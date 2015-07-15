@@ -1,0 +1,61 @@
+/* line 6, ../sass/style.scss */
+.highlights .module-heading {
+  color: #fff;
+  background: #757472 url("../images/home-highlight.png") no-repeat center center;
+  background-size: cover;
+  padding: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 150px;
+  overflow: hidden; }
+  @media (min-width: 481px) {
+    /* line 6, ../sass/style.scss */
+    .highlights .module-heading {
+      height: 300px;
+      display: block;
+      float: left;
+      height: 300px;
+      margin-right: 1.75788%;
+      width: 49.1211%; } }
+
+/* line 27, ../sass/style.scss */
+.highlights ul.highlights-list {
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0; }
+  /* line 33, ../sass/style.scss */
+  .highlights ul.highlights-list li {
+    background: #fff;
+    padding: 8px 24px;
+    margin-bottom: 2px; }
+    /* line 39, ../sass/style.scss */
+    .highlights ul.highlights-list li .blog-name,
+    .highlights ul.highlights-list li .post-date,
+    .highlights ul.highlights-list li .post-categories,
+    .highlights ul.highlights-list li .meta * {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 12;
+      white-space: nowrap;
+      margin: 0 6px 0 0;
+      color: #757472; }
+      /* line 49, ../sass/style.scss */
+      .highlights ul.highlights-list li .blog-name a,
+      .highlights ul.highlights-list li .post-date a,
+      .highlights ul.highlights-list li .post-categories a,
+      .highlights ul.highlights-list li .meta * a {
+        color: #757472; }
+    /* line 53, ../sass/style.scss */
+    .highlights ul.highlights-list li .post-title {
+      margin: 3px 0 -3px;
+      font-size: 22; }
+    /* line 60, ../sass/style.scss */
+    .highlights ul.highlights-list li .post-excerpt {
+      font-size: 16; }
+/* line 72, ../sass/style.scss */
+.highlights .entry-content ul {
+  padding: 0; }
+
+/*# sourceMappingURL=style.css.map */

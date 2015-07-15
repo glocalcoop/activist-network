@@ -1,0 +1,169 @@
+// NEWS PROMO (home page)
+
+.news-list,
+.home .widget_glocal_network_posts_widget {
+    li {
+        background: $white;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 10px;
+        height: 300px;
+        overflow: hidden;
+    }
+    .post-title {
+        margin: .25em 0 0;
+		@extend h3;
+    }
+    .post-excerpt {
+        margin:  .25em 0 .5em;
+		a {
+			display: inline;
+		}
+    }
+    .blog-name,
+    .post-date {
+      display: inline-block;
+      margin-right: $space-fourth;
+      white-space: nowrap;
+      color: $base4; 
+      @include font-size($micro);
+      a {
+        color: $base4;
+      }
+    }
+    .post-author {
+      display: none;
+    }
+    @include breakpoint(sm) {
+      li {
+        @include span-columns(8); 
+        padding: 10px 20px;
+      }
+    }
+}
+
+
+
+// There are two types of news feeds.
+// 1. a dynamic series of articles (on the news page, group page, & partner page)
+// 2. an unordered list of aggregated posts (on the network page)
+
+
+// NEWS PAGE, PARTNER PAGE, GROUP HOME PAGE
+
+.post {
+  @include row();
+  margin-top: 0;
+  margin-bottom: $space;
+  background: $white;
+  .post-header {
+    @include span-columns(2 of 12);
+    @include pad(34px 0 24px 24px);
+    color: $base4;
+  }
+  .post-body {
+    @include span-columns(10 of 12);
+    @include pad(24px 24px 24px 0);
+  }
+  .post-title {
+    margin-bottom: $space-34;
+  }
+  .post-date,
+  .post-categories li {
+    @include font-size($zeta);
+  }
+}
+
+.blog .news .post-image {
+  float: right;
+}
+
+// News Listing
+
+.main-news .post {
+  .post-header {
+    @include span-columns(3);
+  }
+  .post-body {
+    @include span-columns(13);
+    .post-image {
+        float: right;
+        margin-left: $space;
+        margin-bottom: $space-fourth;
+        img {
+            display: block;
+            border: $frame-border;
+        }      
+    }
+  }
+  .post-footer {
+    @include span-columns(3);
+  }
+}
+
+// Events Listing
+
+.event-image {
+  overflow: hidden;
+}
+
+
+// NETWORK PAGE
+
+.main-network .subtitle {
+    @include font-size($epsilon);
+    letter-spacing: $tracking-loose;
+    margin-bottom: $space-half;
+}
+
+
+.network-posts {
+    li {
+        background: $white;
+        margin-bottom: $space;
+        padding: $space-32 $space $space-34;
+        max-width: none;
+        @include fill-parent;
+        clear: both;
+    }    
+    .post-title {
+    	@include font-size($beta);
+    	margin-bottom: $space-fourth;
+    }
+    .post-image {
+        float: left;
+        margin-top: $space-fourth;
+        margin-right: $space;
+        margin-bottom: $space-fourth;
+        img {
+            display: block;
+            border: $frame-border;
+        }
+    }
+    .post-excerpt {
+    	@include font-size($delta);
+    	margin-bottom: $space-half;
+    }
+    .meta {
+        clear: both;
+    }
+    h6 {
+    	@include font-size($milli);
+    	color: $base5;
+    	display: inline-block;
+    	&:after {
+        	content: ' / ';
+        	letter-spacing: 5px;
+    	}
+    	&:last-child:after {
+        	content: '';
+    	}
+    	a, a:visited {
+        	color: $base5;
+        	&:hover {
+            	color: $text-color;
+        	}
+    	}
+    }
+}
+

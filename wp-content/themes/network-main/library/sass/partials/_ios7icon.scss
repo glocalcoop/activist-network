@@ -1,0 +1,48 @@
+// ios7 icon font
+// paste in symbols from http://ios7-icon-font-demo.herokuapp.com/
+// see _webfonts.scss partial for mixin
+
+%ios7-sites:before{ content:''; }
+%ios7-data:before{ content:''; }
+%ios7-book:before{ content:''; }
+%ios7-truck:before{ content:''; }
+
+%ios7-search:before{ content:''; }
+%ios7-location:before{ content:''; }
+%ios7-store:before{ content:''; }
+%ios7-profile:before{ content:''; }
+
+%ios7-right:before{ content:''; }
+%ios7-left:before{ content:''; }
+%ios7-up:before{ content:''; }
+%ios7-down:before{ content:''; }
+
+
+
+
+// versions for nav menus -- add title attribute to menu items
+
+[title^="icon-"]:before {
+  font-family: 'ios7-icon';
+  src: url('fonts/ios7-icon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-size: 32px;
+  -webkit-text-rendering: geometricPrecision;
+  -moz-text-rendering: geometricPrecision;
+  -ms-text-rendering: geometricPrecision;
+  -o-text-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+[title="icon-sites"]:before {content: '';}  
+[title="icon-data"]:before {content: '';}  
+[title="icon-book"]:before { content: '';} 
+[title="icon-truck"]:before {content: ''; position: relative; top: -3px;}
+
+
+ 

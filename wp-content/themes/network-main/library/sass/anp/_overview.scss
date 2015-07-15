@@ -1,0 +1,229 @@
+// CUSTOM MIXINS
+// rainbow buttons
+
+@mixin rainbow-button($color){
+  a,
+  a:visited {
+      background: $color;
+      border: 3px solid $color;
+      color: $white;
+  }
+  a:hover,
+  a:focus {
+      background: $white;
+      color: $color;
+  }
+}
+
+
+// OVERVIEW PAGE
+
+body.overview {
+  .content {
+    padding-top: 0;
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      margin: $space * 4;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: $space-third;
+    }
+    p {
+      max-width: none;
+    }
+    section {
+      @include row();
+      padding-top: $space-double;
+      padding-bottom: $space-double;
+      margin-bottom: 0;
+    }
+    .entry-content {
+      padding-top: 0;
+    }
+    .section-inner {
+      @include fill-parent;
+    }
+  }
+  .article-header {
+    display: none;
+  }   
+  .promo-intro {
+    @include span-columns(14);
+    @include shift(1); 
+    @include breakpoint(md) {
+      width: 75%;
+      margin-left: 12.5%; 
+  	}
+  }
+}
+
+
+.overview-intro {
+  background: $base2 url('/wp-content/uploads/2014/09/bridge-large.jpg') no-repeat center center;
+  background-size: cover;
+  h1 {
+    color: $white;
+    margin: 1.2em 0;
+    text-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+  }
+}
+
+
+// calls to action (top and bottom)
+
+.overview-actions {
+  list-style: none;
+  margin: 0;
+  padding: $space 0;
+  text-align: center;
+  li {
+      display: inline-block;
+      margin: 5px;
+      @include font-size($epsilon);
+      line-height: 1.2;
+      white-space: nowrap;
+  }
+  a {
+      display: block;
+      padding: $space-34 $space-32;
+      text-transform: uppercase;
+      letter-spacing: $tracking;
+      text-decoration: none;
+      text-align: center;
+  }
+  li:nth-child(4n+1) {  
+      @include rainbow-button($green);
+  }
+  li:nth-child(4n+2) {  
+      @include rainbow-button($teal);
+  }
+  li:nth-child(4n+3) {  
+      @include rainbow-button($blue);
+  }
+  li:nth-child(4n+4) {  
+      @include rainbow-button($navy);
+  }
+}
+
+
+
+.overview-value {
+  background: $base8;
+  .wp-caption {
+    background: transparent;
+    img {
+      border: 5px solid $white;
+    }
+    p.wp-caption-text {
+      @include font-size($epsilon);
+      line-height: 1.6;
+      text-align: left;
+      padding: 5px;
+    }
+  }
+}
+
+.value-problem,
+.value-solution {
+    @include span-columns(14);
+    @include shift(1);
+    @include breakpoint(md) {
+        @include span-columns(6);
+    }
+}
+
+
+
+.overview-advantage {
+  background: $base8;
+  padding-bottom: 0 !important;
+  .size-full {
+      width: 100%;
+      max-height: 430px;
+      overflow: hidden;
+  }
+  img {
+      clear: both;
+      width: 100%;
+      height: auto;
+  }
+}
+
+.overview-tools,
+.overview-glocal,
+.overview-services {
+  color: $white;
+  h2, p {
+    color: $white;
+  }
+}
+
+.overview-tools {
+  background: $blue;
+}
+.overview-glocal {
+  background: $navy;
+}
+.overview-services {
+  background: $base2;
+}
+
+// lists of tools and services 
+.tools-promo,
+.services-promo {
+  text-align: center;
+  clear: both;
+  .wp-caption {
+    display: inline-block;
+    margin: 0 5px 10px;
+    img {
+        width: auto;
+        border: 5px solid $white;
+    }
+    p {
+        color: $base2;
+    }
+  }
+  .wp-caption + br {
+    display: none; // hide unintentional line breaks created by Wordpress
+  }
+}
+.tools-promo .wp-caption {
+  width: 235px;
+  height: 285px;
+    
+}
+.services-promo .wp-caption {
+  width: 130px !important;
+  height: 153px !important;
+  @include breakpoint(lg) {
+    width: 153px !important;
+    padding-top: 10px;
+    p {
+      @include font-size($milli);
+    } 
+  }
+}
+
+// glocal images
+.glocal-promo {
+  clear: both;
+  img {
+    @include span-columns(14);
+  	@include shift(1); 
+  	margin-right: 0;
+    border: 5px solid white;
+    margin-top: 20px;
+  }
+	@include breakpoint(md) {
+  	img {
+      width: 30%;
+      height: auto;
+      margin-left: 2.5%;
+  	}
+	}
+}
+
+

@@ -1,0 +1,86 @@
+== High Priority ==
+* i18n
+* "TypeError: a is undefined" JS error on twentythirteen
+	* switch to unminified jquery to debug
+	* check 2014 too
+* Can tag v1.0 when these are done
+* subscribers/etc can see menu item, but when click on it get cap error
+* tweets w/ emoji breaking when inserted into db.
+	* maybe base64-encode them before saving them, but needs to be backcompat.
+	* do to all services in case they start supporting emoji in future. instagram supports it now.
+	* https://core.trac.wordpress.org/ticket/27961
+
+	
+== Contributions / Feedback ==
+* do "x new posts" at top instead of automatically inserting them, ala twitter
+* replace PREFIX w/ "tggr" in places users will expect, like filter names. makes it easier for someone to grep the code for something they're looking for. maybe remove the constant completely.
+* in classes, just `return` if class_exists(). then don't have to indent everything another level
+* switch to 1 column default layout
+* incorportate the user's bg image, like http://vaultpress.com/what-theyre-saying/
+* use http://fortawesome.github.io/Font-Awesome/ for icons instead of the images
+* hide Hashtag menu b/c just confuses people? http://wordpress.org/support/topic/unclear-installation-instructions?replies=1#post-4685223
+* add debugging options to figure out what's going on in each step. maybe if isset $_get['tggr_debug'] and current_user_can(manage_options), console.log( $response['debug'] ) array
+* widget that has input field for hashtag. produces same output as shortcode, just lets user easily put it in a widget
+* shortcode/widget attributes for all|text(tweets)|photos
+* prefix postmeta with _ so users won't edit. will have to migrate existing during upgrade? no, just use http://queryposts.com/function/is_protected_meta/
+
+
+== Quick / Easy ==
+* update screenshots
+* some functions missing @mvc tags
+* use new wp_get_sites() function instead of manual query
+* network deactivate needs to do all sites?
+* register taxonomies with post type -- see note in http://codex.wordpress.org/register_post_type
+* replace update_option_{option} callback in twitter class with pre_update_option_{option} filter
+
+
+== Medium Priority ==
+* cron to save posts when no one viewing page. but how will it know which tags to get? hae to scan all posts/pages for shortcodes? maybe when the shortcode loads, it adds the current $post->ID to a _protected setting. then periodically empty the array so it doesn't keep pulling old ones after they're removed from the shortcode
+* update_newest_media_[id|date] is all source modules -	this needs to be stored for each hashtag. otherwise bug when multiple tags setup on same site b/c they're sharing the same id, so will miss some posts
+* on first setup (and probably later) sometimes not pulling in new posts the first few times. have to make muliple ajax requests. problems w/ the race condition blockers? or just twitter api being lame?
+* bug: everything after emoticons gets stripped off. example: https://twitter.com/ElysciaSheldon/status/388785059865829376
+* class for vine
+* add support for videos attached to instagram/flickr in addition to images
+	* just use built in [video] shortcode. can use nested shortcodes? if not, just do it manually, but use mediaelements.js
+* support pulling from usernames, including multiple at the same time
+* infinite scroll? so you can see what happened earlier
+* add meta boxes to posts to show extra fields, and save values
+* postmeta key to display/hide a post
+* make Hashtags taxonomy edit page expand Tagregator menu when active instead of Posts menu
+* only load css/js on shortcode page
+* if get tweets requests fails b/c of bad auth, obtain new bearer token
+* when calling api, maybe detect if no posts (so know it's first time), and then try to go back and get lots more, so that you get items from before the plugin was activated. twitter only provides a few days
+* maybe remove items from the bottom of the container once you reach ~100 items, so the page doesn't get too long and memory bloated
+* maybe not humantimediff in media iteam b/c unless you constantly update it dynamically, they're all gonna say "1 min ago" eventually. could add timestamp as data-timestamp attribute, then have js go through and recalc all. but would need js equiv for humantimediff
+* don't want this page to get cached? b/c when update, it'll output a huge amount of posts on the first ajax call
+	* no, b/c cache generated before new posts added?
+* register_page_settings() - add &post_type=[?] ? but would want it for all of them, but if leave off then it assumes it's 'post'
+* move menu to 20.53 (or something like that) instead of default position? avoid conflicts w/ other submenus
+* add ability to upload directly from wordpress, rather than using social media
+* maybe call something like register_parent_hooks() inside each media source register_hook_callbacks() function, for things that they'll all do, like convert_urls_to_links()
+* convert twitter module to streaming api? see note in prefetch_media_items()
+* profile for memory usage w/ 9000+ posts
+* rewrite front end bits with backbone.js
+* make log page more readable. better formatting of the data array, line wrapping / scrolling, maybe unserialize nested items, etc. maybe use wp_list_table
+* add logging throughout the rest of the codebase, where appropriate
+* sometimes avatar images 404, i think that happens when someone changes their avatar after the post has been cached in the db. maybe have js detect when an avatar fails, and remove it, or replace it w/ a blank one, so don't have the ugly empty border
+* use flexbox to space .tggr-actions items evenly across the container
+* use tggr-tweets-username / tggr-tweets-tag styles for other sources?
+
+
+== Low Priority ==
+* notice if at least 1 media source doesn't have creds entered / warning if havne't entered settings yet
+* meta caps instead of using update_options
+* settings input fields large enough to hold access key, etc w/out scrolling
+* better to just output raw string instead of json encoding?
+* if a post has multple hastags, don't duplicate it, just assign multiple terms to it
+* render_latest_media_items() - if not having diff transient for each hashtag, could lead to situations where one tag gets checks more frequently that others, edge case though
+* add login action to prevent tagregator user from actually logging in
+* maybe use twitter 'authorize app' process ala Tweet Watcher, rather than asking them to create a their own app. rate limits become new problem then? or does that solve rate limit problem b/c each user has their own limit?
+* using transients incorrectly (see #20316); use option instead
+* create_post_author() - todo if multisite, make sure exists on current blog
+* get_new_hashtagged_tweets() - if response code is 'over limit', then decrease refresh period? log it too
+* seems like maybe some ajax calls should be bringing new ones in, but they don't as often as they should. maybe bug w/ race condition checks or other area.
+* don't store tweet/photo/etc authors as postmeta? because creates redundant data. better to map them to something that's normalized
+* getExistingItemIDs should append to array when new items added instead of recounting all of them every time
+* log() can use compact() instead of manually building the array entry

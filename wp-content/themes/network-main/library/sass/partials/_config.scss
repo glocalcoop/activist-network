@@ -1,0 +1,102 @@
+// STARTER VARIABLES AND MIXINS
+
+
+// GRID -- neat.bourbon.io/docs
+
+@import "neat/neat-helpers";
+$grid-columns: 16;
+$max-width: 1200px;
+
+
+// COLORS
+
+$navy: #247cc9;
+$blue: #29abe2;
+$teal: #00a99d;
+$green: #22b573;
+$lime: #8cc63f;
+$yellow: #fbb03b;
+$orange: #ff931e;
+$red: #f15a24;
+
+$black: #000;
+$white: #fff;
+
+// shades of beige -- HSB(43, 3, X)
+$base1: #1a1919;
+$base2: #333231;
+$base3: #4d4c4a;
+$base4: #757472;
+$base5: #999894;
+$base6: #b8b6b2;
+$base7: #d1cfcb;
+$base8: #e6e4df;
+$base9: #f5f3f0;
+$base0: #fcfdf9;
+
+
+// Tutorial: how to use color variables properly:
+// http://sachagreif.com/sass-color-variables/
+
+$anchor-color: $teal;
+$anchor-hover: $navy;
+$headline-color: $base1;
+$text-color: $base2;
+$quiet-color: $base6;
+$loud-color: $black;
+$hr-color: $base6;
+$hr-alt: $base8;
+
+
+// TYPOGRAPHY
+
+$sans: "Lato", Helvetica, Verdana, sans-serif;
+$mono: "Courier New", Courier, monospace;
+$tracking: 1px;
+$tracking-loose: 2px;
+
+
+// TYPE SIZES
+// http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+
+$giga: 80;
+$mega: 72;
+$kilo: 64;
+
+$alpha: 48; // h1
+$beta: 36; // h2
+$gamma: 28; // h3
+$delta: 22; // h4
+$epsilon: 18; // h5, p
+$zeta: 16; // h6
+
+$milli: 14; 
+$micro: 12; 
+$nano: 11; 
+
+
+// SPACING
+
+$space-triple: 72px; 
+$space-double: 48px;
+$space-32: 30px; 
+$space: 24px; // equal to body line-height
+$space-34: 18px; 
+$space-half: 12px; 
+$space-third: 8px; 
+$space-fourth: 6px; 
+
+
+// BORDERS
+
+$frame-border: 5px solid $white;
+
+
+// LAYERS
+
+$layer1: 1; // content
+$layer2: 2; // hovers
+$layer3: 3; // cloak
+$layer4: 4; // lightbox
+$layer5: 5; // lightbox content
+

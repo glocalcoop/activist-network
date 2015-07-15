@@ -1,0 +1,74 @@
+@import "../partials/bourbon/bourbon";
+@import "../partials/custom";
+@import "../partials/config";
+
+#crm-container {
+	
+	.content {
+		padding: 0;
+	}
+	
+	.crm-section {
+		padding: .5em 0;
+	}
+	
+	#printer-friendly {
+		display: none;
+	}
+	
+	label {
+		font-weight: 300;
+	}
+	
+	.label label {
+		font-weight: bold;
+	}
+	
+	input,
+	textarea {
+		margin-bottom: 0;
+		
+	}
+	
+	input[type='checkbox'],
+	input[type='radio']{
+		margin-right: .25em;
+	}
+	
+	input[type='submit'],
+	input[type='button'],
+	.button, 
+	.cancel {
+		@include transition(all 0.2s ease-in-out);
+		text-transform: uppercase; 
+			letter-spacing: $tracking;
+		-webkit-appearance: button;
+		cursor: pointer;
+		border: 0;
+		border-radius: 5px;
+		background: $base2;
+		color: $white;
+		line-height: 42px;
+		height: 42px;
+		white-space: inherit;
+		margin: 0;
+		padding: 0 1em;
+		font-weight: normal;
+		font-size: 	1.125rem;
+		&:hover,
+		&:focus {
+			background: $white;
+			color: $base2 !important;
+		}
+	}
+	
+	.crm-public-footer {
+		float: right;
+		
+		.empowered-by-logo {
+			display: inline;
+		}
+
+	}
+
+}

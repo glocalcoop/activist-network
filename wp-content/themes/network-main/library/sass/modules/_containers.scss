@@ -1,0 +1,197 @@
+// CONTAINERS 
+
+
+// standardize box model across browsers! IE8 and up. bit.ly/1eXrOej 
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+// base
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: $base9;
+}
+
+
+hr {
+	border: 0;
+	height: 1px;
+	background: $hr-color;
+	margin:2rem 0 4rem 0;
+}
+
+
+// FULL-WIDTH ROWS (header, .content, footer)
+// for bg colors etc 
+
+.header-global,
+.header-local,
+.footer,
+.footer-slug {
+  padding: 0 20px;
+}
+
+.content {
+    padding: 20px;
+    .directory & {
+        padding-bottom: $space-double;
+    }
+}
+
+
+// CENTERED CONTAINERS
+// centered, w/max-width, using Bourbon Neat grid
+
+.wrap {
+    @include outer-container;
+}
+
+
+// 2-COLUMN PAGE (DEFAULT)
+
+.page-template-default {}
+
+.content {
+
+	main,
+	aside {
+		@include span-columns(16);
+	}
+
+
+	@include breakpoint(md) {
+
+		main {
+			@include span-columns(12);
+		}
+		aside {
+			@include span-columns(4);
+		}
+
+	}
+
+}
+
+//.content {
+//
+//	main {
+//		@include span-columns(12);
+//	}
+//	aside {
+//		@include span-columns(4);
+//	}
+//
+//	@include breakpoint(sm) {
+//
+//		main,
+//		aside {
+//			@include span-columns(16);
+//		}
+//	}
+//
+//}
+
+
+// SINGLE COLUMN, FULLWIDTH PAGE
+
+// .page-template,
+.page-template-page-full-width-php,
+// .page-template-page-news-php,
+.page-template-page-directory-php,
+// .page-news,
+.page-events,
+.page-directory,
+.page-sites {
+
+  .content {
+    main {
+      @include span-columns(16);
+    }
+  }
+}
+
+
+// CONTENT COLUMNS
+
+// main
+// main {
+//   padding-bottom: 60px; 
+//   @include breakpoint(md) {
+//     @include span-columns(12);
+//   }
+//   // clear right margin if right column
+//   &:last-child {
+//       @include omega();
+//   }
+//   // single column layout 
+//   .page-template-page-iframe-php &,
+//   // .page-template-default &,
+//   .directory &,
+//   .sites &,
+//   .news & {
+//       @include fill-parent;
+//   }
+// }
+
+// // sidebar
+// aside,
+// div[role='complementary'] {
+// 	@include breakpoint(md) {
+//     @include span-columns(4);
+//   }
+//     // clear right margin if right column
+//     &:last-child {
+//         @include omega();
+//     }
+// }
+
+
+
+
+
+// ONE-COLUMN CONTENT 
+
+// main.main-news,
+// .home-start,
+// .sites-list,
+// .networks-list {
+//     @include row();
+// }
+
+
+// CUSTOM CONTAINERS 
+
+.home-intro {
+    background: $white;
+    margin: 20px 0;
+    @include pad($space $space 0);
+  	@include breakpoint(md) {@include span-columns(16); }
+  	h1 {
+      	margin-bottom: $space-third;
+      	line-height: 1.1;
+  	}
+  	p {
+      	line-height: 1.5;
+  	}
+  }
+
+.home-feature {
+    border-top: 1px solid $hr-color;
+	@include breakpoint(md) {@include span-columns(12); border: 0;}
+}
+
+.home-modules {
+    padding-bottom: 30px;
+    .row {
+        clear: both;
+        border-top: 1px solid $hr-color;
+        padding: 20px 0;
+    }
+}
+
+

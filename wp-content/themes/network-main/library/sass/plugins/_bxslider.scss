@@ -1,0 +1,97 @@
+// BOX SLIDER PLUGIN 
+
+div.bx-wrapper {
+    position: relative;
+    margin: 20px auto;
+    .bx-viewport {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        left: 0;
+    }
+    .bxslider {
+        margin: 0;
+    }
+    .featured-post {
+        max-width: none;
+        min-height: 390px;
+        background-size: cover;
+        background-position: center center;
+    }
+    a {
+        display: block;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .bx-caption {
+        background: rgba(255,255,255,.8);
+        bottom: 10px;
+        width: 100%;
+        span {
+            color: $text-color;
+            font-family: $sans;
+            @include font-size($delta);
+            margin: 0;
+        }
+    }   
+    .bx-pager.bx-default-pager {
+        position: absolute;
+        bottom: 12px;
+        right: 15px;
+        width: 30%;
+        z-index: 100;
+        text-align: right;
+        a {
+            background: $base9;
+            text-indent: 9999px; // reverse b/c text-align right
+        }
+        a:hover, 
+        a.active {
+            background: $base2;
+        }
+    }
+}
+
+
+// HOME PAGE FEATURE
+
+article.home-feature div.bx-wrapper .bx-viewport {
+    border: 5px solid $white;
+    background: $base2;
+
+}
+
+
+// LEFT/RIGHT BUTTONS
+
+.bx-wrapper .bx-controls-direction {
+    a {
+        @include font-icon-base($family:"ios7-icon"); 
+        background: none;
+        color: $anchor-color;
+        overflow: hidden;
+    }
+    a:hover {
+        color: $anchor-hover;
+    }
+    .bx-prev {
+        @extend %ios7-left;
+        left: -40px;
+    }
+    .bx-next {
+        @extend %ios7-right;
+        right: -40px;
+    }
+}
+
+.home-modules .bx-wrapper .bx-controls-direction {
+    a {
+        @include font-size(36); 
+        height: 48px;
+        margin-top: -24px;
+        text-indent: 0;
+        line-height: 48px;
+    }
+}

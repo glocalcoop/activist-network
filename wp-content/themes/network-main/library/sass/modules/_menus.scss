@@ -1,0 +1,255 @@
+/*********************
+NAVIGATION STYLES
+*********************/
+
+// NAVIGATION
+
+/* all menu lists have a .menu class applied via the 
+wp_menu function, so we can easily write one group of 
+styles and our css is cleaner and more scalable. */
+ 
+.menu, 
+.sub-menu {
+  margin: 0;
+  width: 100%;
+  background: $white;
+  @include transition(all 0.3s ease-out);
+}
+
+.sub-menu {
+  background: rgba(0,0,0,.05);
+}
+
+.menu {  
+  li {
+    margin: 0;
+    display: block;
+    white-space: nowrap;
+    line-height: 1;
+  }
+	a {
+		display: block;
+		text-decoration: none;
+    color: $text-color;
+    padding: 0.8em;
+    position: relative;
+    &:focus,
+    &:hover {
+      color: $anchor-color;
+    }
+	}
+}
+
+.menu-item-has-children {
+    > a {
+        @include font-icon-base($family:"ios7-icon"); 
+        @extend %ios7-down;
+    }
+    > a:before {
+        float: right;
+        margin-left: 6px;
+        margin-top: 3px;
+        @include font-size($milli); 
+    }
+}
+
+
+
+// if JS is loaded, set up animations
+.js {
+    .menu, 
+    .sub-menu {
+        max-height: 0;
+        overflow: hidden;
+        &.active {
+          max-height: 480px;
+        	overflow: visible;
+        }
+    }
+}
+
+
+// NAVIGATION: HORIZONTAL
+
+@include breakpoint(md) {
+    
+    // if JS is loaded, set up animations
+    .js {
+        .menu, 
+        .sub-menu {
+            max-height: none;
+            overflow: visible;
+        }
+        .sub-menu {
+            display: none;
+        }
+        li:hover .sub-menu {
+            display: block;
+        }
+    }
+    
+    .menu {
+        background: none;
+        border: 0;
+        width: auto;
+        li {
+            display: inline-block;
+            margin-right: -2px; // remove space caused by inline-block
+            position: relative;
+        }
+    }
+    
+    .sub-menu {
+        background: $white;
+        position: absolute;
+        z-index: 99; // to stay above carousel w/z-index of 50
+        top: 100%;
+        left: 0;
+        width: 12em;
+        li {
+            display: block;
+        }
+        a {
+            padding: 11px 0;
+        }
+    }
+        
+}
+
+
+
+
+
+
+
+
+// TOGGLE MENUS
+
+.toggle {
+    float: right;
+    li {
+        display: inline-block;
+        color: $anchor-color;
+        padding: 3px 8px;
+        text-transform: uppercase;
+        letter-spacing: $tracking;
+        &.is-on {
+            background: $white;
+            color: $text-color;
+        }
+        &:hover {
+            background: $white;
+            cursor: pointer;
+        }
+    }
+}
+
+// FILTER MENUS
+
+$f-height: 2.5em; // set variable for this menu
+
+.filter, 
+.sort {
+    max-height: $f-height;
+    padding-top: $f-height; // allow for absolutely-positioned .is-on item
+    overflow: hidden;
+    position: relative;
+    margin-bottom: $space;
+    @include transition(max-height 0.25s ease); // slide down and up
+	@include breakpoint(sm) {@include span-columns(8);}
+	@include breakpoint(lg) {@include span-columns(4);}
+	&:hover {
+    	max-height: 10em;
+    	cursor: pointer;
+	}
+    li {
+        line-height: $f-height;
+        display: block;
+        padding: 0 1em;
+        margin: 0;
+        background: $white;
+        color: $text-color;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include font-size($zeta);
+        &:hover {
+            background: lighten($anchor-color, 10);
+            color: $white;
+        }
+        &.is-on {
+            @include font-icon-base($family:"ios7-icon"); 
+            @include font-size($zeta);
+            @extend %ios7-down;
+            background: $anchor-color;
+            color: $white;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            &:before {
+                float: right;
+            }
+        }
+    }
+}
+
+
+// PAGINATION
+
+.pagination,
+.wp-prev-next {
+	margin: 1.1em 0 2.2em;
+}
+.pagination{
+    clear: both;
+    border-top: 1px solid $hr-color;
+    padding-top: $space-half;
+    ul {
+        display: inline-block;
+        white-space: nowrap;
+        padding:0;
+        clear: both;
+        margin: 1px;
+        li {
+            padding: 0;
+            margin: 0;
+            float: left;
+            display: inline;
+            overflow: hidden;
+            a, span {
+                margin: 0;
+                text-decoration: none;
+                padding: 0;
+                line-height: 1em;
+                font-size: 1em;
+                font-weight: 300;
+                padding: .5em;
+                min-width: 1em;
+                display: block;
+            }
+            span.current{
+            	font-weight: bold;
+            }
+            a:hover, a:focus {
+                
+            }
+        }
+    }
+} 
+
+/* fallback previous & next links */
+.wp-prev-next {
+
+	ul {}
+
+	.prev-link {
+		float: left;
+	}
+
+	.next-link {
+		float: right;
+	}
+
+}
+

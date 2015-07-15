@@ -1,0 +1,65 @@
+// NYCP FOOTER
+
+
+.footer-logo {
+    margin: 0;
+    line-height: 30px;
+}
+
+.logo-NYCP {
+    @include font-size($epsilon);
+    text-transform: uppercase; 
+    letter-spacing: $tracking;
+    font-weight: 700;
+    white-space: nowrap;
+    display: inline-block; 
+    margin-right: 20px;
+    color: $white;
+    @include transition (color 0.25s ease);
+    span {
+        display: inline-block;
+        border: 3px solid $white;
+        padding: 3px 5px;
+        margin-left: 5px;   
+        @include transition (border-color 0.25s ease);
+    }
+    &:visited {
+        color: $white;
+    }
+    &:hover,
+    &:focus, 
+    &:visited:hover {
+        color: $text-color;
+        span {
+            border-color: $text-color;
+        }
+    }
+}
+
+.tagline-NYCP {
+  @include font-size(13);
+	text-transform: uppercase;
+	letter-spacing: $tracking;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: $base5;
+}
+
+
+// service promo icons
+.footer .menu li:first-child {
+  @include font-size(28); 
+  @include font-icon-base($family:"ios7-icon");
+  margin: 0;
+  border-top: 0;
+  a {
+    padding: $space-third 0; 
+    margin-top: -$space-third;
+  }
+  a:before {
+    margin-right: $space-half;
+  }
+}
+
+
+
