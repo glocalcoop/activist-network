@@ -1047,8 +1047,13 @@ class fm_db_class{
 		$str = ob_get_contents();
 		ob_end_clean();
 		
-		//Properly encode the CSV so Excel can open it: Credit for this goes to someone called Eugene Murai
-		$str = chr(255).chr(254).mb_convert_encoding( $str, 'UTF-16LE', 'UTF-8');
+		//Properly encode the CSV so Excel can open it. Thanks Eugene Murai
+		if ( function_exists( 'iconv' ) ){
+			$str = chr(255).chr(254).iconv( 'UTF-8', 'UTF-16LE', $str );			
+		} elseif ( function_exists( 'mb_convert_encoding' ) ){			
+			$str = chr(255).chr(254).mb_convert_encoding( $str, 'UTF-16LE', 'UTF-8');
+		}
+		
 		return $str;
 	}
 
