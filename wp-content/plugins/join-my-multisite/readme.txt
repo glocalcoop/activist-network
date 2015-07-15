@@ -3,7 +3,7 @@ Contributors: Ipstenu
 Tags: multisite, wpmu, registration, users
 Requires at least: 3.7
 Tested up to: 4.3
-Stable tag: 1.7.7
+Stable tag: 1.7.8
 Donate link: https://store.halfelf.org/donate/
 
 Allow site admins to automatically add existing users to their site, or let users decide at the click of a button.
@@ -32,6 +32,12 @@ When you have registration turned on, each site can chose to use 'Per Site Regis
 * [Donate](https://store.halfelf.org/donate/)
 
 ==Changelog==
+
+= 1.7.8 =
+
+06 July, 2015
+
+* Updating widgets to be [compatible with PHP 5 constructors](https://markjaquith.wordpress.com/2009/09/29/using-php5-object-constructors-in-wp-widget-api/). Props chriscct7.
 
 = 1.7.7 =
 11 June, 2015
