@@ -1,0 +1,1609 @@
+# Copyright (C) 2010 Form Manager
+# This file is distributed under the same license as the Form Manager package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Form Manager 1.6.20\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wordpress-form-manager\n"
+"POT-Creation-Date: 2011-08-05 17:50:05+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2011-10-12 09:50+0330\n"
+"Last-Translator: سلمان <salmanmp@gmail.com>\n"
+"Language-Team: Me <salmanmp@gmail.com>\n"
+"X-Poedit-Language: Persian\n"
+
+#: api.php:98
+#: helpers.php:142
+#: display.php:189
+msgid "Timestamp"
+msgstr "برچسب زمان"
+
+#: api.php:99
+#: helpers.php:149
+#: display.php:188
+msgid "User"
+msgstr "کاربر"
+
+#: api.php:100
+msgid "Post"
+msgstr "مطلب"
+
+#: api.php:235
+msgid "(form  %s not found)"
+msgstr "فرم %s یافت نشد"
+
+#: types/base.php:109
+#: types/blank.php:15
+#: pages/editformnn.php:80
+msgid "Item Label"
+msgstr "عنوان مورد"
+
+#: types/base.php:110
+#: types/file.php:22
+#: types/separator.php:41
+#: types/checkbox.php:12
+#: types/textarea.php:44
+#: types/list.php:17
+#: types/note.php:60
+#: types/blank.php:16
+#: types/text.php:40
+#: types/text.php:231
+#: types/text.php:306
+msgid "Item Description"
+msgstr "توضیح مورد"
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/file.php:8
+msgid "File"
+msgstr "پرونده"
+
+#: types/file.php:21
+msgid "New File Upload"
+msgstr "بارگزاری فایل جدید"
+
+#: types/file.php:54
+msgid "File upload exceeded maximum allowable size."
+msgstr "حجم فایل از بیشنیه بیش‌تر است"
+
+#: types/file.php:57
+msgid "There was an error with the file upload."
+msgstr "خطا در بارگزاری فایل"
+
+#. translators: this will be shown along with the item label and file
+#. extension, as in, "(File Upload) Cannot be of type '.txt'"
+#: types/file.php:64
+msgid "Cannot be of type"
+msgstr "نمی‌تواند از این نوع‌ها باشد"
+
+#. translators: this will be shown along with the item label and a list of file
+#. extensions, as in, "(File Upload) Can only be of types '.txt, .doc, .pdf'"
+#: types/file.php:69
+msgid "Can only be of types"
+msgstr "فقط می‌تواند از این انواع باشد"
+
+#: types/file.php:178
+#: types/separator.php:15
+#: types/checkbox.php:62
+#: types/checkbox.php:114
+#: types/textarea.php:74
+#: types/textarea.php:135
+#: types/list.php:144
+#: types/list.php:288
+#: types/recaptcha.php:73
+#: types/blank.php:38
+#: types/text.php:61
+#: types/text.php:156
+#: types/text.php:217
+#: types/text.php:290
+msgid "Label"
+msgstr "برچسب"
+
+#: types/file.php:179
+msgid "Max file size (in kB)"
+msgstr "حجم بیشینه فایل (کیلوبایت)"
+
+#: types/file.php:180
+msgid "Your host restricts uploads to"
+msgstr "میزبانتان بارگزاری را محدود کرده است در"
+
+#: types/file.php:181
+msgid "File Types"
+msgstr "انواع فایل"
+
+#: types/file.php:182
+msgid "Enter a list of extensions separated by commas, e.g. \".txt, .rtf, .doc\""
+msgstr "سیاهه‌ای از پسوندها که با «،» از هم جدا شده اند وارد کنید. مثل \".txt, .rtf, .doc\""
+
+#: types/file.php:183
+msgid "Only allow"
+msgstr "فقط اجازه"
+
+#: types/file.php:184
+msgid "Do not allow"
+msgstr "اجازه نده"
+
+#: types/file.php:185
+msgid "Uploads"
+msgstr "بارگزاری‌ها"
+
+#: types/file.php:186
+msgid "Upload directory"
+msgstr "دایرکتوری بارگزاری"
+
+#: types/file.php:188
+msgid "<em>This does not appear to be a valid directory</em>"
+msgstr "<em>به نظر می‌رسد این مورد یک پوشه معتبر نباشد</em>"
+
+#: types/file.php:189
+msgid "Using an upload directory will allow you to post links to uploaded files.  Otherwise, Form Manager will manage the uploaded files for you in the database."
+msgstr "استفاده از یک پوشه برای بارگزاری، به شما امکان می‌دهد که پیوندهایی به فایل‌های بارگزاری شده ایجاد کنید. وگرنه «مدیریت فرم» پرونده‌های بارگزاری شده را در پایگاه داده مدیریت خواهد کرد."
+
+#: types/file.php:190
+msgid "Upload URL"
+msgstr "نشانی بارگزاری"
+
+#: types/file.php:191
+msgid "This will be the base URL used for links to the uploaded files.  If left blank, no links will be generated."
+msgstr "این یک نشانی پایه برای پیوندهای فایل‌های بارگزاری شده است. اگر خالی باقی بماند پیوندی تولید نخواهد شد."
+
+#: types/file.php:192
+msgid "Name format"
+msgstr "قالب نام"
+
+#: types/file.php:193
+msgid "This only applies if you specify an upload directory. Insert %filename% where you want the filename to appear. The rest will be used as a PHP timestamp format."
+msgstr ""
+
+#: types/file.php:228
+msgid "'Only allow' must be a list of extensions separated by commas"
+msgstr ""
+
+#: types/file.php:232
+msgid "'Do not allow' must be a list of extensions separated by commas"
+msgstr ""
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/separator.php:7
+msgid "Separator"
+msgstr "جدا کننده"
+
+#: types/separator.php:40
+msgid "New Separator"
+msgstr "جدا کننده جدید"
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/checkbox.php:7
+msgid "Checkbox"
+msgstr "چک‌باکس"
+
+#: types/checkbox.php:11
+msgid "New Checkbox"
+msgstr "چک‌باکس جدید"
+
+#: types/checkbox.php:28
+#: types/checkbox.php:40
+#: types/checkbox.php:52
+#: types/checkbox.php:131
+#: types/checkbox.php:132
+msgid "yes"
+msgstr "بله"
+
+#: types/checkbox.php:52
+#: types/checkbox.php:53
+#: types/checkbox.php:131
+#: types/checkbox.php:132
+msgid "no"
+msgstr "نه"
+
+#: types/checkbox.php:63
+msgid "Position"
+msgstr "موقعیت"
+
+#: types/checkbox.php:63
+msgid "Left"
+msgstr "چپ"
+
+#: types/checkbox.php:63
+msgid "Right"
+msgstr "راست"
+
+#: types/checkbox.php:64
+#: types/checkbox.php:115
+msgid "Checked by Default"
+msgstr "به صورت پیش‌فرض انتخاب شده است"
+
+#: types/checkbox.php:65
+#: types/textarea.php:78
+#: types/list.php:147
+#: types/text.php:65
+msgid "Required"
+msgstr "الزامی‌ست"
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/textarea.php:7
+msgid "Text Area"
+msgstr "متن گسترده"
+
+#: types/textarea.php:43
+msgid "New Text Area"
+msgstr "متن گسترده جدید"
+
+#: types/textarea.php:75
+#: types/text.php:62
+msgid "Placeholder"
+msgstr "مقدار پیش‌فرض"
+
+#: types/textarea.php:76
+#: types/textarea.php:137
+msgid "Height (in pixels)"
+msgstr "ارتفاع (پیکسل)"
+
+#: types/textarea.php:77
+#: types/textarea.php:138
+#: types/list.php:146
+#: types/text.php:63
+msgid "Width (in pixels)"
+msgstr "عرض (پیکسل)"
+
+#. translators: the following are descriptions of the different behavior types
+#: types/textarea.php:136
+#: types/text.php:157
+#: settings.php:16
+msgid "Default"
+msgstr "پیش‌فرض"
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/list.php:11
+msgid "List"
+msgstr "سیاهه"
+
+#: types/list.php:16
+msgid "New List"
+msgstr "سیاهه جدید"
+
+#: types/list.php:145
+#: types/list.php:289
+msgid "Style"
+msgstr "استیل"
+
+#: types/list.php:145
+#: types/list.php:289
+msgid "Dropdown"
+msgstr "منوی افتان"
+
+#: types/list.php:145
+#: types/list.php:289
+msgid "List Box"
+msgstr "سیاهه جعبه"
+
+#: types/list.php:145
+#: types/list.php:289
+msgid "Radio Buttons"
+msgstr "کلیدهای رادیویی"
+
+#: types/list.php:145
+#: types/list.php:289
+msgid "Checkboxes"
+msgstr "چک‌باکس‌ها"
+
+#: types/list.php:148
+#: types/list.php:290
+msgid "List Items"
+msgstr "موارد سیاهه"
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/recaptcha.php:10
+msgid "reCAPTCHA"
+msgstr ""
+
+#: types/recaptcha.php:15
+msgid "(No reCAPTCHA API public key found)"
+msgstr "(کلید عمومی reCAPTCHA یافت نشد)"
+
+#: types/recaptcha.php:22
+msgid "The reCAPTCHA was incorrect."
+msgstr "reCAPTCHA غلط بود"
+
+#: types/recaptcha.php:67
+msgid "You need reCAPTCHA API keys."
+msgstr "شما کلید‌های API مربوط به reCAPTCHA را نیاز دارید"
+
+#: types/recaptcha.php:67
+msgid "Fix this in"
+msgstr "این را تصحیح کن در"
+
+#: types/recaptcha.php:67
+#: wordpress-form-manager.php:391
+#: wordpress-form-manager.php:392
+#: wordpress-form-manager.php:429
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: types/recaptcha.php:68
+msgid "(reCAPTCHA field)"
+msgstr "(مورد reCAPTCHA)"
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/note.php:7
+msgid "Note"
+msgstr "نبشته"
+
+#: types/note.php:22
+msgid "HTML"
+msgstr "اچ‌تی‌ام‌ال"
+
+#: types/note.php:59
+msgid "New Note"
+msgstr "نبشته جدید"
+
+#. translators: this is for the list element options
+#: types/panelhelper.php:74
+msgid "Enter Items as Text"
+msgstr "موارد را به صورت متن وارد کنید"
+
+#: types/panelhelper.php:79
+#: pages/editformcond.php:93
+msgid "Add"
+msgstr "اضافه"
+
+#: types/blank.php:18
+msgid "Item Nickname"
+msgstr "عنوان جای‌گزین مورد"
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/text.php:14
+msgid "Text"
+msgstr "متن"
+
+#: types/text.php:39
+msgid "New Text"
+msgstr "متن جدید"
+
+#: types/text.php:64
+msgid "Max characters"
+msgstr "بیشینه تعداد حروف"
+
+#: types/text.php:66
+msgid "Validation"
+msgstr "اعتبارسنجی"
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/text.php:198
+msgid "ID Number"
+msgstr "شماره رکورد"
+
+#: types/text.php:218
+msgid "Next Number"
+msgstr "عدد بعدی"
+
+#: types/text.php:230
+msgid "New ID Number"
+msgstr "شماره جدید رکورد"
+
+#. translators: this appears in the 'Add Form Element' menu
+#: types/text.php:247
+msgid "Tracking Number"
+msgstr "عدد ردگیری"
+
+#: types/text.php:291
+msgid "Carrier"
+msgstr "حامل"
+
+#: types/text.php:305
+msgid "New Tracking Number"
+msgstr "عدد ردگیری جدید"
+
+#: db.php:70
+msgid "Submit"
+msgstr "ارسال"
+
+#: db.php:92
+#: db.php:124
+msgid "[form title] Submission"
+msgstr "ثبت جدید در [form title]"
+
+#. translators: the default name of a new form
+#: db.php:117
+msgid "New Form"
+msgstr "فرم جدید"
+
+#: db.php:118
+msgid "Thank you! Your data has been submitted."
+msgstr "متشکر. اطلاعات شما ارسال شد."
+
+#. translators: the default message given if a required item is left blank.
+#. You must include a backslash before any single quotes
+#: db.php:120
+msgid "\\'%s\\' is required."
+msgstr "\\'%s\\' الزامی‌ست."
+
+#: db.php:121
+msgid "'%s' is only available to registered users."
+msgstr "'%s' فقط برای کاربران ثبت شده در دسترس است."
+
+#. translators: the following are for the numbers only validator
+#: db.php:130
+msgid "Numbers Only"
+msgstr "فقط عدد"
+
+#: db.php:131
+msgid "'%s' must be a valid number"
+msgstr "'%s' باید یک عدد معتبر باشد"
+
+#. translators: the following are for the phone number validator
+#: db.php:136
+msgid "Phone Number"
+msgstr "شماره تلفن"
+
+#: db.php:137
+msgid "'%s' must be a valid phone number"
+msgstr "'%s' باید یک شماره تلفن معتبر باشد"
+
+#. translators: the regular expression for US phone numbers (XXX XXX XXXX).
+#: db.php:139
+msgid "/^.*[0-9]{3}.*[0-9]{3}.*[0-9]{4}.*$/"
+msgstr ""
+
+#. translators: the following are for the e-mail validator
+#: db.php:143
+#: pages/editsettingsadv.php:255
+msgid "E-Mail"
+msgstr "رایانامه"
+
+#: db.php:144
+msgid "'%s' must be a valid e-mail address"
+msgstr "'%s' باید یک نشانی رایانامه معتبر باشد"
+
+#. translators: the following are for the date validator
+#: db.php:149
+msgid "Date (MM/DD/YY)"
+msgstr "تاریخ (yyyy/mm/dd)"
+
+#: db.php:150
+msgid "'%s' must be a date (MM/DD/YY)"
+msgstr "'%s' باید یک تاریخ باشد (MM/DD/YY)"
+
+#: db.php:154
+msgid "State (U.S.)"
+msgstr "ایالت (امریکا)"
+
+#: db.php:155
+msgid "'%s' must be a valid state abbreviation"
+msgstr "'%s' باید یک مخفف معتبر از استان‌ها باشد"
+
+#: db.php:159
+msgid "Zip code (U.S.)"
+msgstr "زیپ‌کد (امریکا)"
+
+#: db.php:160
+msgid "'%s' must be a valid zip code"
+msgstr "'%s' باید یک زیپ‌کد معتبر باشد"
+
+#: db.php:164
+msgid "Dimensions (L x W x H)"
+msgstr "ابعاد (طول x عرض x ارتفاع)"
+
+#: db.php:165
+msgid "'%s' must be dimensions (L x W x H)"
+msgstr "'%s' باید مشخص کننده ابعاد به شکل (طول x عرض x  ارتفاع) باشد"
+
+#: types.php:54
+#: types.php:61
+#: pages/main.php:159
+#: pages/main.php:169
+#: pages/formdatasingle.php:63
+#: pages/editform.php:10
+#: display.php:240
+#: wordpress-form-manager.php:382
+#: wordpress-form-manager.php:383
+msgid "Edit"
+msgstr "ویرایش"
+
+#: types.php:56
+#: wordpress-form-manager.php:266
+msgid "Hide"
+msgstr "پنهان"
+
+#. translators: the following are used on the main page, (the one that lists
+#. all forms)
+#: pages/main.php:73
+#: pages/main.php:113
+#: wordpress-form-manager.php:372
+#: wordpress-form-manager.php:373
+msgid "Forms"
+msgstr "فرم‌ها"
+
+#: pages/main.php:75
+msgid "Are you sure you want to delete:"
+msgstr "مطمئنید که می خواهید این مورد را حذف کنید"
+
+#: pages/main.php:91
+msgid "Yes"
+msgstr "بله"
+
+#: pages/main.php:92
+msgid "Cancel"
+msgstr "لغو"
+
+#: pages/main.php:105
+msgctxt "upgrade-notice"
+msgid "The 'Submission Data' page has changed. You may want to review permissions if you are using the 'Members' plugin."
+msgstr "صفحه داده‌های ارسالی تغییر کرده است. اگر از افزونه «کابران»(Members) استفاده می‌کنید، ممکن است بخواهید اجازه دسترسی‌ها را بازبینی کنید"
+
+#: pages/main.php:115
+msgid "Add New"
+msgstr "افزودن جدید"
+
+#: pages/main.php:123
+msgid "Bulk Actions"
+msgstr "برای همه"
+
+#: pages/main.php:124
+#: pages/main.php:162
+#: pages/main.php:175
+#: display.php:241
+#: wordpress-form-manager.php:262
+msgid "Delete"
+msgstr "حذف"
+
+#: pages/main.php:126
+#: pages/formdata.php:609
+msgid "Apply"
+msgstr "اعمال"
+
+#: pages/main.php:136
+#: pages/main.php:145
+#: pages/editsettingsadv.php:161
+msgid "Name"
+msgstr "نام"
+
+#: pages/main.php:137
+#: pages/main.php:146
+msgid "Slug"
+msgstr "عنوان"
+
+#. translators: the number of submissions for a form
+#: pages/main.php:138
+#: pages/main.php:147
+#: pages/editformdesign.php:125
+msgid "Submission count"
+msgstr "تعداد ارسال"
+
+#: pages/main.php:139
+#: pages/main.php:148
+msgid "Last Submission"
+msgstr "آخرین ارسال"
+
+#: pages/main.php:159
+#: pages/main.php:169
+#: pages/editform.php:9
+msgid "Edit this form"
+msgstr "ویرایش این فرم"
+
+#: pages/main.php:160
+#: pages/main.php:171
+#: pages/editform.php:45
+msgid "Advanced form settings"
+msgstr "تنظیمات پیش‌رفته فرم"
+
+#: pages/main.php:160
+#: pages/main.php:171
+#: pages/editform.php:46
+#, fuzzy
+msgid "Advanced"
+msgstr "پیش‌رفته"
+
+#: pages/main.php:161
+#: pages/main.php:173
+#: pages/editform.php:16
+#: pages/editform.php:23
+msgid "View form data"
+msgstr "مشاهده اطلاعات فرم"
+
+#: pages/main.php:161
+#: pages/main.php:173
+msgid "Data"
+msgstr "داده"
+
+#: pages/main.php:162
+#: pages/main.php:175
+msgid "Delete this form"
+msgstr "حذف این فرم"
+
+#. translators: the following is displayed if there are no forms to list
+#: pages/main.php:191
+msgid " No forms yet..."
+msgstr "هنوز فرمی ساخته نشده"
+
+#: pages/formdatasingle.php:52
+#: pages/formdata.php:456
+msgid "Data updated."
+msgstr "داده‌ها به روز شد"
+
+#. translators: the following are from the form's advanced section
+#: pages/formdatasingle.php:60
+#: pages/editformnn.php:57
+#: pages/editformnn.php:133
+#: pages/editformdesign.php:96
+#: pages/editformcond.php:74
+#: pages/editformcond.php:120
+#: pages/formdata.php:597
+#: pages/formdata.php:652
+#: pages/editformadv.php:84
+#: pages/editformadv.php:159
+msgid "Cancel Changes"
+msgstr "لغو تغییرات"
+
+#: pages/formdatasingle.php:61
+#: pages/editsettings.php:91
+#: pages/editsettingsadv.php:275
+#: pages/editformnn.php:58
+#: pages/editformnn.php:134
+#: pages/editformcond.php:75
+#: pages/editformcond.php:121
+#: pages/formdata.php:598
+#: pages/formdata.php:653
+#: pages/editformadv.php:85
+#: pages/editformadv.php:160
+msgid "Save Changes"
+msgstr "ذخیره تنظیمات"
+
+#: pages/formdatasingle.php:67
+#: pages/formdata.php:478
+msgid "Summary"
+msgstr "خلاصه"
+
+#: pages/editform.php:17
+#: pages/editform.php:24
+#: pages/editformdesign.php:120
+#: pages/editformadv.php:138
+msgid "Submission Data"
+msgstr "داده‌های ارسالی"
+
+#: pages/editform.php:31
+msgid "Form extra"
+msgstr "موارد اکسترای فرم"
+
+#: pages/editform.php:32
+msgid "Form Extra"
+msgstr "موراد اکسترای فرم"
+
+#: pages/editform.php:38
+msgid "Conditional behavior"
+msgstr "رفتار مشروط"
+
+#: pages/editform.php:39
+msgid "Conditions"
+msgstr "شرایط"
+
+#: pages/editform.php:59
+msgid "Edit Form"
+msgstr "ویرایش فرم"
+
+#. translators: the following are from the settings page (for the plugin)
+#: pages/editsettings.php:35
+msgid "Form Manager Settings"
+msgstr "تنظیمات مدیریت فرم‌ها"
+
+#: pages/editsettings.php:40
+#: pages/editsettingsadv.php:147
+#: pages/editformnn.php:64
+#: pages/editformcond.php:82
+#: pages/editformadv.php:91
+msgid "Settings Saved."
+msgstr "تنظیمات ذخیره شد"
+
+#: pages/editsettings.php:41
+#: pages/editsettingsadv.php:148
+#: pages/editformnn.php:65
+#: pages/editformdesign.php:70
+#: pages/editformcond.php:83
+#: pages/editformadv.php:92
+msgid "Save failed."
+msgstr "ذخیره با خطا مواجه شد"
+
+#: pages/editsettings.php:50
+msgid "Global E-Mail Notifications"
+msgstr ""
+
+#: pages/editsettings.php:52
+msgid "These settings will be applied to every form you create."
+msgstr "این تنظیمات بر روی تمامی فرم‌هایی که می‌سازید تاثیر خواهد گذاشت"
+
+#: pages/editsettings.php:53
+msgid "Send to Administrator"
+msgstr "ارسال به مدیریت"
+
+#: pages/editsettings.php:54
+msgid "Registered Users"
+msgstr "کاربران ثبت نام شده"
+
+#: pages/editsettings.php:54
+msgid "A confirmation e-mail will be sent to a registered user only when they submit a form"
+msgstr "پس از ارسال یک فرم، رایانامه‌ای حاوی تاییدیه برای کاربران ثبت شده ارسال خواهد شد"
+
+#: pages/editsettings.php:55
+msgid "Default Subject"
+msgstr "موضوع پیش‌فرض"
+
+#: pages/editsettings.php:56
+msgid "Default From"
+msgstr "فرم پیش‌فرض"
+
+#: pages/editsettings.php:59
+msgid "Default Form Settings"
+msgstr "تنظیمات پیش‌فرض فرم"
+
+#: pages/editsettings.php:61
+msgid "Form Title"
+msgstr "عنوان فرم"
+
+#: pages/editsettings.php:62
+msgid "Submit Acknowledgment"
+msgstr "پیام ارسال"
+
+#: pages/editsettings.php:63
+msgid "Required Item Message"
+msgstr "پیام مربوط به موارد الزامی"
+
+#: pages/editsettings.php:63
+msgid "This is displayed when a user fails to input a required item.  Include '%s' in the message where you would like the item's label to appear."
+msgstr ""
+
+#: pages/editsettings.php:66
+msgid "reCAPTCHA Settings"
+msgstr "تنظیمات reCAPTCHA"
+
+#: pages/editsettings.php:67
+msgid "API Keys for reCAPTCHA can be acquired (for free) by visiting"
+msgstr "کلید‌های API مربوط به reCAPTCHA را به صورت رایگان از این نشانی دریافت کنید"
+
+#: pages/editsettings.php:69
+msgid "reCAPTCHA Public Key"
+msgstr "کلید عمومی reCAPTCHA"
+
+#: pages/editsettings.php:70
+msgid "reCAPTCHA Private Key"
+msgstr "کلید خصوصی reCAPTCHA"
+
+#: pages/editsettings.php:72
+msgid "Red"
+msgstr "قرمز"
+
+#: pages/editsettings.php:72
+msgid "White"
+msgstr "سفید"
+
+#: pages/editsettings.php:72
+msgid "Black"
+msgstr "سیاه"
+
+#: pages/editsettings.php:72
+msgid "Clean"
+msgstr "تمیز"
+
+#: pages/editsettings.php:77
+msgid "Color Scheme"
+msgstr "شمای رنگی"
+
+#. translators: this will be followed by the name of the template to be removed
+#: pages/editsettingsadv.php:95
+msgid "Are you sure you want to remove"
+msgstr "مطمئنید که می خواهید این قالب را حذف کنید:"
+
+#: pages/editsettingsadv.php:99
+msgid "Are you sure? All templates other than the default will be removed."
+msgstr "مطمئنید؟ همه قالب‌ها (غیر از پیش‌فرض) حذف خواهند شد"
+
+#: pages/editsettingsadv.php:142
+msgid "Form Manager Settings - Advanced"
+msgstr "تنظیمات مدیریت فرم - پیش‌رفته"
+
+#: pages/editsettingsadv.php:157
+msgid "Text Validators"
+msgstr "اعتبارسنج‌های متنی"
+
+#: pages/editsettingsadv.php:162
+msgid "Error Message"
+msgstr "متن خطا"
+
+#: pages/editsettingsadv.php:163
+msgid "Regular Expression"
+msgstr "عبارت منظم"
+
+#: pages/editsettingsadv.php:176
+msgid "delete"
+msgstr "حذف"
+
+#: pages/editsettingsadv.php:191
+msgid "The regular expression is invalid."
+msgstr "عبارت منظم نامعتبر است"
+
+#: pages/editsettingsadv.php:204
+msgid "Shortcode"
+msgstr "کد کوتاه"
+
+#: pages/editsettingsadv.php:206
+msgid "Plugin Shortcode"
+msgstr "کد کوتاه افزونه"
+
+#: pages/editsettingsadv.php:209
+msgid "Display Templates"
+msgstr "قالب‌های نمایش"
+
+#: pages/editsettingsadv.php:211
+msgid "Default Form Template"
+msgstr "قالب پیش‌فرض فرم"
+
+#: pages/editsettingsadv.php:212
+msgid "Default E-Mail Template"
+msgstr "قالب پیش‌فرض رایانامه"
+
+#: pages/editsettingsadv.php:213
+msgid "Default Summary Template"
+msgstr "قالب پیش‌فرض خلاصه"
+
+#: pages/editsettingsadv.php:215
+msgid "Reset Templates"
+msgstr "دوباره سازی قالب‌ها"
+
+#: pages/editsettingsadv.php:223
+msgid "Remove"
+msgstr "حذف"
+
+#: pages/editsettingsadv.php:227
+msgid "Database Check"
+msgstr "آزمودن پایگاه داده"
+
+#: pages/editsettingsadv.php:229
+msgid "Check the Form Manager database"
+msgstr "آزمون پایگاه داده مدیریت فرم‌ها"
+
+#: pages/editsettingsadv.php:229
+msgid "Go"
+msgstr "برو"
+
+#: pages/editsettingsadv.php:232
+msgid "Post/Page Editor"
+msgstr "ویرایش مطلب/صفحه"
+
+#: pages/editsettingsadv.php:234
+msgid "Enable the editor button"
+msgstr "فعال کردن کلید فرم در ویرایش‌گر"
+
+#: pages/editsettingsadv.php:241
+msgid "Files"
+msgstr "فایل‌ها"
+
+#: pages/editsettingsadv.php:244
+msgid "auto"
+msgstr "خودکار"
+
+#: pages/editsettingsadv.php:245
+msgid "direct"
+msgstr "مستقیم"
+
+#: pages/editsettingsadv.php:246
+msgid "ssh"
+msgstr "اس‌اس‌اچ"
+
+#: pages/editsettingsadv.php:247
+msgid "ftpext"
+msgstr ""
+
+#: pages/editsettingsadv.php:248
+msgid "ftpsockets"
+msgstr ""
+
+#: pages/editsettingsadv.php:251
+msgid "Write method"
+msgstr "شیوه‌ی نوشتن"
+
+#: pages/editsettingsadv.php:252
+msgid "Default file naming format"
+msgstr "قالب پیش‌فرض نام‌دهی به فایل"
+
+#: pages/editsettingsadv.php:257
+msgid "WordPress (wp_mail)"
+msgstr "وردپرس (wp_mail)"
+
+#: pages/editsettingsadv.php:258
+msgid "PHP (mail)"
+msgstr "پی‌اچ‌پی (mail)"
+
+#: pages/editsettingsadv.php:259
+msgid "None"
+msgstr "هیچ"
+
+#: pages/editsettingsadv.php:263
+msgid "Send method"
+msgstr "شیوه ارسال"
+
+#: pages/editsettingsadv.php:266
+msgid "Content Filtering"
+msgstr "فیلتر کردن محتوا"
+
+#: pages/editsettingsadv.php:268
+msgid "Allowed HTML Tags"
+msgstr "تگ‌های مجاز اچ‌تی‌ام‌ال"
+
+#: pages/editsettingsadv.php:268
+msgid "Enter tags including '<' and '>', e.g., \"<a><em><strong><br><hr>\" etc."
+msgstr "تگ‌هایی مثل '<' and '>', e.g., \"<a><em><strong><br><hr>\" وارد کنید."
+
+#: pages/editformnn.php:74
+msgid "Item Nicknames"
+msgstr "نام مستعار موراد"
+
+#: pages/editformnn.php:76
+msgid "Giving a nickname to form items makes it easier to access their information within custom e-mail notifications and templates"
+msgstr ""
+
+#: pages/editformnn.php:80
+msgid "Nickname"
+msgstr "نام مستعار"
+
+#: pages/editformnn.php:98
+msgid "Private Fields"
+msgstr "موارد خصوصی"
+
+#: pages/editformnn.php:100
+msgid "Private fields only appear in the submission data table, and can be used to attach extra information to form submissions."
+msgstr ""
+
+#. translators: the following are from the form editor
+#: pages/editformdesign.php:69
+msgid "Form updated."
+msgstr "فرم به روز شد"
+
+#: pages/editformdesign.php:85
+msgid "Publish"
+msgstr "انتشار"
+
+#: pages/editformdesign.php:90
+msgid "Save"
+msgstr "ذخیره"
+
+#: pages/editformdesign.php:111
+msgid "Save Form"
+msgstr "ذخیره فرم"
+
+#. translators: label for the date of the most recent submission
+#: pages/editformdesign.php:126
+msgid "Last submission"
+msgstr "آخرین ارسال"
+
+#: pages/editformdesign.php:136
+msgid "Form Slug"
+msgstr "نامک فرم"
+
+#: pages/editformdesign.php:153
+#: pages/editformadv.php:118
+msgid "E-Mail Notifications"
+msgstr "اطلاع رسانی رایانامه‌ای"
+
+#: pages/editformdesign.php:160
+msgid "Send to (user entry)"
+msgstr "ارسال به (ورودی کاربر)"
+
+#: pages/editformdesign.php:162
+msgid "(none)"
+msgstr "(هیچ)"
+
+#: pages/editformdesign.php:169
+msgid "Make sure the field you choose contains an E-Mail validator"
+msgstr ""
+
+#: pages/editformdesign.php:173
+msgid "Also send notification(s) to"
+msgstr "همچنین آگهی را بفرست به"
+
+#: pages/editformdesign.php:175
+msgid "Enter a list of e-mail addresses separated by commas"
+msgstr "سیاهه‌ای از نشانی‌های رایانامه را که با ویرگول از هم جدا کرده‌اید وارد کنید"
+
+#: pages/editformdesign.php:179
+msgid "Subject"
+msgstr "موضوع"
+
+#: pages/editformdesign.php:184
+msgid "From"
+msgstr "فرم"
+
+#: pages/editformdesign.php:197
+msgid "Auto Redirect"
+msgstr "انتقال خودکار"
+
+#: pages/editformdesign.php:203
+msgid "Automatically redirect the user after a successful form submission"
+msgstr "به صورت خودکار بعد از ارسال موفق فرم کاربر به محل دیگری انتقال داده شود"
+
+#: pages/editformdesign.php:205
+msgid "Enable automatic redirect"
+msgstr "فعال‌سازی انقال خودکار"
+
+#: pages/editformdesign.php:210
+msgid "Desination page"
+msgstr "صفحه مقصد"
+
+#: pages/editformdesign.php:223
+msgid "Timeout (seconds)"
+msgstr "تایم اوت (ثانیه)"
+
+#: pages/editformdesign.php:250
+msgid "Add Form Element:"
+msgstr "افزودن مورد به فرم"
+
+#: pages/editformdesign.php:264
+msgid "Insert Saved Form"
+msgstr "ورود فرم ذخیره شده"
+
+#: pages/editformdesign.php:276
+msgid "Insert Fields From:"
+msgstr ""
+
+#: pages/editformdesign.php:283
+msgid "Insert After:"
+msgstr "Insert After:"
+
+#: pages/editformdesign.php:285
+msgid "(Insert at beginning)"
+msgstr ""
+
+#: pages/editformdesign.php:289
+msgid "(Insert at end)"
+msgstr ""
+
+#: pages/editformdesign.php:292
+msgid "Load Fields"
+msgstr ""
+
+#: pages/editformdesign.php:306
+msgctxt "upgrade-notice"
+msgid "Private fields have moved"
+msgstr "فیلدهای خصوصی جابجا شدند"
+
+#: pages/editformdesign.php:329
+msgid "Appearance"
+msgstr "ظاهر فرم"
+
+#: pages/editformdesign.php:359
+msgid "Customize"
+msgstr "شخصی‌سازی"
+
+#: pages/editformdesign.php:363
+msgid "Submit acknowledgement message:"
+msgstr "پیام اطلاع رسانی پس از ارسال"
+
+#: pages/editformdesign.php:364
+msgid "This is displayed after the form has been submitted"
+msgstr "این متن زمانی که فرم ارسال شد نمایش داده می‌شود "
+
+#: pages/editformdesign.php:369
+msgid "Show summary with acknowledgment:"
+msgstr "نمایش خلاصه، همراه با اطلاع رسانی ارسال فرم"
+
+#: pages/editformdesign.php:370
+msgid "A summary of the submitted data will be shown along with the acknowledgment message"
+msgstr ""
+
+#: pages/editformdesign.php:375
+msgid "Submit button label:"
+msgstr "برچسب کلید ارسال"
+
+#: pages/editformdesign.php:379
+msgid "Required item message:"
+msgstr "پیام برای موارد الزامی:"
+
+#: pages/editformdesign.php:380
+msgid "This is shown if a user leaves a required item blank.  The item's label will appear in place of '%s'."
+msgstr ""
+
+#: pages/formdata.php:23
+msgctxt "date-range"
+msgid "All"
+msgstr "همه"
+
+#: pages/formdata.php:24
+msgctxt "date-range"
+msgid "This month"
+msgstr "این ماه"
+
+#: pages/formdata.php:25
+msgctxt "date-range"
+msgid "Past 7 days"
+msgstr "هفته گذشته"
+
+#: pages/formdata.php:26
+msgctxt "date-range"
+msgid "Today"
+msgstr "امروز"
+
+#: pages/formdata.php:27
+msgctxt "date-range"
+msgid "Range..."
+msgstr "بازه ..."
+
+#: pages/formdata.php:119
+msgid "View"
+msgstr "مشاهده"
+
+#: pages/formdata.php:323
+msgid "Showing data for the current month"
+msgstr "نمایش داده‌های ماه گذشته"
+
+#: pages/formdata.php:328
+msgid "Showing data from the past seven days"
+msgstr "نمایش داده‌های هفت روز گذشته"
+
+#: pages/formdata.php:333
+msgid "Showing data for today"
+msgstr "نمایش داده‌های امروز"
+
+#. translators: this is a date format. See php.net for more about that.
+#: pages/formdata.php:338
+msgid "Y-m-d"
+msgstr ""
+
+#: pages/formdata.php:342
+msgid "Showing data from %s to %s"
+msgstr "نمایش داده‌ها از %s تا %s"
+
+#: pages/formdata.php:430
+#: wordpress-form-manager.php:298
+msgid "..."
+msgstr "..."
+
+#: pages/formdata.php:433
+msgid "Delete Selected"
+msgstr "حذف مورد انتخاب شده"
+
+#: pages/formdata.php:434
+msgid "Delete All Submission Data"
+msgstr "حذف همه ارسال‌ها"
+
+#: pages/formdata.php:437
+msgid "Edit Selected"
+msgstr "ویرایش مورد انتخاب شده"
+
+#: pages/formdata.php:462
+msgid "Options"
+msgstr "انتخاب‌ها"
+
+#: pages/formdata.php:466
+msgid "Column Options"
+msgstr "انتخاب‌های ستون"
+
+#: pages/formdata.php:470
+#: wordpress-form-manager.php:268
+msgid "Show"
+msgstr "نمایش"
+
+#: pages/formdata.php:472
+msgid "Show capability"
+msgstr "نمایش ظرفیت"
+
+#: pages/formdata.php:474
+msgid "Editable"
+msgstr "ویرایش‌پذیر"
+
+#: pages/formdata.php:476
+msgid "Edit capability"
+msgstr "ویرایش ظرفیت"
+
+#: pages/formdata.php:511
+msgctxt "date-range"
+msgid "Update"
+msgstr "به روز رسانی"
+
+#: pages/formdata.php:519
+msgid "Download Data (.csv)"
+msgstr "بارگیری داده‌ها (.csv)"
+
+#: pages/formdata.php:522
+msgid "All entries (including hidden fields)"
+msgstr "تمام داده‌های ورودی (شامل فیلدهای مخفی)"
+
+#: pages/formdata.php:524
+msgid "All entries"
+msgstr "همه داده‌های وارد شده"
+
+#: pages/formdata.php:525
+msgid "Search results (all pages)"
+msgstr "نتایج جستجو (تمام صفحات)"
+
+#: pages/formdata.php:526
+msgid "Search results (current page only)"
+msgstr "نتایج جستجو (فقط صفحه جاری)"
+
+#: pages/formdata.php:528
+msgid "Download"
+msgstr "دریافت"
+
+#: pages/formdata.php:533
+#: wordpress-form-manager.php:254
+msgid "Click here to download"
+msgstr "برای دریاف، این‌جا را کلید کنید"
+
+#: pages/formdata.php:539
+msgid "Date Range"
+msgstr "بازه تاریخ"
+
+#: pages/formdata.php:543
+msgctxt "date-range"
+msgid "Show"
+msgstr "نمایش"
+
+#: pages/formdata.php:552
+msgctxt "date-range"
+msgid "From"
+msgstr "از"
+
+#: pages/formdata.php:555
+msgctxt "date-range"
+msgid "To"
+msgstr "به"
+
+#: pages/formdata.php:561
+msgid "Search"
+msgstr "جستجو"
+
+#: pages/formdata.php:564
+msgid "Search for"
+msgstr "جستجو به دنبال"
+
+#: pages/formdata.php:568
+msgid "Field"
+msgstr "فیلد"
+
+#: pages/formdata.php:576
+msgid "Results per page"
+msgstr "تعداد نتایج در صفحه"
+
+#: pages/formdata.php:579
+msgid "Sort by"
+msgstr "مرتب‌سازی با"
+
+#: pages/formdata.php:582
+msgid "Order"
+msgstr "ترتیب"
+
+#: pages/formdata.php:584
+msgid "Descending"
+msgstr "نزولی"
+
+#: pages/formdata.php:585
+msgid "Ascending"
+msgstr "صعودی"
+
+#: pages/formdata.php:588
+msgid "Update"
+msgstr "به‌روزرسانی"
+
+#: pages/formdata.php:622
+msgid "Showing row(s) %s - %s out of %s"
+msgstr "نمایش ردیف‌های %s - %s از %s"
+
+#: pages/formdata.php:623
+msgctxt "data-page-select"
+msgid "Pages"
+msgstr "صفحات"
+
+#: pages/editformadv.php:101
+msgid "Behavior"
+msgstr "رفتار"
+
+#: pages/editformadv.php:107
+#, fuzzy
+msgid "Behavior Type"
+msgstr "نوع رفتار"
+
+#: pages/editformadv.php:107
+msgid "Behavior types other than 'Default' require a registered user"
+msgstr ""
+
+#: pages/editformadv.php:109
+msgid "Message displayed to unregistered users"
+msgstr "پیامی که برای کاربران ثبت نشده نمایش داده می‌شود"
+
+#: pages/editformadv.php:109
+msgid "Include '%s' where you would like the form title to appear"
+msgstr "'%s' را هر جا که مایلید عنوان فرم قرار بگیرد قرار دهید"
+
+#. translators: the following apply to the different kinds of templates
+#: pages/editformadv.php:117
+msgid "Form Display"
+msgstr "نمایش فرم "
+
+#: pages/editformadv.php:117
+#: pages/editformadv.php:118
+#: pages/editformadv.php:119
+msgid "(use default)"
+msgstr "(استفاده از پیش‌فرض)"
+
+#: pages/editformadv.php:119
+msgid "Data Summary"
+msgstr "خلاصه داده‌ها"
+
+#: pages/editformadv.php:123
+msgid "Custom E-Mail Notifications"
+msgstr "اطلاع رسانی رایانامه‌ای دل‌خواه"
+
+#: pages/editformadv.php:125
+msgid "Use custom e-mail notifications"
+msgstr "از اطلاع‌رسانی دل‌خواه استفاده کنید"
+
+#: pages/editformadv.php:126
+msgid "This will override the 'E-Mail Notifications' settings in both the main editor and the plugin settings page with the information entered below"
+msgstr ""
+
+#: pages/editformadv.php:130
+msgid "Publish Submitted Data"
+msgstr "انتشار داده‌های ارسالی"
+
+#: pages/editformadv.php:132
+msgid "Publish submissions as posts"
+msgstr "انتشار داده‌های ارسالی در قالب یک مطلب"
+
+#: pages/editformadv.php:133
+msgid "Post category"
+msgstr "دسته‌بندی مطلب"
+
+#: pages/editformadv.php:134
+msgid "Post title"
+msgstr "عنوان مطلب"
+
+#: pages/editformadv.php:135
+msgid "Publish status"
+msgstr "وضعیت انتشار"
+
+#: pages/editformadv.php:168
+msgid "Edit Form Definition:"
+msgstr "ویرایش تعریف فرم:"
+
+#: pages/editformadv.php:172
+msgid "Update Form"
+msgstr "به‌روز‌رسانی فرم"
+
+#: ajax.php:42
+msgid "Error: the shortcode '%s' is already in use. (other changes were saved successfully)"
+msgstr ""
+
+#. translators: this error is given when saving the form, if there was a
+#. problem with the list of e-mails under 'E-Mail Notifications'.
+#: ajax.php:118
+msgid "Error: There was a problem with the notification e-mail list.  Other settings were updated."
+msgstr ""
+
+#. translators: This error occurs if the save script failed for some reason.
+#: ajax.php:139
+msgid "Error: Save posted an invalid array expression."
+msgstr ""
+
+#: helpers.php:156
+msgid "IP Address"
+msgstr "نشانی IP"
+
+#: helpers.php:162
+msgid "Post Link"
+msgstr "پیوند مطلب"
+
+#. translators: the following are for the options for the default form display
+#. template
+#: templates/fm-form-default.php:62
+msgid "Show form title:"
+msgstr "نمایش عنوان فرم"
+
+#: templates/fm-form-default.php:63
+msgid "Show border:"
+msgstr "نمایش حاشیه"
+
+#: templates/fm-form-default.php:64
+msgid "Label position:"
+msgstr "موقعیت برچسب"
+
+#: templates/fm-form-default.php:65
+msgid "Labels can be placed to the left or above each field"
+msgstr ""
+
+#: templates/fm-form-default.php:66
+msgctxt "template-option"
+msgid "Left"
+msgstr "چپ"
+
+#: templates/fm-form-default.php:67
+msgctxt "template-option"
+msgid "Top"
+msgstr "بالا"
+
+#: templates/fm-form-default.php:68
+msgid "Label width (in pixels):"
+msgstr "عرض برچسب (پیکسل)"
+
+#: templates/fm-form-default.php:69
+msgid "Applies to checkboxes, and when labels are to the left"
+msgstr ""
+
+#: settings.php:17
+msgid "Registered users only"
+msgstr "فقط کاربران ثبت شده"
+
+#: settings.php:18
+msgid "Unregistered users can only view the form"
+msgstr "کاربران ثبت نشده فقط قادر به دیدن فرم باشند"
+
+#: settings.php:19
+msgid "Keep only most recent submission"
+msgstr ""
+
+#: settings.php:20
+msgid "Single submission"
+msgstr "فقط یک ارسال"
+
+#: settings.php:21
+msgid "'User profile' style"
+msgstr ""
+
+#: wordpress-form-manager.php:56
+msgid "Form Manager requires WordPress version 3.0 or higher"
+msgstr ""
+
+#: wordpress-form-manager.php:62
+msgid "Form Manager requires PHP version 5.2 or higher"
+msgstr ""
+
+#: wordpress-form-manager.php:69
+msgid "Form manager requires MySQL version 5.0.3 or higher"
+msgstr ""
+
+#: wordpress-form-manager.php:250
+msgid "There may be (data) associated with the form item(s) you removed.  Are you sure you want to save?"
+msgstr ""
+
+#: wordpress-form-manager.php:252
+msgid "Any unsaved changes will be lost. Are you sure?"
+msgstr ""
+
+#: wordpress-form-manager.php:256
+msgid "There are no files to download"
+msgstr ""
+
+#: wordpress-form-manager.php:258
+msgid "Unable to create .ZIP file"
+msgstr "نمی‌توان پرونده زیپ (فشرده) ساخت"
+
+#: wordpress-form-manager.php:260
+msgid "Move"
+msgstr "جابجایی"
+
+#: wordpress-form-manager.php:264
+msgid "Enter items separated by commas"
+msgstr "موارد را با جداسازی گیومه وارد کنید"
+
+#: wordpress-form-manager.php:270
+msgid "Add Test"
+msgstr "افزودن آزمون"
+
+#: wordpress-form-manager.php:272
+msgid "Add Item"
+msgstr "افزودن مورد"
+
+#: wordpress-form-manager.php:274
+msgid "Applies to"
+msgstr "اِعمال بر روی"
+
+#: wordpress-form-manager.php:276
+msgid "AND"
+msgstr "و"
+
+#: wordpress-form-manager.php:278
+msgid "OR"
+msgstr "یا"
+
+#: wordpress-form-manager.php:280
+msgid "(Choose a rule type)"
+msgstr ""
+
+#: wordpress-form-manager.php:282
+msgid "Only show elements if..."
+msgstr "فقط اگر ...  المنت‌ها را نشان بده"
+
+#: wordpress-form-manager.php:284
+msgid "Show elements if..."
+msgstr "موارد را نشان بده اگر ..."
+
+#: wordpress-form-manager.php:286
+msgid "Hide elements if..."
+msgstr "موارد را مخفی کن اگر ..."
+
+#: wordpress-form-manager.php:288
+msgid "Only require elements if..."
+msgstr ""
+
+#: wordpress-form-manager.php:290
+msgid "Require elements if"
+msgstr "المنت لازم است اگر"
+
+#: wordpress-form-manager.php:292
+msgid "Do not require elements if"
+msgstr "به المنت نیازی نیست اگر"
+
+#: wordpress-form-manager.php:294
+msgid "Always"
+msgstr "همیشه"
+
+#: wordpress-form-manager.php:296
+msgid "Never"
+msgstr "هرگز"
+
+#: wordpress-form-manager.php:300
+msgid "equals"
+msgstr "مساوی‌ست با"
+
+#: wordpress-form-manager.php:302
+msgid "does not equal"
+msgstr "مساوی نیست"
+
+#: wordpress-form-manager.php:304
+msgid "is less than"
+msgstr "کمتر از"
+
+#: wordpress-form-manager.php:306
+msgid "is greater than"
+msgstr "بزرگ‌تر از"
+
+#: wordpress-form-manager.php:308
+msgid "is less than or equal to"
+msgstr "کوچک‌تر یا مساوی با"
+
+#: wordpress-form-manager.php:310
+msgid "is greater than or equal to"
+msgstr "بزرگ‌تر یا مساوی با"
+
+#: wordpress-form-manager.php:312
+msgid "is empty"
+msgstr "خالی‌ست"
+
+#: wordpress-form-manager.php:314
+msgid "is not empty"
+msgstr "خالی نیست"
+
+#: wordpress-form-manager.php:316
+msgid "is checked"
+msgstr "چک شده"
+
+#: wordpress-form-manager.php:318
+msgid "is not checked"
+msgstr "چک نشده"
+
+#: wordpress-form-manager.php:400
+#: wordpress-form-manager.php:401
+msgid "Advanced Settings"
+msgstr "تنظیمات پیش‌رفته"
+
+#: wordpress-form-manager.php:545
+#: wordpress-form-manager.php:556
+msgid "Form Manager: shortcode must include a form slug.  For example, something like '%s'"
+msgstr "مدیریت فرم: کد کوتاه باید شامل نامک فرم باشد؛ برای مثال چیزی شبیه به '%s'"
+
+#. Plugin Name of the plugin/theme
+msgid "Form Manager"
+msgstr "مدیریت فرم"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.campbellhoffman.com/form-manager/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Create custom forms; download entered data in .csv format; validation, required fields, custom acknowledgments;"
+msgstr "فرم‌های دل‌خواه بسازید؛ داده‌های وارد شده را در قالب CSV دریافت کنید؛ اعتبارسنجی کنید، موراد الزامی را در نظر بگیرید و ..."
+
+#. Author of the plugin/theme
+msgid "Campbell Hoffman"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.campbellhoffman.com/"
+msgstr ""
+

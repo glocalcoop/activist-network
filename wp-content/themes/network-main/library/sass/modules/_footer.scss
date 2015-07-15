@@ -1,0 +1,111 @@
+// FOOTER
+
+.footer {
+    background: $base8;
+    .global {
+        padding: 30px 0;
+        @include breakpoint(md) {position: relative;}
+    }
+}
+
+.footer-logo img {
+  max-height: 60px;
+  width: auto;
+}
+
+.footer .widgettitle {
+  display: none;
+}
+
+.footer .widget {
+  background: $white;
+  margin-bottom: 30px;   
+	ul {
+    	margin-bottom: 0;
+	}
+	li {
+    	@include font-size(16);
+    	color: $text-color;
+    	padding: 0;
+    	margin: 0;
+    	display: block !important;
+	}
+	a, a:visited {
+    	color: $teal;
+	}
+	@include breakpoint(sm) {
+	  @include span-columns(4);
+	  margin-bottom: 0;
+}
+}
+
+
+
+// SOCIAL LINKS AND COPYRIGHT
+
+.footer-slug {
+    background: $base7;
+    clear: both;
+}
+
+
+// social icons list
+
+.nav-social {
+    margin: 15px 15px 15px 0;
+    padding: 0;
+    float: left;
+    li {
+        @include font-size(40);
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 0;
+        margin-right: 2px;
+    }
+    a {
+        display: block;
+        height: 100%;
+        line-height: 30px; // needed to vertically center icons
+    }
+    .facebook a {@include flip-button($navy); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-facebook;}
+    .twitter a {@include flip-button($blue); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-twitter;}
+    .github a {@include flip-button($teal); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-github;}
+    .email a {@include flip-button($green); @include font-icon-base($family:"entypo"); @extend %entypo-mail;}
+    .rss a {@include flip-button($orange); @include font-icon-base($family:"entypo"); @extend %entypo-rss;}
+    .network a {@include flip-button($black); @include font-icon-base($family:"entypo"); @extend %entypo-network;}
+    
+    // child themes
+    .glocal-group &,
+    .glocal-partner & {
+        float: right;
+        margin: 5px 15px;
+    }
+
+    h4.widgettitle {
+      display: none;
+    }
+}
+
+
+.copyright {
+  @include font-size(10);
+  text-transform: uppercase; 
+      letter-spacing: $tracking;
+  color: $base4;
+  display: inline-block;
+  margin: 15px 0;
+  height: 30px;
+  line-height: 30px;
+  .copyleft {
+    @include font-size(30);
+    // @include flip-button($black); 
+    @include font-icon-base($family:"entypo"); 
+    @extend %entypo-cc-sa;
+  }
+  @include breakpoint(md) {@include font-size(12);}
+}

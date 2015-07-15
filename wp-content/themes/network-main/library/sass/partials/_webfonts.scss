@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'entypo';
+    src: url('../fonts/entypo.eot');
+    src: url('../fonts/entypo.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/entypo.woff') format('woff'),
+         url('../fonts/entypo.ttf') format('truetype'),
+         url('../fonts/entypo.svg#entypo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'entypo-social';
+    src: url('../fonts/entypo-social.eot');
+    src: url('../fonts/entypo-social.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/entypo-social.woff') format('woff'),
+         url('../fonts/entypo-social.ttf') format('truetype'),
+         url('../fonts/entypo-social.svg#entypo-social') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ios7-icon';
+    src: url('../fonts/ios7-icon.woff') format('woff'),
+         url('../fonts/ios7-icon.ttf') format('truetype'),
+         url('../fonts/ios7-icon.svg#ios7-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@mixin font-icon-base($family:"entypo", $font-size: inherit, $line-height: inherit, $margin: 0, $align: center, $color: inherit) {
+  @if $family == "entypo-social" {
+    $family:"entypo-social";
+  }
+  @else if $family == "entypo" {
+    $family:"entypo";
+  }
+  @else if $family == "ios7-icon" {
+    $family:"ios7-icon";
+  }
+  &:before {
+    font-family: "#{$family}";
+    font-style: normal;
+    font-size: $font-size;
+    line-height: $line-height;
+    margin-right: $margin;
+    text-align: $align;
+    display: inline-block;
+    color: $color;
+    vertical-align: middle;
+  }
+}
+
+[class^="icon-"] {
+  display: inline-block;
+  -webkit-text-rendering: geometricPrecision;
+  -moz-text-rendering: geometricPrecision;
+  -ms-text-rendering: geometricPrecision;
+  -o-text-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}

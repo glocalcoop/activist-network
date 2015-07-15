@@ -1,0 +1,202 @@
+
+/******************************************************************
+ FORMS 
+******************************************************************/
+
+form {
+    background: $base8;
+    padding: 20px;
+    @include breakpoint(sm) {padding: 40px;}        
+    p {
+        margin-bottom: .25em; // since Wordpress wraps everything in paragraph tags
+    }
+}
+
+fieldset {
+    border: 0;
+	padding: 0;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type='email'] {
+    padding: 5px;
+}
+
+input[type='submit'] {
+    @include transition(all 0.2s ease-in-out);
+    text-transform: uppercase; 
+        letter-spacing: $tracking;
+    -webkit-appearance: button;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    background: $base2;
+    color: $white;
+    line-height: 1.2;
+    white-space: inherit;
+    margin: 0;
+    padding: .6em 2em;
+    &:hover {
+        background: $white;
+        color: $base2;
+    }
+}
+
+/******************************************************************
+ SEARCH FORM 
+******************************************************************/
+
+// div containing form
+.search-form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    @include breakpoint(md) {display: inline-block; width: auto; float: right; }
+}
+
+// body gets .js class on load
+.js .search-form {
+	overflow: hidden;
+	max-height: 0;
+    @include transition(max-height 0.2s ease-in-out);
+    &.active {
+    	max-height: 50px;
+    }
+    @include breakpoint(md) {max-height: none;}
+}
+
+// form element
+#searchform {
+    background: transparent;
+    margin: 10px 0;
+    padding: 0;
+    label {
+        display: none;
+    }
+    #s {
+        @include font-size($epsilon);
+        line-height: 1;
+        width: 270px;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        padding: 5px;
+        margin: 0;
+        vertical-align: top;
+        @include breakpoint(md) {@include font-size(14); width: 140px; height: 24px; line-height: 24px; padding: 2px 5px;}
+    }
+    #searchsubmit {
+        @include font-icon-base($family:"ios7-icon"); 
+        @extend %ios7-search;
+        @include font-size(20);
+        font-weight: normal;
+        line-height: 30px;
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        margin-left: -4px;
+        vertical-align: top;
+        background: $base3;
+        border: 1px solid $base3;
+        border-radius: 0;
+        @include breakpoint(md) {@include font-size(16); height: 24px; width: 24px; line-height: 24px; }
+        &:hover {
+            background: $white;
+            border-color: $base6;
+        }
+    }
+}
+
+
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+
+.respond-form {
+	padding-bottom: 2.2em;
+	form {
+		li {
+			list-style-type: none;
+			clear: both;
+			margin-bottom: 0.7335em;
+			label,
+			small {
+				display: none;
+			}
+		}
+		input[type=text],
+		input[type=email],
+		input[type=url],
+		textarea {
+			padding: 4px 8px;
+			background: $white;
+			border: 1px solid $base6;
+			&:focus {
+				border-color: $blue;
+			}
+			&:invalid {
+				outline: none;
+				border-color: $red;
+				background-color: $base0;
+				-webkit-box-shadow: none;
+				   -moz-box-shadow: none;
+				    -ms-box-shadow: none;
+						box-shadow: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=url] {
+			max-width: 400px;
+			min-width: 250px;
+		}
+
+		textarea {
+			resize: none;
+			width: 97.3%;
+			height: 150px;
+		}
+
+	}
+}
+
+/* comment submit button */
+#submit {}
+
+/* comment form title */
+#comment-form-title {
+	margin: 1.5em 0 .5em;
+}
+
+/* cancel comment reply link */
+#cancel-comment-reply {
+	a {}
+}
+
+/* logged in comments */
+.comments-logged-in-as {
+    line-height: 1;
+}
+
+/* allowed tags */
+#allowed_tags {
+}
+
+/* no comments */
+.nocomments {
+	margin: 0 20px 1.1em;
+}
+
+// all the input fields
+#comment-form-elements {
+    margin: 0;
+}
+
+// the wrapper paragraph for the textarea
+#comment-form-elements + p {
+    margin: 0 0 30px;
+}
+

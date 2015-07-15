@@ -1,0 +1,18 @@
+// FORM MANAGER
+
+.fm-form {
+    label {
+        line-height: 1.2;
+        margin-top: 6px;
+    }
+    em {
+        color: $red !important;
+    }
+    input[type=file] {
+        font-size: 16px;
+    }    
+    input.submit {
+        float: none;
+        margin: 12px 0;
+    }    
+}

@@ -1,0 +1,44 @@
+
+/*********************
+ALERTS AND NOTICES
+*********************/
+
+%alert {
+	padding: 20px;
+	color: $white;
+}
+
+.alert-help {
+	@extend %alert;
+	background: $blue;
+}
+
+.alert-info {
+	@extend %alert;
+	background: $base2;
+}
+
+.alert-error {
+	@extend %alert;
+	background: $red;
+}
+
+.alert-success {
+	@extend %alert;
+	background: $green;
+}
+
+
+// unique variations
+
+.respond-form .alert {
+    margin: 40px -40px -40px;
+    padding: 20px 40px;
+    code,
+    p {
+        @include font-size(15);
+        line-height: 1.4;
+    }
+}
+
+

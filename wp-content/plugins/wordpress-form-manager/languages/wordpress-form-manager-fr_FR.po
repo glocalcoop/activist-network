@@ -1,0 +1,1589 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp form manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-29 09:39+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: serge rauber <http://wp.kalyxstudio.com/contact>\n"
+"Language-Team: kalyx.fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../api.php:98
+#: ../display.php:203
+#: ../helpers.php:142
+msgid "Timestamp"
+msgstr "Date"
+
+#: ../api.php:99
+#: ../display.php:202
+#: ../helpers.php:149
+msgid "User"
+msgstr "Utilisateur"
+
+#: ../api.php:100
+msgid "Post"
+msgstr "Article"
+
+#: ../api.php:238
+#, php-format
+msgid "(form  %s not found)"
+msgstr "(formulaire  %s non trouvé)"
+
+#: ../wordpress-form-manager.php:60
+msgid "Form Manager requires WordPress version 3.0 or higher"
+msgstr "Form Manager requiert  WordPress version 3.0 ou supérieur"
+
+#: ../wordpress-form-manager.php:66
+msgid "Form Manager requires PHP version 5.2 or higher"
+msgstr "Form Manager requiert PHP version 5.2 ou supérieur"
+
+#: ../wordpress-form-manager.php:73
+msgid "Form manager requires MySQL version 5.0.3 or higher"
+msgstr "Form manager requiert MySQL version 5.0.3 ou supérieur"
+
+#: ../wordpress-form-manager.php:256
+msgid "There may be (data) associated with the form item(s) you removed.  Are you sure you want to save?"
+msgstr "Il peut y avoir des données associées à l'élément que vous voulez supprimer. Voulez-vous supprimer?"
+
+#: ../wordpress-form-manager.php:258
+msgid "Any unsaved changes will be lost. Are you sure?"
+msgstr "Tout changement non enregistré sera perdu. Êtes-vous sur?"
+
+#: ../wordpress-form-manager.php:260
+msgid "Click here to download"
+msgstr "Cliquer ici pour télécharger"
+
+#: ../wordpress-form-manager.php:262
+msgid "There are no files to download"
+msgstr "Il n'y a pas de fichier à télécharger"
+
+#: ../wordpress-form-manager.php:264
+msgid "Unable to create .ZIP file"
+msgstr "Impossible de créer un fichier .zip"
+
+#: ../wordpress-form-manager.php:266
+msgid "Move"
+msgstr "Déplacer"
+
+#: ../wordpress-form-manager.php:268
+#: ../display.php:255
+msgid "Delete"
+msgstr "Supprimer"
+
+#: ../wordpress-form-manager.php:270
+msgid "Enter items separated by commas"
+msgstr "Entrer les éléments séparés par une virgule"
+
+#: ../wordpress-form-manager.php:272
+#: ../types.php:56
+msgid "Hide"
+msgstr "Fermer"
+
+#: ../wordpress-form-manager.php:274
+msgid "Show"
+msgstr "afficher"
+
+#: ../wordpress-form-manager.php:276
+msgid "Add Test"
+msgstr "Ajouter un test"
+
+#: ../wordpress-form-manager.php:278
+msgid "Add Item"
+msgstr "Ajouter un élément"
+
+#: ../wordpress-form-manager.php:280
+msgid "Applies to"
+msgstr "Appliquer à"
+
+#: ../wordpress-form-manager.php:282
+msgid "AND"
+msgstr "ET"
+
+#: ../wordpress-form-manager.php:284
+msgid "OR"
+msgstr "OU"
+
+#: ../wordpress-form-manager.php:286
+msgid "(Choose a rule type)"
+msgstr "(choisir un type de filtre)"
+
+#: ../wordpress-form-manager.php:288
+msgid "Only show elements if..."
+msgstr "Afficher seulement si ..."
+
+#: ../wordpress-form-manager.php:290
+msgid "Show elements if..."
+msgstr "Afficher si ..."
+
+#: ../wordpress-form-manager.php:292
+msgid "Hide elements if..."
+msgstr "Masquer si ..."
+
+#: ../wordpress-form-manager.php:294
+msgid "Only require elements if..."
+msgstr "Requis seulement si ..."
+
+#: ../wordpress-form-manager.php:296
+msgid "Require elements if"
+msgstr "Requis si ..."
+
+#: ../wordpress-form-manager.php:298
+msgid "Do not require elements if"
+msgstr "Non requis si ..."
+
+#: ../wordpress-form-manager.php:300
+msgid "Always"
+msgstr "Toujours"
+
+#: ../wordpress-form-manager.php:302
+msgid "Never"
+msgstr "Jamais"
+
+#: ../wordpress-form-manager.php:304
+msgid "..."
+msgstr "..."
+
+#: ../wordpress-form-manager.php:306
+msgid "equals"
+msgstr "est égal"
+
+#: ../wordpress-form-manager.php:308
+msgid "does not equal"
+msgstr "n'est pas égal"
+
+#: ../wordpress-form-manager.php:310
+msgid "is less than"
+msgstr "est plus petit que"
+
+#: ../wordpress-form-manager.php:312
+msgid "is greater than"
+msgstr "est plus grand que"
+
+#: ../wordpress-form-manager.php:314
+msgid "is less than or equal to"
+msgstr "est plus petit ou égal à"
+
+#: ../wordpress-form-manager.php:316
+msgid "is greater than or equal to"
+msgstr "est plus grand ou égal à"
+
+#: ../wordpress-form-manager.php:318
+msgid "is empty"
+msgstr "est vide"
+
+#: ../wordpress-form-manager.php:320
+msgid "is not empty"
+msgstr "n'est pas vide"
+
+#: ../wordpress-form-manager.php:322
+msgid "is checked"
+msgstr "est coché"
+
+#: ../wordpress-form-manager.php:324
+msgid "is not checked"
+msgstr "n'est pas coché"
+
+#: ../wordpress-form-manager.php:399
+#: ../wordpress-form-manager.php:400
+msgid "Forms"
+msgstr "Formulaire"
+
+#: ../wordpress-form-manager.php:409
+#: ../wordpress-form-manager.php:410
+#: ../display.php:254
+#: ../types.php:54
+#: ../types.php:61
+msgid "Edit"
+msgstr "Modifier"
+
+#: ../wordpress-form-manager.php:418
+#: ../wordpress-form-manager.php:419
+#: ../wordpress-form-manager.php:456
+msgid "Settings"
+msgstr "Réglages"
+
+#: ../wordpress-form-manager.php:427
+#: ../wordpress-form-manager.php:428
+msgid "Advanced Settings"
+msgstr "Avancés"
+
+#: ../wordpress-form-manager.php:572
+#: ../wordpress-form-manager.php:583
+#, php-format
+msgid "Form Manager: shortcode must include a form slug.  For example, something like '%s'"
+msgstr "Form Manager: le shortcode doit contenir l'identifiant d'un formulaire.  Par exemple: '%s'"
+
+#: ../db.php:71
+msgid "Submit"
+msgstr "Envoyer"
+
+#: ../db.php:93
+#: ../db.php:126
+msgid "[form title] Submission"
+msgstr "[form title] Soumission"
+
+#: ../db.php:119
+msgid "New Form"
+msgstr "Nouveau formulaire"
+
+#: ../db.php:120
+msgid "Thank you! Your data has been submitted."
+msgstr "Merci! Vos informations ont bien été envoyées."
+
+#: ../db.php:122
+#, php-format
+msgid "\\'%s\\' is required."
+msgstr "\\'%s\\' est requis."
+
+#: ../db.php:123
+#, php-format
+msgid "'%s' is only available to registered users."
+msgstr "Le formulaire '%s' n'est accssiible qu'aux utilisateurs enregistrés."
+
+#: ../db.php:132
+msgid "Numbers Only"
+msgstr "Seulement un nombre"
+
+#: ../db.php:133
+#, php-format
+msgid "'%s' must be a valid number"
+msgstr "'%s' doit être un nombre"
+
+#: ../db.php:138
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#: ../db.php:139
+#, php-format
+msgid "'%s' must be a valid phone number"
+msgstr "'%s' doit être un numéro de téléphone valide"
+
+#: ../db.php:141
+msgid "/^.*[0-9]{3}.*[0-9]{3}.*[0-9]{4}.*$/"
+msgstr "/^.*[0-9]{3}.*[0-9]{3}.*[0-9]{4}.*$/"
+
+#: ../db.php:145
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: ../db.php:146
+#, php-format
+msgid "'%s' must be a valid e-mail address"
+msgstr "'%s' doit être une adresse de courriel valide"
+
+#: ../db.php:151
+msgid "Date (MM/DD/YY)"
+msgstr "Date (JJ/MM/YY)"
+
+#: ../db.php:152
+#, php-format
+msgid "'%s' must be a date (MM/DD/YY)"
+msgstr "'%s' doit être une date sous la forme (JJ/MM/YY)"
+
+#: ../db.php:156
+msgid "State (U.S.)"
+msgstr "Etat"
+
+#: ../db.php:157
+#, php-format
+msgid "'%s' must be a valid state abbreviation"
+msgstr "'%s' doit être une abbréviation d'état valide"
+
+#: ../db.php:161
+msgid "Zip code (U.S.)"
+msgstr "Code postal"
+
+#: ../db.php:162
+#, php-format
+msgid "'%s' must be a valid zip code"
+msgstr "'%s' doit être un code postal valide"
+
+#: ../db.php:166
+msgid "Dimensions (L x W x H)"
+msgstr "Dimensions (L x l x H)"
+
+#: ../db.php:167
+#, php-format
+msgid "'%s' must be dimensions (L x W x H)"
+msgstr "'%s' must be dimensions (L x l x H)"
+
+#: ../ajax.php:42
+#, php-format
+msgid "Error: the shortcode '%s' is already in use. (other changes were saved successfully)"
+msgstr "Erreur: le shortcode '%s' est déjà utilisé. (les autres changements ont été enregistrés)"
+
+#: ../ajax.php:118
+msgid "Error: There was a problem with the notification e-mail list.  Other settings were updated."
+msgstr "Erreur: problème avec la liste d'emails de notification"
+
+#: ../ajax.php:139
+msgid "Error: Save posted an invalid array expression."
+msgstr "Erreur: expression non valide"
+
+#: ../helpers.php:156
+msgid "IP Address"
+msgstr "Adresse IP"
+
+#: ../helpers.php:162
+msgid "Post Link"
+msgstr "Lien de l'article"
+
+#: ../settings.php:16
+msgid "Default"
+msgstr "par défaut"
+
+#: ../settings.php:17
+msgid "Registered users only"
+msgstr "Seulement pour les utilisateurs enregistrés"
+
+#: ../settings.php:18
+msgid "Unregistered users can only view the form"
+msgstr "Les utilisateurs non enregistrés peuvent seulement voir le formulaire"
+
+#: ../settings.php:19
+msgid "Keep only most recent submission"
+msgstr "Garder seulement les soumissions récentes"
+
+#: ../settings.php:20
+msgid "Single submission"
+msgstr "Soumission simple"
+
+#: ../settings.php:21
+msgid "'User profile' style"
+msgstr "Style du profil"
+
+#: ../templates/fm-form-default.php:62
+msgid "Show form title:"
+msgstr "Afficher le titre du formulaire:"
+
+#: ../templates/fm-form-default.php:63
+msgid "Show border:"
+msgstr "Afficher une bordure:"
+
+#: ../templates/fm-form-default.php:64
+msgid "Label position:"
+msgstr "Position du label:"
+
+#: ../templates/fm-form-default.php:65
+msgid "Labels can be placed to the left or above each field"
+msgstr "Les labels peuvent être affichés à gauche ou au-dessus des champs"
+
+#: ../templates/fm-form-default.php:66
+msgid "Left"
+msgstr "Gauche"
+
+#: ../templates/fm-form-default.php:67
+msgid "Top"
+msgstr "Haut"
+
+#: ../templates/fm-form-default.php:68
+msgid "Label width (in pixels):"
+msgstr "Largeur du label (en pixels)"
+
+#: ../templates/fm-form-default.php:69
+msgid "Applies to checkboxes, and when labels are to the left"
+msgstr "Pour les cases à cocher, et lorsque les labels sont à gauche"
+
+#: ../pages/editformdesign.php:69
+msgid "Form updated."
+msgstr "Formulaire mis à jour."
+
+#: ../pages/editformdesign.php:70
+#: ../pages/editformnn.php:65
+#: ../pages/editsettings.php:42
+#: ../pages/editformcond.php:83
+#: ../pages/editformadv.php:92
+#: ../pages/editsettingsadv.php:149
+msgid "Save failed."
+msgstr "L'enregistement à échouer"
+
+#: ../pages/editformdesign.php:85
+msgid "Publish"
+msgstr "Publier"
+
+#: ../pages/editformdesign.php:90
+msgid "Save"
+msgstr "Enregistrer"
+
+#: ../pages/editformdesign.php:96
+#: ../pages/editformnn.php:57
+#: ../pages/editformnn.php:133
+#: ../pages/formdata.php:602
+#: ../pages/formdata.php:657
+#: ../pages/editformcond.php:74
+#: ../pages/editformcond.php:120
+#: ../pages/editformadv.php:84
+#: ../pages/editformadv.php:159
+#: ../pages/formdatasingle.php:60
+msgid "Cancel Changes"
+msgstr "Annuler"
+
+#: ../pages/editformdesign.php:111
+msgid "Save Form"
+msgstr "Enregistrer le formulaire"
+
+#: ../pages/editformdesign.php:120
+#: ../pages/editform.php:17
+#: ../pages/editform.php:24
+#: ../pages/editformadv.php:138
+msgid "Submission Data"
+msgstr "Données envoyées"
+
+#: ../pages/editformdesign.php:125
+#: ../pages/main.php:138
+#: ../pages/main.php:147
+msgid "Submission count"
+msgstr "Nombre de soumission"
+
+#: ../pages/editformdesign.php:126
+msgid "Last submission"
+msgstr "Dernière soumission"
+
+#: ../pages/editformdesign.php:136
+msgid "Form Slug"
+msgstr "Identifiant du formulaire"
+
+#: ../pages/editformdesign.php:153
+#: ../pages/editformadv.php:118
+msgid "E-Mail Notifications"
+msgstr "Notifications"
+
+#: ../pages/editformdesign.php:160
+msgid "Send to (user entry)"
+msgstr "Champ email"
+
+#: ../pages/editformdesign.php:162
+msgid "(none)"
+msgstr "(rien)"
+
+#: ../pages/editformdesign.php:169
+msgid "Make sure the field you choose contains an E-Mail validator"
+msgstr "Vérifier que le champ sélectionné contient bien une adresse email"
+
+#: ../pages/editformdesign.php:173
+msgid "Also send notification(s) to"
+msgstr "Envoyer aussi une notification à "
+
+#: ../pages/editformdesign.php:175
+msgid "Enter a list of e-mail addresses separated by commas"
+msgstr "Séparer plusieurs adresses par une virgule"
+
+#: ../pages/editformdesign.php:179
+msgid "Subject"
+msgstr "Sujet"
+
+#: ../pages/editformdesign.php:184
+#: ../pages/formdata.php:557
+msgid "From"
+msgstr "De (expéditeur)"
+
+#: ../pages/editformdesign.php:197
+msgid "Auto Redirect"
+msgstr "Redirection"
+
+#: ../pages/editformdesign.php:203
+msgid "Automatically redirect the user after a successful form submission"
+msgstr "Rédirige l'utilisateur après la validation du formulaire"
+
+#: ../pages/editformdesign.php:205
+msgid "Enable automatic redirect"
+msgstr "Activer la redirection"
+
+#: ../pages/editformdesign.php:210
+msgid "Desination page"
+msgstr "Page de destination"
+
+#: ../pages/editformdesign.php:223
+msgid "Timeout (seconds)"
+msgstr "Délai (en secondes)"
+
+#: ../pages/editformdesign.php:250
+msgid "Add Form Element:"
+msgstr "Ajouter un élément de formulaire:"
+
+#: ../pages/editformdesign.php:263
+msgid "Insert Saved Form"
+msgstr "Insérer un formulaire"
+
+#: ../pages/editformdesign.php:273
+msgid "Insert Fields From:"
+msgstr "Insérer des champs depuis:"
+
+#: ../pages/editformdesign.php:280
+msgid "Insert After:"
+msgstr "Insérer après:"
+
+#: ../pages/editformdesign.php:282
+msgid "(Insert at beginning)"
+msgstr "(insérer au début)"
+
+#: ../pages/editformdesign.php:286
+msgid "(Insert at end)"
+msgstr "(insérer à la fin)"
+
+#: ../pages/editformdesign.php:289
+msgid "Load Fields"
+msgstr "Charger les champs"
+
+#: ../pages/editformdesign.php:303
+msgid "Private fields have moved"
+msgstr "Les champs privés ont été déplacés"
+
+#: ../pages/editformdesign.php:326
+msgid "Appearance"
+msgstr "Apparence"
+
+#: ../pages/editformdesign.php:356
+msgid "Customize"
+msgstr "Personnaliser"
+
+#: ../pages/editformdesign.php:360
+msgid "Submit acknowledgement message:"
+msgstr "Message de validation:"
+
+#: ../pages/editformdesign.php:361
+msgid "This is displayed after the form has been submitted"
+msgstr "Affiché lorsque le formulaire est validé."
+
+#: ../pages/editformdesign.php:366
+msgid "Show summary with acknowledgment:"
+msgstr "Afficher les données avec le message:"
+
+#: ../pages/editformdesign.php:367
+msgid "A summary of the submitted data will be shown along with the acknowledgment message"
+msgstr "Un résumé des données sera affiché à la suite du message"
+
+#: ../pages/editformdesign.php:372
+msgid "Submit button label:"
+msgstr "Label du bouton d'envoi:"
+
+#: ../pages/editformdesign.php:376
+msgid "Required item message:"
+msgstr "Message des éléments obliatoires:"
+
+#: ../pages/editformdesign.php:377
+#, php-format
+msgid "This is shown if a user leaves a required item blank.  The item's label will appear in place of '%s'."
+msgstr "Affiché si les éléments obligatoires sont vides ou non valides. '%s' est le label de l'élément."
+
+#: ../pages/editformnn.php:58
+#: ../pages/editformnn.php:134
+#: ../pages/editsettings.php:93
+#: ../pages/formdata.php:603
+#: ../pages/formdata.php:658
+#: ../pages/editformcond.php:75
+#: ../pages/editformcond.php:121
+#: ../pages/editformadv.php:85
+#: ../pages/editformadv.php:160
+#: ../pages/editsettingsadv.php:281
+#: ../pages/formdatasingle.php:61
+msgid "Save Changes"
+msgstr "Enregistrer"
+
+#: ../pages/editformnn.php:64
+#: ../pages/editsettings.php:41
+#: ../pages/editformcond.php:82
+#: ../pages/editformadv.php:91
+#: ../pages/editsettingsadv.php:148
+msgid "Settings Saved."
+msgstr "Options enregistrées"
+
+#: ../pages/editformnn.php:74
+msgid "Item Nicknames"
+msgstr "Identifiants"
+
+#: ../pages/editformnn.php:76
+msgid "Giving a nickname to form items makes it easier to access their information within custom e-mail notifications and templates"
+msgstr "Donner un identifiant aux éléments permet un accès plus simple aux informations dans les notifications et les templates"
+
+#: ../pages/editformnn.php:80
+#: ../types/base.php:109
+msgid "Item Label"
+msgstr "Label"
+
+#: ../pages/editformnn.php:80
+msgid "Nickname"
+msgstr "Identifiant"
+
+#: ../pages/editformnn.php:98
+msgid "Private Fields"
+msgstr "Champs privés"
+
+#: ../pages/editformnn.php:100
+msgid "Private fields only appear in the submission data table, and can be used to attach extra information to form submissions."
+msgstr "Les champs privés n'apparaissent que dans les données de soumission. Ils peuvent être utilisés pour ajouter des informations à la soumission d'un formulaire."
+
+#: ../pages/editsettings.php:36
+msgid "Form Manager Settings"
+msgstr "Réglages"
+
+#: ../pages/editsettings.php:51
+msgid "Global E-Mail Notifications"
+msgstr "Notifications par email"
+
+#: ../pages/editsettings.php:53
+msgid "These settings will be applied to every form you create."
+msgstr "Ces réglages seront appliqués à tous vos formulaires"
+
+#: ../pages/editsettings.php:54
+msgid "Send to Administrator"
+msgstr "Envoi à l'administrateur"
+
+#: ../pages/editsettings.php:55
+msgid "Registered Users"
+msgstr "Envoi aux utilisateurs enregistrés"
+
+#: ../pages/editsettings.php:55
+msgid "A confirmation e-mail will be sent to a registered user only when they submit a form"
+msgstr "Les utilisateurs enregistrés recevront un email de confirmation que quand ils soumettent un formulaire"
+
+#: ../pages/editsettings.php:56
+msgid "Default Subject"
+msgstr "Sujet par défaut"
+
+#: ../pages/editsettings.php:57
+msgid "Default From"
+msgstr "Expéditeur par défaut"
+
+#: ../pages/editsettings.php:60
+msgid "Default Form Settings"
+msgstr "Réglages par défaut des formulaires"
+
+#: ../pages/editsettings.php:62
+msgid "Form Title"
+msgstr "Titre du formulaire"
+
+#: ../pages/editsettings.php:63
+msgid "Submit Acknowledgment"
+msgstr "Message après envoi"
+
+#: ../pages/editsettings.php:64
+msgid "Required Item Message"
+msgstr "Message pour les champs requis"
+
+#: ../pages/editsettings.php:64
+#, php-format
+msgid "This is displayed when a user fails to input a required item.  Include '%s' in the message where you would like the item's label to appear."
+msgstr "Lorsqu'un utilisateur n'a pas rempli correctement un champ obligatoire. %s est le label du champ"
+
+#: ../pages/editsettings.php:67
+msgid "reCAPTCHA Settings"
+msgstr "Réglages reCAPTCHA"
+
+#: ../pages/editsettings.php:68
+msgid "API Keys for reCAPTCHA can be acquired (for free) by visiting"
+msgstr "Obtenez une clé pour l'API reCAPTCHA sur"
+
+#: ../pages/editsettings.php:70
+msgid "reCAPTCHA Public Key"
+msgstr "Clé publique reCAPTCHA"
+
+#: ../pages/editsettings.php:71
+msgid "reCAPTCHA Private Key"
+msgstr "Clé privée reCAPTCHA"
+
+#: ../pages/editsettings.php:73
+msgid "Red"
+msgstr "Rouge"
+
+#: ../pages/editsettings.php:73
+msgid "White"
+msgstr "Blanc"
+
+#: ../pages/editsettings.php:73
+msgid "Black"
+msgstr "Noir"
+
+#: ../pages/editsettings.php:73
+msgid "Clean"
+msgstr "Neutre"
+
+#: ../pages/editsettings.php:78
+msgid "Color Scheme"
+msgstr "Couleur du thème"
+
+#: ../pages/editsettings.php:88
+msgid "Language"
+msgstr "Langue"
+
+#: ../pages/editform.php:9
+#: ../pages/main.php:159
+#: ../pages/main.php:169
+msgid "Edit this form"
+msgstr "Modifier ce formulaire"
+
+#: ../pages/editform.php:16
+#: ../pages/editform.php:23
+#: ../pages/main.php:161
+#: ../pages/main.php:173
+msgid "View form data"
+msgstr "Afficher les données"
+
+#: ../pages/editform.php:31
+msgid "Form extra"
+msgstr "Options supplémentaires"
+
+#: ../pages/editform.php:32
+msgid "Form Extra"
+msgstr "Form Extra"
+
+#: ../pages/editform.php:38
+msgid "Conditional behavior"
+msgstr "Comportement conditionnel:"
+
+#: ../pages/editform.php:39
+msgid "Conditions"
+msgstr "Filtres"
+
+#: ../pages/editform.php:45
+#: ../pages/main.php:160
+#: ../pages/main.php:171
+msgid "Advanced form settings"
+msgstr "Réglages avancés des formulaires"
+
+#: ../pages/editform.php:46
+#: ../pages/main.php:160
+#: ../pages/main.php:171
+msgid "Advanced"
+msgstr "Avancés"
+
+#: ../pages/editform.php:59
+msgid "Edit Form"
+msgstr "Modifier le formulaire"
+
+#: ../pages/main.php:75
+msgid "Are you sure you want to delete:"
+msgstr "Êtes-vous sur de vouloir supprimer:"
+
+#: ../pages/main.php:91
+msgid "Yes"
+msgstr "Oui"
+
+#: ../pages/main.php:92
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../pages/main.php:105
+msgid "The 'Submission Data' page has changed. You may want to review permissions if you are using the 'Members' plugin."
+msgstr "La page des données envoyées a changé. Vérifiez les permissions si vous utilisez l'extension 'members'"
+
+#: ../pages/main.php:115
+msgid "Add New"
+msgstr "Nouveau"
+
+#: ../pages/main.php:123
+msgid "Bulk Actions"
+msgstr "Actions groupées"
+
+#: ../pages/main.php:126
+#: ../pages/formdata.php:614
+msgid "Apply"
+msgstr "Appliquer"
+
+#: ../pages/main.php:136
+#: ../pages/main.php:145
+#: ../pages/editsettingsadv.php:162
+msgid "Name"
+msgstr "Nom"
+
+#: ../pages/main.php:137
+#: ../pages/main.php:146
+msgid "Slug"
+msgstr "Identifiant"
+
+#: ../pages/main.php:139
+#: ../pages/main.php:148
+msgid "Last Submission"
+msgstr "Dernière soumission"
+
+#: ../pages/main.php:161
+#: ../pages/main.php:173
+msgid "Data"
+msgstr "Données"
+
+#: ../pages/main.php:162
+#: ../pages/main.php:175
+msgid "Delete this form"
+msgstr "Supprimer ce formulaire"
+
+#: ../pages/main.php:191
+msgid " No forms yet..."
+msgstr "Aucun formulaire"
+
+#: ../pages/formdata.php:23
+msgid "All"
+msgstr "Tout"
+
+#: ../pages/formdata.php:24
+msgid "This month"
+msgstr "Ce mois"
+
+#: ../pages/formdata.php:25
+msgid "Past 7 days"
+msgstr "7 derniers jours"
+
+#: ../pages/formdata.php:26
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#: ../pages/formdata.php:27
+msgid "Range..."
+msgstr "Plage..."
+
+#: ../pages/formdata.php:119
+msgid "View"
+msgstr "Affichage"
+
+#: ../pages/formdata.php:323
+msgid "Showing data for the current month"
+msgstr "Données du mois"
+
+#: ../pages/formdata.php:328
+msgid "Showing data from the past seven days"
+msgstr "Données des 7 derniers jours"
+
+#: ../pages/formdata.php:333
+msgid "Showing data for today"
+msgstr "Données du jour"
+
+#: ../pages/formdata.php:338
+msgid "Y-m-d"
+msgstr "d-m-Y"
+
+#: ../pages/formdata.php:342
+#, php-format
+msgid "Showing data from %s to %s"
+msgstr "Données de %s à %s"
+
+#: ../pages/formdata.php:438
+msgid "Delete Selected"
+msgstr "Supprimer la sélection"
+
+#: ../pages/formdata.php:439
+msgid "Delete All Submission Data"
+msgstr "Tout supprimer"
+
+#: ../pages/formdata.php:442
+msgid "Edit Selected"
+msgstr "Modifier la sélection"
+
+#: ../pages/formdata.php:461
+#: ../pages/formdatasingle.php:52
+msgid "Data updated."
+msgstr "Données mises à jour."
+
+#: ../pages/formdata.php:467
+msgid "Options"
+msgstr "Options"
+
+#: ../pages/formdata.php:471
+msgid "Column Options"
+msgstr "Options des colonnes"
+
+#: ../pages/formdata.php:477
+msgid "Show capability"
+msgstr "Afficher les droits"
+
+#: ../pages/formdata.php:479
+msgid "Editable"
+msgstr "Modifiable"
+
+#: ../pages/formdata.php:481
+msgid "Edit capability"
+msgstr "Modifier les droits"
+
+#: ../pages/formdata.php:483
+#: ../pages/formdatasingle.php:67
+msgid "Summary"
+msgstr "Résumé des données"
+
+#: ../pages/formdata.php:516
+#: ../pages/formdata.php:593
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: ../pages/formdata.php:524
+msgid "Download Data (.csv)"
+msgstr "Télécharger les donées (.csv)"
+
+#: ../pages/formdata.php:527
+msgid "All entries (including hidden fields)"
+msgstr "Toutes les entrées ( avec les champs cachés)"
+
+#: ../pages/formdata.php:529
+msgid "All entries"
+msgstr "Toutes les entrées"
+
+#: ../pages/formdata.php:530
+msgid "Search results (all pages)"
+msgstr "Résultats de recherche (toutes les pages)"
+
+#: ../pages/formdata.php:531
+msgid "Search results (current page only)"
+msgstr "Résultats de recherche (pour la page courante seulement)"
+
+#: ../pages/formdata.php:533
+msgid "Download"
+msgstr "Télécharger"
+
+#: ../pages/formdata.php:544
+msgid "Date Range"
+msgstr "Dates"
+
+#: ../pages/formdata.php:560
+msgid "To"
+msgstr "à"
+
+#: ../pages/formdata.php:566
+msgid "Search"
+msgstr "Rechercher"
+
+#: ../pages/formdata.php:569
+msgid "Search for"
+msgstr "Recherche pour"
+
+#: ../pages/formdata.php:573
+msgid "Field"
+msgstr "Champ"
+
+#: ../pages/formdata.php:581
+msgid "Results per page"
+msgstr "Nb de résultats par page"
+
+#: ../pages/formdata.php:584
+msgid "Sort by"
+msgstr "Trier par"
+
+#: ../pages/formdata.php:587
+msgid "Order"
+msgstr "Ordre"
+
+#: ../pages/formdata.php:589
+msgid "Descending"
+msgstr "Descendant"
+
+#: ../pages/formdata.php:590
+msgid "Ascending"
+msgstr "Ascendant"
+
+#: ../pages/formdata.php:627
+#, php-format
+msgid "Showing row(s) %s - %s out of %s"
+msgstr "Ligne(s) %s - %s sur %s"
+
+#: ../pages/formdata.php:628
+msgid "Pages"
+msgstr "Pages"
+
+#: ../pages/editformcond.php:93
+msgid "Add"
+msgstr "Ajouter"
+
+#: ../pages/editformadv.php:101
+msgid "Behavior"
+msgstr "Comportement"
+
+#: ../pages/editformadv.php:107
+msgid "Behavior Type"
+msgstr "Type de comportement"
+
+#: ../pages/editformadv.php:107
+msgid "Behavior types other than 'Default' require a registered user"
+msgstr "Les types de comportement autres que 'défaut' nécessite un utilisateur enregistré"
+
+#: ../pages/editformadv.php:109
+msgid "Message displayed to unregistered users"
+msgstr "Message pour les utilisateurs non enregistrés"
+
+#: ../pages/editformadv.php:109
+#, php-format
+msgid "Include '%s' where you would like the form title to appear"
+msgstr "Inclure '%s' là où vous voulez faire apparaître le titre"
+
+#: ../pages/editformadv.php:117
+msgid "Form Display"
+msgstr "Affichage formulaire"
+
+#: ../pages/editformadv.php:117
+#: ../pages/editformadv.php:118
+#: ../pages/editformadv.php:119
+msgid "(use default)"
+msgstr "par défaut"
+
+#: ../pages/editformadv.php:119
+msgid "Data Summary"
+msgstr "Résumé des données"
+
+#: ../pages/editformadv.php:123
+msgid "Custom E-Mail Notifications"
+msgstr "Notifications personnalisées"
+
+#: ../pages/editformadv.php:125
+msgid "Use custom e-mail notifications"
+msgstr "Activer"
+
+#: ../pages/editformadv.php:126
+msgid "This will override the 'E-Mail Notifications' settings in both the main editor and the plugin settings page with the information entered below"
+msgstr "Ces données prennent le dessus sur les autres données de notification"
+
+#: ../pages/editformadv.php:130
+msgid "Publish Submitted Data"
+msgstr "Publier les données envoyées"
+
+#: ../pages/editformadv.php:132
+msgid "Publish submissions as posts"
+msgstr "Publier les données d'un formulaire en tant qu'article"
+
+#: ../pages/editformadv.php:133
+msgid "Post category"
+msgstr "Catégorie d'article"
+
+#: ../pages/editformadv.php:134
+msgid "Post title"
+msgstr "Titre de l'article"
+
+#: ../pages/editformadv.php:135
+msgid "Publish status"
+msgstr "Statut"
+
+#: ../pages/editformadv.php:168
+msgid "Edit Form Definition:"
+msgstr "Modifier la définition duuformulaire:"
+
+#: ../pages/editformadv.php:172
+msgid "Update Form"
+msgstr "Mettre à jour"
+
+#: ../pages/editsettingsadv.php:96
+msgid "Are you sure you want to remove"
+msgstr "ëtes-vous sur de vouloir supprimer"
+
+#: ../pages/editsettingsadv.php:100
+msgid "Are you sure? All templates other than the default will be removed."
+msgstr "Tous les templates autres que celui par défaut seront supprimés."
+
+#: ../pages/editsettingsadv.php:143
+msgid "Form Manager Settings - Advanced"
+msgstr "Form Manager Réglages avancés"
+
+#: ../pages/editsettingsadv.php:158
+msgid "Text Validators"
+msgstr "Validation des champs texte"
+
+#: ../pages/editsettingsadv.php:163
+msgid "Error Message"
+msgstr "Message d'erreur"
+
+#: ../pages/editsettingsadv.php:164
+msgid "Regular Expression"
+msgstr "Expression régulière"
+
+#: ../pages/editsettingsadv.php:177
+msgid "delete"
+msgstr "supprimer"
+
+#: ../pages/editsettingsadv.php:192
+msgid "The regular expression is invalid."
+msgstr "L'expression régulière n'est pas valide"
+
+#: ../pages/editsettingsadv.php:205
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: ../pages/editsettingsadv.php:207
+msgid "Plugin Shortcode"
+msgstr "Shortcode du plugin"
+
+#: ../pages/editsettingsadv.php:210
+msgid "Display Templates"
+msgstr "Templates d'affichage"
+
+#: ../pages/editsettingsadv.php:212
+msgid "Default Form Template"
+msgstr "Template par défaut"
+
+#: ../pages/editsettingsadv.php:213
+msgid "Default E-Mail Template"
+msgstr "Template email"
+
+#: ../pages/editsettingsadv.php:214
+msgid "Default Summary Template"
+msgstr "Template sommaire"
+
+#: ../pages/editsettingsadv.php:216
+msgid "Reset Templates"
+msgstr "Supprimer les templates"
+
+#: ../pages/editsettingsadv.php:224
+msgid "Remove"
+msgstr "Supprimer"
+
+#: ../pages/editsettingsadv.php:228
+msgid "Database Check"
+msgstr "Vérifier la base de données"
+
+#: ../pages/editsettingsadv.php:230
+msgid "Check the Form Manager database"
+msgstr "Vérifie la table de Form Manager"
+
+#: ../pages/editsettingsadv.php:230
+msgid "Go"
+msgstr "Vérifier"
+
+#: ../pages/editsettingsadv.php:233
+msgid "Post/Page Editor"
+msgstr "Editeur"
+
+#: ../pages/editsettingsadv.php:235
+msgid "Enable the editor button"
+msgstr "Activer le bouton dans l'éditeur"
+
+#: ../pages/editsettingsadv.php:242
+msgid "Files"
+msgstr "Fichiers"
+
+#: ../pages/editsettingsadv.php:245
+msgid "auto"
+msgstr "auto"
+
+#: ../pages/editsettingsadv.php:246
+msgid "direct"
+msgstr "direct"
+
+#: ../pages/editsettingsadv.php:247
+msgid "ssh"
+msgstr "ssh"
+
+#: ../pages/editsettingsadv.php:248
+msgid "ftpext"
+msgstr "ftpext"
+
+#: ../pages/editsettingsadv.php:249
+msgid "ftpsockets"
+msgstr "ftpsockets"
+
+#: ../pages/editsettingsadv.php:252
+msgid "Write method"
+msgstr "Méthode d'écriture"
+
+#: ../pages/editsettingsadv.php:253
+msgid "Default file naming format"
+msgstr "Format de nom de fichier par défaut"
+
+#: ../pages/editsettingsadv.php:258
+msgid "WordPress (wp_mail)"
+msgstr "WordPress (wp_mail)"
+
+#: ../pages/editsettingsadv.php:259
+msgid "PHP (mail)"
+msgstr "PHP (mail)"
+
+#: ../pages/editsettingsadv.php:260
+msgid "None"
+msgstr "Aucun"
+
+#: ../pages/editsettingsadv.php:264
+msgid "Send method"
+msgstr "Méthode d 'envoi"
+
+#: ../pages/editsettingsadv.php:267
+msgid "Content Filtering"
+msgstr "Filtrage du contenu"
+
+#: ../pages/editsettingsadv.php:269
+msgid "Allowed HTML Tags"
+msgstr "Balises HTML autorisées"
+
+#: ../pages/editsettingsadv.php:269
+msgid "Enter tags including '<' and '>', e.g., \"<a><em><strong><br><hr>\" etc."
+msgstr "Entrez les balises avec '<' et '>', par ex :<a><em><strong><br><hr>\" etc."
+
+#: ../pages/editsettingsadv.php:272
+msgid "Security"
+msgstr "Sécurité"
+
+#: ../pages/editsettingsadv.php:274
+msgid "Enable nonce check"
+msgstr "Activer vérification de circonstance (nonce)"
+
+#: ../types/separator.php:7
+msgid "Separator"
+msgstr "Séparateur"
+
+#: ../types/separator.php:15
+#: ../types/textarea.php:74
+#: ../types/textarea.php:135
+#: ../types/list.php:150
+#: ../types/list.php:317
+msgid "Label"
+msgstr "Label"
+
+#: ../types/separator.php:40
+msgid "New Separator"
+msgstr "Nouveau séparateur"
+
+#: ../types/separator.php:41
+#: ../types/textarea.php:44
+#: ../types/base.php:110
+#: ../types/list.php:17
+#: ../types/note.php:60
+msgid "Item Description"
+msgstr "Description de l'élément"
+
+#: ../types/textarea.php:7
+msgid "Text Area"
+msgstr "Boîte de texte"
+
+#: ../types/textarea.php:43
+msgid "New Text Area"
+msgstr "message"
+
+#: ../types/textarea.php:75
+msgid "Placeholder"
+msgstr "Texte par défaut"
+
+#: ../types/textarea.php:76
+#: ../types/textarea.php:137
+msgid "Height (in pixels)"
+msgstr "Hauteur (en pixels)"
+
+#: ../types/textarea.php:77
+#: ../types/textarea.php:138
+#: ../types/list.php:152
+msgid "Width (in pixels)"
+msgstr "Largeur (en pixels)"
+
+#: ../types/textarea.php:78
+#: ../types/list.php:153
+msgid "Required"
+msgstr "Requis"
+
+#: ../types/list.php:11
+msgid "List"
+msgstr "Liste"
+
+#: ../types/list.php:16
+msgid "New List"
+msgstr "Nouvelle liste"
+
+#: ../types/list.php:151
+#: ../types/list.php:318
+msgid "Style"
+msgstr "Style"
+
+#: ../types/list.php:151
+#: ../types/list.php:318
+msgid "Dropdown"
+msgstr "Déroulante"
+
+#: ../types/list.php:151
+#: ../types/list.php:318
+msgid "List Box"
+msgstr "Boîte"
+
+#: ../types/list.php:151
+#: ../types/list.php:318
+msgid "Radio Buttons"
+msgstr "Boutons radio"
+
+#: ../types/list.php:151
+#: ../types/list.php:318
+msgid "Checkboxes"
+msgstr "Cases à cocher"
+
+#: ../types/list.php:154
+#: ../types/list.php:319
+msgid "List Items"
+msgstr "Eléments de la liste"
+
+#: ../types/note.php:7
+msgid "Note"
+msgstr "Commentaire"
+
+#: ../types/note.php:22
+msgid "HTML"
+msgstr "HTML"
+
+#: ../types/note.php:59
+msgid "New Note"
+msgstr "Nouvelle note"
+
+#: ../types/panelhelper.php:74
+msgid "Enter Items as Text"
+msgstr "Entrer les éléments de la liste"
+
+#: ../types/blank.php:18
+msgid "Item Nickname"
+msgstr "Identifiant"
+
+#: ../types/file.php:8
+msgid "File"
+msgstr "Fichier"
+
+#: ../types/file.php:21
+msgid "New File Upload"
+msgstr "Télécharger un fichier"
+
+#: ../types/file.php:54
+msgid "File upload exceeded maximum allowable size."
+msgstr "Le fichier téléchargé dépasse la taille maximale autorisée."
+
+#: ../types/file.php:57
+msgid "There was an error with the file upload."
+msgstr "Une erreur s'est produite lors du téléchargemet."
+
+#: ../types/file.php:64
+msgid "Cannot be of type"
+msgstr "Ne peut pas être de type"
+
+#: ../types/file.php:69
+msgid "Can only be of types"
+msgstr "Doit être de type"
+
+#: ../types/file.php:192
+msgid "Max file size (in kB)"
+msgstr "Taille max (en kB)"
+
+#: ../types/file.php:193
+msgid "Your host restricts uploads to"
+msgstr "Votre serveur restreint le téléchargement à"
+
+#: ../types/file.php:194
+msgid "File Types"
+msgstr "Types de fichier"
+
+#: ../types/file.php:195
+msgid "Enter a list of extensions separated by commas, e.g. \".txt, .rtf, .doc\""
+msgstr "Entrez une liste d'extensions séparées par une virgule, ex : \".txt, .rtf, .doc\""
+
+#: ../types/file.php:196
+msgid "Only allow"
+msgstr "Autoriser seulement"
+
+#: ../types/file.php:197
+msgid "Do not allow"
+msgstr "Ne pas autorier"
+
+#: ../types/file.php:198
+msgid "Uploads"
+msgstr "Téléchargements"
+
+#: ../types/file.php:199
+msgid "Upload directory"
+msgstr "Répertoire de téléchargement"
+
+#: ../types/file.php:201
+msgid "<em>This does not appear to be a valid directory</em>"
+msgstr "<em>ce répertoire ne semble pas être valide</em>"
+
+#: ../types/file.php:202
+msgid "Using an upload directory will allow you to post links to uploaded files.  Otherwise, Form Manager will manage the uploaded files for you in the database."
+msgstr "Utiliser un répertoire de téléchargemtnt vous permet de faire des liens vers les fichiers téléchargés. Sinon, Form Manager gèrera les fichiers téléchargés en base de données."
+
+#: ../types/file.php:203
+msgid "Upload URL"
+msgstr "URL des téléchargements"
+
+#: ../types/file.php:204
+msgid "This will be the base URL used for links to the uploaded files.  If left blank, no links will be generated."
+msgstr "URL de base utilisée pour les fichiers téléchargés. Si vous laissez vide, aucun lien ne sera généré."
+
+#: ../types/file.php:205
+msgid "Name format"
+msgstr "Format de nom"
+
+#: ../types/file.php:206
+msgid "This only applies if you specify an upload directory. Insert %filename% where you want the filename to appear. The rest will be used as a PHP timestamp format."
+msgstr "S'applique seulement si vous spécifiez un répertoire de téléchargement. Insérer %filename% là où vous voulez que le nom du fichier apparaisse. "
+
+#: ../types/file.php:241
+msgid "'Only allow' must be a list of extensions separated by commas"
+msgstr "la liste d'extensions doit être séparée par des virgules"
+
+#: ../types/file.php:245
+msgid "'Do not allow' must be a list of extensions separated by commas"
+msgstr "la liste d'extensions doit être séparée par des virgules"
+
+#: ../types/recaptcha.php:10
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
+
+#: ../types/recaptcha.php:19
+msgid "(No reCAPTCHA API public key found)"
+msgstr "(Clé reCAPTCHA non renseignée)"
+
+#: ../types/recaptcha.php:38
+msgid "The reCAPTCHA was incorrect."
+msgstr "Code antispam incorrect."
+
+#: ../types/recaptcha.php:83
+msgid "You need reCAPTCHA API keys."
+msgstr "Vous devez avoir des clés pour l'API reCAPTCHA"
+
+#: ../types/recaptcha.php:83
+msgid "Fix this in"
+msgstr "renseignez les dans les "
+
+#: ../types/recaptcha.php:84
+msgid "(reCAPTCHA field)"
+msgstr "(reCAPTCHA)"
+
+#: ../types/checkbox.php:7
+msgid "Checkbox"
+msgstr "Case à cocher"
+
+#: ../types/checkbox.php:11
+msgid "New Checkbox"
+msgstr "Nouvelle case à cocher"
+
+#: ../types/checkbox.php:28
+#: ../types/checkbox.php:40
+#: ../types/checkbox.php:52
+#: ../types/checkbox.php:131
+#: ../types/checkbox.php:132
+msgid "yes"
+msgstr "oui"
+
+#: ../types/checkbox.php:52
+#: ../types/checkbox.php:53
+#: ../types/checkbox.php:131
+#: ../types/checkbox.php:132
+msgid "no"
+msgstr "non"
+
+#: ../types/checkbox.php:63
+msgid "Position"
+msgstr "Position"
+
+#: ../types/checkbox.php:63
+msgid "Right"
+msgstr "Droite"
+
+#: ../types/checkbox.php:64
+#: ../types/checkbox.php:115
+msgid "Checked by Default"
+msgstr "Coché par défaut"
+
+#: ../types/text.php:14
+msgid "Text"
+msgstr "Texte"
+
+#: ../types/text.php:39
+msgid "New Text"
+msgstr "Nouveau texte"
+
+#: ../types/text.php:64
+msgid "Max characters"
+msgstr "Caractères max."
+
+#: ../types/text.php:66
+msgid "Validation"
+msgstr "Validation"
+
+#: ../types/text.php:198
+msgid "ID Number"
+msgstr "Numéro d'ID"
+
+#: ../types/text.php:218
+msgid "Next Number"
+msgstr "Prochain numéro"
+
+#: ../types/text.php:230
+msgid "New ID Number"
+msgstr "Nouveau numéro d'ID"
+
+#: ../types/text.php:247
+msgid "Tracking Number"
+msgstr "N° de suivi"
+
+#: ../types/text.php:291
+msgid "Carrier"
+msgstr "Transport"
+
+#: ../types/text.php:305
+msgid "New Tracking Number"
+msgstr "Nouveau n° de suivi"
+
+#~ msgctxt "date-range"
+
+#~ msgid "Update"
+#~ msgstr "Mettre à jour"
+#~ msgctxt "date-range"
+
+#~ msgid "Show"
+#~ msgstr "afficher"
+#~ msgctxt "date-range"
+
+#~ msgid "From"
+#~ msgstr "De"
+#~ msgctxt "template-option"
+
+#~ msgid "Left"
+#~ msgstr "Gauche"
+
+#~ msgid "Form Manager"
+#~ msgstr "Formulaires"
+
+#~ msgid "http://www.campbellhoffman.com/form-manager/"
+#~ msgstr "http://www.campbellhoffman.com/form-manager/"
+
+#~ msgid ""
+#~ "Create custom forms; download entered data in .csv format; validation, "
+#~ "required fields, custom acknowledgments;"
+#~ msgstr ""
+#~ "Créez vos formulaires personnalisés; télécharger les données en .csv; "
+#~ "validation, champs obligatoires, messages personnalisés;"
+
+#~ msgid "Campbell Hoffman"
+#~ msgstr "Campbell Hoffman"
+
+#~ msgid "http://www.campbellhoffman.com/"
+#~ msgstr "http://www.campbellhoffman.com/"
+
+#~ msgid "m-y-d h-i-s"
+#~ msgstr "d-m-y h-i-s"
+
+#~ msgid "%s Submission"
+#~ msgstr "%s soumission"
+
+#~ msgid "Private"
+#~ msgstr "Privé"
+
+#~ msgid "Submit Changes"
+#~ msgstr "Enregistrer"
+
+#~ msgid "Edit data"
+#~ msgstr "Modifier les données"
+
+#~ msgid "Data summary:"
+#~ msgstr "Sommaire des donées:"
+
+#~ msgid "Working..."
+#~ msgstr "En cours..."
+
+#~ msgid "Show Summary"
+#~ msgstr "Afficher le sommaire"
+
+#~ msgid "Are you sure you want to delete the selected items?"
+#~ msgstr "Êtes-vous sur de vouloir supprimer les données sélectionnées ?"
+
+#~ msgid "This will delete all submission data for this form. Are you sure?"
+#~ msgstr "Êtes-vous sur de vouloir supprimer toutes les données?"
+
+#~ msgid "Download Files"
+#~ msgstr "Télécharger des fichiers"
+
+#~ msgid "Form item nicknames"
+#~ msgstr "Identifiants des éléments"
+
+#~ msgid "Item Meta"
+#~ msgstr "Options des éléments"

@@ -1,0 +1,119 @@
+// GROUP AND PARTNER PAGES
+
+.header-local {
+    padding-top: $space;
+    .wrap {
+        position: relative;
+    }    
+    .nav-social {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    h1.h2 {
+        display: none;
+    }
+} 
+
+
+// PARTNER BANNER
+
+.partner-logo {
+  img {
+    width: 100%;
+    height: auto;
+  }
+  @include breakpoint(md) { @include span-columns(4);}
+ 
+}
+.partner-banner {
+  padding: $space;
+  .site-prefix,
+  .site-name {
+    text-transform: uppercase;
+    letter-spacing: $tracking-loose;
+  }
+  .site-prefix {
+    margin-bottom: 3px;
+    color: $base4;
+  }
+  .site-name {
+    margin-left: -4px;
+  }
+  @include breakpoint(md) { @include span-columns(12);}
+  
+}	
+
+.glocal-partner .page-header {
+  display: none;
+}
+
+
+// GROUP BANNER
+
+
+.site-banner {
+    border: $frame-border;
+    width: 100%;
+    height: 150px;
+    clear: both;
+    overflow: visible;
+    position: relative;
+	@include breakpoint(md) {height: auto; min-height: 140px; max-height: 300px;}
+}
+
+.banner-inner {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    background-color: $base8;
+	@include breakpoint(md) {height: auto; min-height: 130px; max-height: 290px;}
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.site-banner .site-name {
+    text-transform: uppercase; 
+    letter-spacing: $tracking;
+    @include font-size($beta);
+    line-height: 1.1;
+    margin: 0;
+    padding: 20px;
+    background: $white;
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    z-index: $layer2;
+    a {
+        color: $headline-color;
+        &:hover {
+            color: $anchor-color;
+        }
+    }
+}
+
+
+
+// NETWORK PAGES
+
+.network-header {
+    .social-links {
+        float: right;
+    }
+    .banner {
+        background: $white;
+        padding: $space;
+        margin-bottom: $space;
+        @include breakpoint(sm) {@include span-columns(4);}
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .entry-title {
+        padding-top: 1em;
+    }
+}

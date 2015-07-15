@@ -1,0 +1,52 @@
+// signup form
+
+.alo_easymail_widget_form {
+    display: inline-block;
+    td, label {
+        font-size: 16px;
+        vertical-align: top;
+        white-space: nowrap;
+    }
+    label {
+        vertical-align: middle;
+        margin-right: 3px;
+    }
+    .input-radio,
+    .input-checkbox {
+        margin: 0 3px 7px 0;
+    }
+    .input-text {
+        padding: 0 5px;
+        width: 100%;
+    }
+    .input-submit {
+        width: 100%;
+        margin-top: .5em;
+        padding: .5em 1em;
+        @include font-size(15);
+    }
+
+    // sidebar version
+    .sidebar & {
+        padding: 20px 0;
+        background: transparent;
+        border-top: 1px solid $white;
+        border-bottom: 1px solid $white;
+        border-color: rgba(255,255,255,.5);
+        color: $white;
+        td {
+            white-space: normal;
+        }
+    }
+    
+}
+
+
+
+// list selection table
+
+.alo_easymail_lists_table {
+    font-size: 14px;
+    margin-top: 20px;
+
+}

@@ -1,0 +1,180 @@
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+  p {
+      line-height: 1.3;
+      @include font-size($zeta);
+  }
+	.menu a, 
+	.menu a:visited,
+	.menu a:hover {
+  	color: $white;
+	}
+  
+}
+
+.widgettitle {
+	margin: -5px 0 0.5em;
+	color: $white;
+    color: rgba(255,255,255,.7);
+    @include font-size($zeta);
+}
+
+
+.widget {
+	padding: 20px;
+	margin: 0 0 $space-half;
+  background: $base5;
+  color: $white;
+	a, 
+	a:visited {
+		color: $white;
+		font-weight: 300;
+		display: block;
+    padding: 0.5em 0;
+		&:hover {
+  		color: $white;
+		}
+	}
+	ul {
+  	border-bottom: 1px solid $text-color;
+  	border-bottom: 1px solid rgba(0,0,0,.1);
+  	margin: 0;
+	}
+	li {
+  	border-top: 1px solid $text-color;
+  	border-top: 1px solid rgba(0,0,0,.1);
+    padding: 0;
+    margin: 0;
+    line-height: 1.3;
+    display: block !important;
+		
+		/* deep nesting */
+		ul {
+			margin: 0;
+			padding-left: 20px;
+			border: 0;
+		}
+		li {
+    		border: 0;
+    		padding: 0;
+    		color: $quiet-color;
+		}
+		a {
+    		border: 0;
+		}
+	}
+	form {
+  	background: transparent;
+  	padding: 20px 0;
+	}
+	label {
+    margin-bottom: 0;
+  }
+  input[type="text"], 
+  input[type="password"], 
+  input[type='email'] {
+      padding: 2px 5px;
+  }
+}
+
+// partner version
+
+.glocal-partner .sidebar .widget {
+  background: rgba(0,0,0,.3);
+}
+
+
+// SEARCH
+
+.widget_search {
+    padding: 5px 20px;
+}
+
+
+// EVENT MANAGER
+
+.widget_recent_entries,
+.widget_em_widget {
+  li {
+    @include font-size($delta);
+    li {
+  		@include font-size($epsilon);
+    }
+  }
+}
+
+// ARCHIVE, META
+
+.widget_archive, 
+.widget_meta {
+    li {
+        white-space: nowrap;
+        @include font-size($zeta);
+        line-height: 1.1;
+    }
+}
+
+
+// DEFAULT CALENDAR WIDGET
+
+#wp-calendar {
+    width: 100%;
+    td {
+        text-align: center;
+    }
+    td#prev {
+        text-align: left;
+    }
+    td#next {
+        text-align: right;
+    }
+}
+
+
+// SOCIAL WIDGET
+.widget {
+	
+  ul.nav-social {
+    float: none;
+    border-bottom: none;
+
+    li {
+      display: inline-block !important;
+      line-height: 30px;
+      height: 30px;
+      width: 30px;
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        height: 30px;
+        padding: 0 !important;
+      }
+    }
+
+  }
+
+}
+
+
+.widget,
+.widget_glocal_network_sites_widget {
+
+	.sites-list {
+	
+		li {}
+		.site-name {
+			font-size:  1.375rem;
+			margin-bottom: 0;
+		}
+		
+	}
+	
+}
+
+

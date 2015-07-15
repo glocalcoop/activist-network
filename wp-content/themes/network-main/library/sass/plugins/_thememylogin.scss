@@ -1,0 +1,73 @@
+// EXTRA SPECIFICITY NEEDED TO OVERWRITE PLUGIN DEFAULTS
+
+.login {
+	padding: 0 0 20px;
+	p.error, 
+	p.message {
+        padding: 20px;
+        margin-bottom: 20px;
+        color: $text-color;
+        border: 0;
+        @include font-size($epsilon);
+	}
+	p.error {
+        background-color: lighten($red, 30);
+    }
+    p.message {
+        background-color: lighten($yellow, 30);
+    }
+    form label {
+        margin-bottom: 0;
+    }
+}
+
+#pass-strength-result {
+    background-color: $base8;
+    border-color: $base6 !important;
+    &.bad {
+        background-color: lighten($orange, 30);
+        border-color: $orange !important;
+    }
+    
+    &.good {
+        background-color: lighten($yellow, 30);
+        border-color: $yellow !important;
+    }
+    &.short {
+        background-color: lighten($red, 30);
+        border-color: $red !important;
+    }
+    &.strong {
+        background-color: lighten($green, 30);
+        border-color: $green !important;
+    }
+}
+
+
+.tml-action-links li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px 10px 0;
+}
+
+
+// WIDGET
+
+.widget_theme_my_login {
+    
+    .widgettitle {
+        max-width: 75%;
+    }
+    .login {
+        position: relative;
+    }
+    .tml-user-avatar {
+        float: right;
+        position: absolute;
+        top: -30px;
+        right: 0;
+        img {
+            border: 3px solid white;
+        }
+    }
+}

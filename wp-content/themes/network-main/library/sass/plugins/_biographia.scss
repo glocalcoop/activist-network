@@ -1,0 +1,61 @@
+// BIOGRAPHIA PLUGIN
+
+.wp-biographia-container-top {
+	background: transparent !important; // override inline styling
+	background: rgba(255,255,255,.7) !important; // override inline styling
+	border-top: 1px solid $hr-alt !important; // override inline styling
+	border-bottom: 0 !important; // override inline styling
+	margin: 0;
+	padding: 0;
+}
+.wp-biographia-container-around {
+	background: transparent;
+	border-color: $hr-color;
+}
+
+.wp-biographia-container-none {
+	background: transparent;
+}
+
+.wp-biographia-pic {
+    background: transparent;
+    border: 0;
+	padding: 5px 0 !important; // override inline styling
+	height: 70px !important; // override inline styling
+	width: 70px !important; // override inline styling
+}
+.wp-biographia-avatar {
+    max-width: 60px;
+    height: auto;
+    display: block;
+}
+
+
+.wp-biographia-text {
+    margin-left: 80px;
+    p {
+      display: none;
+    }
+}
+
+.wp-biographia-text h3 {
+    @include font-size($epsilon);
+    margin: .5em 0 0;
+}
+
+
+.wp-biographia-links {
+    ul {
+        padding: 0;
+    }
+    li {
+        @include font-size($milli);
+        padding: 0;
+        margin-right: 10px;
+    }
+    li:first-child {
+        display: none; // hide "mail" link
+    }
+}
+
+

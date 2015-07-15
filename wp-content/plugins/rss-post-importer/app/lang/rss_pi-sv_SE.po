@@ -1,0 +1,254 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Rss Post Importer v1.0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-09 19:12+0530\n"
+"PO-Revision-Date: 2014-12-09 19:14+0530\n"
+"Last-Translator: admin <jens@simmalugnt.se>\n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ default
+#: classes/admin/class-rss-pi-admin-processor.php:47
+msgid "Settings saved."
+msgstr ""
+
+# @ default
+#: classes/admin/class-rss-pi-admin-processor.php:173
+msgid "new posts imported."
+msgstr ""
+
+#: classes/admin/class-rss-pi-admin-processor.php:192
+msgid "Invalid API key!"
+msgstr ""
+
+#: classes/admin/class-rss-pi-admin.php:40
+msgid ""
+"You need a <a href=\"http://www.feedsapi.com/?utm_source=rsspi-full-rss-key-"
+"here\" target=\"_blank\">Full Text RSS Key</a> to activate this section, "
+"please <a href=\"http://www.feedsapi.com/?utm_source=rsspi-full-rss-key-here"
+"\" target=\"_blank\">get one and try it free</a> for the next 14 days to see "
+"how it goes."
+msgstr ""
+
+# @ rss_pi
+#: classes/helpers/class-rss-pi-log.php:46
+msgid "Log has been cleared."
+msgstr "Loggen rensad."
+
+# @ rss_pi
+#: templates/admin-ui.php:4
+msgid "Rss Post Importer Settings"
+msgstr "Rss Post Importer Inställningar"
+
+# @ rss_pi
+#: templates/feed-save-box.php:7
+msgid "Latest import:"
+msgstr "Senaste import:"
+
+# @ rss_pi
+#: templates/feed-save-box.php:9
+msgid "View the log"
+msgstr "Visa loggen"
+
+# @ default
+#: templates/feed-save-box.php:13
+msgid "Save"
+msgstr ""
+
+# @ rss_pi
+#: templates/feed-save-box.php:14
+msgid "Save and import"
+msgstr "Spara och importera"
+
+# @ rss_pi
+#: templates/feed-save-box.php:20
+#, php-format
+msgid "%d posts imported and counting!"
+msgstr "%d poster importerade!"
+
+# @ default
+#: templates/feed-table-row.php:25
+msgid "Edit"
+msgstr ""
+
+# @ default
+#: templates/feed-table-row.php:26
+msgid "Delete"
+msgstr ""
+
+# @ rss_pi
+#: templates/feed-table-row.php:37 templates/feed-table.php:4
+msgid "Feed name"
+msgstr "Flödesnamn"
+
+# @ rss_pi
+#: templates/feed-table-row.php:44 templates/feed-table.php:5
+msgid "Feed url"
+msgstr "Url"
+
+# @ rss_pi
+#: templates/feed-table-row.php:50 templates/feed-table.php:6
+msgid "Max posts / import"
+msgstr "Max poster / import"
+
+# @ rss_pi
+#: templates/feed-table-row.php:54
+#, fuzzy
+msgid "Feed Author"
+msgstr "Url"
+
+# @ default
+#: templates/feed-table-row.php:71 templates/feed-table.php:7
+msgid "Category"
+msgstr ""
+
+# @ rss_pi
+#: templates/feed-table-row.php:75
+msgid "Strip html tags"
+msgstr "Ta bort html-taggar"
+
+# @ default
+#: templates/feed-table-row.php:79 templates/settings-table.php:128
+#: templates/settings-table.php:144
+msgid "Yes"
+msgstr ""
+
+# @ default
+#: templates/feed-table-row.php:82 templates/settings-table.php:131
+#: templates/settings-table.php:147
+msgid "No"
+msgstr ""
+
+# @ default
+#: templates/feed-table-row.php:89
+msgid "Close"
+msgstr ""
+
+# @ rss_pi
+#: templates/feed-table.php:25
+msgid ""
+"You haven't specified any feeds to import yet, why don't you <a href=\"#\" "
+"class=\"add-row\">add one now</a>?"
+msgstr ""
+"Du har inte lagt till några flöden att importera, varför inte <a href=\"#\" "
+"class=\"add-row\">lägga till ett nu</a>?"
+
+# @ rss_pi
+#: templates/feed-table.php:36
+msgid "Add new feed"
+msgstr "Lägg till flöde"
+
+# @ rss_pi
+#: templates/log.php:2
+msgid "Rss Post Importer Log"
+msgstr "Rss Post Importer Logg"
+
+# @ rss_pi
+#: templates/log.php:7
+#, php-format
+msgid ""
+"If your imports are not running regularly according to your settings you "
+"might need to set up a scheduled task, there are several ways to do this, "
+"most convenient is to set up a scheduled task on your server and simply ask "
+"it to hit your sites url (%s) regularly, there are also external sites that "
+"offer the same service, such as:"
+msgstr ""
+"Om din import inte körs regelbundet enligt dina inställningar kan du testa "
+"att sätta upp en scheduled task som besöker din site(%s), via din server "
+"eller via något av nedanstående siter:"
+
+# @ rss_pi
+#: templates/log.php:15
+msgid "Ok, all done"
+msgstr "Ok, klar"
+
+# @ rss_pi
+#: templates/log.php:16
+msgid "Clear log"
+msgstr "Rensa logg"
+
+# @ default
+#: templates/settings-table.php:4
+msgid "Settings"
+msgstr ""
+
+# @ rss_pi
+#: templates/settings-table.php:13
+msgid "Frequency"
+msgstr "Frekvens"
+
+# @ rss_pi
+#: templates/settings-table.php:14
+msgid "How often will the import run."
+msgstr "Hur ofta skall importen köras?"
+
+#: templates/settings-table.php:30
+msgid "Full Text RSS Feed API Key"
+msgstr ""
+
+#: templates/settings-table.php:32
+msgid "Boost Your traffic with Full RSS Content - "
+msgstr ""
+
+# @ default
+#: templates/settings-table.php:44
+msgid "Template"
+msgstr ""
+
+# @ rss_pi
+#: templates/settings-table.php:45
+msgid "This is how the post will be formatted."
+msgstr "Så här kommer innehållet formatteras."
+
+# @ rss_pi
+#: templates/settings-table.php:47
+msgid "Available tags:"
+msgstr "Tillgängliga taggar:"
+
+#: templates/settings-table.php:71
+msgid "Keywords Filter"
+msgstr ""
+
+#: templates/settings-table.php:72
+msgid "Enter keywords and/or regex, separated by commas"
+msgstr ""
+
+#: templates/settings-table.php:74
+msgid "Only posts matching these keywords/regex will be imported"
+msgstr ""
+
+# @ rss_pi
+#: templates/settings-table.php:91
+msgid "Post status"
+msgstr "Post status"
+
+# @ default
+#: templates/settings-table.php:111
+msgid "Author"
+msgstr ""
+
+# @ rss_pi
+#: templates/settings-table.php:124
+msgid "Allow comments"
+msgstr "Tillåt kommentarer"
+
+# @ rss_pi
+#: templates/settings-table.php:138
+msgid "Enable logging?"
+msgstr "Aktivera loggen?"
+
+# @ rss_pi
+#: templates/settings-table.php:139
+msgid "The logfile can be found <a href=\"#\" class=\"load-log\">here</a>."
+msgstr "Du hittar loggfilen <a href=\"#\" class=\"load-log\">här</a>."

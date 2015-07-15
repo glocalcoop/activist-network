@@ -1,0 +1,106 @@
+
+// LINKS
+
+a {
+	color: $anchor-color;
+  text-decoration: none; 
+  cursor: pointer;     
+  @include transition(all 0.25s ease);
+  
+  &:visited {
+      color: $anchor-color;
+  }
+
+	&:hover, 
+	&:focus {
+		color: $anchor-hover;
+	}
+
+	/* on click */
+	&:active {
+
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+
+.excerpt-read-more {
+    font-size: 80%;
+    white-space: nowrap;
+    padding-left: 5px;
+    text-transform: uppercase; 
+    letter-spacing: $tracking;
+}
+
+
+// BUTTONS
+
+
+
+button,
+.button {
+    @include transition(all 0.25s ease);
+    @include font-size($milli);
+	text-transform: uppercase; 
+    letter-spacing: $tracking-loose;
+    line-height: 1.2;
+	font-weight: 700;
+    padding: .75em 3em;
+    text-align: center;
+    border: 0;
+    background: $anchor-color;
+    color: $white;
+    display: inline-block;
+    &:link,
+    &:visited {
+        color: $white;
+    }
+    &:hover,
+    &:focus {
+        background: lighten($anchor-color, 10);
+        color: $white !important;
+    }
+}
+
+
+// button sizes
+
+%button-large {
+    @include font-size($delta);
+    padding: 1em 3em;
+}
+
+%button-small {
+    @include font-size($micro);
+    padding: .25em 1em;
+}
+
+
+// CUSTOM INSTANCES
+
+.home-intro .button {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+
+.sidebar .button, 
+.sidebar input[type='submit'] {
+    background: $base3;
+    background: rgba(0,0,0,.6);
+    font-weight: 700;
+    &:hover {
+        background: $base4;
+        background: rgba(0,0,0,.4);
+    }
+}

@@ -1,0 +1,162 @@
+// BASE STYLES
+// variations are in _posts partial
+
+html {
+    line-height: 1.5;
+    font-size: 80%;
+	@include breakpoint(md) {font-size: 90%;}
+	@include breakpoint(lg) {font-size: 100%;} // 16px
+}
+
+body {
+    font-family: $sans;
+    font-weight: 300;
+    line-height: 1.5;
+    color: $text-color;
+}
+
+
+// FONT SIZING
+// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+
+@mixin font-size($size: 16){
+  font-size: $size + px;
+  font-size: $size / 16 + rem;
+}
+
+
+// HEADERS
+// note: use only BOTTOM margins for spacing, for easier management, a la @csswizardry
+
+h1, h2, h3, h4, h5, h6 {
+	text-rendering: optimizelegibility;
+	font-weight: 300;
+    color: $headline-color;
+    margin-top: 0;
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, h2 {
+    line-height: 1.2;
+    margin-bottom: $space;
+}
+
+h3, h4, h5 {
+    line-height: 1.3;
+    margin-bottom: $space;
+}
+
+h6, small {
+    line-height: 1.2;
+    margin-bottom: $space-half;
+}
+
+
+h1 {
+    @include font-size($alpha);
+}
+
+h2 {
+    @include font-size($beta);
+}
+
+h3 {
+    @include font-size($gamma);
+}
+
+h4 {
+    @include font-size($delta);
+}
+
+h5 {
+    @include font-size($epsilon);
+}
+
+h6 {
+    @include font-size($zeta);
+	text-transform: uppercase;
+	letter-spacing: $tracking;
+}
+
+
+// OTHER
+
+p, li, dt, dd {
+    margin-top: 0;
+    margin-bottom: $space;
+    @include font-size($epsilon);
+	// @include breakpoint(lg) {max-width: 40em; line-height: 1.75;}
+}
+
+
+input, label, select, textarea {
+    @include font-size($epsilon);
+	margin-bottom: $space-half;
+	font-family: $sans;
+	font-weight: 300;
+}
+
+small {
+    @include font-size($milli);
+}
+
+
+// if you're using webfonts, be sure to check your weights
+// http://css-tricks.com/watch-your-font-weight/
+
+b, strong {
+  font-weight: 700;
+}
+
+i, em {
+    font-style: italic;
+}
+
+
+
+// clear lists; style typographic lists in _posts 
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    ul, ol {
+        margin: 0 $space $space-half;
+    }
+}
+
+li {
+	margin-bottom: $space-half;
+}
+
+
+
+blockquote {
+    padding: 0 10% 0 0;
+    margin: $space 0;
+    p, li {
+    	color: $base5;
+        font-style: italic;
+    }
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: $mono;
+    @include font-size($epsilon);
+}
+
+pre {
+    padding: 1em $space;
+    margin: $space 0;
+    display: block;
+    background: $base2;
+    color: $white;
+}
+
+
+
