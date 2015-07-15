@@ -24,22 +24,23 @@ if (!defined('ABSPATH')) {
 // Basic JMM Widget
 class jmm_JMM_Widget extends WP_Widget {
 
-    function jmm_JMM_Widget() {
-		$widget_ops = array( 'classname' => 'jmm_add_users', 'description' => 'Allow members of your network to join a specific site.' );
-		$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'helf-add-user-widget' );
-		$this->WP_Widget( 'helf-add-user-widget', 'Join My Site Widget', $widget_ops, $control_ops );
-	}
+    function __construct() {
+        $widget_ops = array( 'classname' => 'jmm_add_users', 'description' => 'Allow members of your network to join a specific site.' );
+        $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'helf-add-user-widget' );
+        parent::__construct( 'helf-add-user-widget', 'Join My Site Widget', $widget_ops, $control_ops );
+    }
 
 	function widget( $args, $instance ) {
 		extract( $args );
 
 		/* User-selected settings. */
-		$title = apply_filters('widget_title', $instance['title'] );
-		$notregistered = $instance['notreg'];
-		$notmember = $instance['notmember'];
-		$member = $instance['member'];
-		$welcome = $instance['welcome'];
-		$show_form = $instance['show_form'];
+		//$title =  isset( $instance['title'] ) ? apply_filters('widget_title', $instance['title'] ) : "" ;
+		$title = isset( $instance['title'] ) ? apply_filters('widget_title', $instance['title'] ) : "" ;
+		$notregistered = isset( $instance['notreg'] ) ? $instance['notreg'] : "";
+		$notmember = isset( $instance['notmember'] ) ? $instance['notmember'] : "";
+		$member = isset( $instance['member'] ) ? $instance['member'] : "";
+		$welcome = isset( $instance['welcome'] ) ? $instance['welcome'] : "";
+		$show_form = isset( $instance['show_form'] ) ? $instance['show_form'] : "";
 		$jmm_options = get_option( 'helfjmm_options' );
 		global $current_user, $blog_id, $user_login;
 
@@ -57,9 +58,8 @@ class jmm_JMM_Widget extends WP_Widget {
             } else {
                 if( !is_user_logged_in() ) {
                     if ( get_option('users_can_register') == 1 ) {
-                        // If user isn't logged in but we allow for registration....
-                         
-                        // IF we have a custom URL, use it, else send to /wp-signup.php
+                        // If user isn't logged in but we allow for registration.... 
+                        // IF we have a custom URL, use it, else send to /wp-signup.php for this site (becuase join my SITE, not network)
                         if ( !is_null($jmm_options['perpage']) && $jmm_options['perpage'] != "XXXXXX"  )
                             {$goto = get_permalink($jmm_options['perpage']); }
                         else
