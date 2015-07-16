@@ -3,8 +3,8 @@ Contributors: hoffcamp
 Donate link: http://www.campbellhoffman.com/
 Tags: form, forms, form manager
 Requires at least: 3.0.0
-Tested up to: 4.0
-Stable tag: 1.7.0
+Tested up to: 4.2
+Stable tag: 1.7.1
 
 Put custom forms into posts and pages using shortcodes. Download submissions in .csv format.
 
@@ -54,6 +54,9 @@ You can also type in shortcodes yourself.  For example, if your form's slug is '
 * Chinese Simplified (zh_CN)
 
 == Changelog ==
+= 1.7.1 =
+* Fixed CSV download ( dependency on PHP multibyte strings module removed )
+
 = 1.7.0 =
 * Fixed 'housekeeping suicide' multisite bug
 * Tested up to 4.0
