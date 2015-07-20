@@ -1,0 +1,3 @@
+[submodule "wp-content/plugins/anp-global-menu"]
+	path = wp-content/plugins/anp-global-menu
+	url = https://github.com/glocalcoop/anp-global-menu.git
