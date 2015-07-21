@@ -721,7 +721,7 @@ hr {
         display: block;
         float: left;
         margin-right: 1.75788%;
-        width: 17.32172%; }
+        width: 23.68159%; }
         /* line 41, ../sass/partials/neat/grid/_span-columns.scss */
         .header-global .site-title:last-child {
           margin-right: 0; } }
@@ -737,8 +737,8 @@ hr {
       display: inline-block;
       vertical-align: middle;
       padding: .5em;
-      border: 2px solid #fff;
-      color: #fff; }
+      border: 2px solid #333231;
+      color: #333231; }
     /* line 37, ../sass/modules/_header.scss */
     .header-global .site-title.network-logo a {
       border: none;
@@ -759,7 +759,7 @@ hr {
       display: block;
       float: left;
       margin-right: 1.75788%;
-      width: 80.9204%; }
+      width: 74.56053%; }
       /* line 41, ../sass/partials/neat/grid/_span-columns.scss */
       .header-global .nav-global:last-child {
         margin-right: 0; } }
