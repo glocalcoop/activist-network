@@ -29,5 +29,6 @@
 		//event.preventDefault();
 		$(this).children('a').toggleClass('active');
 	});
+	
 
 })( jQuery );
