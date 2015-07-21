@@ -9,7 +9,7 @@
 
         @include breakpoint(md) {
             //display: block;
-            @include span-columns(3);
+            @include span-columns(4);
         }
 
         margin: 0 15px 0 0;
@@ -29,8 +29,8 @@
             vertical-align: middle;
             padding: .5em;
 
-            border: 2px solid $white;
-            color: $white;
+            border: 2px solid $text-color;
+            color: $text-color;
 
         }
 
@@ -48,7 +48,7 @@
         }
 
         @include breakpoint(lg) {
-            @include span-columns(13);
+            @include span-columns(12);
         }
 
     }
