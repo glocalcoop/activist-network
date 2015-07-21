@@ -17,42 +17,67 @@
 		}
 	}
 
-	nav ul {
-		font-family: $font-base; // Nav item font styles
-		font-weight: 300;
-		font-size: 14px;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
+	#anp-global-menu {
 
-			li {
-				&:hover,
-				&:focus {
-					background-color: $gray-dark; // Hover color
+		// Top-level menu
+		.menu {
+			background-color: $menu-background;
+
+			font-family: $font-base; // Nav item font styles
+			font-weight: 300;
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+
+				li {
+					a {
+						color: $white;
+					}
+					&:hover,
+					&:focus {
+						background-color: $gray-dark; // Hover color
+					}
+
+				// Sub-level menu
+				.sub-menu {
+					background-color: $gray-dark; // Sub-menu background color
+
+					li {
+						padding: .125em .5em;
+
+						a {
+							font-size: 14px;
+						}
+						&:hover,
+						&:focus {
+							background-color: $menu-background; // Hover color
+						}
+
+					}
 				}
 
-				a {
-					color: $white;
-				}
-
-				ul {
-					background-color: $menu-background; // Sub-menu background color
-				}
 			}
 
-
-	}
-
-
-	.arrow {
-		@extend .fa-angle-down;
-		color: $white;
-
-		&.rotate {
-			@extend .fa-angle-up;
 		}
+
+		.menu-item-has-children > a:before {
+			content: '';
+		}
+
+		.menu-item-has-children > a:after {
+			padding: 0;
+			margin: 0 0 0 10px;
+			line-height: 16px;
+			
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			font-size: 20px;
+			content: '';
+		}
+
+		.menu-item-has-children > a.active:after {}
+
 	}
-
-
-
 
 }
