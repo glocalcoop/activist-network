@@ -49,7 +49,7 @@ VENDORS
   font-style: normal;
 }
 /* line 4, ../sass/font-awesome/_core.scss */
-.fa, #anp-global-header nav ul .arrow, #anp-global-header .mobile {
+.fa, #anp-global-header a.menu-link {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -68,7 +68,7 @@ VENDORS
 }
 
 /* line 10, ../sass/font-awesome/_larger.scss */
-.fa-2x {
+.fa-2x, #anp-global-header a.menu-link {
   font-size: 2em;
 }
 
@@ -135,11 +135,11 @@ VENDORS
 }
 
 /* line 14, ../sass/font-awesome/_bordered-pulled.scss */
-.fa.pull-left, #anp-global-header nav ul .pull-left.arrow, #anp-global-header .pull-left.mobile {
+.fa.pull-left, #anp-global-header a.pull-left.menu-link {
   margin-right: .3em;
 }
 /* line 15, ../sass/font-awesome/_bordered-pulled.scss */
-.fa.pull-right, #anp-global-header nav ul .pull-right.arrow, #anp-global-header .pull-right.mobile {
+.fa.pull-right, #anp-global-header a.pull-right.menu-link {
   margin-left: .3em;
 }
 
@@ -1166,7 +1166,7 @@ VENDORS
 .fa-navicon:before,
 .fa-reorder:before,
 .fa-bars:before,
-#anp-global-header .mobile:before {
+#anp-global-header a.menu-link:before {
   content: "";
 }
 
@@ -1459,12 +1459,12 @@ VENDORS
 }
 
 /* line 266, ../sass/font-awesome/_icons.scss */
-.fa-angle-up:before, #anp-global-header .arrow.rotate:before {
+.fa-angle-up:before {
   content: "";
 }
 
 /* line 267, ../sass/font-awesome/_icons.scss */
-.fa-angle-down:before, #anp-global-header .arrow:before {
+.fa-angle-down:before {
   content: "";
 }
 
@@ -2933,10 +2933,19 @@ VENDORS
 VARIABLES & MIXINS
 **********************/
 /*********************
+IMPORT FONTS
+**********************/
+/*********************
 RESPONSIVE BREAKPOINT
 **********************/
 /*********************
 CLEARFIX
+**********************/
+/*********************
+TRANSITION
+**********************/
+/*********************
+FONT SIZE
 **********************/
 /*********************
 BASE
@@ -2945,6 +2954,10 @@ BASE
 #anp-global-header {
   width: 100%;
   margin: 0;
+  padding: 0;
+  /***************************
+  MOBILE NAV STYLES
+  ***************************/
   /***************************
   MOBILE NAV STYLES
   ***************************/
@@ -2955,168 +2968,141 @@ BASE
   display: table;
   clear: both;
 }
-/* line 8, ../sass/_base.scss */
+/* line 9, ../sass/_base.scss */
+#anp-global-header a,
+#anp-global-header a:link {
+  text-decoration: none;
+}
+/* line 14, ../sass/_base.scss */
 #anp-global-header .wrap {
   margin: 0 auto;
-  max-width: 1080px;
+  padding: 1em;
+  max-width: 1200px;
 }
-/* line 13, ../sass/_base.scss */
-#anp-global-header #main-site-logo {
-  float: left;
-  margin: 5px 10px 5px 5px;
-  padding: 5px 10px;
-}
-/* line 18, ../sass/_base.scss */
-#anp-global-header #main-site-logo a {
-  text-decoration: none;
-}
-/* line 29, ../sass/_base.scss */
-#anp-global-header nav ul {
-  float: left;
-  margin: 0;
-  padding-left: 0;
-  padding-top: 6px;
-  padding-bottom: 6px;
+/* line 19, ../sass/_mixins.scss */
+#anp-global-header .wrap:after {
+  content: "";
   display: table;
-  list-style: none;
+  clear: both;
 }
-/* line 38, ../sass/_base.scss */
-#anp-global-header nav ul li {
-  float: left;
-  display: relative;
-  z-index: 1;
-  padding: 5px 10px;
+/* line 21, ../sass/_base.scss */
+#anp-global-header #main-site-logo {
+  padding: .5em;
 }
-@media (max-width: 668px) {
-  /* line 38, ../sass/_base.scss */
-  #anp-global-header nav ul li {
-    float: none;
-    position: relative;
-    margin: 0;
+/* line 26, ../sass/_base.scss */
+#anp-global-header #main-site-logo a {
+  display: block;
+}
+@media (min-width: 768px) {
+  /* line 21, ../sass/_base.scss */
+  #anp-global-header #main-site-logo {
+    float: left;
+    margin: 0 30px 0 0;
   }
 }
-/* line 54, ../sass/_base.scss */
-#anp-global-header nav ul li a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  -moz-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-}
-/* line 61, ../sass/_base.scss */
-#anp-global-header nav ul li ul {
-  margin: 0;
-  list-style: none;
+/* line 45, ../sass/_base.scss */
+#anp-global-header #anp-global-menu .menu {
   padding: 0;
-  position: absolute;
-  width: 200px;
+  margin: 0;
   max-height: 0;
-  z-index: 0;
   opacity: 0;
   overflow: hidden;
 }
-@media (max-width: 668px) {
-  /* line 61, ../sass/_base.scss */
-  #anp-global-header nav ul li ul {
-    clear: left;
-    max-height: 0;
-    opacity: 1;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
+/* line 53, ../sass/_base.scss */
+#anp-global-header #anp-global-menu .menu li {
+  padding: .25em 0;
+  border-bottom: 1px solid #eee;
 }
-/* line 82, ../sass/_base.scss */
-#anp-global-header nav ul li ul li {
-  float: none;
-  margin: 0;
+/* line 57, ../sass/_base.scss */
+#anp-global-header #anp-global-menu .menu li:last-child {
+  border-bottom: none;
 }
-/* line 86, ../sass/_base.scss */
-#anp-global-header nav ul li ul li a {
+/* line 62, ../sass/_base.scss */
+#anp-global-header #anp-global-menu .menu a {
+  padding: .25em;
   display: block;
-  text-align: left;
 }
-/* line 93, ../sass/_base.scss */
-#anp-global-header nav ul li:hover ul,
-#anp-global-header nav ul li ul.active {
+/* line 69, ../sass/_base.scss */
+#anp-global-header #anp-global-menu.active .menu {
+  z-index: 10;
+  padding-left: 0;
+  left: 0;
+  max-height: 999px;
   opacity: 1;
-  max-height: 1000px;
-  z-index: 200;
-  margin: 10px 0 0 -10px;
+  overflow: visible;
 }
-/* line 102, ../sass/_base.scss */
-#anp-global-header nav ul .menu-item-has-children > a {
-  display: inline-block;
+/* line 79, ../sass/_base.scss */
+#anp-global-header #anp-global-menu .sub-menu {
+  padding-left: 0;
 }
-/* line 106, ../sass/_base.scss */
-#anp-global-header nav ul .arrow {
-  display: inline-block;
-}
-@media (max-width: 768px) {
-  /* line 27, ../sass/_base.scss */
-  #anp-global-header nav {
-    float: clear;
-    border: green;
+@media (min-width: 768px) {
+  /* line 42, ../sass/_base.scss */
+  #anp-global-header #anp-global-menu {
+    float: left;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
   }
-}
-@media (max-width: 668px) {
-  /* line 125, ../sass/_base.scss */
-  #anp-global-header nav {
+  /* line 89, ../sass/_base.scss */
+  #anp-global-header #anp-global-menu .menu {
+    max-height: 999px;
+    overflow: visible;
+    z-index: 5;
+    opacity: 1;
+    margin: 0;
+    padding: .25em 0;
+  }
+  /* line 100, ../sass/_base.scss */
+  #anp-global-header #anp-global-menu .menu li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    padding: 0 .25em;
+    border: none;
+  }
+  /* line 111, ../sass/_base.scss */
+  #anp-global-header #anp-global-menu .sub-menu {
+    position: absolute;
     max-height: 0;
+    opacity: 0;
     overflow: hidden;
   }
-  /* line 130, ../sass/_base.scss */
-  #anp-global-header nav.active {
-    float: none;
-    clear: left;
-    -moz-transition-duration: 3s;
-    -o-transition-duration: 3s;
-    -webkit-transition-duration: 3s;
-    transition-duration: 3s;
-    max-height: 9000px !important;
+  /* line 119, ../sass/_base.scss */
+  #anp-global-header #anp-global-menu .sub-menu li {
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+  /* line 123, ../sass/_base.scss */
+  #anp-global-header #anp-global-menu .sub-menu li:last-child {
+    border-bottom: none;
+  }
+  /* line 131, ../sass/_base.scss */
+  #anp-global-header #anp-global-menu .menu-item-has-children:hover .sub-menu,
+  #anp-global-header #anp-global-menu .menu-item-has-children:focus .sub-menu,
+  #anp-global-header #anp-global-menu .active {
+    z-index: 10;
+    padding-left: 0;
+    left: -1px;
+    max-height: 999px;
+    opacity: 1;
+    overflow: visible;
   }
 }
-/* line 143, ../sass/_base.scss */
-#anp-global-header .mobile {
-  top: 12px;
-  right: 15px;
-  display: none;
-  margin: 0;
-  padding: 20px 15px;
-  position: absolute;
+/* line 159, ../sass/_base.scss */
+#anp-global-header a.menu-link {
   color: #fff;
-  text-decoration: none;
-  line-height: 0;
 }
-/* line 157, ../sass/_base.scss */
-#anp-global-header .mobile:before {
-  font-size: 28px;
+/* line 167, ../sass/_base.scss */
+#anp-global-header a.menu-link .hide-text {
+  opacity: 0;
 }
-@media (max-width: 668px) {
-  /* line 143, ../sass/_base.scss */
-  #anp-global-header .mobile {
-    display: table !important;
-  }
-}
-@media (max-width: 375px) {
-  /* line 143, ../sass/_base.scss */
-  #anp-global-header .mobile {
-    top: 50px;
-  }
-}
-@media (max-width: 1200px) {
-  /* line 171, ../sass/_base.scss */
-  #anp-global-header #main-site-logo {
-    margin-left: 10px;
-  }
-}
-
-@media (max-width: 668px) {
-  /* line 192, ../sass/_base.scss */
-  .admin-bar #anp-global-header .mobile {
-    top: 50px !important;
+@media (min-width: 768px) {
+  /* line 175, ../sass/_base.scss */
+  #anp-global-header a.menu-link {
+    display: none;
   }
 }
 
@@ -3140,27 +3126,51 @@ THEME
 #anp-global-header #main-site-logo a {
   color: #fff;
 }
-/* line 20, ../sass/_theme.scss */
-#anp-global-header nav ul {
+/* line 23, ../sass/_theme.scss */
+#anp-global-header #anp-global-menu .menu {
+  background-color: #222;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-/* line 28, ../sass/_theme.scss */
-#anp-global-header nav ul li:hover, #anp-global-header nav ul li:focus {
+/* line 33, ../sass/_theme.scss */
+#anp-global-header #anp-global-menu .menu li a {
+  color: #fff;
+}
+/* line 36, ../sass/_theme.scss */
+#anp-global-header #anp-global-menu .menu li:hover, #anp-global-header #anp-global-menu .menu li:focus {
   background-color: #333;
 }
-/* line 33, ../sass/_theme.scss */
-#anp-global-header nav ul li a {
-  color: #fff;
+/* line 42, ../sass/_theme.scss */
+#anp-global-header #anp-global-menu .menu li .sub-menu {
+  background-color: #333;
 }
-/* line 37, ../sass/_theme.scss */
-#anp-global-header nav ul li ul {
+/* line 45, ../sass/_theme.scss */
+#anp-global-header #anp-global-menu .menu li .sub-menu li {
+  padding: .125em .5em;
+}
+/* line 48, ../sass/_theme.scss */
+#anp-global-header #anp-global-menu .menu li .sub-menu li a {
+  font-size: 14px;
+}
+/* line 51, ../sass/_theme.scss */
+#anp-global-header #anp-global-menu .menu li .sub-menu li:hover, #anp-global-header #anp-global-menu .menu li .sub-menu li:focus {
   background-color: #222;
 }
-/* line 46, ../sass/_theme.scss */
-#anp-global-header .arrow {
-  color: #fff;
+/* line 63, ../sass/_theme.scss */
+#anp-global-header #anp-global-menu .menu-item-has-children > a:before {
+  content: '';
+}
+/* line 67, ../sass/_theme.scss */
+#anp-global-header #anp-global-menu .menu-item-has-children > a:after {
+  padding: 0;
+  margin: 0 0 0 10px;
+  line-height: 16px;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  content: '';
 }

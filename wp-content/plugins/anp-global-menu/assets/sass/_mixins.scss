@@ -22,3 +22,25 @@ CLEARFIX
     clear: both;
   }
 }
+
+/*********************
+TRANSITION
+**********************/
+
+@mixin transition($secs) {
+
+     -moz-transition: $secs;
+      -ms-transition: $secs;
+       -o-transition: $secs;
+  -webkit-transition: $secs;
+          transition: $secs;
+}
+
+/*********************
+FONT SIZE
+**********************/
+
+@mixin font-size($sizeValue) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / 16) + rem;
+}
