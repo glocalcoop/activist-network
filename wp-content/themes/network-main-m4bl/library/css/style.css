@@ -37,13 +37,12 @@ a:link {
 .header-global {
   background-color: #000; }
   /* line 4, ../sass/_header.scss */
-  .header-global h1.network-name {
-    border-color: #fff;
-    margin-right: 20px;
-    z-index: 5000; }
+  .header-global h1.site-title {
+    margin-right: 20px; }
     /* line 9, ../sass/_header.scss */
-    .header-global h1.network-name a {
-      color: #fff !important; }
+    .header-global h1.site-title a {
+      color: #fff !important;
+      border-color: #fff; }
   /* line 18, ../sass/_header.scss */
   .header-global nav.nav-global a,
   .header-global nav.nav-global .current-item a {
