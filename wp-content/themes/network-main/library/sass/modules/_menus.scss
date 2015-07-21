@@ -21,22 +21,22 @@ styles and our css is cleaner and more scalable. */
 }
 
 .menu {  
-  li {
-    margin: 0;
-    display: block;
-    white-space: nowrap;
-    line-height: 1;
-  }
+    li {
+        margin: 0;
+        display: block;
+        white-space: nowrap;
+        line-height: 1;
+    }
 	a {
 		display: block;
 		text-decoration: none;
-    color: $text-color;
-    padding: 0.8em;
-    position: relative;
-    &:focus,
-    &:hover {
-      color: $anchor-color;
-    }
+        color: $text-color;
+        padding: 0.8em;
+        position: relative;
+        &:focus,
+        &:hover {
+          color: $anchor-color;
+        }
 	}
 }
 
@@ -52,7 +52,6 @@ styles and our css is cleaner and more scalable. */
         @include font-size($milli); 
     }
 }
-
 
 
 // if JS is loaded, set up animations
@@ -115,12 +114,6 @@ styles and our css is cleaner and more scalable. */
     }
         
 }
-
-
-
-
-
-
 
 
 // TOGGLE MENUS
