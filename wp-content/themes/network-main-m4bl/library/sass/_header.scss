@@ -1,0 +1,37 @@
+.header-global {
+	background-color: $black;
+
+	h1.network-name {
+
+		border-color: $white;
+		margin-right: 20px;
+
+		a {
+			color: $white !important;
+		}
+
+		z-index: 5000;
+	}
+
+	nav.nav-global {
+
+		a,
+		.current-item a {
+			color: $white !important;
+		}
+		.sub-menu,
+		.menu {
+			background-color: $black !important;
+
+			li.current-menu-item, 
+        	li.current_page_item, 
+        	li.current-page-ancestor {
+				// triangle 'on' state
+				&:after {
+					border-bottom-color: $brand-primary;
+				}
+			}
+
+		}
+	}
+}
