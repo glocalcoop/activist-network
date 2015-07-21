@@ -1,32 +1,64 @@
 // HEADERS
 
-
 .header-global {
     background: $base0;
+
+    .site-title {
+
+        display: none;
+
+        @include breakpoint(md) {
+            //display: block;
+            @include span-columns(3);
+        }
+
+        margin: 0 15px 0 0;
+        padding: 0;
+        line-height: 1;
+
+        img {
+          fill: $text-color;
+          max-height: 40px;
+        }
+        &:hover img {
+          fill: $anchor-color; 
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            padding: .5em;
+
+            border: 2px solid $white;
+            color: $white;
+
+        }
+
+        &.network-logo a {
+            border: none;
+            padding: 0;
+        }
+
+    }
+
+    .nav-global {
+
+        @include breakpoint(md) {
+            @include span-columns(16);
+        }
+
+        @include breakpoint(lg) {
+            @include span-columns(13);
+        }
+
+    }
+
+
 }
 
-.domain-logo {
-    display: none;
-    @include breakpoint(md) {display: block;}
-    float: left;
-    
-    margin-right: 15px;
-    img {
-      fill: $text-color;
-      max-height: 40px;
-      width: auto;
-    }
-    &:hover img {
-      fill: $anchor-color; 
-    }
-    h1.site-title {
-        font-size: 16px;
-        margin-top: 10px;
-        margin-bottom: 0;
-        padding: 5px;
-        border: 2px solid $base3;
-    }
-}
+
+//964
+
 
 // mobile buttons to reveal full menus
 
@@ -108,7 +140,7 @@
 
 @include breakpoint(md) {
     
-    .domain-logo {
+    .site-title{
         display: none;
     }
 
