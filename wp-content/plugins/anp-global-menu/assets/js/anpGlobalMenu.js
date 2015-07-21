@@ -11,9 +11,9 @@
 
 	if( anpGlobalMenuVars.globalMenu ) {
 
-		$( '<header class="network-header" id="anp-global-header"><div class="wrap"></div></header>' ).prependTo('body');
+		$( '<header class="header-global" id="anp-global-header"><div class="wrap"></div></header>' ).prependTo('body');
 
-		$( '#anp-global-header' ).find( '.wrap' ).html( anpGlobalMenuVars.globalSiteLogo + '<a class="mobile menu-link" href="#" rel="icon"><span class="hide-text">MENU</span></a><nav id="anp-global-menu" class="menu-global" role="navigation">' + anpGlobalMenuVars.globalMenu + '</nav>' );
+		$( '#anp-global-header' ).find( '.wrap' ).html( '<h1 id="main-site-logo" class="network-title">' + anpGlobalMenuVars.globalSiteLogo + '</h1>' + '<a class="mobile menu-link" href="#" rel="icon"><span class="hide-text">MENU</span></a><nav id="anp-global-menu" class="menu-global" role="navigation">' + anpGlobalMenuVars.globalMenu + '</nav>' );
 	
 	} else {
 
