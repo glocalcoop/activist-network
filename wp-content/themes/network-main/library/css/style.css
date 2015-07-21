@@ -706,46 +706,75 @@ hr {
     border-top: 1px solid #b8b6b2;
     padding: 20px 0; }
 
-/* line 4, ../sass/modules/_header.scss */
+/* line 3, ../sass/modules/_header.scss */
 .header-global {
   background: #fcfdf9; }
-
-/* line 8, ../sass/modules/_header.scss */
-.domain-logo {
-  display: none;
-  float: left;
-  margin-right: 15px; }
+  /* line 6, ../sass/modules/_header.scss */
+  .header-global .site-title {
+    display: none;
+    margin: 0 15px 0 0;
+    padding: 0;
+    line-height: 1; }
+    @media (min-width: 769px) {
+      /* line 6, ../sass/modules/_header.scss */
+      .header-global .site-title {
+        display: block;
+        float: left;
+        margin-right: 1.75788%;
+        width: 17.32172%; }
+        /* line 41, ../sass/partials/neat/grid/_span-columns.scss */
+        .header-global .site-title:last-child {
+          margin-right: 0; } }
+    /* line 19, ../sass/modules/_header.scss */
+    .header-global .site-title img {
+      fill: #333231;
+      max-height: 40px; }
+    /* line 23, ../sass/modules/_header.scss */
+    .header-global .site-title:hover img {
+      fill: #00a99d; }
+    /* line 27, ../sass/modules/_header.scss */
+    .header-global .site-title a {
+      display: inline-block;
+      vertical-align: middle;
+      padding: .5em;
+      border: 2px solid #fff;
+      color: #fff; }
+    /* line 37, ../sass/modules/_header.scss */
+    .header-global .site-title.network-logo a {
+      border: none;
+      padding: 0; }
   @media (min-width: 769px) {
-    /* line 8, ../sass/modules/_header.scss */
-    .domain-logo {
-      display: block; } }
-  /* line 14, ../sass/modules/_header.scss */
-  .domain-logo img {
-    fill: #333231;
-    max-height: 40px;
-    width: auto; }
-  /* line 19, ../sass/modules/_header.scss */
-  .domain-logo:hover img {
-    fill: #00a99d; }
-  /* line 22, ../sass/modules/_header.scss */
-  .domain-logo h1.site-title {
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 0;
-    padding: 5px;
-    border: 2px solid #4d4c4a; }
+    /* line 44, ../sass/modules/_header.scss */
+    .header-global .nav-global {
+      display: block;
+      float: left;
+      margin-right: 1.75788%;
+      width: 100%; }
+      /* line 41, ../sass/partials/neat/grid/_span-columns.scss */
+      .header-global .nav-global:last-child {
+        margin-right: 0; } }
+  @media (min-width: 1025px) {
+    /* line 44, ../sass/modules/_header.scss */
+    .header-global .nav-global {
+      display: block;
+      float: left;
+      margin-right: 1.75788%;
+      width: 80.9204%; }
+      /* line 41, ../sass/partials/neat/grid/_span-columns.scss */
+      .header-global .nav-global:last-child {
+        margin-right: 0; } }
 
-/* line 33, ../sass/modules/_header.scss */
+/* line 65, ../sass/modules/_header.scss */
 .nav-anchors {
   margin: 0; }
-  /* line 35, ../sass/modules/_header.scss */
+  /* line 67, ../sass/modules/_header.scss */
   .nav-anchors li {
     display: inline-block;
     margin: 0; }
-    /* line 38, ../sass/modules/_header.scss */
+    /* line 70, ../sass/modules/_header.scss */
     .nav-anchors li:last-child {
       float: right; }
-  /* line 42, ../sass/modules/_header.scss */
+  /* line 74, ../sass/modules/_header.scss */
   .nav-anchors .anchor-menu {
     font-size: 18px;
     font-size: 1.125rem;
@@ -762,12 +791,12 @@ hr {
       display: inline-block;
       color: inherit;
       vertical-align: middle; }
-    /* line 48, ../sass/modules/_header.scss */
+    /* line 80, ../sass/modules/_header.scss */
     .nav-anchors .anchor-menu:before {
       float: right;
       margin-left: 7px;
       margin-top: 2px; }
-  /* line 54, ../sass/modules/_header.scss */
+  /* line 86, ../sass/modules/_header.scss */
   .nav-anchors .anchor-search {
     font-size: 22px;
     font-size: 1.375rem;
@@ -785,78 +814,78 @@ hr {
       color: inherit;
       vertical-align: middle; }
 
-/* line 66, ../sass/modules/_header.scss */
+/* line 98, ../sass/modules/_header.scss */
 .nav-global {
   background: transparent;
   position: relative; }
-  /* line 69, ../sass/modules/_header.scss */
+  /* line 101, ../sass/modules/_header.scss */
   .nav-global a {
     color: #333231; }
-  /* line 72, ../sass/modules/_header.scss */
+  /* line 104, ../sass/modules/_header.scss */
   .nav-global a:hover {
     color: #00a99d; }
-  /* line 75, ../sass/modules/_header.scss */
+  /* line 107, ../sass/modules/_header.scss */
   .nav-global .search-form {
     float: right;
     border-top: 1px solid #f5f3f0; }
-  /* line 80, ../sass/modules/_header.scss */
+  /* line 112, ../sass/modules/_header.scss */
   .nav-global .menu {
     position: absolute;
     z-index: 4;
     left: 0;
     top: 60px;
     background: #fff; }
-    /* line 86, ../sass/modules/_header.scss */
+    /* line 118, ../sass/modules/_header.scss */
     .nav-global .menu a {
       padding: 10px 20px;
       color: #333231;
       border-bottom: 1px solid #e6e4df; }
-    /* line 91, ../sass/modules/_header.scss */
+    /* line 123, ../sass/modules/_header.scss */
     .nav-global .menu:first-child a {
       border-top: 1px solid #e6e4df; }
-    /* line 94, ../sass/modules/_header.scss */
+    /* line 126, ../sass/modules/_header.scss */
     .nav-global .menu a:focus,
     .nav-global .menu a:hover {
       background: #333231;
       color: #fff; }
 
 @media (min-width: 769px) {
-  /* line 111, ../sass/modules/_header.scss */
-  .domain-logo {
+  /* line 143, ../sass/modules/_header.scss */
+  .site-title {
     display: none; }
 
-  /* line 115, ../sass/modules/_header.scss */
+  /* line 147, ../sass/modules/_header.scss */
   .nav-anchors {
     display: none; }
 
-  /* line 120, ../sass/modules/_header.scss */
+  /* line 152, ../sass/modules/_header.scss */
   .nav-global .search-form {
     border: 0;
     padding: 5px 0; }
-  /* line 124, ../sass/modules/_header.scss */
+  /* line 156, ../sass/modules/_header.scss */
   .nav-global .menu {
     position: static;
     padding-right: 5px;
     background: transparent; }
-    /* line 128, ../sass/modules/_header.scss */
+    /* line 160, ../sass/modules/_header.scss */
     .nav-global .menu li {
       font-size: 16px;
       font-size: 1rem; }
-    /* line 131, ../sass/modules/_header.scss */
+    /* line 163, ../sass/modules/_header.scss */
     .nav-global .menu > li a {
       border: 0;
       padding: 20px 10px; }
-    /* line 135, ../sass/modules/_header.scss */
+    /* line 167, ../sass/modules/_header.scss */
     .nav-global .menu a:focus,
     .nav-global .menu a:hover {
       background: transparent;
       color: #00a99d; }
-    /* line 140, ../sass/modules/_header.scss */
+    /* line 172, ../sass/modules/_header.scss */
     .nav-global .menu li.current-menu-item,
     .nav-global .menu li.current_page_item,
     .nav-global .menu li.current-page-ancestor {
       position: relative; }
-      /* line 145, ../sass/modules/_header.scss */
+      /* line 177, ../sass/modules/_header.scss */
       .nav-global .menu li.current-menu-item:after,
       .nav-global .menu li.current_page_item:after,
       .nav-global .menu li.current-page-ancestor:after {
@@ -872,83 +901,83 @@ hr {
         border-bottom-color: #f5f3f0;
         border-width: 10px;
         margin-left: -10px; }
-      /* line 160, ../sass/modules/_header.scss */
+      /* line 192, ../sass/modules/_header.scss */
       .nav-global .menu li.current-menu-item a,
       .nav-global .menu li.current_page_item a,
       .nav-global .menu li.current-page-ancestor a {
         color: #333231;
         font-weight: bold; }
-      /* line 167, ../sass/modules/_header.scss */
+      /* line 199, ../sass/modules/_header.scss */
       .nav-global .menu li.current-menu-item li a,
       .nav-global .menu li.current_page_item li a,
       .nav-global .menu li.current-page-ancestor li a {
         font-weight: 300; }
-        /* line 169, ../sass/modules/_header.scss */
+        /* line 201, ../sass/modules/_header.scss */
         .nav-global .menu li.current-menu-item li a:hover, .nav-global .menu li.current-menu-item li a:focus,
         .nav-global .menu li.current_page_item li a:hover,
         .nav-global .menu li.current_page_item li a:focus,
         .nav-global .menu li.current-page-ancestor li a:hover,
         .nav-global .menu li.current-page-ancestor li a:focus {
           color: #00a99d; }
-      /* line 175, ../sass/modules/_header.scss */
+      /* line 207, ../sass/modules/_header.scss */
       .nav-global .menu li.current-menu-item li:after,
       .nav-global .menu li.current_page_item li:after,
       .nav-global .menu li.current-page-ancestor li:after {
         border: none; }
-  /* line 182, ../sass/modules/_header.scss */
+  /* line 214, ../sass/modules/_header.scss */
   .nav-global .sub-menu {
     left: -10px; }
-    /* line 184, ../sass/modules/_header.scss */
+    /* line 216, ../sass/modules/_header.scss */
     .nav-global .sub-menu li a {
       padding: 10px 20px; }
-    /* line 187, ../sass/modules/_header.scss */
+    /* line 219, ../sass/modules/_header.scss */
     .nav-global .sub-menu a:first-child {
       border-top: 0; }
 
-  /* line 196, ../sass/modules/_header.scss */
+  /* line 228, ../sass/modules/_header.scss */
   li.current-menu-item a:hover,
   li.current_page_item a:hover {
     color: #333231;
     cursor: default; } }
-/* line 208, ../sass/modules/_header.scss */
+/* line 240, ../sass/modules/_header.scss */
 .nav-local {
   background: #4d4c4a;
   height: 44px; }
-  /* line 211, ../sass/modules/_header.scss */
+  /* line 243, ../sass/modules/_header.scss */
   .nav-local .search-form {
     float: right;
     margin: 0 5px; }
-  /* line 215, ../sass/modules/_header.scss */
+  /* line 247, ../sass/modules/_header.scss */
   .nav-local #searchform #searchsubmit {
     background: #00a99d;
     border-color: #00a99d; }
-  /* line 219, ../sass/modules/_header.scss */
+  /* line 251, ../sass/modules/_header.scss */
   .nav-local .nav-anchors a {
     padding: 11px 0; }
-  /* line 222, ../sass/modules/_header.scss */
+  /* line 254, ../sass/modules/_header.scss */
   .nav-local .menu li {
     font-size: 100%;
     text-transform: uppercase;
     letter-spacing: 1px; }
-    /* line 226, ../sass/modules/_header.scss */
+    /* line 258, ../sass/modules/_header.scss */
     .nav-local .menu li a {
       padding: 11px 15px;
       color: #00a99d; }
-      /* line 229, ../sass/modules/_header.scss */
+      /* line 261, ../sass/modules/_header.scss */
       .nav-local .menu li a:hover {
         color: #fff;
         background: #00a99d; }
-    /* line 234, ../sass/modules/_header.scss */
+    /* line 266, ../sass/modules/_header.scss */
     .nav-local .menu li.current-menu-item a {
       background: #00a99d;
       color: #fff; }
 
 @media (min-width: 769px) {
-  /* line 247, ../sass/modules/_header.scss */
+  /* line 279, ../sass/modules/_header.scss */
   .nav-local .menu li a {
     color: #fff;
     padding: 14px 15px; }
-  /* line 253, ../sass/modules/_header.scss */
+  /* line 285, ../sass/modules/_header.scss */
   .nav-local .sub-menu li a {
     color: #00a99d; } }
 /* line 3, ../sass/modules/_footer.scss */
@@ -1385,42 +1414,42 @@ styles and our css is cleaner and more scalable. */
   font-size: 14px;
   font-size: 0.875rem; }
 
-/* line 60, ../sass/modules/_menus.scss */
+/* line 59, ../sass/modules/_menus.scss */
 .js .menu,
 .js .sub-menu {
   max-height: 0;
   overflow: hidden; }
-  /* line 64, ../sass/modules/_menus.scss */
+  /* line 63, ../sass/modules/_menus.scss */
   .js .menu.active,
   .js .sub-menu.active {
     max-height: 480px;
     overflow: visible; }
 
 @media (min-width: 769px) {
-  /* line 78, ../sass/modules/_menus.scss */
+  /* line 77, ../sass/modules/_menus.scss */
   .js .menu,
   .js .sub-menu {
     max-height: none;
     overflow: visible; }
-  /* line 83, ../sass/modules/_menus.scss */
+  /* line 82, ../sass/modules/_menus.scss */
   .js .sub-menu {
     display: none; }
-  /* line 86, ../sass/modules/_menus.scss */
+  /* line 85, ../sass/modules/_menus.scss */
   .js li:hover .sub-menu {
     display: block; }
 
-  /* line 91, ../sass/modules/_menus.scss */
+  /* line 90, ../sass/modules/_menus.scss */
   .menu {
     background: none;
     border: 0;
     width: auto; }
-    /* line 95, ../sass/modules/_menus.scss */
+    /* line 94, ../sass/modules/_menus.scss */
     .menu li {
       display: inline-block;
       margin-right: -2px;
       position: relative; }
 
-  /* line 102, ../sass/modules/_menus.scss */
+  /* line 101, ../sass/modules/_menus.scss */
   .sub-menu {
     background: #fff;
     position: absolute;
@@ -1428,32 +1457,32 @@ styles and our css is cleaner and more scalable. */
     top: 100%;
     left: 0;
     width: 12em; }
-    /* line 109, ../sass/modules/_menus.scss */
+    /* line 108, ../sass/modules/_menus.scss */
     .sub-menu li {
       display: block; }
-    /* line 112, ../sass/modules/_menus.scss */
+    /* line 111, ../sass/modules/_menus.scss */
     .sub-menu a {
       padding: 11px 0; } }
-/* line 128, ../sass/modules/_menus.scss */
+/* line 121, ../sass/modules/_menus.scss */
 .toggle {
   float: right; }
-  /* line 130, ../sass/modules/_menus.scss */
+  /* line 123, ../sass/modules/_menus.scss */
   .toggle li {
     display: inline-block;
     color: #00a99d;
     padding: 3px 8px;
     text-transform: uppercase;
     letter-spacing: 1px; }
-    /* line 136, ../sass/modules/_menus.scss */
+    /* line 129, ../sass/modules/_menus.scss */
     .toggle li.is-on {
       background: #fff;
       color: #333231; }
-    /* line 140, ../sass/modules/_menus.scss */
+    /* line 133, ../sass/modules/_menus.scss */
     .toggle li:hover {
       background: #fff;
       cursor: pointer; }
 
-/* line 151, ../sass/modules/_menus.scss */
+/* line 144, ../sass/modules/_menus.scss */
 .filter,
 .sort {
   max-height: 2.5em;
@@ -1465,7 +1494,7 @@ styles and our css is cleaner and more scalable. */
   -moz-transition: max-height 0.25s ease;
   transition: max-height 0.25s ease; }
   @media (min-width: 481px) {
-    /* line 151, ../sass/modules/_menus.scss */
+    /* line 144, ../sass/modules/_menus.scss */
     .filter,
     .sort {
       display: block;
@@ -1477,7 +1506,7 @@ styles and our css is cleaner and more scalable. */
       .sort:last-child {
         margin-right: 0; } }
   @media (min-width: 1025px) {
-    /* line 151, ../sass/modules/_menus.scss */
+    /* line 144, ../sass/modules/_menus.scss */
     .filter,
     .sort {
       display: block;
@@ -1488,12 +1517,12 @@ styles and our css is cleaner and more scalable. */
       .filter:last-child,
       .sort:last-child {
         margin-right: 0; } }
-  /* line 161, ../sass/modules/_menus.scss */
+  /* line 154, ../sass/modules/_menus.scss */
   .filter:hover,
   .sort:hover {
     max-height: 10em;
     cursor: pointer; }
-  /* line 165, ../sass/modules/_menus.scss */
+  /* line 158, ../sass/modules/_menus.scss */
   .filter li,
   .sort li {
     line-height: 2.5em;
@@ -1508,12 +1537,12 @@ styles and our css is cleaner and more scalable. */
     text-overflow: ellipsis;
     font-size: 16px;
     font-size: 1rem; }
-    /* line 177, ../sass/modules/_menus.scss */
+    /* line 170, ../sass/modules/_menus.scss */
     .filter li:hover,
     .sort li:hover {
       background: #00dccc;
       color: #fff; }
-    /* line 181, ../sass/modules/_menus.scss */
+    /* line 174, ../sass/modules/_menus.scss */
     .filter li.is-on,
     .sort li.is-on {
       font-size: 16px;
@@ -1535,36 +1564,36 @@ styles and our css is cleaner and more scalable. */
         display: inline-block;
         color: inherit;
         vertical-align: middle; }
-      /* line 190, ../sass/modules/_menus.scss */
+      /* line 183, ../sass/modules/_menus.scss */
       .filter li.is-on:before,
       .sort li.is-on:before {
         float: right; }
 
-/* line 200, ../sass/modules/_menus.scss */
+/* line 193, ../sass/modules/_menus.scss */
 .pagination,
 .wp-prev-next {
   margin: 1.1em 0 2.2em; }
 
-/* line 204, ../sass/modules/_menus.scss */
+/* line 197, ../sass/modules/_menus.scss */
 .pagination {
   clear: both;
   border-top: 1px solid #b8b6b2;
   padding-top: 12px; }
-  /* line 208, ../sass/modules/_menus.scss */
+  /* line 201, ../sass/modules/_menus.scss */
   .pagination ul {
     display: inline-block;
     white-space: nowrap;
     padding: 0;
     clear: both;
     margin: 1px; }
-    /* line 214, ../sass/modules/_menus.scss */
+    /* line 207, ../sass/modules/_menus.scss */
     .pagination ul li {
       padding: 0;
       margin: 0;
       float: left;
       display: inline;
       overflow: hidden; }
-      /* line 220, ../sass/modules/_menus.scss */
+      /* line 213, ../sass/modules/_menus.scss */
       .pagination ul li a, .pagination ul li span {
         margin: 0;
         text-decoration: none;
@@ -1575,15 +1604,15 @@ styles and our css is cleaner and more scalable. */
         padding: .5em;
         min-width: 1em;
         display: block; }
-      /* line 231, ../sass/modules/_menus.scss */
+      /* line 224, ../sass/modules/_menus.scss */
       .pagination ul li span.current {
         font-weight: bold; }
 
 /* fallback previous & next links */
-/* line 246, ../sass/modules/_menus.scss */
+/* line 239, ../sass/modules/_menus.scss */
 .wp-prev-next .prev-link {
   float: left; }
-/* line 250, ../sass/modules/_menus.scss */
+/* line 243, ../sass/modules/_menus.scss */
 .wp-prev-next .next-link {
   float: right; }
 
