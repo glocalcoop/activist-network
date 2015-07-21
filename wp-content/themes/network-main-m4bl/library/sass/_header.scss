@@ -1,16 +1,16 @@
 .header-global {
 	background-color: $black;
 
-	h1.network-name {
+	h1.site-title {
 
-		border-color: $white;
+		
 		margin-right: 20px;
 
 		a {
 			color: $white !important;
+			border-color: $white;
 		}
 
-		z-index: 5000;
 	}
 
 	nav.nav-global {
