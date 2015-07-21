@@ -30,7 +30,7 @@ function anp_global_menu_register_scripts() {
             'mainSite'  => is_main_site(),
             'mainSiteURL'   => get_blog_details(1)->siteurl,
             'mainSiteName'  => get_blog_details(1)->blogname,
-            'globalSiteLogo'    => '<h1 id="main-site-logo" class="site-title"><a href="' . get_blog_details(1)->siteurl . '">' . get_blog_details(1)->blogname . '</a></h1>',
+            'globalSiteLogo'    => '<a href="' . get_blog_details(1)->siteurl . '">' . get_blog_details(1)->blogname . '</a>',
             'globalMenu'    => anp_global_menu_get_main_menu(),
             'globalMenuMobile' => '<a class="mobile" href="#">' . get_blog_details(1)->blogname . '</a>',
             'prependMenu'   => '<ul class="nav-anchors js-anchors"><li><a href="#menu-main-navigation" class="anchor-menu" title="menu">' . get_blog_details(1)->blogname . '</a></li><li><a href="#search-global" class="anchor-search" title="search"></a></li></ul>',
