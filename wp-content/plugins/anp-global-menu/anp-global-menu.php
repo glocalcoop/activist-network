@@ -16,6 +16,7 @@ License: GPL
 // Considerations:
 // Styling
 // Location
+// Custom mark-up
 
 /**
  * 

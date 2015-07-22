@@ -50,7 +50,7 @@ require_once( 'library/custom-functions.php' );
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/library/customizer.php';
+//require get_template_directory() . '/library/customizer.php';
 
 
 /************* THUMBNAIL SIZE OPTIONS *************/
@@ -172,47 +172,47 @@ MENUS & NAVIGATION
 // wp menus
 add_theme_support( 'menus' );
 
-// registering wp3+ menus
-register_nav_menus(
-	array(
-		'secondary-nav' => __( 'The Secondary Menu', 'glocal-theme' ),   // secondary nav in header
-		'utility-nav' => __( 'The Utility Menu', 'glocal-theme' ),   // utility nav in header
-	)
-);
+// // registering wp3+ menus
+// register_nav_menus(
+// 	array(
+// 		'secondary-nav' => __( 'The Secondary Menu', 'glocal-theme' ),   // secondary nav in header
+// 		'utility-nav' => __( 'The Utility Menu', 'glocal-theme' ),   // utility nav in header
+// 	)
+// );
 
-// the secondary menu
-function bones_secondary_nav() {
-	// display the wp3 menu if available
-	wp_nav_menu(array(
-		'container' => false,                           // remove nav container
-		'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
-		'menu' => __( 'The Secondary Menu', 'glocal-theme' ),  // nav name
-		'menu_class' => 'nav second-nav clearfix',         // adding custom nav class
-		'theme_location' => 'second-nav',                 // where it's located in the theme
-		'before' => '',                                 // before the menu
-		'after' => '',                                  // after the menu
-		'link_before' => '',                            // before each link
-		'link_after' => '',                             // after each link
-		'depth' => 0                                  // limit the depth of the nav
-	));
-} /* end bones secondary nav */
+// // the secondary menu
+// function bones_secondary_nav() {
+// 	// display the wp3 menu if available
+// 	wp_nav_menu(array(
+// 		'container' => false,                           // remove nav container
+// 		'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
+// 		'menu' => __( 'The Secondary Menu', 'glocal-theme' ),  // nav name
+// 		'menu_class' => 'nav second-nav clearfix',         // adding custom nav class
+// 		'theme_location' => 'second-nav',                 // where it's located in the theme
+// 		'before' => '',                                 // before the menu
+// 		'after' => '',                                  // after the menu
+// 		'link_before' => '',                            // before each link
+// 		'link_after' => '',                             // after each link
+// 		'depth' => 0                                  // limit the depth of the nav
+// 	));
+// } /* end bones secondary nav */
 
-// the utility menu
-function bones_utility_nav() {
-	// display the wp3 menu if available
-	wp_nav_menu(array(
-		'container' => false,                           // remove nav container
-		'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
-		'menu' => __( 'Utility Menu', 'glocal-theme' ),  // nav name
-		'menu_class' => 'nav utility-nav clearfix',         // adding custom nav class
-		'theme_location' => 'utility-nav',                 // where it's located in the theme
-		'before' => '',                                 // before the menu
-		'after' => '',                                  // after the menu
-		'link_before' => '',                            // before each link
-		'link_after' => '',                             // after each link
-		'depth' => 0                                  // limit the depth of the nav
-	));
-} /* end bones secondary nav */
+// // the utility menu
+// function bones_utility_nav() {
+// 	// display the wp3 menu if available
+// 	wp_nav_menu(array(
+// 		'container' => false,                           // remove nav container
+// 		'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
+// 		'menu' => __( 'Utility Menu', 'glocal-theme' ),  // nav name
+// 		'menu_class' => 'nav utility-nav clearfix',         // adding custom nav class
+// 		'theme_location' => 'utility-nav',                 // where it's located in the theme
+// 		'before' => '',                                 // before the menu
+// 		'after' => '',                                  // after the menu
+// 		'link_before' => '',                            // before each link
+// 		'link_after' => '',                             // after each link
+// 		'depth' => 0                                  // limit the depth of the nav
+// 	));
+// } /* end bones secondary nav */
 
 
 /*************************

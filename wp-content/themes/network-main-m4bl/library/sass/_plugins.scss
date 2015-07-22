@@ -1,0 +1,69 @@
+// Slider
+
+.bx-wrapper {
+
+	.bx-controls-direction a {
+		color: $brand-primary !important;
+	}
+
+}
+
+// Home Widgets
+
+// Network Sites
+
+.home {
+
+	.widget_glocal_network_sites_widget {
+
+		.sites-list li {
+			background-color: $black !important;
+			color: $brand-primary;
+
+			a {
+				color: $brand-primary !important;
+			}
+		}
+
+	}
+
+	// Events
+
+	.widget_em_widget {
+		li {
+			background-color: $black !important;
+			color: $brand-primary;
+
+			a {
+				color: $brand-primary !important;
+			}
+		}
+	}
+
+	.widget_glocal_network_posts_widget {
+		li {
+			background-color: $base8;
+		}
+	}
+
+	.widget_glocal_network_post_highlights_widget {
+		h2 {
+			color: $text-color;
+		}
+	}
+
+
+}
+
+// Events
+div.css-search div.em-search-main .em-search-submit {
+	background-color: $brand-primary;
+	color: $text-color;
+
+	&:hover,
+	&:focus {
+		background-color: $black;
+	}
+}
+
+
