@@ -8,7 +8,11 @@
 	// display tabs
 	foreach ($tabs as $key => $name)
 		printf(
+<<<<<<< HEAD
 			'<a href="options-general.php?page=mlang&amp;tab=%1$s" id="nav-tab-%1$s" class="nav-tab %2$s">%3$s</a>',
+=======
+			'<a href="options-general.php?page=mlang&amp;tab=%s" class="nav-tab %s">%s</a>',
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 			$key,
 			$key == $this->active_tab ? 'nav-tab-active' : '',
 			$name

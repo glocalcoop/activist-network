@@ -2,7 +2,8 @@
 
 	<div class="wrap">
 
-		<a class="domain-logo global-logo logo-NYCP" href="<?php bloginfo( 'name' ); ?>">
+		<h1 class="site-title <?php if( get_header_image() ) { echo 'network-logo'; } ?>">
+			<a class="domain-logo global-logo logo-NYCP" href="<?php bloginfo( 'url' ); ?>">
             <?php 
             if( get_header_image() ) { ?>
             
@@ -10,11 +11,11 @@
             
             <?php } else { ?>
             
-                <h1 class="site-title"><a class="domain-logo global-logo logo-NYCP" href="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+                <?php bloginfo( 'name' ); ?>
             
             <?php } ?>
-                
-        </a>
+	        </a>
+	    </h1>
 
 		<nav role="navigation" class="nav-global">
 			<ul class="nav-anchors js-anchors">

@@ -13,7 +13,7 @@ function anp_global_menu_register_scripts() {
 
 
     if ( !is_admin() ) {
-         wp_register_script( 'anp-global-menu-js', $plugin_url . '/js/anpGlobalMenu.js', array('jquery'), null, true );
+         wp_register_script( 'anp-global-menu-js', $plugin_url . '/assets/js/anpGlobalMenu.js', array('jquery'), null, true );
     }
 
     // Retrieve menu options
@@ -30,17 +30,20 @@ function anp_global_menu_register_scripts() {
             'mainSite'  => is_main_site(),
             'mainSiteURL'   => get_blog_details(1)->siteurl,
             'mainSiteName'  => get_blog_details(1)->blogname,
-            'globalSiteLogo'    => '<a id="global-logo" class="domain-logo global-logo" href="' . get_blog_details(1)->siteurl . '"><h1 class="site-title">' . get_blog_details(1)->blogname . '</h1></a>',
+            'globalSiteLogo'    => '<a href="' . get_blog_details(1)->siteurl . '">' . get_blog_details(1)->blogname . '</a>',
             'globalMenu'    => anp_global_menu_get_main_menu(),
+            'globalMenuMobile' => '<a class="mobile" href="#">' . get_blog_details(1)->blogname . '</a>',
             'prependMenu'   => '<ul class="nav-anchors js-anchors"><li><a href="#menu-main-navigation" class="anchor-menu" title="menu">' . get_blog_details(1)->blogname . '</a></li><li><a href="#search-global" class="anchor-search" title="search"></a></li></ul>',
         );
 
     } else {
 
         // Send error info
-        $menuData['globalMenuStatus'] = 'Error';
-        $menuData['errorCode'] = 'BOO! ' . $return->get_error_code();
-        $menuData['errorMessage'] = $return->get_error_message();
+        $menuData = array(
+            'globalMenuStatus' => 'Error',
+            'errorCode' => 'BOO! ' . $return->get_error_code(),
+            'errorMessage' => $return->get_error_message(),
+        );
 
     }
 
@@ -61,7 +64,7 @@ function anp_global_menu_register_scripts() {
 
     }
 
-    $anp_global_menu_css = $plugin_url . '/css/anp-global-menu-style.css';
+    $anp_global_menu_css = $plugin_url . '/assets/css/style.css';
 
     // Provide filter to override style
     $anp_global_menu_css = apply_filters( 'anp_global_menu_css_override', $anp_global_menu_css );

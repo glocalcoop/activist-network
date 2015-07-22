@@ -22,7 +22,11 @@ class PLL_WPML_Config {
 	public function __construct() {
 		$this->init();
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 	/*
 	 * access to the single instance of the class
 	 *
@@ -268,7 +272,11 @@ class PLL_WPML_Config {
 			foreach ($context['custom-type'] as $pt) {
 				if ($pt['attributes']['translate'] == 1 && !$hide)
 					$types[$pt['value']] = $pt['value'];
+<<<<<<< HEAD
 				else
+=======
+				elseif ($hide)
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 					unset ($types[$pt['value']]); // the author decided what to do with the post type so don't allow the user to change this
 			}
 		}
@@ -289,7 +297,11 @@ class PLL_WPML_Config {
 			foreach ($context['taxonomy'] as $tax) {
 				if ($tax['attributes']['translate'] == 1 && !$hide)
 					$taxonomies[$tax['value']] = $tax['value'];
+<<<<<<< HEAD
 				else
+=======
+				elseif ($hide)
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 					unset ($taxonomies[$tax['value']]); // the author decided what to do with the taxonomy so don't allow the user to change this
 			}
 		}

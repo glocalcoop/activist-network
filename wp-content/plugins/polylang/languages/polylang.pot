@@ -141,7 +141,11 @@ msgstr ""
 
 #: admin/admin-filters.php:126
 #@ polylang
+<<<<<<< HEAD
 msgid "WordPress default"
+=======
+msgid "Wordpress default"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 msgstr ""
 
 #: admin/admin.php:167
@@ -292,7 +296,11 @@ msgstr ""
 
 #: admin/view-tab-lang.php:66
 #@ polylang
+<<<<<<< HEAD
 msgid "WordPress Locale for the language (for example: en_US). You will need to install the .mo file for this language."
+=======
+msgid "Wordpress Locale for the language (for example: en_US). You will need to install the .mo file for this language."
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 msgstr ""
 
 #: admin/view-tab-lang.php:70
@@ -637,4 +645,8 @@ msgstr ""
 #: include/switcher.php:26
 #@ polylang
 msgid "Hides languages with no translation"
+<<<<<<< HEAD
 msgstr ""
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2

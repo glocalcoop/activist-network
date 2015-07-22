@@ -1,0 +1,28 @@
+// Buttons
+
+button,
+.button,
+#searchform #searchsubmit {
+	background-color: $brand-primary;
+	color: $text-color;
+
+	&:link {
+		color: $text-color;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $black;
+		color: $brand-primary !important;
+		border: none;
+	}
+}
+
+// Links
+
+a,
+a:link {
+	color: $text-color;
+}
+
+

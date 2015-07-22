@@ -50,10 +50,13 @@ class PLL_Admin extends PLL_Base {
 		// adds a 'settings' link in the plugins table
 		add_filter('plugin_action_links_' . POLYLANG_BASENAME, array(&$this, 'plugin_action_links'));
 		add_action('in_plugin_update_message-' . POLYLANG_BASENAME, array(&$this, 'plugin_update_message'), 10, 2);
+<<<<<<< HEAD
 
 		// Lingotek
 		if (!defined('PLL_LINGOTEK_AD') || PLL_LINGOTEK_AD)
 			require(POLYLANG_DIR . '/lingotek/lingotek.php');
+=======
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 	}
 
 	/*
@@ -153,6 +156,7 @@ class PLL_Admin extends PLL_Base {
 	if (typeof jQuery != 'undefined') {
 		(function($){
 			$.ajaxPrefilter(function (options, originalOptions, jqXHR) {
+<<<<<<< HEAD
 				if (options.url.indexOf(ajaxurl) != -1) {
 					if ( typeof options.data === 'undefined' ) {
 						options.data = options.type === "get" ? '<?php echo $str;?>' : {<?php echo $arr;?>};
@@ -172,6 +176,13 @@ class PLL_Admin extends PLL_Base {
 							options.data = $.extend(options.data, {<?php echo $arr;?>});
 						}
 					}
+=======
+				if ( typeof options.data === 'undefined' ) {
+					options.data = options.type === "get" ? '<?php echo $str;?>' : {<?php echo $arr;?>};
+				}
+				else {
+					options.data = typeof options.data === "string" ? '<?php echo $str;?>'+options.data : $.extend(options.data, {<?php echo $arr;?>});
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 				}
 			});
 		})(jQuery)

@@ -147,7 +147,11 @@ class PLL_Model {
 	 */
 	public function get_languages_list($args = array()) {
 		if (false === $languages = $this->cache->get('languages')) {
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 			// create the languages from taxonomies
 			if ((defined('PLL_CACHE_LANGUAGES') && !PLL_CACHE_LANGUAGES) || false === ($languages = get_transient('pll_languages_list'))) {
 				$languages = get_terms('language', array('hide_empty' => false, 'orderby'=> 'term_group'));
@@ -162,14 +166,22 @@ class PLL_Model {
 					foreach ($languages as $k => $v) {
 						$languages[$k] = new PLL_Language($v, $term_languages[$v->name]);
 					}
+<<<<<<< HEAD
 
+=======
+					
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 					$languages = apply_filters('pll_languages_list', $languages);
 				}
 				else {
 					$languages = array(); // in case something went wrong
 				}
 			}
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 			// create the languages directly from arrays stored in transients
 			else {
 				foreach ($languages as $k => $v) {
@@ -398,11 +410,19 @@ class PLL_Model {
 
 		// make sure we return only translations (thus we allow plugins to store other informations in the array)
 		$translations = array_intersect_key($translations, array_flip($this->get_languages_list(array('fields' => 'slug'))));
+<<<<<<< HEAD
 
 		// make sure to return at least the passed post or term in its translation array
 		if (empty($translations) && $type && $lang = call_user_func(array(&$this, 'get_'.$type.'_language'), $id))
 			$translations = array($lang->slug => $id);
 
+=======
+		
+		// make sure to return at least the passed post or term in its translation array
+		if (empty($translations) && $type && $lang = call_user_func(array(&$this, 'get_'.$type.'_language'), $id))
+			$translations = array($lang->slug => $id);
+		
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 		return $translations;
 	}
 
@@ -616,8 +636,13 @@ class PLL_Model {
 			if (!empty($this->options['media_support']))
 				$post_types['attachement'] = 'attachment';
 
+<<<<<<< HEAD
 			if (!empty($this->options['post_types']) && is_array($this->options['post_types']))
 				$post_types = array_merge($post_types,  array_combine($this->options['post_types'], $this->options['post_types']));
+=======
+			if (is_array($this->options['post_types']))
+				$post_types = array_merge($post_types,  $this->options['post_types']);
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 			$post_types = apply_filters('pll_get_post_types', $post_types , false);
 		}
@@ -667,8 +692,13 @@ class PLL_Model {
 		if (empty($taxonomies)) {
 			$taxonomies = array('category' => 'category', 'post_tag' => 'post_tag');
 
+<<<<<<< HEAD
 			if (!empty($this->options['taxonomies']) && is_array($this->options['taxonomies']))
 				$taxonomies = array_merge($taxonomies, array_combine($this->options['taxonomies'], $this->options['taxonomies']));
+=======
+			if (is_array($this->options['taxonomies']))
+				$taxonomies = array_merge($taxonomies, $this->options['taxonomies']);
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 			$taxonomies = apply_filters('pll_get_taxonomies', $taxonomies, false);
 		}
@@ -698,10 +728,16 @@ class PLL_Model {
 	 * @return array array of registered taxonomy names
 	 */
 	public function get_filtered_taxonomies($filter = true) {
+<<<<<<< HEAD
 		if (did_action('after_setup_theme'))
 			static $taxonomies = null;
 
 		if (empty($taxonomies)) {
+=======
+		static $taxonomies = null;
+
+		if (null === $taxonomies || !did_action('after_setup_theme')) {
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 			$taxonomies = array('post_format' => 'post_format');
 			$taxonomies = apply_filters('pll_filtered_taxonomies', $taxonomies, false);
 		}
@@ -790,7 +826,11 @@ class PLL_Model {
 		global $wpdb;
 
 		$term_name = trim(wp_unslash($term_name));
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 		$select = "SELECT t.term_id FROM $wpdb->terms AS t";
 		$join = " INNER JOIN $wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id";
 		$join .= $this->join_clause('term');

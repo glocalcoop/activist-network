@@ -18,7 +18,7 @@
 				
 				<section class="post-body">
 					<h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<div class="post-image"><?php echo get_the_post_thumbnail($page->ID, 'medium'); ?></div>
+					<div class="post-image"><?php echo get_the_post_thumbnail($post->ID, 'medium'); ?></div>
 					<div class="post-excerpt"><?php the_excerpt(); ?></div>
 				</section>
 				

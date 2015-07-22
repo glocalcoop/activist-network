@@ -3,10 +3,17 @@ msgstr ""
 "Project-Id-Version: Polylang v1.1dev10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
+<<<<<<< HEAD
 "PO-Revision-Date: 2015-06-15 07:25+0700\n"
 "Last-Translator: ajoull <ajoull@gmail.com>\n"
 "Language-Team: ajoull <ajoull@gmail.com>\n"
 "Language: id_ID\n"
+=======
+"PO-Revision-Date: 2015-02-14 09:19+0100\n"
+"Last-Translator: ajoull <ajoull@gmail.com>\n"
+"Language-Team: ajoull <ajoull@gmail.com>\n"
+"Language: Bahasa Indonesia\n"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,7 +23,11 @@ msgstr ""
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ../\n"
 "X-Textdomain-Support: yes\n"
+<<<<<<< HEAD
 "X-Generator: Poedit 1.8.1\n"
+=======
+"X-Generator: Poedit 1.5.4\n"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 "X-Poedit-SearchPath-0: .\n"
 
 # @ polylang
@@ -28,9 +39,15 @@ msgid ""
 "on a daily basis, a FAQ, as well as a documentation for programmers to adapt "
 "their plugins and themes."
 msgstr ""
+<<<<<<< HEAD
 "Polylang disediakan beserta %sdokumentasi%s yang lengkap (tapi dalam Bahasa "
 "Inggris). Dokumentasi tersebut meliputi informasi tentang cara mengatur "
 "situs multi-bahasa Anda dan menggunakannya sehari-hari, sebuah FAQ, serta "
+=======
+"Polylang disedikan beserta %sdokumentasi%s yang lengkap (tapi dalam Bahasa "
+"Inggris). Dokumentasi tersebut meliputi informasi tentang cara mengeset "
+"situs multi-bahasa Anda dan menggunakannya sehari-hari, sebuah FAQ, dan juga "
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 "dokumentasi untuk para programer untuk mengadaptasi plugin dan theme buatan "
 "mereka."
 
@@ -43,8 +60,12 @@ msgid ""
 msgstr ""
 "Anda juga akan menemukan informasi bermanfaat di dalam %sforum pendukung "
 "(support forum)%s. Walaupun demikian, lakukan terlebih dahulu pencarian "
+<<<<<<< HEAD
 "mengenai topik Anda yang inginkan sebelum membuat topik baru di forum "
 "tersebut."
+=======
+"mengenai topik Anda inginkan sebelum membuat topik baru di forum tersebut."
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-about.php:16
@@ -61,7 +82,11 @@ msgstr ""
 #, php-format
 msgid "If you wonder how you can help the project, just %sread this%s."
 msgstr ""
+<<<<<<< HEAD
 "Jika Anda ingin tahu bagaimana agar bisa berkontribusi dalam proyek ini, "
+=======
+"Jika ingin tahu bagaimana caranya Anda bisa berkontribusi dalam proyek ini, "
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 "silahkan %sbaca ini%s."
 
 # @ polylang
@@ -71,7 +96,11 @@ msgid ""
 "the author are greatly appreciated."
 msgstr ""
 "Akhir kata, jika Anda menyukai plugin ini ataupun merasa bahwa plugin ini "
+<<<<<<< HEAD
 "membantu bisnis Anda, donasi kepada pengembangnya sangat dihargai."
+=======
+"membantu bisnis Anda, donasi kepada pembuatnya sangat dihargai."
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin-filters-post.php:115 admin/admin.php:90 admin/settings.php:70
@@ -97,7 +126,11 @@ msgstr "Paksa tautan ke halaman depan"
 # @ polylang
 #: include/switcher.php:25
 msgid "Hides the current language"
+<<<<<<< HEAD
 msgstr "Sembunyikan bahasa saat ini"
+=======
+msgstr "Sembunyikan bahasa yang berlaku"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: include/switcher.php:30
@@ -156,7 +189,11 @@ msgstr "Bahasa untuk Admin"
 # @ polylang
 #: admin/admin-filters.php:126
 msgid "WordPress default"
+<<<<<<< HEAD
 msgstr "Bawaan WordPress (default)"
+=======
+msgstr "Setelan asli WordPress"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin.php:167 admin/settings.php:102
@@ -166,7 +203,11 @@ msgstr "Pengaturan"
 # @ polylang
 #: admin/admin-filters.php:160 admin/admin-filters.php:169
 msgid "Upgrading language files&#8230;"
+<<<<<<< HEAD
 msgstr "Memperbarui berkas-berkas bahasa&#8230;"
+=======
+msgstr "Meng-upgrade file bahasa&#8230;"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/settings.php:62
@@ -176,12 +217,20 @@ msgstr "Tentang Polylang"
 # @ polylang
 #: admin/settings.php:78
 msgid "Strings translations"
+<<<<<<< HEAD
 msgstr "Terjemahan string"
+=======
+msgstr "Penerjemahan string"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/settings.php:101
 msgid "Strings translation"
+<<<<<<< HEAD
 msgstr "Penerjemahan string"
+=======
+msgstr "Terjemahan string"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin-model.php:244
@@ -240,12 +289,20 @@ msgstr "Tulisan-tulisan lekat (sticky posts)"
 # @ polylang
 #: admin/settings.php:324
 msgid "Published date"
+<<<<<<< HEAD
 msgstr "Tanggal terbit"
+=======
+msgstr "Tanggal diterbitkan"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/settings.php:325
 msgid "Post format"
+<<<<<<< HEAD
 msgstr "Format pos"
+=======
+msgstr "Format penulisan"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/settings.php:326
@@ -286,13 +343,21 @@ msgstr "Pilih sebuah bahasa"
 #: admin/view-tab-lang.php:51
 msgid "You can choose a language in the list or directly edit it below."
 msgstr ""
+<<<<<<< HEAD
 "Anda dapat memilih satu bahasa dari daftar yang ada atau langsung "
+=======
+"Anda dapat memilih suatu bahasa dari daftar yang ada atau langsung "
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 "menyuntingnya di bawah ini."
 
 # @ polylang
 #: admin/table-languages.php:74 admin/view-tab-lang.php:55
 msgid "Full name"
+<<<<<<< HEAD
 msgstr "Nama bahasa"
+=======
+msgstr "Sebutan lengkap"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-lang.php:57
@@ -370,7 +435,11 @@ msgstr "Bersihkan database terjemahan semua string"
 # @ polylang
 #: admin/view-tab-settings.php:14
 msgid "Default language"
+<<<<<<< HEAD
 msgstr "Bahasa bawaan <i>(default)</i>"
+=======
+msgstr "Bahasa default"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:29
@@ -379,7 +448,11 @@ msgid ""
 "to set them all to default language ?"
 msgstr ""
 "Terdapat tulisan, halaman, kategori atau tag tanpa set bahasa. Anda ingin "
+<<<<<<< HEAD
 "menyetel semua itu ke bahasa bawaan <i>(dafault language)</i>?"
+=======
+"mengeset itu semua ke bahasa setelan awal <i>(dafault language)</i>?"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:149
@@ -398,14 +471,22 @@ msgstr ""
 # @ polylang
 #: admin/view-tab-settings.php:37
 msgid "URL modifications"
+<<<<<<< HEAD
 msgstr "Modifikasi URL"
+=======
+msgstr "Pemodifikasian URL"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:93
 msgid "Hide URL language information for default language"
+<<<<<<< HEAD
 msgstr ""
 "Sembunyikan URL informasi bahasa untuk bahasa bawaan <i>(default language)</"
 "i>"
+=======
+msgstr "Sembunyikan informasi bahasa URL untuk bahasa <i>default</i>"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:162
@@ -503,7 +584,11 @@ msgstr "Judul:"
 #. translators: plugin header field 'Description'
 #: polylang.php:0
 msgid "Adds multilingual capability to WordPress"
+<<<<<<< HEAD
 msgstr "Tambahkan kapabilitas multi-bahasa pada WordPress"
+=======
+msgstr "Tambahkan kapabilitas multi-bahasa ke WordPress"
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: install/install.php:24
@@ -517,14 +602,24 @@ msgstr ""
 msgid ""
 "Polylang has been deactivated because you upgraded from a too old version."
 msgstr ""
+<<<<<<< HEAD
 "Polylang telah dinonaktifkan karena Anda meningkatkannya dari versi yang "
 "sangat lama."
+=======
+"Polylang telah dinonaktifkan karena Anda meng-<i>upgrade</i> nya dari versi "
+"yang sangat lama."
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: install/upgrade.php:78
 #, php-format
 msgid "Please upgrade first to %s before ugrading to %s."
+<<<<<<< HEAD
 msgstr "Mohon tingkatkan dahulu ke %s sebelum meningkatkannya ke %s."
+=======
+msgstr ""
+"Mohon <i>upgrade</i> dahulu ke %s sebelum meng-<i>upgrade</i> nya ke %s."
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/table-string.php:109
@@ -539,7 +634,11 @@ msgstr "Tampilkan semua grup"
 # @ polylang
 #: admin/table-languages.php:59
 msgid "You are about to permanently delete this language. Are you sure?"
+<<<<<<< HEAD
 msgstr "Anda akan menghapus permanen bahasa ini. Anda yakin?"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-strings.php:12
@@ -547,8 +646,11 @@ msgid ""
 "Use this to remove unused strings from database, for example after a plugin "
 "has been uninstalled."
 msgstr ""
+<<<<<<< HEAD
 "Gunakan ini untuk menghapus string-string dari database, misalnya setelah "
 "suatu plugin baru di-uninstall."
+=======
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:226
@@ -557,55 +659,94 @@ msgid ""
 "translations in the case of taxonomies and page parent) of meta content "
 "between the translations of a post or page."
 msgstr ""
+<<<<<<< HEAD
 "Opsi-opsi sinkronisasi memungkinkan untuk menjaga nilai (atau terjemahan, "
 "jika pada taksonomi dan induk halaman) dari isi meta agar tepat sama antara "
 "terjemahan pos atau halaman."
+=======
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin-model.php:248
 msgid "The language code contains invalid characters"
+<<<<<<< HEAD
 msgstr "Kode bahasa berisi karakter yang tidak valid"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:43
 msgid "The language is set from content"
+<<<<<<< HEAD
 msgstr "Bahasa disetel dari konten"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:46
 msgid "Posts, pages, categories and tags urls are not modified."
+<<<<<<< HEAD
 msgstr "URL untuk pos, halaman, kategori dan tag tidak berubah."
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:51
 msgid "The language is set from the directory name in pretty permalinks"
+<<<<<<< HEAD
 msgstr "Bahasa disetel dari nama direktori pada permalink cantik"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:54 admin/view-tab-settings.php:63
 #: admin/view-tab-settings.php:110 admin/view-tab-settings.php:119
 msgid "Example:"
+<<<<<<< HEAD
 msgstr "Contoh:"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:60
 msgid "The language is set from the subdomain name in pretty permalinks"
+<<<<<<< HEAD
 msgstr "Bahasa disetel dari nama subdomain pada permalink cantik."
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:69
 msgid "The language is set from different domains"
+<<<<<<< HEAD
 msgstr "Bahasa disetel dari domain yang berbeda."
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:107
 msgid "Remove /language/ in pretty permalinks"
+<<<<<<< HEAD
 msgstr "Hilangkan /language/ pada permalink cantik"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:116
 msgid "Keep /language/ in pretty permalinks"
+<<<<<<< HEAD
 msgstr "Biarkan /language/ pada permalink cantik"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:131
@@ -613,66 +754,116 @@ msgid ""
 "The front page url contains the language code instead of the page name or "
 "page id"
 msgstr ""
+<<<<<<< HEAD
 "URL halaman depan berisi kode bahasa, seharusnya nama halaman atau id halaman"
+=======
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:139
 #, php-format
 msgid "Example: %s instead of %s"
+<<<<<<< HEAD
 msgstr "Contoh: %s dan bukan %s"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin-model.php:38
 msgid "Impossible to add the language."
+<<<<<<< HEAD
 msgstr "Tidak dimungkinkan menambah bahasa."
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin-model.php:66
 msgid "Language added."
+<<<<<<< HEAD
 msgstr "Bahasa ditambahkan."
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin-model.php:146
 msgid "Language deleted."
+<<<<<<< HEAD
 msgstr "Bahasa dihapus."
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin-model.php:227
 msgid "Language updated."
+<<<<<<< HEAD
 msgstr "Bahasa diperbarui."
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/settings.php:239
 msgid "Translations updated."
+<<<<<<< HEAD
 msgstr "Terjemahan diperbarui."
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-lang.php:72
 msgid "Language code - preferably 2-letters ISO 639-1  (for example: en)"
+<<<<<<< HEAD
 msgstr "Kode bahasa - sebaiknya 2-letters ISO 639-1  (for example: en)"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin-filters.php:203
 msgid "The chosen static front page must be translated in all languages."
 msgstr ""
+<<<<<<< HEAD
 "Halaman depan statis terpilih harus diterjemahkan ke dalam semua bahasa."
+=======
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/admin-strings.php:60
 msgid "Widget text"
+<<<<<<< HEAD
 msgstr "Teks widget"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/settings.php:52
 msgid "Recommended plugins"
+<<<<<<< HEAD
 msgstr "Daftar plugin yang disarankan"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: admin/view-tab-settings.php:51
 msgid "The language is set from the code in the URL"
+<<<<<<< HEAD
 msgstr "Bahasa disetel dari kode pada URL"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
 
 # @ polylang
 #: include/switcher.php:26
 msgid "Hides languages with no translation"
+<<<<<<< HEAD
 msgstr "Sembunyikan bahasa yang tak memiliki terjemahan"
+=======
+msgstr ""
+>>>>>>> bc2eb663d075e7d5adde91b15739950076b25eb2
