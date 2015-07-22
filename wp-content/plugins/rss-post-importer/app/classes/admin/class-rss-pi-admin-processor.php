@@ -43,9 +43,19 @@ class rssPIAdminProcessor {
 		// formulate the feeds array
 		$feeds = $this->process_feeds($ids);
 
-		// import settings
+		// import CSV file
 		if ( isset($_FILES['import_csv']) && $settings['is_key_valid'] ) {
 			$feeds = $this->import_csv($feeds);
+		}
+
+		// import OPML file
+		// @since v2.1.3
+		if ( isset($_FILES['import_opml']) && is_uploaded_file($_FILES['import_opml']['tmp_name']) ) {
+			$opml = new Rss_pi_opml();
+			$feeds = $opml->import($feeds);
+			$opml_errors = $opml->errors;
+		} else {
+			$opml_errors = array();
 		}
 
 		// save and reload the options
@@ -58,7 +68,8 @@ class rssPIAdminProcessor {
 				'settings-updated' => 'true',
 				// yield the routine for import feeds via AJAX when needed
 				'import' => ( $_POST['save_to_db'] == 'true' ),
-				'message' => $invalid_api_key ? 2 : 1
+				'message' => $invalid_api_key ? 2 : 1,
+//				'opml_errors' => $opml_errors ? urlencode(implode('<br/>',$opml_errors)) : '',
 			),
 			$rss_post_importer->page_link
 		));
@@ -253,7 +264,7 @@ class rssPIAdminProcessor {
 					'category_id' => (isset($_POST[$id . '-category_id'])) ? $_POST[$id . '-category_id'] : '',
 					'tags_id' => (isset($_POST[$id . '-tags_id'])) ? $_POST[$id . '-tags_id'] : '',
 					'keywords' => array_map('trim',$keywords),
-					'strip_html' => $_POST[$id . '-strip_html']
+					'strip_html' => (isset($_POST[$id . '-strip_html'])) ? $_POST[$id . '-strip_html'] : ''
 				));
 			}
 		}
