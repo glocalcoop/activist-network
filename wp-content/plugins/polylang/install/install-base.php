@@ -49,14 +49,22 @@ class PLL_Install_Base {
 
 			foreach ($wpdb->get_col("SELECT blog_id FROM $wpdb->blogs") as $blog_id) {
 				switch_to_blog($blog_id);
+<<<<<<< HEAD
 				$what == 'activate' ? $this->_activate() : $this->_deactivate();
+=======
+				$what == 'activate' ? $this->_activate($networkwide) : $this->_deactivate($networkwide);
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 			}
 			restore_current_blog();
 		}
 
 		// single blog
 		else
+<<<<<<< HEAD
 			$what == 'activate' ? $this->_activate() : $this->_deactivate();
+=======
+			$what == 'activate' ? $this->_activate($networkwide) : $this->_deactivate($networkwide);
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 	}
 
 	/*
@@ -73,7 +81,11 @@ class PLL_Install_Base {
 	 *
 	 * @since 0.5
 	 */
+<<<<<<< HEAD
 	protected function _activate() {
+=======
+	protected function _activate($networkwide) {
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 		// can be overriden in child class
 	}
 
@@ -91,7 +103,11 @@ class PLL_Install_Base {
 	 *
 	 * @since 0.5
 	 */
+<<<<<<< HEAD
 	protected function _deactivate() {
+=======
+	protected function _deactivate($networkwide) {
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 		// can be overriden in child class
 	}
 
@@ -104,7 +120,11 @@ class PLL_Install_Base {
 	 */
 	public function wpmu_new_blog($blog_id) {
 		switch_to_blog($blog_id);
+<<<<<<< HEAD
 		$this->_activate();
+=======
+		$this->_activate($networkwide); // FIXME will avoid flushing rules
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 		restore_current_blog();
 	}
 }

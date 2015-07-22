@@ -10,6 +10,7 @@ jQuery(document).ready(function($) {
 		$('#lang_name').val(selected[0]);
 	});
 
+<<<<<<< HEAD
 	// strings translations
 	// save translations when pressing enter
 	$('.translation input').keypress( function(event){
@@ -19,6 +20,8 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+=======
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 	// settings page
 	// manages visibility of fields
 	$("input[name='force_lang']").change(function() {

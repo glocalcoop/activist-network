@@ -1,0 +1,42 @@
+.sidebar {
+
+	.widget {
+		padding: 0;
+		background: $base8 !important;
+
+		&>ul,
+		form {
+			padding: 20px;
+		}
+
+		p,
+		li,
+		a {
+			color: $text-color;
+		}
+
+		li a:hover {
+			background-color: $brand-primary;
+		}
+	}
+
+	.widget_search {
+		padding: 10px 20px;
+
+		#searchsubmit {
+			@extend .button;
+			background-color: $brand-primary;
+			color: $black;
+		}
+	}
+
+	.widgettitle {
+		background-color: $black;
+		padding: 20px;
+
+		color: $brand-primary;
+		text-transform: uppercase;
+		font-size: 1.75rem;
+
+	}
+}

@@ -53,9 +53,12 @@ class PLL_Frontend extends PLL_Base {
 		$c = array('Content', 'Url', 'Url', 'Domain');
 		$class = 'PLL_Choose_Lang_' . $c[$this->options['force_lang']];
 		$this->choose_lang = new $class($this);
+<<<<<<< HEAD
 
 		// need to load nav menu class early to correctly define the locations in the customizer when the language is set from the content
 		$this->nav_menu = new PLL_Frontend_Nav_Menu($this);
+=======
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 	}
 
 	/*
@@ -67,6 +70,12 @@ class PLL_Frontend extends PLL_Base {
 		// filters
 		$this->filters = new PLL_Frontend_Filters($this);
 		$this->filters_search = new PLL_Frontend_Filters_Search($this);
+<<<<<<< HEAD
+=======
+
+		// nav menu
+		$this->nav_menu = new PLL_Frontend_Nav_Menu($this);
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 	}
 
 	/*
@@ -115,8 +124,13 @@ class PLL_Frontend extends PLL_Base {
 			if (empty($taxonomies) && ($query->is_author || $query->is_post_type_archive || $query->is_date || $query->is_search)) {
 				$query->is_tax = false;
 				unset($query->queried_object); // FIXME useless?
+<<<<<<< HEAD
 			}
 
+=======
+			} 
+					
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 			// move the language tax_query at the end to avoid it being the queried object
 			if (!empty($taxonomies) && 'language' == reset( $queried_taxonomies )) {
 				$query->tax_query->queried_terms['language'] = array_shift($query->tax_query->queried_terms);

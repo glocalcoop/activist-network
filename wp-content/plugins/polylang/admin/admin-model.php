@@ -236,8 +236,13 @@ class PLL_Admin_Model extends PLL_Model {
 	 * @see PLL_Admin_Model::add_language
 	 */
 	protected function validate_lang($args, $lang = null) {
+<<<<<<< HEAD
 		// validate locale with the same pattern as WP 4.3. See #28303
 		if ( !preg_match('#^[a-z]{2,3}(?:_[A-Z]{2})?(?:_[a-z0-9]+)?$#', $args['locale'], $matches))
+=======
+		// validate locale
+		if ( !preg_match('#^[A-Za-z_]+$#', $args['locale']))
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 			add_settings_error('general', 'pll_invalid_locale', __('Enter a valid WordPress locale', 'polylang'));
 
 		// validate slug characters

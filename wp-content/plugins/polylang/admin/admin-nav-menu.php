@@ -5,7 +5,11 @@
  *
  * @since 1.2
  */
+<<<<<<< HEAD
 class PLL_Admin_Nav_Menu extends PLL_Nav_Menu {
+=======
+class PLL_Admin_Nav_Menu {
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 
 	/*
 	 * constructor: setups filters and actions
@@ -15,13 +19,24 @@ class PLL_Admin_Nav_Menu extends PLL_Nav_Menu {
 	 * @param object $polylang
 	 */
 	public function __construct(&$polylang) {
+<<<<<<< HEAD
 		parent::__construct($polylang);
 
+=======
+		$this->model = &$polylang->model;
+		$this->options = &$polylang->options;
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 		$this->theme = get_option( 'stylesheet' );
 
 		// integration in the WP menu interface
 		add_action('admin_init', array(&$this, 'admin_init')); // after Polylang upgrade
 
+<<<<<<< HEAD
+=======
+		// integration with WP customizer
+		add_action('customize_register', array(&$this, 'create_nav_menu_locations'), 5);
+
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 		// protection against #24802
 		// backward compatibility with WP < 4.1
 		if (version_compare($GLOBALS['wp_version'], '4.1', '<'))
@@ -41,7 +56,11 @@ class PLL_Admin_Nav_Menu extends PLL_Nav_Menu {
 
 		// translation of menus based on chosen locations
 		add_filter('pre_update_option_theme_mods_' . $this->theme, array($this, 'update_nav_menu_locations'));
+<<<<<<< HEAD
 		add_filter('theme_mod_nav_menu_locations', array($this, 'nav_menu_locations'), 20);
+=======
+		add_filter('theme_mod_nav_menu_locations', array($this, 'nav_menu_locations'), 20);			
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 		add_action('delete_nav_menu', array(&$this, 'delete_nav_menu'));
 
 		// filter _wp_auto_add_pages_to_menu by language
@@ -55,6 +74,26 @@ class PLL_Admin_Nav_Menu extends PLL_Nav_Menu {
 	}
 
 	/*
+<<<<<<< HEAD
+=======
+	 * create temporary nav menu locations (one per location and per language) for all non-default language
+	 *
+	 * @since 1.2
+	 */
+	public function create_nav_menu_locations() {
+		global $_wp_registered_nav_menus;
+
+		if (isset($_wp_registered_nav_menus)) {
+			foreach ($_wp_registered_nav_menus as $loc => $name)
+				foreach ($this->model->get_languages_list() as $lang)
+					$arr[$loc . (pll_default_language() == $lang->slug ? '' : '___' . $lang->slug)] = $name . ' ' . $lang->name;
+
+			$_wp_registered_nav_menus = $arr;
+		}
+	}
+
+	/*
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 	 * language switcher metabox
 	 * The checkbox and all hidden fields are important
 	 * thanks to John Morris for his very interesting post http://www.johnmorrisonline.com/how-to-add-a-fully-functional-custom-meta-box-to-wordpress-navigation-menus/
@@ -258,10 +297,17 @@ class PLL_Admin_Nav_Menu extends PLL_Nav_Menu {
 				}
 			}
 		}
+<<<<<<< HEAD
 
 		update_option('polylang', $this->options);
 	}
 
+=======
+		
+		update_option('polylang', $this->options);
+	}
+	
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 	/*
 	 * filters _wp_auto_add_pages_to_menu by language
 	 *

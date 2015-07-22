@@ -3,80 +3,42 @@
 /************* REGISTER MENUS ***************/
 
 function glocal_register_menus() {
-    register_nav_menu('network-menu',__( 'Global Network Menu' ));
+    register_nav_menu('network-menu',__( 'Main Menu' ));
     unregister_nav_menu( 'main-nav' );
+    unregister_nav_menu( 'secondary-nav' );
+    unregister_nav_menu( 'utility-nav' );
 }
 add_action( 'init', 'glocal_register_menus' );
+
 
 function glocal_global_nav($menu) {
 	// display the wp3 menu if available
 	wp_nav_menu(array(
-		'container' => false,                           // remove nav container
-		'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
-		'menu' => __( 'Global Network Menu', 'glocal-global-menu' ),  // nav name
-		'menu_class' => 'menu clearfix',                // adding custom nav class
-        'menu_id' => 'menu-main-navigation',            // menu id
-		'theme_location' => $menu,                      // where it's located in the theme
-		'before' => '',                                 // before the menu
-		'after' => '',                                  // after the menu
-		'link_before' => '',                            // before each link
-		'link_after' => '',                             // after each link
-		'depth' => 0,                                   // limit the depth of the nav
-		'fallback_cb' => 'false'                        // fallback function - FALSE
+    'container' => false,                           // remove nav container
+    'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
+    'menu' => __( 'Global Network Menu', 'glocal-global-menu' ),  // nav name
+    'menu_class' => 'menu clearfix',                // adding custom nav class
+    'menu_id' => 'menu-main-navigation',            // menu id
+    'theme_location' => $menu,                      // where it's located in the theme
+    'before' => '',                                 // before the menu
+    'after' => '',                                  // after the menu
+    'link_before' => '',                            // before each link
+    'link_after' => '',                             // after each link
+    'depth' => 0,                                   // limit the depth of the nav
+    'fallback_cb' => 'false'                        // fallback function - FALSE
 	));
 } /* end global nav */
 
 
-function get_glocal_global_menu($parameters = []) {
-    
-    /** Default parameters **/
-    $defaults = array(
-        'site_id' => 1,
-        'menu' => 'network-menu',
-    );
-    
-    // Parse & merge parameters with the defaults - http://codex.wordpress.org/Function_Reference/wp_parse_args
-    $settings = wp_parse_args( $parameters, $defaults );
-    
-    // Strip out tags
-    foreach($settings as $parameter => $value) {
-        // Strip everything
-        $settings[$parameter] = strip_tags($value);
-    }
-    
-    // Extract each parameter as its own variable
-    extract( $settings, EXTR_SKIP );
-    
-	//store the current blog_id being viewed
-	global $blog_id;
-	$current_blog_id = $blog_id;
+/************* REMOVE BAD CIVI STYLING *****************/
+// Uses civicrm override hook
 
-	//switch to the main blog which will almost always have an ID of 1
-	switch_to_blog($site_id);
-    
-    //get the menu ID for each menu location
-    $locations = get_nav_menu_locations();
-    //get the menu ID for the location passed into function
-    $menu_id = $locations[$menu];
-    
-    if($menu_id) {
-        // Check that the function exists
-        if(function_exists('glocal_global_nav')) {
-            //output the WordPress navigation menu
-            glocal_global_nav($menu);
-        }
-        else {
-            echo "Error: function 'glocal_global_nav' doesn't exist.";
-        }
-    }
-    else {
-        echo '<!-- There is no menu in position ' . $menu . ' -->';
-    }
-    
-	//switch back to the current blog being viewed
-	switch_to_blog($current_blog_id);
-	 
+function tc_civicrm_theme_css( ) {
+    $tc_css = get_bloginfo( 'stylesheet_directory' ) .'/css/plugins/civicrm.css';
+    return $tc_css;
 }
+add_filter( 'tc_civicss_override', 'tc_civicrm_theme_css' );
+
 
 /************* CUSTOM WIDGET FOR DISPLAYING SOCIAL LINKS ***************/
 
@@ -159,6 +121,61 @@ function glocal_hack_wp_title_for_home( $title ) {
   return $title;
 }
 
+/************* HELPERS ***************/
+
+
+/************* GET GLOBAL NAV ***************/
+
+function get_glocal_global_menu($parameters = []) {
+    
+    /** Default parameters **/
+    $defaults = array(
+        'site_id' => 1,
+        'menu' => 'network-menu',
+    );
+    
+    // Parse & merge parameters with the defaults - http://codex.wordpress.org/Function_Reference/wp_parse_args
+    $settings = wp_parse_args( $parameters, $defaults );
+    
+    // Strip out tags
+    foreach($settings as $parameter => $value) {
+        // Strip everything
+        $settings[$parameter] = strip_tags($value);
+    }
+    
+    // Extract each parameter as its own variable
+    extract( $settings, EXTR_SKIP );
+    
+  //store the current blog_id being viewed
+  global $blog_id;
+  $current_blog_id = $blog_id;
+
+  //switch to the main blog which will almost always have an ID of 1
+  switch_to_blog($site_id);
+    
+    //get the menu ID for each menu location
+    $locations = get_nav_menu_locations();
+    //get the menu ID for the location passed into function
+    $menu_id = $locations[$menu];
+    
+    if($menu_id) {
+        // Check that the function exists
+        if(function_exists('glocal_global_nav')) {
+            //output the WordPress navigation menu
+            glocal_global_nav($menu);
+        }
+        else {
+            echo "Error: function 'glocal_global_nav' doesn't exist.";
+        }
+    }
+    else {
+        echo '<!-- There is no menu in position ' . $menu . ' -->';
+    }
+    
+  //switch back to the current blog being viewed
+  switch_to_blog($current_blog_id);
+   
+}
 
 /************* GET GLOBAL NAVIGATION FROM MAIN SITE (SITE 1) (MULTISITE) *****************/
 
@@ -197,16 +214,6 @@ function glocal_get_site_image($site_id) {
 
 	return $site_image->thumbnail_url;
 }
-
-
-
-/************* REMOVE BAD CIVI STYLING *****************/
-
-function tc_civicrm_theme_css( ) {
-    $tc_css = get_bloginfo( 'stylesheet_directory' ) .'/css/plugins/civicrm.css';
-    return $tc_css;
-}
-add_filter( 'tc_civicss_override', 'tc_civicrm_theme_css' );
 
 
 ?>

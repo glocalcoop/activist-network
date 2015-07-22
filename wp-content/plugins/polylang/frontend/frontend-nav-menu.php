@@ -5,8 +5,13 @@
  *
  * @since 1.2
  */
+<<<<<<< HEAD
 class PLL_Frontend_Nav_Menu extends PLL_Nav_Menu {
 	public $curlang;
+=======
+class PLL_Frontend_Nav_Menu {
+	public $options, $curlang;
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 
 	/*
 	 * constructor
@@ -14,8 +19,12 @@ class PLL_Frontend_Nav_Menu extends PLL_Nav_Menu {
 	 * @since 1.2
 	 */
 	public function __construct(&$polylang) {
+<<<<<<< HEAD
 		parent::__construct($polylang);
 
+=======
+		$this->options = &$polylang->options;
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 		$this->curlang = &$polylang->curlang;
 
 		// split the language switcher menu item in several language menu items
@@ -131,7 +140,10 @@ class PLL_Frontend_Nav_Menu extends PLL_Nav_Menu {
 
 	/*
 	 * fills the theme nav menus locations with the right menu in the right language
+<<<<<<< HEAD
 	 * needs to wait for the language to be defined
+=======
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 	 *
 	 * @since 1.2
 	 *
@@ -139,6 +151,7 @@ class PLL_Frontend_Nav_Menu extends PLL_Nav_Menu {
 	 * @return array|bool modified list of nav menus locations
 	 */
 	public function nav_menu_locations($menus) {
+<<<<<<< HEAD
 		if (is_array($menus) && !empty($this->curlang)) {
 			// first get multilingual menu locations from DB
 			$theme = get_option('stylesheet');
@@ -146,6 +159,9 @@ class PLL_Frontend_Nav_Menu extends PLL_Nav_Menu {
 			foreach ($menus as $loc => $menu)
 				$menus[$loc] = empty($this->options['nav_menus'][$theme][$loc][$this->curlang->slug]) ? 0 : $this->options['nav_menus'][$theme][$loc][$this->curlang->slug];
 
+=======
+		if (is_array($menus)) {
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 			// support for theme customizer
 			// let's look for multilingual menu locations directly in $_POST as there are not in customizer object
 			if (isset($_POST['wp_customize'], $_POST['customized'])) {
@@ -159,13 +175,27 @@ class PLL_Frontend_Nav_Menu extends PLL_Nav_Menu {
 								$loc = substr($loc, 0, $pos);
 								$menus[$loc] = $c;
 							}
+<<<<<<< HEAD
 							elseif ($this->curlang->slug == $this->options['default_lang']) {
 								$menus[$loc] = $c;
 							}
+=======
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 						}
 					}
 				}
 			}
+<<<<<<< HEAD
+=======
+
+			// otherwise get multilingual menu locations from DB
+			else {
+				$theme = get_option('stylesheet');
+
+				foreach ($menus as $loc => $menu)
+					$menus[$loc] = empty($this->options['nav_menus'][$theme][$loc][$this->curlang->slug]) ? 0 : $this->options['nav_menus'][$theme][$loc][$this->curlang->slug];
+			}
+>>>>>>> 9553c38f59c9dea537288e79795ecedcc981cf29
 		}
 		return $menus;
 	}
