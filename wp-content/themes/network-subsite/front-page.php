@@ -17,8 +17,6 @@
 			
             <div class="news-articles">
             
-				<?php// query_posts('posts_per_page=10'); ?>
-
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 				<article role="article" class="post siteid-3">
@@ -30,7 +28,7 @@
 					
 					<section class="post-body">
 						<h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<div class="post-image"><?php echo get_the_post_thumbnail($page->ID, 'medium'); ?></div>
+						<div class="post-image"><?php echo get_the_post_thumbnail($post->ID, 'medium'); ?></div>
 						<div class="post-excerpt"><?php the_excerpt(); ?></div>
 					</section>
 					
