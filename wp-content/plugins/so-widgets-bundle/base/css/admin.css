@@ -340,6 +340,10 @@
   -moz-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
+<<<<<<< HEAD
+=======
+  position: static;
+>>>>>>> 0781e44... SO Widgets Bundle Plugin
   opacity: 1;
 }
 .siteorigin-widget-form .media-remove-button.remove-hide {

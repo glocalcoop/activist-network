@@ -41,6 +41,16 @@ abstract class SiteOrigin_Widget_Field_Container_Base extends SiteOrigin_Widget_
 	 * @var bool
 	 */
 	protected $hide;
+<<<<<<< HEAD
+=======
+	/**
+	 * Whether or not this container's fields are rendered within a collapsible container.
+	 *
+	 * @access protected
+	 * @var bool
+	 */
+	protected $collapsible = true;
+>>>>>>> 0781e44... SO Widgets Bundle Plugin
 
 	public function __construct( $base_name, $element_id, $element_name, $field_options, SiteOrigin_Widget $for_widget, $parent_container = array()  ) {
 		parent::__construct( $base_name, $element_id, $element_name, $field_options );
@@ -55,6 +65,15 @@ abstract class SiteOrigin_Widget_Field_Container_Base extends SiteOrigin_Widget_
 		return $label_classes;
 	}
 
+<<<<<<< HEAD
+=======
+	protected function render_field_label() {
+		if ($this->collapsible ) {
+			parent::render_field_label();
+		}
+	}
+
+>>>>>>> 0781e44... SO Widgets Bundle Plugin
 	protected function create_and_render_sub_fields( $values, $parent_container = null, $is_template = false ) {
 		$this->sub_fields = array();
 		if( isset( $parent_container )) {

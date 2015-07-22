@@ -2,7 +2,11 @@
 /*
 Plugin Name: SiteOrigin Widgets Bundle
 Description: A collection of all widgets, neatly bundled into a single plugin. It's also a framework to code your own widgets on top of.
+<<<<<<< HEAD
 Version: 1.3.1
+=======
+Version: 1.4
+>>>>>>> 0781e44... SO Widgets Bundle Plugin
 Author: SiteOrigin
 Author URI: https://siteorigin.com
 Plugin URI: https://siteorigin.com/widgets-bundle/
@@ -10,7 +14,11 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 */
 
+<<<<<<< HEAD
 define('SOW_BUNDLE_VERSION', '1.3.1');
+=======
+define('SOW_BUNDLE_VERSION', '1.4');
+>>>>>>> 0781e44... SO Widgets Bundle Plugin
 define('SOW_BUNDLE_JS_SUFFIX', '.min');
 define('SOW_BUNDLE_BASE_FILE', __FILE__);
 
