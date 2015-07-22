@@ -3,8 +3,10 @@
 /************* REGISTER MENUS ***************/
 
 function glocal_register_menus() {
-    register_nav_menu('network-menu',__( 'Global Network Menu' ));
+    register_nav_menu('network-menu',__( 'Main Menu' ));
     unregister_nav_menu( 'main-nav' );
+    unregister_nav_menu( 'secondary-nav' );
+    unregister_nav_menu( 'utility-nav' );
 }
 add_action( 'init', 'glocal_register_menus' );
 
