@@ -95,7 +95,7 @@ class rssPIAdmin {
 
 		// manage meta data on post deletion and restoring
 		add_action('wp_trash_post', array($this, 'delete_post')); // trashing a post
-		add_action('before_delete_post', array($this, 'delete_post')); // deleting a post permanently
+//		add_action('before_delete_post', array($this, 'delete_post')); // deleting a post permanently
 		add_action('untrash_post', array($this, 'restore_post')); // restoring a post from trash
 
 		// the ajax for adding new feeds (table rows)
@@ -112,6 +112,13 @@ class rssPIAdmin {
 
 		// Add 10 minutes in frequency.
 		add_filter('cron_schedules', array($this, 'rss_pi_cron_add'));
+
+		// trigger on Export
+		if ( isset($_POST['export_opml']) ) {
+			$this->opml = new Rss_pi_opml();
+			$this->opml->export();
+		}
+
 	}
 
 	/**
@@ -209,8 +216,12 @@ class rssPIAdmin {
 	 */
 	function screen() {
 
+		// it'll process any submitted form data
+		// reload the options just in case
+		$this->load_options();
+
 		// display a success message
-		if( isset($_GET['deleted_cache_purged']) || isset($_GET['settings-updated']) || isset($_GET['invalid_api_key']) || isset($_GET['import']) && $_GET['settings-updated'] ) {
+		if ( isset($_GET['deleted_cache_purged']) || isset($_GET['settings-updated']) || isset($_GET['invalid_api_key']) || isset($_GET['import']) && @$_GET['settings-updated'] ) {
 ?>
 		<div id="message" class="updated">
 <?php
@@ -224,17 +235,18 @@ class rssPIAdmin {
 			<p><strong><?php _e('Settings saved.') ?></strong></p>
 <?php
 			}
-			if( isset($_GET['imported']) && $_GET['imported'] ) {
-				$imported = intval($_GET['imported']);
-?>
+// OBSOLETE, we're now doing this via AJAX
+//			if( isset($_GET['imported']) && $_GET['imported'] ) {
+//				$imported = intval($_GET['imported']);
+/*?>
 			<p><strong><?php printf( _n( '%s new post imported.', '%s new posts imported.', $imported, 'rss_pi' ), $imported ); ?></strong></p>
-<?php
-			}
+<?php*/
+//			}
 ?>
 		</div>
 <?php
-			// import feeds via AJAX
-			if( isset($_GET['import']) ) {
+			// import feeds via AJAX but only when Save is done
+			if( isset($_GET['import']) && isset($_GET['settings-updated']) && $_GET['settings-updated'] ) {
 ?>
 <script type="text/javascript">
 <?php
@@ -245,8 +257,8 @@ if ( is_array($this->options['feeds']) ) :
 	endforeach;
 endif;
 ?>
-if (feeds !== undefined) {
-	feeds.set(<?php echo json_encode($ids); ?>);
+if ( feeds !== undefined ) {
+	feeds.set( <?php echo json_encode($ids); ?> );
 }  else {
 	var feeds = <?php echo json_encode($ids); ?>;
 }
@@ -255,7 +267,7 @@ if (feeds !== undefined) {
 			}
 		}
 
-		// display a error message
+		// display an error message
 		if( isset($_GET['message']) && $_GET['message'] > 1 ) {
 ?>
 		<div id="message" class="error">
@@ -267,16 +279,12 @@ if (feeds !== undefined) {
 			<p><strong><?php _e('Invalid API key!', 'rss_api'); ?></strong></p>
 <?php
 				}
-				break;
+//				break;
 			}
 ?>
 		</div>
 <?php
 		}
-
-		// it'll process any submitted form data
-		// reload the options just in case
-		$this->load_options();
 
 		global $rss_post_importer;
 
@@ -320,6 +328,8 @@ if (feeds !== undefined) {
 	 */
 	function ajax_import() {
 		global $rss_post_importer;
+
+		$this->load_options();
 
 		// if there's nothing for processing or invalid data, bail
 		if ( ! isset($_POST['feed']) ) {
@@ -374,6 +384,11 @@ if (feeds !== undefined) {
 		}
 
 		remove_filter('wp_feed_cache_transient_lifetime', array($engine, 'frequency'));
+
+		if ( $items === false ) {
+			// there were an wp_error doing fetch_feed
+			wp_send_json_error(array('url'=>$f['url']));
+		}
 
 		// reformulate import count
 		$imports = intval($this->options['imports']) + $post_count;
