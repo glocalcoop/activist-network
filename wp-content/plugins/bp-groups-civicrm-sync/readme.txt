@@ -3,8 +3,8 @@ Contributors: needle, cuny-academic-commons
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PZSKM8T5ZP3SC
 Tags: civicrm, buddypress, user, groups, sync
 Requires at least: 3.9
-Tested up to: 4.1
-Stable tag: 0.2
+Tested up to: 4.2
+Stable tag: 0.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,10 @@ For versions of *CiviCRM* prior to 4.6-alpha1, this plugin requires the correspo
 
 
 == Changelog ==
+
+= 0.2.1 =
+
+Set "Use Parent Group" to off by default
 
 = 0.2 =
 

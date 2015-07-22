@@ -645,7 +645,7 @@ class BP_Groups_CiviCRM_Sync_Admin {
 		$settings = array();
 
 		// set default parent group setting
-		$settings['parent_group'] = 1;
+		$settings['parent_group'] = 0;
 
 		// set default nesting setting for when BP Group Hierarchy is installed
 		$settings['nesting'] = 1;
