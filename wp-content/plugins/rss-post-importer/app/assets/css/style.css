@@ -186,8 +186,9 @@
 }
 .rss_pi-table code {
 	display: block;
-	float: left;
-	clear: both;
+	display: inline-block;
+	/*float: left;*/
+	/*clear: both;*/
 	padding: 3px 5px;
 	font-size: 0.9em;
 	background: none;

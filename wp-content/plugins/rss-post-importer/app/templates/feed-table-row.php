@@ -54,13 +54,13 @@ if (is_array($f['category_id'])) {
 
 <tr id="display_<?php echo ($f['id']); ?>" class="data-row<?php echo $show; ?>" data-fields="name,url,max_posts">
 	<td class="rss_pi-feed_name">
-		<strong><a href="#" class="toggle-edit" data-target="<?php echo ($f['id']); ?>"><span class="field-name"><?php echo $f['name']; ?></span></a></strong>
+		<strong><a href="#" class="toggle-edit" data-target="<?php echo ($f['id']); ?>"><span class="field-name"><?php echo esc_html(stripslashes($f['name'])); ?></span></a></strong>
 		<div class="row-options">
 			<a href="#" class="toggle-edit" data-target="<?php echo ($f['id']); ?>"><?php _e('Edit', 'rss_pi'); ?></a> | 
 			<a href="#" class="delete-row" data-target="<?php echo ($f['id']); ?>"><?php _e('Delete', 'rss_pi'); ?></a>
 		</div>
 	</td>
-	<td class="rss_pi-feed_url"><span class="field-url"><?php echo $f['url']; ?></span></td>
+	<td class="rss_pi-feed_url"><span class="field-url"><?php echo esc_url(stripslashes($f['url'])); ?></span></td>
 	<td class="rss_pi_feed_max_posts"><span class="field-max_posts"><?php echo $f['max_posts']; ?></span></td>
    <!-- <td width="20%"><?php //echo $category;  ?></td>-->
 </tr>
@@ -70,7 +70,7 @@ if (is_array($f['category_id'])) {
 			<tr>
 				<td><label for="<?php echo ($f['id']); ?>-name"><?php _e("Feed name", 'rss_pi'); ?></label></td>
 				<td>
-					<input type="text" class="field-name" name="<?php echo ($f['id']); ?>-name" id="<?php echo ($f['id']); ?>-name" value="<?php echo ($f['name']); ?>" />
+					<input type="text" class="field-name" name="<?php echo ($f['id']); ?>-name" id="<?php echo ($f['id']); ?>-name" value="<?php echo esc_attr(stripslashes($f['name'])); ?>" />
 				</td>
 			</tr>
 			<tr>
@@ -78,7 +78,7 @@ if (is_array($f['category_id'])) {
 					<label for="<?php echo ($f['id']); ?>-url"><?php _e("Feed url", 'rss_pi'); ?></label>
 					<p class="description">e.g. "http://news.google.com/?output=rss"</p>
 				</td>
-				<td><input type="text" class="field-url" name="<?php echo ($f['id']); ?>-url" id="<?php echo ($f['id']); ?>-url" value="<?php echo ($f['url']); ?>" /></td>
+				<td><input type="text" class="field-url" name="<?php echo ($f['id']); ?>-url" id="<?php echo ($f['id']); ?>-url" value="<?php echo esc_attr(stripslashes($f['url'])); ?>" /></td>
 			</tr>
 			<tr>
 				<td><label for="<?php echo ($f['id']); ?>-max_posts"><?php _e("Max posts / import", 'rss_pi'); ?></label></td>

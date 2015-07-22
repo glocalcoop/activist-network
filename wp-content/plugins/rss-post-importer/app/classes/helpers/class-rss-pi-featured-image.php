@@ -18,13 +18,13 @@ if (!function_exists('media_handle_sideload')) {
 class rssPIFeaturedImage {
 
 	/**
-	 * Sets featured image
+	 * Prepare featured image
 	 * 
 	 * @param object $item Feed item
 	 * @param int $post_id Post id
 	 * @return boolean
 	 */
-	function _set($item, $post_id) {
+	function _prepare($item, $post_id) {
 
 		$content = $item->get_content() != "" ? $item->get_content() : $item->get_description();
 
@@ -69,6 +69,20 @@ class rssPIFeaturedImage {
 		 */
 		// sideload it
 		$featured_id = $this->_sideload( $img_url, $post_id, '' );
+
+		return $featured_id;
+	}
+
+	/**
+	 * Sets featured image
+	 * 
+	 * @param object $item Feed item
+	 * @param int $post_id Post id
+	 * @return boolean
+	 */
+	function _set($item, $post_id) {
+
+		$featured_id = $this->_prepare($item, $post_id);
 
 		if ( ! is_wp_error($featured_id) ) {
 //			add_action('set_rss_pi_featured_image', $featured_id, $post_id);
