@@ -1,10 +1,6 @@
 <?php
 // Template: Front Page
 
-// This template makes heavy use of the Events Manager and the network-latest-posts plugin.
-// Without Events Manager, the events module (module 3) will not appear.
-// Without the network-latest-posts function, the network-wide posts (module 1 and module 2) will not appear
-
 ?>
 
 <?php get_header(); ?>
@@ -14,26 +10,22 @@
 	<div class="wrap">
 
 		<section class="home-start">
+
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
-			<?php  if( 'page' == get_option('show_on_front') ) { ?>
+				<?php 
+				$home_content = get_the_content();
+				if( !empty( $home_content ) ) { ?>
+
+				<article class="home-intro">
+
+					<?php the_content(); ?>
+
+				</article>
 		
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			
-					<?php 
-					$home_content = get_the_content();
-					if( !empty( $home_content ) ) { ?>
+				<?php } ?>
 
-					<article class="home-intro">
-
-						<?php the_content(); ?>
-
-					</article>
-			
-					<?php } ?>
-
-				<?php endwhile; endif; ?>
-			
-			<?php } ?>
+			<?php endwhile; endif; ?>
 			
 		</section>
 
@@ -66,15 +58,7 @@
 
 			dynamic_sidebar( 'home-modules' ); ?>
 
-			<?php
-			
-
-			// $posts = get_posts('post_type=post');
-			// echo "<pre>";
-			// var_dump($news);
-			// echo "</pre>";
-
-			?>
+			<?php ?>
 		</section>
 
 	</div>
