@@ -1,11 +1,11 @@
 <?
 /*
 Plugin Name: Activist Network Global Menu
-Description: Adds global menu to all sites in a multi-site network
+Description: Adds global menu to all sites in a multi-site network. 
 Author: Pea, Glocal
 Author URI: http://glocal.coop
 Version: 0.1
-License: GPL
+License: GPL3
 */
 
 // Check for multisite - DONE
@@ -28,7 +28,7 @@ License: GPL
 $plugin_url =  WP_PLUGIN_URL . '/anp-global-menu';
 $options = array();
 $anp_global_menu_errors = new WP_Error();
-$anp_global_menu_errors_print = 0;
+$anp_global_menu_errors_print = 1;
 
 //If this file is called directly, abort.
 if( !defined( 'WPINC' ) ) {
@@ -40,6 +40,8 @@ if( is_multisite() ) {
 	include_once( 'anp-global-menu-options-render.php' );
 	include_once( 'anp-global-menu-render.php' );
 
+} else {
+	$anp_global_menu_errors->add( 'Not Multisite', __( 'The site is not multisite.', 'glocal-global-menu' ) );
 }
 
 //Print errors
