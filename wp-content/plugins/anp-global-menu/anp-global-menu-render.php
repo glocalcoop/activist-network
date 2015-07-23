@@ -84,6 +84,7 @@ add_action( 'wp_enqueue_scripts', 'anp_global_menu_register_scripts' );
 
 /**
  * Get Main Site
+ * Returns number id of main site
  **/
 
 function anp_global_menu_get_main_site() {
