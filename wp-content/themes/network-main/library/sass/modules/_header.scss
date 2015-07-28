@@ -69,7 +69,10 @@
         margin: 0;
         &:last-child {
             float: right;
-        }   
+        }
+        & > a {
+            color: $white;
+        }
     }
     .anchor-menu {
         @include font-icon-base($family:"ios7-icon"); 
