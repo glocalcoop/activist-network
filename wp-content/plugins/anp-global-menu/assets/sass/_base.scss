@@ -24,6 +24,7 @@
 
 		// Mobile First
 		padding: .5em;
+		margin: 0;
 
 		a {
 			display: block;
@@ -36,7 +37,6 @@
 		}
 
 		// Large
-
 		@media(min-width: $large-screen) {}
 
 	}
@@ -99,14 +99,14 @@
 				opacity: 1;
 
 				margin: 0;
-				padding: .25em 0;
+				padding: 0;
 
 				li {
 					position: relative;
 					display: inline-block;
 					vertical-align: top;
 					white-space: nowrap;
-					padding: 0 .25em;
+					padding: .5em;
 
 					border: none;
 				}
@@ -164,6 +164,8 @@
 		@extend .fa;
 		@extend .fa-bars;
 		@extend .fa-2x;
+
+		margin-top: 10px;
 
 		color: $white;
 
