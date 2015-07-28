@@ -1,0 +1,201 @@
+#anpgm-header { // Limit to anp-global-header namespace
+
+	@include clearfix;
+
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+	z-index: 5;
+
+	a,
+	a:link {
+		text-decoration: none;
+	}
+
+	.anpgm-wrap {
+		@include clearfix;
+		margin: 0 auto;
+		padding: 1em;
+		max-width: $max-width;
+	}
+
+	#anpgm-network-title { // Network Name
+
+		// Mobile First
+		padding: .5em;
+
+		a {
+			display: block;
+		}
+
+		// Medium
+		@media(min-width: $medium-screen) {
+			float: left;
+			margin: 0 30px 0 0;
+		}
+
+		// Large
+
+		@media(min-width: $large-screen) {}
+
+	}
+
+	#anpgm-global-nav { // Global Nav
+
+		// Mobile First
+		.menu {
+			padding: 0;
+			margin: 0;
+
+			max-height: 0;
+			opacity: 0;
+			overflow: hidden;
+
+			li {
+				padding: .25em 0;
+				border-bottom: 1px solid $menu-border;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+
+			a {
+				padding: .25em;
+				display: block;
+			}
+
+		}
+
+		.menu-item-has-children:hover .sub-menu,
+		.menu-item-has-children:focus .sub-menu,
+		&.active .menu {
+			z-index: 10;
+			padding-left: 0;
+			left: 0;
+			max-height: 999px;
+			opacity: 1;
+			overflow: visible;
+		}
+
+		.sub-menu {
+			padding-left: 0;
+			margin-left: 0 !important;
+		}
+
+		// DESKTOP
+		@media(min-width: $medium-screen) {
+
+			float: left;
+			@include transition(.2s);
+
+			.menu {
+
+				// Make main nav visible for bigger screens
+				max-height: 999px;
+				overflow: visible;
+				z-index: 5;
+				opacity: 1;
+
+				margin: 0;
+				padding: .25em 0;
+
+				li {
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					white-space: nowrap;
+					padding: 0 .25em;
+
+					border: none;
+				}
+			}
+
+			.sub-menu {
+				position: absolute;
+
+				// Hide sub-nav for bigger screens until hover/focus
+				max-height: 0;
+				opacity: 0;
+				overflow: hidden;
+
+				li {
+					display: block;
+
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+
+
+			// Show sub-nav on roll-over
+			.menu-item-has-children:hover .sub-menu,
+			.menu-item-has-children:focus .sub-menu,
+
+			// Show sub-nav on click 
+			.active {
+				z-index: 10;
+				padding-left: 0;
+				left: -1px;
+				max-height: 999px;
+				opacity: 1;
+				overflow: visible;
+			}
+
+		}
+
+		// Large
+
+		@media(min-width: $large-screen) {
+			
+		}
+
+	}
+
+
+	/***************************
+	MOBILE NAV STYLES
+	***************************/
+
+	a.menu-link {
+
+		@extend .fa;
+		@extend .fa-bars;
+		@extend .fa-2x;
+
+		color: $white;
+
+		.hide-text {
+			opacity: 0;
+		}
+
+	}
+
+	@media(min-width: $medium-screen) {
+
+		a.menu-link {
+			// Hide mobile menu link on larger screens
+			display: none;
+		}
+
+	}
+
+
+	@media(max-width: $xlarge-screen) {}
+
+	@media(max-width: $large-screen) {}
+
+	@media(max-width: $medium-screen) {}
+
+	@media(max-width: $small-screen) {}
+
+	@media(max-width: $xsmall-screen) {}
+
+	@media(max-width: $tiny-screen) {}
+
+
+}
+
+.admin-bar #anp-global-header .mobile { }

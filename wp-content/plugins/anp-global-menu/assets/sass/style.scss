@@ -1,0 +1,39 @@
+/**
+ * 
+ * Primary stylesheet
+ * Pulls in partials. 
+ * 
+ **/
+
+
+/*********************
+RESET
+**********************/
+
+@import 'reset';
+
+/*********************
+VENDORS
+**********************/
+
+@import "compass/css3";
+@import 'font-awesome/font-awesome';
+
+/*********************
+VARIABLES & MIXINS
+**********************/
+
+@import 'variables';
+@import 'mixins';
+
+/*********************
+BASE
+**********************/
+
+@import 'base';
+
+/*********************
+THEME
+**********************/
+
+@import 'theme';

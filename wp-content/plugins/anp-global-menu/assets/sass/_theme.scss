@@ -1,0 +1,92 @@
+#anpgm-header { // Limit to #anp-global namespace
+
+	background-color: $menu-background; // Main nav background color
+
+	#anpgm-network-title { // Network Name
+
+		// Logo styles
+		border: $white solid 1px;
+		font-family: $font-condensed;
+		font-size: 16px; 
+		color: $white;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+
+		a {
+			color: $white;
+		}
+	}
+
+	#anpgm-global-nav {
+
+		// Top-level menu
+		.menu {
+			background-color: $menu-background;
+
+			font-family: $font-base; // Nav item font styles
+			font-weight: 300;
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+
+				li {
+					a {
+						color: $white;
+					}
+					&:hover,
+					&:focus {
+						background-color: $gray-dark; // Hover color
+					}
+
+				// Sub-level menu
+				.sub-menu {
+					background-color: $gray-dark; // Sub-menu background color
+
+					li {
+						padding: 6px;
+						border-bottom: 1px solid $menu-border;
+
+						&:last-child {
+							border: none;
+						}
+
+						a {
+							font-size: 14px;
+						}
+						&:hover,
+						&:focus {
+							background-color: $menu-background; // Hover color
+						}
+
+					}
+				}
+
+			}
+
+		}
+
+		.menu-item-has-children > a:before {
+			content: '';
+		}
+
+		.menu-item-has-children > a:after {
+			padding: 0;
+			margin: 0 0 0 10px;
+			line-height: 16px;
+			
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			font-size: 20px;
+			content: '';
+		}
+
+		.menu-item-has-children > a.active:after {}
+
+	}
+
+	.hide-text {
+		display: none;
+	}
+
+}
