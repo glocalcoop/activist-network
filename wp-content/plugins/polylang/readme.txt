@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: multilingual, bilingual, translate, translation, language, multilanguage, international, localization
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.7.6
+Stable tag: 1.7.8
 License: GPLv2 or later
 
 Making WordPress multilingual
@@ -13,11 +13,12 @@ Making WordPress multilingual
 
 = Features  =
 
-Polylang allows you to create a bilingual or multilingual WordPress site. You write posts, pages and create categories and post tags as usual, and then define the language for each of them. The translation of a post, whether it is in the default language or not, is optional. The translation has to be done by the site editor as Polylang does not integrate any automatic or professional translation service.
+Polylang allows you to create a bilingual or multilingual WordPress site. You write posts, pages and create categories and post tags as usual, and then define the language for each of them. The translation of a post, whether it is in the default language or not, is optional. If you wish to use a professional or automatic translation service, you can now install [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/), as an addon of Polylang. Lingotek offers a complete translation management system which provides services such as translation memory or semi-automated translation processes (e.g. machine translation > human translation > legal review).
 
 * You can use as many languages as you want. RTL language scripts are supported. WordPress languages packs are automatically downloaded and updated.
 * You can translate posts, pages, media, categories, post tags, menus, widgets...
 * Custom post types, custom taxonomies, sticky posts and post formats, RSS feeds and all default WordPress widgets are supported.
+* Professional and automatic translations services are available thanks to [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/).
 * The language is either set by the content or by the language code in url, or you can use one different subdomain or domain per language
 * Categories, post tags as well as some other metas are automatically copied when adding a new post or page translation
 * A customizable language switcher is provided as a widget or in the nav menu
@@ -25,10 +26,10 @@ Polylang allows you to create a bilingual or multilingual WordPress site. You wr
 
 = Translators =
 
-The plugin admin interface is currently available in 38 languages:
+The plugin admin interface is currently available in 40 languages:
 
 * English
-* French
+* French by [fxbenard](http://fxbenard.com/)
 * German by [Christian Ries](http://www.singbyfoot.lu)
 * Russian by [yoyurec](http://yoyurec.in.ua) and unostar
 * Greek by [theodotos](http://www.ubuntucy.org)
@@ -65,6 +66,8 @@ The plugin admin interface is currently available in 38 languages:
 * Brazilian Portuguese by [Henrique Vianna](http://henriquevianna.com/)
 * Georgian by [Tours in Georgia](http://www.georgia-tours.eu/)
 * Galician by [Toño Calo](http://fedellar.wordpress.com/)
+* Romanian by uskro
+* Japanese by [Eiko Toda](http://www.eikotoda.com)
 
 = Credits =
 
@@ -82,6 +85,7 @@ Don't hesitate to [give your feedback](http://wordpress.org/support/view/plugin-
 1. Extract all the files.
 1. Upload everything (keeping the directory structure) to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
+1. Install and activate the [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/) plugin to enable machine/professional translation.
 1. Go to the languages settings page and create the languages you need
 1. Add the 'language switcher' widget to let your visitors switch the language.
 1. Take care that your theme must come with the corresponding .mo files (Polylang downloads them for themes and plugins bundled with WordPress). If your theme is not internationalized yet, please refer to the [codex](http://codex.wordpress.org/I18n_for_WordPress_Developers#I18n_for_theme_and_plugin_developers) or ask the theme author to internationalize it.
@@ -91,6 +95,7 @@ Don't hesitate to [give your feedback](http://wordpress.org/support/view/plugin-
 = Where to find help ? =
 
 * Read the [documentation](http://polylang.wordpress.com/documentation/). It includes [guidelines to start working with Polylang](http://polylang.wordpress.com/documentation/setting-up-a-wordpress-multilingual-site-with-polylang/), a [FAQ](http://polylang.wordpress.com/documentation/frequently-asked-questions/) and the [documentation for programmers](http://polylang.wordpress.com/documentation/documentation-for-developers/).
+* If you want to use professional or automatic translation services, install and activate the [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/) plugin.
 * First time users should read [Polylang - Getting started](http://plugins.svn.wordpress.org/polylang/doc/polylang-getting-started.pdf), a user contributed PDF document which explains the basics with a lot of screenshots.
 * Search the [support forum](https://wordpress.org/search/). You will most probably find your answer here.
 * Read the sticky posts in the [support forum](http://wordpress.org/support/plugin/polylang).
@@ -105,6 +110,25 @@ See http://polylang.wordpress.com/documentation/contribute/
 1. The Polylang languages admin panel in WordPress 3.8
 
 == Changelog ==
+
+= 1.7.8 (2015-07-21) =
+
+* fix: conflict with PHP < 5.4 introduced in 1.7.7
+
+= 1.7.7 (2015-07-20) =
+
+* Add Romanian translation contributed by uskro
+* Add Japanese translation contributed by [Eiko Toda](http://www.eikotoda.com)
+* Update French translation contributed by [fxbenard](http://fxbenard.com/)
+* The language locale is now validated with the same pattern as in WP 4.3. See #28303
+* fix: make sure that the language switcher never finds translations for untranslated post types (could occur when the post type was previously translated)
+* fix: display the default category according to the admin language filter in settings->writing
+* fix: flushing rewrite rules at network activation and de-activation is back. [props RavanH](https://polylang.wordpress.com/2015/06/10/polylang-1-7-6-and-multisite/comment-page-1/#comment-1138)
+* fix: avoid a conflict with WP Super Cache preloading (loading 'polylang_mo' posts which are 404). [props ecdltf](https://wordpress.org/support/topic/polylang_mo-and-404s-take-2)
+* fix: customizer menus issues introduced by changes in WP 4.1
+* fix: strings translations are not saved when pressing enter
+* fix: it is not possible to de-activate the translation for custom post types and taxonomies from wpml-config.xml
+* fix: conflict whith plugins using stringified json in ajax requests
 
 = 1.7.6 (2015-06-10) =
 

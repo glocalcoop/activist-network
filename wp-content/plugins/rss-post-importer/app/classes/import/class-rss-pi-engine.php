@@ -30,7 +30,17 @@ class rssPIEngine {
 
 		global $rss_post_importer;
 
-		// load options
+		$this->load_options();
+	}
+
+	/**
+	 * Start the engine
+	 * 
+	 * @global type $rss_post_importer
+	 */
+	public function load_options() {
+
+		global $rss_post_importer;
 		$this->options = $rss_post_importer->options;
 	}
 
@@ -41,6 +51,8 @@ class rssPIEngine {
 	 */
 	public function import_feed() {
 		global $rss_post_importer;
+
+		$this->load_options();
 
 		$post_count = 0;
 
@@ -348,11 +360,13 @@ class rssPIEngine {
 				} else {
 					$tags_name = array();
 				}
-				$parser->_parse($item, $args['feed_title'], $args['strip_html']);
+
+				// parse the content
+				$content = $parser->_parse($item, $args['feed_title'], $args['strip_html']);
+
 				$post = array(
 					'post_title' => $item->get_title(),
-					// parse the content
-					'post_content' => $parser->_parse($item, $args['feed_title'], $args['strip_html']),
+					'post_content' => $content,
 					'post_status' => $this->options['settings']['post_status'],
 					'post_author' => $args['author_id'],
 					'post_category' => array($args['category_id']),
@@ -360,8 +374,6 @@ class rssPIEngine {
 					'comment_status' => $this->options['settings']['allow_comments'],
 					'post_date' => get_date_from_gmt($item->get_date('Y-m-d H:i:s'))
 				);
-
-				$content = $post['post_content'];
 
 				// catch base url and replace any img src with it
 				if (preg_match('/src="\//ui', $content)) {
@@ -381,7 +393,6 @@ class rssPIEngine {
 
 				//download images and save them locally if setting suggests so
 				if ($this->options['settings']['import_images_locally'] == 'true') {
-
 					$post = $this->download_images_locally($post);
 				}
 
@@ -389,8 +400,34 @@ class rssPIEngine {
 				$post_id = $this->_insert($post, $item->get_permalink());
 
 				// set thumbnail
-				if ($this->options['settings']['disable_thumbnail'] == 'false') {
+				if ( $this->options['settings']['disable_thumbnail'] == 'false' ) {
+					// assign a thumbnail (featured image) to the post
 					$thumbnail->_set($item, $post_id);
+					$attachment_id = get_post_thumbnail_id($post_id);
+				} else {
+					// just download the image to the media library
+					$attachment_id = $thumbnail->_prepare($item, $post_id);
+				}
+
+				/* Parse {$inline_image} template tag
+				 * @since 2.1.3
+				 */
+				if ( preg_match('/\{\$inline_image\}/i', $post['post_content']) ) {
+					$_post_content = $post['post_content'];
+					if ( $attachment_id ) {
+//						$featured_image = wp_get_attachment_image($attachment_id);
+						$featured_image = wp_get_attachment_image_src($attachment_id,'full');
+						$featured_image = '<img src="'.$featured_image[0].'" width="'.$featured_image[1].'" height="'.$featured_image[2].'">';
+					} else {
+						$featured_image = '';
+					}
+					$_post_content = preg_replace('/\{\$inline_image\}/i', $featured_image, $_post_content);
+					$_post = array(
+						'ID' => $post_id,
+						'post_content' => $_post_content
+					);
+					wp_update_post($_post);
+					$post['post_content'] = $_post_content;
 				}
 
 				array_push($saved_posts, $post);
@@ -414,8 +451,9 @@ class rssPIEngine {
 		$post_exists = FALSE;
 
 		if ( isset($this->options['upgraded']['deleted_posts']) ) { // database migrated
-			// check if there is a post with this source URL
-			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_key = 'rss_pi_source_md5' and meta_value = %s", $permalink_md5 ), 'ARRAY_A');
+			// check if there is a published (!) post with this source URL
+//			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_key = 'rss_pi_source_md5' and meta_value = %s", $permalink_md5 ), 'ARRAY_A');
+			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} pm, {$wpdb->posts} p WHERE pm.meta_key = 'rss_pi_source_md5' and pm.meta_value = %s AND pm.post_id = p.ID AND p.post_status = 'publish'", $permalink_md5 ), 'ARRAY_A');
 			if ( count($posts) ) {
 				$post_exists = TRUE;
 			}
@@ -533,7 +571,10 @@ class rssPIEngine {
 	}
 
 	function add_to_media($url, $associated_with_post, $desc) {
-		$tmp = download_url($url);
+		$tmp = @download_url($url);
+		if (is_wp_error($tmp)) {
+			return false;
+		}
 		$post_id = $associated_with_post;
 		$desc = $desc;
 		$file_array = array();

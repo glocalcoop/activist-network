@@ -2,7 +2,7 @@
 Tags: bundle, widget, button, slider, image, carousel, price table
 Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 1.3
+Stable tag: 1.3.1
 License: GPLv3 or later
 Contributors: gpriday, braam-genis
 
@@ -49,6 +49,14 @@ The SiteOrigin Widgets Bundle is the perfect platform to build widgets for your 
 3. An example of the button widget.
 
 == Changelog ==
+
+= 1.4 =
+* Created a base slider widget class.
+* Converted current slider widget to use base slider.
+* Fixed image sizing in slider widget.
+* Added plain background color option to slider widget.
+* Added new Hero Image widget.
+* Fixed repeaters in sub items.
 
 = 1.3.1 =
 * Fix to TinyMCE field when moved in Customizer and Widgets interface.
