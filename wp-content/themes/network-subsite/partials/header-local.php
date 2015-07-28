@@ -10,20 +10,20 @@
 		</div>
 		<?php // bloginfo('description'); ?>
 
-
 		<nav role="navigation" class="nav-local">
 			<ul class="nav-anchors js-anchors">
-            	<li><a href="#menu-main-navigation-1" class="anchor-menu" title="menu">MENU</a></li>
+            	<li><a href="#menu-main-navigation" class="anchor-menu" title="menu">MENU</a></li>
             	<li><a href="#search-local" class="anchor-search" title="search"></a></li>
             </ul>
 			<div class="search-form" id="search-local">
 			    <?php get_search_form(); ?>
 			</div>
 			<?php wp_nav_menu( array( 
-				'theme_location' => 'site-nav',
-				'container' => false,                           // remove nav container
-				'menu_class' => 'menu clearfix',                // adding custom nav class
-				'depth' => 0,                                   // limit the depth of the nav
+				'theme_location' 	=> 'site-nav',
+				'container' 		=> false,					// remove nav container
+				'menu_class' 		=> 'menu clearfix',			// adding custom nav class
+				'menu_id' 			=> 'menu-main-navigation',	// should match href attr of mobile menu
+				'depth' 			=> 0,						// limit the depth of the nav
 			 ) ); ?>
 		</nav>
 
