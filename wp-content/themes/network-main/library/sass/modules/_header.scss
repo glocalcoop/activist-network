@@ -248,8 +248,12 @@
         background: $anchor-color;
         border-color: $anchor-color;
     }
-    .nav-anchors a {
-        padding: 11px 0;
+    .nav-anchors {
+        padding-right: 10px;
+        padding-left: 10px;
+        a {
+            padding: 11px 0;
+        }
     }
     .menu li {
         font-size: 100%;
