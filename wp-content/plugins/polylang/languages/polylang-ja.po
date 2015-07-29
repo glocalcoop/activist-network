@@ -1,677 +1,612 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Polylang v1.6beta1\n"
+"Project-Id-Version: Polylang v1.7beta1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-06-26 10:13+0100\n"
-"Last-Translator: fxbenard | FxB <fx@fxbenard.com>\n"
+"PO-Revision-Date: 2015-07-18 08:55+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Generator: Poedit 1.8.1\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
-"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
-"Language: fr_FR\n"
-"X-Poedit-SearchPath-0: ..\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-SearchPath-0: .\n"
 
 # @ polylang
 #: admin/view-about.php:3
 #, php-format
-msgid ""
-"Polylang is provided with an extensive %sdocumentation%s (in English only). "
-"It includes information on how to set up your multilingual site and use it "
-"on a daily basis, a FAQ, as well as a documentation for programmers to adapt "
-"their plugins and themes."
-msgstr ""
-"Polylang est fourni avec une %sdocumentation%s (en anglais). Elle explique "
-"comment installer votre site multilingue et l&rsquo;utiliser au jour le "
-"jour. Elle contient aussi une FAQ et une documentation pour les développeurs "
-"leur permettant d&rsquo;adapter leurs extensions et leurs thèmes."
+msgid "Polylang is provided with an extensive %sdocumentation%s (in English only). It includes information on how to set up your multilingual site and use it on a daily basis, a FAQ, as well as a documentation for programmers to adapt their plugins and themes."
+msgstr "Polylang は、多言語サイトをセットアップする方法や日常的に使用する方法から FAQ まで、包括的な内容を盛り込んだ%sドキュメンテーション%s (English のみ) を参照して活用できます。また、プログラマーが独自のプラグインやテーマを Polylang に対応させるためのドキュメンテーションも用意されています。"
 
 # @ polylang
 #: admin/view-about.php:9
 #, php-format
-msgid ""
-"You will also find useful information in the %ssupport forum%s. However "
-"don't forget to make a search before posting a new topic."
-msgstr ""
-"Vous pouvez aussi trouver des informations dans le %sforum de support%s (en "
-"anglais). Cependant, n&rsquo;oubliez pas de faire une recherche avant de "
-"publier."
+msgid "You will also find useful information in the %ssupport forum%s. However don't forget to make a search before posting a new topic."
+msgstr "さらに、%sサポートフォーラム%sで必要な情報を入手することもできます。ただし、新規トピックを投稿する前に、同じようなトピックがないか検索してください。"
 
 # @ polylang
 #: admin/view-about.php:16
 #, php-format
-msgid ""
-"Polylang is free of charge and is released under the same license as "
-"WordPress, the %sGPL%s."
-msgstr ""
-"Polylang est gratuit et publié sous la même licence que WordPress, la %sGPL"
-"%s."
+msgid "Polylang is free of charge and is released under the same license as WordPress, the %sGPL%s."
+msgstr "Polyland は無料であり、WordPress と同じライセンスである %sGPL%s でリリースされています。"
 
 # @ polylang
 #: admin/view-about.php:22
 #, php-format
 msgid "If you wonder how you can help the project, just %sread this%s."
-msgstr "Si vous souhaitez aider le projet, %slisez ceci%s."
+msgstr "「このプロジェクトの役に立てれば」とお考えの方は、%sこちら%sをお読みください。"
 
-# @ polylang
+# @ polylang If I translate literally, it sounds redundant (the string before sounds similar). So I transalted as "Also, (I) will be grateful if you can support/help (me) in the form of donation."
 #: admin/view-about.php:27
-msgid ""
-"Finally if you like this plugin or if it helps your business, donations to "
-"the author are greatly appreciated."
-msgstr ""
-"Enfin, si vous aimez cette extension ou si elle vous aide dans votre "
-"business, vous pouvez faire un don à l&rsquo;auteur."
+msgid "Finally if you like this plugin or if it helps your business, donations to the author are greatly appreciated."
+msgstr "また、寄付という形でご支援をいただければ大変幸甚です (右下の Donate ボタンをクリックしてください)。"
 
 # @ polylang
 #: admin/admin-filters-post.php:115 admin/admin.php:90 admin/settings.php:70
 #: admin/settings.php:97 include/model.php:561
 msgid "Languages"
-msgstr "Langues"
+msgstr "言語"
 
 # @ polylang
 #: include/switcher.php:22
 msgid "Displays language names"
-msgstr "Afficher le nom des langues"
+msgstr "言語名を表示する"
 
 # @ polylang
 #: include/switcher.php:23
 msgid "Displays flags"
-msgstr "Afficher les drapeaux"
+msgstr "国旗を表示する"
 
 # @ polylang
 #: include/switcher.php:24
 msgid "Forces link to front page"
-msgstr "Force le lien vers la page d&rsquo;accueil"
+msgstr "フロントページへのリンクを強制する"
 
 # @ polylang
 #: include/switcher.php:25
 msgid "Hides the current language"
-msgstr "Cacher la langue courante"
+msgstr "現在の言語を非表示にする"
 
 # @ polylang
 #: include/switcher.php:30
 msgid "Displays as dropdown"
-msgstr "Afficher en liste déroulante"
+msgstr "ドロップダウンとして表示する"
 
 # @ polylang
 #: admin/admin.php:267
 msgid "Filters content by language"
-msgstr "Filtrer le contenu par langue"
+msgstr "言語でコンテンツをフィルターする"
 
 # @ polylang
 #: admin/admin.php:258
 msgid "Show all languages"
-msgstr "Afficher toutes les langues"
+msgstr "すべての言語を表示"
 
 # @ polylang
 #: admin/admin-filters-columns.php:140 admin/admin-filters-columns.php:230
 msgid "Add new translation"
-msgstr "Ajouter une nouvelle traduction"
+msgstr "翻訳を追加"
 
 # @ polylang
 #: admin/admin-filters-columns.php:173 admin/admin-filters-media.php:55
 #: admin/admin-filters-post.php:141 admin/admin-filters-term.php:75
 #: admin/admin-filters-term.php:122 include/model.php:562
 msgid "Language"
-msgstr "Langue"
+msgstr "言語"
 
 # @ polylang
 #: admin/table-string.php:112 admin/view-translations-media.php:5
 #: admin/view-translations-post.php:5 admin/view-translations-term.php:6
 #: admin/view-translations-term.php:11
 msgid "Translations"
-msgstr "Traductions"
+msgstr "翻訳"
 
 # @ polylang
 #: admin/admin-filters-term.php:82 admin/admin-filters-term.php:130
 msgid "Sets the language"
-msgstr "Définit la langue"
+msgstr "言語を設定する"
 
 # @ polylang
 #: admin/admin-filters.php:52
 msgid "The widget is displayed for:"
-msgstr "Afficher le widget pour&nbsp;:"
+msgstr "ウジェットを表示する言語:"
 
 # @ polylang
 #: admin/admin-filters.php:55 include/model.php:563
 msgid "All languages"
-msgstr "Toutes les langues"
+msgstr "すべての言語"
 
-# @ polylang
+# @ polylang I've seen this somewhere, but I don't remember. I translated as "Language for administration." Is this OK?
 #: admin/admin-filters.php:123
 msgid "Admin language"
-msgstr "Langue pour l&rsquo;interface d&rsquo;administration"
+msgstr "管理用言語"
 
 # @ polylang
 #: admin/admin-filters.php:126
 msgid "WordPress default"
-msgstr "Langue par défaut de WordPress"
+msgstr "WordPress のデフォルト"
 
 # @ polylang
 #: admin/admin.php:167 admin/settings.php:102
 msgid "Settings"
-msgstr "Réglages"
+msgstr "設定"
 
 # @ polylang
 #: admin/admin-filters.php:160 admin/admin-filters.php:169
 msgid "Upgrading language files&#8230;"
-msgstr "Mise à jour des fichiers de langues&#8230;"
+msgstr "言語ファイルのアップグレード中&#8230;"
 
 # @ polylang
 #: admin/settings.php:62
 msgid "About Polylang"
-msgstr "À propos de Polylang"
+msgstr "Polylang について"
 
 # @ polylang
 #: admin/settings.php:78
 msgid "Strings translations"
-msgstr "Traductions des chaînes"
+msgstr "文字列翻訳"
 
 # @ polylang
 #: admin/settings.php:101
 msgid "Strings translation"
-msgstr "Traduction des chaînes"
+msgstr "文字列翻訳"
 
 # @ polylang
 #: admin/admin-model.php:244
 msgid "Enter a valid WordPress locale"
-msgstr "Entrez un code local WordPress valide"
+msgstr "有効な WordPress ロケールを入力してください"
 
 # @ polylang
 #: admin/admin-model.php:252
 msgid "The language code must be unique"
-msgstr "Le code de la langue doit être unique"
+msgstr "言語コードは一意である必要があります"
 
 # @ polylang
 #: admin/admin-model.php:256
 msgid "The language must have a name"
-msgstr "La langue doit avoir un nom"
+msgstr "言語に名称が必要です"
 
 # @ polylang
 #: admin/admin.php:367 admin/settings.php:180
-msgid ""
-"The language was created, but the WordPress language file was not "
-"downloaded. Please install it manually."
-msgstr ""
-"La langue a été créée, mais le fichier de langue WordPress n&rsquo;a pu être "
-"téléchargé. Merci de l&rsquo;installer manuellement."
+msgid "The language was created, but the WordPress language file was not downloaded. Please install it manually."
+msgstr "言語は作成されましたが、WordPress の言語ファイルはダウンロードされませんでした。このファイルを手動でインストールしてください。"
 
 # @ polylang
 #: admin/admin-strings.php:59
 msgid "Widget title"
-msgstr "Titre du widget"
+msgstr "ウィジェットのタイトル"
 
 # @ polylang
 #: admin/settings.php:319
 msgid "Taxonomies"
-msgstr "Taxinomies"
+msgstr "タクソノミー"
 
 # @ polylang
 #: admin/settings.php:320
 msgid "Custom fields"
-msgstr "Champs personnalisés"
+msgstr "カスタムフィールド"
 
 # @ polylang
 #: admin/settings.php:321
 msgid "Comment status"
-msgstr "Autorisation des commentaires"
+msgstr "コメントのステータス"
 
 # @ polylang
 #: admin/settings.php:322
 msgid "Ping status"
-msgstr "Autorisation des pings"
+msgstr "Ping のステータス"
 
 # @ polylang
 #: admin/settings.php:323
 msgid "Sticky posts"
-msgstr "Articles mis en avant"
+msgstr "付箋紙"
 
 # @ polylang
 #: admin/settings.php:324
 msgid "Published date"
-msgstr "Date de publication"
+msgstr "公開日"
 
 # @ polylang
 #: admin/settings.php:325
 msgid "Post format"
-msgstr "Format"
+msgstr "投稿フォーマット"
 
 # @ polylang
 #: admin/settings.php:326
 msgid "Page parent"
-msgstr "Page parent"
+msgstr "親ページ"
 
 # @ polylang
 #: admin/settings.php:327
 msgid "Page template"
-msgstr "Modèle de page"
+msgstr "ページテンプレート"
 
 # @ polylang
 #: admin/settings.php:328
 msgid "Page order"
-msgstr "Ordre des pages"
+msgstr "ページの順序"
 
 # @ polylang
 #: admin/settings.php:329
 msgid "Featured image"
-msgstr "Image à la Une"
+msgstr "アイキャッチ画像"
 
 # @ polylang
 #: admin/view-tab-lang.php:21
 msgid "Edit language"
-msgstr "Modifier la langue"
+msgstr "言語を編集"
 
 # @ polylang
 #: admin/view-tab-lang.php:21 admin/view-tab-lang.php:96
 msgid "Add new language"
-msgstr "Ajouter une nouvelle langue"
+msgstr "言語を追加"
 
 # @ polylang
 #: admin/view-tab-lang.php:37
 msgid "Choose a language"
-msgstr "Choisir une langue"
+msgstr "言語を選択"
 
 # @ polylang
 #: admin/view-tab-lang.php:51
 msgid "You can choose a language in the list or directly edit it below."
-msgstr ""
-"Choisissez une langue dans la liste ou modifiez-la directement ci-dessous."
+msgstr "リストから言語を選択するか、以下で言語を直接編集してください。"
 
 # @ polylang
 #: admin/table-languages.php:74 admin/view-tab-lang.php:55
 msgid "Full name"
-msgstr "Nom"
+msgstr "名称"
 
 # @ polylang
 #: admin/view-tab-lang.php:57
 msgid "The name is how it is displayed on your site (for example: English)."
-msgstr ""
-"Le nom est utilisé un peu partout sur le site (par exemple&nbsp;: Français)"
+msgstr "サイトに表示される名称 (「English」など)。"
 
 # @ polylang
 #: admin/table-languages.php:75 admin/view-tab-lang.php:61
 msgid "Locale"
-msgstr "Code local"
+msgstr "ロケール"
 
 # @ polylang
 #: admin/view-tab-lang.php:66
-msgid ""
-"WordPress Locale for the language (for example: en_US). You will need to "
-"install the .mo file for this language."
-msgstr ""
-"Code local utilisé par WordPress pour la langue (par exemple&nbsp;: fr_FR). "
-"Vous aurez besoin d&rsquo;installer les fichiers .mo correspondant."
+msgid "WordPress Locale for the language (for example: en_US). You will need to install the .mo file for this language."
+msgstr "言語の WordPress ロケール (「en_GB」など)。この言語の .mo ファイルをインストールする必要があります。"
 
 # @ polylang
 #: admin/view-tab-lang.php:70
 msgid "Language code"
-msgstr "Code de la langue"
+msgstr "言語コード"
 
 # @ polylang
 #: admin/view-tab-lang.php:76
 msgid "Text direction"
-msgstr "Système d&rsquo;écriture"
+msgstr "テキストの方向"
 
 # @ polylang
 #: admin/view-tab-lang.php:80
 msgid "left to right"
-msgstr "de gauche à droite"
+msgstr "左から右"
 
 # @ polylang
 #: admin/view-tab-lang.php:85
 msgid "right to left"
-msgstr "de droite à gauche"
+msgstr "右から左"
 
 # @ polylang
 #: admin/view-tab-lang.php:87
 msgid "Choose the text direction for the language"
-msgstr "Choisir le système d&rsquo;écriture pour la langue"
+msgstr "この言語のテキストの方向を選択してください"
 
 # @ polylang
 #: admin/table-languages.php:77 admin/view-tab-lang.php:91
 msgid "Order"
-msgstr "Ordre"
+msgstr "順序"
 
 # @ polylang
 #: admin/view-tab-lang.php:93
 msgid "Position of the language in the language switcher"
-msgstr "Position de la langue dans la liste de langues"
+msgstr "この言語の言語スイッチャーでの位置を指定してください"
 
 # @ polylang
 #: admin/admin-nav-menu.php:54 admin/admin-nav-menu.php:92
 #: admin/admin-nav-menu.php:95 admin/admin-nav-menu.php:126
 #: admin/admin-nav-menu.php:188 install/upgrade.php:301
 msgid "Language switcher"
-msgstr "Liste des langues"
+msgstr "言語スイッチャー"
 
 # @ polylang
 #: admin/view-tab-strings.php:8
 msgid "Search translations"
-msgstr "Chercher dans les traductions"
+msgstr "翻訳を検索"
 
 # @ polylang
 #: admin/view-tab-strings.php:11
 msgid "Clean strings translation database"
-msgstr "Nettoyer les chaines de traduction de la base de données"
+msgstr "文字列翻訳データベースをクリーンアップする"
 
 # @ polylang
 #: admin/view-tab-settings.php:14
 msgid "Default language"
-msgstr "Langue par défaut"
+msgstr "デフォルトの言語"
 
-# @ polylang
+# @ polylang I don't know how to translate this "set." I need to know what "without language set" means.
 #: admin/view-tab-settings.php:29
-msgid ""
-"There are posts, pages, categories or tags without language set. Do you want "
-"to set them all to default language ?"
-msgstr ""
-"Il y a des articles, pages, catégories ou étiquettes sans jeu de langue. "
-"Voulez-vous leur attribuer la langue par défaut&nbsp;?"
+msgid "There are posts, pages, categories or tags without language set. Do you want to set them all to default language ?"
+msgstr "言語が設定されていない投稿、ページ、カテゴリー、またはタグがあります。これらすべてをデフォルトの言語に設定しますか?"
 
 # @ polylang
 #: admin/view-tab-settings.php:149
 msgid "Detect browser language"
-msgstr "Détecter la langue du navigateur"
+msgstr "ブラウザーの言語の検出"
 
 # @ polylang
 #: admin/view-tab-settings.php:155
-msgid ""
-"When the front page is visited, set the language according to the browser "
-"preference"
-msgstr ""
-"Lorsque la page d&rsquo;accueil est visitée, le visiteur est redirigé en "
-"fonction des préférences de langue de son navigateur"
+msgid "When the front page is visited, set the language according to the browser preference"
+msgstr "フロントページへのアクセスがあったときに、ブラウザーの環境設定に応じて言語を設定する"
 
 # @ polylang
 #: admin/view-tab-settings.php:37
 msgid "URL modifications"
-msgstr "Modifications des URL"
+msgstr "URL の修正"
 
-# @ polylang
+# @ polylang I translated as "Do not show language information for default language in URL."
 #: admin/view-tab-settings.php:93
 msgid "Hide URL language information for default language"
-msgstr ""
-"Cacher l&rsquo;information de langue dans l&rsquo;URL pour la langue par "
-"défaut"
+msgstr "URL にデフォルトの言語の言語情報を表示しない"
 
 # @ polylang
 #: admin/view-tab-settings.php:162
 msgid "Media"
-msgstr "Médias"
+msgstr "メディア"
 
 # @ polylang
 #: admin/view-tab-settings.php:168
 msgid "Activate languages and translations for media"
-msgstr "Activer la gestion des langues et des traductions pour les médias."
+msgstr "メディアの言語と翻訳を有効にする"
 
 # @ polylang
 #: admin/view-tab-settings.php:215
 msgid "Synchronization"
-msgstr "Synchronisation"
+msgstr "同期"
 
 # @ polylang
 #: admin/view-tab-settings.php:176
 msgid "Custom post types"
-msgstr "Types de contenu personnalisé"
+msgstr "カスタム投稿タイプ"
 
 # @ polylang
 #: admin/view-tab-settings.php:189
 msgid "Activate languages and translations for custom post types."
-msgstr ""
-"Activer la gestion des langues et des traductions pour les types de contenu."
+msgstr "カスタム投稿タイプの言語と翻訳を有効にする"
 
 # @ polylang
 #: admin/view-tab-settings.php:196
 msgid "Custom taxonomies"
-msgstr "Taxinomies"
+msgstr "カスタムタクソノミー"
 
 # @ polylang
 #: admin/view-tab-settings.php:209
 msgid "Activate languages and translations for custom taxonomies."
-msgstr "Activer la gestion des langues et des traductions pour les taxinomies."
+msgstr "カスタムタクソノミーの言語と翻訳を有効にする"
 
 # @ polylang
 #: admin/admin-filters-post.php:433 admin/admin-filters-term.php:642
 #: admin/table-languages.php:54 admin/view-translations-media.php:21
 msgid "Edit"
-msgstr "Modifier"
+msgstr "編集"
 
 # @ polylang
 #: admin/table-languages.php:60 admin/table-string.php:168
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "削除"
 
 # @ polylang
 #: admin/table-languages.php:76
 msgid "Code"
-msgstr "Code"
+msgstr "コード"
 
 # @ polylang
 #: admin/table-languages.php:78
 msgid "Flag"
-msgstr "Drapeau"
+msgstr "国旗"
 
 # @ polylang
 #: admin/table-languages.php:79
 msgid "Posts"
-msgstr "Articles"
+msgstr "投稿"
 
 # @ polylang
 #: admin/table-string.php:110
 msgid "Name"
-msgstr "Nom"
+msgstr "名前"
 
 # @ polylang
 #: admin/table-string.php:111
 msgid "String"
-msgstr "Chaîne"
+msgstr "文字列"
 
 # @ polylang
 #: admin/view-translations-media.php:30 admin/view-translations-post.php:21
 #: admin/view-translations-term.php:30
 msgid "Add new"
-msgstr "Ajouter"
+msgstr "新規追加"
 
 # @ polylang
 #: include/widget-languages.php:16
 msgid "Language Switcher"
-msgstr "Liste des langues"
+msgstr "言語スイッチャー"
 
 # @ polylang
 #: include/widget-languages.php:16
 msgid "Displays a language switcher"
-msgstr "Afficher la liste des langues"
+msgstr "言語スイッチャーを表示する"
 
 # @ polylang
 #: include/widget-languages.php:75
 msgid "Title:"
-msgstr "Titre&nbsp;:"
+msgstr "タイトル:"
 
 # @ polylang
 #. translators: plugin header field 'Description'
 #: polylang.php:0
 msgid "Adds multilingual capability to WordPress"
-msgstr "Permet une utilisation multilingue de WordPress"
+msgstr "WordPress に多言語機能を追加する"
 
 # @ polylang
 #: install/install.php:24
 #, php-format
 msgid "You are using WordPress %s. Polylang requires at least WordPress %s."
-msgstr "Vous utilisez WordPress %s. Polylang nécessite au moins WordPress %s."
+msgstr "WordPress %s を使用されています。Polylang を使用するには、WordPress %s 以降が必要です。"
 
 # @ polylang
 #: install/upgrade.php:76
-msgid ""
-"Polylang has been deactivated because you upgraded from a too old version."
-msgstr ""
-"Polylang a été désactivé parce que vous avez fait une mise à jour depuis une "
-"version trop ancienne."
+msgid "Polylang has been deactivated because you upgraded from a too old version."
+msgstr "アップグレード元のバージョンが古いため、Polylang は無効になっています。"
 
 # @ polylang
 #: install/upgrade.php:78
 #, php-format
 msgid "Please upgrade first to %s before ugrading to %s."
-msgstr ""
-"Veuillez d&rsquo;abord mettre à jour en %s avant de mettre à jour en %s."
+msgstr "%s にアップグレードする前に、まず %s にアップグレードしてください。"
 
 # @ polylang
 #: admin/table-string.php:109
 msgid "Group"
-msgstr "Groupe"
+msgstr "グループ"
 
 # @ polylang
 #: admin/table-string.php:187
 msgid "View all groups"
-msgstr "Voir tous les groupes"
+msgstr "すべてのグループを表示"
 
 # @ polylang
 #: admin/table-languages.php:59
 msgid "You are about to permanently delete this language. Are you sure?"
-msgstr "Êtes-vous sûr de vouloir supprimer cette langue définitivement&nbsp;?"
+msgstr "この言語を完全に削除しますか?"
 
 # @ polylang
 #: admin/view-tab-strings.php:12
-msgid ""
-"Use this to remove unused strings from database, for example after a plugin "
-"has been uninstalled."
-msgstr ""
-"Utilisez cette option pour supprimer les phrases inutiles dans la base de "
-"données, par exemple après avoir déssinstallé une extension."
+msgid "Use this to remove unused strings from database, for example after a plugin has been uninstalled."
+msgstr "これをオンにすると、使用されていない文字列がデータベースから削除されます (プラグインをアンインストールした後など)。"
 
-# @ polylang
+# @ polylang I translated as "The synchronization options allow to synchronize values (or translations ..."
 #: admin/view-tab-settings.php:226
-msgid ""
-"The synchronization options allow to maintain exact same values (or "
-"translations in the case of taxonomies and page parent) of meta content "
-"between the translations of a post or page."
-msgstr ""
-"Les options de synchronisation permettent de maintenir les mêmes valeurs de "
-"métacontenus entre les traductions d&rsquo;un article ou d&rsquo;une page "
-"(ou de les traduire dans le cas des taxinomies et de la page parent)"
+msgid "The synchronization options allow to maintain exact same values (or translations in the case of taxonomies and page parent) of meta content between the translations of a post or page."
+msgstr "同期オプションを使用することにより、投稿の翻訳とページの翻訳の間で、メタコンテンツの値 (タクソノミーと親ページの場合は翻訳）を同期させることができます。"
 
 # @ polylang
 #: admin/admin-model.php:248
 msgid "The language code contains invalid characters"
-msgstr "Le code de la langue contient des caractères invalides"
+msgstr "言語コードに無効な文字が含まれています"
 
 # @ polylang
 #: admin/view-tab-settings.php:43
 msgid "The language is set from content"
-msgstr "La langue est déterminée par le contenu"
+msgstr "言語はコンテンツから設定される"
 
 # @ polylang
 #: admin/view-tab-settings.php:46
 msgid "Posts, pages, categories and tags urls are not modified."
-msgstr ""
-"Les adresses des articles, pages, catégories et mots clés ne sont pas "
-"modifiées."
+msgstr "投稿、ページ、カテゴリー、およびタグの URL は修正されません。"
 
 # @ polylang
 #: admin/view-tab-settings.php:51
 msgid "The language is set from the directory name in pretty permalinks"
-msgstr "La langue est déterminée par le nom du répertoire dans les permaliens"
+msgstr "言語はプリティーパーマリンク内のディレクトリ名から設定される"
 
 # @ polylang
 #: admin/view-tab-settings.php:54 admin/view-tab-settings.php:63
 #: admin/view-tab-settings.php:110 admin/view-tab-settings.php:119
 msgid "Example:"
-msgstr "Exemple&nbsp;:"
+msgstr "例:"
 
 # @ polylang
 #: admin/view-tab-settings.php:60
 msgid "The language is set from the subdomain name in pretty permalinks"
-msgstr "La langue est déterminée par le sous-domaine dans les permaliens"
+msgstr "言語はプリティーパーマリンク内のサブドメイン名から設定される"
 
 # @ polylang
 #: admin/view-tab-settings.php:69
 msgid "The language is set from different domains"
-msgstr "La langue est déterminée par des noms de domaine différents"
+msgstr "言語は他のドメインから設定される"
 
 # @ polylang
 #: admin/view-tab-settings.php:107
 msgid "Remove /language/ in pretty permalinks"
-msgstr "Supprimer /language/ dans les permaliens"
+msgstr "プリティーパーマリンクの /language/ を削除する"
 
 # @ polylang
 #: admin/view-tab-settings.php:116
 msgid "Keep /language/ in pretty permalinks"
-msgstr "Conserver /language/ dans les permaliens"
+msgstr "プリティーパーマリンクの /language/ を維持する"
 
 # @ polylang
 #: admin/view-tab-settings.php:131
-msgid ""
-"The front page url contains the language code instead of the page name or "
-"page id"
-msgstr ""
-"L'adresse de la page d'accueil contient le code de la langue au lieu du nom "
-"de la page"
+msgid "The front page url contains the language code instead of the page name or page id"
+msgstr "フロントページの URL にページ名またはページ ID の代わりに言語コードが含まれています"
 
 # @ polylang
 #: admin/view-tab-settings.php:139
 #, php-format
 msgid "Example: %s instead of %s"
-msgstr "Exemple : %s au lieu de %s"
+msgstr "例: %s ではなく %s"
 
 # @ polylang
 #: admin/admin-model.php:38
 msgid "Impossible to add the language."
-msgstr "Impossible d'ajouter la langue."
+msgstr "この言語は追加できません。"
 
 # @ polylang
 #: admin/admin-model.php:66
 msgid "Language added."
-msgstr "Langue ajoutée."
+msgstr "言語が追加されました。"
 
 # @ polylang
 #: admin/admin-model.php:146
 msgid "Language deleted."
-msgstr "Langue supprimée."
+msgstr "言語が削除されました。"
 
 # @ polylang
 #: admin/admin-model.php:227
 msgid "Language updated."
-msgstr "Langue mise à jour."
+msgstr "言語が更新されました。"
 
 # @ polylang
 #: admin/settings.php:239
 msgid "Translations updated."
-msgstr "Traductions mises à jour."
+msgstr "翻訳が更新されました。"
 
 # @ polylang
 #: admin/view-tab-lang.php:72
 msgid "Language code - preferably 2-letters ISO 639-1  (for example: en)"
-msgstr ""
-"Code de langue, de préférence code ISO 639-1 à 2 lettres (par exemple&nbsp;: "
-"fr)"
+msgstr "言語コード。ISO 639-1 準拠の 2 文字 (「en」など) を使用することを推奨します。"
 
 # @ polylang
 #: admin/admin-filters.php:203
 msgid "The chosen static front page must be translated in all languages."
-msgstr "La page d'accueil statique doit être traduite dans toutes les langues."
+msgstr "選択されている静的フロントページは、すべての言語で翻訳されている必要があります。"
 
 # @ polylang
 #: admin/admin-strings.php:60
 msgid "Widget text"
-msgstr "Widget texte"
+msgstr "ウィジェットのテキスト"
 
 # @ polylang
 #: admin/settings.php:52
 msgid "Recommended plugins"
-msgstr "Extensions recommandées"
+msgstr "推奨プラグイン"
 
 # @ polylang
 #: admin/view-tab-settings.php:51
 msgid "The language is set from the code in the URL"
-msgstr "La langue est déterminée par le code dans l'URL"
+msgstr "言語は URL 内のコードから設定される"
 
 # @ polylang
 #: include/switcher.php:26
 msgid "Hides languages with no translation"
-msgstr "Cacher les langues sans traduction"
+msgstr "翻訳がない言語を非表示にする"
