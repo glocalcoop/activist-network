@@ -25,9 +25,9 @@ wp-content/plugins/wp-example-content/screenshot-3.png
 *.sass-cache
 
 
-wp-content/themes/twentyfifteen/
-wp-content/themes/twentyfourteen/
-wp-content/themes/twentythirteen/
+# wp-content/themes/twentyfifteen/
+# wp-content/themes/twentyfourteen/
+# wp-content/themes/twentythirteen/
 
 .brackets.json
 .gitignore~
