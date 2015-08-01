@@ -40,8 +40,9 @@ class URE_Ajax_Processor {
         }
         
     }
+    // end of ajax_check_permissions()
     
-    
+                
     protected function get_users_without_role() {
         global $wp_roles;
         
@@ -50,8 +51,10 @@ class URE_Ajax_Processor {
             $answer = array('result'=>'failure', 'message'=>'Provide new role');
             return $answer;
         }
+        
+        $assign_role = $this->lib->get_assign_role();
         if ($new_role==='no_rights') {
-            $this->lib->create_no_rights_role();
+            $assign_role->create_no_rights_role();
         }        
         
         if (!isset($wp_roles)) {
@@ -61,8 +64,9 @@ class URE_Ajax_Processor {
             $answer = array('result'=>'failure', 'message'=>'Selected new role does not exist');
             return $answer;
         }
+                
+        $users = $assign_role->get_users_without_role($new_role);
         
-        $users = $this->lib->get_users_without_role();    
         $answer = array('result'=>'success', 'users'=>$users, 'new_role'=>$new_role, 'message'=>'success');
         
         return $answer;

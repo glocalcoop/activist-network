@@ -33,17 +33,19 @@ class Ure_Lib extends Garvs_WP_Lib {
 	protected $role_select_html = '';
 	protected $role_delete_html = '';
 	protected $capability_remove_html = '';
-	protected $advert = null;         
+	protected $advert = null;
+ public $debug = false;
   
   
     /** class constructor
      * 
-     * @param string $option_name
+     * @param string $options_id
      * 
      */
     public function __construct($options_id) {
                                            
         parent::__construct($options_id); 
+        $this->debug = defined('URE_DEBUG') && (URE_DEBUG==1 || URE_DEBUG==true);
         
         $this->upgrade();
     }
@@ -651,6 +653,16 @@ class Ure_Lib extends Garvs_WP_Lib {
     // end of get_last_role_id()
     
     
+    public function get_usermeta_table_name() {
+        global $wpdb;
+        
+        $table_name = (!$this->multisite && defined('CUSTOM_USER_META_TABLE')) ? CUSTOM_USER_META_TABLE : $wpdb->usermeta;
+        
+        return $table_name;
+    }
+    // end of get_usermeta_table_name()
+    
+    
     /**
      * Check if user has "Administrator" role assigned
      * 
@@ -665,7 +677,7 @@ class Ure_Lib extends Garvs_WP_Lib {
             return false;
         }
 
-        $table_name = (!$this->multisite && defined('CUSTOM_USER_META_TABLE')) ? CUSTOM_USER_META_TABLE : $wpdb->usermeta;
+        $table_name = $this->get_usermeta_table_name();
         $meta_key = $wpdb->prefix . 'capabilities';
         $query = "SELECT count(*)
                 FROM $table_name
@@ -878,15 +890,12 @@ class Ure_Lib extends Garvs_WP_Lib {
      * @global wpdb $wpdb   - WP database object
      * @return array 
      */
-    protected function get_roles_can_delete() 
-    {
-        global $wpdb;
+    protected function get_roles_can_delete() {
 
-        $table_name = (!$this->multisite && defined('CUSTOM_USER_META_TABLE')) ? CUSTOM_USER_META_TABLE : $wpdb->usermeta;
-        $meta_key = $wpdb->prefix . 'capabilities';
         $default_role = get_option('default_role');
         $standard_roles = array('administrator', 'editor', 'author', 'contributor', 'subscriber');
         $roles_can_delete = array();
+        $users = count_users();
         foreach ($this->roles as $key => $role) {
             $can_delete = true;
             // check if it is default role for new users
@@ -902,27 +911,8 @@ class Ure_Lib extends Garvs_WP_Lib {
             if ($this->role_contains_caps_not_allowed_for_simple_admin($key)) {
                 continue;
             }
-            
-            // check if user with such role exists
-            $query = "SELECT DISTINCT meta_value
-                FROM $table_name
-                WHERE meta_key='$meta_key' AND meta_value like '%$key%'";
-            $roles_used = $wpdb->get_results($query);
-            if ($roles_used && count($roles_used > 0)) {
-                foreach ($roles_used as $role_used) {
-                    $role_name = unserialize($role_used->meta_value);
-                    foreach ($role_name as $key1 => $value1) {
-                        if ($key == $key1) {
-                            $can_delete = false;
-                            break;
-                        }
-                    }
-                    if (!$can_delete) {
-                        break;
-                    }
-                }
-            }
-            if ($can_delete) {
+                        
+            if (!isset($users['avail_roles'][$key])) {
                 $roles_can_delete[$key] = $role['name'] . ' (' . $key . ')';
             }
         }
@@ -1011,6 +1001,8 @@ class Ure_Lib extends Garvs_WP_Lib {
             $caps['manage_network_options'] = 1;
         }
                 
+        $caps = apply_filters('ure_built_in_wp_caps', $caps);
+        
         return $caps;
     }
     // end of get_built_in_wp_caps()
@@ -1664,6 +1656,9 @@ class Ure_Lib extends Garvs_WP_Lib {
         
         unset($this->built_in_wp_caps);
         asort($this->full_capabilities);
+        
+        $this->full_capabilities = apply_filters('ure_full_capabilites', $this->full_capabilities);
+        
     }
     // end of init_full_capabilities()
 
@@ -1848,7 +1843,7 @@ class Ure_Lib extends Garvs_WP_Lib {
      */
     protected function multisite_update_roles() {
         
-        if (defined('URE_DEBUG') && URE_DEBUG) {
+        if ($this->debug) {
             $time_shot = microtime();
         }
         
@@ -1858,7 +1853,7 @@ class Ure_Lib extends Garvs_WP_Lib {
             $result = $this->wp_api_network_roles_update();            
         }
 
-        if (defined('URE_DEBUG') && URE_DEBUG) {
+        if ($this->debug) {
             echo '<div class="updated fade below-h2">Roles updated for ' . ( microtime() - $time_shot ) . ' milliseconds</div>';
         }
 
@@ -2438,42 +2433,6 @@ class Ure_Lib extends Garvs_WP_Lib {
 
     
     /**
-     * Returns list of user roles, except 1st one, and bbPress assigned as they are shown by WordPress and bbPress theirselves.
-     * 
-     * @param type $user WP_User from wp-includes/capabilities.php
-     * @return array
-     */
-    public function other_user_roles($user) {
-
-        global $wp_roles;
-
-        if (!is_array($user->roles) || count($user->roles) <= 1) {
-            return '';
-        }
-
-        // get bbPress assigned user role
-        if (function_exists('bbp_filter_blog_editable_roles')) {
-            $bb_press_role = bbp_get_user_role($user->ID);
-        } else {
-            $bb_press_role = '';
-        }
-
-        $roles = array();
-        foreach ($user->roles as $key => $value) {
-            if (!empty($bb_press_role) && $bb_press_role === $value) {
-                // exclude bbPress assigned role
-                continue;
-            }
-            $roles[] = $value;
-        }
-        array_shift($roles); // exclude primary role which is shown by WordPress itself
-
-        return $roles;
-    }
-    // end of ure_other_user_roles()
-    
-    
-    /**
      * Returns text presentation of user roles
      * 
      * @param type $roles user roles list
@@ -2714,44 +2673,7 @@ class Ure_Lib extends Garvs_WP_Lib {
            
     }
     // end of show_other_default_roles()
-
-    
-    public function create_no_rights_role() {
-        global $wp_roles;
-        
-        $role_id = 'no_rights';
-        $role_name = 'No rights';
-        
-        if (!isset($wp_roles)) {
-            $wp_roles = new WP_Roles();
-        }
-        if (isset($wp_roles->roles[$role_name])) {
-            return;
-        }
-        add_role($role_id, $role_name, array());
-        
-    }
-    // end of create_no_rights_role()
-    
-    
-    public function get_users_without_role() {
-        
-        global $wpdb;
-        
-        $id = get_current_blog_id();
-        $blog_prefix = $wpdb->get_blog_prefix($id);
-        $query = "select ID from {$wpdb->users} users
-                    where not exists (select user_id from {$wpdb->usermeta}
-                                          where user_id=users.ID and meta_key='{$blog_prefix}capabilities') or
-                          exists (select user_id from {$wpdb->usermeta}
-                                    where user_id=users.ID and meta_key='{$blog_prefix}capabilities' and meta_value='a:0:{}')                ;";
-        $users = $wpdb->get_col($query);
-        
-        return $users;
-        
-    }
-    // end of get_users_without_role()
-    
+                   
     
     public function get_current_role() {
         
@@ -2771,6 +2693,49 @@ class Ure_Lib extends Garvs_WP_Lib {
         return $edit_user_caps;
     }
     // end of get_edit_user_caps_mode()
+    
+    
+    /**
+     * Returns comma separated string of capabilities directly (not through the roles) assigned to the user
+     * 
+     * @global WP_Roles $wp_roles
+     * @param object $user
+     * @return string
+     */
+    public function get_edited_user_caps($user) {
+        global $wp_roles;
+        
+        $output = '';
+        foreach ($user->caps as $cap => $value) {
+            if (!$wp_roles->is_role($cap)) {
+                if ('' != $output) {
+                    $output .= ', ';
+                }
+                $output .= $value ? $cap : sprintf(__('Denied: %s'), $cap);
+            }
+        }
+        
+        return $output;
+    }
+    // end of get_edited_user_caps()
+            
+    
+    public function is_user_profile_extention_allowed() {
+        // Check if we are not at the network admin center
+        $result = stripos($_SERVER['REQUEST_URI'], 'network/user-edit.php') == false;
+        
+        return $result;
+    }
+    // end of is_user_profile_extention_allowed()
+
+    
+    // create assign_role object
+    public function get_assign_role() {
+        $assign_role = new URE_Assign_Role($this);
+        
+        return $assign_role;
+    }
+    // end of get_assign_role()
     
 }
 // end of URE_Lib class

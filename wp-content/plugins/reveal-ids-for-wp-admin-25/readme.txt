@@ -18,7 +18,6 @@ What this plugin does is to reveal most removed entry IDs on admin pages, showin
 
 **Features:**
 
-* Following IDs can be revealed: posts, pages, categories, links, media, users, comments, link categories, custom taxonomies, custom post types, tags
 * Sortable columns for WP 3.1 or higher
 
 [Developer on Google+](https://plus.google.com/118074611982254715031 "Developer on Google+") | [Developer on Twitter](http://twitter.com/wpseek "Developer on Twitter")
@@ -55,6 +54,10 @@ None.
 1. Installation finished.
 
 == Changelog ==
+
+= 1.4.6.1 =
+* Backend cleanup
+* Added uninstall.php
 
 = 1.4.6 =
 * Fixed an issue that caused a redirection loop in some environments
