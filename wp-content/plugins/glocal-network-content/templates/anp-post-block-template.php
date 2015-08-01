@@ -4,7 +4,7 @@
 * Override by placing a file called plugins/glocal-network-content/anp-post-block-template.php in your active theme
 */ 
 
-$html .= '<article id="post-' . $post_id . '" class="post hentry list-item TESTIFY" role="article">';
+$html .= '<article id="post-' . $post_id . '" class="post hentry list-item" role="article">';
 
 $html .= '<header class="article-header">';
 if($show_thumbnail && $post_detail['post_image']) {
