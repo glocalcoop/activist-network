@@ -1,0 +1,360 @@
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+caption, th, td, th {
+	text-align: right;
+}
+
+.menu-toggles .screen-reader-text {
+	right: 0;
+	left: auto;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	right: 24px;
+	left: auto;
+}
+
+textarea {
+	padding-right: 3px;
+	padding-left: 0;
+}
+
+.entry-format, .hentry:before {
+	margin-right: -40px;
+	right: 50%;
+	left: auto;
+	margin-left: auto;
+}
+
+@media screen and (max-width: 51em) {
+
+	.entry-format, .hentry:before {
+		margin-right: -30px;
+	}
+
+}
+
+/* =Global */
+
+/* Alignment */
+.alignright {
+	float: right;
+	margin: 12px 0 12px 24px;
+}
+
+.alignleft {
+	float: left;
+	margin: 12px 24px 12px 0;
+}
+
+/* Headings */
+
+/* Text elements */
+
+ul {
+	margin: 0 24px 24px 0;
+}
+
+ol {
+	margin: 0 24px 24px 0;
+}
+
+li > ul,
+li > ol {
+	margin-right: 24px;
+	margin-left: auto;
+}
+
+dd {
+	margin: 12px 24px 12px 0;
+}
+
+blockquote {
+	border-right: 5px solid rgba(173, 163, 147, 0.25);
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 24px;
+	padding-left: 0;
+	border-left: none;
+}
+
+blockquote cite {
+	text-align: left;
+}
+
+.site-content {
+	float: left;
+}
+
+@media screen and (max-width: 65em) {
+	.site-content {
+		float: none;
+	}
+}
+
+.content-area {
+	float: right;
+	margin: 0 0 0 -30%;
+}
+
+@media screen and (max-width: 65em) {
+	.content-area {
+		float: none;
+		margin: 0;
+	}
+}
+
+/* =Header */
+.site-header {
+	float: right;
+}
+
+@media screen and (max-width: 65em) {
+	.site-header {
+		float: none;
+	}
+}
+
+.header-avatar {
+	right: 50%;
+	margin-right: -35px;
+	left: auto;
+	margin-left: auto;
+}
+
+.site-branding:after {
+	right: -1px;
+	left: auto;
+}
+
+/* =Menu */
+
+.main-navigation ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.main-navigation li li a {
+	padding-right: 48px;
+	padding-left: 0;
+}
+
+.main-navigation li li li a {
+	padding-right: 72px;
+	padding-left: 0;
+}
+
+/* Small menu */
+.menu-toggle {
+	float: right;
+}
+
+.menu-toggle:before {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+.header-search input[type="submit"] {
+	left: 0;
+	right: auto;
+}
+
+.hentry:after {
+	right: -1px;
+	left: auto;
+}
+
+@media screen and (max-width: 51em) {
+
+	.hentry:after {
+		right: 0;
+		left: auto;
+	}
+
+}
+
+.hentry.format-link .entry-title a:after {
+	margin-right: 7px;
+	margin-left: auto;
+}
+
+.comments-link a:before,
+.post-date a:before,
+.sticky .post-date a:before,
+.byline a:before,
+.edit-link a:before,
+a .post-date:before:before {
+	margin-left: 2px;
+	margin-right: auto;
+}
+
+.tags-links {
+	margin: 12px 11px 12px 0;
+}
+
+.tags-links a {
+	float: right;
+	margin-left: 24px;
+	margin-right: auto;
+}
+
+.tags-links a:after {
+	border-radius: 0 22px 22px 0;
+	right: -11px;
+	left: auto;
+}
+
+.tags-links a:before {
+	right: -4px;
+	left: auto;
+}
+
+.page-title:before {
+	margin-left: 7px;
+	margin-right: auto;
+}
+.gallery-item {
+	float: right;
+}
+
+.site-content [class*="paging-navigation"] .nav-previous a:before,
+.site-content [class*="post-navigation"] .nav-previous a:before {
+	right: 0;
+	margin-right: -48px;
+	text-align: left;
+	left: auto;
+	margin-left: auto;
+}
+
+@media screen and (max-width: 51em) {
+
+	.site-content [class*="paging-navigation"] .nav-previous a:before,
+	.site-content [class*="post-navigation"] .nav-previous a:before {
+		margin-right: -35px;
+	}
+
+}
+
+.site-content [class*="paging-navigation"] .nav-next a:before,
+.site-content [class*="post-navigation"] .nav-next a:before {
+	left: 0;
+	margin-left: -48px;
+	text-align: right;
+	right: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width: 51em) {
+
+	.site-content [class*="paging-navigation"] .nav-next a:before,
+	.site-content [class*="post-navigation"] .nav-next a:before {
+		margin-left: -35px;
+	}
+
+}
+.site-content .comment-navigation .nav-previous {
+	float: right;
+}
+
+.site-content .comment-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+.comment-list {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.comment-list .children {
+	padding-right: 6px;
+	padding-left: 0;
+}
+
+.pingback .edit-link,
+.trackback .edit-link {
+	float: left;
+	margin-right: 24px;
+	margin-left: 0;
+}
+.comment-author .avatar-wrapper {
+	float: right;
+	margin: 0 -35px 0 12px;
+	right: 50%;
+	left: auto;
+}
+
+@media screen and (max-width: 51em) {
+
+	.comment-author .avatar-wrapper {
+		margin-right: -30px;
+	}
+
+}
+
+#cancel-comment-reply-link {
+	float: left;
+}
+
+#cancel-comment-reply-link:before {
+	margin-left: 3px;
+	margin-right: auto;
+}
+
+.reply {
+	margin-left: 24px;
+	margin-right: auto;
+}
+
+.reply:before {
+	margin-left: 3px;
+	margin-right: auto;
+}
+
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label,
+.comment-form-comment label {
+	right: 0;
+	left: auto;
+}
+
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input,
+.comment-form-comment input {
+	padding-right: 100px;
+	padding-left: 0;
+}
+
+/* =Widgets */
+
+.widget select {
+	margin-right: 24px;
+	margin-left: auto;
+}
+
+.widget ul li li {
+	padding: 6px 12px 6px 0;
+}
+
+.widget_search input {
+	margin-right: 24px;
+	margin-left: auto;
+}
+
+div.sharedaddy div.sd-block {
+	padding: 11px !important 12px 0;
+}
+
+/* =Social Links */
+
+.social-links ul:last-of-type {
+	margin-left: 0;
+	margin-right: auto;
+}

@@ -1,0 +1,308 @@
+# Translation of Adaption in Indonesian
+# This file is distributed under the same license as the Adaption package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-07-12 03:25:03+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Adaption\n"
+
+#: functions.php:90
+msgid "Mobile Widgets"
+msgstr ""
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/adaption/style.css
+msgid "A theme that adapts to your content, making sure it looks good on any device. Full width featured images make your content stand out. This theme adapts as add widgets with a 3rd column added to the layout."
+msgstr ""
+
+#. Author of the plugin/theme
+#: wp-content/themes/pub/adaption/style.css
+msgid "Automattic"
+msgstr "Automattic"
+
+#: inc/template-tags.php:106
+msgctxt "1: date, 2: time"
+msgid ", %1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:109
+msgid " (Edit)"
+msgstr ""
+
+#: inc/template-tags.php:147
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr ""
+
+#: inc/template-tags.php:158
+msgid "<span class=\"posted-on\">Posted on %1$s</span>"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Hasil Pencarian untuk: %s"
+
+#: inc/template-tags.php:102
+msgid "%s "
+msgstr "%s"
+
+#: inc/template-tags.php:99
+msgid "Your comment is awaiting moderation."
+msgstr "Komentar Anda sedang menunggu moderasi."
+
+#: inc/template-tags.php:82
+msgid "Pingback:"
+msgstr "Ping balik:"
+
+#: inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Navigasi pos"
+
+#: inc/template-tags.php:31
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Pos-pos selanjutnya <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:27
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Pos-pos sebelumnya"
+
+#: inc/extras.php:116
+msgid "Read more <span class=\"screen-reader-text\">%1s</span>"
+msgstr ""
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Navigasi pos"
+
+#: inc/extras.php:66
+msgid "Page %s"
+msgstr "Halaman %s"
+
+#: header.php:38 header.php:93
+msgid "Skip to content"
+msgstr "Lanjut ke konten"
+
+#: functions.php:44
+msgid "Social Links Menu"
+msgstr "Menu Tautan Sosial"
+
+#: functions.php:72
+msgid "Sidebar One"
+msgstr "Bilah Sisi Satu"
+
+#: functions.php:81
+msgid "Sidebar Two"
+msgstr "Bilah sisi Dua"
+
+#. translators: If there are characters in your language that are not supported
+#. by Arimo, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:113
+msgctxt "Arimo sans-serif font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: To add an additional Armio character subsets,
+#. * translate this to 'greek', 'cyrillic' or 'vietnamese'.
+#. * Do not translate these strings into your own langauge.
+#: functions.php:121
+msgctxt "Arimo: add new subset (cyrillic, greek, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: functions.php:43
+msgid "Primary Menu"
+msgstr "Menu Utama"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s oleh %2$s."
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "Dengan bangga ditenagai oleh %s"
+
+#: content.php:69
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Baca lebih lanjut <span class=\"meta-nav\">&rarr;</span>"
+
+#: content.php:22
+msgid "% Comments"
+msgstr "% Komentar"
+
+#: content.php:22
+msgid "1 Comment"
+msgstr "1 Komentar"
+
+#: content.php:22
+msgid "Leave a comment"
+msgstr "Tinggalkan komentar"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:60 content.php:82
+msgid " "
+msgstr ""
+
+#: content-single.php:66 content.php:87
+msgid "%1$s"
+msgstr "%1$s"
+
+#: content-single.php:32 content.php:40
+msgid "All %s posts"
+msgstr "Semua %s tulisan"
+
+#: content-single.php:38
+msgid " Edit"
+msgstr "Sunting"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:24 content.php:30
+msgid ", "
+msgstr ", "
+
+#: content-single.php:13 content.php:13
+msgid "Permalink to %s"
+msgstr "Taut permanen ke %s"
+
+#: content-page.php:23 inc/template-tags.php:82
+msgid "Edit"
+msgstr "Edit"
+
+#: content-page.php:18 content-single.php:52 content.php:72
+msgid "Pages:"
+msgstr "Halaman:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Rupanya kami tidak dapat menemukan apa yang Anda cari. Mungkin pencarian dapat membantu."
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Maaf, tidak ada yang cocok dengan kata yang anda cari. Silahkan coba lagi dengan kata kunci yang lain"
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Sudah siap menerbitkan pos pertamamu? <a href=\"%1$s\">Mulai di sini</a>."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Tidak Menemukan Apa-apa"
+
+#: comments.php:63
+msgid "Comments are closed."
+msgstr "Komentar ditutup."
+
+#: comments.php:39 comments.php:53
+msgid "Newer Comments &rarr;"
+msgstr "Komentar Selanjutnya &rarr;"
+
+#: comments.php:38 comments.php:52
+msgid "&larr; Older Comments"
+msgstr "&larr; Komentar Sebelumnya"
+
+#: comments.php:37 comments.php:51
+msgid "Comment navigation"
+msgstr "Navigasi komentar"
+
+#: comments.php:30
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Satu pemikiran pada &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s pemikiran pada &ldquo;%2$s&rdquo;"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Obrolan"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "Arsip"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Audio"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "Status"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Tautan"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Kutipan"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Film"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Gambar"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Sampingan"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Galeri"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Tahun: %s"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Bulan: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Hari: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Penulis: %s"
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Coba cari di arsip bulanan. %1$s"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "Kategori Paling Banyak Digunakan"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Nampaknya tidak ada yang ditemukan di lokasi. Mungkin coba salah satu tautan di bawah atau telusuri?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Halaman itu tidak dapat ditemukan."

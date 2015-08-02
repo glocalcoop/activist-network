@@ -1,0 +1,295 @@
+# Translation of Hew in Dutch
+# This file is distributed under the same license as the Hew package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-02-20 03:53:12+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Hew\n"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/hew/style.css
+msgid "Hew is a personal blog theme with distinct identity and a splash of colour! It's all about sharing your thoughts and experiences, and connecting with your readers via prominently placed social media links."
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Zoekresultaten voor: %s"
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:330
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: inc/template-tags.php:332
+msgid "Archives"
+msgstr "Archieven"
+
+#: inc/template-tags.php:323
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "Gesprekken"
+
+#: inc/template-tags.php:326
+msgid "Archives: %s"
+msgstr "Archieven: %s"
+
+#: inc/template-tags.php:319
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "Statussen"
+
+#: inc/template-tags.php:321
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Audio"
+
+#: inc/template-tags.php:317
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "Links"
+
+#: inc/template-tags.php:313
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Video's"
+
+#: inc/template-tags.php:315
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "Citaten"
+
+#: inc/template-tags.php:311
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "Afbeeldingen"
+
+#: inc/template-tags.php:307
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "Zijdelings"
+
+#: inc/template-tags.php:309
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "Galerijen"
+
+#: inc/template-tags.php:304
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j F Y"
+
+#: inc/template-tags.php:304
+msgid "Day: %s"
+msgstr "Dag: %s"
+
+#: inc/template-tags.php:302
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/template-tags.php:302
+msgid "Month: %s"
+msgstr "Maand: %s"
+
+#: inc/template-tags.php:300
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/template-tags.php:300
+msgid "Year: %s"
+msgstr "Jaar: %s"
+
+#: inc/template-tags.php:298
+msgid "Author: %s"
+msgstr "Auteur: %s"
+
+#: inc/template-tags.php:296
+msgid "Tag: %s"
+msgstr "Tag: %s"
+
+#: inc/template-tags.php:294
+msgid "Category: %s"
+msgstr "Categorie: %s"
+
+#: inc/template-tags.php:273
+msgid "Post navigation"
+msgstr "Berichtnavigatie"
+
+#: inc/template-tags.php:249
+msgid "Newer posts"
+msgstr "Nieuwere berichten"
+
+#: inc/template-tags.php:245
+msgid "Older posts"
+msgstr "Oudere berichten"
+
+#: inc/template-tags.php:86
+msgctxt "categories list"
+msgid "in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:241
+msgid "Posts navigation"
+msgstr "Berichtennavigatie"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:84
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:79
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Geplaatst op %s"
+
+#: inc/template-tags.php:50
+msgid "Your comment is awaiting moderation."
+msgstr "Je reactie is in afwachting van moderatie."
+
+#: inc/template-tags.php:40
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s om %2$s"
+
+#: inc/template-tags.php:34
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">zegt:</span>"
+
+#: inc/template-tags.php:23
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/extras.php:118
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: header.php:68 header.php:69
+msgid "Widgets"
+msgstr "Widgets"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Droid Serif, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:130
+msgctxt "Noto Serif font: on or off"
+msgid "on"
+msgstr "on"
+
+#: header.php:32
+msgid "Skip to content"
+msgstr "Spring naar inhoud"
+
+#: functions.php:72
+msgid "Top Widget Area One"
+msgstr ""
+
+#: functions.php:82
+msgid "Top Widget Area Two"
+msgstr ""
+
+#: functions.php:92
+msgid "Top Widget Area Three"
+msgstr ""
+
+#: functions.php:102
+msgid "Top Widget Area Four"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported
+#. * by Source Sans Pro, translate this to 'off'. Do not translate into your
+#. own language.
+#: functions.php:125
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:42
+msgid "Social Menu"
+msgstr "Social-menu"
+
+#: functions.php:41 header.php:49
+msgid "Primary Menu"
+msgstr "Primair menu"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Thema: %1$s door %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Met trots ondersteund door %s"
+
+#: footer.php:15
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Een semantisch persoonlijk publicatieplatform"
+
+#: content-quote.php:11 inc/template-tags.php:129
+msgid "All %s posts"
+msgstr "Alle %s berichten"
+
+#: content-page.php:29 inc/template-tags.php:23 inc/template-tags.php:43
+#: inc/template-tags.php:113
+msgid "Edit"
+msgstr "Bewerken"
+
+#: content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Het lijkt erop dat we niet kunnen vinden wat je zoekt. Misschien kan zoeken helpen."
+
+#: content-none.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sorry, maar niets kwam overeen met je zoektermen. Gelieve het opnieuw te proberen met een aantal andere trefwoorden."
+
+#: content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Klaar om je eerste bericht te publiceren? <a href=\"%1$s\">Begin hier</a>."
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: content-image.php:47 content-link.php:28 content-page.php:21
+#: content-quote.php:26 content-single.php:28 content.php:30
+msgid "Pages:"
+msgstr "Pagina&#39;s:"
+
+#: content-image.php:7 content-link.php:25 content-quote.php:23
+#: content-single.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lees verder <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr "Reacties zijn gesloten."
+
+#: comments.php:37 comments.php:56
+msgid "Newer Comments &rarr;"
+msgstr "Nieuwe reacties &rarr;"
+
+#: comments.php:36 comments.php:55
+msgid "&larr; Older Comments"
+msgstr "&larr; Oudere reacties"
+
+#: comments.php:35 comments.php:54
+msgid "Comment navigation"
+msgstr "Reactienavigatie"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Een gedachte over &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s gedachtes over &ldquo;%2$s&rdquo;"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Het lijkt erop dat er niets werd gevonden op deze locatie. Misschien een zoekopdracht  proberen?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oeps! Die pagina kon niet worden gevonden."

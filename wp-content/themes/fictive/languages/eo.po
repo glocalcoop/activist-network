@@ -1,0 +1,309 @@
+# Translation of Fictive in Esperanto
+# This file is distributed under the same license as the Fictive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-01-09 16:09:31+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Fictive\n"
+
+#: eventbrite/eventbrite-index.php:38 eventbrite/eventbrite-single.php:25
+msgid "Eventbrite event"
+msgstr ""
+
+#. Author URI of the plugin/theme
+#: wp-content/themes/pub/fictive/style.css
+msgid "https://wordpress.com/themes/"
+msgstr "https://wordpress.com/themes/"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/fictive/style.css
+msgid "Fictive is all about you -- your style, your look, your story. Make it personal with a custom header image, a Gravatar, and links to your favorite social networks. Use Post Formats to dress up your content, add a custom menu and widgets, or keep it simple with a fixed-position header."
+msgstr ""
+
+#: inc/template-tags.php:144
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s je %2$s"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Serĉrezultoj por: %s"
+
+#: inc/template-tags.php:124
+msgid "Your comment is awaiting moderation."
+msgstr "Via komento atendas kontroladon"
+
+#: inc/template-tags.php:120
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">diras:</span>"
+
+#: inc/template-tags.php:83
+msgid "<span class=\"post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a></span><span class=\"byline\"><span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:110
+msgid "Pingback:"
+msgstr "Resondado:"
+
+#: inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+msgstr "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+
+#: inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+msgstr "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+
+#: inc/template-tags.php:74
+msgid "<span class=\"post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">Featured</a></span><span class=\"byline\"><span class=\"author vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\" rel=\"author\">%5$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:78 inc/template-tags.php:89
+msgid "View all posts by %s"
+msgstr "Vidu ĉiujn afiŝojn de %s"
+
+#: inc/template-tags.php:27
+msgctxt "Older posts"
+msgid "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+msgstr "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+
+#: inc/template-tags.php:31
+msgctxt "Newer posts"
+msgid "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+msgstr "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Navigado tra afiŝoj"
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Navigado tra afiŝoj"
+
+#: inc/extras.php:67
+msgid "Page %s"
+msgstr "Paĝo %s"
+
+#: inc/customizer.php:46
+msgid "Scroll"
+msgstr "Rulumi"
+
+#: inc/customizer.php:29
+msgid "Gravatar Email"
+msgstr ""
+
+#: inc/customizer.php:41
+msgid "Sidebar Position"
+msgstr ""
+
+#: inc/customizer.php:45
+msgid "Fixed"
+msgstr "Fiksita"
+
+#: inc/customizer.php:19
+msgid "Theme"
+msgstr "Etoso"
+
+#: header.php:66
+msgid "Skip to content"
+msgstr "Iri rekte al enhavo"
+
+#: header.php:62
+msgid "Search"
+msgstr "Serĉi"
+
+#: header.php:60
+msgid "Widgets"
+msgstr "Kromprogrametoj"
+
+#. translators: If there are characters in your language that are not supported
+#. by Bitter, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:168
+msgctxt "Bitter font: on or off"
+msgid "on"
+msgstr "off"
+
+#: header.php:57
+msgid "Menu"
+msgstr "Menuo"
+
+#. translators: If there are characters in your language that are not supported
+#. by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:159
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:45
+msgid "Social Links"
+msgstr "Sociaj ligiloj"
+
+#: functions.php:78
+msgid "Sidebar"
+msgstr "Flankpanelo"
+
+#: functions.php:44
+msgid "Primary Menu"
+msgstr "Ĉefa menuo"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Etoso: %1$s de %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Fiere kreata de %s"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content.php:45
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Legi plu <span class=\"meta-nav\">&rarr;</span>"
+
+#: content.php:32
+msgid "% Comments"
+msgstr "% Komentoj"
+
+#: content.php:32
+msgid "1 Comment"
+msgstr "1 komento"
+
+#: content.php:32
+msgid "Leave a comment"
+msgstr "Komenti"
+
+#: content-single.php:17 content.php:18
+msgid "All %s posts"
+msgstr "Ĉiuj %s-afiŝoj"
+
+#: content-page.php:30 content-single.php:27 content.php:35
+#: eventbrite/eventbrite-index.php:46 eventbrite/eventbrite-single.php:33
+#: inc/template-tags.php:110 inc/template-tags.php:147
+msgid "Edit"
+msgstr "Redakti"
+
+#: content-page.php:24 content-single.php:35 content.php:48
+msgid "Pages:"
+msgstr "Paĝoj:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Ŝajnas, ke ni ne povas trovi tion. Eble serĉo helpos."
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Bedaŭrinde, nenio kongruis kun viaj serĉaj kriterioj. Bonvolu provi denove, uzante malsamajn vortojn."
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Ĉu preta por publikigi vian unuan afiŝon? <a href=\"%1$s\">Eku ĉi tie</a>."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Nenio estis trovita"
+
+#: comments.php:61
+msgid "Comments are closed."
+msgstr "Komentado estas fermita."
+
+#: comments.php:37 comments.php:51
+msgid "Newer Comments &rarr;"
+msgstr "Pli novaj komentoj &rarr;"
+
+#: comments.php:36 comments.php:50
+msgid "&larr; Older Comments"
+msgstr "&larr; Pli malnovaj komentoj"
+
+#: comments.php:35 comments.php:49
+msgid "Comment navigation"
+msgstr "Navigado tra komentoj"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Unu penso pri &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s pensoj pri &ldquo;%2$s&rdquo;"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "Arkivoj"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "Statoj"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Aŭdaĵoj"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Babiloj"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Ligiloj"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Citaĵoj"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Videoj"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Galerioj"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Bildoj"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Mencioj"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Jaro: %s"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Tago: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Monato: %s"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Aŭtoro: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ne eblas trovi tiun paĝon."

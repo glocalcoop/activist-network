@@ -1,0 +1,328 @@
+# Translation of Sequential in French (France)
+# This file is distributed under the same license as the Sequential package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-11-28 11:28:24+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Sequential\n"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/sequential/style.css
+msgid "Sequential is a contemporary, clean, and multi-purpose business theme."
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/full-width-page.php
+msgid "Full-Width Page"
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/grid-page.php
+msgid "Grid Page"
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/front-page.php
+msgid "Front Page"
+msgstr "Page d'Accueil"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Résultats de recherche pour : %s"
+
+#: inc/template-tags.php:180
+msgid "% Comments"
+msgstr "% commentaires"
+
+#: inc/template-tags.php:180
+msgid "1 Comment"
+msgstr "Un commentaire"
+
+#: inc/template-tags.php:180
+msgid "Leave a comment"
+msgstr "Laisser un commentaire"
+
+#: inc/template-tags.php:174
+msgid "Tagged %1$s"
+msgstr "Tagu&eacute; %1$s"
+
+#: inc/template-tags.php:168
+msgid "Posted in %1$s"
+msgstr "Posté dans %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:166 inc/template-tags.php:172
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:146
+msgid "Featured"
+msgstr "à la Une"
+
+#: inc/template-tags.php:120
+msgid "All %s posts"
+msgstr "Tous les articles de %s"
+
+#: inc/template-tags.php:59
+msgid "<span class=\"meta-nav\">Next Post</span>%title"
+msgstr "<span class=\"meta-nav\">Article Suivant</span>%title"
+
+#: inc/template-tags.php:56
+msgid "<span class=\"meta-nav\">Published In</span>%title"
+msgstr "<span class=\"meta-nav\">Publi&eacute; dans</span>%title"
+
+#: inc/template-tags.php:58
+msgid "<span class=\"meta-nav\">Previous Post</span>%title"
+msgstr "<span class=\"meta-nav\">Article Pr&eacute;c&eacute;dent</span>%title"
+
+#: inc/template-tags.php:52
+msgid "Post navigation"
+msgstr "Navigation des articles"
+
+#: inc/template-tags.php:29
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:25
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articles Précédents"
+
+#: inc/template-tags.php:21
+msgid "Posts navigation"
+msgstr "Navigation des articles"
+
+#: inc/customizer.php:79
+msgid "Front Page: Show Page Titles"
+msgstr ""
+
+#: inc/extras.php:83
+msgid "Page %s"
+msgstr "Page %s"
+
+#: inc/customizer.php:31
+msgid "Show Tagline"
+msgstr ""
+
+#: inc/customizer.php:43
+msgid "Top Area Content"
+msgstr ""
+
+#: inc/customizer.php:55
+msgid "Front Page: Featured Page One"
+msgstr "Page d&rsquo;accueil&nbsp;: page à la Une Section #1"
+
+#: inc/customizer.php:67
+msgid "Front Page: Featured Page Two"
+msgstr "Page d&rsquo;accueil&nbsp;: page à la Une Section #2"
+
+#: inc/customizer.php:20
+msgid "Theme"
+msgstr "Thème"
+
+#: header.php:45
+msgid "Menu"
+msgstr "Menu"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Source Code Pro, translate this to 'off'. Do not translate into your
+#. own language.
+#: functions.php:186
+msgctxt "Source Code Pro font: on or off"
+msgid "on"
+msgstr "on"
+
+#: header.php:23
+msgid "Skip to content"
+msgstr "Aller au contenu principal"
+
+#. translators: To add an additional Open Sans character subset specific to
+#. your language,
+#. * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate
+#. into your own language.
+#: functions.php:154
+msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr "no-subset"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Montserrat, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:126
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr "on"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:148
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:104
+msgid "Footer"
+msgstr "Pied de page"
+
+#: functions.php:95
+msgid "Sidebar"
+msgstr "Colonne latérale"
+
+#: functions.php:60
+msgid "Footer Menu"
+msgstr "Menu du pied de page"
+
+#: functions.php:59
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: footer.php:32
+msgid "Theme: %1$s by %2$s."
+msgstr "Thème %1$s par %2$s."
+
+#: footer.php:30
+msgid "Proudly powered by %s"
+msgstr "Fièrement propulsé par %s"
+
+#: footer.php:30
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lire la suite <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:24 content-single.php:26 content.php:27
+msgid "Pages:"
+msgstr "Pages&nbsp;:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Contenu Introuvable. Voulez-vous lancer une recherche?"
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Contenu Introuvable. Réessayez en modifiant les termes de recherche."
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Pr&ecirc;t &agrave; publier votre premier article ? <a href=\"%1$s\">Allons-y !</a>."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Aucun Résultat"
+
+#: content-grid.php:16
+msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lire la suite <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-grid.php:19 content-page.php:32 inc/template-tags.php:154
+#: page-templates/front-page.php:26
+msgid "Edit"
+msgstr "Modifier"
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: comments.php:47
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Commentaires Plus Récents <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Commentaires Pr&eacute;c&eacute;dents"
+
+#: comments.php:45
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Une r&eacute;flexion sur &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s r&eacute;flexions sur &ldquo;%2$s&rdquo;"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "Archives"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Chats"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Audios"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "États"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Liens"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Citations"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Vidéos"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Images"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Galeries"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Apart&eacute;s"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Ann&eacute;e: %s"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Mois: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Jour: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Auteur : %s"
+
+#. translators: %1$s: smiley
+#: 404.php:29
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Essayez du c&ocirc;t&eacute; des archives mensuelles. %1$s"
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Contenu Introuvable. L'outil de Recherche ou les Liens ci-dessous vous remettront peut-être sur la voie&hellip;"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oups ! Cette page est introuvable."

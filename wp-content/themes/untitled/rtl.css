@@ -1,0 +1,242 @@
+/*
+Theme Name: untitled
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+
+/* =Layout
+----------------------------------------------- */
+
+#masthead #logo {
+	float: right;
+	width: auto;
+}
+
+
+/* =Menu
+----------------------------------------------- */
+
+.nav-wrap{
+	float: left;
+	width: 70%;
+}
+.main-navigation {
+	float: left;
+	font-family: 'arvo', georgia;
+	padding-top: 2px;
+	text-transform: uppercase;
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	float: left;
+}
+
+
+/* =Featured Content and mini carousel
+----------------------------------------------- */
+
+#featured-content.flexslider .slides .hentry {
+	text-align: left;
+}
+
+#featured-content.flexslider .slides .hentry {
+	left: 0;
+	right: auto;
+}
+
+#featured-content.flexslider{
+	direction: ltr;
+}
+
+.minislides{
+	direction: ltr;
+}
+
+
+/* =Featured image styles
+----------------------------------------------- */
+
+#main .post-thumb {
+	overflow: hidden;
+	padding-bottom: 30px;
+}
+#main .post-thumb .header-wrapper {
+	float: right;
+}
+.entry-title {
+	font-family: "raleway", sans-serif;
+	text-transform: uppercase;
+	line-height: 1.0344827586;
+	padding: 0;
+	margin: 0 0 30px 0;
+	font-size: 29px;
+}
+.entry-meta{
+	line-height: 1.2857142857;
+	font-size: 14px;
+	padding: 0;
+	color: #000;
+	border: 0!important;
+	z-index: 99999;
+	text-align: right;
+	margin: 0 0 12px;
+}
+.entry-meta a{
+	color: #000;
+}
+.entry-meta a:hover{
+	color: #999;
+}
+#main .single-thumbnail a {
+	float: right;
+	margin-right: 0;
+	margin-left: 4.14285715%;
+	max-width: 43%;
+	position: relative;
+}
+#main .single-thumbnail a img{
+	max-width:100%;
+	height: auto;
+}
+
+
+/* Media queries for responsive design
+--------------------------------------------- */
+
+@media screen and (max-width: 1000px) {
+	#featured-content.flexslider .slides .featured-hentry-wrap {
+		width: 100%;
+		margin: 0;
+	}
+	.site-info{
+		padding:0 30px;
+	}
+	.site-title{
+		padding-right:30px;
+	}
+	.nav-wrap{
+		padding-right:30px;
+		}
+}
+@media screen and (max-width: 965px) {
+	#main, #single-main{
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	.widget-area .content-area {
+		float: none;
+		margin: 0 auto;
+		width: 100%;
+	}
+	.widget-area .site-content {
+		margin: 0 0% 10% 0;
+	}
+	.widget-area #secondary{
+		max-width: 700px;
+		margin:0 auto;
+		}
+	.site-main .widget-area{
+		float: none;
+		clear:left
+		overflow: hidden;
+		width: 100%;
+	}
+}
+@media screen and (max-width: 700px) {
+	#featured-content.flexslider .slides .featured-hentry-wrap {
+		width: 100%;
+		margin:0;
+	}
+}
+/* --- iPad Portrait --- */
+@media screen and (max-width: 890px) {
+.nav-wrap{
+	float: none;
+	width: 100%;
+}
+.main-navigation {
+	float: right;
+	font-family: 'arvo', georgia;
+	padding-top: 2px;
+	text-transform: uppercase;
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	float: right;
+}
+}
+@media screen and (max-width: 708px) {
+/* =Featured image styles
+----------------------------------------------- */
+
+#main, #single-main{
+	padding:10px;
+	}
+}
+/* --- Smartphones and small Tablet PCs --- */
+@media screen and (max-width: 767px) {
+#masthead #logo {
+	float: none;
+	width: 100%;
+}
+.site-title {
+	text-align: center
+}
+}
+/* --- Small menu --- */
+@media screen and (max-width: 600px) {
+.site-navigation h1.menu-toggle {
+	color: #fff;
+	font-size: 14px;
+	margin: 0;
+	padding: 15px 0;
+	font-family:raleway, arial;
+	text-align:center;
+}
+.site-navigation h1.menu-toggle:hover{
+	color: #999;
+}
+.site-navigation h1.menu-toggle:before {
+	content: '\f419';
+	color: #fff;
+	font-size: 14px;
+	margin: 0;
+	padding: 0 0 0 14px;
+	font-family: genericons, arial;
+	vertical-align: middle;
+}
+.main-small-navigation .menu {
+	list-style-type: none;
+	margin: 3% 3% 0 3%;
+	padding-bottom: 10px;
+	font-family: 'arvo', georgia;
+	text-transform: uppercase;
+	font-size:13px;
+}
+.main-small-navigation ul,
+.main-small-navigation ul ul {
+	list-style-type: none;
+}
+.main-small-navigation ul li a{
+	display: block;
+	line-height:2;
+}
+.main-small-navigation ul li a:hover {
+	color: #fff;
+}
+}

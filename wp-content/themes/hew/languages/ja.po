@@ -1,0 +1,294 @@
+# Translation of Hew in Japanese
+# This file is distributed under the same license as the Hew package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-02-19 14:52:43+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Hew\n"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/hew/style.css
+msgid "Hew is a personal blog theme with distinct identity and a splash of colour! It's all about sharing your thoughts and experiences, and connecting with your readers via prominently placed social media links."
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "検索結果: %s"
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:330
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: inc/template-tags.php:332
+msgid "Archives"
+msgstr "アーカイブ"
+
+#: inc/template-tags.php:323
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "チャット"
+
+#: inc/template-tags.php:326
+msgid "Archives: %s"
+msgstr "アーカイブ: %s"
+
+#: inc/template-tags.php:319
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "ステータス"
+
+#: inc/template-tags.php:321
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "音声"
+
+#: inc/template-tags.php:317
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "リンク"
+
+#: inc/template-tags.php:313
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "動画"
+
+#: inc/template-tags.php:315
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "引用"
+
+#: inc/template-tags.php:311
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "画像"
+
+#: inc/template-tags.php:307
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "アサイド"
+
+#: inc/template-tags.php:309
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "ギャラリー"
+
+#: inc/template-tags.php:304
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "Y年n月j日"
+
+#: inc/template-tags.php:304
+msgid "Day: %s"
+msgstr "﻿日: %s"
+
+#: inc/template-tags.php:302
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "Y年n月"
+
+#: inc/template-tags.php:302
+msgid "Month: %s"
+msgstr "月別: %s"
+
+#: inc/template-tags.php:300
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y年"
+
+#: inc/template-tags.php:300
+msgid "Year: %s"
+msgstr "﻿年: %s"
+
+#: inc/template-tags.php:298
+msgid "Author: %s"
+msgstr "作者別: %s"
+
+#: inc/template-tags.php:296
+msgid "Tag: %s"
+msgstr "タグ: %s"
+
+#: inc/template-tags.php:294
+msgid "Category: %s"
+msgstr "カテゴリー: %s"
+
+#: inc/template-tags.php:273
+msgid "Post navigation"
+msgstr "投稿ナビゲーション"
+
+#: inc/template-tags.php:249
+msgid "Newer posts"
+msgstr "新しい投稿"
+
+#: inc/template-tags.php:245
+msgid "Older posts"
+msgstr "過去の投稿"
+
+#: inc/template-tags.php:86
+msgctxt "categories list"
+msgid "in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:241
+msgid "Posts navigation"
+msgstr "投稿ナビゲーション"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:84
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:79
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "投稿日: %s"
+
+#: inc/template-tags.php:50
+msgid "Your comment is awaiting moderation."
+msgstr "あなたのコメントは承認待ちです。"
+
+#: inc/template-tags.php:40
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s %2$s"
+
+#: inc/template-tags.php:34
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">より:</span>"
+
+#: inc/template-tags.php:23
+msgid "Pingback:"
+msgstr "ピンバック:"
+
+#: inc/extras.php:118
+msgid "Page %s"
+msgstr "ページ %s"
+
+#: header.php:68 header.php:69
+msgid "Widgets"
+msgstr "ウィジェット"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Droid Serif, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:130
+msgctxt "Noto Serif font: on or off"
+msgid "on"
+msgstr "on"
+
+#: header.php:32
+msgid "Skip to content"
+msgstr "コンテンツへ移動"
+
+#: functions.php:72
+msgid "Top Widget Area One"
+msgstr "トップウィジェットエリア 1"
+
+#: functions.php:82
+msgid "Top Widget Area Two"
+msgstr "トップウィジェットエリア 2"
+
+#: functions.php:92
+msgid "Top Widget Area Three"
+msgstr "トップウィジェットエリア 3"
+
+#: functions.php:102
+msgid "Top Widget Area Four"
+msgstr "トップウィジェットエリア 4"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Source Sans Pro, translate this to 'off'. Do not translate into your
+#. own language.
+#: functions.php:125
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:42
+msgid "Social Menu"
+msgstr "ソーシャルメニュー"
+
+#: functions.php:41 header.php:49
+msgid "Primary Menu"
+msgstr "メインメニュー"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Theme: %1$s by %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: footer.php:15
+msgid "A Semantic Personal Publishing Platform"
+msgstr "セマンティックなブログ／CMS プラットフォーム"
+
+#: content-quote.php:11 inc/template-tags.php:129
+msgid "All %s posts"
+msgstr "すべての%s投稿"
+
+#: content-page.php:29 inc/template-tags.php:23 inc/template-tags.php:43
+#: inc/template-tags.php:113
+msgid "Edit"
+msgstr "編集"
+
+#: content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
+
+#: content-none.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "ご指定の検索条件に一致する投稿がありませんでした。他のキーワードでもう一度検索してみてください。"
+
+#: content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "最初の投稿をする準備ができましたか ?  <a href=\"%1$s\">ここからスタート</a>してください。"
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr "見つかりません"
+
+#: content-image.php:47 content-link.php:28 content-page.php:21
+#: content-quote.php:26 content-single.php:28 content.php:30
+msgid "Pages:"
+msgstr "ページ:"
+
+#: content-image.php:7 content-link.php:25 content-quote.php:23
+#: content-single.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr "コメントは受け付けていません。"
+
+#: comments.php:37 comments.php:56
+msgid "Newer Comments &rarr;"
+msgstr "新しいコメント &rarr;"
+
+#: comments.php:36 comments.php:55
+msgid "&larr; Older Comments"
+msgstr "&larr; 古いコメント"
+
+#: comments.php:35 comments.php:54
+msgid "Comment navigation"
+msgstr "コメントナビゲーション"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "「%2$s」への%1$s件のフィードバック"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "こちらには何もありません。検索をお試しください。"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "お探しのページが見つかりません。"

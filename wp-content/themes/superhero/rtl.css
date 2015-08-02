@@ -1,0 +1,204 @@
+/*
+Theme Name: Superhero
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+/*
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+*/
+
+/* =Reset
+-------------------------------------------------------------- */
+
+caption, th, td {
+	text-align: right;
+}
+
+/* =Global
+----------------------------------------------- */
+
+/* Text elements */
+
+ul, ol {
+	margin: 0 3em 1.5em 0;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+	margin-right: 1.5em;
+	margin-left: auto;
+}
+
+textarea {
+	padding-right: 3px;
+	padding-left: 0;
+}
+
+/* Links */
+
+/* Alignment */
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
+	margin-left: auto;
+}
+
+/* =Layout
+----------------------------------------------- */
+
+#masthead hgroup {
+	float: right;
+}
+
+#primary {
+	float: right;
+	margin-left: 25px;
+	margin-right: auto;
+}
+
+#primary.full-width-page {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+#secondary {
+	float: left;
+}
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+	float: left;
+}
+
+.main-navigation ul {
+	padding-right: 0;
+	text-align: left;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	float: right;
+	right: 0;
+	text-align: right;
+	left: auto;
+}
+
+.main-navigation ul ul ul {
+	right: 100%;
+	left: auto;
+}
+
+/* =Featured Content
+----------------------------------------------- */
+
+#featured-content.flexslider .slides .hentry {
+	left: 0;
+	right: auto;
+}
+
+#featured-content .flex-direction-nav li .next {
+	left: 0;
+	right: auto;
+}
+
+#featured-content .flex-direction-nav li .prev {
+	right: 0;
+	left: auto;
+}
+
+#featured-content .flex-control-nav {
+	left: 0;
+	right: auto;
+}
+#featured-content.flexslider:hover .flex-direction-nav li a {
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Opera, Chrome, and Safari */
+	transform: rotate(180deg);
+	-webkit-transition: opacity 0.2s ease;
+	-moz-transition: opacity 0.2s ease;
+	-o-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+}
+#featured-content .flex-direction-nav li a {
+	line-height: 49px;
+	-webkit-transition: opacity 0.2s ease;
+	-moz-transition: opacity 0.2s ease;
+	-o-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+}
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-content .nav-previous {
+	float: right;
+}
+
+.site-content .nav-next {
+	float: left;
+	text-align: left;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.commentlist .comment-content li {
+	margin-right: 2.8em;
+	margin-left: auto;
+}
+
+.commentlist li li {
+	padding-right: 10%;
+	padding-left: 0;
+}
+
+.commentlist .avatar {
+	float: right;
+	margin: 0 0 10px 13px;
+}
+
+.comment-author {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+.comment-content {
+	clear: right;
+}
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget ul ul {
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+/* Search widget */
+
+#not-found-secondary .widget {
+	float: right;
+	margin-left: 5%;
+	margin-right: auto;
+}
+
+#not-found-secondary .widget.widget_archive {
+	margin-left: 0;
+	margin-right: auto;
+}

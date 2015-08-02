@@ -1,0 +1,308 @@
+# Translation of Adaption in Dutch
+# This file is distributed under the same license as the Adaption package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-02-09 08:25:51+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Adaption\n"
+
+#: functions.php:90
+msgid "Mobile Widgets"
+msgstr ""
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/adaption/style.css
+msgid "A theme that adapts to your content, making sure it looks good on any device. Full width featured images make your content stand out. This theme adapts as add widgets with a 3rd column added to the layout."
+msgstr ""
+
+#. Author of the plugin/theme
+#: wp-content/themes/pub/adaption/style.css
+msgid "Automattic"
+msgstr "Automattic"
+
+#: inc/template-tags.php:106
+msgctxt "1: date, 2: time"
+msgid ", %1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:109
+msgid " (Edit)"
+msgstr "(Bewerken)"
+
+#: inc/template-tags.php:147
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr ""
+
+#: inc/template-tags.php:158
+msgid "<span class=\"posted-on\">Posted on %1$s</span>"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Zoekresultaten voor: %s"
+
+#: inc/template-tags.php:102
+msgid "%s "
+msgstr "%s"
+
+#: inc/template-tags.php:99
+msgid "Your comment is awaiting moderation."
+msgstr "Je reactie is in afwachting van moderatie."
+
+#: inc/template-tags.php:82
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Berichtnavigatie"
+
+#: inc/template-tags.php:31
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nieuwere berichten <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:27
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Oudere berichten"
+
+#: inc/extras.php:116
+msgid "Read more <span class=\"screen-reader-text\">%1s</span>"
+msgstr ""
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Berichtennavigatie"
+
+#: inc/extras.php:66
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: header.php:38 header.php:93
+msgid "Skip to content"
+msgstr "Spring naar inhoud"
+
+#: functions.php:44
+msgid "Social Links Menu"
+msgstr "Socialelinksmenu"
+
+#: functions.php:72
+msgid "Sidebar One"
+msgstr "Sidebar een"
+
+#: functions.php:81
+msgid "Sidebar Two"
+msgstr "Sidebar twee"
+
+#. translators: If there are characters in your language that are not supported
+#. by Arimo, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:113
+msgctxt "Arimo sans-serif font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: To add an additional Armio character subsets,
+#. * translate this to 'greek', 'cyrillic' or 'vietnamese'.
+#. * Do not translate these strings into your own langauge.
+#: functions.php:121
+msgctxt "Arimo: add new subset (cyrillic, greek, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: functions.php:43
+msgid "Primary Menu"
+msgstr "Primair menu"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "Thema: %1$s door %2$s."
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "Met trots ondersteund door %s"
+
+#: content.php:69
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lees verder <span class=\"meta-nav\">&rarr;</span>"
+
+#: content.php:22
+msgid "% Comments"
+msgstr "% reacties"
+
+#: content.php:22
+msgid "1 Comment"
+msgstr "1 reactie"
+
+#: content.php:22
+msgid "Leave a comment"
+msgstr "Een reactie plaatsen"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:60 content.php:82
+msgid " "
+msgstr ""
+
+#: content-single.php:66 content.php:87
+msgid "%1$s"
+msgstr "%1$s "
+
+#: content-single.php:32 content.php:40
+msgid "All %s posts"
+msgstr "Alle %s berichten"
+
+#: content-single.php:38
+msgid " Edit"
+msgstr "Wijzigen"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:24 content.php:30
+msgid ", "
+msgstr ", "
+
+#: content-single.php:13 content.php:13
+msgid "Permalink to %s"
+msgstr "Permalink naar %s"
+
+#: content-page.php:23 inc/template-tags.php:82
+msgid "Edit"
+msgstr "Bewerken"
+
+#: content-page.php:18 content-single.php:52 content.php:72
+msgid "Pages:"
+msgstr "Pagina&#39;s:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Het lijkt erop dat we niet kunnen vinden wat je zoekt. Misschien kan zoeken helpen."
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sorry, maar niets kwam overeen met je zoektermen. Gelieve het opnieuw te proberen met een aantal andere trefwoorden."
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Klaar om je eerste bericht te publiceren? <a href=\"%1$s\">Begin hier</a>."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: comments.php:63
+msgid "Comments are closed."
+msgstr "Reacties zijn gesloten."
+
+#: comments.php:39 comments.php:53
+msgid "Newer Comments &rarr;"
+msgstr "Nieuwe reacties &rarr;"
+
+#: comments.php:38 comments.php:52
+msgid "&larr; Older Comments"
+msgstr "&larr; Oudere reacties"
+
+#: comments.php:37 comments.php:51
+msgid "Comment navigation"
+msgstr "Reactienavigatie"
+
+#: comments.php:30
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Een gedachte over &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s gedachtes over &ldquo;%2$s&rdquo;"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Chats"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "Archief"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Audio"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "Statussen"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Links"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Gezegden"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Video&#39;s"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Afbeeldingen"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Opmerkingen"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Galerijen"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Jaar: %s"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Maand: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Dag: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Auteur: %s"
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Probeer eens te zoeken in het maandelijks archief. %1$s"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "Meest gebruikte categorie&#235;n"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Het lijkt erop dat niets werd gevonden op deze locatie. Probeer dan misschien een van de links hieronder of een zoekopdracht?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oeps! Die pagina kon niet worden gevonden."
