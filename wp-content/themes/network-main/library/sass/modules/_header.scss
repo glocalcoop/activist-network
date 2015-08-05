@@ -92,7 +92,6 @@
     }
 }
 
-		
 // GLOBAL NAV
 		
 .nav-global {
@@ -106,6 +105,9 @@
     }
     .search-form {
         float: right;
+        //border-top: 1px solid $base9;
+    }
+    .search-form.active {
         border-top: 1px solid $base9;
     }
     
@@ -113,15 +115,15 @@
         position: absolute;
         z-index: $layer4;
         left: 0;
-        top: 60px;
+        top: 62px;
         background: $white;
 		a {
-	    padding: 10px 20px;
-      color: $text-color;
-      border-bottom: 1px solid $hr-alt;
+            padding: 10px 20px;
+            color: $text-color;
+            border-bottom: 1px solid $hr-alt;
 		}
   	&:first-child a {
-      border-top: 1px solid $hr-alt;
+        border-top: 1px solid $hr-alt;
   	}
     a:focus,
 		a:hover {

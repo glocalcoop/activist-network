@@ -328,8 +328,14 @@ table.em-calendar {
                 cursor: pointer;
             }
         }
+<<<<<<< HEAD
         .event-promo {
             background: lighten($teal, 10);
+=======
+        .event-promo,
+        .all-events-link {
+            //background: lighten($teal, 10);
+>>>>>>> 337a78f... Main site style tweaks for sites listing.
             height: 100px;
             a {
                 display: block;
