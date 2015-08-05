@@ -167,7 +167,8 @@ function anp_dynamic_css() { ?>
 	<style type='text/css'>
 
 	/* Nav */
-	.header-global {
+	.header-global,
+	.nav-global {
 		background-color: <?php echo get_theme_mod('secondary_color') ?>;
 	}
 
