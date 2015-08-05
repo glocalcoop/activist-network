@@ -16,7 +16,6 @@ add_theme_support( 'custom-header', $args );
 
 // Remove theme customization settings for child theme
 // Remove menu customization on child themes
-
 function network_subsite_remove_theme_customization() {
 
     unregister_nav_menu( 'main-nav' );
@@ -30,14 +29,20 @@ function network_subsite_remove_theme_customization() {
 	);
 	remove_action( 'customize_register', 'glocal_customize_register');
 }
+
 add_action( 'after_setup_theme', 'network_subsite_remove_theme_customization', 20 ); 
 
+
 // Remove Parent or Network Theme page templates from child theme
-add_filter( 'theme_page_templates', 'remove_network_page_template' );
-    function remove_network_page_template( $pages_templates ) {
+function remove_network_page_template( $pages_templates ) {
     unset( $pages_templates['page-directory.php'] );
     unset( $pages_templates['page-news.php'] );
     return $pages_templates;
 }
+
+add_filter( 'theme_page_templates', 'remove_network_page_template' );
+
+// Include theme customizer
+include_once( 'library/customizer.php' );
 
 ?>
