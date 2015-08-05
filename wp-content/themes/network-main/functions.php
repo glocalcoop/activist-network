@@ -50,7 +50,7 @@ require_once( 'library/custom-functions.php' );
 /**
  * Customizer additions.
  */
-//require get_template_directory() . '/library/customizer.php';
+require get_template_directory() . '/library/customizer.php';
 
 
 /************* THUMBNAIL SIZE OPTIONS *************/
