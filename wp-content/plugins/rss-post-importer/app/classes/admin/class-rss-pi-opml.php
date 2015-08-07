@@ -69,8 +69,13 @@ if (!class_exists("Rss_pi_opml")) {
 
 				$file = $_FILES['import_opml']['tmp_name'];
 				$opml = file_get_contents($file);
-				$opml = new OPMLParser($opml);
 				@unlink($file);
+
+				// apply some validation fixes:
+				// - & -> &amp;
+				$opml = preg_replace( '/(&(?!amp;))/', '&amp;', $opml );
+
+				$opml = new OPMLParser($opml);
 
 				$feeds = $this->_parse_data( $opml->data, $feeds );
 				$this->options['feeds'] = $feeds;
@@ -208,6 +213,7 @@ if (!class_exists("Rss_pi_opml")) {
 			// disposition / encoding on response body
 			header("Content-Disposition: attachment;filename={$filename}");
 			header("Content-Transfer-Encoding: binary");
+			header("Content-type: text/html;charset=utf-8");
 
 		}
 

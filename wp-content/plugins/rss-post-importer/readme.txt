@@ -3,8 +3,8 @@ Contributors: feedsapi
 Donate link: https://www.feedsapi.org/
 Tags: rss, feeds, import, feed, autoblog, feed aggregation, rss-feed, aggregation, atom, feed, rss, syndication, FeedWordPress, autoblog aggregator, Autoblogger, autoblogging,  feed import, rss multi importer, feed reader, feed to post, multi feed import, multi feed importer, multi import, multi rss feeds, multiple feed import, multiple feeds, multiple rss feeds, rss, rss aggregator, rss feader, RSS import, rss to post, content curation, RSS Retriever, RSS fetch feed, WP RSS Aggregator, AutoPost, RSS Feed to Post, RSSImport, yahoo pipes, WP Pipes, Import XML feed , FeedSyndicate, RSSpost, RSS in Page
 Requires at least: 3.5
-Tested up to: 4.2.2
-Stable tag: 2.1.3
+Tested up to: 4.2.4
+Stable tag: 2.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,7 @@ Not only does this WordPress RSS Aggregator Plugin import a snippet of the rss f
 * Assign Imported Posts to as many Tags as you want , the sky is the limit.
 * Assign Imported Post to as many categories as you want , the sky is the limit.
 * Export/import your Feeds and setting as CSV File.
+* Import/Export Feeds + Feeds' Settings as OPML file
 * Disable Banner for a valid Full Text RSS Key
 * Purge Deleted Posts from the Memory to re-import old posts
 * Option to re-import the same articles several times and disable the protection
@@ -122,6 +123,11 @@ Learn more (and get detailed instructions) in our [contribute guide](http://jetp
 
 
 == Change Log ==
+
+= Version 2.1.4 =
+ * Possible duplicate post issue
+ * Some encoding and structure issues with OPML Export/Import
+ * API related issue for feed URLs with parameters
 
 = Version 2.1.3 =
  * Template item inline_image to insert Featured image inline into post
