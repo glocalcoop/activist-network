@@ -187,7 +187,8 @@ class rssPIEngine {
 		//if api key has been saved by user and is not empty
 		if (isset($key) && !empty($key)) {
 
-			$api_url = 'http://176.58.108.28/fetch.php?key=' . $key . '&url=' . $url;
+//			$api_url = 'http://176.58.108.28/fetch.php?key=' . $key . '&url=' . $url;
+			$api_url = 'http://176.58.108.28/fetch.php?key=' . $key . '&url=' . urlencode($url);
 
 			return $api_url;
 		}
@@ -337,11 +338,11 @@ class rssPIEngine {
 		// Featured Image setter
 		$thumbnail = new rssPIFeaturedImage();
 
-		foreach ($items as $item) {
-			if (!$this->post_exists($item)) {
+		foreach ( $items as $item ) {
+			if ( ! $this->post_exists($item) ) {
 				/* Code to convert tags id array to tag name array * */
-				if (!empty($args['tags_id'])) {
-					foreach ($args['tags_id'] as $tagid) {
+				if ( ! empty($args['tags_id']) ) {
+					foreach ( $args['tags_id'] as $tagid ) {
 						$tag_name = get_tag($tagid); // <-- your tag ID
 						$tags_name[] = $tag_name->name;
 					}
@@ -407,20 +408,35 @@ class rssPIEngine {
 	 * @return boolean
 	 */
 	private function post_exists($item) {
-
 		global $wpdb;
+
 		$permalink = $item->get_permalink();
+		// calculate md5 hash
 		$permalink_md5 = md5($permalink);
+		// strip any params from the URL
+		$permalink_new = $permalink;
+		$permalink_new = explode('?',$permalink_new);
+		$permalink_new = $permalink_new[0];
+		// calculate new md5 hash
+		$permalink_md5_new = md5($permalink_new);
 		$post_exists = FALSE;
 
 		if ( isset($this->options['upgraded']['deleted_posts']) ) { // database migrated
+<<<<<<< HEAD
 			// check if there is a post with this source URL
 			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_key = 'rss_pi_source_md5' and meta_value = %s", $permalink_md5 ), 'ARRAY_A');
+=======
+			// check if there is post with this source URL that is not trashed
+//			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_key = 'rss_pi_source_md5' and meta_value = %s", $permalink_md5 ), 'ARRAY_A');
+			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} pm, {$wpdb->posts} p WHERE pm.meta_key = 'rss_pi_source_md5' AND ( pm.meta_value = %s OR pm.meta_value = %s ) AND pm.post_id = p.ID AND p.post_status <> 'trash'", $permalink_md5, $permalink_md5_new ), 'ARRAY_A');
+>>>>>>> 6bf6eac... Updating plugins - MPO and RSSpi
 			if ( count($posts) ) {
 				$post_exists = TRUE;
 			}
-		} else {
-			// do it the old fashion way
+		}
+//		} else {
+		if ( ! $post_exists ) {
+			// do it the old fashion way -> check for post title and source domain
 			$title = $item->get_title();
 			$domain_old = $this->get_domain($permalink);
 
@@ -444,7 +460,7 @@ class rssPIEngine {
 			// check if the post has been imported and then deleted
 			if ( $this->options['upgraded']['deleted_posts'] ) { // database migrated
 				$rss_pi_deleted_posts = get_option( 'rss_pi_deleted_posts', array() );
-				if ( in_array( $permalink_md5, $rss_pi_deleted_posts ) ) {
+				if ( in_array( $permalink_md5, $rss_pi_deleted_posts ) || in_array( $permalink_md5_new, $rss_pi_deleted_posts ) ) {
 					$post_exists = TRUE;
 				}
 			} else {
@@ -494,7 +510,13 @@ class rssPIEngine {
 
 		add_action('save_rss_pi_post', $post_id);
 
-		$url_md5 = md5($url);
+//		$url_md5 = md5($url);
+		// strip any params from the URL
+		$url_new = $url;
+		$url_new = explode('?',$url_new);
+		$url_new = $url_new[0];
+		// calculate new md5 hash
+		$url_md5 = md5($url_new);
 		update_post_meta($post_id, 'rss_pi_source_url', esc_url($url));
 		update_post_meta($post_id, 'rss_pi_source_md5', $url_md5);
 

@@ -116,8 +116,11 @@ class rssPostImporter {
 			$_start = microtime(TRUE);
 			// iterate through all imported posts' source URLs
 			foreach ( $rss_pi_imported_posts as $k => $source_url ) {
+				// strip any params from the URL
+				$_source_url = explode('?',$source_url);
+				$_source_url = $_source_url[0];
 				// hash the URL for storage
-				$source_md5 = md5($source_url);
+				$source_md5 = md5($_source_url);
 				// properly format the URL for comparison
 				$source_url = esc_url($source_url);
 				// skip if we already have "migrated" this item
