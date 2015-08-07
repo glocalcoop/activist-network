@@ -1,3 +1,23 @@
+// SITES LIST
+// Home
+
+// Page
+.entry-content > ul.sites-list {
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+        padding: 24px;
+    }
+
+}
+
+// Widget
+
+
+
 // BOX SLIDER PLUGIN 
 
 div.bx-wrapper {
