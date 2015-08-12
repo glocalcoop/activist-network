@@ -20,7 +20,7 @@ class EM_Location_Posts_Admin{
 		//quick hacks to make event admin table make more sense for events
 		?>
 		<script type="text/javascript">
-			jQuery(document).ready( public static function($){
+			jQuery(document).ready( function($){
 				$('.inline-edit-date').prev().css('display','none').next().css('display','none').next().css('display','none');
 			});
 		</script>

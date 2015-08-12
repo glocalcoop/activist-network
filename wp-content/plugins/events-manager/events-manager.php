@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Events Manager
-Version: 5.5.7.1
+Version: 5.6
 Plugin URI: http://wp-events-plugin.com
 Description: Event registration and booking management for WordPress. Recurring events, locations, google maps, rss, ical, booking registration and more!
 Author: Marcus Sykes
@@ -9,7 +9,7 @@ Author URI: http://wp-events-plugin.com
 */
 
 /*
-Copyright (c) 2014, Marcus Sykes
+Copyright (c) 2015, Marcus Sykes
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -27,8 +27,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
 // Setting constants
-define('EM_VERSION', 5.55); //self expanatory
-define('EM_PRO_MIN_VERSION', 2.377); //self expanatory
+define('EM_VERSION', 5.6); //self expanatory
+define('EM_PRO_MIN_VERSION', 2.392); //self expanatory
+define('EM_PRO_MIN_VERSION_CRITICAL', 2.377); //self expanatory
 define('EM_DIR', dirname( __FILE__ )); //an absolute path to this directory
 define('EM_DIR_URI', trailingslashit(plugins_url('',__FILE__))); //an absolute path to this directory
 define('EM_SLUG', plugin_basename( __FILE__ )); //for updates
@@ -73,7 +74,7 @@ include("em-functions.php");
 include("em-ical.php");
 include("em-shortcode.php");
 include("em-template-tags.php");
-include("em-ml.php");
+include("multilingual/em-ml.php");
 //Widgets
 include("widgets/em-events.php");
 if( get_option('dbem_locations_enabled') ){
@@ -293,9 +294,10 @@ class EM_Scripts_and_Styles {
 	}
 	
 	public static function admin_enqueue(){
-	    do_action('em_enqueue_admin_scripts');
 		wp_enqueue_script('events-manager', plugins_url('includes/js/events-manager.js',__FILE__), array('jquery', 'jquery-ui-core','jquery-ui-widget','jquery-ui-position','jquery-ui-sortable','jquery-ui-datepicker','jquery-ui-autocomplete','jquery-ui-dialog'), EM_VERSION);
+	    do_action('em_enqueue_admin_scripts');
 		wp_enqueue_style('events-manager-admin', plugins_url('includes/css/events_manager_admin.css',__FILE__), array(), EM_VERSION);
+		do_action('em_enqueue_admin_styles');
 		self::localize_script();
 	}
 
@@ -313,10 +315,13 @@ class EM_Scripts_and_Styles {
 			'firstDay' => get_option('start_of_week'),
 			'locale' => $locale_code,
 			'dateFormat' => $date_format,
-			'ui_css' => plugins_url('includes/css/ui-lightness.css', __FILE__),
+			'ui_css' => plugins_url('includes/css/jquery-ui.min.css', __FILE__),
 			'show24hours' => get_option('dbem_time_24h'),
 			'is_ssl' => is_ssl(),
 		);
+		//debug mode
+		if( defined('WP_DEBUG') && WP_DEBUG ) $em_localized_js['ui_css'] = plugins_url('includes/css/jquery-ui.css', __FILE__);
+		//booking-specific stuff
 		if( get_option('dbem_rsvp_enabled') ){
 		    $em_localized_js = array_merge($em_localized_js, array(
 				'bookingInProgress' => __('Please wait while the booking is being submitted.','dbem'),
@@ -759,7 +764,7 @@ register_deactivation_hook( __FILE__,'em_deactivate');
  * Fail-safe compatibility checking of EM Pro 
  */
 function em_check_pro_compatability(){
-	if( defined('EMP_VERSION') && EMP_VERSION < EM_PRO_MIN_VERSION && (!defined('EMP_DISABLE_CRITICAL_WARNINGS') || !EMP_DISABLE_CRITICAL_WARNINGS) ){
+	if( defined('EMP_VERSION') && EMP_VERSION < EM_PRO_MIN_VERSION_CRITICAL && (!defined('EMP_DISABLE_CRITICAL_WARNINGS') || !EMP_DISABLE_CRITICAL_WARNINGS) ){
 		include('em-pro-compatibility.php');
 	}
 }

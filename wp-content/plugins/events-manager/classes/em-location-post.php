@@ -105,15 +105,13 @@ class EM_Location_Post {
 				$wp_query->query_vars['orderby'] = (!empty($_REQUEST['orderby'])) ? $_REQUEST['orderby']:'title';
 				$wp_query->query_vars['order'] = (!empty($_REQUEST['order'])) ? $_REQUEST['order']:'ASC';
 			}else{
-				if( empty($wp_query->query_vars['location']) ) {
-				  	if( get_option('dbem_locations_default_archive_orderby') == 'title'){
-				  		$wp_query->query_vars['orderby'] = 'title';
-				  	}else{
-					  	$wp_query->query_vars['orderby'] = 'meta_value_num';
-					  	$wp_query->query_vars['meta_key'] = get_option('dbem_locations_default_archive_orderby','_location_country');	  		
-				  	}
-					$wp_query->query_vars['order'] = get_option('dbem_locations_default_archive_orderby','ASC');
-				}
+			  	if( get_option('dbem_locations_default_archive_orderby') == 'title'){
+			  		$wp_query->query_vars['orderby'] = 'title';
+			  	}else{
+				  	$wp_query->query_vars['orderby'] = 'meta_value_num';
+				  	$wp_query->query_vars['meta_key'] = get_option('dbem_locations_default_archive_orderby','_location_country');	  		
+			  	}
+				$wp_query->query_vars['order'] = get_option('dbem_locations_default_archive_order','ASC');
 			}
 		}
 	}

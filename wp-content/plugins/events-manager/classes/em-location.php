@@ -244,9 +244,10 @@ class EM_Location extends EM_Object {
 				}
 			}
 		}
+		//the line below should be deleted one day and we move validation out of this function, when that happens check otherfunctions like EM_ML_IO::get_post_meta function which force validation again 
 		$result = $validate ? $this->validate_meta():true; //post returns null
 		$this->compat_keys();
-		return apply_filters('em_location_get_post_meta',$result,$this);
+		return apply_filters('em_location_get_post_meta',$result, $this, $validate); //if making a hook, assume that eventually $validate won't be passed on
 	}
 	
 	function validate(){
@@ -279,13 +280,12 @@ class EM_Location extends EM_Object {
 	
 	function save(){
 		global $wpdb, $current_user, $blog_id, $EM_SAVING_LOCATION;
-		$EM_SAVING_LOCATION = true;
+		$EM_SAVING_LOCATION = true; //this flag prevents our dashboard save_post hooks from going further
 		//TODO shuffle filters into right place
 		if( get_site_option('dbem_ms_mainblog_locations') ){ self::ms_global_switch(); }
 		if( !$this->can_manage('edit_locations', 'edit_others_locations') && !( get_option('dbem_events_anonymous_submissions') && empty($this->location_id)) ){
 			return apply_filters('em_location_save', false, $this);
 		}
-		remove_action('save_post',array('EM_Location_Post_Admin','save_post'),10,1); //disable the default save post action, we'll do it manually this way
 		do_action('em_location_save_pre', $this);
 		$post_array = array();
 		//Deal with updates to a location
@@ -336,17 +336,16 @@ class EM_Location extends EM_Object {
 			$this->location_owner = $post_data->post_author;
 			$this->post_status = $post_data->post_status;
 			$this->get_status();
+			//save the image, errors here will surface during $this->save_meta()
+			$this->image_upload();
 			//now save the meta
 			$meta_save = $this->save_meta();
-			//save the image
-			$this->image_upload();
-			$image_save = (count($this->errors) == 0);
 		}elseif(is_wp_error($post_id)){
 			//location not saved, add an error
 			$this->add_error($post_id->get_error_message());
 		}
 		if( get_site_option('dbem_ms_mainblog_locations') ){ self::ms_global_switch_back(); }
-		$return = apply_filters('em_location_save', $post_save && $meta_save && $image_save, $this);
+		$return = apply_filters('em_location_save', $post_save && $meta_save, $this );
 		$EM_SAVING_LOCATION = false;
 		return $return;
 	}

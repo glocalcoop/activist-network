@@ -25,6 +25,10 @@ class EM_Bookings extends EM_Object implements Iterator{
 	 */
 	var $spaces;
 	/**
+	 * @var boolena Flag for Multilingual functionality, to help prevent unnecessary reloading of this object if already 'translated'
+	 */
+	var $translated;
+	/**
 	 * If flag is true, a registration will be attempted when booking whether the user is logged in or not. Used in cases such as manual bookings (a Pro feature) and should only be enabled during manipulation by an event admin.
 	 * @var unknown
 	 */
@@ -40,7 +44,7 @@ class EM_Bookings extends EM_Object implements Iterator{
 	 * @param EM_Event $event
 	 * @return null
 	 */
-	function EM_Bookings( $data = false ){
+	function __construct( $data = false ){
 		if( is_object($data) && get_class($data) == "EM_Event" ){ //Creates a blank bookings object if needed
 			global $wpdb;
 			$this->event_id = $data->event_id;
@@ -600,7 +604,8 @@ class EM_Bookings extends EM_Object implements Iterator{
 					//we call the segmented JS files and include them here
 					$include_path = dirname(dirname(__FILE__)); //get path to parent directory
 					include($include_path.'/includes/js/bookingsform.js'); 
-					do_action('em_gateway_js'); 
+					do_action('em_gateway_js'); //deprecated use em_booking_js below instead
+					do_action('em_booking_js'); //use this instead
 				?>							
 			});
 			<?php
@@ -625,12 +630,12 @@ class EM_Bookings extends EM_Object implements Iterator{
 		$conditions = apply_filters( 'em_bookings_build_sql_conditions', parent::build_sql_conditions($args), $args );
 		if( is_numeric($args['status']) ){
 			$conditions['status'] = 'booking_status='.$args['status'];
-		}elseif( is_array($args['status']) && count($args['status']) > 0 ){
+		}elseif( self::array_is_numeric($args['status']) && count($args['status']) > 0 ){
 			$conditions['status'] = 'booking_status IN ('.implode(',',$args['status']).')';
 		}elseif( !is_array($args['status']) && preg_match('/^([0-9],?)+$/', $args['status']) ){
 			$conditions['status'] = 'booking_status IN ('.$args['status'].')';
 		}
-		if( is_numeric($args['person']) && current_user_can('manage_others_bookings') ){
+		if( is_numeric($args['person']) ){
 			$conditions['person'] = EM_BOOKINGS_TABLE.'.person_id='.$args['person'];
 		}
 		if( EM_MS_GLOBAL && !empty($args['blog']) && is_numeric($args['blog']) ){

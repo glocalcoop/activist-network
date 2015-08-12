@@ -50,6 +50,8 @@ $(document).on('submit', '.em-booking-form', function(e){
 			}
 			if( !response.result && typeof Recaptcha != 'undefined' && typeof RecaptchaState != 'undefined'){
 				Recaptcha.reload();
+			}else if( !response.result && grecaptcha != 'undefined' ){
+				grecaptcha.reset();
 			}
 			$(document).trigger('em_booking_complete', [response]);
 		},

@@ -8,7 +8,7 @@ class EM_Locations_Widget extends WP_Widget {
 	var $defaults = array();
 	
     /** constructor */
-    function EM_Locations_Widget() {
+    function __construct() {
     	$this->defaults = array(
     		'title' => __('Event Locations','dbem'),
     		'scope' => 'future',
@@ -23,7 +23,7 @@ class EM_Locations_Widget extends WP_Widget {
     		'location_name' => __('Location name','dbem')
     	);
     	$widget_ops = array('description' => __( "Display a list of event locations on Events Manager.", 'dbem') );
-        parent::WP_Widget(false, $name = 'Event Locations', $widget_ops);	
+        parent::__construct(false, $name = 'Event Locations', $widget_ops);	
     }
 
     /** @see WP_Widget::widget */

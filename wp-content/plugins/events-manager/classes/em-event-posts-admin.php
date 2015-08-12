@@ -242,7 +242,7 @@ class EM_Event_Posts_Admin{
 		if($post->post_type == EM_POST_TYPE_EVENT){
 			global $post, $EM_Event;
 			$EM_Event = em_get_event($post, 'post_id');
-			$actions['duplicate'] = '<a href="'.admin_url().'edit.php?action=event_duplicate&amp;event_id='.$EM_Event->event_id.'&amp;_wpnonce='.wp_create_nonce('event_duplicate_'.$EM_Event->event_id).'" title="'.sprintf(__('Duplicate %s','dbem'), __('Event','dbem')).'">'.__('Duplicate','dbem').'</a>';
+			$actions['duplicate'] = '<a href="'.$EM_Event->duplicate_url().'" title="'.sprintf(__('Duplicate %s','dbem'), __('Event','dbem')).'">'.__('Duplicate','dbem').'</a>';
 		}
 		return $actions;
 	}
@@ -308,8 +308,8 @@ class EM_Event_Recurring_Posts_Admin{
 	    unset($columns['date']);
 	    unset($columns['author']);
 	    return array_merge($id_array, $columns, array(
-	    	'location' => __('Location'),
-	    	'date-time' => __('Date and Time'),
+	    	'location' => __('Location','dbem'),
+	    	'date-time' => __('Date and Time','dbem'),
 	    	'author' => __('Owner','dbem'),
 	    ));
 	}

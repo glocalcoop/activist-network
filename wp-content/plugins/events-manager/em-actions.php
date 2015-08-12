@@ -86,13 +86,14 @@ function em_init_actions() {
 			}
 		}
 		if ( $_REQUEST['action'] == 'event_duplicate' && wp_verify_nonce($_REQUEST['_wpnonce'],'event_duplicate_'.$EM_Event->event_id) ) {
-			$EM_Event = $EM_Event->duplicate();
-			if( $EM_Event === false ){
+			$event = $EM_Event->duplicate();
+			if( $event === false ){
 				$EM_Notices->add_error($EM_Event->errors, true);
+				wp_redirect( wp_get_referer() );
 			}else{
 				$EM_Notices->add_confirm($EM_Event->feedback_message, true);
+				wp_redirect( $event->get_edit_url() );
 			}
-			wp_redirect( wp_get_referer() );
 			exit();
 		}
 		if ( $_REQUEST['action'] == 'event_delete' && wp_verify_nonce($_REQUEST['_wpnonce'],'event_delete_'.$EM_Event->event_id) ) { 
@@ -139,7 +140,9 @@ function em_init_actions() {
 				$return = array('result'=>true, 'message'=>$EM_Event->feedback_message);
 			}else{		
 				$return = array('result'=>false, 'message'=>$EM_Event->feedback_message, 'errors'=>$EM_Event->errors);
-			}	
+			}
+			echo EM_Object::json_encode($return);
+			edit();
 		}
 	}
 	
@@ -152,7 +155,7 @@ function em_init_actions() {
 		}else{
 			$EM_Location = new EM_Location();
 		}
-		if( $_REQUEST['action'] == 'location_save' && current_user_can('edit_locations') ){
+		if( $_REQUEST['action'] == 'location_save' && $EM_Location->can_manage('edit_locations','edit_others_locations') ){
 			//Check Nonces
 			em_verify_nonce('location_save');
 			//Grab and validate submitted data
@@ -617,6 +620,7 @@ function em_init_actions() {
 		$EM_Bookings_Table->limit = 150; //if you're having server memory issues, try messing with this number
 		$EM_Bookings = $EM_Bookings_Table->get_bookings();
 		$handle = fopen("php://output", "w");
+		$delimiter = !defined('EM_CSV_DELIMITER') ? ',' : EM_CSV_DELIMITER;
 		while(!empty($EM_Bookings->bookings)){
 			foreach( $EM_Bookings->bookings as $EM_Booking ) {
 				//Display all values
@@ -625,11 +629,11 @@ function em_init_actions() {
 				if( $show_tickets ){
 					foreach($EM_Booking->get_tickets_bookings()->tickets_bookings as $EM_Ticket_Booking){
 						$row = $EM_Bookings_Table->get_row_csv($EM_Ticket_Booking);
-						fputcsv($handle, $row);
+						fputcsv($handle, $row, $delimiter);
 					}
 				}else{
 					$row = $EM_Bookings_Table->get_row_csv($EM_Booking);
-					fputcsv($handle, $row);
+					fputcsv($handle, $row, $delimiter);
 				}
 			}
 			//reiterate loop
@@ -646,6 +650,7 @@ add_action('init','em_init_actions',11);
  * Handles AJAX Bookings admin table filtering, view changes and pagination
  */
 function em_ajax_bookings_table(){
+    check_admin_referer('em_bookings_table');
 	$EM_Bookings_Table = new EM_Bookings_Table();
 	$EM_Bookings_Table->output_table();
 	exit();

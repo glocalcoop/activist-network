@@ -68,7 +68,7 @@ msgid "Full support for administration over SSL (if applicable)."
 msgstr ""
 
 #. Found in description list item.
-msgid "Visit the <em>Users</em> menu in WordPress and you'll see a <em>Switch To</em> link next to each user."
+msgid "Visit the <em>Users</em> menu in WordPress and you'll see a <em>Switch To</em> link in the list of action links for each user."
 msgstr ""
 
 #. Found in description list item.
@@ -84,6 +84,14 @@ msgid "العربية (Arabic)"
 msgstr ""
 
 #. Found in description list item.
+msgid "Azərbaycan dili (Azerbaijani)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Bosanski (Bosnian)"
+msgstr ""
+
+#. Found in description list item.
 msgid "Български (Bulgarian)"
 msgstr ""
 
@@ -93,6 +101,10 @@ msgstr ""
 
 #. Found in description list item.
 msgid "Hrvatski (Croatian)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Dansk (Danish)"
 msgstr ""
 
 #. Found in description list item.
@@ -172,7 +184,7 @@ msgid "Türkçe (Turkish)"
 msgstr ""
 
 #. Found in description paragraph.
-msgid "This plugin allows you to quickly swap between user accounts in WordPress at the click of a button. You'll be instantly logged out and logged in as your desired user. This is handy for test environments where you regularly log out and in between different accounts, or for adminstrators who need to switch between multiple accounts."
+msgid "This plugin allows you to quickly swap between user accounts in WordPress at the click of a button. You'll be instantly logged out and logged in as your desired user. This is handy for test environments where you regularly log out and in between different accounts, or for administrators who need to switch between multiple accounts."
 msgstr ""
 
 #. Found in description paragraph.
@@ -180,7 +192,7 @@ msgid "See the <a href=\"https://wordpress.org/plugins/user-switching/faq/\">FAQ
 msgstr ""
 
 #. Found in description paragraph.
-msgid "Thanks to translations by Hassan Hisham, Tunghsiao Liu, Francois-Xavier Bénard, Ralph Stenzel, Rami Y, Yusuke Hayasaki, Tommixoft, Amin Ab, Bartosz Arendt, Raphael Mendonça, R J, Max Samael, Eko Ikhyar, Marcelo Pedra, Abdullah Pazarbasi, ArianServ, SilverXp, Evi Giannakou, Petya Raykovska, Martin Sauter, Yaser Tallo, Enrique Errando, Sami Keijonen, Kalina Michocka, Alessandro Curci, Alessandro Tesoro, Ante Sepic, and Per Søderlind!"
+msgid "Thanks to translations by Hassan Hisham, Tunghsiao Liu, Francois-Xavier Bénard, Ralph Stenzel, Rami Y, Yusuke Hayasaki, Tommixoft, Amin Ab, Bartosz Arendt, Raphael Mendonça, R J, Max Samael, Eko Ikhyar, Marcelo Pedra, Abdullah Pazarbasi, ArianServ, SilverXp, Evi Giannakou, Petya Raykovska, Martin Sauter, Yaser Tallo, Enrique Errando, Sami Keijonen, Kalina Michocka, Alessandro Curci, Alessandro Tesoro, Ante Sepic, Per Søderlind, Mushviq Abdulla, Kenan Dervisevic, and Joachim Jensen!"
 msgstr ""
 
 #. Found in installation list item.
@@ -208,11 +220,27 @@ msgid "Alternatively, you can install this plugin directly from your WordPress d
 msgstr ""
 
 #. Found in changelog list item.
-msgid "Correct the values passed to the <code>switch_back_user</code> action when a user switches back."
+msgid "Azerbaijani, Danish, and Bosnian translations."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add back the 'User Switching' heading on the user profile screen."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Correct the value passed to the <code>$old_user_id</code> parameter of the <code>switch_back_user</code> hook when a user has been switched off. This should be boolean <code>false</code> rather than <code>0</code>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Docblocks for actions and filters."
 msgstr ""
 
 #. Found in changelog list item.
 msgid "More code standards tweaks."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Correct the values passed to the <code>switch_back_user</code> action when a user switches back."
 msgstr ""
 
 #. Found in changelog list item.
@@ -512,6 +540,10 @@ msgid "Does this plugin work with bbPress?"
 msgstr ""
 
 #. Found in faq header.
+msgid "Does this plugin work if my site is using a two-factor authentication plugin?"
+msgstr ""
+
+#. Found in faq header.
 msgid "Does this work as a mu-plugin?"
 msgstr ""
 
@@ -524,7 +556,7 @@ msgid "Can regular admins on Multisite installs switch accounts?"
 msgstr ""
 
 #. Found in faq header.
-msgid "Are any plugin hooks called when users switch accounts?"
+msgid "Are any plugin actions called when a user switches account?"
 msgstr ""
 
 #. Found in faq paragraph.
@@ -548,7 +580,15 @@ msgid "Yes, and you'll also be able to switch users from member profile screens.
 msgstr ""
 
 #. Found in faq paragraph.
-msgid "Yes, but you'll need to install <code>user-switching.php</code> into the root of your <code>mu-plugins</code> directory, not in the <code>user-switching</code> subdirectory. This is a restriction of WordPress."
+msgid "Yes, mostly."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "One exception I'm aware of is <a href=\"https://wordpress.org/plugins/duo-wordpress/\">Duo Security</a>. If you're using this plugin, you should install the <a href=\"https://github.com/johnbillion/user-switching-duo-security\">User Switching for Duo Security</a> add-on plugin which will prevent the two-factor authentication prompt from appearing when you switch between users."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Yes, but you'll need to install <code>user-switching.php</code> into the root of your <code>mu-plugins</code> directory, not in the <code>user-switching</code> subdirectory. This is a limitation of WordPress."
 msgstr ""
 
 #. Found in faq paragraph.
@@ -569,4 +609,8 @@ msgstr ""
 
 #. Found in faq paragraph.
 msgid "When a user switches off, the <code>switch_off_user</code> hook is called with the old user ID as a parameter."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "See the plugin source code for complete hook documentation."
 msgstr ""

@@ -248,17 +248,17 @@ function em_wp_the_title($data, $id = null){
 	global $post, $wp_query, $EM_Location, $EM_Event;
 	if( empty($post) ) return $data; //fix for any other plugins calling the_content outside the loop
 	//because we're only editing the main title of the page here, we make sure we're in the main query
-	if( is_main_query() ){
+	if( is_main_query() && $id == $post->ID ){
 	    $events_page_id = get_option ( 'dbem_events_page' );
 	    $locations_page_id = get_option( 'dbem_locations_page' );
 	    $edit_events_page_id = get_option( 'dbem_edit_events_page' );
 	    $edit_locations_page_id = get_option( 'dbem_edit_locations_page' );
 	    $edit_bookings_page_id = get_option( 'dbem_edit_bookings_page' );
-		if( is_main_query() && !empty($post->ID) && in_array($post->ID, array($events_page_id, $locations_page_id, $edit_events_page_id, $edit_locations_page_id, $edit_bookings_page_id)) ){
+		if( !empty($post->ID) && in_array($post->ID, array($events_page_id, $locations_page_id, $edit_events_page_id, $edit_locations_page_id, $edit_bookings_page_id)) ){
 			if ( $wp_query->in_the_loop ) {
 				return apply_filters('em_wp_the_title', em_content_page_title($data, $id)) ;
 			}
-		}elseif( is_main_query() && is_single() && !empty($post->post_type) ){
+		}elseif( is_single() && !empty($post->post_type) ){
 			if( $post->post_type == EM_POST_TYPE_EVENT ){
 				$EM_Event = em_get_event($post);
 				return apply_filters('em_wp_the_title', $EM_Event->output($data)) ;

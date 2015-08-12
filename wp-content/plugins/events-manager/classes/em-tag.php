@@ -38,7 +38,7 @@ class EM_Tag extends EM_Object {
 	 * @param $tag_data
 	 * @return null
 	 */
-	function EM_Tag( $tag_data = false ) {
+	function __construct( $tag_data = false ) {
 		global $wpdb;
 		//Initialize
 		$tag = array();

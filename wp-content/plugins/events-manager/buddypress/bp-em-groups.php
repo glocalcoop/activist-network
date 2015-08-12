@@ -45,6 +45,7 @@ function bp_em_group_event_can_manage( $result, $EM_Event, $owner_capability, $a
 	    $EM_Object = new EM_Object(); //create new object to prevent infinite loop should we call $EM_Event->can_manage();
 		if( groups_is_user_admin(get_current_user_id(),$EM_Event->group_id) && $EM_Object->can_manage($owner_capability, $admin_capability, $user_to_check) ){
 			//This user is an admin of the owner's group, so they can edit this event.
+			array_pop($EM_Event->errors); //remove last error
 			return true;
 		}else{
 		    $EM_Event->add_error($EM_Object->get_errors()); //add any applicable errors

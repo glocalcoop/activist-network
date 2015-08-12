@@ -13,9 +13,9 @@
         	$this->set_cookies = $set_cookies == true;
         	if( $this->set_cookies ){
 	        	if( !empty($_COOKIE['em_notices']) ) {
-	        	    $notices = base64_decode($_COOKIE['em_notices']);
-	        	    if( is_serialized( $notices ) ){
-		        		$this->notices = unserialize($notices);
+	        	    $notices = json_decode(base64_decode($_COOKIE['em_notices']));
+	        	    if( is_array($notices) ){
+		        		$this->notices = $notices;
 		        		setcookie('em_notices', '', time() - 3600, COOKIEPATH, COOKIE_DOMAIN, is_ssl(), true); //unset the cookie
 	        	    }
 	        	}
@@ -37,7 +37,7 @@
         	}
         	if( $this->set_cookies ){
 	            if(count($this->notices['errors']) > 0 || count($this->notices['alerts']) > 0 || count($this->notices['infos']) > 0 || count($this->notices['confirms']) > 0){
-	            	setcookie('em_notices', base64_encode(serialize($this->notices)), time() + 30, COOKIEPATH, COOKIE_DOMAIN, is_ssl(), true); //sets cookie for 30 seconds, which may be too much
+	            	setcookie('em_notices', base64_encode(json_encode($this->notices)), time() + 30, COOKIEPATH, COOKIE_DOMAIN, is_ssl(), true); //sets cookie for 30 seconds, which may be too much
 	            }
         	}
         	return $redirect;

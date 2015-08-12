@@ -21,17 +21,17 @@ class EM_Locations extends EM_Object {
 		//Quick version, we can accept an array of IDs, which is easy to retrieve
 		if( self::array_is_numeric($args) ){ //Array of numbers, assume they are event IDs to retreive
 			//We can just get all the events here and return them
-			$sql = "SELECT * FROM $locations_table WHERE location_id=".implode(" OR location_id=", $args);
-			$results = $wpdb->get_results($sql,ARRAY_A);
-			$events = array();
-			foreach($results as $result){
-				$locations[$result['location_id']] = new EM_Location($result);
+			$locations = array();
+			foreach($args as $location_id){
+				$locations[$location_id] = em_get_location($location_id);
 			}
 			return apply_filters('em_locations_get', $locations, $args); //We return all the events matched as an EM_Event array. 
 		}elseif( is_numeric($args) ){
 			//return an event in the usual array format
-			return apply_filters('em_locations_get', array(new EM_Location($args)), $args);
+			return apply_filters('em_locations_get', array(em_get_location($args)), $args);
 		}elseif( is_array($args) && is_object(current($args)) && get_class((current($args))) == 'EM_Location' ){
+		    //we were passed an array of EM_Location classes, so we just give it back
+		    /* @todo do we really need this condition in EM_Locations::get()? */
 			return apply_filters('em_locations_get', $args, $args);
 		}	
 
@@ -44,19 +44,17 @@ class EM_Locations extends EM_Object {
 		$conditions = self::build_sql_conditions($args);
 		
 		//Put it all together
-		$EM_Location = new EM_Location(0); //Empty class for strict message avoidance
-		$fields = $locations_table .".". implode(", {$locations_table}.", array_keys($EM_Location->fields));
 		$where = ( count($conditions) > 0 ) ? " WHERE " . implode ( " AND ", $conditions ):'';
 		
 		//Get ordering instructions
 		$EM_Event = new EM_Event(); //blank event for below
+		$EM_Location = new EM_Location(0); //blank location for below
 		$accepted_fields = $EM_Location->get_fields(true);
 		$accepted_fields = array_merge($EM_Event->get_fields(true),$accepted_fields);
 		$orderby = self::build_sql_orderby($args, $accepted_fields, get_option('dbem_events_default_order'));
 		//Now, build orderby sql
 		$orderby_sql = ( count($orderby) > 0 ) ? 'ORDER BY '. implode(', ', $orderby) : '';
 		
-		$fields = ( $count ) ? $locations_table.'.location_id':$locations_table.'.post_id';
 		if( EM_MS_GLOBAL ){
 			$selectors = ( $count ) ?  'COUNT('.$locations_table.'.location_id)':$locations_table.'.post_id, '.$locations_table.'.blog_id';
 		}else{
@@ -135,7 +133,7 @@ class EM_Locations extends EM_Object {
 			$locations = self::get( $args );
 		}
 		//What format shall we output this to, or use default
-		$format = ( $args['format'] == '' ) ? get_option( 'dbem_location_list_item_format' ) : $args['format'] ;
+		$format = empty($args['format']) ? get_option( 'dbem_location_list_item_format' ) : $args['format'] ;
 		
 		$output = "";
 		$locations = apply_filters('em_locations_output_locations', $locations);	
@@ -144,11 +142,17 @@ class EM_Locations extends EM_Object {
 				$output .= $EM_Location->output($format);
 			}
 			//Add headers and footers to output
-			if( $format == get_option ( 'dbem_location_list_item_format' ) ){
-				$single_event_format_header = get_option ( 'dbem_location_list_item_format_header' );
-				$single_event_format_footer = get_option ( 'dbem_location_list_item_format_footer' );
-				$output =  $single_event_format_header .  $output . $single_event_format_footer;
+			if( $format == get_option( 'dbem_location_list_item_format' ) ){
+			    //we're using the default format, so if a custom format header or footer is supplied, we can override it, if not use the default
+			    $format_header = empty($args['format_header']) ? get_option('dbem_location_list_item_format_header') : $args['format_header'];
+			    $format_footer = empty($args['format_footer']) ? get_option('dbem_location_list_item_format_footer') : $args['format_footer'];
+			}else{
+			    //we're using a custom format, so if a header or footer isn't specifically supplied we assume it's blank
+			    $format_header = !empty($args['format_header']) ? $args['format_header'] : '' ;
+			    $format_footer = !empty($args['format_footer']) ? $args['format_footer'] : '' ;
 			}
+			$output =  $format_header .  $output . $format_footer;
+			
 			//Pagination (if needed/requested)
 			if( !empty($args['pagination']) && !empty($limit) && $locations_count > $limit ){
 				//output pagination links
@@ -267,13 +271,13 @@ class EM_Locations extends EM_Object {
 		}
 		//private locations
 		if( empty($args['private']) ){
-			$conditions['private'] = "(`location_private`=0 AND `event_private`=0)";
+			$conditions['private'] = "(`location_private`=0)";
 		}elseif( !empty($args['private_only']) ){
-			$conditions['private_only'] = "(`location_private`=1 OR `event_private`=1)";
+			$conditions['private_only'] = "(`location_private`=1)";
 		}
 		//post search
 		if( !empty($args['post_id'])){
-			if( is_array($args['post_id']) ){
+			if( self::array_is_numeric($args['post_id']) ){
 				$conditions['post_id'] = "($locations_table.post_id IN (".implode(',',$args['post_id'])."))";
 			}else{
 				$conditions['post_id'] = "($locations_table.post_id={$args['post_id']})";

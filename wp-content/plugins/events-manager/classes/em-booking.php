@@ -106,7 +106,7 @@ class EM_Booking extends EM_Object{
 	 * @param mixed $booking_data
 	 * @return null
 	 */
-	function EM_Booking( $booking_data = false ){
+	function __construct( $booking_data = false ){
 		//Get the person for this booking
 		global $wpdb;
 	  	if( $booking_data !== false ){
@@ -353,13 +353,13 @@ class EM_Booking extends EM_Object{
 	    //recalculate price here only if price is not actually set
 		if( $this->booking_price === null ){
 		    $this->calculate_price();
-			apply_filters('em_booking_get_price', $this->booking_price, $this);
+			$this->booking_price = apply_filters('em_booking_get_price', $this->booking_price, $this);
 		}
 		//return booking_price, formatted or not
 		if($format){
 			return $this->format_price($this->booking_price);
 		}
-		return $this->booking_price;
+		return round($this->booking_price,2);
 	}
 	
 	/**
@@ -800,9 +800,11 @@ class EM_Booking extends EM_Object{
 		if($result !== false){
 			$this->feedback_message = sprintf(__('Booking %s.','dbem'), $action_string);
 			if( $email ){
-				if( $this->email() && $this->mails_sent > 0 ){
-					$this->feedback_message .= " ".__('Email Sent.','dbem');
-				}elseif( $this->previous_status == 0 ){
+				if( $this->email() ){
+				    if( $this->mails_sent > 0 ){
+				        $this->feedback_message .= " ".__('Email Sent.','dbem');
+				    }
+				}else{
 					//extra errors may be logged by email() in EM_Object
 					$this->feedback_message .= ' <span style="color:red">'.__('ERROR : Email Not Sent.','dbem').'</span>';
 					$this->add_error(__('ERROR : Email Not Sent.','dbem'));
@@ -860,7 +862,7 @@ class EM_Booking extends EM_Object{
 	function get_admin_url(){
 		if( get_option('dbem_edit_bookings_page') && (!is_admin() || !empty($_REQUEST['is_public'])) ){
 			$my_bookings_page = get_permalink(get_option('dbem_edit_bookings_page'));
-			$bookings_link = em_add_get_params($my_bookings_page, array('event_id'=>$this->event_id, 'booking_id'=>'booking_id'), false);
+			$bookings_link = em_add_get_params($my_bookings_page, array('event_id'=>$this->event_id, 'booking_id'=>$this->booking_id), false);
 		}else{
 			if( $this->get_event()->blog_id != get_current_blog_id() ){
 				$bookings_link = get_admin_url($this->get_event()->blog_id, 'edit.php?post_type='.EM_POST_TYPE_EVENT."&page=events-manager-bookings&event_id=".$this->event_id."&booking_id=".$this->booking_id);
@@ -966,7 +968,8 @@ class EM_Booking extends EM_Object{
 			$output_string = str_replace($full_result, $replacement , $output_string );
 		}
 		//run event output too, since this is never run from within events and will not infinitely loop
-		$output_string = $this->get_event()->output($output_string, $target);
+		$EM_Event = apply_filters('em_booking_output_event', $this->get_event(), $this); //allows us to override the booking event info if it belongs to a parent or translation
+		$output_string = $EM_Event->output($output_string, $target);
 		return apply_filters('em_booking_output', $output_string, $this, $format, $target);	
 	}
 	
@@ -1007,30 +1010,23 @@ class EM_Booking extends EM_Object{
 				//get admin emails that need to be notified, hook here to add extra admin emails
 				$admin_emails = str_replace(' ','',get_option('dbem_bookings_notify_admin'));
 				$admin_emails = apply_filters('em_booking_admin_emails', explode(',', $admin_emails), $this); //supply emails as array
+				if( get_option('dbem_bookings_contact_email') == 1 && !empty($EM_Event->get_contact()->user_email) ){
+				    //add event owner contact email to list of admin emails
+				    $admin_emails[] = $EM_Event->get_contact()->user_email;
+				}
 				foreach($admin_emails as $key => $email){ if( !is_email($email) ) unset($admin_emails[$key]); } //remove bad emails
 				//proceed to email admins if need be
-				if( get_option('dbem_bookings_contact_email') == 1 || !empty($admin_emails) ){
+				if( !empty($admin_emails) ){
 					//Only gets sent if this is a pending booking, unless approvals are disabled.
 					$msg['admin']['subject'] = $this->output($msg['admin']['subject'],'raw');
 					$msg['admin']['body'] = $this->output($msg['admin']['body'], $output_type);
-					//email contact
-					if( get_option('dbem_bookings_contact_email') == 1 && !empty($EM_Event->get_contact()->user_email) ){ //if contacts are enabled and user email exists
-						if( !$this->email_send( $msg['admin']['subject'], $msg['admin']['body'], $EM_Event->get_contact()->user_email) && current_user_can('list_users')){
-							$this->errors[] = __('Confirmation email could not be sent to contact person. Registrant should have gotten their email (only admin see this warning).','dbem');
-							$result = false;
-						}else{
-							$this->mails_sent++;
-						}
-					}
-					//email admin
-					if( !empty($admin_emails) ){
+					//email admins
 						if( !$this->email_send( $msg['admin']['subject'], $msg['admin']['body'], $admin_emails) && current_user_can('list_users') ){
 							$this->errors[] = __('Confirmation email could not be sent to admin. Registrant should have gotten their email (only admin see this warning).','dbem');
 							$result = false;
 						}else{
 							$this->mails_sent++;
 						}
-					}
 				}
 			}
 		}

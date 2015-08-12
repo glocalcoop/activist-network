@@ -31,7 +31,7 @@ class EM_Ticket_Booking extends EM_Object{
 	 * @param mixed $ticket_data
 	 * @return null
 	 */
-	function EM_Ticket_Booking( $ticket_data = false ){
+	function __construct( $ticket_data = false ){
 		if( $ticket_data !== false ){
 			//Load ticket data
 			$ticket = array();

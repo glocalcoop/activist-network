@@ -16,7 +16,7 @@ function em_install() {
 	if( EM_VERSION > $old_version || $old_version == '' || (is_multisite() && !EM_MS_GLOBAL && get_option('em_ms_global_install')) ){
 		if( get_option('dbem_upgrade_throttle') <= time() || !get_option('dbem_upgrade_throttle') ){
 		 	// Creates the events table if necessary
-		 	if( !EM_MS_GLOBAL || (EM_MS_GLOBAL && is_main_blog()) ){
+		 	if( !EM_MS_GLOBAL || (EM_MS_GLOBAL && is_main_site()) ){
 				em_create_events_table();
 				em_create_events_meta_table();
 				em_create_locations_table();
@@ -161,7 +161,7 @@ function em_create_events_table() {
 		}
 		dbDelta($sql);
 	}
-	em_sort_out_table_nu_keys($table_name, array('event_status','post_id','blog_id','group_id'));
+	em_sort_out_table_nu_keys($table_name, array('event_status','post_id','blog_id','group_id','location_id'));
 }
 
 function em_create_events_meta_table(){
@@ -257,7 +257,7 @@ function em_create_bookings_table() {
 		) DEFAULT CHARSET=utf8 ;";
 	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 	dbDelta($sql);
-	em_sort_out_table_nu_keys($table_name, array('event_id'));
+	em_sort_out_table_nu_keys($table_name, array('event_id','person_id','booking_status'));
 }
 
 
@@ -545,7 +545,7 @@ function em_add_options() {
 		'dbem_tag_page_title_format' => '#_TAGNAME',
 		'dbem_tag_page_format' => '<h3>'.__('Upcoming Events','dbem').'</h3>#_TAGNEXTEVENTS',
 		'dbem_tag_no_events_message' => '<li>'.__('No events with this tag', 'dbem').'</li>',
-		'dbem_tag_event_list_item_header_format' => '<ul>',
+		'dbem_tag_event_list_item_header_format' => '<ul class="em-tags-list">',
 		'dbem_tag_event_list_item_format' => "<li>#_EVENTLINK - #_EVENTDATES - #_EVENTTIMES</li>",
 		'dbem_tag_event_list_item_footer_format' => '</ul>',
 		'dbem_tag_event_single_format' => '#_EVENTLINK - #_EVENTDATES - #_EVENTTIMES',
@@ -602,6 +602,7 @@ function em_add_options() {
 		'dbem_small_calendar_event_title_separator' => ", ",
 		'dbem_small_calendar_initials_length' => 1,
 		'dbem_small_calendar_abbreviated_weekdays' => false,
+		'dbem_small_calendar_long_events' => '0',
 		'dbem_display_calendar_order' => 'ASC',
 		'dbem_display_calendar_orderby' => 'event_name,event_start_time',
 		'dbem_display_calendar_events_limit' => get_option('dbem_full_calendar_events_limit',3),
@@ -912,7 +913,7 @@ function em_add_options() {
 	if( get_option('dbem_time_24h','not set') == 'not set'){
 		//Localise vars regardless
 		$locale_code = substr ( get_locale(), 0, 2 );
-		if (preg_match('/^en_(?:GB|IE|AU|NZ|ZA|TT|JM)$/', WPLANG)) {
+		if (preg_match('/^en_(?:GB|IE|AU|NZ|ZA|TT|JM)$/', get_locale())) {
 		    $locale_code = 'en-GB';
 		}
 		//Set time

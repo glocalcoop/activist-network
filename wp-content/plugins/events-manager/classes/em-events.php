@@ -22,17 +22,11 @@ class EM_Events extends EM_Object {
 		//Quick version, we can accept an array of IDs, which is easy to retrieve
 		if( self::array_is_numeric($args) ){ //Array of numbers, assume they are event IDs to retreive
 			//We can just get all the events here and return them
-			$sql = "
-				SELECT * FROM $events_table
-				LEFT JOIN $locations_table ON {$locations_table}.location_id={$events_table}.location_id
-				WHERE event_id=".implode(" OR event_id=", $args)."
-			";
-			$results = $wpdb->get_results(apply_filters('em_events_get_sql',$sql),ARRAY_A);
 			$events = array();
-			foreach($results as $result){
-				$events[$result['event_id']] = new EM_Event($result);
+			foreach($args as $event_id){
+				$events[$event_id] = em_get_event($event_id);
 			}
-			return $events; //We return all the events matched as an EM_Event array. 
+			return apply_filters('em_events_get', $events, $args);
 		}
 		
 		//We assume it's either an empty array or array of search arguments to merge with defaults			
@@ -199,14 +193,16 @@ class EM_Events extends EM_Object {
 		if ( $events_count > 0 ) {
 			foreach ( $events as $EM_Event ) {
 				$output .= $EM_Event->output($format);
-			}
+			} 
 			//Add headers and footers to output
-			if( $format == get_option ( 'dbem_event_list_item_format' ) ){
-				$format_header = ( get_option( 'dbem_event_list_item_format_header') == '' ) ? '':get_option ( 'dbem_event_list_item_format_header' );
-				$format_footer = ( get_option ( 'dbem_event_list_item_format_footer' ) == '' ) ? '':get_option ( 'dbem_event_list_item_format_footer' );
+			if( $format == get_option( 'dbem_event_list_item_format' ) ){
+			    //we're using the default format, so if a custom format header or footer is supplied, we can override it, if not use the default
+			    $format_header = empty($args['format_header']) ? get_option('dbem_event_list_item_format_header') : $args['format_header'];
+			    $format_footer = empty($args['format_footer']) ? get_option('dbem_event_list_item_format_footer') : $args['format_footer'];
 			}else{
-				$format_header = ( !empty($args['format_header']) ) ? $args['format_header']:'';
-				$format_footer = ( !empty($args['format_footer']) ) ? $args['format_footer']:'';
+			    //we're using a custom format, so if a header or footer isn't specifically supplied we assume it's blank
+			    $format_header = !empty($args['format_header']) ? $args['format_header'] : '' ;
+			    $format_footer = !empty($args['format_footer']) ? $args['format_footer'] : '' ;
 			}
 			$output = $format_header .  $output . $format_footer;
 			//Pagination (if needed/requested)
@@ -442,8 +438,6 @@ class EM_Events extends EM_Object {
 			'order' => get_option('dbem_events_default_order'),
 			'bookings' => false, //if set to true, only events with bookings enabled are returned
 			'status' => 1, //approved events only
-			'format_header' => '', //events can have custom html above the list
-			'format_footer' => '', //events can have custom html below the list
 			'town' => false,
 			'state' => false,
 			'country' => false,

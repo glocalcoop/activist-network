@@ -62,9 +62,9 @@ if(!is_admin()) echo $EM_Notices;
 	<?php endif; ?>
 	<p class='submit'>
 	    <?php if( empty($EM_Location->location_id) ): ?>
-	    <input type='submit' class='button-primary' name='submit' value='<?php echo esc_attr(sprintf( __('Submit %s','dbem'), __('Location','dbem') )); ?>' />
+	    <input type='submit' class='button-primary' value='<?php echo esc_attr(sprintf( __('Submit %s','dbem'), __('Location','dbem') )); ?>' />
 	    <?php else: ?>
-	    <input type='submit' class='button-primary' name='submit' value='<?php echo esc_attr(sprintf( __('Update %s','dbem'), __('Location','dbem') )); ?>' />
+	    <input type='submit' class='button-primary' value='<?php echo esc_attr(sprintf( __('Update %s','dbem'), __('Location','dbem') )); ?>' />
 	    <?php endif; ?>
 	</p>
 </form>
