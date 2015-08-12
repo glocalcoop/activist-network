@@ -16,9 +16,9 @@ $col_max = count($calendar['row_headers']); //each time this collumn number is r
 <table class="em-calendar fullcalendar">
 	<thead>
 		<tr>
-			<td><a class="em-calnav full-link em-calnav-prev" href="<?php echo $calendar['links']['previous_url']; ?>">&lt;&lt;</a></td>
-			<td class="month_name" colspan="5"><?php echo ucfirst(date_i18n(get_option('dbem_full_calendar_month_format'), $calendar['month_start'])); ?></td>
-			<td><a class="em-calnav full-link em-calnav-next" href="<?php echo $calendar['links']['next_url']; ?>">&gt;&gt;</a></td>
+			<td><a class="em-calnav full-link em-calnav-prev" href="<?php echo esc_url($calendar['links']['previous_url']); ?>">&lt;&lt;</a></td>
+			<td class="month_name" colspan="5"><?php echo esc_html(ucfirst(date_i18n(get_option('dbem_full_calendar_month_format'), $calendar['month_start']))); ?></td>
+			<td><a class="em-calnav full-link em-calnav-next" href="<?php echo esc_url($calendar['links']['next_url']); ?>">&gt;&gt;</a></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -36,9 +36,9 @@ $col_max = count($calendar['row_headers']); //each time this collumn number is r
 				//if you want to sort events cronologically on each day, including all day events at top and long events within the right times, add define('EM_CALENDAR_SORTTIME', true); to your wp-config.php file 
 				if( defined('EM_CALENDAR_SORTTIME') && EM_CALENDAR_SORTTIME ) ksort($cell_data['events']); //indexes are timestamps
 				?>
-				<td class="<?php echo $class; ?>">
+				<td class="<?php echo esc_attr($class); ?>">
 					<?php if( !empty($cell_data['events']) && count($cell_data['events']) > 0 ): ?>
-					<a href="<?php echo esc_url($cell_data['link']); ?>" title="<?php echo esc_attr($cell_data['link_title']); ?>"><?php echo date('j',$cell_data['date']); ?></a>
+					<a href="<?php echo esc_url($cell_data['link']); ?>" title="<?php echo esc_attr($cell_data['link_title']); ?>"><?php echo esc_html(date('j',$cell_data['date'])); ?></a>
 					<ul>
 						<?php echo EM_Events::output($cell_data['events'],array('format'=>get_option('dbem_full_calendar_event_format'))); ?>
 						<?php if( $args['limit'] && $cell_data['events_count'] > $args['limit'] && get_option('dbem_display_calendar_events_limit_msg') != '' ): ?>
@@ -46,7 +46,7 @@ $col_max = count($calendar['row_headers']); //each time this collumn number is r
 						<?php endif; ?>
 					</ul>
 					<?php else:?>
-					<?php echo date('j',$cell_data['date']); ?>
+					<?php echo esc_html(date('j',$cell_data['date'])); ?>
 					<?php endif; ?>
 				</td>
 				<?php

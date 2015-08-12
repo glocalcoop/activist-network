@@ -3,15 +3,15 @@
 Contributors: johnbillion  
 Tags: users, profiles, user switching, fast user switching, multisite, buddypress, bbpress, become, user management, developer  
 Requires at least: 3.1  
-Tested up to: 4.2.2  
-Stable tag: 1.0.6  
+Tested up to: 4.3  
+Stable tag: 1.0.7  
 License: GPL v2 or later  
 
 Instant switching between user accounts in WordPress.
 
 == Description ==
 
-This plugin allows you to quickly swap between user accounts in WordPress at the click of a button. You'll be instantly logged out and logged in as your desired user. This is handy for test environments where you regularly log out and in between different accounts, or for adminstrators who need to switch between multiple accounts.
+This plugin allows you to quickly swap between user accounts in WordPress at the click of a button. You'll be instantly logged out and logged in as your desired user. This is handy for test environments where you regularly log out and in between different accounts, or for administrators who need to switch between multiple accounts.
 
 = Features =
 
@@ -31,7 +31,7 @@ This plugin allows you to quickly swap between user accounts in WordPress at the
 
 = Usage =
 
- 1. Visit the *Users* menu in WordPress and you'll see a *Switch To* link next to each user.
+ 1. Visit the *Users* menu in WordPress and you'll see a *Switch To* link in the list of action links for each user.
  2. Click this and you will immediately switch into that user account.
  3. You can switch back to your originating account via the *Switch back* link on each dashboard screen or in your profile menu in the WordPress toolbar.
 
@@ -40,9 +40,12 @@ See the [FAQ](https://wordpress.org/plugins/user-switching/faq/) for information
 = Translations Included =
 
  * العربية (Arabic)
+ * Azərbaycan dili (Azerbaijani)
+ * Bosanski (Bosnian)
  * Български (Bulgarian)
  * 中文 (Chinese Simplified)
  * Hrvatski (Croatian)
+ * Dansk (Danish)
  * Nederlands (Dutch)
  * Suomi (Finnish)
  * Français (French)
@@ -63,7 +66,7 @@ See the [FAQ](https://wordpress.org/plugins/user-switching/faq/) for information
  * Español (Spanish)
  * Türkçe (Turkish)
 
-Thanks to translations by Hassan Hisham, Tunghsiao Liu, Francois-Xavier Bénard, Ralph Stenzel, Rami Y, Yusuke Hayasaki, Tommixoft, Amin Ab, Bartosz Arendt, Raphael Mendonça, R J, Max Samael, Eko Ikhyar, Marcelo Pedra, Abdullah Pazarbasi, ArianServ, SilverXp, Evi Giannakou, Petya Raykovska, Martin Sauter, Yaser Tallo, Enrique Errando, Sami Keijonen, Kalina Michocka, Alessandro Curci, Alessandro Tesoro, Ante Sepic, and Per Søderlind!
+Thanks to translations by Hassan Hisham, Tunghsiao Liu, Francois-Xavier Bénard, Ralph Stenzel, Rami Y, Yusuke Hayasaki, Tommixoft, Amin Ab, Bartosz Arendt, Raphael Mendonça, R J, Max Samael, Eko Ikhyar, Marcelo Pedra, Abdullah Pazarbasi, ArianServ, SilverXp, Evi Giannakou, Petya Raykovska, Martin Sauter, Yaser Tallo, Enrique Errando, Sami Keijonen, Kalina Michocka, Alessandro Curci, Alessandro Tesoro, Ante Sepic, Per Søderlind, Mushviq Abdulla, Kenan Dervisevic, and Joachim Jensen!
 
 == Screenshots ==
 
@@ -101,9 +104,15 @@ Yes, and you'll also be able to switch users from member profile screens and the
 
 Yes, and you'll also be able to switch users from member profile screens.
 
+= Does this plugin work if my site is using a two-factor authentication plugin? =
+
+Yes, mostly.
+
+One exception I'm aware of is [Duo Security](https://wordpress.org/plugins/duo-wordpress/). If you're using this plugin, you should install the [User Switching for Duo Security](https://github.com/johnbillion/user-switching-duo-security) add-on plugin which will prevent the two-factor authentication prompt from appearing when you switch between users.
+
 = Does this work as a mu-plugin? =
 
-Yes, but you'll need to install `user-switching.php` into the root of your `mu-plugins` directory, not in the `user-switching` subdirectory. This is a restriction of WordPress.
+Yes, but you'll need to install `user-switching.php` into the root of your `mu-plugins` directory, not in the `user-switching` subdirectory. This is a limitation of WordPress.
 
 = What capability does a user need in order to switch accounts? =
 
@@ -113,7 +122,7 @@ A user needs the `edit_users` capability in order to switch user accounts. By de
 
 No. This can be enabled though by installing the [User Switching for Regular Admins](https://github.com/johnbillion/user-switching-for-regular-admins) plugin.
 
-= Are any plugin hooks called when users switch accounts? =
+= Are any plugin actions called when a user switches account? =
 
 Yes. When a user switches to another account, the `switch_to_user` hook is called with the new and old user IDs passed as parameters.
 
@@ -121,12 +130,24 @@ When a user switches back to their original account, the `switch_back_user` hook
 
 When a user switches off, the `switch_off_user` hook is called with the old user ID as a parameter.
 
+See the plugin source code for complete hook documentation.
+
 == Upgrade Notice ==
 
-= 1.0.6 =
-* Correct the values passed to the `switch_back_user` action when a user switches back.
+= 1.0.7 =
+
+* Azerbaijani, Danish, and Bosnian translations.
+* Add back the 'User Switching' heading on the user profile screen, and correct the values passed to the `switch_back_user` hook when a user has been switched off.
 
 == Changelog ==
+
+= 1.0.7 =
+
+* Azerbaijani, Danish, and Bosnian translations.
+* Add back the 'User Switching' heading on the user profile screen.
+* Correct the value passed to the `$old_user_id` parameter of the `switch_back_user` hook when a user has been switched off. This should be boolean `false` rather than `0`.
+* Docblocks for actions and filters.
+* More code standards tweaks.
 
 = 1.0.6 =
 * Correct the values passed to the `switch_back_user` action when a user switches back.

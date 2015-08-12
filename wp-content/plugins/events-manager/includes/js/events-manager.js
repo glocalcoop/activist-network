@@ -23,18 +23,18 @@ jQuery(document).ready( function($){
 		//show or hide advanced tickets, hidden by default
 		var el = $(this);
 		var rel = el.attr('rel').split(':');
-		if( el.hasClass('show') ){
+		if( el.hasClass('show-search') ){
 			if( rel.length > 1 ){ el.closest(rel[1]).find(rel[0]).slideUp(); }
 			else{ $(rel[0]).slideUp(); }
-			el.find('.show').show();
-			el.find('.hide').hide();
-			el.addClass('hide').removeClass('show');
+			el.find('.show, .show-advanced').show();
+			el.find('.hide, .hide-advanced').hide();
+			el.removeClass('show-search');
 		}else{
 			if( rel.length > 1 ){ el.closest(rel[1]).find(rel[0]).slideDown(); }
 			else{ $(rel[0]).slideDown(); }
-			el.find('.show').hide();
-			el.find('.hide').show();
-			el.addClass('show').removeClass('hide');
+			el.find('.show, .show-advanced').hide();
+			el.find('.hide, .hide-advanced').show();
+			el.addClass('show-search');
 		}
 		
 	});
@@ -306,14 +306,14 @@ jQuery(document).ready( function($){
 			var el = $(this);
 			if( el.hasClass('show') ){
 				el.closest('.em-ticket-form').find('.em-ticket-form-advanced').fadeIn();
-				el.find('.show').hide();
-				el.find('.hide').show();
+				el.find('.show,.show-advanced').hide();
+				el.find('.hide,.hide-advanced').show();
 			}else{
 				el.closest('.em-ticket-form').find('.em-ticket-form-advanced').hide();
-				el.find('.show').show();
-				el.find('.hide').hide();
+				el.find('.show,.show-advanced').show();
+				el.find('.hide,.hide-advanced').hide();
 			}
-			el.toggleClass('show').toggleClass('hide');
+			el.toggleClass('show');
 		});
 		$('.em-ticket-form').each( function(){
 			//check whether to show advanced options or not by default for each ticket
@@ -329,7 +329,6 @@ jQuery(document).ready( function($){
 			e.preventDefault();
 			var el = $(this);
 			var tbody = el.closest('tbody');
-			console.log(tbody.find('input.ticket_id').val());
 			if( tbody.find('input.ticket_id').val() > 0 ){
 				//only will happen if no bookings made
 				el.text('Deleting...');	
@@ -753,10 +752,12 @@ function em_setup_datepicker(wrap){
 
 function em_setup_timepicker(wrap){
 	wrap = jQuery(wrap);
-	wrap.find(".em-time-input").timePicker({
+	var timepicker_options = {
 		show24Hours: EM.show24hours == 1,
 		step:15
-	});
+	}
+	jQuery(document).triggerHandler('em_timepicker_options', timepicker_options);
+	wrap.find(".em-time-input").timePicker(timepicker_options);
 	
 	// Keep the duration between the two inputs.
 	wrap.find(".em-time-range input.em-time-start").each( function(i, el){

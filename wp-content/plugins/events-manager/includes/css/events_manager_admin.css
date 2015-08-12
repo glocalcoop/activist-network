@@ -81,6 +81,8 @@ table.events-table .category { color:#888; }
 	/* Generic Table Info */
 	table.em-form-fields td, table.em-form-fields th { text-align:left; vertical-align:top; }
 	table.em-form-fields th { padding:0px 20px 5px 0px; }
+	.em-tablenav-pagination.tablenav-pages a { width:auto; padding-top:4px; padding-bottom:5px;}
+	.em-tablenav-pagination.tablenav-pages .current { font-size:16px; }
 	/* Ticket table info */
 	table.em-tickets-bookings-table { width:100%; border:1px #efefef solid; margin:10px 0px; }
 	table.em-tickets-bookings-table th, table.em-tickets-bookings-table td { padding:5px 5px; margin:0px; }
@@ -120,7 +122,7 @@ table.events-table .category { color:#888; }
 #em-options-form tr.em-subheader h5 { font-style:normal; margin:10px 0; padding:0 0 5px; font-weight:bold; font-size:15px; border-bottom: 1px solid #efefef; color:#000; }
 #em-options-form tbody.em-subsection th { padding-left:35px; }
 table.em-caps-table th, table.em-caps-table td { width:auto !important; }
-.em-translatable { display:inline-block; width:16px; height:16px; background:url(../images/globe.png) 0px 0px no-repeat; padding:0px 5px 0px 0px; cursor:pointer; }
+.em-translatable { display:inline-block; width:20px; height:20px; font-size:20px; padding:0px 5px 0px 0px; cursor:pointer; }
 .em-ml-options { display:none; }
 .em-ml-options table { width:95%; }
 .em-ml-options table td { padding:0px 0px 5px; margin:0px; }

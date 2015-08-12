@@ -3,8 +3,8 @@ Contributors: netweblogic, nutsmuggler
 Donate link: http://wp-events-plugin.com
 Tags: events, event, event registration, event calendar, events calendar, event management, paypal, registration, ticket, tickets, ticketing, tickets, theme, widget, locations, maps, booking, attendance, attendee, buddypress, calendar, gigs, payment, payments, sports,
 Requires at least: 3.5
-Tested up to: 4.2.2
-Stable tag: 5.5.7.1
+Tested up to: 4.3
+Stable tag: 5.6
 
 Fully featured event registration management including recurring events, locations management, calendar, Google map integration, booking management
 
@@ -56,7 +56,7 @@ We have also released an add-on for Events Manager which not only demonstrates t
 * Coupon Codes
 * Faster support via private forums
 
-For more information or to go pro, [visit our plugin website](http://wp-events-plugin.com).
+For more information or to go pro, [visit our plugin website](http://wp-events-plugin.com/features/).
 
 == Installation ==
 
@@ -98,14 +98,92 @@ See our [FAQ](http://wp-events-plugin.com/documentation/faq/) page, which is upd
 6. Manage attendees with various booking reports
 
 == Changelog ==
+= 5.6 =
+* fixed potential XSS and a potential code injection vulnerabilities (props to the team at bit9.com)
+* updated Czech, Danish, Dutch, English (UK), Spanish, Estonian, French, German, Hungarian, Italian, Japanese, Norwegian, Persian, Polish, Portuguese (Brazil), Russian and Slovenian language files
+* added Greek and Slovak languages
+* added MultiLingual abstract layer rewritten and various modifications throughout EM to enable multilingual interfacing with plugins like WPML
+ * created abstract multilingual layer classes, a complete rewrite and overhaul
+ * fixed em_events_get_bookings filter not allowing replacement of EM_Booking object
+ * changed booking form placeholder template to reference EM_Bookings->event_id rather than EM_Event->event_id
+ * fixed wp_insert_post_data not correctly loading/validating the event associated with the actual post id supplied
+ * changed ML globe icon to use the globe dashicon
+ * fixed attributes not being translatable as well as porting new attribute values added to original being added to other language if no translation exists
+ * added single-tab view for options page if number of ML languages add more than 1000 fields to submit
+* fixed some minor PHP warnings for edge cases
+* fixed bp deprecated warning in debug mode
+* added long_events default option to small and full calendar sizes on settings page
+* fixed erroneous month returned when using functions and the 12th month (kudos @althie) 
+* removed a console.log function from the JS delete ticket function
+* removed the forced 50px width/height of the full calendar day cells which breaks the calendar in twenty fifteen
+* fixed global $EM_Event not loading before add_admin_boxes in admin area
+* improved/simplified code for front-end image uploads handling which now uses media_handle_upload
+* fixed #_CONTACTNAME showing anonymous events user rather than the guest submitter name
+* fixed MS Global recurrences not saving global category info
+* fixed recurring tickets triggering errors if only start date is defined
+* fixed private locations searches not including eventless private locations
+* changed some deprecated is_main_blog() functions to is_main_site()
+* fixed JS DOM conflict by naming submit buttons 'submit'
+* fixed 'Email Sent' being shown when no emails sent during booking status change
+* fixed em_wp_the_title() unnecessarily filtering all the_title instances on event, location and EM pages rather than just the main title
+* fixed long_events=0 not being considered for the WP Fullcalendar plugin
+* fixed issue where when saving via WP admin the global $EM_Event object doesn't refresh all data before passing onto save_event filter
+* added em_rewrite_rules_array_events filter for permalink rewrites
+* fixed long events argument not taking in WP FullCalendar
+* fixed filters em_bookings_table_rows_col and em_bookings_table_rows_col_{col_name} not supplying $object which could be an EM_Ticket_Booking object
+* modified EM_Bookings_Table::get_row() to apply em_bookings_table_rows_col for every column
+* fixed minor admin page bug where JS can clash with uses of pseudo URLs when certain plugins activated
+* fixed EM_Calendar links clashing with WPML and potentially other plugins that manipulate urls
+* added some esc_ functions to calendar links and templates an extra safety precaution
+* added EM_CSV_DELIMITER constant check to allow overriding CSV delimiters
+* added em_booking_output_event filter
+* improved booking email sending so contact and extra admin emails sent in one go rather than in separate send functions
+* added em_booking_js hook with intention of replacing em_gateway_js hook in the distant future
+* fixed booking price rounding issues in EM_Booking::get_price()
+* fixed event save_post hook issues when a new location CPT is created within it, which fixes ACF plugin saving issues
+* fixed WPLANG php notice on installation/update
+* fixed 'Manage Persons Bookings' page not filtering properly for non-admins
+* fixed some false positive/negative results using EM_Object::can_manage()
+* added additional db indexes for performance improvements
+* fixed EM_Events::get() returning blank events when supplied an array of event IDs
+* fixed advanced search & ticket editor advanced options toggle conflicts with twitter bootstrap-based themes
+* updated classes and widgets to use PHP 5 constructor methods in lieu of WP 4.3 update
+* fixed BP event duplication errors for non-owner group admins
+* changed and cleaned up some table layout issues in templates/buddypress/group-events.php
+* fixed current view/scope link not being bold in front-end events editor
+* fixed saving recurrences not deleting currently trashed recurrences
+* fixed location archives not adhering to sorting defined in settings page
+* fixed users without the manage_booking capability being able to create events with bookings in the admin areas
+* removed auto-insert of ul tags if no format_header or format_footer supplied in taxonomy list shortcode
+* fixed some format, format_header and format_footer attributes not being output for custom value combinations
+* fixed misspelt action em_front_event_form_guest (em_font_event_form_guest depricated, will remove in future) 
+* fixed custom taxonomies not being considered as default search args to make search form integration easier
+* changed templates/templates/search/categories.php so default value is 0 rather than -1
+* changed incorrect em_event_get_post filter applied for EM_Event::get_post_meta() which is now em_event_get_post_meta
+* added em_event_get_post_meta_pre and em_event_get_post_pre actions
+* fixed SQL error when searching non-existent taxonomy values or taxonomy names containing a hyphen
+* fixed change of event ownership to anonymously submitted event not showing new owner contact information
+* fixed soon-to-be deprecated templates/forms/ticket-form.php not including overridden forms/event/bookings-ticket-form.php file
+* added em_timepicker_options JS trigger for altering time picker options
+* fixed strict PHP error in templates/forms/bookingform/ticket-single.php
+* added em_enqueue_admin_styles action and moved em_enqueue_admin_scripts action after em script is added
+* added Russian Ruble to currency list
+* fixed errors with some booking edit links on the front end
+* changed use of deprecated function bp_core_add_notification to bp_notifications_add_notification
+* added EM_Event::duplicate_url and changed templates with duplicate urls to use this so ML events will duplicate original translation
+* fixed some potential validation errors when hooking into em_location_get_post_meta
+* added admin global $EM_Location so it now becomes global during add_meta_boxes action
+* added em_category_taxonomy_template and em_tag_taxonomy_template actions
+* updated jQuery UI CSS files
+
 = 5.5.7.1 =
-* fixed a minor DOM XSS vulnerability
+* fixed minor DOM XSS vulnerability
 
 = 5.5.7 =
-* fixed some reported XSS vulnerabilities
+* fixed some more XSS vulnerabilities
 
 = 5.5.6 =
-* fixed security vulnerability
+* fixed a security vulnerability
 
 = 5.5.5 =
 * fixed booking cut-off time not being editable after event is saved

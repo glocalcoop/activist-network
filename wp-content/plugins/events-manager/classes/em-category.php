@@ -41,7 +41,7 @@ class EM_Category extends EM_Object {
 	 * @param $category_data
 	 * @return null
 	 */
-	function EM_Category( $category_data = false ) {
+	function __construct( $category_data = false ) {
 		global $wpdb;
 		self::ms_global_switch();
 		//Initialize

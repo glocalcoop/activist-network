@@ -22,7 +22,7 @@ class EM_Categories extends EM_Object implements Iterator{
 	 * @param mixed $data
 	 * @return null
 	 */
-	function EM_Categories( $data = false ){
+	function __construct( $data = false ){
 		global $wpdb;
 		self::ms_global_switch();
 		if( is_object($data) && get_class($data) == "EM_Event" && !empty($data->post_id) ){ //Creates a blank categories object if needed
@@ -180,13 +180,16 @@ class EM_Categories extends EM_Object implements Iterator{
 				$category_count++;
 			}
 			//Add headers and footers to output
-			if( $format == get_option ( 'dbem_categories_list_item_format' ) ){
-				$single_event_format_header = get_option ( 'dbem_categories_list_item_format_header' );
-				$single_event_format_header = ( $single_event_format_header != '' ) ? $single_event_format_header : "<ul class='em-categories-list'>";
-				$single_event_format_footer = get_option ( 'dbem_categories_list_item_format_footer' );
-				$single_event_format_footer = ( $single_event_format_footer != '' ) ? $single_event_format_footer : "</ul>";
-				$output =  $single_event_format_header .  $output . $single_event_format_footer;
+			if( $format == get_option( 'dbem_categories_list_item_format' ) ){
+			    //we're using the default format, so if a custom format header or footer is supplied, we can override it, if not use the default
+			    $format_header = empty($args['format_header']) ? get_option('dbem_categories_list_item_format_header') : $args['format_header'];
+			    $format_footer = empty($args['format_footer']) ? get_option('dbem_categories_list_item_format_footer') : $args['format_footer'];
+			}else{
+			    //we're using a custom format, so if a header or footer isn't specifically supplied we assume it's blank
+			    $format_header = !empty($args['format_header']) ? $args['format_header'] : '' ;
+			    $format_footer = !empty($args['format_footer']) ? $args['format_footer'] : '' ;
 			}
+			$output =  $format_header .  $output . $format_footer;
 			//Pagination (if needed/requested)
 			if( !empty($args['pagination']) && !empty($limit) && $categories_count >= $limit ){
 				//Show the pagination links (unless there's less than 10 events, or the custom limit)

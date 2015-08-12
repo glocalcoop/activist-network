@@ -271,7 +271,6 @@ jQuery(document).ready( function($){
 			e.preventDefault();
 			var el = $(this);
 			var tbody = el.closest('tbody');
-			console.log(tbody.find('input.ticket_id').val());
 			if( tbody.find('input.ticket_id').val() > 0 ){
 				//only will happen if no bookings made
 				el.text('Deleting...');	

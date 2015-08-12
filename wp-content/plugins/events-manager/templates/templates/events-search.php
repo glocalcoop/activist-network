@@ -37,7 +37,7 @@ $args = !empty($args) ? $args:array(); /* @var $args array */
 			//date range (scope)
 			if( !empty($args['search_scope']) ) em_locate_template('templates/search/scope.php',true,array('args'=>$args));
 			//categories
-			if( !empty($args['search_categories']) ) em_locate_template('templates/search/categories.php',true,array('args'=>$args));
+			if( get_option('dbem_categories_enabled') && !empty($args['search_categories']) ) em_locate_template('templates/search/categories.php',true,array('args'=>$args));
 			//Location data
 			em_locate_template('templates/search/location.php',true, array('args'=>$args));
 			if( !empty($args['search_geo_units']) ) em_locate_template('templates/search/geo-units.php',true, array('args'=>$args));
@@ -51,8 +51,8 @@ $args = !empty($args) ? $args:array(); /* @var $args array */
 		<?php if( !empty($args['advanced_hidden']) && !empty($args['show_advanced']) ): //show the advanced search toggle if advanced fields are collapsed ?>
 		<div class="em-search-options">
 			<a href="#" class="em-toggle" rel=".em-search-advanced:.em-search-form">
-				<span class="hide" style="display:none;"><?php echo esc_html($args['search_text_hide']); ?></span>
-				<span class="show"><?php echo esc_html($args['search_text_show']); ?></span>
+				<span class="hide-advanced" style="display:none;"><?php echo esc_html($args['search_text_hide']); ?></span>
+				<span class="show-advanced"><?php echo esc_html($args['search_text_show']); ?></span>
 			</a>
 		</div>
 		<?php endif; ?>

@@ -50,7 +50,7 @@ class EM_Categories_Taxonomy{
 		}
 		?>
 	    <tr class="form-field">
-	        <th scope="row" valign="top"><label for="category-bgcolor">Calendar Color</label></th>
+	        <th scope="row" valign="top"><label for="category-bgcolor"><?php esc_html_e('Color','dbem'); ?></label></th>
 	        <td>
 	            <input type="text" name="category_bgcolor" id="category-bgcolor" class="colorwell" value="<?php echo esc_attr($category_color); ?>" style="width:100px;"/><br />
 	            <p class="description"><?php echo sprintf(__('Choose a color for your category. You can access this using the %s placeholder.','dbem'),'<code>#_CATEGORYCOLOR</code>'); ?></p>
@@ -58,7 +58,7 @@ class EM_Categories_Taxonomy{
 	        </td>
 	    </tr>
 	    <tr class="form-field">
-	        <th scope="row" valign="top"><label for="category-image">Image</label></th>
+	        <th scope="row" valign="top"><label for="category-image"><?php esc_html_e('Image','dbem'); ?></label></th>
 	        <td>
 	        	<?php if( !empty($category_image) ): ?>
 	        	<p id="category-image-img"><img src="<?php echo $category_image; ?>" /></p>

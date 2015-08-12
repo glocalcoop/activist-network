@@ -29,6 +29,8 @@ class EM_Object {
 			'order' => 'ASC', //hard-coded at end of this function
 			'orderby' => false,
 			'format' => '', 
+			'format_header' => '', //custom html above the list
+			'format_footer' => '', //custom html below the list
 			'category' => 0,
 			'tag' => 0,
 			'location' => false,
@@ -53,6 +55,9 @@ class EM_Object {
 			'near_distance'=>get_option('dbem_search_form_geo_distance_default'), //distance from near coordinates - currently the default is the same as for the search form
 			'ajax'=> (defined('EM_AJAX') && EM_AJAX) //considered during pagination
 		);
+		//auto-add taxonomies to defaults
+		foreach( self::get_taxonomies() as $item => $item_data ){ $super_defaults[$item] = false; }
+		
 		//Return default if nothing passed
 		if( empty($defaults) && empty($array) ){
 			return $super_defaults;
@@ -210,7 +215,7 @@ class EM_Object {
 				$conditions['recurring'] = "`recurrence`=1";
 			}
 		}elseif( $recurrence > 0 ){
-			$conditions['recurrence'] = "`recurrence_id`=$recurrence";
+			$conditions['recurrence'] = $wpdb->prepare("`recurrence_id`=%d", $recurrence);
 		}else{
 		    if( $recurrences !== null ){
 		    	$conditions['recurrences'] = $recurrences ? "(`recurrence_id` > 0 )":"(`recurrence_id` IS NULL OR `recurrence_id`=0 )";
@@ -358,7 +363,7 @@ class EM_Object {
 		//Location specific filters
 		//if we're searching near something, country etc. becomes irrelevant
 		if( !empty($args['near']) && self::array_is_numeric($args['near']) ){
-			$distance = !empty($args['near_distance']) && is_numeric($args['near_distance']) ? absint($args['near_distance']) : get_option('dbem_search_form_geo_units',25);
+			$distance = !empty($args['near_distance']) && is_numeric($args['near_distance']) ? absint($args['near_distance']) : absint(get_option('dbem_search_form_geo_units',25));
 			if( empty($args['near_unit']) ) $args['near_unit'] = get_option('dbem_search_form_geo_distance','mi');
 			$unit = ( !empty($args['near_unit']) && $args['near_unit'] == 'km' ) ? 6371 /* kilometers */ : 3959 /* miles */;
 			$conditions['near'] = "( $unit * acos( cos( radians({$args['near'][0]}) ) * cos( radians( location_latitude ) ) * cos( radians( location_longitude ) - radians({$args['near'][1]}) ) + sin( radians({$args['near'][0]}) ) * sin( radians( location_latitude ) ) ) ) < $distance";
@@ -389,7 +394,7 @@ class EM_Object {
 			if( !empty($args['state']) ){
 				$conditions['state'] = $wpdb->prepare('location_state=%s', $args['state']);
 			}
-			//state lookup
+			//town lookup
 			if( !empty($args['town']) ){
 				$conditions['town'] = $wpdb->prepare('location_town=%s', $args['town']);
 			}
@@ -432,12 +437,12 @@ class EM_Object {
 					foreach($tax_id_set as $tax_id){
 					    $tax_id_clean = preg_replace('/^-/', '', $tax_id);
 						if( !is_numeric($tax_id_clean) ){
-							$term = get_term_by('slug', $tax_id_clean, $tax_data['name']);
+							$term = get_term_by('slug', $tax_id_clean, $tax_data['query_var']);
 							if( empty($term) ){
-								$term = get_term_by('name', $tax_id_clean, $tax_data['name']);
+								$term = get_term_by('name', $tax_id_clean, $tax_data['query_var']);
 							}
 						}else{
-							$term = get_term_by('id', $tax_id_clean, $tax_data['name']);
+							$term = get_term_by('id', $tax_id_clean, $tax_data['query_var']);
 						}
 						if( !empty($term->term_taxonomy_id) ){
 							if( !preg_match('/^-/', $tax_id) ){
@@ -447,6 +452,9 @@ class EM_Object {
 								$term_tax_not_ids[] = $term->term_taxonomy_id;
 								if( EM_MS_GLOBAL && !empty($tax_data['ms']) ) $term_not_ids[] = $term->term_id;
 							}
+						}elseif( preg_match('/^-/', $tax_id) ){
+						    //if they supply a negative term for a nonexistent custom taxonomy e.g. -1, we should still  
+						    $ignore_cancel_cond = true;
 						}
 					}
 				    if( !empty($tax_data['ms']) ) self::ms_global_switch_back(); //switch back if ms global mode
@@ -478,8 +486,8 @@ class EM_Object {
 								$tax_conds[] = "$post_context NOT IN ( SELECT object_id FROM ".$wpdb->term_relationships." WHERE term_taxonomy_id IN (".implode(',',$term_tax_not_ids).") )";			
 							}
 						}
-					}else{
-					    $tax_conds[] = array('taxonomy'=>'2=1'); //force a false, supplied taxonomies don't exist
+					}elseif( empty($ignore_cancel_cond) ){
+					    $tax_conds[] = '2=1'; //force a false, supplied taxonomies don't exist
 					    break; //no point continuing this loop
 					}
 			    }
@@ -884,7 +892,6 @@ class EM_Object {
 	public static function get_post_search($args = array(), $filter = false, $request = array(), $accepted_searches = array()){
 		if( empty($request) ) $request = $_REQUEST;
 		if( !empty($request['em_search']) && empty($args['search']) ) $request['search'] = $request['em_search']; //em_search is included to circumvent wp search GET/POST clashes
-		if( !empty($request['category']) && $request['category'] == -1  ) $request['category'] = $args['category'] = 0;
 		$accepted_searches = !empty($accepted_searches) ? $accepted_searches : self::get_default_search();
 		$accepted_searches = apply_filters('em_accepted_searches', $accepted_searches, $args);
 		//merge variables from the $request into $args
@@ -966,9 +973,32 @@ class EM_Object {
 		$return = apply_filters('em_object_get_pagination_links', em_paginate( $page_link_template, $count, $limit, $page, $unique_args ), $page_link_template, $count, $limit, $page);
 		//if PHP is 5.3 or later, you can specifically filter by class e.g. em_events_output_pagination - this replaces the old filter originally located in the actual child classes
 		if( function_exists('get_called_class') ){
-			$return = apply_filters(strtolower(get_called_class()).'_output_pagination', em_paginate( $page_link_template, $count, $limit, $page, $unique_args ), $page_link_template, $count, $limit, $page);
+			$return = apply_filters(strtolower(get_called_class()).'_output_pagination', $return, $page_link_template, $count, $limit, $page);
 		}
 		return $return;
+	}
+	
+	/**
+	 * Returns the id of a particular object in the table it is stored, be it Event (event_id), Location (location_id), Tag, Booking etc.
+	 * @return int 
+	 */
+	function get_id(){
+	    switch( get_class($this) ){
+	        case 'EM_Event':
+	            return $this->event_id;
+	        case 'EM_Location':
+	            return $this->location_id;
+	        case 'EM_Category':
+	            return $this->term_id;
+	        case 'EM_Tag':
+	            return $this->term_id;
+	        case 'EM_Ticket':
+	            return $this->ticket_id;
+	        case 'EM_Ticket_Booking':
+	            return $this->ticket_booking_id;
+	        case 'EM_Ticket_Booking':
+	            return $this->ticket_booking_id;
+	    }
 	}
 	
 	/**
@@ -987,7 +1017,7 @@ class EM_Object {
 	    }
 	    if( empty($user->ID) ) $user = wp_get_current_user();
 		//do they own this?
-		$is_owner = ( (!empty($this->owner) && ($this->owner == get_current_user_id()) || empty($this->id) || (!empty($user) && $this->owner == $user->ID)) );
+		$is_owner = ( (!empty($this->owner) && ($this->owner == get_current_user_id()) || !$this->get_id() || (!empty($user) && $this->owner == $user->ID)) );
 		//now check capability
 		$can_manage = false;
 		if( $is_owner && $owner_capability && $user->has_cap($owner_capability) ){
@@ -1396,30 +1426,24 @@ class EM_Object {
 		if ( !empty($_FILES[$type.'_image']['size']) && file_exists($_FILES[$type.'_image']['tmp_name']) && $this->image_validate() && $this->can_manage('upload_event_images','upload_event_images', $user_to_check) ) {
 			require_once(ABSPATH . "wp-admin" . '/includes/file.php');					
 			require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+        	require_once( ABSPATH . 'wp-admin/includes/media.php' );
 					
-			$attachment = wp_handle_upload($_FILES[$type.'_image'], array('test_form'=>false), current_time('mysql'));
-						
-			if ( isset($attachment['error']) ){
-				$this->add_error('Image Error: ' . $attachment['error'] );
-			}
+			$attachment_id = media_handle_upload( $type.'_image', $this->post_id );
 			
 			/* Attach file to item */
-			if ( count($this->errors) == 0 && $attachment ){
-				$attachment_data = array(
-					'post_mime_type' => $attachment['type'],
-					'post_title' => $this->post_title,
-					'post_content' => '',
-					'post_status' => 'inherit'
-				);
-				$attachment_id = wp_insert_attachment( $attachment_data, $attachment['file'], $this->post_id );
-				$attachment_metadata = wp_generate_attachment_metadata( $attachment_id, $attachment['file'] );
-				wp_update_attachment_metadata( $attachment_id,  $attachment_metadata );
+			if ( !is_wp_error($attachment_id) ){
 				//delete the old attachment
 				$this->image_delete();
 				update_post_meta($this->post_id, '_thumbnail_id', $attachment_id);
 				return apply_filters('em_object_image_upload', true, $this);
 			}else{
-				return apply_filters('em_object_image_upload', false, $this);
+			    //error uploading, pass error message on and return false
+			    $error_string = __('There was an error uploading the image.','dbem');
+			    if( current_user_can('edit_others_events') && !empty($attachment_id->errors['upload_error']) ){
+    			    $error_string .= ' <em>('. implode(' ', $attachment_id->errors['upload_error']) .')</em>';
+			    }
+			    $this->add_error( $error_string );
+			    return apply_filters('em_object_image_upload', false, $this);
 			}
 		}elseif( !empty($_REQUEST[$type.'_image_delete']) ){
 			$this->image_delete();

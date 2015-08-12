@@ -8,7 +8,7 @@ class EM_Widget extends WP_Widget {
 	var $defaults;
 	
     /** constructor */
-    function EM_Widget() {
+    function __construct() {
     	$this->defaults = array(
     		'title' => __('Events','dbem'),
     		'scope' => 'future',
@@ -29,7 +29,7 @@ class EM_Widget extends WP_Widget {
 			'event_end_date,event_end_time,event_name' => __('end date, end time, event name','dbem'),
 		)); 
     	$widget_ops = array('description' => __( "Display a list of events on Events Manager.", 'dbem') );
-        parent::WP_Widget(false, $name = 'Events', $widget_ops);	
+        parent::__construct(false, $name = 'Events', $widget_ops);	
     }
 
     /** @see WP_Widget::widget */

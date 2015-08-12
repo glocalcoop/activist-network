@@ -53,7 +53,7 @@ class EM_Ticket extends EM_Object{
 	 * @param mixed $ticket_data
 	 * @return null
 	 */
-	function EM_Ticket( $ticket_data = false ){
+	function __construct( $ticket_data = false ){
 		$this->ticket_name = __('Standard Ticket','dbem');
 		$ticket = array();
 		if( $ticket_data !== false ){

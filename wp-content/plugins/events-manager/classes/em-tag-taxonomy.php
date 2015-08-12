@@ -11,7 +11,7 @@ class EM_Tag_Taxonomy{
 	 * @param string $template
 	 * @return string
 	 */
-	public static function template($template){
+	public static function template($template = ''){
 		global $wp_query, $EM_Tag, $em_tag_id, $post;
 		if( is_tax(EM_TAXONOMY_TAG) && !locate_template('taxonomy-'.EM_TAXONOMY_TAG.'.php') &&  get_option('dbem_cp_tags_formats', true)){
 			$EM_Tag = em_get_tag($wp_query->queried_object->term_id);
@@ -50,6 +50,7 @@ class EM_Tag_Taxonomy{
 			add_filter('wpseo_breadcrumb_links',array('EM_Tag_Taxonomy','wpseo_breadcrumb_links')); //for Yoast WP SEO
 			$wp_query->em_tag_id = $em_tag_id = $EM_Tag->term_id; //we assign $em_tag_id just in case other themes/plugins do something out of the ordinary to WP_Query
 			$template = locate_template(array('page.php','index.php'),false); //tag becomes a page
+			do_action('em_tag_taxonomy_template');
 		}
 		return $template;
 	}

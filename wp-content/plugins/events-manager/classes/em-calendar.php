@@ -58,10 +58,8 @@ class EM_Calendar extends EM_Object {
 		// determine how many days are in the last month.
 		$month_last = $month-1;
 		$month_next = $month+1;
-		$calendar_array['month_next'] = $month_next;
 		$year_last = $year; 
 		$year_next = $year;
-		$calendar_array['year_next'] = $year_next;
 		
 		if($month == 1) { 
 		   $month_last = 12;
@@ -70,8 +68,10 @@ class EM_Calendar extends EM_Object {
 			$month_next = 1;
 			$year_next = $year + 1; 
 		}
+		$calendar_array['month_next'] = $month_next;
 		$calendar_array['month_last'] = $month_last;
 		$calendar_array['year_last'] = $year_last;
+		$calendar_array['year_next'] = $year_next;
 		
 		$num_days_last = self::days_in_month($month_last, $year_last);
 		 
@@ -127,10 +127,10 @@ class EM_Calendar extends EM_Object {
 		$weeks = array_chunk($new_count, 7);    
 		  
 		//Get an array of arguments that don't include default valued args
-		$link_args = self::get_link_args($args);
-
-		$previous_url = "?ajaxCalendar=1&amp;mo={$month_last}&amp;yr={$year_last}&amp;{$link_args}";
-		$next_url = "?ajaxCalendar=1&amp;mo={$month_next}&amp;yr={$year_next}&amp;{$link_args}";
+		$link_args = self::get_query_args($args);
+		$link_args['ajaxCalendar'] = 1;
+		$previous_url = esc_url_raw(add_query_arg( array_merge($link_args, array('mo'=>$month_last, 'yr'=>$year_last)) ));
+		$next_url = esc_url_raw(add_query_arg( array_merge($link_args, array('mo'=>$month_next, 'yr'=>$year_next)) ));
 		
 	 	$weekdays = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
 	 	if(!empty($args['full'])) {
@@ -148,7 +148,7 @@ class EM_Calendar extends EM_Object {
 	   
 		$days_initials_array = array();
 		foreach($weekdays as $weekday) {
-			$days_initials_array[] = self::translate_and_trim($weekday, $day_initials_length);
+			$days_initials_array[] = esc_html(self::translate_and_trim($weekday, $day_initials_length));
 		} 
 		
 		$calendar_array['links'] = array( 'previous_url'=>$previous_url, 'next_url'=>$next_url);
@@ -267,7 +267,7 @@ class EM_Calendar extends EM_Object {
 			}
 		}
 		//generate a link argument string containing event search only
-		$day_link_args = self::get_link_args( array_intersect_key($original_args, EM_Events::get_post_search($args, true) ));
+		$day_link_args = self::get_query_args( array_intersect_key($original_args, EM_Events::get_post_search($args, true) ));
 		foreach($eventful_days as $day_key => $events) {
 			if( array_key_exists($day_key, $calendar_array['cells']) ){
 				//Get link title for this date
@@ -291,20 +291,19 @@ class EM_Calendar extends EM_Object {
 						if( $wp_rewrite->using_permalinks() ){
 							$event_page_link = trailingslashit(home_url()).EM_POST_TYPE_EVENT_SLUG.'/'; //don't use EM_URI here, since ajax calls this before EM_URI is defined.
 						}else{
-							$event_page_link = trailingslashit(home_url()).'?post_type='.EM_POST_TYPE_EVENT; //don't use EM_URI here, since ajax calls this before EM_URI is defined.
+						    //not needed atm anyway, but we use esc_url later on, in case you're wondering ;) 
+							$event_page_link = add_query_arg(array('post_type'=>EM_POST_TYPE_EVENT), home_url()); //don't use EM_URI here, since ajax calls this before EM_URI is defined.
 						}
 					}
 					if( $wp_rewrite->using_permalinks() && !defined('EM_DISABLE_PERMALINKS') ){
 						$calendar_array['cells'][$day_key]['link'] = trailingslashit($event_page_link).$day_key."/";
-						if( !empty($day_link_args) ){
-							$calendar_array['cells'][$day_key]['link'] .= '?'.$day_link_args;
-						}
+    					//add query vars to end of link
+    					if( !empty($day_link_args) ){
+    						$calendar_array['cells'][$day_key]['link'] = esc_url_raw(add_query_arg($day_link_args, $calendar_array['cells'][$day_key]['link']));
+    					}
 					}else{
-						$joiner = (stristr($event_page_link, "?")) ? "&amp;" : "?";				
-						$calendar_array['cells'][$day_key]['link'] = $event_page_link.$joiner."calendar_day=".$day_key;
-						if( !empty($day_link_args) ){
-							$calendar_array['cells'][$day_key]['link'] .= '&amp;'.$day_link_args;
-						}
+    					$day_link_args['calendar_day'] = $day_key;
+						$calendar_array['cells'][$day_key]['link'] = esc_url_raw(add_query_arg($day_link_args, $event_page_link));
 					}
 				}else{
 					foreach($events as $EM_Event){
@@ -357,9 +356,11 @@ class EM_Calendar extends EM_Object {
 	}  
 	
 	/**
-	 * Helper function to create a link querystring from array which contains arguments with only values that aren't defuaults. 
+	 * Gets all the EM-supported search arguments and removes the ones that aren't the default in the $args array. Returns the arguments that have non-default values.
+	 * @param array $args
+	 * @return array
 	 */
-	public static function get_link_args($args = array(), $html_entities=true){
+	public static function get_query_args( $args ){
 		unset($args['month']); unset($args['year']);
 		$default_args = self::get_default_search(array());
 		foreach($default_args as $arg_key => $arg_value){
@@ -382,6 +383,16 @@ class EM_Calendar extends EM_Object {
     		    }
 			}
 		}
+		return $args;
+	}
+	
+	/**
+	 * DEPRECATED - use EM_Calendar::get_query_args() instead and manipulate the array.
+	 * Left only to prevent 3rd party add-ons from potentially breaking if they use this
+	 * Helper function to create a link querystring from array which contains arguments with only values that aren't defuaults. 
+	 */
+	public static function get_link_args($args = array(), $html_entities=true){
+	    $args = self::get_query_args($args);
 		$qs_array = array();
 		foreach($args as $key => $value){
 			if(is_array($value)){
@@ -423,6 +434,7 @@ class EM_Calendar extends EM_Object {
 		}else{
 			$defaults = array_merge($defaults, $array_or_defaults);
 		}
+		$defaults['long_events'] = !empty($array['full']) ? get_option('dbem_full_calendar_long_events') : get_option('dbem_small_calendar_long_events');
 		//specific functionality
 		if(is_multisite()){
 			global $bp;
