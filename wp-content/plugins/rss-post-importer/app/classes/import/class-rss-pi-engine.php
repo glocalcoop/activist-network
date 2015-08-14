@@ -422,14 +422,9 @@ class rssPIEngine {
 		$post_exists = FALSE;
 
 		if ( isset($this->options['upgraded']['deleted_posts']) ) { // database migrated
-<<<<<<< HEAD
-			// check if there is a post with this source URL
-			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_key = 'rss_pi_source_md5' and meta_value = %s", $permalink_md5 ), 'ARRAY_A');
-=======
 			// check if there is post with this source URL that is not trashed
 //			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_key = 'rss_pi_source_md5' and meta_value = %s", $permalink_md5 ), 'ARRAY_A');
 			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} pm, {$wpdb->posts} p WHERE pm.meta_key = 'rss_pi_source_md5' AND ( pm.meta_value = %s OR pm.meta_value = %s ) AND pm.post_id = p.ID AND p.post_status <> 'trash'", $permalink_md5, $permalink_md5_new ), 'ARRAY_A');
->>>>>>> 6bf6eac... Updating plugins - MPO and RSSpi
 			if ( count($posts) ) {
 				$post_exists = TRUE;
 			}
