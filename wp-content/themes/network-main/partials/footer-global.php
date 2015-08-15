@@ -7,7 +7,7 @@ $global_site_header = glocal_get_site_image(1);
 	<div class="wrap">
 
 		<section class="global site-meta first">
-			<h2 class="footer-logo"><a href="<?php echo $global_site_details->siteurl; ?>"><img src="<?php echo $global_site_header?>" alt="<?php echo $global_site_details->blogname; ?>" /></a> <span class="tagline-NYCP"><?php bloginfo('description'); ?></span></h2>
+			<h2 class="footer-logo"><a href="<?php echo $global_site_details->siteurl; ?>"><img src="<?php echo $global_site_header?>" alt="<?php echo $global_site_details->blogname; ?>" /></a> <span class="tagline-network"><?php bloginfo('description'); ?></span></h2>
 		</section>
 		
 		<section class="widgets">

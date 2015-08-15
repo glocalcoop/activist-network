@@ -3,7 +3,7 @@
 	<div class="wrap">
 
 		<h1 class="site-title <?php if( get_header_image() ) { echo 'network-logo'; } ?>">
-			<a class="domain-logo global-logo logo-NYCP" href="<?php bloginfo( 'url' ); ?>">
+			<a class="domain-logo global-logo logo-network" href="<?php bloginfo( 'url' ); ?>">
             <?php 
             if( get_header_image() ) { ?>
             

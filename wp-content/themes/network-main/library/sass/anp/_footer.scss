@@ -6,7 +6,8 @@
     line-height: 30px;
 }
 
-.logo-NYCP {
+.logo-NYCP,
+.logo-network {
     @include font-size($epsilon);
     text-transform: uppercase; 
     letter-spacing: $tracking;
@@ -36,7 +37,8 @@
     }
 }
 
-.tagline-NYCP {
+.tagline-NYCP,
+.tagline-network {
   @include font-size(13);
 	text-transform: uppercase;
 	letter-spacing: $tracking;
