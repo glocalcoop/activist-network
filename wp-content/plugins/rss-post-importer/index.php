@@ -43,12 +43,14 @@ include_once RSS_PI_PATH . 'app/classes/helpers/class-rss-pi-log.php';
 include_once RSS_PI_PATH . 'app/classes/helpers/class-rss-pi-featured-image.php';
 include_once RSS_PI_PATH . 'app/classes/helpers/class-rss-pi-parser.php';
 include_once RSS_PI_PATH . 'app/classes/helpers/rss-pi-functions.php';
+include_once RSS_PI_PATH . 'app/classes/helpers/class-OPMLParser.php'; // OPML Parser
 
 // admin classes
 include_once RSS_PI_PATH . 'app/classes/admin/class-rss-pi-admin-processor.php';
 include_once RSS_PI_PATH . 'app/classes/admin/class-rss-pi-admin.php';
 include_once RSS_PI_PATH . 'app/classes/admin/class-rss-pi-export-to-csv.php';
 include_once RSS_PI_PATH . 'app/classes/admin/class-rss-pi-stats.php';
+include_once RSS_PI_PATH . 'app/classes/admin/class-rss-pi-opml.php';
 
 // Front classes
 include_once RSS_PI_PATH . 'app/classes/front/class-rss-pi-front.php';
