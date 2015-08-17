@@ -56,6 +56,10 @@ class ANP_Network_Sites_Widget extends WP_Widget {
 
     public function widget( $args, $instance ) {
 
+        extract( $args );
+
+        $title = apply_filters('widget_title', $instance['title']);
+
         // Convert array to comma-separated string
         if(is_array($instance['exclude_sites']) && (!empty($instance['exclude_sites'][0])) ) {
             $instance['exclude_sites'] = implode(',', $instance['exclude_sites'] );
@@ -63,6 +67,7 @@ class ANP_Network_Sites_Widget extends WP_Widget {
             unset( $instance['exclude_sites'] );
         }
 
+       
         echo $before_widget;
                 
         // if the title is set
@@ -231,6 +236,10 @@ class ANP_Network_Posts_Widget extends WP_Widget {
     }
 
     public function widget( $args, $instance ) {
+
+        extract($args);
+
+        $title = apply_filters('widget_title', $instance['title']);
 
         // Convert $exclude_sites array to comma-separated string
         if(is_array($instance['exclude_sites']) && (!empty($instance['exclude_sites'][0])) ) {
@@ -466,6 +475,10 @@ class ANP_Network_Post_Highlights_Widget extends WP_Widget {
 
 
     public function widget( $args, $instance ) {
+
+        extract($args);
+
+        $title = apply_filters('widget_title', $instance['title']);
 
         $instance['style'] = 'highlights';
 
