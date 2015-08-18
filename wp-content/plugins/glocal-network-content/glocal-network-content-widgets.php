@@ -33,7 +33,7 @@ class ANP_Network_Sites_Widget extends WP_Widget {
             __( 'Network Sites', 'glocal-network-content' ),
             array(
                 'description' => __( 'Display list of sites in your network.', 'glocal-network-content' ),
-                'classname'   => 'network-sites-list',
+                'classname'   => 'widget_glocal_network_sites_widget',
             )
         );
 
