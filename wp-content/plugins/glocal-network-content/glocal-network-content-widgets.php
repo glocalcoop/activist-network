@@ -499,21 +499,11 @@ class ANP_Network_Post_Highlights_Widget extends WP_Widget {
         //TODO
         // Make sure ID & Class fields contain valid characters
 
-        echo $before_widget;
-
-        // if the title is set
-        if ( $title ) {
-            echo $before_title . $title . $after_title;
-        }
-
         // Use glocal_networkwide_sites function to display sites
         if(function_exists('glocal_networkwide_posts_module')) {
             
             echo glocal_networkwide_posts_module( $instance );
         }
-                
-        echo $after_widget;
-
 
     }
 
