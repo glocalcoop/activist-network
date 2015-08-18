@@ -254,6 +254,7 @@ class ANP_Network_Posts_Widget extends WP_Widget {
             unset( $instance['include_categories'] );
         }
 
+
         //TODO
         // Make sure ID & Class fields contain valid characters
 
@@ -270,6 +271,10 @@ class ANP_Network_Posts_Widget extends WP_Widget {
         }
 
         echo $after_widget;
+
+        echo '<pre>';
+        var_dump( $instance );
+        echo '</pre>';
 
     }
 
@@ -288,7 +293,7 @@ class ANP_Network_Posts_Widget extends WP_Widget {
             'show_meta' => true,
             'show_thumbnail' => false,
             'show_excerpt' => true,
-            'excerpt_length' => '',
+            'excerpt_length' => 20,
             'show_site_name' => true,
         ) );
 
@@ -520,7 +525,7 @@ class ANP_Network_Post_Highlights_Widget extends WP_Widget {
             'show_meta' => true,
             'show_thumbnail' => false,
             'show_excerpt' => true,
-            'excerpt_length' => '',
+            'excerpt_length' => 20,
             'show_site_name' => true,
         ) );
 
