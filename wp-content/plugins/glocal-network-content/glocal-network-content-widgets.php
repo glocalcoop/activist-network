@@ -142,7 +142,6 @@ class ANP_Network_Sites_Widget extends WP_Widget {
             $site_id = $site['blog_id'];
             $site_name = get_blog_details( $site_id )->blogname;
             echo '      <option id="' . $site_id . '" value="' . $site_id . '"', in_array( $site_id,  $exclude_sites) ? ' selected="selected"' : '','>' . $site_name . '</>';
-            //var_dump($instance['exclude_sites']);
         }
 
         echo '  </select>';
@@ -342,7 +341,6 @@ class ANP_Network_Posts_Widget extends WP_Widget {
             $site_id = $site['blog_id'];
             $site_name = get_blog_details( $site_id )->blogname;
             echo '      <option id="' . $site_id . '" value="' . $site_id . '"', in_array( $site_id,  $exclude_sites) ? ' selected="selected"' : '','>' . $site_name . '</>';
-            //var_dump($instance['exclude_sites']);
         }
 
         echo '  </select>';
