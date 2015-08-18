@@ -229,7 +229,7 @@ class ANP_Network_Posts_Widget extends WP_Widget {
             __( 'Network Posts', 'glocal-network-content' ),
             array(
                 'description' => __( 'Display list of posts from your network.', 'glocal-network-content' ),
-                'classname'   => 'network-posts-list',
+                'classname'   => 'widget_glocal_network_posts_widget',
             )
         );
 
