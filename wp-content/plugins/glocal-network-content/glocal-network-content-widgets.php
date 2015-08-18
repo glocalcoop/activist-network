@@ -272,10 +272,6 @@ class ANP_Network_Posts_Widget extends WP_Widget {
 
         echo $after_widget;
 
-        echo '<pre>';
-        var_dump( $instance );
-        echo '</pre>';
-
     }
 
     public function form( $instance ) {
