@@ -768,8 +768,8 @@ function limit_number_posts($posts_array, $max_number) {
     
     $posts = $posts_array;
     $limit = $max_number;
-    
-    if(count($posts) > $limit ) {
+
+    if( $limit && ( count($posts) > $limit ) ) {
         array_splice($posts, $limit);
     }
     
