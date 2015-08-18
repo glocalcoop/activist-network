@@ -427,7 +427,7 @@ class ANP_Network_Posts_Widget extends WP_Widget {
         $instance['show_meta'] = !empty( $new_instance['show_meta'] ) ? true : false;
         $instance['show_thumbnail'] = !empty( $new_instance['show_thumbnail'] ) ? true : false;
         $instance['show_excerpt'] = !empty( $new_instance['show_excerpt'] ) ? true : false;
-        $instance['excerpt_length'] = !empty( $new_instance['excerpt_length'] ) ? strip_tags( $new_instance['excerpt_length'] ) : '';
+        $instance['excerpt_length'] = !empty( $new_instance['excerpt_length'] ) ? strip_tags( $new_instance['excerpt_length'] ) : 20;
         $instance['show_site_name'] = !empty( $new_instance['show_site_name'] ) ? true : false;
 
         return $instance;
@@ -480,8 +480,6 @@ class ANP_Network_Post_Highlights_Widget extends WP_Widget {
     public function widget( $args, $instance ) {
 
         extract($args);
-
-        $title = apply_filters('widget_title', $instance['title']);
 
         $instance['style'] = 'highlights';
 
@@ -657,7 +655,7 @@ class ANP_Network_Post_Highlights_Widget extends WP_Widget {
         $instance['show_meta'] = !empty( $new_instance['show_meta'] ) ? true : false;
         $instance['show_thumbnail'] = !empty( $new_instance['show_thumbnail'] ) ? true : false;
         $instance['show_excerpt'] = !empty( $new_instance['show_excerpt'] ) ? true : false;
-        $instance['excerpt_length'] = !empty( $new_instance['excerpt_length'] ) ? strip_tags( $new_instance['excerpt_length'] ) : '';
+        $instance['excerpt_length'] = !empty( $new_instance['excerpt_length'] ) ? strip_tags( $new_instance['excerpt_length'] ) : 20;
         $instance['show_site_name'] = !empty( $new_instance['show_site_name'] ) ? true : false;
 
         return $instance;
