@@ -189,6 +189,10 @@ class CRM_Contact_BAO_Relationship extends CRM_Contact_DAO_Relationship {
           continue;
         }
 
+        //CRM-16978:check duplicate relationship as per case id.
+        if ($caseId = CRM_Utils_Array::value('case_id', $params)) {
+          $contactFields['case_id'] = $caseId;
+        }
         if (
         self::checkDuplicateRelationship(
           $contactFields,
@@ -696,7 +700,7 @@ class CRM_Contact_BAO_Relationship extends CRM_Contact_DAO_Relationship {
   public static function disableEnableRelationship($id, $action, $params = array(), $ids = array(), $active = FALSE) {
     $relationship = self::clearCurrentEmployer($id, $action);
 
-    if (CRM_Core_Permission::access('CiviMember')) {
+    if ($id) {
       // create $params array which is required to delete memberships
       // of the related contacts.
       if (empty($params)) {
@@ -971,7 +975,7 @@ WHERE  relationship_type_id = " . CRM_Utils_Type::escape($type, 'Integer');
     }
 
     // get the total count of relationships
-    $v['totalCount'] = CRM_Contact_BAO_Relationship::getRelationship($params['contact_id'], NULL, NULL, TRUE);
+    $v['totalCount'] = count($v['data']);
 
     $values['relationship']['data'] = &$v['data'];
     $values['relationship']['totalCount'] = &$v['totalCount'];
@@ -1222,11 +1226,14 @@ LEFT JOIN  civicrm_country ON (civicrm_address.country_id = civicrm_country.id)
           $mask = $mask & $permissionMask;
         }
       }
+
       while ($relationship->fetch()) {
         $rid = $relationship->civicrm_relationship_id;
         $cid = $relationship->civicrm_contact_id;
-        if (($permissionedContact) &&
-          (!CRM_Contact_BAO_Contact_Permission::relationship($cid, $contactId))
+        if (($permissionedContact &&
+            (!CRM_Contact_BAO_Contact_Permission::relationship($cid, $contactId))
+          ) ||
+          (!CRM_Contact_BAO_Contact_Permission::allow($cid))
         ) {
           continue;
         }
@@ -1972,8 +1979,7 @@ AND cc.sort_name LIKE '%$name%'";
     if (!empty($relationships)) {
       // get the total relationships
       if ($params['context'] != 'user') {
-        $params['total'] = CRM_Contact_BAO_Relationship::getRelationship($params['contact_id'],
-          $relationshipStatus, 0, 1, 0, NULL, NULL, $permissionedContacts);
+        $params['total'] = count($relationships);
       }
       else {
         // FIX ME: we cannot directly determine total permissioned relationship, hence re-fire query

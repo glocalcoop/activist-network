@@ -418,7 +418,7 @@
   {/if}
   {literal}
 
-  function toggleConfirmButton() {
+  function toggleConfirmButton(flag) {
     var payPalExpressId = "{/literal}{$payPalExpressId}{literal}";
     var elementObj = cj('input[name="payment_processor"]');
     if ( elementObj.attr('type') == 'hidden' ) {
@@ -428,22 +428,27 @@
       var processorTypeId = elementObj.filter(':checked').val();
     }
 
-    if (payPalExpressId !=0 && payPalExpressId == processorTypeId) {
+    if (payPalExpressId !=0 && payPalExpressId == processorTypeId && flag === false) {
       cj("#crm-submit-buttons").hide();
+      cj("#paypalExpress").show();
     }
     else {
       cj("#crm-submit-buttons").show();
+      if (flag === true) {
+        cj("#paypalExpress").hide();
+      }
     }
   }
 
   cj('input[name="payment_processor"]').change( function() {
-    toggleConfirmButton();
+    toggleConfirmButton(false);
   });
 
   CRM.$(function($) {
-    toggleConfirmButton();
+    toggleConfirmButton(false);
     enableHonorType();
     showRecurHelp();
+    skipPaymentMethod();
   });
 
   function showHidePayPalExpressOption() {
@@ -455,6 +460,52 @@
       cj("#paypalExpress").show();
       cj("#crm-submit-buttons").hide();
     }
+  }
+
+  function showHidePayment(flag) {
+    var payment_options = cj(".payment_options-group");
+    var payment_processor = cj("div.payment_processor-section");
+    var payment_information = cj("div#payment_information");
+    if (flag) {
+      payment_options.hide();
+      payment_processor.hide();
+      payment_information.hide();
+    }
+    else {
+      payment_options.show();
+      payment_processor.show();
+      payment_information.show();
+    }
+  }
+  
+  function skipPaymentMethod() {
+    var flag = false;
+    // If price-set is used then calculate the Total Amount
+    if (cj('#pricevalue').length !== 0) {
+      currentTotal = cj('#pricevalue').text().replace(/[^\/\d]/g,'');
+      flag = (currentTotal == 0) ? true : false;
+    }
+    // Else quick-config w/o other-amount scenarios
+    else {
+      cj('.price-set-option-content input').each( function() {
+        currentTotal = cj(this).is('[data-amount]') ? cj(this).attr('data-amount').replace(/[^\/\d]/g,'') : 0;
+        if( cj(this).is(':checked') &&  currentTotal == 0 ) {
+          flag = true;
+        }
+      });
+      cj('.price-set-option-content input, .other_amount-content input').change( function () {
+        currentTotal = cj(this).is('[data-amount]') ? cj(this).attr('data-amount').replace(/[^\/\d]/g,'') : (cj(this).val() ? cj(this).val() : 0);
+        if (currentTotal == 0 ) {
+          flag = true;
+        } else {
+          flag = false;
+        }
+        toggleConfirmButton(flag);
+        showHidePayment(flag);
+      });
+    }
+    toggleConfirmButton(flag);
+    showHidePayment(flag);
   }
 
   CRM.$(function($) {

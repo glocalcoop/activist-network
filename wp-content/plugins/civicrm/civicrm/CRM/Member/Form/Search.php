@@ -209,7 +209,7 @@ class CRM_Member_Form_Search extends CRM_Core_Form_Search {
       $this->_formValues["member_test"] = 0;
     }
 
-    CRM_Core_BAO_CustomValue::fixFieldValueOfTypeMemo($this->_formValues);
+    CRM_Core_BAO_CustomValue::fixCustomFieldValue($this->_formValues);
 
     $this->_queryParams = CRM_Contact_BAO_Query::convertFormValues($this->_formValues);
 
@@ -282,12 +282,7 @@ class CRM_Member_Form_Search extends CRM_Core_Form_Search {
     );
     if ($status) {
       $status = explode(',', $status);
-      $tempStatus = array();
-      foreach ($status as $value) {
-        $tempStatus[$value] = 1;
-      }
-      $this->_formValues['member_status_id'] = $tempStatus;
-      $this->_defaults['member_status_id'] = $tempStatus;
+      $this->_formValues['status_id'] = $this->_defaults['status_id'] = (array) $status;
     }
 
     $membershipType = CRM_Utils_Request::retrieve('type', 'String',
@@ -295,8 +290,8 @@ class CRM_Member_Form_Search extends CRM_Core_Form_Search {
     );
 
     if ($membershipType) {
-      $this->_formValues['member_membership_type_id'] = array($membershipType => 1);
-      $this->_defaults['member_membership_type_id'] = array($membershipType => 1);
+      $this->_formValues['membership_type_id'] = array($membershipType);
+      $this->_defaults['membership_type_id'] = array($membershipType);
     }
 
     $cid = CRM_Utils_Request::retrieve('cid', 'Positive',

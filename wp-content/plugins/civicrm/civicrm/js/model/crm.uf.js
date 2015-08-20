@@ -97,6 +97,7 @@
       case 'Individual':
       case 'Organization':
       case 'Household':
+      case 'Formatting':
         return 'contact_1';
       case 'Activity':
         return 'activity_1';
@@ -223,6 +224,9 @@
       }
     },
     initialize: function() {
+      if (this.get('field_name').indexOf('formatting') === 0) {
+        this.schema.help_pre.title = ts('Markup');
+      }
       this.set('entity_name', CRM.UF.guessEntityName(this.get('field_type')));
       this.on("rel:ufGroupModel", this.applyDefaults, this);
       this.on('change', watchChanges);
@@ -312,7 +316,9 @@
       var entity_name = ufFieldModel.get('entity_name'),
         field_name = ufFieldModel.get('field_name'),
         fieldSchema = this.getRel('ufGroupModel').getFieldSchema(ufFieldModel.get('entity_name'), ufFieldModel.get('field_name'));
-
+      if (field_name.indexOf('formatting') === 0) {
+        return true;
+      }
       if (! fieldSchema) {
         return false;
       }
@@ -673,12 +679,13 @@
       return ufEntity.getModelClass();
     },
     getFieldSchema: function(entity_name, field_name) {
+      if (field_name.indexOf('formatting') === 0) {
+        field_name = 'formatting';
+      }
       var modelClass = this.getModelClass(entity_name);
       var fieldSchema = modelClass.prototype.schema[field_name];
       if (!fieldSchema) {
-        if (console.log) {
-          console.log('Failed to locate field: ' + entity_name + "." + field_name);
-        }
+        CRM.console('warn', 'Failed to locate field: ' + entity_name + "." + field_name);
         return null;
       }
       return fieldSchema;
@@ -691,11 +698,15 @@
      * @return {Boolean}
      */
     //CRM-15427
-    checkGroupType: function(validTypesExpr, allowAllSubtypes) {
+    checkGroupType: function(validTypesExpr, allowAllSubtypes, usedByFilter) {
       var allMatched = true;
       allowAllSubtypes = allowAllSubtypes || false;
+      usedByFilter = usedByFilter || null;
       if (_.isEmpty(this.get('group_type'))) {
         return true;
+      }
+      if (usedByFilter && _.isEmpty(this.get('module'))) {
+        return false;
       }
 
       var actualTypes = CRM.UF.parseTypeList(this.get('group_type'));
@@ -708,6 +719,10 @@
         }
       });
 
+      // CRM-16915 - filter with usedBy module if specified.
+      if (usedByFilter && this.get('module') != usedByFilter) {
+        allMatched = false;
+      }
       //CRM-15427 allow all subtypes
       if (!$.isEmptyObject(validTypes.subTypes) && !allowAllSubtypes) {
         // Every actual.subType is a valid.subType

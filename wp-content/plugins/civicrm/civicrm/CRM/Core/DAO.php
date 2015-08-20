@@ -978,6 +978,19 @@ FROM   civicrm_domain
   }
 
   /**
+   * Returns all results as array-encoded records.
+   *
+   * @return array
+   */
+  public function fetchAll() {
+    $result = array();
+    while ($this->fetch()) {
+      $result[] = $this->toArray();
+    }
+    return $result;
+  }
+
+  /**
    * Given a DAO name, a column name and a column value, find the record and GET the value of another column in that record
    *
    * @param string $daoName
@@ -2274,7 +2287,7 @@ SELECT contact_id
     // http://issues.civicrm.org/jira/browse/CRM-9150 - stick with 'simple' operators for now
     // support for other syntaxes is discussed in ticket but being put off for now
     foreach ($filter as $operator => $criteria) {
-      if (in_array($operator, self::acceptedSQLOperators())) {
+      if (in_array($operator, self::acceptedSQLOperators(), TRUE)) {
         switch ($operator) {
           // unary operators
           case 'IS NULL':

@@ -164,12 +164,14 @@ class CRM_Core_DAO_JobLog extends CRM_Core_DAO
         'id' => array(
           'name' => 'id',
           'type' => CRM_Utils_Type::T_INT,
+          'title' => ts('Job Log ID') ,
           'description' => 'Job log entry Id',
           'required' => true,
         ) ,
         'domain_id' => array(
           'name' => 'domain_id',
           'type' => CRM_Utils_Type::T_INT,
+          'title' => ts('Domain ID') ,
           'description' => 'Which Domain is this scheduled job for',
           'required' => true,
           'FKClassName' => 'CRM_Core_DAO_Domain',
@@ -182,18 +184,19 @@ class CRM_Core_DAO_JobLog extends CRM_Core_DAO
         'run_time' => array(
           'name' => 'run_time',
           'type' => CRM_Utils_Type::T_TIMESTAMP,
-          'title' => ts('Run Time') ,
+          'title' => ts('Timestamp') ,
           'description' => 'Log entry date',
         ) ,
         'job_id' => array(
           'name' => 'job_id',
           'type' => CRM_Utils_Type::T_INT,
+          'title' => ts('Job ID') ,
           'description' => 'Pointer to job id - not a FK though, just for logging purposes',
         ) ,
         'name' => array(
           'name' => 'name',
           'type' => CRM_Utils_Type::T_STRING,
-          'title' => ts('Name') ,
+          'title' => ts('Job Name') ,
           'description' => 'Title of the job',
           'maxlength' => 255,
           'size' => CRM_Utils_Type::HUGE,
@@ -217,7 +220,7 @@ class CRM_Core_DAO_JobLog extends CRM_Core_DAO
         'data' => array(
           'name' => 'data',
           'type' => CRM_Utils_Type::T_TEXT,
-          'title' => ts('Data') ,
+          'title' => ts('Extended Data') ,
           'description' => 'Potential extended data for specific job run (e.g. tracebacks).',
         ) ,
       );

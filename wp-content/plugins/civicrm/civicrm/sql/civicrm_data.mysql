@@ -4286,7 +4286,8 @@ INSERT INTO civicrm_state_province (id, country_id, abbreviation, name) VALUES
 (NULL, 1081, "RL", "Racha-Lechkhumi and Kvemo Svaneti"),
 (NULL, 1081, "SZ", "Samegrelo-Zemo Svaneti"),
 (NULL, 1081, "SJ", "Samtskhe-Javakheti"),
-(NULL, 1081, "SK", "Shida Kartli");
+(NULL, 1081, "SK", "Shida Kartli"),
+(NULL, 1074, "C", "Central");
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.6                                                |
 -- +--------------------------------------------------------------------+
@@ -4868,8 +4869,12 @@ VALUES
  -- for Print or Email Contribution Invoices
    (@option_group_id_act, 'Downloaded Invoice', 49, 'Downloaded Invoice',      NULL, 1, NULL, 49, 'Downloaded Invoice.',0, 1, 1, NULL, NULL),
    (@option_group_id_act, 'Emailed Invoice', 50, 'Emailed Invoice',      NULL, 1, NULL, 50, 'Emailed Invoice.',0, 1, 1, NULL, NULL),
- -- for manual contact merge
-   (@option_group_id_act, 'Contact Merged', 51, 'Contact Merged', NULL, 1, NULL, 51, 'Contact Merged',0, 1, 1, NULL, NULL), 
+
+  -- for manual contact merge
+   (@option_group_id_act, 'Contact Merged', 51, 'Contact Merged', NULL, 1, NULL, 51, 'Contact Merged',0, 1, 1, NULL, NULL),
+
+  -- Activity Type for failed payment
+   (@option_group_id_act, 'Failed Payment', 52, 'Failed Payment', NULL, 1, 0, 43, 'Failed Payment', 0, 1, 1, @contributeCompId, NULL),
 
    (@option_group_id_gender, 'Female',      1, 'Female',      NULL, 0, NULL, 1, NULL, 0, 0, 1, NULL, NULL),
    (@option_group_id_gender, 'Male',        2, 'Male',        NULL, 0, NULL, 2, NULL, 0, 0, 1, NULL, NULL),
@@ -23438,28 +23443,31 @@ VALUES
 INSERT INTO civicrm_navigation
     ( domain_id, url, label, name, permission, permission_operator, parent_id, is_active, has_separator, weight )
 VALUES
-    ( @domainID, NULL, 'Help', 'Help', NULL, '',  NULL, '1', NULL, 110);
+    ( @domainID, NULL, 'Support', 'Support', NULL, '',  NULL, '1', NULL, 110);
 
 SET @adminHelplastID:=LAST_INSERT_ID();
 INSERT INTO civicrm_navigation
     ( domain_id, url, label, name, permission, permission_operator, parent_id, is_active, has_separator, weight )
 VALUES
-    ( @domainID, 'http://documentation.civicrm.org',   'Documentation',      'Documentation',    NULL, 'AND', @adminHelplastID, '1', NULL, 1 ),
-    ( @domainID, 'http://forum.civicrm.org',           'Community Forums',   'Community Forums', NULL, 'AND', @adminHelplastID, '1', NULL, 2 ),
-    ( @domainID, 'http://civicrm.org/participate',     'Participate',        'Participate',      NULL, 'AND', @adminHelplastID, '1', NULL, 3 ),
-    ( @domainID, 'http://civicrm.org/what/whatiscivicrm', 'About',              'About',            NULL, 'AND', @adminHelplastID, '1', NULL, 4 );
+    ( @domainID, 'http://civicrm.org/get-started?src=iam',        'Get started',        'Get started',        NULL, 'AND', @adminHelplastID, '1', NULL, 1 ),
+    ( @domainID, 'http://civicrm.org/documentation?src=iam',      'Documentation',      'Documentation',      NULL, 'AND', @adminHelplastID, '1', NULL, 2 ),
+    ( @domainID, 'http://civicrm.org/ask-a-question?src=iam',     'Ask a question',     'Ask a question',     NULL, 'AND', @adminHelplastID, '1', NULL, 3 ),
+    ( @domainID, 'http://civicrm.org/experts?src=iam', 		  'Get expert help',    'Get expert help',    NULL, 'AND', @adminHelplastID, '1', NULL, 4 ),
+    ( @domainID, 'http://civicrm.org/about?src=iam', 		  'About CiviCRM',      'About CiviCRM',      NULL, 'AND', @adminHelplastID, '1', 1, 5 ),
+    ( @domainID, 'http://civicrm.org/register-your-site?src=iam', 'Register your site', 'Register your site', NULL, 'AND', @adminHelplastID, '1', NULL, 6 ),    
+    ( @domainID, 'http://civicrm.org/become-member?src=iam',      'Join CiviCRM',       'Join CiviCRM',       NULL, 'AND', @adminHelplastID, '1', NULL, 7 );
 
 INSERT INTO civicrm_navigation
 ( domain_id, url, label, name, permission, permission_operator, parent_id, is_active, has_separator, weight )
 VALUES
-    ( @domainID, NULL, 'Developer', 'Developer', 'administer CiviCRM', '', @adminHelplastID, '1', NULL, 5 );
+    ( @domainID, NULL, 'Developer', 'Developer', 'administer CiviCRM', '', @adminHelplastID, '1', 1, 8 );
 
 SET @devellastID:=LAST_INSERT_ID();
 INSERT INTO civicrm_navigation
 ( domain_id, url, label, name, permission, permission_operator, parent_id, is_active, has_separator, weight )
 VALUES
 ( @domainID, 'civicrm/api', 'API Explorer','API Explorer', 'administer CiviCRM', '', @devellastID, '1', NULL, 1 ),
-( @domainID, 'http://wiki.civicrm.org/confluence/display/CRMDOC/Develop', 'Developer Docs', 'Developer Docs', 'administer CiviCRM', '', @devellastID, '1', NULL, 3 );
+( @domainID, 'http://civicrm.org/developer-documentation?src=iam', 'Developer Docs', 'Developer Docs', 'administer CiviCRM', '', @devellastID, '1', NULL, 3 );
 
 INSERT INTO civicrm_navigation
     ( domain_id, url, label, name, permission, permission_operator, parent_id, is_active, has_separator, weight )
@@ -23696,4 +23704,4 @@ INSERT INTO `civicrm_report_instance`
 VALUES
     (  @domainID, 'Survey Details', 'survey/detail', 'Detailed report for canvassing, phone-banking, walk lists or other surveys.', 'access CiviReport', 'a:39:{s:6:"fields";a:2:{s:9:"sort_name";s:1:"1";s:6:"result";s:1:"1";}s:22:"assignee_contact_id_op";s:2:"eq";s:25:"assignee_contact_id_value";s:0:"";s:12:"sort_name_op";s:3:"has";s:15:"sort_name_value";s:0:"";s:17:"street_number_min";s:0:"";s:17:"street_number_max";s:0:"";s:16:"street_number_op";s:3:"lte";s:19:"street_number_value";s:0:"";s:14:"street_name_op";s:3:"has";s:17:"street_name_value";s:0:"";s:15:"postal_code_min";s:0:"";s:15:"postal_code_max";s:0:"";s:14:"postal_code_op";s:3:"lte";s:17:"postal_code_value";s:0:"";s:7:"city_op";s:3:"has";s:10:"city_value";s:0:"";s:20:"state_province_id_op";s:2:"in";s:23:"state_province_id_value";a:0:{}s:13:"country_id_op";s:2:"in";s:16:"country_id_value";a:0:{}s:12:"survey_id_op";s:2:"in";s:15:"survey_id_value";a:0:{}s:12:"status_id_op";s:2:"eq";s:15:"status_id_value";s:1:"1";s:11:"custom_1_op";s:2:"in";s:14:"custom_1_value";a:0:{}s:11:"custom_2_op";s:2:"in";s:14:"custom_2_value";a:0:{}s:17:"custom_3_relative";s:1:"0";s:13:"custom_3_from";s:0:"";s:11:"custom_3_to";s:0:"";s:11:"description";s:75:"Detailed report for canvassing, phone-banking, walk lists or other surveys.";s:13:"email_subject";s:0:"";s:8:"email_to";s:0:"";s:8:"email_cc";s:0:"";s:10:"permission";s:17:"access CiviReport";s:6:"groups";s:0:"";s:9:"domain_id";i:1;}');
 
-UPDATE civicrm_domain SET version = '4.6.4';
+UPDATE civicrm_domain SET version = '4.6.7';

@@ -120,6 +120,8 @@ class CRM_Core_Permission {
   public static function check($permissions) {
     $permissions = (array) $permissions;
 
+    $tempPerm = CRM_Core_Config::singleton()->userPermissionTemp;
+
     foreach ($permissions as $permission) {
       if (is_array($permission)) {
         foreach ($permission as $orPerm) {
@@ -132,7 +134,10 @@ class CRM_Core_Permission {
         return FALSE;
       }
       else {
-        if (!CRM_Core_Config::singleton()->userPermissionClass->check($permission)) {
+        if (
+          !CRM_Core_Config::singleton()->userPermissionClass->check($permission)
+          && !($tempPerm && $tempPerm->check($permission))
+        ) {
           //one of our 'and' conditions has not been met
           return FALSE;
         }
@@ -586,7 +591,7 @@ class CRM_Core_Permission {
     $permissions = self::getCorePermissions($descriptions);
 
     if (self::isMultisiteEnabled()) {
-      $permissions['administer Multiple Organizations'] = $prefix . ts('administer Multiple Organizations');
+      $permissions['administer Multiple Organizations'] = array($prefix . ts('administer Multiple Organizations'));
     }
 
     if (!$all) {
@@ -600,16 +605,19 @@ class CRM_Core_Permission {
       $perm = $comp->getPermissions(FALSE, $descriptions);
       if ($perm) {
         $info = $comp->getInfo();
-        if ($descriptions) {
-          foreach ($perm as $p => $attr) {
-            $title = $info['translatedName'] . ': ' . array_shift($attr);
-            array_unshift($attr, $title);
+        foreach ($perm as $p => $attr) {
+
+          if (!is_array($attr)) {
+            $attr = array($attr);
+          }
+
+          $attr[0] = $info['translatedName'] . ': ' . $attr[0];
+
+          if ($descriptions) {
             $permissions[$p] = $attr;
           }
-        }
-        else {
-          foreach ($perm as $p) {
-            $permissions[$p] = $info['translatedName'] . ': ' . $p;
+          else {
+            $permissions[$p] = $attr[0];
           }
         }
       }

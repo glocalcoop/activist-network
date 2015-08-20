@@ -866,4 +866,102 @@ class CRM_Utils_Array {
     return $arrayDiff;
   }
 
+  /**
+   * Given a 2-dimensional matrix, create a new matrix with a restricted list of columns.
+   *
+   * @param array $matrix
+   *   All matrix data, as a list of rows.
+   * @param array $columns
+   *   List of column names.
+   * @return array
+   */
+  public static function filterColumns($matrix, $columns) {
+    $newRows = array();
+    foreach ($matrix as $pos => $oldRow) {
+      $newRow = array();
+      foreach ($columns as $column) {
+        $newRow[$column] = CRM_Utils_Array::value($column, $oldRow);
+      }
+      $newRows[$pos] = $newRow;
+    }
+    return $newRows;
+  }
+
+  /**
+   * Rewrite the keys in an array by filtering through a function.
+   *
+   * @param array $array
+   * @param callable $func
+   *   Function($key, $value). Returns the new key.
+   * @return array
+   */
+  public static function rekey($array, $func) {
+    $result = array();
+    foreach ($array as $key => $value) {
+      $newKey = $func($key, $value);
+      $result[$newKey] = $value;
+    }
+    return $result;
+  }
+
+  /**
+   * Copy all properties of $other into $array (recursively).
+   *
+   * @param array|ArrayAccess $array
+   * @param array $other
+   */
+  public static function extend(&$array, $other) {
+    foreach ($other as $key => $value) {
+      if (is_array($value)) {
+        self::extend($array[$key], $value);
+      }
+      else {
+        $array[$key] = $value;
+      }
+    }
+  }
+
+  /**
+   * Get a single value from an array-tre.
+   *
+   * @param array $arr
+   *   Ex: array('foo'=>array('bar'=>123)).
+   * @param array $pathParts
+   *   Ex: array('foo',bar').
+   * @return mixed|NULL
+   *   Ex 123.
+   */
+  public static function pathGet($arr, $pathParts) {
+    $r = $arr;
+    foreach ($pathParts as $part) {
+      if (!isset($r[$part])) {
+        return NULL;
+      }
+      $r = $r[$part];
+    }
+    return $r;
+  }
+
+  /**
+   * Set a single value in an array tree.
+   *
+   * @param array $arr
+   *   Ex: array('foo'=>array('bar'=>123)).
+   * @param array $pathParts
+   *   Ex: array('foo',bar').
+   * @param $value
+   *   Ex: 456.
+   */
+  public static function pathSet(&$arr, $pathParts, $value) {
+    $r = &$arr;
+    $last = array_pop($pathParts);
+    foreach ($pathParts as $part) {
+      if (!isset($r[$part])) {
+        $r[$part] = array();
+      }
+      $r = &$r[$part];
+    }
+    $r[$last] = $value;
+  }
+
 }

@@ -8,7 +8,7 @@
  | This file is a part of CiviCRM.                                    |
  |                                                                    |
  | CiviCRM is free software; you can copy, modify, and distribute it  |
-s | under the terms of the GNU Affero General Public License           |
+ | under the terms of the GNU Affero General Public License           |
  | Version 3, 19 November 2007 and the CiviCRM Licensing Exception.   |
  |                                                                    |
  | CiviCRM is distributed in the hope that it will be useful, but     |
@@ -323,7 +323,7 @@ class CRM_Contact_Form_Search_Advanced extends CRM_Contact_Form_Search {
       $this->_sortByCharacter = NULL;
     }
 
-    CRM_Core_BAO_CustomValue::fixFieldValueOfTypeMemo($this->_formValues);
+    CRM_Core_BAO_CustomValue::fixCustomFieldValue($this->_formValues);
 
     $this->_params = CRM_Contact_BAO_Query::convertFormValues($this->_formValues);
     $this->_returnProperties = &$this->returnProperties();
@@ -370,6 +370,9 @@ class CRM_Contact_Form_Search_Advanced extends CRM_Contact_Form_Search {
       'contribution_status',
       'contribution_status_id',
       'contribution_source',
+      'membership_type_id',
+      'membership_status_id',
+      'participant_status_id',
       'contribution_trxn_id',
       'activity_type_id',
       'status_id',
@@ -420,12 +423,23 @@ class CRM_Contact_Form_Search_Advanced extends CRM_Contact_Form_Search {
     }
 
     if ($this->_ssID && empty($_POST)) {
-      $fields = array('contact_type', 'group', 'contact_tags');
+      $specialFields = array('contact_type', 'group', 'contact_tags', 'member_membership_type_id', 'member_status_id');
 
-      foreach ($fields as $field) {
-        $fieldValues = CRM_Utils_Array::value($field, $defaults);
-        if ($fieldValues && is_array($fieldValues)) {
-          $defaults[$field] = array_keys($fieldValues);
+      foreach ($defaults as $element => $value) {
+        if (!empty($value) && is_array($value)) {
+          if (in_array($element, $specialFields)) {
+            $element = str_replace('member_membership_type_id', 'membership_type_id', $element);
+            $element = str_replace('member_status_id', 'membership_status_id', $element);
+            $defaults[$element] = array_keys($value);
+          }
+          // As per the OK (Operator as Key) value format, value array may contain key
+          // as an operator so to ensure the default is always set actual value
+          elseif (in_array(key($value), CRM_Core_DAO::acceptedSQLOperators(), TRUE)) {
+            $defaults[$element] = CRM_Utils_Array::value(key($value), $value);
+            if (is_string($defaults[$element])) {
+              $defaults[$element] = str_replace("%", '', $defaults[$element]);
+            }
+          }
         }
       }
     }

@@ -131,6 +131,7 @@ function _civicrm_api3_contact_create_spec(&$params) {
   );
   $params['prefix_id']['api.aliases'] = array('individual_prefix', 'individual_prefix_id');
   $params['suffix_id']['api.aliases'] = array('individual_suffix', 'individual_suffix_id');
+  $params['gender_id']['api.aliases'] = array('gender');
 }
 
 /**
@@ -723,7 +724,7 @@ function civicrm_api3_contact_getquick($params) {
   }
   $from = implode(' ', $from);
   $limit = (int) CRM_Utils_Array::value('limit', $params);
-  $limit = $limit > 0 ? $limit : 10;
+  $limit = $limit > 0 ? $limit : CRM_Core_BAO_Setting::getItem(CRM_Core_BAO_Setting::SEARCH_PREFERENCES_NAME, 'search_autocomplete_count', NULL, 10);
 
   // add acl clause here
   list($aclFrom, $aclWhere) = CRM_Contact_BAO_Contact_Permission::cacheClause('cc');

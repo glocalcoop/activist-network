@@ -264,11 +264,13 @@ class CRM_Contribute_BAO_Contribution_Utils {
           $paymentParams['contributionRecurID'] = $contribution->contribution_recur_id;
         }
       }
-      if (is_object($payment)) {
-        $result = $payment->doDirectPayment($paymentParams);
-      }
-      else {
-        CRM_Core_Error::fatal($paymentObjError);
+      if ($form->_amount > 0.0) {
+        if (is_object($payment)) {
+          $result = $payment->doDirectPayment($paymentParams);
+        }
+        else {
+          CRM_Core_Error::fatal($paymentObjError);
+        }
       }
     }
 
@@ -330,8 +332,13 @@ class CRM_Contribute_BAO_Contribution_Utils {
         );
       }
       $form->postProcessPremium($premiumParams, $contribution);
-      if (is_array($result) && !empty($result['trxn_id'])) {
-        $contribution->trxn_id = $result['trxn_id'];
+      if (is_array($result)) {
+        if (!empty($result['trxn_id'])) {
+          $contribution->trxn_id = $result['trxn_id'];
+        }
+        if (!empty($result['payment_status_id'])) {
+          $contribution->payment_status_id = $result['payment_status_id'];
+        }
       }
       $membershipResult[1] = $contribution;
     }
@@ -340,9 +347,24 @@ class CRM_Contribute_BAO_Contribution_Utils {
       return $membershipResult;
     }
 
-    //Do not send an email if Recurring contribution is done via Direct Mode
-    //We will send email once the IPN is received.
+    //  Email is done when the payment is completed (now or later)
+    // by completetransaction, rather than the form.
+    // We are moving towards it being done for all payment methods in completetransaction.
     if (!empty($paymentParams['is_recur']) && $form->_contributeMode == 'direct') {
+      if (CRM_Utils_Array::value('payment_status_id', $result) == 1) {
+        try {
+          civicrm_api3('contribution', 'completetransaction', array(
+            'id' => $contribution->id,
+            'trxn_id' => CRM_Utils_Array::value('trxn_id', $result),
+            'is_transactional' => FALSE,
+          ));
+        }
+        catch (CiviCRM_API3_Exception $e) {
+          if ($e->getErrorCode() != 'contribution_completed') {
+            throw new CRM_Core_Exception('Failed to update contribution in database');
+          }
+        }
+      }
       return TRUE;
     }
 

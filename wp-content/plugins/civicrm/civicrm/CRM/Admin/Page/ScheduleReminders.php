@@ -3,8 +3,7 @@
  +--------------------------------------------------------------------+
  | CiviCRM version 4.6                                                |
  +--------------------------------------------------------------------+
- | Copyright (C) 2011 Marty Wright                                    |
- | Licensed to CiviCRM under the Academic Free License version 3.0.   |
+ | Copyright CiviCRM LLC (c) 2004-2015                                |
  +--------------------------------------------------------------------+
  | This file is a part of CiviCRM.                                    |
  |                                                                    |
@@ -136,6 +135,12 @@ class CRM_Admin_Page_ScheduleReminders extends CRM_Core_Page_Basic {
    * @return void
    */
   public function browse($action = NULL) {
+    //CRM-16777: Do not permit access to user, for page 'Administer->Communication->Schedule Reminder',
+    //when do not have 'administer CiviCRM' permission.
+    if (!CRM_Core_Permission::check('administer CiviCRM')) {
+      CRM_Core_Error::fatal(ts('You do not have permission to access this page.'));
+    }
+
     // Get list of configured reminders
     $reminderList = CRM_Core_BAO_ActionSchedule::getList();
 

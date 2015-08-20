@@ -405,7 +405,7 @@ class CRM_Contribute_BAO_ContributionPage extends CRM_Contribute_DAO_Contributio
         $taxAmt = $template->get_template_vars('dataArray');
         $prefixValue = CRM_Core_BAO_Setting::getItem(CRM_Core_BAO_Setting::CONTRIBUTE_PREFERENCES_NAME, 'contribution_invoice_settings');
         $invoicing = CRM_Utils_Array::value('invoicing', $prefixValue);
-        if (count($taxAmt) > 0 && (isset($invoicing) && isset($prefixValue['is_email_pdf']))) {
+        if (isset($invoicing) && isset($prefixValue['is_email_pdf'])) {
           $sendTemplateParams['isEmailPdf'] = TRUE;
           $sendTemplateParams['contributionId'] = $values['contribution_id'];
         }
@@ -471,11 +471,10 @@ class CRM_Contribute_BAO_ContributionPage extends CRM_Contribute_DAO_Contributio
    * @param object $recur
    *   Object of recurring contribution table.
    * @param bool|object $autoRenewMembership is it a auto renew membership.
-   *
-   * @return void
    */
   public static function recurringNotify($type, $contactID, $pageID, $recur, $autoRenewMembership = FALSE) {
     $value = array();
+    $isEmailReceipt = FALSE;
     if ($pageID) {
       CRM_Core_DAO::commonRetrieveAll('CRM_Contribute_DAO_ContributionPage', 'id', $pageID, $value, array(
         'title',
@@ -485,9 +484,9 @@ class CRM_Contribute_BAO_ContributionPage extends CRM_Contribute_DAO_Contributio
         'cc_receipt',
         'bcc_receipt',
       ));
+      $isEmailReceipt = CRM_Utils_Array::value('is_email_receipt', $value[$pageID]);
     }
 
-    $isEmailReceipt = CRM_Utils_Array::value('is_email_receipt', $value[$pageID]);
     $isOfflineRecur = FALSE;
     if (!$pageID && $recur->id) {
       $isOfflineRecur = TRUE;
