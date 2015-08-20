@@ -4,7 +4,7 @@ Theme URI: https://wordpress.com/themes/sequential/
 Author: Automattic
 Author URI: https://wordpress.com/themes/
 Description: Sequential is a contemporary, clean, and multi-purpose business theme.
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sequential
@@ -1012,11 +1012,7 @@ ul[id^="menu-social"] a:hover:before {
 	width: 1px;
 	overflow: hidden;
 }
-.sharing-screen-reader-text:hover,
 .sharing-screen-reader-text:focus,
-.sharing-screen-reader-text:active,
-.screen-reader-text:hover,
-.screen-reader-text:active,
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;

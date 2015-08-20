@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sequential 1.1\n"
+"Project-Id-Version: Sequential 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/sequential\n"
-"POT-Creation-Date: 2015-02-25 04:59:23+00:00\n"
+"POT-Creation-Date: 2015-08-01 03:49:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,6 +25,10 @@ msgstr ""
 #. translators: %1$s: smiley
 #: 404.php:29
 msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive-jetpack-testimonial.php:23
+msgid "Testimonials"
 msgstr ""
 
 #: archive.php:27
@@ -120,7 +124,7 @@ msgstr ""
 msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: content-grid.php:19 content-page.php:32 inc/template-tags.php:154
+#: content-grid.php:19 content-page.php:32 inc/template-tags.php:175
 #: page-templates/front-page.php:26
 msgid "Edit"
 msgstr ""
@@ -255,60 +259,76 @@ msgstr ""
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:25
+#: inc/template-tags.php:28
+msgid "<span class=\"meta-nav\">&larr;</span> Older testimonials"
+msgstr ""
+
+#: inc/template-tags.php:30
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/template-tags.php:29
+#: inc/template-tags.php:40
+msgid "Newer testimonials <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:42
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:52
+#: inc/template-tags.php:68
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:56
+#: inc/template-tags.php:72
 msgid "<span class=\"meta-nav\">Published In</span>%title"
 msgstr ""
 
-#: inc/template-tags.php:58
+#: inc/template-tags.php:75
+msgid "<span class=\"meta-nav\">Previous Testimonial</span>%title"
+msgstr ""
+
+#: inc/template-tags.php:76
+msgid "<span class=\"meta-nav\">Next Testimonial</span>%title"
+msgstr ""
+
+#: inc/template-tags.php:78
 msgid "<span class=\"meta-nav\">Previous Post</span>%title"
 msgstr ""
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:79
 msgid "<span class=\"meta-nav\">Next Post</span>%title"
 msgstr ""
 
-#: inc/template-tags.php:120
+#: inc/template-tags.php:141
 msgid "All %s posts"
 msgstr ""
 
-#: inc/template-tags.php:146
+#: inc/template-tags.php:167
 msgid "Featured"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:166 inc/template-tags.php:172
+#: inc/template-tags.php:187 inc/template-tags.php:193
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:168
+#: inc/template-tags.php:189
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:174
+#: inc/template-tags.php:195
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:180
+#: inc/template-tags.php:201
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:180
+#: inc/template-tags.php:201
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:180
+#: inc/template-tags.php:201
 msgid "% Comments"
 msgstr ""
 
