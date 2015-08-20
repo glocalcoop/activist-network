@@ -26,7 +26,7 @@ get_header(); ?>
 						</h1><!-- .entry-title -->
 					</header><!-- .entry-header -->
 
-					<?php if ( isset( $jetpack_options['page-content'] ) && '' != $jetpack_options['page-content'] ) : // only display if content not empty ?>
+					<?php if ( '' != $jetpack_options['page-content'] ) : // only display if content not empty ?>
 					<div class="entry-content">
 						<?php echo convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $jetpack_options['page-content'] ) ) ) ) ) ); ?>
 					</div><!-- .entry-content -->

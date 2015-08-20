@@ -2,33 +2,13 @@
 # This file is distributed under the same license as the Sequential package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-05-28 08:18:51+0000\n"
+"PO-Revision-Date: 2015-04-27 10:44:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
+"X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Sequential\n"
-
-#: inc/template-tags.php:28
-msgid "<span class=\"meta-nav\">&larr;</span> Older testimonials"
-msgstr "<span class=\"meta-nav\">&larr;</span> گواهی‌نامه‌های پیشین"
-
-#: inc/template-tags.php:40
-msgid "Newer testimonials <span class=\"meta-nav\">&rarr;</span>"
-msgstr "گواهی‌نامه‌های پسین <span class=\"meta-nav\">&rarr;</span>"
-
-#: inc/template-tags.php:75
-msgid "<span class=\"meta-nav\">Previous Testimonial</span>%title"
-msgstr "<span class=\"meta-nav\">گواهی‌نامهٔ‌ قبلی</span>%title"
-
-#: inc/template-tags.php:76
-msgid "<span class=\"meta-nav\">Next Testimonial</span>%title"
-msgstr "<span class=\"meta-nav\">گواهی‌نامهٔ بعدی</span>%title"
-
-#: archive-jetpack-testimonial.php:23
-msgid "Testimonials"
-msgstr "گواهی‌نامه‌ها"
 
 #. Description of the plugin/theme
 #: wp-content/themes/pub/sequential/style.css
@@ -54,60 +34,60 @@ msgstr "برگهٔ نخست"
 msgid "Search Results for: %s"
 msgstr "نتایج جست‌وجو برای: %s"
 
-#: inc/template-tags.php:201
+#: inc/template-tags.php:180
 msgid "% Comments"
 msgstr "% دیدگاه"
 
-#: inc/template-tags.php:201
+#: inc/template-tags.php:180
 msgid "1 Comment"
 msgstr "۱ دیدگاه"
 
-#: inc/template-tags.php:201
+#: inc/template-tags.php:180
 msgid "Leave a comment"
 msgstr "بیان دیدگاه"
 
-#: inc/template-tags.php:195
+#: inc/template-tags.php:174
 msgid "Tagged %1$s"
 msgstr "برچسب‌خورده با %1$s"
 
-#: inc/template-tags.php:189
+#: inc/template-tags.php:168
 msgid "Posted in %1$s"
 msgstr "فرستاده‌شده در %1$s"
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:187 inc/template-tags.php:193
+#: inc/template-tags.php:166 inc/template-tags.php:172
 msgid ", "
 msgstr "، "
 
-#: inc/template-tags.php:167
+#: inc/template-tags.php:146
 msgid "Featured"
 msgstr "ویژه"
 
-#: inc/template-tags.php:141
+#: inc/template-tags.php:120
 msgid "All %s posts"
 msgstr "همهٔ %s نوشته"
 
-#: inc/template-tags.php:79
+#: inc/template-tags.php:59
 msgid "<span class=\"meta-nav\">Next Post</span>%title"
 msgstr "<span class=\"meta-nav\">نوشتۀ پسین</span>%title"
 
-#: inc/template-tags.php:72
+#: inc/template-tags.php:56
 msgid "<span class=\"meta-nav\">Published In</span>%title"
 msgstr "<span class=\"meta-nav\">منتشرشده در</span>%title"
 
-#: inc/template-tags.php:78
+#: inc/template-tags.php:58
 msgid "<span class=\"meta-nav\">Previous Post</span>%title"
 msgstr "<span class=\"meta-nav\">نوشتۀ پیشین</span>%title"
 
-#: inc/template-tags.php:68
+#: inc/template-tags.php:52
 msgid "Post navigation"
 msgstr "ناوبری نوشته"
 
-#: inc/template-tags.php:42
+#: inc/template-tags.php:29
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "نوشته‌های تازه‌تر <span class=\"meta-nav\">&rarr;</span>"
 
-#: inc/template-tags.php:30
+#: inc/template-tags.php:25
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> نوشته‌های پیشین"
 
@@ -240,7 +220,7 @@ msgstr "چیزی پیدا نشد"
 msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
 msgstr "بیشتر بخوانید <span class=\"meta-nav\">&rarr;</span>"
 
-#: content-grid.php:19 content-page.php:32 inc/template-tags.php:175
+#: content-grid.php:19 content-page.php:32 inc/template-tags.php:154
 #: page-templates/front-page.php:26
 msgid "Edit"
 msgstr "ویرایش"

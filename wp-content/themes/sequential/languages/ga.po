@@ -2,17 +2,28 @@
 # This file is distributed under the same license as the Sequential package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-05-07 03:59:37+0000\n"
+"PO-Revision-Date: 2014-12-06 16:20:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
+"X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Sequential\n"
 
-#: archive-jetpack-testimonial.php:23
-msgid "Testimonials"
-msgstr "Teistiméireachtaí"
+#. Description of the plugin/theme
+#: wp-content/themes/pub/sequential/style.css
+msgid "Sequential is a contemporary, clean, and multi-purpose business theme."
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/full-width-page.php
+msgid "Full-Width Page"
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/grid-page.php
+msgid "Grid Page"
+msgstr ""
 
 #. Template Name of the plugin/theme
 #: wp-content/themes/pub/sequential/page-templates/front-page.php
@@ -23,60 +34,60 @@ msgstr "Leathanach Tosaigh"
 msgid "Search Results for: %s"
 msgstr "Torthaí ar: %s"
 
-#: inc/template-tags.php:201
+#: inc/template-tags.php:180
 msgid "% Comments"
 msgstr "Freagraí: %"
 
-#: inc/template-tags.php:201
+#: inc/template-tags.php:180
 msgid "1 Comment"
 msgstr "1 Fhreagra Amháin"
 
-#: inc/template-tags.php:201
+#: inc/template-tags.php:180
 msgid "Leave a comment"
 msgstr "Freagra"
 
-#: inc/template-tags.php:195
+#: inc/template-tags.php:174
 msgid "Tagged %1$s"
 msgstr "Clibeanna: %1$s"
 
-#: inc/template-tags.php:189
+#: inc/template-tags.php:168
 msgid "Posted in %1$s"
 msgstr "Ranganna: %1$s"
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:187 inc/template-tags.php:193
+#: inc/template-tags.php:166 inc/template-tags.php:172
 msgid ", "
 msgstr ", "
 
-#: inc/template-tags.php:167
+#: inc/template-tags.php:146
 msgid "Featured"
 msgstr "Ardaithe"
 
-#: inc/template-tags.php:141
+#: inc/template-tags.php:120
 msgid "All %s posts"
 msgstr "Na %s alt uile"
 
-#: inc/template-tags.php:79
+#: inc/template-tags.php:59
 msgid "<span class=\"meta-nav\">Next Post</span>%title"
 msgstr "<span class=\"meta-nav\">Aniar</span>%title"
 
-#: inc/template-tags.php:72
+#: inc/template-tags.php:56
 msgid "<span class=\"meta-nav\">Published In</span>%title"
 msgstr "<span class=\"meta-nav\">Ranganna:</span>%title"
 
-#: inc/template-tags.php:78
+#: inc/template-tags.php:58
 msgid "<span class=\"meta-nav\">Previous Post</span>%title"
 msgstr "<span class=\"meta-nav\">Siar</span>%title"
 
-#: inc/template-tags.php:68
+#: inc/template-tags.php:52
 msgid "Post navigation"
 msgstr "Treoraíocht alt"
 
-#: inc/template-tags.php:42
+#: inc/template-tags.php:29
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Chun tosaigh <span class=\"meta-nav\">&rarr;</span>"
 
-#: inc/template-tags.php:30
+#: inc/template-tags.php:25
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Chun deiridh"
 
@@ -84,13 +95,29 @@ msgstr "<span class=\"meta-nav\">&larr;</span> Chun deiridh"
 msgid "Posts navigation"
 msgstr "Treoraíocht alt"
 
+#: inc/customizer.php:79
+msgid "Front Page: Show Page Titles"
+msgstr ""
+
 #: inc/extras.php:83
 msgid "Page %s"
 msgstr "Leathanach %s"
 
+#: inc/customizer.php:31
+msgid "Show Tagline"
+msgstr ""
+
 #: inc/customizer.php:43
 msgid "Top Area Content"
 msgstr "Ábhar Uachtair"
+
+#: inc/customizer.php:55
+msgid "Front Page: Featured Page One"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Front Page: Featured Page Two"
+msgstr ""
 
 #: inc/customizer.php:20
 msgid "Theme"
@@ -193,7 +220,7 @@ msgstr "Gan Toradh"
 msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Tuilleadh <span class=\"meta-nav\">&rarr;</span>"
 
-#: content-grid.php:19 content-page.php:32 inc/template-tags.php:175
+#: content-grid.php:19 content-page.php:32 inc/template-tags.php:154
 #: page-templates/front-page.php:26
 msgid "Edit"
 msgstr "Eagar"

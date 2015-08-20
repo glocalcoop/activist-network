@@ -128,7 +128,7 @@ function sequential_montserrat_font_url() {
 			'family' => urlencode( 'Montserrat:400,700' ),
 		);
 
-		$montserrat_font_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		$montserrat_font_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 	}
 
 	return $montserrat_font_url;
@@ -166,7 +166,7 @@ function sequential_open_sans_font_url() {
 			'subset' => urlencode( $subsets ),
 		);
 
-		$open_sans_font_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		$open_sans_font_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 	}
 
 	return $open_sans_font_url;
@@ -188,7 +188,7 @@ function sequential_source_code_pro_font_url() {
 			'family' => urlencode( 'Source Code Pro:400,700' ),
 		);
 
-		$source_code_pro_font_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		$source_code_pro_font_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 	}
 
 	return $source_code_pro_font_url;
