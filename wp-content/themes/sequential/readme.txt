@@ -158,14 +158,139 @@ See live examples on Sequential‘s demo site:
 
 == Changelog ==
 
-= 1.1 - May 6 2015 =
+= 12 August 2015 =
+* updating readme to reflect recent change.
+* adding isset check to testimonial page content from customizer.
+
+= 31 July 2015 =
+* Remove .`screen-reader-text:hover` and `.screen-reader-text:active` style rules.
+
+= 15 July 2015 =
+* Always use https when loading Google Fonts.
+
+= 6 May 2015 =
+* Update po file and copyright
 * Add support for Jetpack Testimonial CPT
 
-= 1.0.2 - Dec 22 2014 =
+= 9 April 2015 =
+* Make sure sharing buttons in the hero area are not showing the text.
+
+= 23 March 2015 =
+* Add override in CSS for official sharing buttons so theme styles do not break them.
+
+= 4 March 2015 =
+* Use margins rather than padding on entry meta to prevent overlapping the entry title;
+
+= 3 March 2015 =
+* Comment out theme-specific PollDaddy styles that were breaking the look of non-plain polls.
+
+= 1 March 2015 =
+* Add missing styles from dequeued sharing script, that was causing screen reader text to be shown on the home page template.
+
+= 26 January 2015 =
+* Add background-color to select when in the footer-widget-area.
+* Fix right and left padding on small devices for template pages with a full-width layout
+* Add count number to share icons.
+
+= 22 December 2014 =
 * Prefix and clean variables
 
-= 1.0.1 - Nov 19 2014 =
-* Fix responsive navigation
+= 17 December 2014 =
+* updated credits.
 
-= 1.0 - Nov 6 2014 =
-* Initial release
+= 13 November 2014 =
+* Load sequential_menu() when document is ready instead of when page is loaded.
+
+= 6 November 2014 =
+* Update site logo link class.
+* Add readme
+* Fix menu positioning when branding + menu > wrapper
+* Update description
+* Re: Fix tagline in Customizer: Revert JS changes made and instead fix the CSS
+* Fix tagline in Customizer
+* Center primary menu when toggled on screen >= 768px
+* Add RTL stylesheet
+
+= 5 November 2014 =
+* Make sure $top_area_content is sanitize with wp_kses_post()
+
+= 4 November 2014 =
+* Add missing tag
+* Update descripton and tags
+* New screenshot to match demo site
+
+= 3 November 2014 =
+* Update columns css: add a margin-bottom to it and make sure that last item it in doesn't have a margin-bottom
+* Fix typo and front page padding bottom
+* Use rgba instead of hexa color so it's still highlighted when content is in a #f7f7f7 section like on the front page template or the grid page template
+* Improve columns extra css classes --3 columns are only available when using a full-width layout (front page template, grid page template or full-width page template)
+* Update flickr widget styles
+* Display author name even if post is sticky
+* Move "cancel reply" link to the right
+* Remove extra spacing in sequential_entry_meta()
+
+= 2 November 2014 =
+* Hyphen added to: "Full-Width Page"
+* remove unnecessary variables defined in the header, $format and $formats
+* Improve 404 page
+* Add missing @package information in inc/custom-header.php
+* Add Jetpack prefixing to Site Logo template tags.
+
+= 31 October 2014 =
+* Early version of the Columns Extra CSS. Careful, still in beta and using jQuery! Handle with care! (^(I)^)
+
+= 30 October 2014 =
+* Remove reply link if empty and fix no-comment's padding
+* Fix hentry margin bottom on large screens
+* Fix margins on larger screens
+* New style for post-thumbnail in the grid-area
+* Fix widget-area paddings and clearings
+* Rename Customizer Panel "Theme Options" to "Theme" -- props @kathrynwp
+
+= 28 October 2014 =
+* Reorganise CSS a bit
+* Update responsive styles to overwritte color annotations
+
+= 27 October 2014 =
+* Add max-with to site-logo to avoid crazy big logos to be uploaded
+* Add site-logo -- was registred but wasn't called or styled
+* Move custom-header in the DOM and improve its styling
+* Fix gravatar like -- copied from jetpack-likes.css
+* Switch .breadcrumb-area background color to black rather than dark purple -- looks better :)
+* Add support for Jetpack's Breadcrumbs
+* Improve entry-footer styles: Add a :before pseudo-element to distinguish it from the content and/or sharedaddy
+* Add custom styles for Sharedaddy
+
+= 26 October 2014 =
+* Fix menu alignement issue when it's supposed to be left -- Widths were not recalculated after screen resize
+
+= 24 October 2014 =
+* Fix missing comma (>_<)
+* Customize Shardaddy share links (remove old css and dequeue default styles)
+* Fix wrong link color for entry-meta in the Hero Area
+* Add styles for WPCOM widgets
+
+= 23 October 2014 =
+* Fix hero hentry margin on large screens (>= 1020px)
+* Define a width for site-branding on devices smaller than 1020px to make sure menu is always on the top right corner. Tweak positioning of the menu when toggled.
+* Add styles for WPCOM Reblogger
+* Center content-area when screen size < 1020px
+* Add styles for PollDaddy
+* Update wpcom comment form with correct colors/spacings
+* Remove extra margin-botttom from the content-area when using the Front Page Template
+* Remove extra margin-top for page-header and post-thumbnail when x >= 1020px
+
+= 22 October 2014 =
+* Add style for tags/categories cloud widget
+* Add style for standard posts with featured image after IS scroll
+* Update .button-minmal colors against dark
+* Fix extra padding on front page blocks
+* Add class "no-sidebar" to body when sidebar-1 isn't active and center the content
+* Update sequential_entry_meta() to fix typo and and spacings
+* Remove content-area with JS if it's empty
+* Update wpcom.php file and add WP.com stylesheet
+* Remove post-thumbnail's background for the Hero Area -- People might want to upload a png, like on the demo site :)
+* Fix show tagline theme option
+
+= 21 October 2014 =
+* Initial import of the .org version of the Sequential theme
