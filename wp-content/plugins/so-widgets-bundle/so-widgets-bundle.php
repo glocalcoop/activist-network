@@ -2,7 +2,7 @@
 /*
 Plugin Name: SiteOrigin Widgets Bundle
 Description: A collection of all widgets, neatly bundled into a single plugin. It's also a framework to code your own widgets on top of.
-Version: 1.4
+Version: 1.4.2
 Author: SiteOrigin
 Author URI: https://siteorigin.com
 Plugin URI: https://siteorigin.com/widgets-bundle/
@@ -10,7 +10,7 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 */
 
-define('SOW_BUNDLE_VERSION', '1.4');
+define('SOW_BUNDLE_VERSION', '1.4.2');
 define('SOW_BUNDLE_JS_SUFFIX', '.min');
 define('SOW_BUNDLE_BASE_FILE', __FILE__);
 
@@ -45,7 +45,7 @@ class SiteOrigin_Widgets_Bundle {
 
 		// Initialize the widgets, but do it fairly late
 		add_action( 'plugins_loaded', array($this, 'set_plugin_textdomain'), 1 );
-		add_action( 'init', array($this, 'load_widget_plugins'), 1 );
+		add_action( 'after_setup_theme', array($this, 'load_widget_plugins'), 11 );
 
 		// Add the action links.
 		add_action( 'plugin_action_links_' . plugin_basename(__FILE__), array($this, 'plugin_action_links') );

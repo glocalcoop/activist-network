@@ -28,7 +28,7 @@ class Ure_Lib extends Garvs_WP_Lib {
 	protected $hide_pro_banner = false;	
 	protected $full_capabilities = false;
 	protected $ure_object = 'role';  // what to process, 'role' or 'user'  
-	public $role_default_html = '';
+	public    $role_default_html = '';
 	protected $role_to_copy_html = '';
 	protected $role_select_html = '';
 	protected $role_delete_html = '';
@@ -1065,12 +1065,12 @@ class Ure_Lib extends Garvs_WP_Lib {
      * 
      * @return string
      */
-    protected function get_caps_to_remove_html() {
+    protected function caps_to_remove_prepare_html() {
         
         $caps_to_remove = $this->get_caps_to_remove();
         if (!empty($caps_to_remove) && is_array($caps_to_remove) && count($caps_to_remove) > 0) {
             $html = '<select id="remove_user_capability" name="remove_user_capability" width="200" style="width: 200px">';
-            foreach ($caps_to_remove as $key => $value) {
+            foreach (array_keys($caps_to_remove) as $key) {
                 $html .= '<option value="' . $key . '">' . $key . '</option>';
             }
             $html .= '</select>';
@@ -1078,9 +1078,9 @@ class Ure_Lib extends Garvs_WP_Lib {
             $html = '';
         }
 
-        return $html;
+        $this->capability_remove_html = $html;
     }
-    // end of getCapsToRemoveHTML()
+    // end of caps_to_remove_prepare_html()
     
 
     /**
@@ -2147,16 +2147,18 @@ class Ure_Lib extends Garvs_WP_Lib {
         if (!empty($_POST['user_role_id'])) {
             $user_role_id = $_POST['user_role_id'];
             unset($_POST['user_role_id']);
-            $errorMessage = 'Error! ' . esc_html__('Error encountered during default role change operation', 'ure');
             if (isset($wp_roles->role_objects[$user_role_id]) && $user_role_id !== 'administrator') {
                 $result = update_option('default_role', $user_role_id);
                 if (empty($result)) {
-                    $mess = $errorMessage;
+                    $mess = 'Error! ' . esc_html__('Error encountered during default role change operation', 'ure');
                 } else {
+                    $this->get_default_role();
                     $mess = sprintf(esc_html__('Default role for new users is set to %s successfully', 'ure'), $wp_roles->role_names[$user_role_id]);
                 }
+            } elseif ($user_role_id === 'administrator') {
+                $mess = 'Error! ' . esc_html__('Can not set Administrator role as a default one', 'ure');
             } else {
-                $mess = $errorMessage;
+                $mess = 'Error! ' . esc_html__('This role does not exist - ', 'ure') . esc_html($user_role_id);            
             }
         }
 
@@ -2424,7 +2426,7 @@ class Ure_Lib extends Garvs_WP_Lib {
                 }
             }
 
-            $mess = sprintf(esc_html__('Capability %s is removed successfully', 'ure'), $capability_id);
+            $mess = sprintf(esc_html__('Capability %s was removed successfully', 'ure'), $capability_id);
         }
 
         return $mess;
@@ -2535,7 +2537,8 @@ class Ure_Lib extends Garvs_WP_Lib {
     // end of show_admin_role()
     
     
-    public function role_edit_prepare_html($select_width=200) {
+    private function role_default_prepare_html($select_width=200) {
+        
         $caps_access_restrict_for_simple_admin = $this->get_option('caps_access_restrict_for_simple_admin', 0);
         $show_admin_role = $this->show_admin_role_allowed();
         if ($select_width>0) {
@@ -2544,12 +2547,8 @@ class Ure_Lib extends Garvs_WP_Lib {
             $select_style = '';
         }
         $this->role_default_html = '<select id="default_user_role" name="default_user_role" '. $select_style .'>';
-        $this->role_to_copy_html = '<select id="user_role_copy_from" name="user_role_copy_from" style="width: '. $select_width .'px">
-            <option value="none" selected="selected">' . esc_html__('None', 'ure') . '</option>';
-        $this->role_select_html = '<select id="user_role" name="user_role" onchange="ure_role_change(this.value);">';
         foreach ($this->roles as $key => $value) {
-            $selected1 = $this->option_selected($key, $this->current_role);
-            $selected2 = $this->option_selected($key, $this->wp_default_role);
+            $selected = $this->option_selected($key, $this->wp_default_role);
             $disabled = ($key==='administrator' && $caps_access_restrict_for_simple_admin && !is_super_admin()) ? 'disabled' : '';
             if ($show_admin_role || $key != 'administrator') {
                 $translated_name = esc_html__($value['name'], 'ure');  // get translation from URE language file, if exists
@@ -2557,15 +2556,16 @@ class Ure_Lib extends Garvs_WP_Lib {
                     $translated_name = translate_user_role($translated_name);
                 }
                 $translated_name .= ' (' . $key . ')';                
-                $this->role_select_html .= '<option value="' . $key . '" ' . $selected1 .' '. $disabled .'>' . $translated_name . '</option>';
-                $this->role_default_html .= '<option value="' . $key . '" ' . $selected2 .' '. $disabled .'>' . $translated_name . '</option>';
-                $this->role_to_copy_html .= '<option value="' . $key .'" '. $disabled .'>' . $translated_name . '</option>';
+                $this->role_default_html .= '<option value="' . $key . '" ' . $selected .' '. $disabled .'>' . $translated_name . '</option>';
             }
         }
-        $this->role_select_html .= '</select>';
         $this->role_default_html .= '</select>';
-        $this->role_to_copy_html .= '</select>';
-
+        
+    }
+    // end of role_default_prepare_html()
+    
+    
+    private function role_delete_prepare_html() {
         $roles_can_delete = $this->get_roles_can_delete();
         if ($roles_can_delete && count($roles_can_delete) > 0) {
             $this->role_delete_html = '<select id="del_user_role" name="del_user_role" width="200" style="width: 200px">';
@@ -2577,8 +2577,41 @@ class Ure_Lib extends Garvs_WP_Lib {
         } else {
             $this->role_delete_html = '';
         }
-
-        $this->capability_remove_html = $this->get_caps_to_remove_html();
+    }
+    // end of role_delete_prepare_html()
+    
+    
+    private function role_select_copy_prepare_html($select_width=200) {
+        $caps_access_restrict_for_simple_admin = $this->get_option('caps_access_restrict_for_simple_admin', 0);
+        $show_admin_role = $this->show_admin_role_allowed();
+        $this->role_to_copy_html = '<select id="user_role_copy_from" name="user_role_copy_from" style="width: '. $select_width .'px">
+            <option value="none" selected="selected">' . esc_html__('None', 'ure') . '</option>';
+        $this->role_select_html = '<select id="user_role" name="user_role" onchange="ure_role_change(this.value);">';
+        foreach ($this->roles as $key => $value) {
+            $selected1 = $this->option_selected($key, $this->current_role);
+            $disabled = ($key==='administrator' && $caps_access_restrict_for_simple_admin && !is_super_admin()) ? 'disabled' : '';
+            if ($show_admin_role || $key != 'administrator') {
+                $translated_name = esc_html__($value['name'], 'ure');  // get translation from URE language file, if exists
+                if ($translated_name === $value['name']) { // get WordPress internal translation
+                    $translated_name = translate_user_role($translated_name);
+                }
+                $translated_name .= ' (' . $key . ')';                
+                $this->role_select_html .= '<option value="' . $key . '" ' . $selected1 .' '. $disabled .'>' . $translated_name . '</option>';
+                $this->role_to_copy_html .= '<option value="' . $key .'" '. $disabled .'>' . $translated_name . '</option>';
+            }
+        }
+        $this->role_select_html .= '</select>';
+        $this->role_to_copy_html .= '</select>';
+    }
+    // end of role_select_copy_prepare_html()
+    
+    
+    public function role_edit_prepare_html($select_width=200) {
+        
+        $this->role_select_copy_prepare_html($select_width);
+        $this->role_default_prepare_html($select_width);
+        $this->role_delete_prepare_html();                
+        $this->caps_to_remove_prepare_html();
     }
     // end of role_edit_prepare_html()
     

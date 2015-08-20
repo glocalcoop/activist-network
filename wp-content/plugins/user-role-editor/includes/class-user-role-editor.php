@@ -120,8 +120,6 @@ class User_Role_Editor {
     add_action( 'admin_enqueue_scripts', array($this, 'admin_load_js' ) );
     add_action( 'user_row_actions', array($this, 'user_row'), 10, 2 );                        
     add_filter( 'all_plugins', array($this, 'exclude_from_plugins_list' ) );
-
-    $this->user_other_roles->set_hooks();
     
     if ($this->lib->multisite) {          
         $allow_edit_users_to_not_super_admin = $this->lib->get_option('allow_edit_users_to_not_super_admin', 0);

@@ -17,23 +17,24 @@ class URE_User_Other_Roles {
     function __construct(Ure_Lib $lib) {
     
         $this->lib = $lib;
-        
+        $this->set_hooks();
     }
     // end of $lib
     
     
     public function set_hooks() {
         
-        add_filter( 'additional_capabilities_display', array($this, 'additional_capabilities_display'), 10, 1);
-        
-        add_action( 'admin_print_styles-user-edit.php', array($this, 'load_css') );
-        add_action( 'admin_print_styles-user-new.php', array($this, 'load_css') );
-        add_action( 'admin_enqueue_scripts', array($this, 'load_js' ) );
-        add_action( 'edit_user_profile', array($this, 'edit_user_profile_html'), 10, 1 );
-        add_action( 'user_new_form', array($this, 'user_new_form'), 10, 1 );
-        add_filter( 'manage_users_columns', array($this, 'user_role_column'), 10, 1 );
-        add_filter( 'manage_users_custom_column', array($this, 'user_role_row'), 10, 3 );
-        add_action( 'profile_update', array($this, 'update'), 10 );
+        if (is_admin()) {
+            add_filter( 'additional_capabilities_display', array($this, 'additional_capabilities_display'), 10, 1);        
+            add_action( 'admin_print_styles-user-edit.php', array($this, 'load_css') );
+            add_action( 'admin_print_styles-user-new.php', array($this, 'load_css') );
+            add_action( 'admin_enqueue_scripts', array($this, 'load_js' ) );
+            add_action( 'edit_user_profile', array($this, 'edit_user_profile_html'), 10, 1 );
+            add_action( 'user_new_form', array($this, 'user_new_form'), 10, 1 );
+            add_filter( 'manage_users_columns', array($this, 'user_role_column'), 10, 1 );
+            add_filter( 'manage_users_custom_column', array($this, 'user_role_row'), 10, 3 );
+            add_action( 'profile_update', array($this, 'update'), 10 );
+        }
         if ($this->lib->multisite) {          
             add_action( 'wpmu_activate_user', array($this, 'add_other_roles'), 10, 1 );
         } else {
