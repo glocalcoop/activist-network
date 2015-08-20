@@ -20,18 +20,27 @@ class CRM_UF_Page_ProfileEditor extends CRM_Core_Page {
 
     CRM_Core_Resources::singleton()
       ->addSettingsFactory(function () {
+        $ufGroups = civicrm_api3('UFGroup', 'get', array(
+          'sequential' => 1,
+          'is_active' => 1,
+          'options' => array('limit' => 0),
+        ));
+        //CRM-16915 - insert 'module' param for the profile used by CiviEvent.
+        if (CRM_Core_Permission::check('manage event profiles') && !CRM_Core_Permission::check('administer CiviCRM')) {
+          foreach ($ufGroups['values'] as $key => $value) {
+            $ufJoin = CRM_Core_BAO_UFGroup::getUFJoinRecord($value['id']);
+            if (in_array('CiviEvent', $ufJoin) || in_array('CiviEvent_Additional', $ufJoin)) {
+              $ufGroups['values'][$key]['module'] = 'CiviEvent';
+            }
+          }
+        }
         return array(
           'PseudoConstant' => array(
             'locationType' => CRM_Core_PseudoConstant::get('CRM_Core_DAO_Address', 'location_type_id'),
             'websiteType' => CRM_Core_PseudoConstant::get('CRM_Core_DAO_Website', 'website_type_id'),
             'phoneType' => CRM_Core_PseudoConstant::get('CRM_Core_DAO_Phone', 'phone_type_id'),
           ),
-          'initialProfileList' => civicrm_api('UFGroup', 'get', array(
-            'version' => 3,
-            'sequential' => 1,
-            'is_active' => 1,
-            'rowCount' => 1000, // FIXME
-          )),
+          'initialProfileList' => $ufGroups,
           'contactSubTypes' => CRM_Contact_BAO_ContactType::subTypes(),
           'profilePreviewKey' => CRM_Core_Key::get('CRM_UF_Form_Inline_Preview', TRUE),
         );
@@ -102,10 +111,10 @@ class CRM_UF_Page_ProfileEditor extends CRM_Core_Page {
 
     $entityTypes = array_unique($entityTypes);
     $availableFields = NULL;
+    $civiSchema = array();
     foreach ($entityTypes as $entityType) {
       if (!$availableFields) {
         $availableFields = CRM_Core_BAO_UFField::getAvailableFieldsFlat();
-        //dpm($availableFields);
       }
       switch ($entityType) {
         case 'IndividualModel':
@@ -174,6 +183,26 @@ class CRM_UF_Page_ProfileEditor extends CRM_Core_Page {
 
         default:
           throw new CRM_Core_Exception("Unrecognized entity type: $entityType");
+      }
+    }
+
+    // Adding the oddball "formatting" field here because there's no other place to put it
+    foreach (array('Individual', 'Organization', 'Household') as $type) {
+      if (isset($civiSchema[$type . 'Model'])) {
+        $civiSchema[$type . 'Model']['schema'] += array(
+          'formatting' => array(
+            'type' => 'Markup',
+            'title' => ts('Free HTML'),
+            'civiFieldType' => 'Formatting',
+            'section' => 'formatting',
+          ),
+        );
+        $civiSchema[$type . 'Model']['sections'] += array(
+          'formatting' => array(
+            'title' => ts('Formatting'),
+            'is_addable' => FALSE,
+          ),
+        );
       }
     }
 

@@ -434,8 +434,7 @@ WHERE  id = %1
     }
 
     // grab a lock so other processes dont compete and do the same query
-    $lockName = "civicrm.group.{$groupID}";
-    $lock = new CRM_Core_Lock($lockName);
+    $lock = Civi\Core\Container::singleton()->get('lockManager')->acquire("data.core.group.{$groupID}");
     if (!$lock->isAcquired()) {
       // this can cause inconsistent results since we dont know if the other process
       // will fill up the cache before our calling routine needs it.
@@ -483,6 +482,9 @@ WHERE  id = %1
         $customClass = CRM_Contact_BAO_SearchCustom::customClass($ssParams['customSearchID'], $savedSearchID);
         $searchSQL = $customClass->contactIDs();
         $searchSQL = str_replace('ORDER BY contact_a.id ASC', '', $searchSQL);
+        if (!strstr($searchSQL, 'WHERE')) {
+          $searchSQL .= " WHERE ( 1 ) ";
+        }
         $idName = 'contact_id';
       }
       else {

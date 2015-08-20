@@ -30,12 +30,12 @@
 
     // FIXME: This could be much simpler as an entityRef field but pcp doesn't have a searchable api :(
     var pcpURL = CRM.url('civicrm/ajax/rest', 'className=CRM_Contact_Page_AJAX&fnName=getPCPList&json=1&context=contact&reset=1');
-    $('#pcp_made_through_id').crmSelect2({
+    $('input[name=pcp_made_through_id]', $form).crmSelect2({
       minimumInputLength: 1,
       ajax: {
         url: pcpURL,
         data: function(term, page) {
-          return {term: term, page: page};
+          return {term: term, page_num: page};
         },
         results: function(response) {
           return response;

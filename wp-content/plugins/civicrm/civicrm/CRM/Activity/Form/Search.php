@@ -211,9 +211,8 @@ class CRM_Activity_Form_Search extends CRM_Core_Form_Search {
           if (is_array($value)) {
             if ($element == 'status_id') {
               unset($this->_formValues[$element]);
-              $element = 'activity_' . $element;
+              $this->_formValues['activity_' . $element] = $value;
             }
-            $this->_formValues[$element] = array('IN' => $value);
           }
           else {
             $this->_formValues[$element] = array('LIKE' => "%$value%");
@@ -234,7 +233,7 @@ class CRM_Activity_Form_Search extends CRM_Core_Form_Search {
       $this->_formValues["activity_test"] = 0;
     }
 
-    CRM_Core_BAO_CustomValue::fixFieldValueOfTypeMemo($this->_formValues);
+    CRM_Core_BAO_CustomValue::fixCustomFieldValue($this->_formValues);
 
     $this->_queryParams = CRM_Contact_BAO_Query::convertFormValues($this->_formValues);
 

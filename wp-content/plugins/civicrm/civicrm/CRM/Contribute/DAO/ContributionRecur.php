@@ -392,7 +392,7 @@ class CRM_Contribute_DAO_ContributionRecur extends CRM_Core_DAO
         'processor_id' => array(
           'name' => 'processor_id',
           'type' => CRM_Utils_Type::T_STRING,
-          'title' => ts('Payment Processor') ,
+          'title' => ts('Processor ID') ,
           'description' => 'Possibly needed to store a unique identifier for this recurring payment order - if this is available from the processor??',
           'maxlength' => 255,
           'size' => CRM_Utils_Type::HUGE,

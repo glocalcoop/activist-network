@@ -174,7 +174,7 @@ class CRM_Core_BAO_CustomField extends CRM_Core_DAO_CustomField {
           }
 
           if (!empty($defaultArray)) {
-            // also add the seperator before and after the value per new conventio (CRM-1604)
+            // also add the separator before and after the value per new convention (CRM-1604)
             $params['default_value'] = CRM_Core_DAO::VALUE_SEPARATOR . implode(CRM_Core_DAO::VALUE_SEPARATOR, $defaultArray) . CRM_Core_DAO::VALUE_SEPARATOR;
           }
         }
@@ -251,8 +251,8 @@ class CRM_Core_BAO_CustomField extends CRM_Core_DAO_CustomField {
         self::fixOptionGroups($params['id'], $params['option_group_id']);
       }
 
-      // if we dont have a default value
-      // retrive it from one of the other custom fields which use this option group
+      // if we do not have a default value
+      // retrieve it from one of the other custom fields which use this option group
       if (empty($params['default_value'])) {
         //don't insert only value separator as default value, CRM-4579
         $defaultValue = self::getOptionGroupDefault($params['option_group_id'],
@@ -1177,13 +1177,12 @@ class CRM_Core_BAO_CustomField extends CRM_Core_DAO_CustomField {
     switch ($html_type) {
       case 'Radio':
         if ($data_type == 'Boolean') {
-          // Do not assume that if not yes means no.
-          $display = '';
-          if ($value) {
-            $display = ts('Yes');
-          }
-          elseif ((string) $value === '0') {
-            $display = ts('No');
+          $option = array('No', 'Yes');
+        }
+        if (is_array($value)) {
+          $display = NULL;
+          foreach ($value as $data) {
+            $display .= $display ? ', ' . $option[$data] : $option[$data];
           }
         }
         else {
@@ -1197,13 +1196,27 @@ class CRM_Core_BAO_CustomField extends CRM_Core_DAO_CustomField {
         ) {
           $display = CRM_Core_DAO::getFieldValue('CRM_Contact_DAO_Contact', $value, 'display_name');
         }
+        elseif (is_array($value)) {
+          $display = NULL;
+          foreach ($value as $data) {
+            $display .= $display ? ', ' . $option[$data] : $option[$data];
+          }
+        }
         else {
           $display = CRM_Utils_Array::value($value, $option);
         }
         break;
 
       case 'Select':
-        $display = CRM_Utils_Array::value($value, $option);
+        if (is_array($value)) {
+          $display = NULL;
+          foreach ($value as $data) {
+            $display .= $display ? ', ' . $option[$data] : $option[$data];
+          }
+        }
+        else {
+          $display = CRM_Utils_Array::value($value, $option);
+        }
         break;
 
       case 'CheckBox':
@@ -1219,25 +1232,16 @@ class CRM_Core_BAO_CustomField extends CRM_Core_DAO_CustomField {
           if ($html_type == 'CheckBox') {
             $newData = array();
             foreach ($checkedData as $v) {
-              $newData[$v] = 1;
+              $v = str_replace(CRM_Core_DAO::VALUE_SEPARATOR, '', $v);
+              $newData[] = $v;
             }
             $checkedData = $newData;
           }
         }
 
         $v = array();
-        $p = array();
         foreach ($checkedData as $key => $val) {
-          if ($html_type == 'CheckBox') {
-            if ($val) {
-              $p[] = $key;
-              $v[] = CRM_Utils_Array::value($key, $option);
-            }
-          }
-          else {
-            $p[] = $val;
-            $v[] = CRM_Utils_Array::value($val, $option);
-          }
+          $v[] = CRM_Utils_Array::value($val, $option);
         }
         if (!empty($v)) {
           $display = implode(', ', $v);
@@ -1260,60 +1264,20 @@ class CRM_Core_BAO_CustomField extends CRM_Core_DAO_CustomField {
         break;
 
       case 'Select State/Province':
-        if (empty($value)) {
-          $display = '';
-        }
-        else {
-          $display = CRM_Core_PseudoConstant::stateProvince($value);
-        }
-        break;
-
       case 'Multi-Select State/Province':
-        if (is_array($value)) {
-          $checkedData = $value;
-        }
-        else {
-          $checkedData = explode(CRM_Core_DAO::VALUE_SEPARATOR,
-            substr($value, 1, -1)
-          );
-        }
-
-        $states = CRM_Core_PseudoConstant::stateProvince();
         $display = NULL;
-        foreach ($checkedData as $stateID) {
-          if ($display) {
-            $display .= ', ';
-          }
-          $display .= $states[$stateID];
+        $option = CRM_Core_PseudoConstant::stateProvince(FALSE, FALSE);
+        foreach ((array) $value as $data) {
+          $display .= $display ? ', ' . $option[$data] : $option[$data];
         }
         break;
 
       case 'Select Country':
-        if (empty($value)) {
-          $display = '';
-        }
-        else {
-          $display = CRM_Core_PseudoConstant::country($value);
-        }
-        break;
-
       case 'Multi-Select Country':
-        if (is_array($value)) {
-          $checkedData = $value;
-        }
-        else {
-          $checkedData = explode(CRM_Core_DAO::VALUE_SEPARATOR,
-            substr($value, 1, -1)
-          );
-        }
-
-        $countries = CRM_Core_PseudoConstant::country();
+        $countries = CRM_Core_PseudoConstant::country(FALSE, FALSE);
         $display = NULL;
-        foreach ($checkedData as $countryID) {
-          if ($display) {
-            $display .= ', ';
-          }
-          $display .= $countries[$countryID];
+        foreach ((array) $value as $countryID) {
+          $display .= $display ? ', ' . $countries[$countryID] : $countries[$countryID];
         }
         break;
 
@@ -1337,16 +1301,17 @@ class CRM_Core_BAO_CustomField extends CRM_Core_DAO_CustomField {
           $display = '';
         }
         else {
-          $display = nl2br($value);
+          $display = is_array($value) ? nl2br(implode(', ', $value)) : nl2br($value);
         }
         break;
 
       case 'Link':
+      case 'Text':
         if (empty($value)) {
           $display = '';
         }
         else {
-          $display = $value;
+          $display = is_array($value) ? implode(', ', $value) : $value;
         }
     }
     return $display ? $display : $value;

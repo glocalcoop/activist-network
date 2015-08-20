@@ -301,6 +301,11 @@ class CRM_Core_DAO_AllCoreTables
         'class' => 'CRM_PCP_DAO_PCP',
         'table' => 'civicrm_pcp',
       ) ,
+      'CRM_Cxn_DAO_Cxn' => array(
+        'name' => 'Cxn',
+        'class' => 'CRM_Cxn_DAO_Cxn',
+        'table' => 'civicrm_cxn',
+      ) ,
       'CRM_Core_DAO_Cache' => array(
         'name' => 'Cache',
         'class' => 'CRM_Core_DAO_Cache',

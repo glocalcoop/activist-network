@@ -131,6 +131,7 @@ DROP TABLE IF EXISTS `civicrm_custom_field`;
 DROP TABLE IF EXISTS `civicrm_custom_group`;
 DROP TABLE IF EXISTS `civicrm_country`;
 DROP TABLE IF EXISTS `civicrm_cache`;
+DROP TABLE IF EXISTS `civicrm_cxn`;
 DROP TABLE IF EXISTS `civicrm_pcp`;
 DROP TABLE IF EXISTS `civicrm_queue_item`;
 DROP TABLE IF EXISTS `civicrm_pledge_block`;
