@@ -58,7 +58,7 @@ abstract class SiteOrigin_Widget extends WP_Widget {
 			'width' => 600,
 		) );
 
-		parent::WP_Widget($id, $name, $widget_options, $control_options);
+		parent::__construct($id, $name, $widget_options, $control_options);
 		$this->initialize();
 
 		// Let other plugins do additional initializing here
@@ -189,7 +189,7 @@ abstract class SiteOrigin_Widget extends WP_Widget {
 						if ( ! wp_style_is( $css_name ) ) {
 							wp_enqueue_style(
 								$css_name,
-								$upload_dir['baseurl'] . '/siteorigin-widgets/' . $css_name .'.css'
+								set_url_scheme($upload_dir['baseurl'] . '/siteorigin-widgets/' . $css_name .'.css')
 							);
 						}
 					}

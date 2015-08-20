@@ -86,8 +86,13 @@ Some translations may be outdated. If you have better translation for some phras
 
 == Changelog ==
 
+= [4.19.1] 20.08.2015 =
+* Default role value has not been refreshed automatically after change at the "Default Role" dialog - fixed.
+* More detailed notice messages are shown after default role change - to reflect a possible error or problem.
+* Other default roles (in addition to the primary role) has been assigned to a new registered user for requests from the admin back-end only. Now this feature works for the requests from the front-end user registration forms too.
+
 = 4.19 =
-* 30.07.2015
+* 28.07.2015
 * It is possible to assign to the user multiple roles directly through a user profile edit page. 
 * Custom SQL-query (checked if the role is in use and slow on the huge data) was excluded and replaced with WordPress built-in function call. [Thanks to Aaron](https://wordpress.org/support/topic/poorly-scaling-queries).
 * Bulk role assignment to the users without role was rewritten for cases with a huge quant of users. It processes just 50 users without role for the one request to return the answer from the server in the short time. The related code was extracted to the separate class.

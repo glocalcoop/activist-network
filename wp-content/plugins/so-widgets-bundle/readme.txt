@@ -1,8 +1,8 @@
 === SiteOrigin Widgets Bundle ===
-Tags: bundle, widget, button, slider, image, carousel, price table
+Tags: bundle, widget, button, slider, image, carousel, price table, google maps, tinymce, social links
 Requires at least: 3.9
-Tested up to: 4.2
-Stable tag: 1.3.1
+Tested up to: 4.3
+Stable tag: 1.4.1
 License: GPLv3 or later
 Contributors: gpriday, braam-genis
 
@@ -50,7 +50,17 @@ The SiteOrigin Widgets Bundle is the perfect platform to build widgets for your 
 
 == Changelog ==
 
-= 1.4 =
+= 1.4.2 - August 18 2015 =
+* Urgent fix in preparation for WordPress 4.3 release
+
+= 1.4.1 - August 17 2015 =
+* Updated to latest Font Awesome.
+* Added TripAdvisor to social links widget.
+* Allow unfiltered HTML in SiteOrigin Editor Widget if user has rights.
+* Properly set URL scheme.
+* Fixed state emitter issue for Google Maps Widget.
+
+= 1.4 - July 20 2015 =
 * Created a base slider widget class.
 * Converted current slider widget to use base slider.
 * Fixed image sizing in slider widget.
