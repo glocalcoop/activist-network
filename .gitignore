@@ -24,18 +24,13 @@ wp-content/plugins/wp-example-content/readme.txt
 wp-content/plugins/wp-example-content/screenshot-1.png
 wp-content/plugins/wp-example-content/screenshot-2.png
 wp-content/plugins/wp-example-content/screenshot-3.png
-*.sass-cache
-
 
 # wp-content/themes/twentyfifteen/
 # wp-content/themes/twentyfourteen/
 # wp-content/themes/twentythirteen/
-wp-content/themes/twentythirteen/network-main-*
+wp-content/themes/network-main-*
+wp-content/themes/*/node_modules
 
-.brackets.json
-.gitignore~
-
-.htaccess~
 license.txt
 readme.html
 wp-activate.php
@@ -55,3 +50,7 @@ wp-signup.php
 wp-trackback.php
 xmlrpc.php
 
+.brackets.json
+*.sass-cache
+.gitignore~
+.htaccess~
