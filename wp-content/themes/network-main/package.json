@@ -1,0 +1,42 @@
+{
+  "name": "network-main",
+  "version": "1.1.2",
+  "description": "Theme for the main site of a multisite network. Based on the <a href=\"https://github.com/eddiemachado/bones\" title=\"Bones\">Bones Development Theme</a>.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-include": "^2.0.2",
+    "gulp-jshint": "^1.11.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.3.5",
+    "jshint-stylish": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glocalcoop/activist-network"
+  },
+  "keywords": [
+    "wordpress",
+    "multisite",
+    "activist",
+    "network",
+    "theme"
+  ],
+  "author": "Pea, Glocal",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/glocalcoop/activist-network/issues"
+  },
+  "homepage": "https://github.com/glocalcoop/activist-network"
+}
