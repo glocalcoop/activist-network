@@ -1,4 +1,14 @@
 @charset "UTF-8";
+/******************************************************************
+Theme Name: Network Main Theme
+Theme URI: https://github.com/glocalcoop/activist-network.git
+Description: Theme for the main site of a multisite network. Based on the <a href="https://github.com/eddiemachado/bones" title="Bones">Bones Development Theme</a>.
+Author: Pea, Glocal Coop
+Author URI: http://glocal.coop
+Version: 1.1.2
+Tags: clean, flexible-width, modularized
+Text Domain: network-main
+*/
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -187,6 +197,11 @@ th {
   display: table;
   clear: both; }
 
+.header-global:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 .is-hidden {
   display: none; }
 
@@ -268,7 +283,7 @@ div.css-search div.em-search-main div.em-search-geo:before {
 .bx-wrapper .bx-controls-direction .bx-prev:before {
   content: ''; }
 
-.nav-anchors .anchor-menu:before, .menu-item-has-children > a:before, .filter li.is-on:before,
+.nav-anchors .anchor-menu:before, .header-local .menu-item-has-children > a:before, .filter li.is-on:before,
 .sort li.is-on:before {
   content: ''; }
 
@@ -306,10 +321,10 @@ div.css-search div.em-search-main div.em-search-geo:before {
 html {
   line-height: 1.5;
   font-size: 80%; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     html {
       font-size: 90%; } }
-  @media (min-width: 1025px) {
+  @media screen and (min-width: 1025px) {
     html {
       font-size: 100%; } }
 
@@ -473,6 +488,13 @@ style a page via class
   color: #b8b6b2;
   text-transform: uppercase; }
 
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -525,7 +547,7 @@ hr {
   .content aside:last-child {
     margin-right: 0; }
 
-@media (min-width: 769px) {
+@media screen and (min-width: 878px) {
   .content main {
     display: block;
     float: left;
@@ -561,7 +583,7 @@ hr {
   background: #fff;
   margin: 20px 0;
   padding: 24px 24px 0; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .home-intro {
       display: block;
       float: left;
@@ -577,7 +599,7 @@ hr {
 
 .home-feature {
   border-top: 1px solid #b8b6b2; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .home-feature {
       display: block;
       float: left;
@@ -595,235 +617,41 @@ hr {
     padding: 20px 0; }
 
 .header-global {
-  background: #fcfdf9; }
+  background-color: #000;
+  padding-top: 10px; }
   .header-global .site-title {
     display: none;
-    margin: 0 15px 0 0;
-    padding: 0;
+    font-size: 14px;
     line-height: 1; }
-    @media (min-width: 769px) {
-      .header-global .site-title {
-        display: block;
-        float: left;
-        margin-right: 1.75788%;
-        width: 23.68159%; }
-        .header-global .site-title:last-child {
-          margin-right: 0; } }
-    .header-global .site-title img {
-      fill: #333231;
-      max-height: 40px; }
-    .header-global .site-title:hover img {
-      fill: #00a99d; }
     .header-global .site-title a {
       display: inline-block;
-      vertical-align: middle;
-      padding: .5em;
-      border: 2px solid #333231;
-      color: #333231; }
-    .header-global .site-title.network-logo a {
-      border: none;
-      padding: 0; }
-  @media (min-width: 769px) {
-    .header-global .nav-global {
-      display: block;
-      float: left;
-      margin-right: 1.75788%;
-      width: 100%; }
-      .header-global .nav-global:last-child {
-        margin-right: 0; } }
-  @media (min-width: 1025px) {
-    .header-global .nav-global {
-      display: block;
-      float: left;
-      margin-right: 1.75788%;
-      width: 74.56053%; }
-      .header-global .nav-global:last-child {
-        margin-right: 0; } }
+      padding: 7px;
+      border: 1px solid #fff;
+      white-space: nowrap;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase; }
+      .header-global .site-title a:hover,
+      .header-global .site-title a:focus {
+        background-color: #333231; }
 
-.nav-anchors {
-  margin: 0; }
-  .nav-anchors li {
-    display: inline-block;
-    margin: 0; }
-    .nav-anchors li:last-child {
-      float: right; }
-    .nav-anchors li > a {
-      color: #fff; }
-  .nav-anchors .anchor-menu {
-    font-size: 18px;
-    font-size: 1.125rem;
+@media screen and (min-width: 878px) {
+  .header-global .site-title {
     display: block;
-    padding: 20px 0; }
-    .nav-anchors .anchor-menu:before {
-      font-family: "ios7-icon";
-      font-style: normal;
-      font-size: inherit;
-      line-height: inherit;
-      margin-right: 0;
-      text-align: center;
-      display: inline-block;
-      color: inherit;
-      vertical-align: middle; }
-    .nav-anchors .anchor-menu:before {
-      float: right;
-      margin-left: 7px;
-      margin-top: 2px; }
-  .nav-anchors .anchor-search {
-    font-size: 22px;
-    font-size: 1.375rem;
-    display: block;
-    padding: 16px 0; }
-    .nav-anchors .anchor-search:before {
-      font-family: "ios7-icon";
-      font-style: normal;
-      font-size: inherit;
-      line-height: inherit;
-      margin-right: 0;
-      text-align: center;
-      display: inline-block;
-      color: inherit;
-      vertical-align: middle; }
-
-.nav-global {
-  background: transparent;
-  position: relative; }
-  .nav-global a {
-    color: #333231; }
-  .nav-global a:hover {
-    color: #00a99d; }
-  .nav-global .search-form {
-    float: right; }
-  .nav-global .search-form.active {
-    border-top: 1px solid #f5f3f0; }
-  .nav-global .menu {
-    position: absolute;
-    z-index: 4;
-    left: 0;
-    top: 62px;
-    background: #fff; }
-    .nav-global .menu a {
-      padding: 10px 20px;
-      color: #333231;
-      border-bottom: 1px solid #e6e4df; }
-    .nav-global .menu:first-child a {
-      border-top: 1px solid #e6e4df; }
-    .nav-global .menu a:focus,
-    .nav-global .menu a:hover {
-      background: #333231;
-      color: #fff; }
-
-@media (min-width: 769px) {
-  .site-title {
-    display: none; }
-  .nav-anchors {
-    display: none; }
-  .nav-global .search-form {
-    border: 0;
-    padding: 5px 0; }
-  .nav-global .menu {
-    position: static;
-    padding-right: 5px;
-    background: transparent; }
-    .nav-global .menu li {
-      font-size: 16px;
-      font-size: 1rem; }
-    .nav-global .menu > li a {
-      border: 0;
-      padding: 20px 10px; }
-    .nav-global .menu a:focus,
-    .nav-global .menu a:hover {
-      background: transparent;
-      color: #00a99d; }
-    .nav-global .menu li.current-menu-item,
-    .nav-global .menu li.current_page_item,
-    .nav-global .menu li.current-page-ancestor {
-      position: relative; }
-      .nav-global .menu li.current-menu-item:after,
-      .nav-global .menu li.current_page_item:after,
-      .nav-global .menu li.current-page-ancestor:after {
-        position: absolute;
-        content: '';
-        height: 0;
-        width: 0;
-        top: auto;
-        left: 50%;
-        bottom: 0;
-        z-index: 1;
-        border: solid transparent;
-        border-bottom-color: #f5f3f0;
-        border-width: 10px;
-        margin-left: -10px; }
-      .nav-global .menu li.current-menu-item a,
-      .nav-global .menu li.current_page_item a,
-      .nav-global .menu li.current-page-ancestor a {
-        color: #333231;
-        font-weight: bold; }
-      .nav-global .menu li.current-menu-item li a,
-      .nav-global .menu li.current_page_item li a,
-      .nav-global .menu li.current-page-ancestor li a {
-        font-weight: 300; }
-        .nav-global .menu li.current-menu-item li a:hover,
-        .nav-global .menu li.current-menu-item li a:focus,
-        .nav-global .menu li.current_page_item li a:hover,
-        .nav-global .menu li.current_page_item li a:focus,
-        .nav-global .menu li.current-page-ancestor li a:hover,
-        .nav-global .menu li.current-page-ancestor li a:focus {
-          color: #00a99d; }
-      .nav-global .menu li.current-menu-item li:after,
-      .nav-global .menu li.current_page_item li:after,
-      .nav-global .menu li.current-page-ancestor li:after {
-        border: none; }
-  .nav-global .sub-menu {
-    left: -10px; }
-    .nav-global .sub-menu li a {
-      padding: 10px 20px; }
-    .nav-global .sub-menu a:first-child {
-      border-top: 0; }
-  li.current-menu-item a:hover,
-  li.current_page_item a:hover {
-    color: #333231;
-    cursor: default; } }
-
-.nav-local {
-  background: #4d4c4a;
-  height: 44px; }
-  .nav-local .search-form {
-    float: right;
-    margin: 0 5px; }
-  .nav-local #searchform #searchsubmit {
-    background: #00a99d;
-    border-color: #00a99d; }
-  .nav-local .nav-anchors {
-    padding-right: 10px;
-    padding-left: 10px; }
-    .nav-local .nav-anchors a {
-      padding: 11px 0; }
-  .nav-local .menu li {
-    font-size: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px; }
-    .nav-local .menu li a {
-      padding: 11px 15px;
-      color: #00a99d; }
-      .nav-local .menu li a:hover {
-        color: #fff;
-        background: #00a99d; }
-    .nav-local .menu li.current-menu-item a {
-      background: #00a99d;
-      color: #fff; }
-
-@media (min-width: 769px) {
-  .nav-local .menu li a {
-    color: #fff;
-    padding: 14px 15px; }
-  .nav-local .sub-menu li a {
-    color: #00a99d; } }
+    float: left;
+    width: 20.83333%;
+    min-width: 175px;
+    margin-top: 0;
+    margin-bottom: 0; }
+  .header-global .nav-global {
+    float: left;
+    width: 79.16667%; } }
 
 .footer {
   background: #e6e4df; }
   .footer .global {
     padding: 30px 0; }
-    @media (min-width: 769px) {
+    @media screen and (min-width: 878px) {
       .footer .global {
         position: relative; } }
 
@@ -848,7 +676,7 @@ hr {
     display: block !important; }
   .footer .widget a, .footer .widget a:visited {
     color: #00a99d; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .footer .widget {
       display: block;
       float: left;
@@ -1020,7 +848,7 @@ hr {
       display: inline-block;
       color: inherit;
       vertical-align: middle; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .copyright {
       font-size: 12px;
       font-size: 0.75rem; } }
@@ -1040,7 +868,7 @@ hr {
   width: 100%;
   height: auto; }
 
-@media (min-width: 769px) {
+@media screen and (min-width: 878px) {
   .partner-logo {
     display: block;
     float: left;
@@ -1060,7 +888,7 @@ hr {
     color: #757472; }
   .partner-banner .site-name {
     margin-left: -4px; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .partner-banner {
       display: block;
       float: left;
@@ -1079,7 +907,7 @@ hr {
   clear: both;
   overflow: visible;
   position: relative; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .site-banner {
       height: auto;
       min-height: 140px;
@@ -1090,7 +918,7 @@ hr {
   height: 140px;
   overflow: hidden;
   background-color: #e6e4df; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .banner-inner {
       height: auto;
       min-height: 130px;
@@ -1125,7 +953,7 @@ hr {
   background: #fff;
   padding: 24px;
   margin-bottom: 24px; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .network-header .banner {
       display: block;
       float: left;
@@ -1146,8 +974,225 @@ NAVIGATION STYLES
 /* all menu lists have a .menu class applied via the 
 wp_menu function, so we can easily write one group of 
 styles and our css is cleaner and more scalable. */
-.menu,
-.sub-menu {
+.nav-global {
+  /* Small menu. */ }
+  .nav-global a,
+  .nav-global a:visited {
+    color: #fff; }
+    .nav-global a:hover,
+    .nav-global a:focus,
+    .nav-global a:visited:hover,
+    .nav-global a:visited:focus {
+      color: #e6e4df; }
+  .nav-global ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
+    .nav-global ul ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 1.5em;
+      left: -999em;
+      z-index: 99999;
+      margin-top: 10px;
+      margin-left: -10px;
+      background-color: #000; }
+      .nav-global ul ul ul {
+        left: -999em;
+        top: 0; }
+      .nav-global ul ul li {
+        padding: 7px; }
+        .nav-global ul ul li:hover > ul,
+        .nav-global ul ul li.focus > ul {
+          left: 100%; }
+      .nav-global ul ul a {
+        width: 200px; }
+    .nav-global ul li:hover > ul,
+    .nav-global ul li.focus > ul {
+      left: auto; }
+  .nav-global li {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0; }
+  .nav-global a {
+    display: block;
+    text-decoration: none; }
+  .nav-global .current_page_item,
+  .nav-global .current-menu-item,
+  .nav-global .current_page_ancestor {
+    background-color: #333231; }
+    .nav-global .current_page_item > a,
+    .nav-global .current-menu-item > a,
+    .nav-global .current_page_ancestor > a {
+      font-weight: bold; }
+  .nav-global .main-nav.active {
+    background-color: #000;
+    width: 100%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: block;
+    margin: 0;
+    left: 0;
+    z-index: 99999; }
+    .nav-global .main-nav.active li {
+      display: block;
+      padding: 5px 10px;
+      border-bottom: 1px solid #333231; }
+      .nav-global .main-nav.active li a {
+        display: inline-block; }
+      .nav-global .main-nav.active li:hover,
+      .nav-global .main-nav.active li:focus {
+        background-color: #333231; }
+      .nav-global .main-nav.active li:last-child {
+        border-bottom: none; }
+  .nav-global .nav-anchors,
+  .nav-global .main-nav.active {
+    display: block; }
+  .nav-global .nav-anchors {
+    padding-bottom: 10px; }
+  .nav-global .anchor-menu {
+    font-size: 14px;
+    line-height: 1;
+    display: inline-block;
+    padding: 7px;
+    border: 1px solid #fff;
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase; }
+    .nav-global .anchor-menu:hover,
+    .nav-global .anchor-menu:focus {
+      background-color: #333231; }
+  .nav-global .search-form {
+    display: none; }
+  .nav-global .search-form.active {
+    display: block; }
+
+@media screen and (min-width: 878px) {
+  .nav-global .main-nav,
+  .nav-global .main-nav.active {
+    display: block;
+    position: relative !important;
+    width: 81.11111% !important; }
+    .nav-global .main-nav > li,
+    .nav-global .main-nav.active > li {
+      display: inline-block;
+      padding: 5px 10px; }
+    .nav-global .main-nav li,
+    .nav-global .main-nav.active li {
+      border-bottom: none; }
+  .nav-global li {
+    font-size: 1em;
+    border-bottom: none; }
+    .nav-global li:hover,
+    .nav-global li:focus {
+      background-color: #333231; }
+    .nav-global li li {
+      border-bottom: 1px solid #333231; }
+  .nav-global .search-form {
+    display: block;
+    width: 18.88889%;
+    float: right;
+    min-width: 170px; } }
+
+.nav-anchors {
+  margin: 0; }
+  .nav-anchors li {
+    display: inline-block;
+    margin: 0; }
+    .nav-anchors li:last-child {
+      float: right; }
+    .nav-anchors li > a {
+      color: #fff; }
+  .nav-anchors .anchor-menu {
+    font-size: 14px;
+    line-height: 1;
+    display: inline-block;
+    padding: 7px;
+    border: 1px solid #fff;
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase; }
+    .nav-anchors .anchor-menu:before {
+      font-family: "ios7-icon";
+      font-style: normal;
+      font-size: inherit;
+      line-height: inherit;
+      margin-right: 0;
+      text-align: center;
+      display: inline-block;
+      color: inherit;
+      vertical-align: middle; }
+    .nav-anchors .anchor-menu:hover,
+    .nav-anchors .anchor-menu:focus {
+      background-color: #333231; }
+    .nav-anchors .anchor-menu:before {
+      float: right;
+      margin-left: 7px;
+      margin-top: 2px; }
+  .nav-anchors .anchor-search {
+    font-size: 22px;
+    font-size: 1.375rem;
+    display: block;
+    padding: 0; }
+    .nav-anchors .anchor-search:before {
+      font-family: "ios7-icon";
+      font-style: normal;
+      font-size: inherit;
+      line-height: inherit;
+      margin-right: 0;
+      text-align: center;
+      display: inline-block;
+      color: inherit;
+      vertical-align: middle; }
+
+@media screen and (min-width: 878px) {
+  .nav-global .nav-anchors {
+    display: none; } }
+
+.nav-local {
+  background: #4d4c4a;
+  height: 44px; }
+  .nav-local .search-form {
+    float: right;
+    margin: 0 5px; }
+  .nav-local #searchform #searchsubmit {
+    background: #00a99d;
+    border-color: #00a99d; }
+  .nav-local .nav-anchors {
+    padding-right: 10px;
+    padding-left: 10px; }
+    .nav-local .nav-anchors a {
+      padding: 11px 0; }
+  .nav-local .menu li {
+    font-size: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+    .nav-local .menu li a {
+      padding: 11px 15px;
+      color: #00a99d; }
+      .nav-local .menu li a:hover {
+        color: #fff;
+        background: #00a99d; }
+    .nav-local .menu li.current-menu-item a {
+      background: #00a99d;
+      color: #fff; }
+
+@media screen and (min-width: 878px) {
+  .nav-local .menu li a {
+    color: #fff;
+    padding: 14px 15px; }
+  .nav-local .sub-menu li a {
+    color: #00a99d; } }
+
+.header-local .menu,
+.header-local .sub-menu {
   margin: 0;
   width: 100%;
   background: #fff;
@@ -1155,26 +1200,26 @@ styles and our css is cleaner and more scalable. */
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out; }
 
-.sub-menu {
+.header-local .sub-menu {
   background: rgba(0, 0, 0, 0.05); }
 
-.menu li {
+.header-local .menu li {
   margin: 0;
   display: block;
   white-space: nowrap;
   line-height: 1; }
 
-.menu a {
+.header-local .menu a {
   display: block;
   text-decoration: none;
   color: #333231;
   padding: 0.8em;
   position: relative; }
-  .menu a:focus,
-  .menu a:hover {
+  .header-local .menu a:focus,
+  .header-local .menu a:hover {
     color: #00a99d; }
 
-.menu-item-has-children > a:before {
+.header-local .menu-item-has-children > a:before {
   font-family: "ios7-icon";
   font-style: normal;
   font-size: inherit;
@@ -1185,12 +1230,33 @@ styles and our css is cleaner and more scalable. */
   color: inherit;
   vertical-align: middle; }
 
-.menu-item-has-children > a:before {
+.header-local .menu-item-has-children > a:before {
   float: right;
   margin-left: 6px;
   margin-top: 3px;
   font-size: 14px;
   font-size: 0.875rem; }
+
+@media screen and (min-width: 878px) {
+  .header-local .menu {
+    background: none;
+    border: 0;
+    width: auto; }
+    .header-local .menu li {
+      display: inline-block;
+      margin-right: -2px;
+      position: relative; }
+  .header-local .sub-menu {
+    background: #fff;
+    position: absolute;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    width: 12em; }
+    .header-local .sub-menu li {
+      display: block; }
+    .header-local .sub-menu a {
+      padding: 11px 0; } }
 
 .js .menu,
 .js .sub-menu {
@@ -1201,7 +1267,7 @@ styles and our css is cleaner and more scalable. */
     max-height: 480px;
     overflow: visible; }
 
-@media (min-width: 769px) {
+@media screen and (min-width: 878px) {
   .js .menu,
   .js .sub-menu {
     max-height: none;
@@ -1209,26 +1275,7 @@ styles and our css is cleaner and more scalable. */
   .js .sub-menu {
     display: none; }
   .js li:hover .sub-menu {
-    display: block; }
-  .menu {
-    background: none;
-    border: 0;
-    width: auto; }
-    .menu li {
-      display: inline-block;
-      margin-right: -2px;
-      position: relative; }
-  .sub-menu {
-    background: #fff;
-    position: absolute;
-    z-index: 99;
-    top: 100%;
-    left: 0;
-    width: 12em; }
-    .sub-menu li {
-      display: block; }
-    .sub-menu a {
-      padding: 11px 0; } }
+    display: block; } }
 
 .toggle {
   float: right; }
@@ -1255,7 +1302,7 @@ styles and our css is cleaner and more scalable. */
   -webkit-transition: max-height 0.25s ease;
   -moz-transition: max-height 0.25s ease;
   transition: max-height 0.25s ease; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .filter,
     .sort {
       display: block;
@@ -1265,7 +1312,7 @@ styles and our css is cleaner and more scalable. */
       .filter:last-child,
       .sort:last-child {
         margin-right: 0; } }
-  @media (min-width: 1025px) {
+  @media screen and (min-width: 1025px) {
     .filter,
     .sort {
       display: block;
@@ -1598,7 +1645,7 @@ POSTS & CONTENT STYLES
   width: 100%;
   height: 100px;
   margin-right: 0; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     #isotope.view-list li {
       display: block;
       float: left;
@@ -1653,7 +1700,7 @@ POSTS & CONTENT STYLES
   margin-bottom: 0;
   height: 150px;
   overflow: hidden; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .highlights .module-heading {
       display: block;
       float: left;
@@ -1692,7 +1739,7 @@ POSTS & CONTENT STYLES
     .highlights-list .post-date a,
     .highlights-list .byline a {
       color: #757472; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .highlights-list {
       display: block;
       float: left;
@@ -1731,7 +1778,7 @@ POSTS & CONTENT STYLES
     .home .sites-list li:nth-child(2n+1),
     .page-template-page-directory .sites-list li:nth-child(2n+1) {
       clear: left; }
-    @media (min-width: 769px) {
+    @media screen and (min-width: 878px) {
       .home .sites-list li,
       .page-template-page-directory .sites-list li {
         display: block;
@@ -1963,7 +2010,7 @@ SIDEBARS & ASIDES
 .home .widget_glocal_network_posts_widget .post-author {
   display: none; }
 
-@media (min-width: 481px) {
+@media screen and (min-width: 481px) {
   .news-list li,
   .home .widget_glocal_network_posts_widget li {
     display: block;
@@ -2135,7 +2182,7 @@ article .post-image {
 form {
   background: #e6e4df;
   padding: 20px; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     form {
       padding: 40px; } }
   form p {
@@ -2178,7 +2225,7 @@ input[type='submit'] {
   width: 100%;
   margin: 0;
   padding: 0; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .search-form {
       display: inline-block;
       width: auto;
@@ -2192,7 +2239,7 @@ input[type='submit'] {
   transition: max-height 0.2s ease-in-out; }
   .js .search-form.active {
     max-height: 50px; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .js .search-form {
       max-height: none; } }
 
@@ -2213,7 +2260,7 @@ input[type='submit'] {
     padding: 5px;
     margin: 0;
     vertical-align: top; }
-    @media (min-width: 769px) {
+    @media screen and (min-width: 878px) {
       #searchform #s {
         font-size: 14px;
         font-size: 0.875rem;
@@ -2244,7 +2291,7 @@ input[type='submit'] {
       display: inline-block;
       color: inherit;
       vertical-align: middle; }
-    @media (min-width: 769px) {
+    @media screen and (min-width: 878px) {
       #searchform #searchsubmit {
         font-size: 16px;
         font-size: 1rem;
@@ -2604,7 +2651,7 @@ article.home-feature div.bx-wrapper .bx-viewport {
 .em-events-search-form {
   background: white;
   padding: 2px 10px; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .em-events-search-form {
       padding: 2px 20px; } }
 
@@ -2630,7 +2677,7 @@ div.css-search {
         display: inline-block;
         color: inherit;
         vertical-align: middle; }
-      @media (min-width: 481px) {
+      @media screen and (min-width: 481px) {
         div.css-search div.em-search-main div.em-search-field {
           font-size: 36px;
           font-size: 2.25rem; } }
@@ -2638,7 +2685,7 @@ div.css-search {
         font-size: 20px;
         font-size: 1.25rem;
         color: #b8b6b2; }
-        @media (min-width: 481px) {
+        @media screen and (min-width: 481px) {
           div.css-search div.em-search-main div.em-search-field input {
             font-size: 24px;
             font-size: 1.5rem; } }
@@ -2647,7 +2694,7 @@ div.css-search {
           font-size: 1.25rem;
           line-height: 16px;
           color: #b8b6b2; }
-          @media (min-width: 481px) {
+          @media screen and (min-width: 481px) {
             div.css-search div.em-search-main div.em-search-field input::-webkit-input-placeholder {
               font-size: 24px;
               font-size: 1.5rem; } }
@@ -2656,7 +2703,7 @@ div.css-search {
           font-size: 1.25rem;
           line-height: 16px;
           color: #b8b6b2; }
-          @media (min-width: 481px) {
+          @media screen and (min-width: 481px) {
             div.css-search div.em-search-main div.em-search-field input:-moz-placeholder {
               font-size: 24px;
               font-size: 1.5rem; } }
@@ -2665,7 +2712,7 @@ div.css-search {
           font-size: 1.25rem;
           line-height: 16px;
           color: #b8b6b2; }
-          @media (min-width: 481px) {
+          @media screen and (min-width: 481px) {
             div.css-search div.em-search-main div.em-search-field input::-moz-placeholder {
               font-size: 24px;
               font-size: 1.5rem; } }
@@ -2674,11 +2721,11 @@ div.css-search {
           font-size: 1.25rem;
           line-height: 16px;
           color: #b8b6b2; }
-          @media (min-width: 481px) {
+          @media screen and (min-width: 481px) {
             div.css-search div.em-search-main div.em-search-field input:-ms-input-placeholder {
               font-size: 24px;
               font-size: 1.5rem; } }
-    @media (min-width: 321px) {
+    @media screen and (min-width: 321px) {
       div.css-search div.em-search-main div.em-search-geo {
         display: inline-block; } }
     div.css-search div.em-search-main .em-search-submit {
@@ -2726,7 +2773,7 @@ div.css-search {
   .css-events-list .event {
     padding: 10px 0;
     clear: both; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .css-events-list .event-header {
       display: block;
       float: left;
@@ -2760,13 +2807,13 @@ div.css-search {
         color: #333231; }
   .css-events-list .event-header span {
     padding-right: 5px; }
-    @media (min-width: 481px) {
+    @media screen and (min-width: 481px) {
       .css-events-list .event-header span {
         display: block; } }
   .css-events-list .event-header .event-time {
     font-size: 75%;
     margin-top: .75em; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .css-events-list .event-content {
       display: block;
       float: left;
@@ -2779,7 +2826,7 @@ div.css-search {
     .css-events-list .event-image img {
       display: block;
       margin: 0; }
-    @media (min-width: 769px) {
+    @media screen and (min-width: 878px) {
       .css-events-list .event-image {
         float: right;
         width: 33%;
@@ -2789,7 +2836,7 @@ div.css-search {
         margin-bottom: 10px; } }
   .css-events-list .event-title {
     margin: 0.75em 0 0.25em; }
-    @media (min-width: 769px) {
+    @media screen and (min-width: 878px) {
       .css-events-list .event-title {
         margin-top: .25em; } }
   .css-events-list .event-location {
@@ -2797,7 +2844,7 @@ div.css-search {
     margin-bottom: 1em; }
     .css-events-list .event-location span {
       display: block; }
-      @media (min-width: 321px) {
+      @media screen and (min-width: 321px) {
         .css-events-list .event-location span {
           display: inline;
           padding-right: 5px; }
@@ -2823,19 +2870,19 @@ div.css-search {
   max-height: 150px;
   overflow: hidden;
   margin-bottom: 1.5em; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .single-event .event-image {
       max-height: 300px; } }
   .single-event .event-image img {
     border: 0;
     display: block; }
 
-@media (min-width: 481px) {
+@media screen and (min-width: 481px) {
   .single-event .event-details {
     float: left;
     width: 33%; } }
 
-@media (min-width: 481px) {
+@media screen and (min-width: 481px) {
   .single-event .event-details h4 span {
     display: block; } }
 
@@ -2843,7 +2890,7 @@ div.css-search {
 .single-event .location {
   margin: .75em 0;
   line-height: 1.5; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .single-event .date-time,
     .single-event .location {
       margin-bottom: 1.5em; } }
@@ -2855,7 +2902,7 @@ div.css-search {
 .single-event .location-address {
   font-size: 75%;
   display: block; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .single-event .event-time,
     .single-event .location-address {
       margin-top: .75em; } }
@@ -2863,13 +2910,13 @@ div.css-search {
 .single-event .tools {
   margin: 1.5em 0;
   margin-right: 10px; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .single-event .tools {
       margin-top: 2.25em; } }
 
 .single-event .event-description {
   margin: 2em 0; }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .single-event .event-description {
       padding-left: 34%;
       padding-right: 20px; } }
@@ -2948,7 +2995,7 @@ table.em-calendar {
   -webkit-transition: background 0.25s ease;
   -moz-transition: background 0.25s ease;
   transition: background 0.25s ease; }
-  @media (min-width: 321px) {
+  @media screen and (min-width: 321px) {
     .home-modules .events-list li,
     .home-modules .widget_em_widget ul li {
       display: block;
@@ -2965,7 +3012,7 @@ table.em-calendar {
       .home-modules .events-list li:nth-child(2n+1),
       .home-modules .widget_em_widget ul li:nth-child(2n+1) {
         clear: left; } }
-  @media (min-width: 481px) {
+  @media screen and (min-width: 481px) {
     .home-modules .events-list li,
     .home-modules .widget_em_widget ul li {
       display: block;
@@ -3026,7 +3073,7 @@ table.em-calendar {
   padding: 10px 0;
   max-height: 90px;
   overflow: hidden; }
-  @media (min-width: 321px) {
+  @media screen and (min-width: 321px) {
     .home-modules .event-title {
       font-size: 20px;
       font-size: 1.25rem;
@@ -3341,7 +3388,7 @@ article.home-feature div.bx-wrapper .bx-viewport {
   line-height: 30px; }
 
 .logo-NYCP,
-.logo-network {
+.domain-logo {
   font-size: 18px;
   font-size: 1.125rem;
   text-transform: uppercase;
@@ -3355,7 +3402,7 @@ article.home-feature div.bx-wrapper .bx-viewport {
   -moz-transition: color 0.25s ease;
   transition: color 0.25s ease; }
   .logo-NYCP span,
-  .logo-network span {
+  .domain-logo span {
     display: inline-block;
     border: 3px solid #fff;
     padding: 3px 5px;
@@ -3364,21 +3411,21 @@ article.home-feature div.bx-wrapper .bx-viewport {
     -moz-transition: border-color 0.25s ease;
     transition: border-color 0.25s ease; }
   .logo-NYCP:visited,
-  .logo-network:visited {
+  .domain-logo:visited {
     color: #fff; }
   .logo-NYCP:hover,
   .logo-NYCP:focus,
   .logo-NYCP:visited:hover,
-  .logo-network:hover,
-  .logo-network:focus,
-  .logo-network:visited:hover {
+  .domain-logo:hover,
+  .domain-logo:focus,
+  .domain-logo:visited:hover {
     color: #333231; }
     .logo-NYCP:hover span,
     .logo-NYCP:focus span,
     .logo-NYCP:visited:hover span,
-    .logo-network:hover span,
-    .logo-network:focus span,
-    .logo-network:visited:hover span {
+    .domain-logo:hover span,
+    .domain-logo:focus span,
+    .domain-logo:visited:hover span {
       border-color: #333231; }
 
 .tagline-NYCP,
@@ -3483,7 +3530,7 @@ body.overview .promo-intro {
   margin-left: 8.5298%; }
   body.overview .promo-intro:last-child {
     margin-right: 0; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     body.overview .promo-intro {
       width: 75%;
       margin-left: 12.5%; } }
@@ -3575,7 +3622,7 @@ body.overview .promo-intro {
   .value-problem:last-child,
   .value-solution:last-child {
     margin-right: 0; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .value-problem,
     .value-solution {
       display: block;
@@ -3644,7 +3691,7 @@ body.overview .promo-intro {
 .services-promo .wp-caption {
   width: 130px !important;
   height: 153px !important; }
-  @media (min-width: 1025px) {
+  @media screen and (min-width: 1025px) {
     .services-promo .wp-caption {
       width: 153px !important;
       padding-top: 10px; }
@@ -3665,7 +3712,7 @@ body.overview .promo-intro {
     margin-top: 20px; }
     .glocal-promo img:last-child {
       margin-right: 0; }
-  @media (min-width: 769px) {
+  @media screen and (min-width: 878px) {
     .glocal-promo img {
       width: 30%;
       height: auto;

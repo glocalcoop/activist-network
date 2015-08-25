@@ -101,12 +101,6 @@ styles and our css is cleaner and more scalable. */
     .current-menu-item > a,
     .current_page_ancestor > a {}
 
-    /* Small menu. */
-    .nav-anchors,
-    .main-nav.active {
-        display: block;
-    }
-
     // Active Mobile Menu
     .main-nav.active {
         background-color: $black;
@@ -116,10 +110,6 @@ styles and our css is cleaner and more scalable. */
         display: block;
         margin: 0;
         left: 0;
-        //float: left;
-        // top: 1.5em;
-        // left: -999em;
-        //padding: 10px 0;
         z-index: 99999;
 
         li {
@@ -143,7 +133,17 @@ styles and our css is cleaner and more scalable. */
         }
     }
 
-    a.anchor-menu {
+    /* Small menu. */
+    .nav-anchors,
+    .main-nav.active {
+        display: block;
+    }
+
+    .nav-anchors {
+        padding-bottom: 10px;
+    }
+
+    .anchor-menu {
         font-size: 14px;
         line-height: 1;
         display: inline-block;
@@ -160,16 +160,20 @@ styles and our css is cleaner and more scalable. */
         }
     }
 
+    .search-form {
+        display: none;
+    }
+    .search-form.active {
+        display: block;
+    }
+
 }
 
-
+// BREAKPOINT
 @include breakpoint(md) {
 
     .nav-global {
 
-        .nav-anchors {
-            display: none;
-        }
         .main-nav,
         .main-nav.active {
             display: block;
@@ -179,6 +183,10 @@ styles and our css is cleaner and more scalable. */
             &>li {
                 display: inline-block;
                 padding: 5px 10px;
+            }
+
+            li {
+                border-bottom: none;
             }
         }
 
@@ -199,15 +207,68 @@ styles and our css is cleaner and more scalable. */
         .search-form {
             display: block;
             width: 170/900 * 100%;
-            min-width: 170px;
-
-            #searchform {
-                margin: 0;
-            }            
+            float: right;
+            min-width: 170px;       
         }
 
     }
 
+}
+
+
+// MOBILE
+
+.nav-anchors {
+    margin: 0;
+    li {
+        display: inline-block;
+        margin: 0;
+        &:last-child {
+            float: right;
+        }
+        & > a {
+            color: $white;
+        }
+    }
+    .anchor-menu {
+        @include font-icon-base($family:"ios7-icon"); 
+        @extend %ios7-down;
+        font-size: 14px;
+        line-height: 1;
+        display: inline-block;
+        padding: 7px;
+        border: 1px solid $white;
+        white-space: nowrap;
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+            background-color: $base2;
+        }
+        &:before {
+            float: right;
+            margin-left: 7px;
+            margin-top: 2px;
+        }
+    }
+    .anchor-search {
+        @include font-icon-base($family:"ios7-icon"); 
+        @extend %ios7-search;
+        @include font-size($delta); 
+        display: block;
+        padding: 0;
+    }
+}
+
+// BREAKPOINT - DESKTOP
+@include breakpoint(md) {
+    .nav-global {
+        .nav-anchors {
+            display: none;
+        }
+    }
 }
 
 
@@ -318,10 +379,6 @@ styles and our css is cleaner and more scalable. */
         }
     }
 
-
-
-
-
     // NAVIGATION: HORIZONTAL
 
     @include breakpoint(md) {
@@ -386,49 +443,6 @@ styles and our css is cleaner and more scalable. */
         }
     }
 
-}
-
-
-// mobile buttons to reveal full menus
-
-.nav-anchors {
-    margin: 0;
-    li {
-        display: inline-block;
-        margin: 0;
-        &:last-child {
-            float: right;
-        }
-        & > a {
-            color: $white;
-        }
-    }
-    .anchor-menu {
-        @include font-icon-base($family:"ios7-icon"); 
-        @extend %ios7-down;
-        @include font-size($epsilon); 
-        display: block;
-        padding: 20px 0;
-        &:before {
-            float: right;
-            margin-left: 7px;
-            margin-top: 2px;
-        }
-    }
-    .anchor-search {
-        @include font-icon-base($family:"ios7-icon"); 
-        @extend %ios7-search;
-        @include font-size($delta); 
-        display: block;
-        padding: 10px 0;
-    }
-}
-
-// BREAKPOINT - DESKTOP
-@include breakpoint(md) {
-    .nav-anchors {
-        display: none;
-    }
 }
 
 
@@ -561,4 +575,3 @@ $f-height: 2.5em; // set variable for this menu
 	}
 
 }
-

@@ -48,7 +48,7 @@ Text Domain: network-main
 @import "modules/alerts";
 
 
-// PLUGINS/ADD-ONS
+// // PLUGINS/ADD-ONS
 @import "plugins/biographia";
 @import "plugins/bxslider";
 @import "plugins/easymail";
@@ -59,13 +59,8 @@ Text Domain: network-main
 @import "plugins/glocalnetworkcontent";
 
 
-// CUSTOM THEME
-// if you've forked this theme, delete this folder and add your own
+// // CUSTOM THEME
+// // if you've forked this theme, delete this folder and add your own
 @import "anp/footer";
 @import "anp/sidebar";
 @import "anp/overview";
-
-
-
-
-

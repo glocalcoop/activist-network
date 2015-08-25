@@ -47,12 +47,13 @@
 }
 
 // for semantic markup, a la http://blog.teamtreehouse.com/a-better-clearfix-with-sass
-%clearfix:after {
+%clearfix {
+  &:after {
     content: "";
     display: table;
     clear: both;
+  }
 }
-
 
 // BUTTON THAT FLIPS BG/TEXT COLORS ON HOVER
 

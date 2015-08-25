@@ -4,9 +4,10 @@
 
 .header-global {
 
+    @extend %clearfix;
+
     // Customize this with something dark
     background-color: $black;
-
     padding-top: 10px;
 
     // Logo
@@ -41,7 +42,7 @@
 
     .header-global {
 
-        padding: 10px;
+        //padding: 10px;
 
         // Logo
         .site-title {
