@@ -3011,26 +3011,6 @@ styles and our css is cleaner and more scalable. */
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out; }
-    .nav-global ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 1.5em;
-      left: -999em;
-      z-index: 99999;
-      margin-top: 10px;
-      margin-left: -10px;
-      background-color: #000; }
-      .nav-global ul ul ul {
-        left: -999em;
-        top: 0; }
-      .nav-global ul ul li {
-        padding: 7px; }
-        .nav-global ul ul li:hover > ul,
-        .nav-global ul ul li.focus > ul {
-          left: 100%; }
-      .nav-global ul ul a {
-        width: 200px; }
     .nav-global ul li:hover > ul,
     .nav-global ul li.focus > ul {
       left: auto; }
@@ -3105,6 +3085,26 @@ styles and our css is cleaner and more scalable. */
     .nav-global .main-nav li,
     .nav-global .main-nav.active li {
       border-bottom: none; }
+  .nav-global ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute;
+    top: 1.5em;
+    left: -999em;
+    z-index: 99999;
+    margin-top: 10px;
+    margin-left: -10px;
+    background-color: #000; }
+    .nav-global ul ul ul {
+      left: -999em;
+      top: 0; }
+    .nav-global ul ul li {
+      padding: 7px; }
+      .nav-global ul ul li:hover > ul,
+      .nav-global ul ul li.focus > ul {
+        left: 100%; }
+    .nav-global ul ul a {
+      width: 200px; }
   .nav-global li {
     font-size: 1em;
     border-bottom: none; }
@@ -3285,6 +3285,11 @@ styles and our css is cleaner and more scalable. */
   .js .sub-menu.active {
     max-height: 480px;
     overflow: visible; }
+
+.js li:hover .sub-menu {
+  display: block;
+  max-height: none;
+  overflow: visible; }
 
 @media screen and (min-width: 878px) {
   .js .menu,

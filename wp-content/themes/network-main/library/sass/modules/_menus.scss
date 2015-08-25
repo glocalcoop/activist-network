@@ -29,49 +29,12 @@ styles and our css is cleaner and more scalable. */
         padding-left: 0;
         @include transition(all 0.3s ease-out);
 
-        ul {
-            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-            float: left;
-            position: absolute;
-            top: 1.5em;
-            left: -999em;
-            z-index: 99999;
-            margin-top: 10px;
-            margin-left: -10px;
-            background-color: $black;
-
-            ul {
-                left: -999em;
-                top: 0;
-            }
-
-            li {
-                padding: 7px;
-
-                &:hover > ul,
-                &.focus > ul {
-                    left: 100%;
-                }
-            }
-
-            a {
-                width: 200px;
-            }
-
-            &:hover > a,
-            .focus > a {
-            }
-
-            a:hover,
-            a.focus {
-            }
-        }
-
         li:hover > ul,
         li.focus > ul {
             left: auto;
         }
     }
+
     li {
         //float: left;
         display: inline-block;
@@ -189,6 +152,51 @@ styles and our css is cleaner and more scalable. */
                 border-bottom: none;
             }
         }
+
+        // Submenu
+
+        ul {
+
+            ul {
+                box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+                float: left;
+                position: absolute;
+                top: 1.5em;
+                left: -999em;
+                z-index: 99999;
+                margin-top: 10px;
+                margin-left: -10px;
+                background-color: $black;
+
+                ul {
+                    left: -999em;
+                    top: 0;
+                }
+
+                li {
+                    padding: 7px;
+
+                    &:hover > ul,
+                    &.focus > ul {
+                        left: 100%;
+                    }
+                }
+
+                a {
+                    width: 200px;
+                }
+
+                &:hover > a,
+                .focus > a {
+                }
+
+                a:hover,
+                a.focus {
+                }
+            }
+
+        }
+
 
         li {
             font-size: 1em;
@@ -423,6 +431,11 @@ styles and our css is cleaner and more scalable. */
             max-height: 480px;
             overflow: visible;
         }
+    }
+    li:hover .sub-menu {
+        display: block;
+        max-height: none;
+        overflow: visible;
     }
 }
 
