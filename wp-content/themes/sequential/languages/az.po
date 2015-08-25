@@ -1,0 +1,302 @@
+# Translation of Sequential in Azerbaijani
+# This file is distributed under the same license as the Sequential package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-06-24 12:37:54+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
+"Project-Id-Version: Sequential\n"
+
+#: archive-jetpack-testimonial.php:23
+msgid "Testimonials"
+msgstr "Xarakteristikalar"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/sequential/style.css
+msgid "Sequential is a contemporary, clean, and multi-purpose business theme."
+msgstr "Sequential is a contemporary, clean, and multi-purpose business theme."
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/front-page.php
+msgid "Front Page"
+msgstr "Ön Səhifə"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr " %s üçün Axtarışın Nəticələri:"
+
+#: inc/template-tags.php:201
+msgid "% Comments"
+msgstr "% Şərh"
+
+#: inc/template-tags.php:201
+msgid "1 Comment"
+msgstr "1 Şərh"
+
+#: inc/template-tags.php:201
+msgid "Leave a comment"
+msgstr "Şərh yaz"
+
+#: inc/template-tags.php:195
+msgid "Tagged %1$s"
+msgstr "%1$s Etiketləndi"
+
+#: inc/template-tags.php:189
+msgid "Posted in %1$s"
+msgstr "%1$s içində dərc edildi"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:187 inc/template-tags.php:193
+msgid ", "
+msgstr ","
+
+#: inc/template-tags.php:167
+msgid "Featured"
+msgstr "Xüsusi"
+
+#: inc/template-tags.php:141
+msgid "All %s posts"
+msgstr "bütün %s  yazıları"
+
+#: inc/template-tags.php:79
+msgid "<span class=\"meta-nav\">Next Post</span>%title"
+msgstr "<span class=\"meta-nav\">Sonrakı Yazı</span>%title"
+
+#: inc/template-tags.php:72
+msgid "<span class=\"meta-nav\">Published In</span>%title"
+msgstr "<span class=\"meta-nav\">Dərc edildi</span>%title"
+
+#: inc/template-tags.php:78
+msgid "<span class=\"meta-nav\">Previous Post</span>%title"
+msgstr "<span class=\"meta-nav\">Öncəki Yazı</span>%title"
+
+#: inc/template-tags.php:68
+msgid "Post navigation"
+msgstr "Yazı naviqasiyaları"
+
+#: inc/template-tags.php:42
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Yeni yazılar <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:30
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Əski yazılar"
+
+#: inc/template-tags.php:21
+msgid "Posts navigation"
+msgstr "Yazı naviqasiyaları"
+
+#: inc/extras.php:83
+msgid "Page %s"
+msgstr "Səhifə %s"
+
+#: inc/customizer.php:20
+msgid "Theme"
+msgstr "Mövzu"
+
+#: header.php:45
+msgid "Menu"
+msgstr "Menyu"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Source Code Pro, translate this to 'off'. Do not translate into your
+#. own language.
+#: functions.php:186
+msgctxt "Source Code Pro font: on or off"
+msgid "on"
+msgstr "açıq"
+
+#: header.php:23
+msgid "Skip to content"
+msgstr "Mühtəviyyata keç"
+
+#. translators: To add an additional Open Sans character subset specific to
+#. your language,
+#. * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate
+#. into your own language.
+#: functions.php:154
+msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr "altset yoxdur"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Montserrat, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:126
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr "açıq"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:148
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "açıq"
+
+#: functions.php:104
+msgid "Footer"
+msgstr "Zirzəmi"
+
+#: functions.php:95
+msgid "Sidebar"
+msgstr "Yan menyu"
+
+#: functions.php:60
+msgid "Footer Menu"
+msgstr "Zirzəmi Menyusu"
+
+#: functions.php:59
+msgid "Primary Menu"
+msgstr "Əsas menyu"
+
+#: footer.php:32
+msgid "Theme: %1$s by %2$s."
+msgstr "Mövzu: %1$s tərəfindən %2$s."
+
+#: footer.php:30
+msgid "Proudly powered by %s"
+msgstr "%s qürurla təqdim edər"
+
+#: footer.php:30
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Oxumağa davam et <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:24 content-single.php:26 content.php:27
+msgid "Pages:"
+msgstr "Səhifələr:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Axtardığınız səhifə tapılmadı. Bəlkə axtarış qutusu axtardığınızı tapmaqda sizə kömək edər."
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Bağışlayın, axtarış kriteriyalarınıza uyğun heç bir şey tapılmadı. Bəzi fərqli açar kəlmələrdən istifadə edərək təkrar yoxlayın."
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "İlk yazınızı dərc etməyə hazırsınızmı? <a href=\"%1$s\">Buradan başlayın</a>."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Tapılmadı"
+
+#: content-grid.php:16
+msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Davamını oxu <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-grid.php:19 content-page.php:32 inc/template-tags.php:175
+#: page-templates/front-page.php:26
+msgid "Edit"
+msgstr "Redaktə et"
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr "Şərh üçün bağlıdır."
+
+#: comments.php:47
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Yeni Şərhlər <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Əski Şərhlər"
+
+#: comments.php:45
+msgid "Comment navigation"
+msgstr "Şərh naviqasiyası"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo; üzərinə bir şərh"
+msgstr[1] "&ldquo;%2$s&rdquo; üzərinə %1$s şərh"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "Arxivlər"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Söhbətlər"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Audiolar"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "Statuslar"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Bağlantılar"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Sitatlar"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Videolar"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Təsvirlər"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Qalereyalar"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Kənarlar"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "İ"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Ay: %s"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "Fİ"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Ay: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Gün: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Müəllif: %s"
+
+#. translators: %1$s: smiley
+#: 404.php:29
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Aylıq arxivlərə baxmağı yoxlayın. %1$s"
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Burada heç bir şeyin tapılmadığı görünür. Bəlkə aşağıdakı bağlantılardan birini yoxlayasan və ya bir axtarış edəsən?"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Bağışlayın! Bu səhifə tapılmır."

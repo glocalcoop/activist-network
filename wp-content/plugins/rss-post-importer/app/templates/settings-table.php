@@ -53,6 +53,7 @@
 								<dt><code>&lcub;$title&rcub;</code></dt>
 								<dt><code>&lcub;$feed_title&rcub;</code></dt>
 								<dt><code>&lcub;$excerpt:n&rcub;</code></dt>
+								<dt><code>&lcub;$inline_image&rcub;</code> <small>insert the featured image inline into the post content</small></dt>
 							</dl>
 							</p>
 						</td>
@@ -64,7 +65,7 @@
 
 								$value = str_replace(array('\r', '\n'), array(chr(13), chr(10)), $value);
 
-								echo stripslashes($value);
+								echo esc_textarea(stripslashes($value));
 								?></textarea>
 						</td>
 					</tr>
@@ -273,7 +274,6 @@
 						?>
 							<input type="submit" value="Export your Feeds and Setting as CSV File" name="csv_download" class="button button-primary button-large"<?php echo $disabled; ?> />     
 						</td> 
-
 					</tr>
 					<tr>
 						<td>
@@ -296,11 +296,42 @@ strip_html = strip html tags - "true" or "false"', "rss_pi"); ?></p>
 						$disabled = '';
 						if (!$this->is_key_valid) {
 							$disabled = ' disabled="disabled"';
-//								$this->key_error($this->key_prompt, true);
 							$this->key_error( sprintf( $this->key_prompt, '', 'http://www.feedsapi.com/?utm_source=rsspostimporter&utm_medium=upgrade&utm_term=import-feeds&utm_content=rsspi-full-rss-key-here&utm_campaign=wordpress' ), true );
 						}
 						?>
 							<input type="file" name="import_csv"<?php echo $disabled; ?> />
+						</td> 
+					</tr>
+					<tr>
+						<td>
+							<?php _e('Export and backup your Feeds as OPML File', "rss_pi"); ?>
+							<p class="description"><?php _e('This option will help you download an OPML file with all your feeds so you can upload it back later.', "rss_pi"); ?></p>
+						</td>
+						<td>
+						<?php
+						$disabled = '';
+						if (!$this->is_key_valid) {
+							$disabled = ' disabled="disabled"';
+							$this->key_error( sprintf( $this->key_prompt, '', 'http://www.feedsapi.com/?utm_source=rsspostimporter&utm_medium=upgrade&utm_term=export-opml&utm_content=rsspi-full-rss-key-here&utm_campaign=wordpress' ), true );
+						}
+						?>
+							<input type="submit" value="Export your Feeds as OPML File" name="export_opml" class="button button-primary button-large"<?php echo $disabled; ?> />     
+						</td> 
+					</tr>
+					<tr>
+						<td>
+							<?php _e('Import your OPML file with your feeds', "rss_pi"); ?>
+							<p class="description"><?php _e('Create and Import an OPML file with your Feeds', "rss_pi"); ?></p>
+						</td>
+						<td>
+						<?php
+						$disabled = '';
+						if (!$this->is_key_valid) {
+							$disabled = ' disabled="disabled"';
+							$this->key_error( sprintf( $this->key_prompt, '', 'http://www.feedsapi.com/?utm_source=rsspostimporter&utm_medium=upgrade&utm_term=import-opml&utm_content=rsspi-full-rss-key-here&utm_campaign=wordpress' ), true );
+						}
+						?>
+							<input type="file" name="import_opml"<?php echo $disabled; ?> />
 						</td> 
 					</tr>
 				</table>

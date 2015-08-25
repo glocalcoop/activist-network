@@ -1,0 +1,328 @@
+# Translation of Sequential in Hungarian
+# This file is distributed under the same license as the Sequential package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-12-10 08:24:02+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Sequential\n"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/sequential/style.css
+msgid "Sequential is a contemporary, clean, and multi-purpose business theme."
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/full-width-page.php
+msgid "Full-Width Page"
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/grid-page.php
+msgid "Grid Page"
+msgstr "Rács oldal"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/front-page.php
+msgid "Front Page"
+msgstr "Kezdőlap"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "%s kifejezésre történő keresés eredménye"
+
+#: inc/template-tags.php:180
+msgid "% Comments"
+msgstr "% hozzászólás"
+
+#: inc/template-tags.php:180
+msgid "1 Comment"
+msgstr "1 hozzászólás"
+
+#: inc/template-tags.php:180
+msgid "Leave a comment"
+msgstr "Hozzászólás"
+
+#: inc/template-tags.php:174
+msgid "Tagged %1$s"
+msgstr "Címkék: %1$s"
+
+#: inc/template-tags.php:168
+msgid "Posted in %1$s"
+msgstr "Kategória: %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:166 inc/template-tags.php:172
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:146
+msgid "Featured"
+msgstr "Kiemelt"
+
+#: inc/template-tags.php:120
+msgid "All %s posts"
+msgstr "Minden %s bejegyzés"
+
+#: inc/template-tags.php:59
+msgid "<span class=\"meta-nav\">Next Post</span>%title"
+msgstr "<span class=\"meta-nav\">Következő bejegyzés</span> %title"
+
+#: inc/template-tags.php:56
+msgid "<span class=\"meta-nav\">Published In</span>%title"
+msgstr "<span class=\"meta-nav\">Kategória</span>: %title"
+
+#: inc/template-tags.php:58
+msgid "<span class=\"meta-nav\">Previous Post</span>%title"
+msgstr "<span class=\"meta-nav\">Előző bejegyzés</span> %title"
+
+#: inc/template-tags.php:52
+msgid "Post navigation"
+msgstr "Bejegyzések navigációja"
+
+#: inc/template-tags.php:29
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Újabb bejegyzés <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:25
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Korábbi bejegyzés"
+
+#: inc/template-tags.php:21
+msgid "Posts navigation"
+msgstr "Bejegyzések navigációja"
+
+#: inc/customizer.php:79
+msgid "Front Page: Show Page Titles"
+msgstr ""
+
+#: inc/extras.php:83
+msgid "Page %s"
+msgstr "%s oldal"
+
+#: inc/customizer.php:31
+msgid "Show Tagline"
+msgstr ""
+
+#: inc/customizer.php:43
+msgid "Top Area Content"
+msgstr ""
+
+#: inc/customizer.php:55
+msgid "Front Page: Featured Page One"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Front Page: Featured Page Two"
+msgstr ""
+
+#: inc/customizer.php:20
+msgid "Theme"
+msgstr "Sablon"
+
+#: header.php:45
+msgid "Menu"
+msgstr "Menü"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Source Code Pro, translate this to 'off'. Do not translate into your
+#. own language.
+#: functions.php:186
+msgctxt "Source Code Pro font: on or off"
+msgid "on"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr "Tovább a tartalomra"
+
+#. translators: To add an additional Open Sans character subset specific to
+#. your language,
+#. * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate
+#. into your own language.
+#: functions.php:154
+msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr "hungarian"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Montserrat, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:126
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr "be"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:148
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:104
+msgid "Footer"
+msgstr "Lábrész"
+
+#: functions.php:95
+msgid "Sidebar"
+msgstr "Oldalsáv"
+
+#: functions.php:60
+msgid "Footer Menu"
+msgstr "Lábléc menü"
+
+#: functions.php:59
+msgid "Primary Menu"
+msgstr "Elsődleges menü"
+
+#: footer.php:32
+msgid "Theme: %1$s by %2$s."
+msgstr "Sablon: %1$s Szerző: %2$s."
+
+#: footer.php:30
+msgid "Proudly powered by %s"
+msgstr "Köszönjük %s!"
+
+#: footer.php:30
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Bővebben... <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:24 content-single.php:26 content.php:27
+msgid "Pages:"
+msgstr "Oldal:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Úgy tűnik, nem található az, amire gondoltunk. Talán, egy újabb keresés segíthet."
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Elnézést, nem találunk a keresési feltételeknek megfelelő eredményt. Másik kulcsszóval, kifejezéssel újra kellene kezdeni egy keresést."
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Készen állunk az első bejegyzés közzétételére? <a href=\"%1$s\">Kezdőlépések</a>."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Nincs megfelelő találat"
+
+#: content-grid.php:16
+msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Bővebben <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-grid.php:19 content-page.php:32 inc/template-tags.php:154
+#: page-templates/front-page.php:26
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr "Hozzászólások lehetősége itt nem engedélyezett."
+
+#: comments.php:47
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Újabb hozzászólások <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Korábbi hozzászólások"
+
+#: comments.php:45
+msgid "Comment navigation"
+msgstr "Hozzászólás navigáció"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo; bejegyzéshez egy hozzászólás"
+msgstr[1] "&ldquo;%2$s&rdquo; bejegyzéshez %1$ hozzászólás"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "Archívum"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Beszélgetések"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Audiók"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "Állapotok"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Hivatkozások"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "idézetek"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Videók"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Képek"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Galériák"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Széljegyzetek"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y."
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Év: %s"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "Y. F"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Hónap: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Nap: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Szerző: %s"
+
+#. translators: %1$s: smiley
+#: 404.php:29
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Próbáljunk betekinteni a hónap bejegyzéseibe: %1$s"
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "A keresett oldal vagy bejegyzés nem található. Próbálkozzunk meg az alábbi hivatkozásokkal vagy esetleg egy kereséssel."
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Hoppá! A keresett oldal nem található."

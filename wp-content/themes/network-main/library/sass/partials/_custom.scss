@@ -17,19 +17,22 @@
 
 @mixin breakpoint($point) {
 	@if $point == xs {
-		@media (min-width: 321px)  { @content; } 
+		@media screen and (min-width: 321px)  { @content; } 
 	}
 	@if $point == sm {
-		@media (min-width: 481px) { @content; }
+		@media screen and (min-width: 481px) { @content; }
 	}
+	// @if $point == md {
+	// 	@media screen and (min-width: 769px) { @content; }
+	// }
 	@if $point == md {
-		@media (min-width: 769px) { @content; }
+		@media screen and (min-width: 878px) { @content; }
 	}
 	@if $point == lg {
-		@media (min-width: 1025px) { @content; }
+		@media screen and (min-width: 1025px) { @content; }
 	}
 	@else if $point == xl {
-		@media (min-width: 1200px) { @content; }
+		@media screen and (min-width: 1200px) { @content; }
 	}
 }
 
@@ -44,12 +47,13 @@
 }
 
 // for semantic markup, a la http://blog.teamtreehouse.com/a-better-clearfix-with-sass
-%clearfix:after {
+%clearfix {
+  &:after {
     content: "";
     display: table;
     clear: both;
+  }
 }
-
 
 // BUTTON THAT FLIPS BG/TEXT COLORS ON HOVER
 

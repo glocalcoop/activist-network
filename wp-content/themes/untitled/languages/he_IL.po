@@ -1,0 +1,303 @@
+# Translation of Untitled in Hebrew
+# This file is distributed under the same license as the Untitled package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-06-02 04:59:32+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Untitled\n"
+
+#. Author URI of the plugin/theme
+#: wp-content/themes/pub/untitled/style.css
+msgid "https://wordpress.com/themes/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/untitled/page-full-width.php
+msgid "Full-Width Page"
+msgstr "עמוד ברוחב מלא"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/untitled/style.css
+msgid "A nice bold theme. Features full-bleed featured posts and featured images, a fixed header, and subtle CSS3 transitions."
+msgstr "ערכת עיצוב חזקה ויפה הכוללת פוסטים מומלצים ותמונות מומלצות, כותרת קבועה ומעברי  CSS3 מעודנים."
+
+#: single.php:90
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "רשומה זו פורסמה בקטגוריה %1$s. אפשר להגיע ישירות לרשומה זו <a href=\"%3$s\" title=\"קישור ישיר לרשומה %4$s\" rel=\"bookmark\">עם קישור ישיר</a>."
+
+#: single.php:88
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "רשומה זו פורסמה בקטגוריה %1$s, עם התגים %2$s. אפשר להגיע ישירות לרשומה זו <a href=\"%3$s\" title=\"קישור ישיר לרשומה %4$s\" rel=\"bookmark\">עם קישור ישיר</a>."
+
+#: single.php:82
+msgid "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "<a href=\"%3$s\" title=\"קישור קבוע לרשומה  %4$s\" rel=\"bookmark\">קישור קבוע</a>."
+
+#: single.php:80
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "רשומה זו מתויגת תחת %2$s. <a href=\"%3$s\" title=\"קישור קבוע ל-%4$s\" rel=\"bookmark\">קישור קבוע</a>."
+
+#. translators: used between list items, there is a space after the comma
+#: single.php:72 single.php:75 slider.php:27
+msgid ", "
+msgstr ", "
+
+#: searchform.php:11
+msgctxt "submit button"
+msgid "Search"
+msgstr "חפש"
+
+#: searchform.php:10
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "חיפוש &hellip;"
+
+#: searchform.php:9
+msgctxt "assistive text"
+msgid "Search"
+msgstr "חיפוש"
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "תוצאות החיפוש: %s"
+
+#: no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "נראה כי לא ניתן למצוא את מה שחיפשת, אולי חיפוש יעזור."
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "מצוערים, אבל לא נמצאה התאמה. אפשר לנסות שוב עם מילות חיפוש שונות."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "מוכן לפרסם את הרשומה הראשונה שלך? <a href=\"%1$s\">התחל כאן</a>."
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "לא מצאתי כלום"
+
+#: inc/template-tags.php:125
+msgid "<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:131
+msgid "View all posts by %s"
+msgstr "הצגת הרשומות של %s"
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:98
+msgid "%1$s at %2$s"
+msgstr "%1$s בשעה %2$s"
+
+#: inc/template-tags.php:90
+msgid "Your comment is awaiting moderation."
+msgstr "התגובה ממתינה לאישור."
+
+#: inc/template-tags.php:87
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">הגיב:</span>"
+
+#: inc/template-tags.php:77
+msgid "Pingback:"
+msgstr "פינגבק:"
+
+#: inc/template-tags.php:52
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "רשומות חדשות יותר <span class=\"meta-nav\">&larr;</span>"
+
+#: inc/template-tags.php:48
+msgid "Older posts"
+msgstr "פוסטים ישנים יותר"
+
+#: inc/jetpack.php:22
+msgid "The featured content section displays on the front page above the first post in the content area."
+msgstr "מקטע התוכן המומלץ מוצג בדף הראשי מעל לפוסט הראשון שבאזור התוכן."
+
+#: inc/template-tags.php:38
+msgid "Post navigation"
+msgstr "ניווט ברשומות"
+
+#: inc/extras.php:61
+msgid "Page %s"
+msgstr "עמוד %s"
+
+#: image.php:105
+msgid "Both comments and trackbacks are currently closed."
+msgstr "סגור לפרסום תגובות והשארת עקבות."
+
+#: image.php:103
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "סגור להשארת עקבות, אבל ניתן <a class/\"comment-link\" href=\"#respond\" title=\"פרסם תגובה\">לפרסם תגובה</a>."
+
+#: image.php:101
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "סגור לתגובות, אבל ניתן להשאיר עקבות: <a class=\"trackback-link\" href=\"%s\" title=\"נתיב להשארת עקבות לרשומה שלך\" rel=\"trackback\">Trackback URL</a>."
+
+#: image.php:99
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"פרסם תגובה\">פרסם תגובה</a> או השאר עקבות: <a class=\"trackback-link\" href=\"%s\" title=\"נתיב להשארת עקבות לרשומה שלך\" rel=\"trackback\">טראקבק</a>."
+
+#: image.php:39
+msgid "Next &rarr;"
+msgstr "התמונה הבאה &larr;"
+
+#: image.php:38
+msgid "&larr; Previous"
+msgstr "&rarr; התמונה הקודמת"
+
+#: image.php:23
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr ""
+
+#: header.php:41
+msgid "Skip to content"
+msgstr "דילוג לתוכן"
+
+#. translators: If there are characters in your language that are not supported
+#. by Raleway or Arvo, translate this to 'off'. Do not translate into your
+#. own language.
+#: functions.php:101
+msgctxt "Web font: on or off"
+msgid "on"
+msgstr "off"
+
+#: header.php:40
+msgid "Menu"
+msgstr "תפריט"
+
+#: functions.php:85
+msgid "Sidebar"
+msgstr " סרגל צדדי"
+
+#: functions.php:55
+msgid "Primary Menu"
+msgstr "תפריט ראשי"
+
+#: footer.php:19
+msgid "Theme: %1$s by %2$s."
+msgstr "ערכת עיצוב: %1$s של %2$s"
+
+#: footer.php:18
+msgid "Proudly powered by %s"
+msgstr "פועל על %s"
+
+#: footer.php:18
+msgid "A Semantic Personal Publishing Platform"
+msgstr "פלטפורמה סמנטית לפרסום תוכן"
+
+#: content.php:52
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "להמשיך לקרוא <span class=\"meta-nav\">&larr;</span>"
+
+#: content.php:20 content.php:39
+msgid "% Comments"
+msgstr "% תגובות"
+
+#: content.php:20 content.php:39
+msgid "1 Comment"
+msgstr "תגובה אחת"
+
+#: content.php:20 content.php:39
+msgid "0 comments"
+msgstr "אין תגובות"
+
+#: content-page.php:22 content.php:28 image.php:34 image.php:107
+#: inc/template-tags.php:77 inc/template-tags.php:100 single.php:103
+msgid "Edit"
+msgstr "עריכה"
+
+#: content-page.php:16 content.php:53 image.php:93 single.php:63
+msgid "Pages:"
+msgstr ":עמודים"
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr "סגור לתגובות."
+
+#: comments.php:49
+msgid "Newer Comments &rarr;"
+msgstr "תגובות חדשות יותר &larr;"
+
+#: comments.php:48
+msgid "&larr; Older Comments"
+msgstr "&rarr; תגובות ישנות יותר"
+
+#: comments.php:47
+msgid "Comment navigation"
+msgstr "ניווט בתגובות"
+
+#: comments.php:28
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "מחשבה אחת על &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s מחשבות על &ldquo;%2$s&rdquo;"
+
+#: archive.php:64
+msgid "Archives"
+msgstr "ארכיון"
+
+#: archive.php:61
+msgid "Links"
+msgstr "קישורים"
+
+#: archive.php:58
+msgid "Quotes"
+msgstr "ציטוטים"
+
+#: archive.php:55
+msgid "Videos"
+msgstr "סרטונים"
+
+#: archive.php:52
+msgid "Images"
+msgstr "תמונות"
+
+#: archive.php:49
+msgid "Asides"
+msgstr "קצרצרים"
+
+#: archive.php:46
+msgid "Yearly Archives: %s"
+msgstr "ארכיון שנתי: %s"
+
+#: archive.php:43
+msgid "Monthly Archives: %s"
+msgstr "ארכיון חודשי: %s"
+
+#: archive.php:40
+msgid "Daily Archives: %s"
+msgstr "ארכיון יומי: %s"
+
+#: archive.php:32
+msgid "Author Archives: %s"
+msgstr "ארכיון רשומות מאת: %s&rlm;"
+
+#: archive.php:25
+msgid "Tag Archives: %s"
+msgstr "תגית: %s"
+
+#: archive.php:22
+msgid "Category Archives: %s"
+msgstr "קטגוריה: %s"
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "כדאי לחפש בארכיון החודשי. %1$s"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "קטגוריות בולטות"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "לא הצלחנו למצוא שום דבר בכתובת זו. כדאי לנסות את הקישורים הבאים, או את החיפוש."
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "אופס. העמוד שביקשת אינו קיים."

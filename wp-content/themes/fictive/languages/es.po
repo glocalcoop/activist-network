@@ -1,0 +1,291 @@
+# Translation of Fictive in Spanish (Spain)
+# This file is distributed under the same license as the Fictive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-06-02 16:59:15+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Fictive\n"
+
+msgid "Fictive is all about you -- your style, your look, your story. Make it personal with a custom header image, a Gravatar, and links to your favorite social networks. Use Post Formats to dress up your content, add a custom menu and widgets, or keep it simple with a fixed-position header."
+msgstr ""
+
+#: inc/template-tags.php:144
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s a las %2$s"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Resultados de la búsqueda para: %s"
+
+#: inc/template-tags.php:124
+msgid "Your comment is awaiting moderation."
+msgstr "Tu comentario está pendiente de moderación."
+
+#: inc/template-tags.php:120
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">dijo:</span>"
+
+#: inc/template-tags.php:83
+msgid "<span class=\"post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a></span><span class=\"byline\"><span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:110
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:74
+msgid "<span class=\"post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">Featured</a></span><span class=\"byline\"><span class=\"author vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\" rel=\"author\">%5$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:78 inc/template-tags.php:89
+msgid "View all posts by %s"
+msgstr "Ver todas las entradas de %s"
+
+#: inc/template-tags.php:27
+msgctxt "Older posts"
+msgid "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:31
+msgctxt "Newer posts"
+msgid "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Navegador de artículos"
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Ir a las entradas"
+
+#: inc/extras.php:63
+msgid "Page %s"
+msgstr "Página %s"
+
+#: inc/customizer.php:46
+msgid "Scroll"
+msgstr "Desplazamiento"
+
+#: inc/customizer.php:29
+msgid "Gravatar Email"
+msgstr ""
+
+#: inc/customizer.php:41
+msgid "Sidebar Position"
+msgstr ""
+
+#: inc/customizer.php:45
+msgid "Fixed"
+msgstr "Fijo"
+
+#: inc/customizer.php:19
+msgid "Theme"
+msgstr "Tema"
+
+#: header.php:66
+msgid "Skip to content"
+msgstr "Saltar al contenido."
+
+#: header.php:62
+msgid "Search"
+msgstr "Buscar"
+
+#: header.php:60
+msgid "Widgets"
+msgstr "Widgets"
+
+#: functions.php:162
+msgctxt "Bitter font: on or off"
+msgid "on"
+msgstr "activa"
+
+#: header.php:57
+msgid "Menu"
+msgstr "Menú"
+
+#: functions.php:153
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "activada"
+
+#: functions.php:45
+msgid "Social Links"
+msgstr ""
+
+#: functions.php:72
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:44
+msgid "Primary Menu"
+msgstr "Menú Principal"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s por %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Funciona con %s"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content.php:45
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Sigue leyendo <span class=\"meta-nav\">&rarr;</span>"
+
+#: content.php:32
+msgid "% Comments"
+msgstr "% comentarios"
+
+#: content.php:32
+msgid "1 Comment"
+msgstr "1 comentario"
+
+#: content.php:32
+msgid "Leave a comment"
+msgstr "Deja un comentario"
+
+#: content-single.php:17 content.php:18
+msgid "All %s posts"
+msgstr "Las %s entradas"
+
+#: content-page.php:30 content-single.php:27 content.php:35
+#: inc/template-tags.php:110 inc/template-tags.php:147
+msgid "Edit"
+msgstr "Editar"
+
+#: content-page.php:24 content-single.php:35 content.php:48
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Parece que no podemos encontrar lo que estás buscando. Tal vez la búsqueda le pueda ayudar."
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Lo sentimos, pero nada coincidió con su búsqueda. Por favor inténtelo de nuevo con otras palabras clave."
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "¿Preparado para publicar tu primera entrada? <a href=\"%1$s\">Empieza aquí</a>."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "No se ha encontrado nada"
+
+#: comments.php:61
+msgid "Comments are closed."
+msgstr "Los comentarios están cerrados."
+
+#: comments.php:37 comments.php:51
+msgid "Newer Comments &rarr;"
+msgstr "Comentarios recientes &rarr;"
+
+#: comments.php:36 comments.php:50
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentarios antiguos"
+
+#: comments.php:35 comments.php:49
+msgid "Comment navigation"
+msgstr "Navegación de comentarios"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un comentario en &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s comentarios en &ldquo;%2$s&rdquo;"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "Archivos"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "Estados"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Audios"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Chat"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Enlaces"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Citas"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Vídeos"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Galerías"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Imágenes"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Apartados"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Año: %s"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Día: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Mes: %s"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Parece que no se encontró nada en esta ubicación. ¿Quizás pruebes con uno de los enlaces de abajo o una búsqueda?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "¡Vaya! Esa página no se puede encontrar."

@@ -1,0 +1,68 @@
+
+/* Options page */
+
+.mes {
+	color: gray;
+	font-style: italic;
+	font-size:. 9em;
+}
+#ag-form {
+	width: 50%;
+}
+#ag-form textarea {
+	clear: right;
+	float: right;
+}
+input[type="submit"] {
+	margin-top: 2em;
+}
+
+#ag-form label {display: block; margin-bottom: .25em; font-weight: 800; font-size: 1.1em;}
+#ag-form .checkboxes label {display: inline;}
+
+#ag-form h3 {border-bottom: 1px solid #ccc; margin-bottom: .5em; padding-bottom: .5em; color: #369; text-shadow: 0 1px 1px #fff; font-size: 1.4em;}
+#ag-form input[type="text"] {min-width: 400px;}
+.ag-checkboxes {padding-bottom: 1em;}
+
+.ag-checkboxes input {float: left; margin-right: .5em;}
+.ag-checkboxes label {line-height: 1em; margin-bottom: 0;}
+
+.ag-color-options input {margin-top: -.25em;}
+
+.ag-plugin-banner {border-bottom: 4px solid #5074bd; padding: 1em; background: #f4f4f4;}
+
+.agreeable-settings h3 {margin-top: 3em;}
+.agreeable-settings h4 {margin: 2em 0 1em 0; padding-bottom: .5em; border-bottom: 1px dotted #ccc; font-size: 1.2em; color: #888; font-weight: 100; text-shadow: 0px 1px 1px #fff; text-transform: uppercase;}
+
+.kp-cross-promote-area {position: absolute; right: 10%; top: 0; width: 20%; min-height: 200px; padding: 0 1em 1em; background: #fafafa; border: 1px solid #ccc; text-align: center; box-sizing: border-box;}
+.kp-cross-promote-area #kp-logo {margin-bottom: 2em; margin-top: -1px; border-top: 1px #fff;}
+.kp-cross-promote-area h3 {margin-top: 0; font-weight: 100; text-transform: uppercase; color: #777; text-shadow: 0 1px 1px #fff; font-size: 1.4em; line-height: 1.4em; margin-bottom: .25em;}
+.kp-cross-promote-area p {margin-top: 0; color: #ccc; text-shadow: 0 1px 1px #fff;}
+
+.rtl .kp-cross-promote-area {left: 10%; right: auto;}
+
+#kp-cross-promote {
+	list-style-type: none;
+	overflow: hidden;
+}
+
+#kp-cross-promote li {
+	margin-bottom: 1em;	
+}
+
+#kp-cross-promote li a img {
+	max-width: 100%;
+	box-shadow: 0 1px 1px #fff;
+}
+
+.kp-cross-promote-area hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em;
+	display: block;
+	clear: both;
+}
+
+
+.kp-cross-promote-area a {text-decoration: none;}
+

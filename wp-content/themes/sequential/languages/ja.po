@@ -1,0 +1,319 @@
+# Translation of Sequential in Japanese
+# This file is distributed under the same license as the Sequential package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-05-07 03:59:37+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
+"Project-Id-Version: Sequential\n"
+
+#: archive-jetpack-testimonial.php:23
+msgid "Testimonials"
+msgstr "推薦文"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/sequential/style.css
+msgid "Sequential is a contemporary, clean, and multi-purpose business theme."
+msgstr "Sequential は現代的でクリーンな、様々な用途に使えるビジネスサイト向けテーマです。"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/full-width-page.php
+msgid "Full-Width Page"
+msgstr "全幅ページ"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/grid-page.php
+msgid "Grid Page"
+msgstr "グリッドページ"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sequential/page-templates/front-page.php
+msgid "Front Page"
+msgstr "フロントページ"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "検索結果: %s"
+
+#: inc/template-tags.php:201
+msgid "% Comments"
+msgstr "%件のコメント"
+
+#: inc/template-tags.php:201
+msgid "1 Comment"
+msgstr "1件のコメント"
+
+#: inc/template-tags.php:201
+msgid "Leave a comment"
+msgstr "コメントする"
+
+#: inc/template-tags.php:195
+msgid "Tagged %1$s"
+msgstr "タグ:  %1$s"
+
+#: inc/template-tags.php:189
+msgid "Posted in %1$s"
+msgstr "カテゴリー: %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:187 inc/template-tags.php:193
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:167
+msgid "Featured"
+msgstr "注目"
+
+#: inc/template-tags.php:141
+msgid "All %s posts"
+msgstr "すべての%s投稿"
+
+#: inc/template-tags.php:79
+msgid "<span class=\"meta-nav\">Next Post</span>%title"
+msgstr "<span class=\"meta-nav\">次の投稿</span>%title"
+
+#: inc/template-tags.php:72
+msgid "<span class=\"meta-nav\">Published In</span>%title"
+msgstr "%title<span class=\"meta-nav\">に投稿</span>"
+
+#: inc/template-tags.php:78
+msgid "<span class=\"meta-nav\">Previous Post</span>%title"
+msgstr "<span class=\"meta-nav\">前の投稿</span>%title"
+
+#: inc/template-tags.php:68
+msgid "Post navigation"
+msgstr "投稿ナビゲーション"
+
+#: inc/template-tags.php:42
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "新しい投稿 <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:30
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> 古い投稿"
+
+#: inc/template-tags.php:21
+msgid "Posts navigation"
+msgstr "投稿ナビゲーション"
+
+#: inc/extras.php:83
+msgid "Page %s"
+msgstr "ページ %s"
+
+#: inc/customizer.php:55
+msgid "Front Page: Featured Page One"
+msgstr "フロントページ: おすすめページ 1"
+
+#: inc/customizer.php:67
+msgid "Front Page: Featured Page Two"
+msgstr "フロントページ: おすすめページ 2"
+
+#: inc/customizer.php:20
+msgid "Theme"
+msgstr "テーマ名"
+
+#: header.php:45
+msgid "Menu"
+msgstr "メニュー"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Source Code Pro, translate this to 'off'. Do not translate into your
+#. own language.
+#: functions.php:186
+msgctxt "Source Code Pro font: on or off"
+msgid "on"
+msgstr "on"
+
+#: header.php:23
+msgid "Skip to content"
+msgstr "コンテンツへ移動"
+
+#. translators: To add an additional Open Sans character subset specific to
+#. your language,
+#. * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate
+#. into your own language.
+#: functions.php:154
+msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr "no-subset"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Montserrat, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:126
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr "on"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:148
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:104
+msgid "Footer"
+msgstr "フッター"
+
+#: functions.php:95
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: functions.php:60
+msgid "Footer Menu"
+msgstr "フッターメニュー"
+
+#: functions.php:59
+msgid "Primary Menu"
+msgstr "メインメニュー"
+
+#: footer.php:32
+msgid "Theme: %1$s by %2$s."
+msgstr "Theme: %1$s by %2$s."
+
+#: footer.php:30
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: footer.php:30
+msgid "http://wordpress.org/"
+msgstr "http://ja.wordpress.org/"
+
+#: content.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:24 content-single.php:26 content.php:27
+msgid "Pages:"
+msgstr "ページ:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "ご指定の検索条件に一致する投稿がありませんでした。他のキーワードでもう一度検索してみてください。"
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "最初の投稿をする準備ができましたか ?  <a href=\"%1$s\">ここからスタート</a>してください。"
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "見つかりません"
+
+#: content-grid.php:16
+msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-grid.php:19 content-page.php:32 inc/template-tags.php:175
+#: page-templates/front-page.php:26
+msgid "Edit"
+msgstr "編集"
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr "コメントは停止中です。"
+
+#: comments.php:47
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "新しいコメント <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> 昔のコメント"
+
+#: comments.php:45
+msgid "Comment navigation"
+msgstr "コメントナビゲーション"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "「%2$s」への%1$s件のフィードバック"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "アーカイブ"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "チャット"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "音声"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "状態"
+
+#: archive.php:54
+msgid "Links"
+msgstr "リンク"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "引用"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "動画"
+
+#: archive.php:45
+msgid "Images"
+msgstr "画像"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "ギャラリー"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "アサイド"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y年"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "年別アーカイブ: %s"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "Y年n月"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "月別アーカイブ: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "日別アーカイブ: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "作成者: %s"
+
+#. translators: %1$s: smiley
+#: 404.php:29
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "月別アーカイブを見てみてください。%1$s"
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "ここには何も見つかりませんでした。以下のリンクまたは検索をお試しください。"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "お探しのページが見つかりません。"

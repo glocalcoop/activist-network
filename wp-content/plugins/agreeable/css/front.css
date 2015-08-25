@@ -1,0 +1,17 @@
+/* Front end styles */
+
+.mfp-hide {display: none;}
+
+#terms {}
+#terms h1, #terms h2 {margin-bottom: .5em; font-size: 2em;}
+#terms h3, #terms h4 {margin-bottom: .5em; font-size: 1.3em;}
+#terms ul, #terms ol {padding-left: 2em; margin-bottom: 1em;}
+#terms p {margin-bottom: 1em;}
+
+p.error {
+	clear: both;
+	background: #faa;
+	color: #a00;
+	margin: 2em 0 1em 0;
+	padding: 6px;
+}

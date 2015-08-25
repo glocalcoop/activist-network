@@ -1,0 +1,79 @@
+/* -----------------------------------------
+   Standard Forms
+----------------------------------------- */
+
+	label { display: block; font-size: 13px; line-height: 18px; cursor: pointer; margin-bottom: 9px; }
+
+	.comment-form-author label,
+	.comment-form-email label,
+	.comment-form-url label,
+	.comment-form-comment label {
+		display: inline;
+	}
+
+	input, textarea { border-right: 1px solid #bbb; border-bottom: 1px solid #bbb; }
+	input, textarea, select { display: block; margin-bottom: 9px; }
+
+	/* Text input and textarea font and padding */
+	input, textarea { font-size: 13px; padding: 4px 3px 2px; outline: none !important; background: #fff; }
+	input.oversize, textarea.oversize { font-size: 18px !important; padding: 4px 5px !important; }
+	input:focus, textarea:focus { background: #f9f9f9; }
+
+	/* Inlined Label Style */
+	input.placeholder, textarea.placeholder { color: #888; }
+
+	/* Text input and textarea sizes */
+	input, textarea { width: 254px; }
+	input.small, textarea.small { width: 134px; }
+	input.medium, textarea.medium { width: 254px; }
+	input.large, textarea.large { width: 434px; }
+
+	/* Fieldsets */
+	fieldset { padding: 9px 9px 2px 9px; border: solid 1px #ddd; margin: 18px 0; }
+
+	/* Errors */
+	input.red { border-color: red; background-color: rgba(255,0,0,0.15); }
+	label.red { color: red; }
+	small.error { margin-top: -6px; display: block; margin-bottom: 9px; font-size: 11px; color: red; width: 260px; }
+
+	.small + .error { width: 140px; }
+	.medium + .error { width: 260px; }
+	.large + .error { width: 440px; }
+
+	/* -----------------------------------------
+	   Nicer Forms
+	----------------------------------------- */
+	input,
+	input[type="password"],
+	input[type="search"],
+	isindex,
+	textarea {
+		border: solid 1px #bbb;
+		border-radius: 2px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		font-size: 13px;
+		padding: 6px 3px 4px;
+		outline: none !important;
+		background: url( '../images/input-bg.png' ) #fff;
+	}
+	input[type="password"],
+	input[type="submit"] {
+		margin: 0 0 18px;
+	}
+	input[type="password"] {
+		width: 39%;
+	}
+	input[type="submit"] {
+		width: 40%;
+	}
+
+	input:focus, textarea:focus { background-color: #f9f9f9; }
+
+	fieldset { border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
+
+	small.error { padding: 6px 4px; border: solid 0px red; border-width: 0px 1px 1px 1px; margin-top: -10px; background: red; color: #fff; font-size: 12px; font-weight: bold; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; -webkit-border-bottom-left-radius: 2px; -webkit-border-bottom-right-radius: 2px; -moz-border-radius-bottomleft: 2px; -moz-border-radius-bottomright: 2px; }
+
+	.small + .error { width: 132px; }
+	.medium + .error { width: 252px; }
+	.large + .error { width: 432px; }

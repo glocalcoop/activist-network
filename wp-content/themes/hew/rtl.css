@@ -1,0 +1,255 @@
+/*
+Theme Name: Hew
+*/
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+blockquote {
+	border-right: 4px solid #eee;
+	padding-right: 1em;
+}
+pre {
+	direction: ltr;
+	text-align: left;
+}
+
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+
+/* =Masthead
+----------------------------------------------- */
+.has-sidebar #masthead {
+	padding-left: 84px;
+	padding-right: 0;
+}
+.site-logo {
+	float: right;
+}
+.site-logo img {
+	display: block;
+}
+.site-branding {
+	float: right;
+	padding: 0 1em;
+}
+
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	float: right;
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation li {
+	float: right;
+	padding: 31px 1em;
+	position: relative;
+}
+
+.main-navigation ul ul {
+	float: left;
+	top: 80px;
+	left: -999em;
+}
+.main-navigation ul ul ul {
+	background: black;
+	left: -999em;
+	top: 0;
+}
+.main-navigation ul ul a {
+	background-color: #32312f;
+}
+.main-navigation ul li:hover > ul {
+	right: auto;
+}
+.main-navigation ul ul li:hover > ul {
+	right: 100%;
+}
+
+/* Social Links */
+.social-links {
+	float: left;
+}
+.social-links ul {
+	float: left;
+}
+.social-links ul li {
+	float: right;
+}
+/* Top Widget Area Toggle */
+.toggle-wrapper {
+	left: 0;
+	right: auto;;
+}
+
+/* Paging navigation*/
+[class*="navigation"] .nav-previous {
+	float: right;
+}
+[class*="navigation"] .nav-next {
+	float: left;
+	text-align: left;
+}
+[class*="navigation"] .nav-previous .meta-nav:before {
+	content: "\2192";
+	margin-right: 5px;
+}
+[class*="navigation"] .nav-next .meta-nav:after {
+	content: "\2190";
+	margin-left: 5px;
+}
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	margin-left: 1.5em;
+	margin-right: 0;
+}
+.alignright {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+.widget-area {
+	float: right;
+}
+
+/* Tag Cloud */
+.tagcloud a {
+	float: right;
+	margin-left: 5px;
+}
+
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+.entry-title,
+.entry-content,
+.entry-summary,
+.entry-footer {
+	text-align: right;
+}
+.entry-title {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+.children .comment {
+    padding-right: 24px;
+}
+.comment-author img {
+	float:right;
+	margin-left: 1em;
+	margin-right: 0;
+}
+.comment-metadata {
+	float: left;
+	margin-left: 1em;
+	margin-right: 0;
+}
+
+/* =404 Page
+----------------------------------------------- */
+.error-404 .widget {
+	float: right;
+}
+.error-404 .widget:first-of-type {
+	margin-right: 0;
+}
+.error-404 .widget:last-of-type {
+	margin-left: 0;
+}
+
+/*--------------------------------------------------------------
+12.0 Media
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+12.2 Galleries
+--------------------------------------------------------------*/
+.gallery-item {
+	float: right;
+}
+.gallery-columns-1 .gallery-item:nth-of-type(1n),
+.gallery-columns-2 .gallery-item:nth-of-type(2n),
+.gallery-columns-3 .gallery-item:nth-of-type(3n),
+.gallery-columns-4 .gallery-item:nth-of-type(4n),
+.gallery-columns-5 .gallery-item:nth-of-type(5n),
+.gallery-columns-6 .gallery-item:nth-of-type(6n),
+.gallery-columns-7 .gallery-item:nth-of-type(7n),
+.gallery-columns-8 .gallery-item:nth-of-type(8n),
+.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+  margin-left: 0;
+}
+.gallery-caption {
+	right: 0;
+	text-align: right;
+}
+.gallery-caption:before {
+	right: 0;
+}
+
+/* =Media Queries
+----------------------------------------------- */
+
+@media screen and (max-width: 767px) {
+	.has-sidebar #masthead {
+		padding-left: 0;
+	}
+	.site-branding {
+		padding-left: 0;
+	}
+	.menu-toggle {
+		left: 0px;
+	}
+	.main-navigation {
+		display: block;
+		float: none;
+	}
+	.main-navigation ul {
+		text-align: right;
+	}
+	.main-navigation ul ul {
+		margin: 0 2.15em 1em 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.site-branding {
+		padding-left: 0;
+	}
+	.menu-toggle {
+		left: -35px;
+		right: auto;
+	}
+}
+@media screen and (max-width: 320px) {
+	.menu-toggle {
+		left: -45px;
+	}
+}

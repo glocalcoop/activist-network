@@ -310,7 +310,6 @@ table.em-calendar {
 
 // HOME PAGE MODULE
 
-
 .home-modules {
     .events-list,
     .widget_em_widget ul { // Added .widget_em_widget ul to apply styles to EM widget PEA 1/24/2015
@@ -339,6 +338,9 @@ table.em-calendar {
                 line-height: 95px;
             }
         }
+        .all-events-link {
+             @extend h3;
+        }
     }
     .event-start {
         float: left;
@@ -361,11 +363,42 @@ table.em-calendar {
         padding: 10px 0;
         max-height: 90px; 
         overflow: hidden;
-        @include breakpoint(xs) {@include font-size(20); line-height: 1.3; }
+        @include breakpoint(xs) {
+            @include font-size(20); line-height: 1.3;
+        }
         a {
             display: block;
             color: $white;
         }
+    }
+
+    @media (max-width: 769px) {
+
+        .event-start {
+            float: none;
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid rgba(255,255,255,.3);
+
+            .event-month,
+            .event-day,
+            .event-date,
+            .all-events-link {
+                @include font-size(16); 
+                line-height: 1.3;
+            }
+            .event-date {
+                display: inline;
+            }
+        }
+
+        .event-title {
+            margin-right: auto;
+            margin-left: auto;
+            max-height: auto;
+            text-align: center;
+        }
+
     }
 }
 

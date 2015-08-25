@@ -1,0 +1,308 @@
+# Translation of Adaption in Turkish
+# This file is distributed under the same license as the Adaption package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-02-09 08:28:56+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Adaption\n"
+
+#: functions.php:90
+msgid "Mobile Widgets"
+msgstr ""
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/adaption/style.css
+msgid "A theme that adapts to your content, making sure it looks good on any device. Full width featured images make your content stand out. This theme adapts as add widgets with a 3rd column added to the layout."
+msgstr ""
+
+#. Author of the plugin/theme
+#: wp-content/themes/pub/adaption/style.css
+msgid "Automattic"
+msgstr "Automattic"
+
+#: inc/template-tags.php:106
+msgctxt "1: date, 2: time"
+msgid ", %1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:109
+msgid " (Edit)"
+msgstr "(Düzenle)"
+
+#: inc/template-tags.php:147
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr ""
+
+#: inc/template-tags.php:158
+msgid "<span class=\"posted-on\">Posted on %1$s</span>"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Arama sonuçları: %s"
+
+#: inc/template-tags.php:102
+msgid "%s "
+msgstr "%s"
+
+#: inc/template-tags.php:99
+msgid "Your comment is awaiting moderation."
+msgstr "Yorumunuz denetim için bekliyor."
+
+#: inc/template-tags.php:82
+msgid "Pingback:"
+msgstr "Geri bildirim: "
+
+#: inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Yazı dolaşımı"
+
+#: inc/template-tags.php:31
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Yeni yazılar <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:27
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Eski yazılar"
+
+#: inc/extras.php:116
+msgid "Read more <span class=\"screen-reader-text\">%1s</span>"
+msgstr ""
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Yazı dolaşımı"
+
+#: inc/extras.php:66
+msgid "Page %s"
+msgstr "Sayfa %s"
+
+#: header.php:38 header.php:93
+msgid "Skip to content"
+msgstr "İçeriğe geç"
+
+#: functions.php:44
+msgid "Social Links Menu"
+msgstr "Sosyal bağlantılar menüsü"
+
+#: functions.php:72
+msgid "Sidebar One"
+msgstr ""
+
+#: functions.php:81
+msgid "Sidebar Two"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported
+#. by Arimo, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:113
+msgctxt "Arimo sans-serif font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: To add an additional Armio character subsets,
+#. * translate this to 'greek', 'cyrillic' or 'vietnamese'.
+#. * Do not translate these strings into your own langauge.
+#: functions.php:121
+msgctxt "Arimo: add new subset (cyrillic, greek, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: functions.php:43
+msgid "Primary Menu"
+msgstr "Birincil menü"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %2$s tarafından %1$s."
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "%s gururla sunar"
+
+#: content.php:69
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Okumaya devam et <span class=\"meta-nav\">&rarr;</span>"
+
+#: content.php:22
+msgid "% Comments"
+msgstr "% Yorum"
+
+#: content.php:22
+msgid "1 Comment"
+msgstr "1 Yorum"
+
+#: content.php:22
+msgid "Leave a comment"
+msgstr "Yorum yapın"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:60 content.php:82
+msgid " "
+msgstr " "
+
+#: content-single.php:66 content.php:87
+msgid "%1$s"
+msgstr "%1$s"
+
+#: content-single.php:32 content.php:40
+msgid "All %s posts"
+msgstr "Tüm %s yazıları"
+
+#: content-single.php:38
+msgid " Edit"
+msgstr "Düzenle"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:24 content.php:30
+msgid ", "
+msgstr ", "
+
+#: content-single.php:13 content.php:13
+msgid "Permalink to %s"
+msgstr "%s için kalıcı bağlantı"
+
+#: content-page.php:23 inc/template-tags.php:82
+msgid "Edit"
+msgstr "Düzenle"
+
+#: content-page.php:18 content-single.php:52 content.php:72
+msgid "Pages:"
+msgstr "Sayfalar:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Aradığınız sayfa bulunamadı. Belki arama kutusu aradığınızı bulma konusunda yardımcı olabilir."
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Üzgünüz fakat aradığınız kriterler ile örtüşen sonuç bulunamadı. Lütfen başka kriterler ile tekrar deneyin."
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "İlk yazınızı yayınlamaya hazır mısınız? <a href=\"%1$s\">Buradan başlayın</a>."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Bulunamadı"
+
+#: comments.php:63
+msgid "Comments are closed."
+msgstr "Yorumlar kapalı."
+
+#: comments.php:39 comments.php:53
+msgid "Newer Comments &rarr;"
+msgstr "Yeni yorumlar &arr;"
+
+#: comments.php:38 comments.php:52
+msgid "&larr; Older Comments"
+msgstr "&arr; Eski yorumlar"
+
+#: comments.php:37 comments.php:51
+msgid "Comment navigation"
+msgstr "Yorum dolaşımı"
+
+#: comments.php:30
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo; üzerine bir yorum"
+msgstr[1] "&ldquo;%2$s&rdquo; üzerine %1$s yorum"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Sohbetler"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "Arşivler"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Sesler"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "Durumlar"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Bağlantılar"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Alıntılar"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Videolar"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Resimler"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Yan sütunlar"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Galeriler"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Yıl: %s"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Ay: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Gün: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Yazar: %s"
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Aylık arşivlere bakmayı deneyin. %1$s"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "En çok Kullanılan Kategoriler"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Burada hiçbir şeyin bulunmadığı görülüyor. Belki alttaki bağlantılardan birini veya bir arama yapmayı denemelisin?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Üzgünüz! Bu sayfa bulunamıyor."

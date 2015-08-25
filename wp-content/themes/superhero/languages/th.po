@@ -1,0 +1,313 @@
+# Translation of Superhero in Thai
+# This file is distributed under the same license as the Superhero package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-06-02 04:34:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Superhero\n"
+
+msgid "Full-Width Page"
+msgstr ""
+
+msgid "Give your blog a clean look with bright pops of color. Superhero features full-bleed featured posts and featured images, a fixed header, and subtle CSS3 transitions."
+msgstr ""
+
+#: sidebar.php:25
+msgid "Meta"
+msgstr "Meta"
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr "ค้นหา &hellip;"
+
+#: searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr "ค้นหา"
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "ผลลัพท์การค้นหาสำหรับ: %s"
+
+#: no-results.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "ดูเหมือนว่าเราไม่มีสิ่งที่คุณกำลังหาอยู่  บางทีคำสั่งค้นหาอาจช่วยคุณได้"
+
+#: no-results.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "ขอโทษครับ  แต่ไม่มีสิ่งใดตรงกับเงื่อนไขการค้นหาของคุณ  โปรดลองใหม่ด้วยคำที่ต่างออกไป"
+
+#: no-results.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "พร้อมที่จะเผยแพร่เรื่องแรกของคุณหรือไม่? <a href=\"%1$s\">เริ่มใช้งานที่นี่</a>"
+
+#: no-results.php:14
+msgid "Nothing Found"
+msgstr "ไม่พบสิ่งใด"
+
+#: inc/template-tags.php:142
+msgid "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:137 inc/template-tags.php:148
+msgid "View all posts by %s"
+msgstr "ดูเรื่องทั้งหมดของ %s"
+
+#: inc/template-tags.php:130 slider.php:27
+msgid "Permalink to %s"
+msgstr "ลิงก์ถาวรไป %s"
+
+#: inc/template-tags.php:128
+msgid "<span class=\"post-format-link\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s</a></span> | Posted on <a href=\"%4$s\" title=\"%5$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%6$s\">%7$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%8$s\" title=\"%9$s\" rel=\"author\">%10$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:99
+msgid "%1$s at %2$s"
+msgstr "%1$s ที่ %2$s"
+
+#: inc/template-tags.php:91
+msgid "Your comment is awaiting moderation."
+msgstr "ความเห็นของคุณกำลังรอตรวจสอบ"
+
+#: inc/template-tags.php:88
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">พูดว่า:</span>"
+
+#: inc/template-tags.php:78
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:53
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "เรื่องที่ใหม่กว่า <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:49
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> เรื่องที่เก่ากว่า"
+
+#: inc/template-tags.php:44
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:43
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/jetpack.php:48
+msgid "The featured content section displays on the front page above the first post in the content area."
+msgstr ""
+
+#: inc/template-tags.php:39
+msgid "Post navigation"
+msgstr "เมนูนำทางเรื่อง"
+
+#: inc/extras.php:75
+msgid "Page %s"
+msgstr "หน้า %s"
+
+#: image.php:106
+msgid "Both comments and trackbacks are currently closed."
+msgstr "ไม่อนุญาตให้เขียนความเห็นและใส่ trackbacks"
+
+#: image.php:104
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "ไม่อนุญาตให้ใส่ Trackbacks แต่คุณสามารถ <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">เขียนความเห็นได้</a>"
+
+#: image.php:102
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "ไม่อนุญาตให้แสดงความเห็น  แต่คุณสามารถใส่ trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>"
+
+#: image.php:100
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">เขียนความเห็น</a> หรือใส่ trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>"
+
+#: image.php:40
+msgid "Next &rarr;"
+msgstr "ต่อไป &rarr;"
+
+#: image.php:39
+msgid "&larr; Previous"
+msgstr "&larr; ก่อนหน้า"
+
+#: image.php:24
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr ""
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "ข้ามไปยังเนื้อหา"
+
+#: functions.php:109
+msgctxt "Carrois Gothic font: on or off"
+msgid "on"
+msgstr ""
+
+#: header.php:44
+msgid "Menu"
+msgstr ""
+
+#: functions.php:90
+msgid "Sidebar"
+msgstr "ด้านข้าง"
+
+#: functions.php:64
+msgid "Primary Menu"
+msgstr "เมนูหลัก"
+
+#: footer.php:20
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: footer.php:18
+msgid "Proudly powered by %s"
+msgstr "ภูมิใจนำเสนอโดย %s"
+
+#: footer.php:18
+msgid "A Semantic Personal Publishing Platform"
+msgstr "แพลตฟอร์มสำหรับเผยแพร่บทความส่วนบุคคล"
+
+#: content-single.php:54
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "ข้อความนี้ถูกเขียนใน %1$s คั่นหน้า <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">ลิงก์ถาวร</a>"
+
+#: content-single.php:52
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "เรื่องนี้ถูกเขียนใน %1$s และติดป้ายกำกับ %2$s คั่นหน้า <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">ลิงก์ถาวร</a>"
+
+#: content-single.php:46
+msgid "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "คั่นหน้า <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">ลิงก์ถาวร</a>"
+
+#: content-single.php:44
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "ข้อความนี้ถูกติดป้ายกำกับ %2$s  คั่นหน้า <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">ลิงก์ถาวร</a>"
+
+#: content-link.php:57 content-page.php:31 content-single.php:68 content.php:70
+#: image.php:35 image.php:108 inc/template-tags.php:78
+#: inc/template-tags.php:101
+msgid "Edit"
+msgstr "แก้ไข"
+
+#: content-link.php:54 content.php:67
+msgid "% Comments"
+msgstr "% ความเห็น"
+
+#: content-link.php:54 content.php:67
+msgid "1 Comment"
+msgstr ""
+
+#: content-link.php:54 content.php:67
+msgid "Leave a comment"
+msgstr "แสดงความคิดเห็น"
+
+#: content-link.php:47 content.php:60
+msgid "Tagged %1$s"
+msgstr "ติดป้ายกำกับ %1$s"
+
+#: content-link.php:36 content.php:49
+msgid "Posted in %1$s"
+msgstr "เขียนใน %1$s"
+
+#: content-link.php:32 content-link.php:42 content-single.php:36
+#: content-single.php:39 content.php:45 content.php:55
+msgid ", "
+msgstr ", "
+
+#: content-link.php:24 content-page.php:28 content-single.php:30 content.php:37
+#: image.php:94
+msgid "Pages:"
+msgstr "หน้า:"
+
+#: content-link.php:23 content.php:36
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "อ่านเพิ่มเติม <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:61
+msgid "Comments are closed."
+msgstr "ปิดการแสดงความเห็น"
+
+#: comments.php:51
+msgid "Newer Comments &rarr;"
+msgstr "ความเห็นที่ใหม่กว่า &rarr;"
+
+#: comments.php:50
+msgid "&larr; Older Comments"
+msgstr "&larr; ความเห็นที่เก่ากว่า"
+
+#: comments.php:49
+msgid "Comment navigation"
+msgstr "เมนูนำทางความเห็น"
+
+#: comments.php:30
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+
+#: archive.php:63 sidebar.php:18
+msgid "Archives"
+msgstr "คลังเก็บ"
+
+#: archive.php:60
+msgid "Links"
+msgstr "ลิงก์"
+
+#: archive.php:57
+msgid "Quotes"
+msgstr "เรื่องคำคม"
+
+#: archive.php:54
+msgid "Videos"
+msgstr "เรื่องวีดีโอ"
+
+#: archive.php:51
+msgid "Images"
+msgstr "เรื่องรูปภาพ"
+
+#: archive.php:48
+msgid "Asides"
+msgstr "เรื่องสั้น"
+
+#: archive.php:45
+msgid "Yearly Archives: %s"
+msgstr "คลังเก็บแบบปี: %s"
+
+#: archive.php:42
+msgid "Monthly Archives: %s"
+msgstr "คลังเก็บรายเดือน: %s"
+
+#: archive.php:39
+msgid "Daily Archives: %s"
+msgstr "คลัีงเก็บรายวัน: %s"
+
+#: archive.php:31
+msgid "Author Archives: %s"
+msgstr "คลังเก็บผู้เขียน: %s"
+
+#: archive.php:24
+msgid "Tag Archives: %s"
+msgstr "คลังเก็บป้ายกำกับ: %s"
+
+#: archive.php:21
+msgid "Category Archives: %s"
+msgstr "คลังเก็บหมวดหมู่: %s"
+
+#: 404.php:40
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "พยายามมองหาในคลังเก็บรายเดือน %1$s"
+
+#: 404.php:32
+msgid "Most Used Categories"
+msgstr "หมวดหมู่ที่ใช้มากที่สุด"
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "ไม่พบสิ่งใดบนที่นั้น บางทีลองหนึ่งในลิงก์ด้านล่างหรือใช้การค้นหา?"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "โอ๊ะ ไม่พบหน้านั้น"

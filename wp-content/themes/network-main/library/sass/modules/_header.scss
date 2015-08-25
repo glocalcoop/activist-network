@@ -1,296 +1,72 @@
 // HEADERS
 
+// GLOBAL HEADER
+
 .header-global {
-    background: $base0;
 
+    @extend %clearfix;
+
+    // Customize this with something dark
+    background-color: $black;
+    padding-top: 10px;
+
+    // Logo
     .site-title {
-
         display: none;
-
-        @include breakpoint(md) {
-            //display: block;
-            @include span-columns(4);
-        }
-
-        margin: 0 15px 0 0;
-        padding: 0;
+        font-size: 14px;
         line-height: 1;
-
-        img {
-          fill: $text-color;
-          max-height: 40px;
-        }
-        &:hover img {
-          fill: $anchor-color; 
-        }
 
         a {
             display: inline-block;
-            vertical-align: middle;
-            padding: .5em;
-
-            border: 2px solid $text-color;
-            color: $text-color;
-
-        }
-
-        &.network-logo a {
-            border: none;
-            padding: 0;
-        }
-
-    }
-
-    .nav-global {
-
-        @include breakpoint(md) {
-            @include span-columns(16);
-        }
-
-        @include breakpoint(lg) {
-            @include span-columns(12);
-        }
-
-    }
-
-
-}
-
-
-//964
-
-
-// mobile buttons to reveal full menus
-
-.nav-anchors {
-    margin: 0;
-    li {
-        display: inline-block;
-        margin: 0;
-        &:last-child {
-            float: right;
-        }   
-    }
-    .anchor-menu {
-        @include font-icon-base($family:"ios7-icon"); 
-        @extend %ios7-down;
-        @include font-size($epsilon); 
-        display: block;
-        padding: 20px 0;
-        &:before {
-            float: right;
-            margin-left: 7px;
-            margin-top: 2px;
-        }
-    }
-    .anchor-search {
-        @include font-icon-base($family:"ios7-icon"); 
-        @extend %ios7-search;
-        @include font-size($delta); 
-        display: block;
-        padding: 16px 0;
-    }
-}
-
-// GLOBAL NAV
-		
-.nav-global {
-    background: transparent;
-    position: relative;
-    a {
-        color: $text-color;
-    }
-    a:hover {
-        color: $anchor-color;
-    }
-    .search-form {
-        float: right;
-        //border-top: 1px solid $base9;
-    }
-    .search-form.active {
-        border-top: 1px solid $base9;
-    }
-    
-    .menu {
-        position: absolute;
-        z-index: $layer4;
-        left: 0;
-        top: 62px;
-        background: $white;
-		a {
-            padding: 10px 20px;
-            color: $text-color;
-            border-bottom: 1px solid $hr-alt;
-		}
-  	&:first-child a {
-        border-top: 1px solid $hr-alt;
-  	}
-    a:focus,
-		a:hover {
-    		background: $text-color;
-    		color: $white;
-		}
-    	// li.current-menu-item, 
-    	// li.current_page_item, 
-    	// li.current-page-ancestor {
-     //    	display: none;
-    	// }
-    }
-}
-
-// GLOBAL NAV -- BREAKPOINT 1
-
-@include breakpoint(md) {
-    
-    .site-title{
-        display: none;
-    }
-
-    .nav-anchors {
-        display: none;
-    }
-
-    .nav-global {
-        .search-form {
-            border: 0; 
-            padding: 5px 0;
-        }    
-        .menu {
-            position: static; 
-            padding-right: 5px; 
-            background: transparent;
-            li {
-                @include font-size($zeta);
-            }
-            > li a {
-                border: 0;
-                padding: 20px 10px;
-            }
-            a:focus,
-            a:hover {
-                background: transparent; 
-                color: $teal;
-            }
-        	li.current-menu-item, 
-        	li.current_page_item, 
-        	li.current-page-ancestor {
-                position: relative;
-        	    // triangle 'on' state
-                &:after {
-                    position: absolute;
-                    content: '';
-                    height: 0;
-                    width: 0;
-                    top: auto;
-                    left: 50%;
-                    bottom: 0;
-                    z-index: $layer1;
-                    border: solid transparent;
-                    border-bottom-color: $base9;
-                    border-width: 10px;
-                    margin-left: -10px;
-                }
-			
-                a {
-                    color: $text-color;
-                    font-weight: bold;
-                }
-				
-				// sub-nav
-				li {
-					a {
-						font-weight: 300;
-						&:hover,
-						&:focus {
-							color: $teal;
-						}
-					}
-					// no triagle 'on' for sub-menus
-					&:after {
-						border:none;
-					}
-			
-				}
-        	}
-        }
-        .sub-menu {
-            left: -10px;
-            li a {
-                padding: 10px 20px;
-            }
-            a:first-child {
-                border-top: 0;
-            }
-        }
-    }    
-    
-    // disable hover for current page but not its ancestors
-    li.current-menu-item,
-    li.current_page_item {
-        a:hover {
-            color: $text-color;
-            cursor: default;
-        }
-    }
-
-}
-
-
-
-// LOCAL NAV
-
-.nav-local {
-    background: $base3;
-    height: 44px;
-    .search-form {
-        float: right;
-        margin: 0 5px;
-    }
-    #searchform #searchsubmit {
-        background: $anchor-color;
-        border-color: $anchor-color;
-    }
-    .nav-anchors a {
-        padding: 11px 0;
-    }
-    .menu li {
-        font-size: 100%;
-        text-transform: uppercase; 
-        letter-spacing: $tracking;
-        a {
-            padding: 11px 15px;
-            color: $anchor-color;
-            &:hover {
-                color: $white;
-                background: $anchor-color;
-            }
-        }
-        &.current-menu-item a {
-            background: $anchor-color;
+            padding: 7px;
+            border: 1px solid $white;
+            white-space: nowrap;
             color: $white;
-        }
-    }
-}
+            text-decoration: none;
+            text-transform: uppercase;
 
-// LOCAL NAV -- BREAKPOINT 1
-
-@include breakpoint(md) {
-
-    .nav-local {
-        .menu {
-            li a {
-                color: $white;
-                padding: 14px 15px;
-            }    
-        }
-        .sub-menu {
-            li a {
-                color: $anchor-color;
+            &:hover,
+            &:focus {
+                background-color: $base3;
             }
         }
     }
 
+    // Nav
+    .nav-global {}
+
+}
+
+// BREAKPOINT
+@include breakpoint(md) {
+
+    .header-global {
+
+        //padding: 10px;
+
+        // Logo
+        .site-title {
+            display: block;
+            float: left;
+            width: 250/1200 * 100%;
+            min-width: 175px;
+            margin-top: 0;
+            margin-bottom: 0;
+            //text-align: center;
+        }
+
+        // Nav
+        .nav-global {
+            float: left;
+            width: 950/1200 * 100%;
+        }
+
+    }
+
 }
 
 
 
+// LOCAL HEADER
+
+.header-local {}

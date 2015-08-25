@@ -1,0 +1,312 @@
+# Translation of Fictive in Irish
+# This file is distributed under the same license as the Fictive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-12-06 16:20:13+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Fictive\n"
+
+#: eventbrite/eventbrite-index.php:38 eventbrite/eventbrite-single.php:25
+msgid "Eventbrite event"
+msgstr ""
+
+#. Author URI of the plugin/theme
+#: wp-content/themes/pub/fictive/style.css
+msgid "https://wordpress.com/themes/"
+msgstr "https://wordpress.com/themes/"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/fictive/style.css
+msgid "Fictive is all about you -- your style, your look, your story. Make it personal with a custom header image, a Gravatar, and links to your favorite social networks. Use Post Formats to dress up your content, add a custom menu and widgets, or keep it simple with a fixed-position header."
+msgstr ""
+
+#: inc/template-tags.php:144
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s ag %2$s"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Torthaí ar: %s"
+
+#: inc/template-tags.php:124
+msgid "Your comment is awaiting moderation."
+msgstr "Tá do fhreagra fós le ceadú."
+
+#: inc/template-tags.php:120
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "<span class=\"says\">Arsa</span> %s:"
+
+#: inc/template-tags.php:83
+msgid "<span class=\"post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a></span><span class=\"byline\"><span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr "<span class=\"post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a></span><span class=\"byline\"><span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#: inc/template-tags.php:110
+msgid "Pingback:"
+msgstr "Ping:"
+
+#: inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+msgstr "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+
+#: inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+msgstr "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+
+#: inc/template-tags.php:74
+msgid "<span class=\"post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">Featured</a></span><span class=\"byline\"><span class=\"author vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\" rel=\"author\">%5$s</a></span></span>"
+msgstr "<span class=\"post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">In airde</a></span><span class=\"byline\"><span class=\"author vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\" rel=\"author\">%5$s</a></span></span>"
+
+#: inc/template-tags.php:78 inc/template-tags.php:89
+msgid "View all posts by %s"
+msgstr "Gach a bhfuil foilsithe ag %s"
+
+#: inc/template-tags.php:27
+msgctxt "Older posts"
+msgid "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+msgstr "<span class=\"meta-nav screen-reader-text\">&larr;</span>"
+
+#: inc/template-tags.php:31
+msgctxt "Newer posts"
+msgid "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+msgstr "<span class=\"meta-nav screen-reader-text\">&rarr;</span>"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Treoraíocht alt"
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Treoraíocht alt"
+
+#: inc/extras.php:67
+msgid "Page %s"
+msgstr "Leathanach %s"
+
+#: inc/customizer.php:46
+msgid "Scroll"
+msgstr "Inscrolláilte"
+
+#: inc/customizer.php:29
+msgid "Gravatar Email"
+msgstr "Ríomhphost Gravatar"
+
+#: inc/customizer.php:41
+msgid "Sidebar Position"
+msgstr "Suíomh an Taobh-Bharra"
+
+#: inc/customizer.php:45
+msgid "Fixed"
+msgstr "Seasta"
+
+#: inc/customizer.php:19
+msgid "Theme"
+msgstr "Téama"
+
+#: header.php:66
+msgid "Skip to content"
+msgstr "Beir go dtí an t-alt féin mé"
+
+#: header.php:62
+msgid "Search"
+msgstr "Cuartaigh"
+
+#: header.php:60
+msgid "Widgets"
+msgstr "Giúirléidí"
+
+#. translators: If there are characters in your language that are not supported
+#. by Bitter, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:168
+msgctxt "Bitter font: on or off"
+msgid "on"
+msgstr "on"
+
+#: header.php:57
+msgid "Menu"
+msgstr "Roghchlár"
+
+#. translators: If there are characters in your language that are not supported
+#. by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:159
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:45
+msgid "Social Links"
+msgstr "Naisc Shóisialta"
+
+#: functions.php:78
+msgid "Sidebar"
+msgstr "Taobh-Bharra"
+
+#: functions.php:44
+msgid "Primary Menu"
+msgstr "Príomhroghchlár"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Téama: %1$s le %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Le cumhacht %s"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: content.php:45
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Tuilleadh <span class=\"meta-nav\">&rarr;</span>"
+
+#: content.php:32
+msgid "% Comments"
+msgstr "Freagraí: %"
+
+#: content.php:32
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:32
+msgid "Leave a comment"
+msgstr "Freagra"
+
+#: content-single.php:17 content.php:18
+msgid "All %s posts"
+msgstr "Na %s alt uile"
+
+#: content-page.php:30 content-single.php:27 content.php:35
+#: eventbrite/eventbrite-index.php:46 eventbrite/eventbrite-single.php:33
+#: inc/template-tags.php:110 inc/template-tags.php:147
+msgid "Edit"
+msgstr "Eagar"
+
+#: content-page.php:24 content-single.php:35 content.php:48
+msgid "Pages:"
+msgstr "Leathanaigh:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Sén chaoi nár frítheadh an rud a bhí tú a iarraidh. B’fhéidir go gcuartófá é."
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sén chaoi nár frítheadh na téarmaí a chuartaigh tú. D’fhéadfá focla eile a chuartú."
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "bhFuil tú réidh le halt a fhoilsiú? <a href=\"%1$s\">Féadfaidh tú tosaí anseo</a>."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Gan Toradh"
+
+#: comments.php:61
+msgid "Comments are closed."
+msgstr "Freagraí dúnta."
+
+#: comments.php:37 comments.php:51
+msgid "Newer Comments &rarr;"
+msgstr "Freagraí Nua &rarr;"
+
+#: comments.php:36 comments.php:50
+msgid "&larr; Older Comments"
+msgstr "&larr; Seanfhreagraí"
+
+#: comments.php:35 comments.php:49
+msgid "Comment navigation"
+msgstr "Treoraíocht freagartha"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Smaoineamh amháin ar “%2$s”"
+msgstr[1] "%1$s smaoineamh ar “%2$s”"
+msgstr[2] "%1$s smaoineamh ar “%2$s”"
+msgstr[3] "%1$s smaoineamh ar “%2$s”"
+msgstr[4] "%1$s smaoineamh ar “%2$s”"
+
+#: archive.php:66
+msgid "Archives"
+msgstr "Cartlanna"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "Céimíochtaí"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Fuaimeanna"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Comhráití"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Naisc"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Athfhriotail"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Físeáin"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Dánlanna"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Íomhánna"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Seachfhocla"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Bliain: %s"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Lá: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Mí: %s"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Údar: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Sén chaoi nár fríothadh tada anseo. B’fhéidir go mbreathnófá ar cheann de na naisc seo thíos nó go gcuartófá rud éigin."
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ab bu búna! Dheamhan fáil ar bith ar an leathanach sin."

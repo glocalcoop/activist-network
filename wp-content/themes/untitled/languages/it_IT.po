@@ -1,0 +1,303 @@
+# Translation of Untitled in Italian
+# This file is distributed under the same license as the Untitled package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-06-02 04:59:27+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Untitled\n"
+
+#. Author URI of the plugin/theme
+#: wp-content/themes/pub/untitled/style.css
+msgid "https://wordpress.com/themes/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/untitled/page-full-width.php
+msgid "Full-Width Page"
+msgstr ""
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/untitled/style.css
+msgid "A nice bold theme. Features full-bleed featured posts and featured images, a fixed header, and subtle CSS3 transitions."
+msgstr "Un bel tema audace. Supporta articoli in evidenza a schermo intero e immagini in evidenza, ha una testata fissa e fini transizioni CSS3."
+
+#: single.php:90
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Questa voce è stata pubblicata in %1$s. Contrassegna il <a href=\"%3$s\" title=\"Permalink a %4$s\" rel=\"bookmark\">permalink</a>."
+
+#: single.php:88
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Questa voce è stata pubblicata in %1$s e contrassegnata con %2$s. Contrassegna il <a href=\"%3$s\" title=\"Permalink a %4$s\" rel=\"bookmark\">permalink</a>."
+
+#: single.php:82
+msgid "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Contrassegna il <a href=\"%3$s\" title=\"Permalink a %4$s\" rel=\"bookmark\">permalink</a>."
+
+#: single.php:80
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Questa voce è stata pubblicata con tag %2$s. Aggiungi il <a href=\"%3$s\" title=\"Permalink a %4$s\" rel=\"bookmark\">permalink</a> ai segnalibri."
+
+#. translators: used between list items, there is a space after the comma
+#: single.php:72 single.php:75 slider.php:27
+msgid ", "
+msgstr ", "
+
+#: searchform.php:11
+msgctxt "submit button"
+msgid "Search"
+msgstr "Cerca"
+
+#: searchform.php:10
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Cerca &hellip;"
+
+#: searchform.php:9
+msgctxt "assistive text"
+msgid "Search"
+msgstr ""
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Risultati della ricerca per: %s"
+
+#: no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Non riusciamo a trovare quello che cerchi. Forse eseguire una ricerca potrebbe essere di aiuto."
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Spiacente, nulla corrisponde i termini della tua ricerca. Riprova con parole chiave diverse."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Sei pronto a pubblicare il tuo primo articolo? <a href=\"%1$s\">Comincia da qui</a>."
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "Nessun risultato"
+
+#: inc/template-tags.php:125
+msgid "<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:131
+msgid "View all posts by %s"
+msgstr "Vedi tutti gli articoli di %s"
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:98
+msgid "%1$s at %2$s"
+msgstr "%1$s alle %2$s"
+
+#: inc/template-tags.php:90
+msgid "Your comment is awaiting moderation."
+msgstr "Il tuo commento deve ancora venire moderato."
+
+#: inc/template-tags.php:87
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">ha detto:</span>"
+
+#: inc/template-tags.php:77
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:52
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articoli più recenti <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:48
+msgid "Older posts"
+msgstr "Post più vecchi"
+
+#: inc/jetpack.php:22
+msgid "The featured content section displays on the front page above the first post in the content area."
+msgstr "La sezione contenuto in evidenza è mostrata nella pagina iniziale sopra il primo articolo nell'area del contenuto."
+
+#: inc/template-tags.php:38
+msgid "Post navigation"
+msgstr "Navigazione articolo"
+
+#: inc/extras.php:61
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: image.php:105
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Commenti e trackback sono attualmente chiusi."
+
+#: image.php:103
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "I trackback sono chiusi, ma puoi <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">postare un commento</a>."
+
+#: image.php:101
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "I commenti sono chiusi, ma puoi lasciare un trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">URL del trackback</a>. "
+
+#: image.php:99
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Posta un commento\">Posta un commento</a> o usa questo <a class=\"trackback-link\" href=\"%s\" title=\"URL per il trackback a questo post\" rel=\"trackback\">indirizzo per il trackback</a>."
+
+#: image.php:39
+msgid "Next &rarr;"
+msgstr "Successivo &rarr;"
+
+#: image.php:38
+msgid "&larr; Previous"
+msgstr "&larr; Precedente"
+
+#: image.php:23
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "Publicato <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> alle <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> li <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+
+#: header.php:41
+msgid "Skip to content"
+msgstr "Vai al contenuto"
+
+#. translators: If there are characters in your language that are not supported
+#. by Raleway or Arvo, translate this to 'off'. Do not translate into your
+#. own language.
+#: functions.php:101
+msgctxt "Web font: on or off"
+msgid "on"
+msgstr ""
+
+#: header.php:40
+msgid "Menu"
+msgstr "Menu"
+
+#: functions.php:85
+msgid "Sidebar"
+msgstr "Barra laterale"
+
+#: functions.php:55
+msgid "Primary Menu"
+msgstr "Menu principale"
+
+#: footer.php:19
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s di %2$s."
+
+#: footer.php:18
+msgid "Proudly powered by %s"
+msgstr "Funziona grazie a %s"
+
+#: footer.php:18
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Una piattaforma semantica di editoria personale"
+
+#: content.php:52
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
+
+#: content.php:20 content.php:39
+msgid "% Comments"
+msgstr "% commenti"
+
+#: content.php:20 content.php:39
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:20 content.php:39
+msgid "0 comments"
+msgstr "0 commenti"
+
+#: content-page.php:22 content.php:28 image.php:34 image.php:107
+#: inc/template-tags.php:77 inc/template-tags.php:100 single.php:103
+msgid "Edit"
+msgstr "Modifica"
+
+#: content-page.php:16 content.php:53 image.php:93 single.php:63
+msgid "Pages:"
+msgstr "Pagine: "
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr "I commenti sono chiusi."
+
+#: comments.php:49
+msgid "Newer Comments &rarr;"
+msgstr "Commenti più recenti &rarr;"
+
+#: comments.php:48
+msgid "&larr; Older Comments"
+msgstr "&larr; Commenti meno recenti"
+
+#: comments.php:47
+msgid "Comment navigation"
+msgstr "Navigazione commenti"
+
+#: comments.php:28
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: archive.php:64
+msgid "Archives"
+msgstr "Archivi"
+
+#: archive.php:61
+msgid "Links"
+msgstr "Link"
+
+#: archive.php:58
+msgid "Quotes"
+msgstr "Citazioni"
+
+#: archive.php:55
+msgid "Videos"
+msgstr "Video"
+
+#: archive.php:52
+msgid "Images"
+msgstr "Immagini"
+
+#: archive.php:49
+msgid "Asides"
+msgstr "Incisi"
+
+#: archive.php:46
+msgid "Yearly Archives: %s"
+msgstr "Archivi annuali: %s"
+
+#: archive.php:43
+msgid "Monthly Archives: %s"
+msgstr "Archivio mensile:%s"
+
+#: archive.php:40
+msgid "Daily Archives: %s"
+msgstr "Archivi giornalieri: %s"
+
+#: archive.php:32
+msgid "Author Archives: %s"
+msgstr "Archivio dell'autore: %s"
+
+#: archive.php:25
+msgid "Tag Archives: %s"
+msgstr "Archivi tag: %s"
+
+#: archive.php:22
+msgid "Category Archives: %s"
+msgstr "Archivi categoria: %s"
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Provare a consultare gli archivi mensili. %1$s"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "Categorie più utilizzate"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Sembra che non ci sia nulla a questo indirizzo. Perché non provi con uno dei link in basso o una ricerca?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! Impossibile trovare la pagina."

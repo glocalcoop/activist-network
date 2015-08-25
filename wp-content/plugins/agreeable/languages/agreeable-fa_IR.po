@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Agreeable\n"
+"POT-Creation-Date: 2014-07-23 09:05-0500\n"
+"PO-Revision-Date: 2014-07-23 09:05-0500\n"
+"Last-Translator: Ian Wilson <ian@kraftpress.com>\n"
+"Language-Team: build/create studios <ian@buildcreate.com>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../agreeable-options.php:38
+msgid "Options saved."
+msgstr "تنظیمات ذخیره شد."
+
+#: ../agreeable-options.php:74
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: ../agreeable-options.php:76
+msgid "Failed to agree error message: "
+msgstr "پیغام خطا برای قبول نکردن شرایط :"
+
+#: ../agreeable-options.php:76
+msgid "This is what shows up if they don't check the box"
+msgstr ""
+"این جای متنی است که در صورت انتخاب قبول نکردن قوانین و شرایط خواهند دید"
+
+#: ../agreeable-options.php:79
+msgid "Select your terms page"
+msgstr "صفحه قوانین خود را انتخاب کنید"
+
+#: ../agreeable-options.php:85
+msgid "Create a page for your terms and conditions and select it here."
+msgstr ""
+"برگه ای برای قوانین و مقررات خود بسازید و در این قسمت آن را انتخاب کنید."
+
+#: ../agreeable-options.php:88
+msgid "Message: "
+msgstr "پیغام:"
+
+#: ../agreeable-options.php:88
+msgid "This is the text that goes right after the checkbox"
+msgstr "این جای متنی است که درست بغل دگمه‌ی قبول داشتن قوانین قرار میگیرد "
+
+#: ../agreeable-options.php:93
+msgid "Remember agreement for 30 days"
+msgstr "به خاطر داشتن قوانین و مقررات برای ۳۰ روز"
+
+#: ../agreeable-options.php:97
+msgid "Lightbox Options"
+msgstr "Lightbox تنظیمات"
+
+#: ../agreeable-options.php:100
+msgid "Active?"
+msgstr "فعال؟"
+
+#: ../agreeable-options.php:102
+msgid ""
+"If checked, the terms will pop up in a responsive lightbox.  If unchecked "
+"the message will link to your terms page."
+msgstr ""
+"در صورت انتخاب ، قوانین به صورت lightbox در یک صفحه‌ی پاپ آپ باز میشوند. در "
+"غیر اینصورت پیغام شما به صفحه قوانین که انتخاب کرده‌اید لینک میشود."
+
+#: ../agreeable-options.php:106
+msgid "Text color"
+msgstr "رنگ نوشته"
+
+#: ../agreeable-options.php:110
+msgid "Background color"
+msgstr "رنگ پس زمینه"
+
+#: ../agreeable-options.php:115
+msgid "Where should it be displayed? "
+msgstr "کجا باید نمایش داده شود؟"
+
+#: ../agreeable-options.php:117
+msgid "Login form"
+msgstr "فرم ورود به سایت"
+
+#: ../agreeable-options.php:118
+msgid "Registration form"
+msgstr "فرم ثبت نام"
+
+#: ../agreeable-options.php:120
+msgid "Comment form"
+msgstr "فرم نظرات و دیدگاه ها"
+
+#: ../agreeable-options.php:125
+msgid "Update Options"
+msgstr "تنضیمات آپدیت (به‌روز رسانی)"

@@ -40,6 +40,9 @@
   @else if $family == "ios7-icon" {
     $family:"ios7-icon";
   }
+  @else if $family == "FontAwesome" {
+    $family:"FontAwesome";
+  }
   &:before {
     font-family: "#{$family}";
     font-style: normal;
@@ -50,6 +53,18 @@
     display: inline-block;
     color: $color;
     vertical-align: middle;
+  }
+}
+
+%fa-before {
+  &:before {
+    font-family: 'FontAwesome';
+  }
+}
+
+%fa-after {
+  &:after {
+    font-family: 'FontAwesome';
   }
 }
 
