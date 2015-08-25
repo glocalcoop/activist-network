@@ -10,7 +10,7 @@ Text Domain: network-main
 */
 
 
-// COMMUNITY CSS 
+// MAIN SITE CSS 
 // This stylesheet was written in Sass and compiled locally 
 
 
@@ -25,6 +25,7 @@ Text Domain: network-main
 
 // WEB FONTS
 @import "partials/webfonts";
+@import "partials/fontawesome/fontawesome";
 @import "partials/entypo";
 @import "partials/ios7icon";
 
