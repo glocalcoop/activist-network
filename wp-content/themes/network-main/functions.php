@@ -238,7 +238,8 @@ function glocal_scripts_and_styles() {
 	wp_register_style( 'glocal-civicrm', get_template_directory_uri() . '/library/css/plugins/civicrm.css');
 
 	// Main Theme Stylesheet
-	wp_register_style( 'glocal-stylesheet', get_template_directory_uri() . '/library/css/style.css');
+	//wp_register_style( 'glocal-stylesheet-dev', get_template_directory_uri() . '/style.css');
+	wp_register_style( 'glocal-stylesheet', get_template_directory_uri() . '/library/css/style.min.css');
 	
 
 	
@@ -249,6 +250,7 @@ function glocal_scripts_and_styles() {
 
     wp_enqueue_style( 'responsive-slider-stylesheet' );
 	wp_enqueue_style( 'glocal-civicrm' );
+    //wp_enqueue_style( 'glocal-stylesheet-dev' );
     wp_enqueue_style( 'glocal-stylesheet' );
 
 }

@@ -7,52 +7,354 @@ NAVIGATION STYLES
 /* all menu lists have a .menu class applied via the 
 wp_menu function, so we can easily write one group of 
 styles and our css is cleaner and more scalable. */
- 
-.menu, 
-.sub-menu {
-  margin: 0;
-  width: 100%;
-  background: $white;
-  @include transition(all 0.3s ease-out);
-}
 
-.sub-menu {
-  background: rgba(0,0,0,.05);
-}
+// GLOBAL NAV
 
-.menu {  
-    li {
-        margin: 0;
-        display: block;
-        white-space: nowrap;
-        line-height: 1;
-    }
-	a {
-		display: block;
-		text-decoration: none;
-        color: $text-color;
-        padding: 0.8em;
-        position: relative;
-        &:focus,
-        &:hover {
-          color: $anchor-color;
+.nav-global {
+
+    a,
+    a:visited {
+        color: $white;
+
+        &:hover,
+        &:focus {
+            color: $base8;
         }
-	}
+    }
+
+    ul {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        @include transition(all 0.3s ease-out);
+
+        ul {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            float: left;
+            position: absolute;
+            top: 1.5em;
+            left: -999em;
+            z-index: 99999;
+            margin-top: 10px;
+            margin-left: -10px;
+            background-color: $black;
+
+            ul {
+                left: -999em;
+                top: 0;
+            }
+
+            li {
+                padding: 7px;
+
+                &:hover > ul,
+                &.focus > ul {
+                    left: 100%;
+                }
+            }
+
+            a {
+                width: 200px;
+            }
+
+            &:hover > a,
+            .focus > a {
+            }
+
+            a:hover,
+            a.focus {
+            }
+        }
+
+        li:hover > ul,
+        li.focus > ul {
+            left: auto;
+        }
+    }
+    li {
+        //float: left;
+        display: inline-block;
+        position: relative;
+        margin-bottom: 0;
+
+        &:hover > a,
+        &.focus > a {
+        }
+    }
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    .current_page_item,
+    .current-menu-item,
+    .current_page_ancestor {
+        // Customize this
+        background-color: $base2;
+        &> a {
+            font-weight: bold;
+        }
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a {}
+
+    /* Small menu. */
+    .nav-anchors,
+    .main-nav.active {
+        display: block;
+    }
+
+    // Active Mobile Menu
+    .main-nav.active {
+        background-color: $black;
+        width: 100%;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        display: block;
+        margin: 0;
+        left: 0;
+        //float: left;
+        // top: 1.5em;
+        // left: -999em;
+        //padding: 10px 0;
+        z-index: 99999;
+
+        li {
+            display: block;
+            padding: 5px 10px;
+            border-bottom: 1px solid $base2;
+
+            a {
+                display: inline-block;
+            }
+
+            &:hover,
+            &:focus {
+                // Customize this
+                background-color: $base2;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    a.anchor-menu {
+        font-size: 14px;
+        line-height: 1;
+        display: inline-block;
+        padding: 7px;
+        border: 1px solid $white;
+        white-space: nowrap;
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+            background-color: $base2;
+        }
+    }
+
 }
 
-.menu-item-has-children {
-    > a {
-        @include font-icon-base($family:"ios7-icon"); 
-        @extend %ios7-down;
+
+@include breakpoint(md) {
+
+    .nav-global {
+
+        .nav-anchors {
+            display: none;
+        }
+        .main-nav,
+        .main-nav.active {
+            display: block;
+            position: relative !important;
+            width: 730/900 * 100% !important;
+
+            &>li {
+                display: inline-block;
+                padding: 5px 10px;
+            }
+        }
+
+        li {
+            font-size: 1em;
+            border-bottom: none;
+
+            &:hover,
+            &:focus {
+                background-color: $base2;
+            }
+
+            li {
+                border-bottom: 1px solid $base2;
+            }
+        }
+
+        .search-form {
+            display: block;
+            width: 170/900 * 100%;
+            min-width: 170px;
+
+            #searchform {
+                margin: 0;
+            }            
+        }
+
     }
-    > a:before {
+
+}
+
+
+// LOCAL NAV
+
+.nav-local {
+    background: $base3;
+    height: 44px;
+    .search-form {
         float: right;
-        margin-left: 6px;
-        margin-top: 3px;
-        @include font-size($milli); 
+        margin: 0 5px;
+    }
+    #searchform #searchsubmit {
+        background: $anchor-color;
+        border-color: $anchor-color;
+    }
+    .nav-anchors {
+        padding-right: 10px;
+        padding-left: 10px;
+        a {
+            padding: 11px 0;
+        }
+    }
+    .menu li {
+        font-size: 100%;
+        text-transform: uppercase; 
+        letter-spacing: $tracking;
+        a {
+            padding: 11px 15px;
+            color: $anchor-color;
+            &:hover {
+                color: $white;
+                background: $anchor-color;
+            }
+        }
+        &.current-menu-item a {
+            background: $anchor-color;
+            color: $white;
+        }
     }
 }
 
+// LOCAL NAV -- BREAKPOINT 1
+
+@include breakpoint(md) {
+
+    .nav-local {
+        .menu {
+            li a {
+                color: $white;
+                padding: 14px 15px;
+            }    
+        }
+        .sub-menu {
+            li a {
+                color: $anchor-color;
+            }
+        }
+    }
+
+}
+ 
+.header-local {
+
+    // GENERAL STYLES 
+    .menu, 
+    .sub-menu {
+      margin: 0;
+      width: 100%;
+      background: $white;
+      @include transition(all 0.3s ease-out);
+    }
+
+    .sub-menu {
+      background: rgba(0,0,0,.05);
+    }
+
+    .menu {  
+        li {
+            margin: 0;
+            display: block;
+            white-space: nowrap;
+            line-height: 1;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            color: $text-color;
+            padding: 0.8em;
+            position: relative;
+            &:focus,
+            &:hover {
+              color: $anchor-color;
+            }
+        }
+    }
+
+    .menu-item-has-children {
+        > a {
+            @include font-icon-base($family:"ios7-icon"); 
+            @extend %ios7-down;
+        }
+        > a:before {
+            float: right;
+            margin-left: 6px;
+            margin-top: 3px;
+            @include font-size($milli); 
+        }
+    }
+
+
+
+
+
+    // NAVIGATION: HORIZONTAL
+
+    @include breakpoint(md) {
+        
+        .menu {
+            background: none;
+            border: 0;
+            width: auto;
+            li {
+                display: inline-block;
+                margin-right: -2px; // remove space caused by inline-block
+                position: relative;
+            }
+        }
+        
+        .sub-menu {
+            background: $white;
+            position: absolute;
+            z-index: 99; // to stay above carousel w/z-index of 50
+            top: 100%;
+            left: 0;
+            width: 12em;
+            li {
+                display: block;
+            }
+            a {
+                padding: 11px 0;
+            }
+        }
+
+    }
+
+}
 
 // if JS is loaded, set up animations
 .js {
@@ -61,17 +363,14 @@ styles and our css is cleaner and more scalable. */
         max-height: 0;
         overflow: hidden;
         &.active {
-          max-height: 480px;
-        	overflow: visible;
+            max-height: 480px;
+            overflow: visible;
         }
     }
 }
 
-
-// NAVIGATION: HORIZONTAL
-
 @include breakpoint(md) {
-    
+
     // if JS is loaded, set up animations
     .js {
         .menu, 
@@ -86,33 +385,50 @@ styles and our css is cleaner and more scalable. */
             display: block;
         }
     }
-    
-    .menu {
-        background: none;
-        border: 0;
-        width: auto;
-        li {
-            display: inline-block;
-            margin-right: -2px; // remove space caused by inline-block
-            position: relative;
+
+}
+
+
+// mobile buttons to reveal full menus
+
+.nav-anchors {
+    margin: 0;
+    li {
+        display: inline-block;
+        margin: 0;
+        &:last-child {
+            float: right;
+        }
+        & > a {
+            color: $white;
         }
     }
-    
-    .sub-menu {
-        background: $white;
-        position: absolute;
-        z-index: 99; // to stay above carousel w/z-index of 50
-        top: 100%;
-        left: 0;
-        width: 12em;
-        li {
-            display: block;
-        }
-        a {
-            padding: 11px 0;
+    .anchor-menu {
+        @include font-icon-base($family:"ios7-icon"); 
+        @extend %ios7-down;
+        @include font-size($epsilon); 
+        display: block;
+        padding: 20px 0;
+        &:before {
+            float: right;
+            margin-left: 7px;
+            margin-top: 2px;
         }
     }
-        
+    .anchor-search {
+        @include font-icon-base($family:"ios7-icon"); 
+        @extend %ios7-search;
+        @include font-size($delta); 
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+// BREAKPOINT - DESKTOP
+@include breakpoint(md) {
+    .nav-anchors {
+        display: none;
+    }
 }
 
 
