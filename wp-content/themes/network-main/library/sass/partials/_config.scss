@@ -38,18 +38,17 @@ $base0: #fcfdf9;
 // Tutorial: how to use color variables properly:
 // http://sachagreif.com/sass-color-variables/
 
-$anchor-color: $teal;
-$anchor-hover: $navy;
 $headline-color: $base1;
 $text-color: $base2;
 $quiet-color: $base6;
 $loud-color: $black;
 $hr-color: $base6;
 $hr-alt: $base8;
+$anchor-color: $teal;
+$anchor-hover: $loud-color;
 
 
 // TYPOGRAPHY
-
 $sans: "Lato", Helvetica, Verdana, sans-serif;
 $mono: "Courier New", Courier, monospace;
 $tracking: 1px;
@@ -100,3 +99,10 @@ $layer3: 3; // cloak
 $layer4: 4; // lightbox
 $layer5: 5; // lightbox content
 
+// SCREEN
+
+$xs-screen: 321px;
+$sm-screen: 481px;
+$md-screen: 769px; // Desktop
+$lg-screen: 1025px;
+$xl-screen: 1200px;

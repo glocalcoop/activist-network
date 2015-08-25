@@ -1,4 +1,16 @@
-// COMMUNITY CSS 
+/******************************************************************
+Theme Name: Network Main Theme
+Theme URI: https://github.com/glocalcoop/activist-network.git
+Description: Theme for the main site of a multisite network. Based on the <a href="https://github.com/eddiemachado/bones" title="Bones">Bones Development Theme</a>.
+Author: Pea, Glocal Coop
+Author URI: http://glocal.coop
+Version: 1.1.2
+Tags: clean, flexible-width, modularized
+Text Domain: network-main
+*/
+
+
+// MAIN SITE CSS 
 // This stylesheet was written in Sass and compiled locally 
 
 
@@ -13,6 +25,7 @@
 
 // WEB FONTS
 @import "partials/webfonts";
+@import "partials/font-awesome/font-awesome";
 @import "partials/entypo";
 @import "partials/ios7icon";
 
@@ -36,7 +49,7 @@
 @import "modules/alerts";
 
 
-// PLUGINS/ADD-ONS
+// // PLUGINS/ADD-ONS
 @import "plugins/biographia";
 @import "plugins/bxslider";
 @import "plugins/easymail";
@@ -45,15 +58,11 @@
 @import "plugins/thememylogin";
 @import "plugins/meetings";
 @import "plugins/glocalnetworkcontent";
+@import "plugins/siteorigin";
 
 
-// CUSTOM THEME
-// if you've forked this theme, delete this folder and add your own
+// // CUSTOM THEME
+// // if you've forked this theme, delete this folder and add your own
 @import "anp/footer";
 @import "anp/sidebar";
 @import "anp/overview";
-
-
-
-
-

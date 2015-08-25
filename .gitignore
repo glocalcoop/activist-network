@@ -17,6 +17,7 @@ civicrm.settings.php
 wp-content/plugins/files/
 wp-content/plugins/akismet/
 wp-content/plugins/hello-dolly/
+wp-content/plugins/*/node_modules
 
 wp-content/plugins/wp-example-content/content.php
 wp-content/plugins/wp-example-content/magic.php
@@ -52,5 +53,6 @@ xmlrpc.php
 
 .brackets.json
 *.sass-cache
+
 .gitignore~
 .htaccess~

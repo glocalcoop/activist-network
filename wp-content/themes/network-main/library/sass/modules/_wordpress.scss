@@ -39,10 +39,20 @@ style a page via class
 .paged {}                         /* paged items like search results or archives */
 	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
 
+.post-excerpt {
+	@include font-size($zeta);
+    line-height: 1.5;
+}
 .meta {
 	@include font-size($nano);
 	color: $quiet-color;
 	text-transform: uppercase;
 }
 
-
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
