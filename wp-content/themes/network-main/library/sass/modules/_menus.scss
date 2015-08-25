@@ -91,7 +91,7 @@ styles and our css is cleaner and more scalable. */
     .current-menu-item,
     .current_page_ancestor {
         // Customize this
-        background-color: $base2;
+        background-color: $base3;
         &> a {
             font-weight: bold;
         }
@@ -115,7 +115,7 @@ styles and our css is cleaner and more scalable. */
         li {
             display: block;
             padding: 5px 10px;
-            border-bottom: 1px solid $base2;
+            border-bottom: 1px solid $base3;
 
             a {
                 display: inline-block;
@@ -124,7 +124,7 @@ styles and our css is cleaner and more scalable. */
             &:hover,
             &:focus {
                 // Customize this
-                background-color: $base2;
+                background-color: $base3;
             }
 
             &:last-child {
@@ -156,7 +156,7 @@ styles and our css is cleaner and more scalable. */
 
         &:hover,
         &:focus {
-            background-color: $base2;
+            background-color: $base3;
         }
     }
 
@@ -196,11 +196,11 @@ styles and our css is cleaner and more scalable. */
 
             &:hover,
             &:focus {
-                background-color: $base2;
+                background-color: $base3;
             }
 
             li {
-                border-bottom: 1px solid $base2;
+                border-bottom: 1px solid $base3;
             }
         }
 
@@ -231,8 +231,8 @@ styles and our css is cleaner and more scalable. */
         }
     }
     .anchor-menu {
-        @include font-icon-base($family:"ios7-icon"); 
-        @extend %ios7-down;
+        @include font-icon-base($family:"FontAwesome"); 
+        @extend .fa-angle-down;
         font-size: 14px;
         line-height: 1;
         display: inline-block;
@@ -245,7 +245,7 @@ styles and our css is cleaner and more scalable. */
 
         &:hover,
         &:focus {
-            background-color: $base2;
+            background-color: $base3;
         }
         &:before {
             float: right;
