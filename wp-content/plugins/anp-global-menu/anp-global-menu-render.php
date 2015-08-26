@@ -57,7 +57,7 @@ function anp_global_menu_register_scripts() {
 
     }
 
-    $anp_global_menu_css = ANP_GLOBAL_MENU_URL . '/assets/css/style.css';
+    $anp_global_menu_css = ANP_GLOBAL_MENU_URL . '/assets/css/style.min.css';
 
     // Provide filter to override style
     $anp_global_menu_css = apply_filters( 'anp_global_menu_css_override', $anp_global_menu_css );
