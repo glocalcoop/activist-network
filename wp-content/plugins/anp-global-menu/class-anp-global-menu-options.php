@@ -85,8 +85,6 @@ class ANP_Global_Menu_Options {
 
                         <?php if( 'select' == $setting['type'] ) { ?>
 
-                            <?php// var_dump( $setting['options'] ) ?>
-
                             <?php $selected_menu = get_site_option( $setting['id'] ); ?>
 
                             <select name="anp-global-menu[<?php echo $setting['id']; ?>]" id="anp-global-menu">

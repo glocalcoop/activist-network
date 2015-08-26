@@ -1,0 +1,100 @@
+/*********************
+RESPONSIVE BREAKPOINT
+**********************/
+
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media screen and (min-width: 321px)  { @content; } 
+  }
+  @if $point == sm {
+    @media screen and (min-width: 481px) { @content; }
+  }
+  // @if $point == md {
+  //  @media screen and (min-width: 769px) { @content; }
+  // }
+  @if $point == md {
+    @media screen and (min-width: 878px) { @content; }
+  }
+  @if $point == lg {
+    @media screen and (min-width: 1025px) { @content; }
+  }
+  @else if $point == xl {
+    @media screen and (min-width: 1200px) { @content; }
+  }
+}
+
+/*********************
+CLEARFIX
+**********************/
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/*********************
+TRANSITION
+**********************/
+
+@mixin transition($secs) {
+
+     -moz-transition: $secs;
+      -ms-transition: $secs;
+       -o-transition: $secs;
+  -webkit-transition: $secs;
+          transition: $secs;
+}
+
+/*********************
+FONT SIZE
+**********************/
+
+@mixin font-size($sizeValue) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / 16) + rem;
+}
+
+/*********************
+FONT ICONS
+**********************/
+
+@mixin font-icon-base($family:"FontAwesome", $font-size: inherit, $line-height: inherit, $margin: 0, $align: center, $color: inherit) {
+  @if $family == "FontAwesome" {
+    $family:"FontAwesome";
+  }
+  @else if $family == "entypo" {
+    $family:"entypo";
+  }
+  @else if $family == "ios7-icon" {
+    $family:"ios7-icon";
+  }
+  @else if $family == "entypo-social" {
+    $family:"entypo-social";
+  }
+  &:before {
+    font-family: "#{$family}";
+    font-style: normal;
+    font-size: $font-size;
+    line-height: $line-height;
+    margin-right: $margin;
+    text-align: $align;
+    display: inline-block;
+    color: $color;
+    vertical-align: middle;
+  }
+}
+
+%fa-before {
+  &:before {
+    font-family: 'FontAwesome';
+  }
+}
+
+%fa-after {
+  &:after {
+    font-family: 'FontAwesome';
+  }
+}

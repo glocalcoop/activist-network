@@ -1,0 +1,29 @@
+{
+  "name": "anp-global-menu",
+  "version": "0.0.2-dev",
+  "authors": [
+    "Pea",
+    "Glocal"
+  ],
+  "description": "Plugin that displays a global menu on sub-sites of a WP multi-site install.",
+  "main": "anp-global-menu.php",
+  "keywords": [
+    "Wordpress",
+    "multi-site",
+    "navigation"
+  ],
+  "license": "GPLv3",
+  "homepage": "https://github.com/glocalcoop/activist-network",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5"
+  }
+}
