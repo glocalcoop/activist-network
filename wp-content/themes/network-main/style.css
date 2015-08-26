@@ -2353,19 +2353,19 @@ body {
   line-height: 1.5;
   color: #333231; }
 
-h1, h2, h3, .news-list .post-title,
+h1, h2, .so-widget-sow-cta .sow-cta-base h4, h3, .news-list .post-title,
 .home .widget_glocal_network_posts_widget .post-title, .home-modules .events-list .all-events-link,
 .home-modules .widget_em_widget ul .all-events-link, h4, h5, h6 {
   text-rendering: optimizelegibility;
   font-weight: 300;
   color: #1a1919;
   margin-top: 0; }
-  h1 a, h2 a, h3 a, .news-list .post-title a,
+  h1 a, h2 a, .so-widget-sow-cta .sow-cta-base h4 a, h3 a, .news-list .post-title a,
   .home .widget_glocal_network_posts_widget .post-title a, .home-modules .events-list .all-events-link a,
   .home-modules .widget_em_widget ul .all-events-link a, h4 a, h5 a, h6 a {
     text-decoration: none; }
 
-h1, h2 {
+h1, h2, .so-widget-sow-cta .sow-cta-base h4 {
   line-height: 1.2;
   margin-bottom: 24px; }
 
@@ -2383,7 +2383,7 @@ h1 {
   font-size: 48px;
   font-size: 3rem; }
 
-h2 {
+h2, .so-widget-sow-cta .sow-cta-base h4 {
   font-size: 36px;
   font-size: 2.25rem; }
 
@@ -2501,6 +2501,13 @@ style a page via class
 /* if user is logged in */
 /* paged items like search results or archives */
 /* individual paged (i.e. body.paged-3) */
+.post-excerpt, .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel .news-list .post-title a, .news-list .so-widget-sow-post-carousel .post-title a,
+.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a,
+.so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5; }
+
 .meta {
   font-size: 11px;
   font-size: 0.6875rem;
@@ -3448,7 +3455,7 @@ a {
     color: #00a99d; }
   a:hover,
   a:focus {
-    color: #247cc9; }
+    color: #000; }
   a:link {
     /*
 		this highlights links on iPhones/iPads.
@@ -3465,7 +3472,7 @@ a {
   letter-spacing: 1px; }
 
 button,
-.button {
+.button, .so-widget-sow-cta .sow-cta-base .ow-button-base a {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -3484,27 +3491,31 @@ button,
   button:link,
   button:visited,
   .button:link,
-  .button:visited {
+  .so-widget-sow-cta .sow-cta-base .ow-button-base a:link,
+  .button:visited, .so-widget-sow-cta .sow-cta-base .ow-button-base a:visited {
     color: #fff; }
   button:hover,
   button:focus,
   .button:hover,
-  .button:focus {
+  .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover,
+  .button:focus, .so-widget-sow-cta .sow-cta-base .ow-button-base a:focus {
     background: #00dccc;
     color: #fff !important; }
 
-.home-intro .button {
+.home-intro .button, .home-intro .so-widget-sow-cta .sow-cta-base .ow-button-base a, .so-widget-sow-cta .sow-cta-base .ow-button-base .home-intro a {
   margin-bottom: 10px;
   margin-right: 10px;
   width: 100%; }
 
 .sidebar .button,
-.sidebar input[type='submit'] {
+.sidebar .so-widget-sow-cta .sow-cta-base .ow-button-base a,
+.so-widget-sow-cta .sow-cta-base .ow-button-base .sidebar a, .sidebar input[type='submit'] {
   background: #4d4c4a;
   background: rgba(0, 0, 0, 0.6);
   font-weight: 700; }
   .sidebar .button:hover,
-  .sidebar input[type='submit']:hover {
+  .sidebar .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover,
+  .so-widget-sow-cta .sow-cta-base .ow-button-base .sidebar a:hover, .sidebar input[type='submit']:hover {
     background: #757472;
     background: rgba(0, 0, 0, 0.4); }
 
@@ -3572,7 +3583,7 @@ POSTS & CONTENT STYLES
 	and floating images at the next breakpoint,
 	but it's up to you. Feel free to change it up.
 	*/ }
-  .post .entry-content h2, .post .entry-content h3, .post .entry-content .news-list .post-title, .news-list .post .entry-content .post-title,
+  .post .entry-content h2, .post .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .post .entry-content h4, .post .entry-content h3, .post .entry-content .news-list .post-title, .news-list .post .entry-content .post-title,
   .post .entry-content .home .widget_glocal_network_posts_widget .post-title, .home .widget_glocal_network_posts_widget .post .entry-content .post-title, .post .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list .post .entry-content .all-events-link,
   .post .entry-content .home-modules .widget_em_widget ul .all-events-link, .home-modules .widget_em_widget ul .post .entry-content .all-events-link, .post .entry-content h4 {
     margin-top: 1.8em; }
@@ -3701,7 +3712,9 @@ POSTS & CONTENT STYLES
   margin-top: 0;
   margin-bottom: 20px; }
 
-.home .post-excerpt {
+.home .post-excerpt, .home .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .home a, .home .so-widget-sow-post-carousel .news-list .post-title a, .so-widget-sow-post-carousel .news-list .post-title .home a, .home .news-list .so-widget-sow-post-carousel .post-title a, .news-list .so-widget-sow-post-carousel .post-title .home a,
+.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .home .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .home a, .home .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .home a,
+.home .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .home a, .home .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .home a {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -3716,7 +3729,7 @@ POSTS & CONTENT STYLES
   text-transform: uppercase;
   letter-spacing: 1px; }
 
-.widget_glocal_network_post_highlights_widget > h2.module-heading {
+.widget_glocal_network_post_highlights_widget > h2.module-heading, .so-widget-sow-cta .sow-cta-base .widget_glocal_network_post_highlights_widget > h4.module-heading {
   display: none; }
 
 .highlights .module-heading {
@@ -3750,7 +3763,9 @@ POSTS & CONTENT STYLES
     margin: 3px 0 -3px;
     font-size: 22px;
     font-size: 1.375rem; }
-  .highlights-list .post-excerpt {
+  .highlights-list .post-excerpt, .highlights-list .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .highlights-list a, .highlights-list .so-widget-sow-post-carousel .news-list .post-title a, .so-widget-sow-post-carousel .news-list .post-title .highlights-list a, .highlights-list .news-list .so-widget-sow-post-carousel .post-title a, .news-list .so-widget-sow-post-carousel .post-title .highlights-list a,
+  .highlights-list .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title .highlights-list a, .highlights-list .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .highlights-list a, .highlights-list .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .highlights-list a, .highlights-list .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .highlights-list a,
+  .highlights-list .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .highlights-list a, .highlights-list .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .highlights-list a {
     font-size: 14px;
     font-size: 0.875rem; }
   .highlights-list .blog-name,
@@ -4011,10 +4026,28 @@ SIDEBARS & ASIDES
   margin: .25em 0 0; }
 
 .news-list .post-excerpt,
-.home .widget_glocal_network_posts_widget .post-excerpt {
+.news-list .so-widget-sow-post-carousel h3 a,
+.so-widget-sow-post-carousel h3 .news-list a, .so-widget-sow-post-carousel .news-list .post-title a, .news-list .so-widget-sow-post-carousel .post-title a,
+.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title .news-list a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .news-list a, .news-list .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a,
+.so-widget-sow-post-carousel .home-modules .events-list .all-events-link .news-list a, .news-list .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a,
+.home-modules .events-list .so-widget-sow-post-carousel .all-events-link .news-list a,
+.news-list .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a,
+.so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .news-list a, .news-list .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .news-list a, .home .widget_glocal_network_posts_widget .post-excerpt, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .home .widget_glocal_network_posts_widget a, .so-widget-sow-post-carousel .news-list .post-title .home .widget_glocal_network_posts_widget a, .news-list .so-widget-sow-post-carousel .post-title .home .widget_glocal_network_posts_widget a,
+.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .home .widget_glocal_network_posts_widget a, .home .widget_glocal_network_posts_widget .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .home .widget_glocal_network_posts_widget a,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .home .widget_glocal_network_posts_widget a, .home .widget_glocal_network_posts_widget .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .home .widget_glocal_network_posts_widget a {
   margin: 0.25em 0 0.5em; }
   .news-list .post-excerpt a,
-  .home .widget_glocal_network_posts_widget .post-excerpt a {
+  .news-list .so-widget-sow-post-carousel h3 a a,
+  .so-widget-sow-post-carousel h3 .news-list a a, .so-widget-sow-post-carousel .news-list .post-title a a, .news-list .so-widget-sow-post-carousel .post-title a a,
+  .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title .news-list a a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .news-list a a, .news-list .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a a,
+  .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .news-list a a, .news-list .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a a,
+  .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .news-list a a,
+  .news-list .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a a,
+  .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .news-list a a, .news-list .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a a,
+  .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .news-list a a, .home .widget_glocal_network_posts_widget .post-excerpt a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel h3 a a, .so-widget-sow-post-carousel h3 .home .widget_glocal_network_posts_widget a a, .so-widget-sow-post-carousel .news-list .post-title .home .widget_glocal_network_posts_widget a a, .news-list .so-widget-sow-post-carousel .post-title .home .widget_glocal_network_posts_widget a a,
+  .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .home .widget_glocal_network_posts_widget a a, .home .widget_glocal_network_posts_widget .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .home .widget_glocal_network_posts_widget a a,
+  .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .home .widget_glocal_network_posts_widget a a, .home .widget_glocal_network_posts_widget .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .home .widget_glocal_network_posts_widget a a {
     display: inline; }
 
 .news-list .blog-name,
@@ -4150,7 +4183,9 @@ SIDEBARS & ASIDES
     display: block;
     border: 5px solid #fff; }
 
-.network-posts .post-excerpt {
+.network-posts .post-excerpt, .network-posts .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .network-posts a, .network-posts .so-widget-sow-post-carousel .news-list .post-title a, .so-widget-sow-post-carousel .news-list .post-title .network-posts a, .network-posts .news-list .so-widget-sow-post-carousel .post-title a, .news-list .so-widget-sow-post-carousel .post-title .network-posts a,
+.network-posts .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title .network-posts a, .network-posts .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .network-posts a, .network-posts .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .network-posts a, .network-posts .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .network-posts a,
+.network-posts .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .network-posts a, .network-posts .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .network-posts a {
   font-size: 22px;
   font-size: 1.375rem;
   margin-bottom: 12px; }
@@ -4621,7 +4656,7 @@ article.home-feature div.bx-wrapper .bx-viewport {
     vertical-align: middle; }
 
 .bx-wrapper .bx-controls-direction a:hover {
-  color: #247cc9; }
+  color: #000; }
 
 .bx-wrapper .bx-controls-direction .bx-prev {
   left: -40px; }
@@ -4793,7 +4828,7 @@ div.css-search {
     line-height: 1.5; }
   .css-events-list a {
     color: #00a99d; }
-    .css-events-list a.button {
+    .css-events-list a.button, .css-events-list .so-widget-sow-cta .sow-cta-base .ow-button-base a, .so-widget-sow-cta .sow-cta-base .ow-button-base .css-events-list a {
       margin: 0 0 1em 0; }
   .css-events-list .event-list-header {
     display: none; }
@@ -5210,7 +5245,8 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .tax-anp_meetings_type article p.meta {
     margin-bottom: 0; }
   .post-type-archive-anp_meetings article header h2,
-  .post-type-archive-anp_meetings article header h3,
+  .post-type-archive-anp_meetings article header .so-widget-sow-cta .sow-cta-base h4,
+  .so-widget-sow-cta .sow-cta-base .post-type-archive-anp_meetings article header h4, .post-type-archive-anp_meetings article header h3,
   .post-type-archive-anp_meetings article header .news-list .post-title,
   .news-list .post-type-archive-anp_meetings article header .post-title,
   .post-type-archive-anp_meetings article header .home .widget_glocal_network_posts_widget .post-title,
@@ -5218,7 +5254,8 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .home-modules .events-list .post-type-archive-anp_meetings article header .all-events-link,
   .post-type-archive-anp_meetings article header .home-modules .widget_em_widget ul .all-events-link,
   .home-modules .widget_em_widget ul .post-type-archive-anp_meetings article header .all-events-link, .tax-anp_meetings_tag article header h2,
-  .tax-anp_meetings_tag article header h3,
+  .tax-anp_meetings_tag article header .so-widget-sow-cta .sow-cta-base h4,
+  .so-widget-sow-cta .sow-cta-base .tax-anp_meetings_tag article header h4, .tax-anp_meetings_tag article header h3,
   .tax-anp_meetings_tag article header .news-list .post-title,
   .news-list .tax-anp_meetings_tag article header .post-title,
   .tax-anp_meetings_tag article header .home .widget_glocal_network_posts_widget .post-title,
@@ -5226,7 +5263,8 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .home-modules .events-list .tax-anp_meetings_tag article header .all-events-link,
   .tax-anp_meetings_tag article header .home-modules .widget_em_widget ul .all-events-link,
   .home-modules .widget_em_widget ul .tax-anp_meetings_tag article header .all-events-link, .tax-anp_meetings_type article header h2,
-  .tax-anp_meetings_type article header h3, .tax-anp_meetings_type article header .news-list .post-title, .news-list .tax-anp_meetings_type article header .post-title,
+  .tax-anp_meetings_type article header .so-widget-sow-cta .sow-cta-base h4,
+  .so-widget-sow-cta .sow-cta-base .tax-anp_meetings_type article header h4, .tax-anp_meetings_type article header h3, .tax-anp_meetings_type article header .news-list .post-title, .news-list .tax-anp_meetings_type article header .post-title,
   .tax-anp_meetings_type article header .home .widget_glocal_network_posts_widget .post-title, .home .widget_glocal_network_posts_widget .tax-anp_meetings_type article header .post-title, .tax-anp_meetings_type article header .home-modules .events-list .all-events-link, .home-modules .events-list .tax-anp_meetings_type article header .all-events-link,
   .tax-anp_meetings_type article header .home-modules .widget_em_widget ul .all-events-link, .home-modules .widget_em_widget ul .tax-anp_meetings_type article header .all-events-link {
     font-size: 22px;
@@ -5244,7 +5282,7 @@ MEETINGS ARCHIVE & SINGLE STYLES
 
 .single-anp_meetings article .entry-content {
   margin-top: .5em; }
-  .single-anp_meetings article .entry-content h2 {
+  .single-anp_meetings article .entry-content h2, .single-anp_meetings article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .single-anp_meetings article .entry-content h4 {
     font-size: 28px;
     font-size: 1.75rem;
     margin-top: .5em;
@@ -5278,7 +5316,7 @@ MEETINGS ARCHIVE & SINGLE STYLES
     padding: .25em 0;
     border-top: 1px solid #e6e4df;
     border-bottom: 1px solid #e6e4df; }
-    .single-anp_meetings article .entry-content .meeting-agenda h2 {
+    .single-anp_meetings article .entry-content .meeting-agenda h2, .single-anp_meetings article .entry-content .meeting-agenda .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .single-anp_meetings article .entry-content .meeting-agenda h4 {
       margin: 0; }
     .single-anp_meetings article .entry-content .meeting-agenda li {
       font-weight: normal; }
@@ -5394,7 +5432,7 @@ article.home-feature div.bx-wrapper .bx-viewport {
     vertical-align: middle; }
 
 .bx-wrapper .bx-controls-direction a:hover {
-  color: #247cc9; }
+  color: #000; }
 
 .bx-wrapper .bx-controls-direction .bx-prev {
   left: -40px; }
@@ -5409,6 +5447,69 @@ article.home-feature div.bx-wrapper .bx-viewport {
   margin-top: -24px;
   text-indent: 0;
   line-height: 48px; }
+
+.so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel .news-list .post-title a, .news-list .so-widget-sow-post-carousel .post-title a,
+.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a,
+.so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a {
+  color: #333231;
+  font-weight: 300; }
+
+.so-widget-sow-post-carousel .sow-carousel-thumbnail {
+  background-color: #ff931e; }
+
+.so-widget-sow-post-carousel a.sow-carousel-next,
+.so-widget-sow-post-carousel a.sow-carousel-previous {
+  background-color: #00a99d;
+  border-radius: 0; }
+  .so-widget-sow-post-carousel a.sow-carousel-next:hover,
+  .so-widget-sow-post-carousel a.sow-carousel-next:focus,
+  .so-widget-sow-post-carousel a.sow-carousel-previous:hover,
+  .so-widget-sow-post-carousel a.sow-carousel-previous:focus {
+    background-color: #000; }
+
+.so-widget-sow-headline h1,
+.so-widget-sow-headline h2, .so-widget-sow-headline .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .so-widget-sow-headline h4 {
+  color: #1a1919 !important; }
+
+.so-widget-sow-cta .sow-cta-base {
+  background-color: #fff !important;
+  border-color: #b8b6b2 !important; }
+  .so-widget-sow-cta .sow-cta-base h4 {
+    color: #1a1919 !important; }
+  .so-widget-sow-cta .sow-cta-base h5 {
+    color: #1a1919 !important; }
+  .so-widget-sow-cta .sow-cta-base .ow-button-base a {
+    border-radius: 0; }
+    .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover,
+    .so-widget-sow-cta .sow-cta-base .ow-button-base a:focus {
+      background-color: #000 !important; }
+    .so-widget-sow-cta .sow-cta-base .ow-button-base a .sow-icon-fontawesome {
+      color: #fff !important; }
+
+.so-widget-sow-slider .sow-slider-base {
+  border: 5px solid #fff; }
+
+.so-widget-sow-slider .sow-slider-images li {
+  max-height: 500px;
+  overflow: hidden; }
+
+.so-widget-sow-slider .sow-slider-images .sow-slider-image,
+.so-widget-sow-slider .sow-slider-images .sow-slider-image-cover {
+  background-position: top; }
+
+.so-widget-sow-slider .sow-slide-nav a {
+  color: #00a99d !important; }
+
+.so-widget-sow-hero .sow-slider-image-wrapper {
+  padding: 1em; }
+
+.so-widget-sow-hero .sow-slider-base {
+  border: 5px solid #fff; }
+  .so-widget-sow-hero .sow-slider-base h2, .so-widget-sow-hero .sow-slider-base .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .so-widget-sow-hero .sow-slider-base h4 {
+    font-size: 2.25rem !important;
+    color: #fff; }
+  .so-widget-sow-hero .sow-slider-base li {
+    min-height: 250px; }
 
 .footer-logo {
   margin: 0;
@@ -5524,7 +5625,7 @@ body.overview .content {
     text-align: center;
     font-weight: 700;
     margin: 96px; }
-  body.overview .content h2 {
+  body.overview .content h2, body.overview .content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base body.overview .content h4 {
     text-align: center;
     margin-bottom: 8px; }
   body.overview .content p {
@@ -5677,10 +5778,12 @@ body.overview .promo-intro {
 .overview-services {
   color: #fff; }
   .overview-tools h2,
-  .overview-tools p,
+  .overview-tools .so-widget-sow-cta .sow-cta-base h4,
+  .so-widget-sow-cta .sow-cta-base .overview-tools h4, .overview-tools p,
   .overview-glocal h2,
-  .overview-glocal p,
-  .overview-services h2, .overview-services p {
+  .overview-glocal .so-widget-sow-cta .sow-cta-base h4,
+  .so-widget-sow-cta .sow-cta-base .overview-glocal h4, .overview-glocal p,
+  .overview-services h2, .overview-services .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .overview-services h4, .overview-services p {
     color: #fff; }
 
 .overview-tools {

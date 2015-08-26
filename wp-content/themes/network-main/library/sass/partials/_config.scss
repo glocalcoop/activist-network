@@ -38,14 +38,14 @@ $base0: #fcfdf9;
 // Tutorial: how to use color variables properly:
 // http://sachagreif.com/sass-color-variables/
 
-$anchor-color: $teal;
-$anchor-hover: $navy;
 $headline-color: $base1;
 $text-color: $base2;
 $quiet-color: $base6;
 $loud-color: $black;
 $hr-color: $base6;
 $hr-alt: $base8;
+$anchor-color: $teal;
+$anchor-hover: $loud-color;
 
 
 // TYPOGRAPHY
