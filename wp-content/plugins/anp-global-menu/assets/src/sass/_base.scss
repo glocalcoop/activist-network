@@ -1,0 +1,569 @@
+/*********************
+HEADER
+*********************/
+
+// GLOBAL HEADER
+
+#anpgm-header {
+
+    @include clearfix();
+
+    // Customize this with something dark
+    background-color: $black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .anpgm-wrap {
+    	width: $max-width;
+    	margin: 0 auto;
+    }
+
+    // Base font
+    a {
+        font-family: $sans;
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+    // Logo
+    #anpgm-network-title {
+        display: none;
+        
+        line-height: 14px;
+        margin: 0;
+        padding: 0;
+
+        a {
+            display: inline-block;
+            padding: 7px;
+            border: 1px solid $white;
+            white-space: nowrap;
+            font-size: 14px;
+            color: $white;
+            text-decoration: none;
+            text-transform: uppercase;
+            vertical-align: top;
+
+            &:hover,
+            &:focus {
+                background-color: $base3;
+            }
+        }
+    }
+
+    // Nav
+    #anpgm-global-nav {}
+
+}
+
+// BREAKPOINT
+@include breakpoint(md) {
+
+    #anpgm-header {
+
+        // Logo
+        #anpgm-network-title {
+            display: block;
+            float: left;
+            width: 250/1200 * 100%;
+            min-width: 175px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        // Nav
+        #anpgm-global-nav {
+            float: left;
+            width: 950/1200 * 100%;
+        }
+
+    }
+
+}
+
+
+/*********************
+NAVIGATION
+*********************/
+
+// GLOBAL NAV
+
+#anpgm-header {
+
+    a,
+    a:visited {
+        color: $white;
+
+        &:hover,
+        &:focus {
+            color: $base8;
+        }
+    }
+
+    ul {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        @include transition(all 0.3s ease-out);
+
+        li:hover > ul,
+        li.focus > ul {
+            left: auto;
+            display: block;
+        }
+    }
+
+    li {
+        //float: left;
+        display: inline-block;
+        position: relative;
+        margin-bottom: 0;
+
+        &:hover > a,
+        &.focus > a {
+        }
+    }
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    .current_page_item,
+    .current-menu-item,
+    .current_page_ancestor {
+        // Customize this
+        background-color: $base3;
+        &> a {
+            font-weight: bold;
+        }
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a {}
+
+    // Active Mobile Menu
+    .global-menu.active {
+        background-color: $black;
+        width: 100%;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        display: block;
+        margin: 0;
+        left: 0;
+        z-index: 99999;
+
+        li {
+            display: block;
+            padding: 5px 10px;
+            border-bottom: 1px solid $base3;
+
+            a {
+                display: inline-block;
+            }
+
+            &:hover,
+            &:focus {
+                // Customize this
+                background-color: $base3;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    /* Small menu. */
+    .global-menu.active {
+        display: block;
+    }
+
+    .mobile-menu-link {
+        font-size: 14px;
+        line-height: 1;
+        display: inline-block;
+        padding: 7px;
+        border: 1px solid $white;
+        white-space: nowrap;
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+            background-color: $base3;
+        }
+    }
+
+}
+
+// BREAKPOINT
+@include breakpoint(md) {
+
+    #anpgm-header {
+
+        .global-menu,
+        .global-menu.active {
+            display: block;
+            position: relative !important;
+            width: 730/900 * 100% !important;
+
+            &>li {
+                display: inline-block;
+                padding: 5px 10px;
+            }
+
+            li {
+                border-bottom: none;
+            }
+        }
+
+        // Submenu
+
+        ul {
+
+            ul {
+                box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+                float: left;
+                position: absolute;
+                top: 1.5em;
+                left: -999em;
+                z-index: 99999;
+                margin-top: 10px;
+                margin-left: -10px;
+                background-color: $black;
+
+                ul {
+                    left: -999em;
+                    top: 0;
+                }
+
+                li {
+                    padding: 7px;
+
+                    &:hover > ul,
+                    &.focus > ul {
+                        left: 100%;
+                    }
+                }
+
+                a {
+                    width: 200px;
+                }
+
+                &:hover > a,
+                .focus > a {
+                }
+
+                a:hover,
+                a.focus {
+                }
+            }
+
+        }
+
+
+        li {
+            font-size: 1em;
+            border-bottom: none;
+
+            &:hover,
+            &:focus {
+                background-color: $base3;
+
+
+                // Sub-menu - Display on roll-over
+                ul {
+                	display: block;
+                }
+            }
+
+            li {
+                border-bottom: 1px solid $base3;
+            }
+        }
+
+    }
+
+}
+
+#anpgm-header {
+
+	// MOBILE
+    .mobile-menu-link {
+        @include font-icon-base($family:"FontAwesome"); 
+        @extend .fa-angle-down;
+        font-size: 14px;
+        line-height: 1;
+        display: inline-block;
+        padding: 7px;
+        border: 1px solid $white;
+        white-space: nowrap;
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+            background-color: $base3;
+        }
+        &:before {
+            float: right;
+            margin-left: 7px;
+            margin-top: 2px;
+        }
+    }
+
+	// BREAKPOINT - DESKTOP
+	@include breakpoint(md) {
+	    .mobile-menu-link {
+            display: none;
+        }
+	}
+
+}
+
+// if JS is loaded, set up animations
+.js {
+    .menu, 
+    .sub-menu {
+        max-height: 0;
+        overflow: hidden;
+        &.active {
+            max-height: 480px;
+            overflow: visible;
+        }
+    }
+    li:hover .sub-menu {
+        display: block;
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+@include breakpoint(md) {
+
+    // if JS is loaded, set up animations
+    .js {
+        .menu, 
+        .sub-menu {
+            max-height: none;
+            overflow: visible;
+        }
+        .sub-menu {
+            display: none;
+        }
+        li:hover .sub-menu {
+            display: block;
+        }
+    }
+
+}
+
+
+
+// #anpgm-header { // Limit to anp-global-header namespace
+
+// 	@include clearfix;
+
+// 	width: 100%;
+// 	margin: 0;
+// 	padding: 0;
+
+// 	z-index: 5;
+
+// 	a,
+// 	a:link {
+// 		text-decoration: none;
+// 	}
+
+// 	.anpgm-wrap {
+// 		@include clearfix;
+// 		margin: 0 auto;
+// 		padding: 1em;
+// 		max-width: $max-width;
+// 	}
+
+// 	#anpgm-network-title { // Network Name
+
+// 		// Mobile First
+// 		padding: .5em;
+// 		margin: 0;
+
+// 		a {
+// 			display: block;
+// 		}
+
+// 		// Medium
+// 		@media(min-width: $medium-screen) {
+// 			float: left;
+// 			margin: 0 30px 0 0;
+// 		}
+
+// 		// Large
+// 		@media(min-width: $large-screen) {}
+
+// 	}
+
+// 	#anpgm-global-nav { // Global Nav
+
+// 		// Mobile First
+// 		.menu {
+// 			padding: 0;
+// 			margin: 0;
+
+// 			max-height: 0;
+// 			opacity: 0;
+// 			overflow: hidden;
+
+// 			li {
+// 				padding: .25em 0;
+// 				border-bottom: 1px solid $menu-border;
+
+// 				&:last-child {
+// 					border-bottom: none;
+// 				}
+// 			}
+
+// 			a {
+// 				padding: .25em;
+// 				display: block;
+// 			}
+
+// 		}
+
+// 		.menu-item-has-children:hover .sub-menu,
+// 		.menu-item-has-children:focus .sub-menu,
+// 		&.active .menu {
+// 			z-index: 10;
+// 			padding-left: 0;
+// 			left: 0;
+// 			max-height: 999px;
+// 			opacity: 1;
+// 			overflow: visible;
+// 		}
+
+// 		.sub-menu {
+// 			padding-left: 0;
+// 			margin-left: 0 !important;
+// 		}
+
+// 		// DESKTOP
+// 		@media(min-width: $medium-screen) {
+
+// 			float: left;
+// 			@include transition(.2s);
+
+// 			.menu {
+
+// 				// Make main nav visible for bigger screens
+// 				max-height: 999px;
+// 				overflow: visible;
+// 				z-index: 5;
+// 				opacity: 1;
+
+// 				margin: 0;
+// 				padding: 0;
+
+// 				li {
+// 					position: relative;
+// 					display: inline-block;
+// 					vertical-align: top;
+// 					white-space: nowrap;
+// 					padding: .5em;
+
+// 					border: none;
+// 				}
+// 			}
+
+// 			.sub-menu {
+// 				position: absolute;
+
+// 				// Hide sub-nav for bigger screens until hover/focus
+// 				max-height: 0;
+// 				opacity: 0;
+// 				overflow: hidden;
+
+// 				li {
+// 					display: block;
+
+// 					&:last-child {
+// 						border-bottom: none;
+// 					}
+// 				}
+// 			}
+
+
+// 			// Show sub-nav on roll-over
+// 			.menu-item-has-children:hover .sub-menu,
+// 			.menu-item-has-children:focus .sub-menu,
+
+// 			// Show sub-nav on click 
+// 			.active {
+// 				z-index: 10;
+// 				padding-left: 0;
+// 				left: -1px;
+// 				max-height: 999px;
+// 				opacity: 1;
+// 				overflow: visible;
+// 			}
+
+// 		}
+
+// 		// Large
+
+// 		@media(min-width: $large-screen) {
+			
+// 		}
+
+// 	}
+
+
+// 	/***************************
+// 	MOBILE NAV STYLES
+// 	***************************/
+
+// 	a.menu-link {
+
+// 		@extend .fa;
+// 		@extend .fa-bars;
+// 		@extend .fa-2x;
+
+// 		margin-top: 10px;
+
+// 		color: $white;
+
+// 		.hide-text {
+// 			opacity: 0;
+// 		}
+
+// 	}
+
+// 	@media(min-width: $medium-screen) {
+
+// 		a.menu-link {
+// 			// Hide mobile menu link on larger screens
+// 			display: none;
+// 		}
+
+// 	}
+
+
+// 	@media(max-width: $xlarge-screen) {}
+
+// 	@media(max-width: $large-screen) {}
+
+// 	@media(max-width: $medium-screen) {}
+
+// 	@media(max-width: $small-screen) {}
+
+// 	@media(max-width: $xsmall-screen) {}
+
+// 	@media(max-width: $tiny-screen) {}
+
+
+// }
+
+.admin-bar #anp-global-header .mobile { }
