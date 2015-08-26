@@ -1,10 +1,8 @@
+
 /*********************
-IMPORT FONTS
+COLORS
 **********************/
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Open+Sans+Condensed:300,700);
-
-// Colors
 $white: #fff;
 $black: #222;
 
@@ -13,6 +11,18 @@ $gray-light: #eee;
 $gray-dark: #333;
 $gray-medium: #999;
 
+
+$base1: #1a1919;
+$base2: #333231;
+$base3: #4d4c4a;
+$base4: #757472;
+$base5: #999894;
+$base6: #b8b6b2;
+$base7: #d1cfcb;
+$base8: #e6e4df;
+$base9: #f5f3f0;
+$base0: #fcfdf9;
+
 $link-color: $white;
 $link-hover: #00aedb;
 $link-vertical-padding: 15px;      //Controls Menu top & bottom padding
@@ -20,8 +30,11 @@ $link-horizontal-padding: 20px;    //Contols Menu left & right padding
 $menu-background: $black;        //Control Menu Color Scheme
 $menu-border: $gray-light;        //Control border colors
 
-// Fonts
-$font-base: 'Open Sans', sans-serif;
+/*********************
+FONTS
+**********************/
+
+$sans: 'Lato', Helvetica, Verdana, sans-serif;
 $font-condensed: 'Open Sans Condensed', sans-serif;
 
 // Screen Sizes
