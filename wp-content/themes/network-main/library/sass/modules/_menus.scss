@@ -272,7 +272,8 @@ styles and our css is cleaner and more scalable. */
 
 // BREAKPOINT - DESKTOP
 @include breakpoint(md) {
-    .nav-global {
+    .nav-global,
+    .nav-local {
         .nav-anchors {
             display: none;
         }
@@ -299,6 +300,9 @@ styles and our css is cleaner and more scalable. */
         a {
             padding: 11px 0;
         }
+    }
+    .anchor-menu {
+        border: none;
     }
     .menu li {
         font-size: 100%;

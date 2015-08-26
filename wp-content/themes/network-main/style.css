@@ -3179,7 +3179,8 @@ styles and our css is cleaner and more scalable. */
       vertical-align: middle; }
 
 @media screen and (min-width: 878px) {
-  .nav-global .nav-anchors {
+  .nav-global .nav-anchors,
+  .nav-local .nav-anchors {
     display: none; } }
 
 .nav-local {
@@ -3196,6 +3197,8 @@ styles and our css is cleaner and more scalable. */
     padding-left: 10px; }
     .nav-local .nav-anchors a {
       padding: 11px 0; }
+  .nav-local .anchor-menu {
+    border: none; }
   .nav-local .menu li {
     font-size: 100%;
     text-transform: uppercase;
