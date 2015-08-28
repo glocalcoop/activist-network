@@ -20,8 +20,8 @@ function glocal_child_scripts_and_styles() {
     //wp_enqueue_script( 'MYSCRIPTNAME' );
     //wp_enqueue_style( 'MYSTYLENAME' );
     
-    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/library/css/style.css', array('glocal-stylesheet') );
-    
+    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/assets/css/style.min.css', array('glocal-stylesheet') );
+   
 }
 
 
