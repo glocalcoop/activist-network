@@ -3050,7 +3050,7 @@ styles and our css is cleaner and more scalable. */
       padding: 5px 10px;
       border-bottom: 1px solid #4d4c4a; }
       .nav-global .main-nav.active li a {
-        display: inline-block; }
+        display: block; }
       .nav-global .main-nav.active li:hover,
       .nav-global .main-nav.active li:focus {
         background-color: #4d4c4a; }
