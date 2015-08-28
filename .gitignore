@@ -30,6 +30,7 @@ wp-content/plugins/wp-example-content/screenshot-3.png
 # wp-content/themes/twentyfourteen/
 # wp-content/themes/twentythirteen/
 wp-content/themes/network-main-*
+!wp-content/themes/network-main-child
 wp-content/themes/*/node_modules
 
 license.txt
