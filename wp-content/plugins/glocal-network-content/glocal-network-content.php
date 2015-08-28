@@ -188,7 +188,7 @@ function glocal_networkwide_sites_module($parameters = []) {
 // Conditionals don't work. Loading on all pages...
 add_action('wp_enqueue_scripts','load_highlight_styles', 200);
 function load_highlight_styles() {    
-    wp_enqueue_style( 'glocal-network-posts', plugins_url( '/stylesheets/css/style.css' , __FILE__ ) );
+    wp_enqueue_style( 'glocal-network-posts', plugins_url( '/stylesheets/css/style.min.css' , __FILE__ ) );
 }
 
 
