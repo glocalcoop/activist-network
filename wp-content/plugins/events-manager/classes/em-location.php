@@ -547,12 +547,12 @@ class EM_Location extends EM_Object {
 		return apply_filters('em_location_load_similar', false, $this);
 	}
 	
-	function has_events(){
+	function has_events( $status = 1 ){
 		global $wpdb;	
 		$events_table = EM_EVENTS_TABLE;
-		$sql = "SELECT count(event_id) as events_no FROM $events_table WHERE location_id = {$this->location_id}";   
-	 	$affected_events = $wpdb->get_row($sql);
-		return apply_filters('em_location_has_events', (count($affected_events) > 0), $this);
+		$sql = $wpdb->prepare("SELECT count(event_id) as events_no FROM $events_table WHERE location_id=%d AND event_status=%d", $this->location_id, $status);
+	 	$affected_events = $wpdb->get_var($sql);
+		return apply_filters('em_location_has_events', $affected_events > 0, $this);
 	}
 	
 	/**
@@ -677,6 +677,12 @@ class EM_Location extends EM_Object {
 					}elseif ($condition == 'no_loc_image'){
 						//does this event have an image?
 						$show_condition = ( $this->get_image_url() == '' );
+					}elseif ($condition == 'has_events'){
+						//does this location have any events
+						$show_condition = $this->has_events();
+					}elseif ($condition == 'no_events'){
+						//does this location NOT have any events?
+						$show_condition = $this->has_events() == false;
 					}
 					$show_condition = apply_filters('em_location_output_show_condition', $show_condition, $condition, $conditionals[0][$key], $this); 
 					if($show_condition){

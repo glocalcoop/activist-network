@@ -305,13 +305,16 @@ function em_admin_options_page() {
 			
 			<?php
 			if( !empty($tabs_enabled) ){
-			    if( $_REQUEST['em_tab'] == 'general' || empty($_REQUEST['em_tab']) ) include('settings/tabs/general.php');
-    			if( $_REQUEST['em_tab'] == 'pages' ) include('settings/tabs/pages.php');
-    			if( $_REQUEST['em_tab'] == 'formats' ) include('settings/tabs/formats.php');
-    			if( get_option('dbem_rsvp_enabled') && $_REQUEST['em_tab'] == 'bookings'  ){
-    			    include('settings/tabs/bookings.php');
-    			}
-    			if( $_REQUEST['em_tab'] == 'emails' ) include('settings/tabs/emails.php');
+			    if( empty($_REQUEST['em_tab']) || $_REQUEST['em_tab'] == 'general' ){ 
+			        include('settings/tabs/general.php');
+			    }else{
+        			if( $_REQUEST['em_tab'] == 'pages' ) include('settings/tabs/pages.php');
+        			if( $_REQUEST['em_tab'] == 'formats' ) include('settings/tabs/formats.php');
+        			if( get_option('dbem_rsvp_enabled') && $_REQUEST['em_tab'] == 'bookings'  ){
+        			    include('settings/tabs/bookings.php');
+        			}
+        			if( $_REQUEST['em_tab'] == 'emails' ) include('settings/tabs/emails.php');
+			    }
 			}else{
     			include('settings/tabs/general.php');
     			include('settings/tabs/pages.php');

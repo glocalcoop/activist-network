@@ -4,9 +4,9 @@ Plugin Name: Moderate New Blogs
 Plugin URI: http://wordpress.org/extend/plugins/moderate-new-blogs/
 Description: New blogs(aka sites) await a final click from a Network Admin to activate in Network-->Sites "Awaiting Moderation". WP3.3.2+ only
 Author: D Sader
-Version: 3.3.2
+Version: 4.3
 Author URI: http://dsader.snowotherway.org
-
+Network: true
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -30,6 +30,7 @@ class ds_moderate_blog_signup {
 
 	function ds_moderate_blog_signup() {
 	}
+	
 	function admin_notices() {
 		if( !is_network_admin() ) return;
 		global $wpdb;
@@ -38,9 +39,10 @@ class ds_moderate_blog_signup {
 		if( is_array( $blogs ) ) {
 			echo '<div id="update-nag">The following blogs are "Awaiting Moderation" at <a href="'.network_admin_url().'sites.php">Site Admin->Blogs</a> (or click to activate): ';
 			$list	= array();
-			foreach( $blogs as $details ) {
-				$blogname = get_blog_option( $details[ 'blog_id' ], 'blogname' );
-				$list[]	= '<span class="activate"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'sites.php?action=confirm&amp;action2=activateblog&amp;id=' . $details['blog_id'] . '&amp;msg=' . urlencode( sprintf( __( 'You are about to activate the site %s' ), $blogname ) ) ), 'confirm' ) ) . '">'. $blogname .'</a></span>';
+			foreach( $blogs as $blog ) {
+				$blogname = get_blog_option( $blog[ 'blog_id' ], 'blogname' );
+
+				$list[]	= '<span class="activate"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'sites.php?action=confirm&amp;action2=activateblog&amp;id=' . $blog['blog_id'] ), 'activateblog_' . $blog['blog_id'] ) ) . '">' . $blogname . '</a></span>';
 				
 			}
 			if (count($list))  
@@ -52,17 +54,18 @@ class ds_moderate_blog_signup {
 			if( is_array( $blogs ) ) {
 			echo '<div id="update-nag">The following blogs are "Awaiting Deletion" at <a href="'.network_admin_url().'sites.php">Site Admin->Blogs</a> (or click to delete): ';
 			$list	= array();
-			foreach( $blogs as $details ) {
-				$blogname = get_blog_option( $details[ 'blog_id' ], 'blogname' );
+			foreach( $blogs as $blog ) {
+				$blogname = get_blog_option( $blog[ 'blog_id' ], 'blogname' );
 
-				$list[]	= '<span class="delete"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'sites.php?action=confirm&amp;action2=deleteblog&amp;id=' . $details['blog_id'] . '&amp;msg=' . urlencode( sprintf( __( 'You are about to delete the site %s' ), $blogname ) ) ), 'confirm' ) ) . '">'. $blogname .'</a></span>';
-				
+				$list[] = '<span class="delete"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'sites.php?action=confirm&amp;action2=deleteblog&amp;id=' . $blog['blog_id'] ), 'deleteblog_' . $blog['blog_id'] ) ) . '">' . $blogname . '</a></span>';
+
 			}
 			if (count($list))  
 				echo implode(' | ', $list); 
 			echo '</div>';
 			}
 	}
+	
 	function moderated($blog_id) {
 		$number = intval(get_site_option('ds_moderate_blog_signup'));
 		if ( $number == '2' ) {
@@ -75,8 +78,9 @@ class ds_moderate_blog_signup {
 	function wpmu_blogs_actions($blog_id) {
 		$blogname = get_blog_option( $blog_id, 'blogname' );
 		if ( get_blog_status( $blog_id, "deleted" ) == '2' ) {
+					
+		echo '<span class="activate"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'sites.php?action=confirm&amp;action2=activateblog&amp;id=' . $blog_id ), 'activateblog_' . $blog_id ) ) . '">' . __( 'Awaiting Moderation' ) . '</a></span>';
 			
-		echo '<span class="activate"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'sites.php?action=confirm&amp;action2=activateblog&amp;id=' . $blog_id . '&amp;msg=' . urlencode( sprintf( __( 'You are about to activate the site %s' ), $blogname ) ) ), 'confirm' ) ) . '">' . __( 'Awaiting Moderation' ) . '</a></span>';
 		}
 	}
 	

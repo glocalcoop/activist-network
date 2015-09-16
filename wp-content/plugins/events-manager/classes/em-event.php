@@ -367,7 +367,7 @@ class EM_Event extends EM_Object{
 	 */
 	function get_post($validate = true){	
 		global $allowedposttags;
-		do_action('em_event_get_post_pre');
+		do_action('em_event_get_post_pre', $this);
 		//we need to get the post/event name and content.... that's it.
 		$this->post_content = isset($_POST['content']) ? wp_kses( stripslashes($_POST['content']), $allowedposttags):'';
 		$this->event_name = !empty($_POST['event_name']) ? htmlspecialchars_decode(wp_kses_data(htmlspecialchars_decode(stripslashes($_POST['event_name'])))):'';
@@ -391,7 +391,7 @@ class EM_Event extends EM_Object{
 	 * @return boolean
 	 */
 	function get_post_meta(){
-		do_action('em_event_get_post_meta_pre');
+		do_action('em_event_get_post_meta_pre', $this);
 		//Grab POST data	
 		$this->event_start_date = ( !empty($_POST['event_start_date']) ) ? wp_kses_data($_POST['event_start_date']) : '';
 		$this->event_end_date = ( !empty($_POST['event_end_date']) ) ? wp_kses_data($_POST['event_end_date']) : $this->event_start_date;
@@ -479,7 +479,7 @@ class EM_Event extends EM_Object{
 						$this->event_rsvp_time = $EM_Ticket->ticket_meta['recurrences']['end_time'];
 					}
 				}else{
-					if( array_key_exists('recurrence_rsvp_days', $_POST) && is_numeric($_POST['recurrence_rsvp_days']) ){
+					if( array_key_exists('recurrence_rsvp_days', $_POST) ){
 						if( !empty($_POST['recurrence_rsvp_days_when']) && $_POST['recurrence_rsvp_days_when'] == 'after' ){
 							$this->recurrence_rsvp_days = absint($_POST['recurrence_rsvp_days']);
 						}else{ //by default the start date is the point of reference

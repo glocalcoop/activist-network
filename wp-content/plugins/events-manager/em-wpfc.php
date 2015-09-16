@@ -5,7 +5,7 @@
  * Admin functions are located in admin/wpfc-admin.php
  */
 //overrides the ajax calls for event data
-if( defined('DOING_AJAX') && DOING_AJAX && !empty($_REQUEST['type']) && $_REQUEST['type'] == 'event' ){ //only needed during ajax requests anyway
+if( defined('DOING_AJAX') && DOING_AJAX && !empty($_REQUEST['type']) && $_REQUEST['type'] == EM_POST_TYPE_EVENT ){ //only needed during ajax requests anyway
 	remove_action('wp_ajax_WP_FullCalendar', array('WP_FullCalendar','ajax'));
 	remove_action('wp_ajax_nopriv_WP_FullCalendar', array('WP_FullCalendar','ajax'));
 	add_action('wp_ajax_WP_FullCalendar', 'wpfc_em_ajax');

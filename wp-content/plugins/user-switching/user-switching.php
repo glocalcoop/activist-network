@@ -2,7 +2,7 @@
 /*
 Plugin Name: User Switching
 Description: Instant switching between user accounts in WordPress
-Version:     1.0.7
+Version:     1.0.8
 Plugin URI:  https://johnblackbourn.com/wordpress-plugin-user-switching/
 Author:      John Blackbourn
 Author URI:  https://johnblackbourn.com/
@@ -381,8 +381,12 @@ class user_switching {
 			return;
 		}
 
-		if ( method_exists( $wp_admin_bar, 'get_node' ) && $wp_admin_bar->get_node( 'user-actions' ) ) {
-			$parent = 'user-actions';
+		if ( method_exists( $wp_admin_bar, 'get_node' ) ) {
+			if ( $wp_admin_bar->get_node( 'user-actions' ) ) {
+				$parent = 'user-actions';
+			} else {
+				return;
+			}
 		} else if ( get_option( 'show_avatars' ) ) {
 			$parent = 'my-account-with-avatar';
 		} else {
@@ -468,7 +472,7 @@ class user_switching {
 					'redirect_to' => urlencode( $_REQUEST['redirect_to'] ),
 				), $url );
 			}
-			$message .= '<p class="message"><span class="dashicons dashicons-admin-users" style="color:#56c234"></span> <a href="' . esc_url( $url ) . '">' . esc_html( $link ) . '</a></p>';
+			$message .= '<p class="message" id="user_switching_switch_on"><span class="dashicons dashicons-admin-users" style="color:#56c234"></span> <a href="' . esc_url( $url ) . '">' . esc_html( $link ) . '</a></p>';
 		}
 
 		return $message;
@@ -531,6 +535,7 @@ class user_switching {
 			'component'  => $component,
 			'link_href'  => esc_url( $link ),
 			'link_text'  => esc_html__( 'Switch&nbsp;To', 'user-switching' ),
+			'wrapper_id' => 'user_switching_switch_to',
 		) );
 		// @codingStandardsIgnoreEnd
 
@@ -553,7 +558,7 @@ class user_switching {
 		), $link );
 
 		?>
-		<ul>
+		<ul id="user_switching_switch_to">
 			<li><a href="<?php echo esc_url( $link ); ?>"><?php esc_html_e( 'Switch&nbsp;To', 'user-switching' ); ?></a></li>
 		</ul>
 		<?php

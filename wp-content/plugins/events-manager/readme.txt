@@ -3,8 +3,8 @@ Contributors: netweblogic, nutsmuggler
 Donate link: http://wp-events-plugin.com
 Tags: events, event, event registration, event calendar, events calendar, event management, paypal, registration, ticket, tickets, ticketing, tickets, theme, widget, locations, maps, booking, attendance, attendee, buddypress, calendar, gigs, payment, payments, sports,
 Requires at least: 3.5
-Tested up to: 4.3
-Stable tag: 5.6
+Tested up to: 4.3.1
+Stable tag: 5.6.1
 
 Fully featured event registration management including recurring events, locations management, calendar, Google map integration, booking management
 
@@ -98,6 +98,20 @@ See our [FAQ](http://wp-events-plugin.com/documentation/faq/) page, which is upd
 6. Manage attendees with various booking reports
 
 == Changelog ==
+= 5.6.1 =
+* fixed no arguments being passed onto em_get_post_meta_pre and em_get_post_pre
+* fixed minor PHP warning when viewing settings in paged tab mode
+* fixed em_event_save_pre and em_location_save_pre firing before the get_post and validate functions/filters via the save_post action in the WP dashboard
+* fixed EM loading jQuery UI css when already loaded by another theme (if they enqueue it with id jquery-ui)
+* fixed bug introduced in 5.6 where some error/confirmation notices aren't showing up on page loads
+* fixed mistaken update of Hungarian language files with German
+* fixed EM_Location::has_events() providing false negatives
+* added has_events and no_locations conditional location placeholders
+* fixed actions column throwing off CSV column spacing since v5.6
+* fixed orderby request parameter being ignored in EM_Bookings_Table
+* fixed booking_date not being a valid orderby value for EM_Bookings
+* fixed recurring events booking cut-off time resetting to 12AM when no days value is given
+
 = 5.6 =
 * fixed potential XSS and a potential code injection vulnerabilities (props to the team at bit9.com)
 * updated Czech, Danish, Dutch, English (UK), Spanish, Estonian, French, German, Hungarian, Italian, Japanese, Norwegian, Persian, Polish, Portuguese (Brazil), Russian and Slovenian language files

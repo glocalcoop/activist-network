@@ -684,7 +684,7 @@ jQuery(document).ready( function($){
 });
 
 function em_load_jquery_css(){
-	if( EM.ui_css && jQuery('script#jquery-ui-css').length == 0 ){
+	if( EM.ui_css && jQuery('link#jquery-ui-css').length == 0 ){
 		var script = document.createElement("link");
 		script.id = 'jquery-ui-css';
 		script.rel = "stylesheet";
