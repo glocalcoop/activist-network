@@ -13,7 +13,7 @@
         	$this->set_cookies = $set_cookies == true;
         	if( $this->set_cookies ){
 	        	if( !empty($_COOKIE['em_notices']) ) {
-	        	    $notices = json_decode(base64_decode($_COOKIE['em_notices']));
+	        	    $notices = json_decode(base64_decode($_COOKIE['em_notices']), true);
 	        	    if( is_array($notices) ){
 		        		$this->notices = $notices;
 		        		setcookie('em_notices', '', time() - 3600, COOKIEPATH, COOKIE_DOMAIN, is_ssl(), true); //unset the cookie

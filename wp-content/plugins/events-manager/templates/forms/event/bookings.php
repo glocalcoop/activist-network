@@ -139,7 +139,7 @@ global $EM_Event, $post, $allowedposttags, $EM_Ticket, $col_count;
 			</span>
 		</span>
 		<span class="em-booking-date-recurring">
-			<input type="text" name="recurrence_rsvp_days" size="3" value="<?php if( !empty($EM_Event->recurrence_rsvp_days) ) echo absint($EM_Event->recurrence_rsvp_days); ?>" />
+			<input type="text" name="recurrence_rsvp_days" size="3" value="<?php echo absint($EM_Event->recurrence_rsvp_days); ?>" />
 			<?php _e('day(s)','dbem'); ?>
 			<select name="recurrence_rsvp_days_when">
 				<option value="before" <?php if( !empty($EM_Event->recurrence_rsvp_days) && $EM_Event->recurrence_rsvp_days <= 0) echo 'selected="selected"'; ?>><?php echo sprintf(_x('%s the event starts','before or after','dbem'),__('Before','dbem')); ?></option>

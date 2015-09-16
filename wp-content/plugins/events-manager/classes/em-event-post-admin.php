@@ -106,10 +106,9 @@ class EM_Event_Post_Admin{
 			$EM_Event->post_type = $post_type;
 			if( !empty($_REQUEST['_emnonce']) && wp_verify_nonce($_REQUEST['_emnonce'], 'edit_event') ){ 
 				//this is only run if we know form data was submitted, hence the nonce
-				do_action('em_event_save_pre', $EM_Event); //technically, the event is saved... but the meta isn't. wp doesn't give an pre-intervention action for this (or does it?)
-				//Handle Errors by making post draft
 				$get_meta = $EM_Event->get_post_meta();
-				$validate_meta = $EM_Event->validate_meta();
+				$validate_meta = $EM_Event->validate_meta(); //Handle Errors by making post draft
+				do_action('em_event_save_pre', $EM_Event); //technically, the event is saved... but the meta isn't. wp doesn't give an pre-intervention action for this (or does it?)
 				//if we execute a location save here, we will screw up the current save_post $wp_filter pointer executed in do_action()
         	    //therefore, we save the current pointer position (priority) and set it back after saving the location further down
         	    global $wp_filter, $wp_current_filter;
