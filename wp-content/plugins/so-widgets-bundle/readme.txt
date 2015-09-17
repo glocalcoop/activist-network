@@ -2,7 +2,7 @@
 Tags: bundle, widget, button, slider, image, carousel, price table, google maps, tinymce, social links
 Requires at least: 3.9
 Tested up to: 4.3
-Stable tag: 1.4.1
+Stable tag: 1.4.3
 License: GPLv3 or later
 Contributors: gpriday, braam-genis
 
@@ -49,6 +49,21 @@ The SiteOrigin Widgets Bundle is the perfect platform to build widgets for your 
 3. An example of the button widget.
 
 == Changelog ==
+
+= 1.4.4 - September 6 2015 =
+* Fixed issue with slider image widths.
+
+= 1.4.3 - September 5 2015 =
+* Added support for WooCommerce Shortcodes plugin to TinyMCE field.
+* New streamlined icon selector field.
+* Added info window functionality to maps widget.
+* Added a button to duplicate repeater items.
+* Added more design settings to hero image widget.
+* Removed full screen mode from TinyMCE field.
+* Option to keep map centered when container is resized.
+* Fixed: CSS bug for Google font imports on generated CSS.
+* Fixed: Post selector for URL fields properly handles empty titles.
+* Added option to skip auto paragraphs in Editor widget.
 
 = 1.4.2 - August 18 2015 =
 * Urgent fix in preparation for WordPress 4.3 release

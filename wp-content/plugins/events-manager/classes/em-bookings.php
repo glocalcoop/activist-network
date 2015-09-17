@@ -529,6 +529,7 @@ class EM_Bookings extends EM_Object implements Iterator{
 		//Get ordering instructions
 		$EM_Booking = em_get_booking();
 		$accepted_fields = $EM_Booking->get_fields(true);
+		$accepted_fields['date'] = 'booking_date';
 		$orderby = self::build_sql_orderby($args, $accepted_fields);
 		//Now, build orderby sql
 		$orderby_sql = ( count($orderby) > 0 ) ? 'ORDER BY '. implode(', ', $orderby) : 'ORDER BY booking_date';

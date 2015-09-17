@@ -14,7 +14,7 @@ function em_admin_help_page(){
 				This page is only a small portion of the event documentation which is here for quick reference. If you're just starting out, we recommend you visit the following places for further support:
 			</p>
 			<ol>
-				<li>New users are strongly encouraged to have a look at our <a href="http://wp-events-plugin.com/documentation/getting-started/">getting started page</a>.</li>
+				<li>New users are strongly encouraged to have a look at our <a href="http://wp-events-plugin.com/documentation/getting-started-guide/">getting started guide</a>.</li>
 				<li>Browse the other documentation pages and <a href="http://wp-events-plugin.com/tutorials/">tutorials</a>.</li>
 				<li>View the <a href="http://wp-events-plugin.com/documentation/faq/">FAQ</a> for general questions and <a href="http://wp-events-plugin.com/documentation/troubleshooting/">Troubleshooting</a> for common issues. These are regularly updated with recent issues.</li>
 				<li>Rather than trying to contact us directly, we request you use the <a href="http://wordpress.org/tags/events-manager?forum_id=10">support forums</a> as others may be experiencing the same issues as you. For faster support via private member forums and extra features please consider <a href="http://wp-events-plugin.com/events-manager-pro/">upgrading to pro</a>.</li>

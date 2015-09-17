@@ -65,7 +65,7 @@ class EM_Bookings_Table{
 		}
 		//Set basic vars
 		$this->order = ( !empty($_REQUEST ['order']) && $_REQUEST ['order'] == 'DESC' ) ? 'DESC':'ASC';
-		$this->orderby = ( !empty($_REQUEST ['order']) ) ? sanitize_sql_orderby($_REQUEST['order']):'booking_name';
+		$this->orderby = ( !empty($_REQUEST ['orderby']) ) ? sanitize_sql_orderby($_REQUEST['orderby']):'booking_name';
 		$this->limit = ( !empty($_REQUEST['limit']) && is_numeric($_REQUEST['limit'])) ? $_REQUEST['limit'] : 20;//Default limit
 		$this->page = ( !empty($_REQUEST['pno']) && is_numeric($_REQUEST['pno']) ) ? $_REQUEST['pno']:1;
 		$this->offset = ( $this->page > 1 ) ? ($this->page-1)*$this->limit : 0;
@@ -559,7 +559,8 @@ class EM_Bookings_Table{
 			}elseif($col == 'booking_date'){
 				$val = date_i18n(get_option('dbem_date_format').' '. get_option('dbem_time_format'), $EM_Booking->timestamp);
 			}elseif($col == 'actions' ){
-				if( !$csv ) $val = implode(' | ', $this->get_booking_actions($EM_Booking));
+				if( $csv ) continue; 
+				$val = implode(' | ', $this->get_booking_actions($EM_Booking));
 			}elseif( $col == 'booking_spaces' ){
 				$val = ($this->show_tickets && !empty($EM_Ticket)) ? $EM_Ticket_Booking->get_spaces() : $EM_Booking->get_spaces();
 			}elseif( $col == 'booking_id' ){
