@@ -8,6 +8,14 @@
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+			<?php 
+
+			global $post;
+
+            $EM_Event = em_get_event($post->ID, 'post_id');
+
+			?>
+
 				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 					<header class="article-header">
