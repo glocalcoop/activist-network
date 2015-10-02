@@ -299,6 +299,17 @@ function ass_group_notification_forum_posts( $post_id ) {
 			}
 		}
 
+		/**
+		 * Filter whether a given user should receive immediate notification of the current activity.
+		 *
+		 * @since 3.6.0
+		 *
+		 * @param bool   $send_it True to send an immediate email notification, false otherwise.
+		 * @param object $content Activity object.
+		 * @param int    $user_id ID of the user.
+		 */
+		$send_it = apply_filters( 'bp_ass_send_activity_notification_for_user', $send_it, $content, $user_id );
+
 		// if we're good to send, send the email!
 		if ( $send_it ) {
 			// One last chance to filter the message content
@@ -533,6 +544,17 @@ To view or reply, log in and go to:
 			$notice .= "\n\n" . ass_group_unsubscribe_links( $user_id );
 
 		}
+
+		/**
+		 * Filter whether a given user should receive immediate notification of the current activity.
+		 *
+		 * @since 3.6.0
+		 *
+		 * @param bool   $send_it True to send an immediate email notification, false otherwise.
+		 * @param object $content Activity object.
+		 * @param int    $user_id ID of the user.
+		 */
+		$send_it = apply_filters( 'bp_ass_send_activity_notification_for_user', $send_it, $content, $user_id );
 
 		// if we're good to send, send the email!
 		if ( $send_it ) {
@@ -1084,7 +1106,7 @@ function ass_default_subscription_settings_form() {
 	<p><?php _e('When new users join this group, their default email notification settings will be:', 'bp-ass'); ?></p>
 	<div class="radio">
 		<label><input type="radio" name="ass-default-subscription" value="no" <?php ass_default_subscription_settings( 'no' ) ?> />
-			<?php _e( 'No Email (users will read this group on the web - good for any group - the default)', 'bp-ass' ) ?></label>
+			<?php _e( 'No Email (users will read this group on the web - good for any group)', 'bp-ass' ) ?></label>
 		<label><input type="radio" name="ass-default-subscription" value="sum" <?php ass_default_subscription_settings( 'sum' ) ?> />
 			<?php _e( 'Weekly Summary Email (the week\'s topics - good for large groups)', 'bp-ass' ) ?></label>
 		<label><input type="radio" name="ass-default-subscription" value="dig" <?php ass_default_subscription_settings( 'dig' ) ?> />
@@ -1118,16 +1140,13 @@ function ass_default_subscription_settings( $setting ) {
 // Save the default group subscription setting in the group meta, if no, delete it
 function ass_save_default_subscription( $group ) {
 	if ( isset( $_POST['ass-default-subscription'] ) && $postval = $_POST['ass-default-subscription'] ) {
-		if ( $postval && $postval != 'no' ) {
+		if ( $postval ) {
 			groups_update_groupmeta( $group->id, 'ass_default_subscription', $postval );
 
 			// during group creation, also save the sub level for the group creator
 			if ( 'group-settings' == bp_get_groups_current_create_step() ) {
 				ass_group_subscription( $postval, $group->creator_id, $group->id );
 			}
-
-		} elseif ( $postval == 'no' ) {
-			groups_delete_groupmeta( $group->id, 'ass_default_subscription' );
 		}
 	}
 }
