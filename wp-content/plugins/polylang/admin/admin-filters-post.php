@@ -75,7 +75,7 @@ class PLL_Admin_Filters_Post extends PLL_Admin_Filters_Post_Base {
 				}
 			}
 		}
-		
+
 		// hierarchical post types
 		if ('edit' == $screen->base && is_post_type_hierarchical($screen->post_type)) {
 			$pages = get_pages();
@@ -241,7 +241,7 @@ class PLL_Admin_Filters_Post extends PLL_Admin_Filters_Post_Base {
 				'echo'             => 0,
 			);
 			$dropdown_args = apply_filters( 'page_attributes_dropdown_pages_args', $dropdown_args, $post ); // since WP 3.3
-			
+
 			$x->Add(array('what' => 'pages', 'data' => wp_dropdown_pages( $dropdown_args )));
 		}
 
@@ -261,10 +261,10 @@ class PLL_Admin_Filters_Post extends PLL_Admin_Filters_Post_Base {
 
 		if (!post_type_exists($_REQUEST['post_type']))
 			die(0);
-		
+
 		$post_language = $this->model->get_language($_REQUEST['post_language']);
 		$translation_language = $this->model->get_language($_REQUEST['translation_language']);
-		
+
 		// don't order by title: see https://wordpress.org/support/topic/find-translated-post-when-10-is-not-enough
 		$args = array(
 			's'                => wp_unslash($_REQUEST['term']),
@@ -279,7 +279,7 @@ class PLL_Admin_Filters_Post extends PLL_Admin_Filters_Post_Base {
 				'terms'    => $translation_language->term_taxonomy_id
 			))
 		);
-		
+
 		// allow plugins to change args help fixing edge cases: see same topic as above
 		$args = apply_filters('pll_ajax_posts_not_translated_args', $args);
 		$posts = get_posts($args);
@@ -328,7 +328,7 @@ class PLL_Admin_Filters_Post extends PLL_Admin_Filters_Post_Base {
 			// bulk edit does not modify the language
 			if (isset($_REQUEST['bulk_edit']) && $_REQUEST['inline_lang_choice'] == -1) {
 				check_admin_referer('bulk-posts');
-				$lang = $this->model->get_post_language($post_id); // get the post language for later use when saving terms 
+				$lang = $this->model->get_post_language($post_id); // get the post language for later use when saving terms
 			}
 			// a language is set in the language dropdown
 			else {
@@ -354,15 +354,10 @@ class PLL_Admin_Filters_Post extends PLL_Admin_Filters_Post_Base {
 			}
 		}
 
-		// quick press
-		// 'post-quickpress-save', 'post-quickpress-publish' = backward compatibility WP < 3.8
-		elseif (isset($_REQUEST['action']) && in_array($_REQUEST['action'], array('post-quickpress-save', 'post-quickpress-publish', 'post-quickdraft-save'))) {
-			check_admin_referer('add-' . $post->post_type);
-			$this->model->set_post_language($post_id, $lang = $this->pref_lang); // default language for Quick draft
-		}
-
-		else
+		// do not assign a language to 'auto-draft' posts as it would prevent set_default_language to correctly assign the first language
+		elseif ( 'auto-draft' != $post->post_status ) {
 			$this->set_default_language($post_id);
+		}
 
 		// make sure we get save terms in the right language (especially tags with same name in different languages)
 		if (!empty($lang)) {

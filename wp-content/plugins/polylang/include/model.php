@@ -38,6 +38,8 @@ class PLL_Model {
 		add_action('update_option_page_on_front', array(&$this, 'clean_languages_cache'));
 		add_action('update_option_page_for_posts', array(&$this, 'clean_languages_cache'));
 		add_action('update_option_permalink_structure', array(&$this, 'clean_languages_cache'));
+		add_action('update_option_siteurl', array(&$this, 'clean_languages_cache'));
+		add_action('update_option_home', array(&$this, 'clean_languages_cache'));
 
 		// registers completely the language taxonomy
 		add_action('setup_theme', array(&$this, 'register_taxonomy'), 1);
@@ -155,12 +157,12 @@ class PLL_Model {
 
 				$term_languages = get_terms('term_language', array('hide_empty' => false));
 				$term_languages = empty($term_languages) || is_wp_error($term_languages) ?
-					array() : array_combine(wp_list_pluck($term_languages, 'name'), $term_languages);
+					array() : array_combine(wp_list_pluck($term_languages, 'slug'), $term_languages);
 
 				if (!empty($languages) && !empty($term_languages)) {
 					// don't use array_map + create_function to instantiate an autoloaded class as it breaks badly in old versions of PHP
 					foreach ($languages as $k => $v) {
-						$languages[$k] = new PLL_Language($v, $term_languages[$v->name]);
+						$languages[$k] = new PLL_Language($v, $term_languages['pll_' . $v->slug]);
 					}
 
 					$languages = apply_filters('pll_languages_list', $languages);

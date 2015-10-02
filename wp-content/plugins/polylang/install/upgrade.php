@@ -122,8 +122,8 @@ class PLL_Upgrade {
 		$this->options['sync'] = empty($this->options['sync']) ? array() : array_keys(PLL_Settings::list_metas_to_sync());
 
 		// set default values for post types and taxonomies to translate
-		$this->options['post_types'] = array_values(get_post_types(array('_builtin' => false, 'show_ui => true')));
-		$this->options['taxonomies'] = array_values(get_taxonomies(array('_builtin' => false, 'show_ui => true')));
+		$this->options['post_types'] = array_values(get_post_types(array('_builtin' => false, 'show_ui' => true)));
+		$this->options['taxonomies'] = array_values(get_taxonomies(array('_builtin' => false, 'show_ui' => true)));
 		update_option('polylang', $this->options);
 
 		flush_rewrite_rules(); // rewrite rules have been modified in 1.0

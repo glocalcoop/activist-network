@@ -238,6 +238,8 @@ class rssPIAdminProcessor {
 	 * @return array
 	 */
 	private function process_feeds($ids) {
+		
+		
 
 		$feeds = array();
 
@@ -253,6 +255,7 @@ class rssPIAdminProcessor {
 					if (!empty($keyword_str)) {
 						$keywords = explode(',', $keyword_str);
 					}
+					
 				}
 				array_push($feeds, array(
 					'id' => $id,
@@ -323,13 +326,19 @@ class rssPIAdminProcessor {
 
 			// set up keywords (otherwise don't)
 			if (isset($_POST['keyword_filter']))
-				$keyword_str = $_POST['keyword_filter'];
+			   
+				 $keyword_str = $_POST['keyword_filter'];
+			
 
 			$keywords = array();
 
 			if (!empty($keyword_str)) {
 				$keywords = explode(',', $keyword_str);
 			}
+			 $keywords;
+			
+		
+			
 			$settings['keywords'] = array_map('trim',$keywords);
 
 			// set up "import deleted posts" (otherwise don't)

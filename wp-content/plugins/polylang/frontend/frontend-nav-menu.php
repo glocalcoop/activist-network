@@ -25,6 +25,7 @@ class PLL_Frontend_Nav_Menu extends PLL_Nav_Menu {
 
 		// filters menus by language
 		add_filter('theme_mod_nav_menu_locations', array($this, 'nav_menu_locations'), 20);
+		add_filter( 'wp_nav_menu_args', array( &$this, 'wp_nav_menu_args' ) );
 	}
 
 	/*
@@ -188,5 +189,48 @@ class PLL_Frontend_Nav_Menu extends PLL_Nav_Menu {
 			}
 		}
 		return $menus;
+	}
+
+	/*
+	 * attempt to translate the nav menu when it is hardcoded or when no location is defined in wp_nav_menu
+	 *
+	 * @since 1.7.10
+	 *
+	 * @param array $args
+	 * @return array modified $args
+	 */
+	public function wp_nav_menu_args( $args ) {
+		$theme = get_option('stylesheet');
+
+		// Get the nav menu based on the requested menu
+		$menu = wp_get_nav_menu_object( $args['menu'] );
+
+		// attempt to find a translation of this menu
+		// this obviously does not work if the nav menu has no associated theme location
+		if ( $menu && ! empty( $this->curlang ) ) {
+			foreach ( $this->options['nav_menus'][ $theme ] as $menus ) {
+				if ( in_array( $menu->term_id, $menus ) && ! empty( $menus[ $this->curlang->slug ] ) ) {
+					$args['menu'] = $menus[ $this->curlang->slug ];
+					return $args;
+				}
+			}
+		}
+
+		// get the first menu that has items and and is in the current language if we still can't find a menu
+		if ( ! $menu && ! $args['theme_location'] && ! empty( $this->curlang ) ) {
+			$menus = wp_get_nav_menus();
+			foreach ( $menus as $menu_maybe ) {
+				if ( $menu_items = wp_get_nav_menu_items( $menu_maybe->term_id, array( 'update_post_term_cache' => false ) ) ) {
+					foreach ( $this->options['nav_menus'][ $theme ] as $menus ) {
+						if ( in_array( $menu_maybe->term_id, $menus ) && ! empty( $menus[ $this->curlang->slug ] ) ) {
+							$args['menu'] = $menus[ $this->curlang->slug ];
+							return $args;
+						}
+					}
+				}
+			}
+		}
+
+		return $args;
 	}
 }
