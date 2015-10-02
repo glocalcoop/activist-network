@@ -104,6 +104,13 @@ class PLL_Admin_Filters_Media extends PLL_Admin_Filters_Post_Base {
 		$post_id = $post->ID;
 		$new_lang = $this->model->get_language($_GET['new_lang']); // make sure we get a valid language slug
 
+		// bails if the translations already exists
+		// see https://wordpress.org/support/topic/edit-translation-in-media-attachments?#post-7322303
+		if ( $this->model->get_translation( 'post', $post_id, $new_lang ) ) {
+			wp_safe_redirect( wp_get_referer() );
+			exit;
+		}
+
 		// create a new attachment (translate attachment parent if exists)
 		$post->ID = null; // will force the creation
 		$post->post_parent = ($post->post_parent && $tr_parent = $this->model->get_translation('post', $post->post_parent, $new_lang->slug)) ? $tr_parent : 0;
@@ -124,7 +131,7 @@ class PLL_Admin_Filters_Media extends PLL_Admin_Filters_Post_Base {
 
 		do_action('pll_translate_media', $tr_id, $post, $translations);
 
-		wp_redirect(admin_url(sprintf('post.php?post=%d&action=edit', $tr_id))); // WP 3.5+
+		wp_safe_redirect(admin_url(sprintf('post.php?post=%d&action=edit', $tr_id))); // WP 3.5+
 		exit;
 	}
 

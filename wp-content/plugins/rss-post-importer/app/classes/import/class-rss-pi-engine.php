@@ -51,7 +51,7 @@ class rssPIEngine {
 	 */
 	public function import_feed() {
 		global $rss_post_importer;
-
+		
 		$this->load_options();
 
 		$post_count = 0;
@@ -127,7 +127,9 @@ class rssPIEngine {
 	 * @return array
 	 */
 	public function do_import($f) {
-
+     
+	 
+	    
 		$args = array(
 			'feed_title' => $f['name'],
 			'max_posts' => $f['max_posts'],
@@ -175,7 +177,8 @@ class rssPIEngine {
 
 		// fetch the feed
 		$feed = fetch_feed($url);
-
+        
+		 
 		if (is_wp_error($feed)) {
 			return false;
 		}
@@ -223,7 +226,10 @@ class rssPIEngine {
 		// if we are saving
 		if ($args['save_to_db']) {
 			// insert and return
+			
 			$saved_posts = $this->insert($feed_items, $args);
+			
+			
 			return $saved_posts;
 		}
 
@@ -241,6 +247,7 @@ class rssPIEngine {
 	private function filter($feed, $args) {
 
 		// the count of keyword matched items
+		 
 		$got = 0;
 
 		// the current index of the items aray
@@ -261,6 +268,9 @@ class rssPIEngine {
 			// else be in a forever loop
 			// get the content
 			$content = $feed_item[0]->get_content();
+			
+			
+			
 
 			// test it against the keywords
 			$tested = $this->test($content,$args['keywords']);
@@ -343,15 +353,16 @@ class rssPIEngine {
 	private function insert($items, $args = array()) {
 
 		$saved_posts = array();
-
+        
 		// Initialise the content parser
 		$parser = new rssPIParser($this->options);
 
 		// Featured Image setter
 		$thumbnail = new rssPIFeaturedImage();
-
+        
 		foreach ( $items as $item ) {
 			if ( ! $this->post_exists($item) ) {
+				
 				/* Code to convert tags id array to tag name array * */
 				if ( ! empty($args['tags_id']) ) {
 					foreach ( $args['tags_id'] as $tagid ) {
@@ -375,6 +386,8 @@ class rssPIEngine {
 					'comment_status' => $this->options['settings']['allow_comments'],
 					'post_date' => get_date_from_gmt($item->get_date('Y-m-d H:i:s'))
 				);
+				
+				
 
 				// catch base url and replace any img src with it
 				if (preg_match('/src="\//ui', $content)) {
@@ -398,6 +411,9 @@ class rssPIEngine {
 				}
 
 				// insert as post
+				
+				
+				
 				$post_id = $this->_insert($post, $item->get_permalink());
 
 				// set thumbnail
@@ -453,6 +469,7 @@ class rssPIEngine {
 		// strip any params from the URL
 		$permalink_new = $permalink;
 		$permalink_new = explode('?',$permalink_new);
+		
 		$permalink_new = $permalink_new[0];
 		// calculate new md5 hash
 		$permalink_md5_new = md5($permalink_new);
@@ -461,7 +478,8 @@ class rssPIEngine {
 		if ( isset($this->options['upgraded']['deleted_posts']) ) { // database migrated
 			// check if there is post with this source URL that is not trashed
 //			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_key = 'rss_pi_source_md5' and meta_value = %s", $permalink_md5 ), 'ARRAY_A');
-			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} pm, {$wpdb->posts} p WHERE pm.meta_key = 'rss_pi_source_md5' AND ( pm.meta_value = %s OR pm.meta_value = %s ) AND pm.post_id = p.ID AND p.post_status <> 'trash'", $permalink_md5, $permalink_md5_new ), 'ARRAY_A');
+			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} pm, {$wpdb->posts} p WHERE pm.meta_key = 'rss_pi_source_md5' AND ( pm.meta_value = %s) AND pm.post_id = p.ID AND p.post_status <> 'trash'", $permalink_md5), 'ARRAY_A');
+			 //echo $wpdb->last_query;
 			if ( count($posts) ) {
 				$post_exists = TRUE;
 			}
@@ -492,7 +510,7 @@ class rssPIEngine {
 			// check if the post has been imported and then deleted
 			if ( $this->options['upgraded']['deleted_posts'] ) { // database migrated
 				$rss_pi_deleted_posts = get_option( 'rss_pi_deleted_posts', array() );
-				if ( in_array( $permalink_md5, $rss_pi_deleted_posts ) || in_array( $permalink_md5_new, $rss_pi_deleted_posts ) ) {
+				if ( in_array( $permalink_md5, $rss_pi_deleted_posts )) {
 					$post_exists = TRUE;
 				}
 			} else {
@@ -503,7 +521,12 @@ class rssPIEngine {
 				}
 			}
 		}
-
+        /* if($post_exists==true){
+			
+			echo "1"; 
+		 }else{
+			echo "0"; 
+		 }*/
 		return $post_exists;
 	}
 
@@ -537,7 +560,7 @@ class rssPIEngine {
 		}
 
 		$_post = apply_filters('pre_rss_pi_insert_post', $post);
-
+       
 		$post_id = wp_insert_post($_post);
 
 		add_action('save_rss_pi_post', $post_id);

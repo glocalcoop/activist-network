@@ -249,13 +249,14 @@ class PLL_Admin_Filters_Columns {
 	public function ajax_update_post_rows() {
 		global $wp_list_table;
 
+		if ( ! post_type_exists( $post_type = $_POST['post_type'] ) || ! $this->model->is_translated_post_type( $post_type ) ) {
+			die(0);
+		}
+
 		check_ajax_referer('inlineeditnonce', '_pll_nonce');
 
 		$x = new WP_Ajax_Response();
 		$wp_list_table = _get_list_table( 'WP_Posts_List_Table', array( 'screen' => $_POST['screen'] ) );
-
-		if (!post_type_exists($post_type = $_POST['post_type']))
-			die(0);
 
 		$translations = empty($_POST['translations']) ? array() : explode(',', $_POST['translations']); // collect old translations
 		$translations = array_merge($translations, array($_POST['post_id'])); // add current post
@@ -263,12 +264,12 @@ class PLL_Admin_Filters_Columns {
 
 		foreach ($translations as $post_id) {
 			$level = is_post_type_hierarchical( $post_type ) ? count( get_ancestors( $post_id, $post_type ) ) : 0;
-			$post = get_post($post_id);
-			ob_start();
-			$wp_list_table->single_row( $post, $level );
-			$data = ob_get_clean();
-
-			$x->add(array('what' => 'row', 'data' => $data, 'supplemental' => array('post_id' => $post_id)));
+			if ($post = get_post($post_id)) {
+				ob_start();
+				$wp_list_table->single_row( $post, $level );
+				$data = ob_get_clean();
+				$x->add(array('what' => 'row', 'data' => $data, 'supplemental' => array('post_id' => $post_id)));
+			}
 		}
 
 		$x->send();
@@ -282,13 +283,14 @@ class PLL_Admin_Filters_Columns {
 	public function ajax_update_term_rows() {
 		global $wp_list_table;
 
+		if ( ! taxonomy_exists( $taxonomy = $_POST['taxonomy'] )  || ! $this->model->is_translated_taxonomy( $taxonomy ) ) {
+			die(0);
+		}
+
 		check_ajax_referer('pll_language', '_pll_nonce');
 
 		$x = new WP_Ajax_Response();
 		$wp_list_table = _get_list_table( 'WP_Terms_List_Table', array( 'screen' => $_POST['screen'] ) );
-
-		if (!taxonomy_exists($taxonomy = $_POST['taxonomy']))
-			die(0);
 
 		$translations = empty($_POST['translations']) ? array() : explode(',', $_POST['translations']); // collect old translations
 		$translations = array_merge($translations, $this->model->get_translations('term', (int) $_POST['term_id'])); // add current translations
@@ -297,12 +299,12 @@ class PLL_Admin_Filters_Columns {
 
 		foreach ($translations as $term_id) {
 			$level = is_taxonomy_hierarchical($taxonomy) ? count( get_ancestors( $term_id, $taxonomy ) ) : 0;
-			$tag = get_term($term_id, $taxonomy);
-			ob_start();
-			$wp_list_table->single_row( $tag, $level );
-			$data = ob_get_clean();
-
-			$x->add(array('what' => 'row', 'data' => $data, 'supplemental' => array('term_id' => $term_id)));
+			if ($tag = get_term($term_id, $taxonomy)) {
+				ob_start();
+				$wp_list_table->single_row( $tag, $level );
+				$data = ob_get_clean();
+				$x->add(array('what' => 'row', 'data' => $data, 'supplemental' => array('term_id' => $term_id)));
+			}
 		}
 
 		$x->send();
