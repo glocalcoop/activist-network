@@ -64,7 +64,7 @@ function anp_meetings_post_type() {
 		'publicly_queryable'  => true,
 		'query_var'           => 'meeting',
 		'rewrite'             => $rewrite,
-		'capability_type'     => 'page',
+		'capability_type'     => 'anp_meetings',
 	);
 	register_post_type( 'anp_meetings', $args );
 
