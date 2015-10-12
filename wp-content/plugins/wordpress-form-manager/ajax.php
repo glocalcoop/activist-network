@@ -125,23 +125,24 @@ function fm_saveHelperGatherFormInfo(){
 	return $formInfo;
 }
 
+function fm_stripArrayValueSlashes( array $arr ){
+	foreach( $arr as $key => $value ){
+		if ( is_string($value) ){
+			$arr[$key] = stripslashes($value);
+		} else if ( is_array($value) ){
+			$arr[$key] = fm_stripArrayValueSlashes($value);
+		}
+	}
+	return $arr;
+}
+
 function fm_saveHelperGatherItems(){
 	$items = array();
 	if(isset($_POST['items'])){
-		foreach($_POST['items'] as $item){			
-			if(!is_serialized($item['extra'])){ //if not a serialized array, hopefully a parseable php array definition..								
-				$item['extra'] = stripslashes(stripslashes($item['extra'])); //both javascript and $_POST add slashes
-				//make sure the code to be eval'ed is safe (otherwise this would be a serious security risk)
-				if(is_valid_array_expr($item['extra']))				
-					eval("\$newExtra = ".$item['extra'].";"); 				
-				else{
-					/* translators: This error occurs if the save script failed for some reason. */
-					_e("Error: Save posted an invalid array expression.", 'wordpress-form-manager')."<br />";
-					echo $item['extra'];
-					die();
-				}					
-				$item['extra'] = $newExtra;
-			}			
+		foreach($_POST['items'] as $item){
+			if ( isset( $item['extra'] ) && is_array( $item['extra']) ){				
+				$item[ 'extra' ] = fm_stripArrayValueSlashes( $item['extra'] );
+			}
 			$items[] = $item;			
 		}
 	}

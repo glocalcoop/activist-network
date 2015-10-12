@@ -284,16 +284,6 @@ function js_multi_item_get_index(ulID, itemCallback, index){
 	eval("var itemValue = " + itemCallback + "('" + UL.childNodes[index].id + "');");
 	return itemValue;	
 }
-function js_multi_item_get_php_array(ulID, itemCallback){
-	var optArr = js_multi_item_get(ulID, itemCallback);
-	var str = "array(";
-	for(var i=0;i<optArr.length;i++){
-		str += "'" + fm_fix_str(optArr[i]) + "'";
-		if(i<optArr.length-1) str += ", ";
-	}
-	str += ")";
-	return str;
-}
 
 function js_multi_item_clear(ulID){
 	var UL = document.getElementById(ulID);		

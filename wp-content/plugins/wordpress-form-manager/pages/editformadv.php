@@ -106,7 +106,7 @@ $behaviorList = array();
 foreach($fm_form_behavior_types as $desc => $val)
 	$behaviorList[$val] = $desc;
 helper_option_field('behaviors', __("Behavior Type", 'wordpress-form-manager'), $behaviorList, $form['behaviors'], __("Behavior types other than 'Default' require a registered user", 'wordpress-form-manager'));
-$msg = empty($formInfo['reg_user_only_msg']) ? $fmdb->getGlobalSetting('reg_user_only_msg') : $form['reg_user_only_msg'];
+$msg = $form['reg_user_only_msg']; //empty($formInfo['reg_user_only_msg']) ? $fmdb->getGlobalSetting('reg_user_only_msg') : $form['reg_user_only_msg'];
 helper_text_field('reg_user_only_msg', __("Message displayed to unregistered users", 'wordpress-form-manager'), $msg, __("Include '%s' where you would like the form title to appear", 'wordpress-form-manager'));
 helper_text_field('exact_form_action', __("Exact URL of destination page", 'wordpress-form-manager'), $form['exact_form_action'], __("This page will be loaded after submitting the form, regardless of the 'behavior' setting", 'wordpress-form-manager'));
 helper_checkbox_field('enable_autocomplete', __("Enable autocomplete", 'wordpress-form-manager'), ($form['enable_autocomplete'] == 1));

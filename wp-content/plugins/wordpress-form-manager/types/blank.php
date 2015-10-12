@@ -36,20 +36,13 @@ class fm_dummyControl extends fm_controlBase{
 		$arr=array();
 		
 		$arr[] = new fm_editPanelItemBase($uniqueName, 'label', __('Label', 'wordpress-form-manager'), array('value' => $itemInfo['label']));
-		/*
-		$arr[] = new fm_editPanelItemBase($uniqueName, 'value', 'Default Value', array('value' => $itemInfo['extra']['value']));
-		$arr[] = new fm_editPanelItemBase($uniqueName, 'size', 'Width (in pixels)', array('value' => $itemInfo['extra']['size']));
-		$arr[] = new fm_editPanelItemCheckbox($uniqueName, 'required', 'Required', array('checked'=>$itemInfo['required']));
-		$arr[] = new fm_editPanelItemDropdown($uniqueName, 'validation', 'Validation', array('options' => array_merge(array('none' => "..."), $this->getValidatorList()), 'value' => $itemInfo['extra']['validation']));		
-		*/
+
 		return $arr;
 	}
 	
 	public function getPanelScriptOptions(){
 		$opt = $this->getPanelScriptOptionDefaults();		
-		/*$opt['extra'] = $this->extraScriptHelper(array('value'=>'value', 'size'=>'size', 'validation'=>'validation'));
-		$opt['required'] = $this->checkboxScriptHelper('required');		
-		*/
+
 		return $opt;
 	}
 	
@@ -57,11 +50,6 @@ class fm_dummyControl extends fm_controlBase{
 		return "fm_".$this->getTypeName()."_show_hide";
 	}
 	
-	/*
-	public function getRequiredValidatorName(){ 
-		return 'fm_base_required_validator';
-	}*/
-		
 	protected function showExtraScripts(){
 		?>
 <script type="text/javascript">

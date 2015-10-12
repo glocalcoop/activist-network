@@ -112,6 +112,8 @@ class rssPIAdmin {
 
 		// Add 10 minutes in frequency.
 		add_filter('cron_schedules', array($this, 'rss_pi_cron_add'));
+		
+		add_filter('cron_schedules', array($this, 'rss_pi_cron_add_custom'));
 
 		// trigger on Export
 		if ( isset($_POST['export_opml']) ) {
@@ -194,7 +196,27 @@ class rssPIAdmin {
 			'interval' => 600,
 			'display' => '10 minutes'
 		);
+		
 		return $schedules;
+	}
+	
+	// this will fetch custom frequency
+	function rss_pi_cron_add_custom($schedules) {
+		
+		// min in sec
+		$rss_min = 60;
+		$custom_cron_options = get_option( 'rss_custom_cron_frequency',array());
+		if(!empty($custom_cron_options)){
+		$rss_custom_cron    = unserialize($custom_cron_options);
+		$rss_frequency_cron = $rss_custom_cron['frequency'];
+		$rss_frequency_time = $rss_custom_cron['time'];
+		// Adding custom cron 
+		 $schedules[$rss_frequency_cron] = array(
+			'interval' => $rss_min*$rss_frequency_time,
+			'display' => $rss_frequency_time.' minutes'
+		);
+		}
+		return $schedules; 
 	}
 
 	/**
