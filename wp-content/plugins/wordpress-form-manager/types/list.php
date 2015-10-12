@@ -158,7 +158,7 @@ class fm_customListControl extends fm_controlBase{
 	
 	public function getPanelScriptOptions(){
 		$opt = $this->getPanelScriptOptionDefaults();		
-		$opt['extra'] = "\"array('options' => \" + js_multi_item_get_php_array('multi-panel-' + itemID, 'fm_custom_list_option_get') + \", 'size' => '\" + fm_get_item_value(itemID, 'size') + \"', 'list_type' => '\" + fm_get_item_value(itemID, 'list_type') + \"', 'default' => '\" + fm_get_item_value(itemID, 'default') + \"' )\"";
+		$opt['extra'] = "{ 'options' : js_multi_item_get('multi-panel-' + itemID, 'fm_custom_list_option_get'), 'size' : fm_get_item_value(itemID, 'size'), 'list_type' : fm_get_item_value(itemID, 'list_type'), 'default' : fm_get_item_value(itemID, 'default') } ";
 		$opt['required'] = $this->checkboxScriptHelper('required');
 		
 		return $opt;

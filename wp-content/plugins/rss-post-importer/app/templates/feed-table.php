@@ -35,6 +35,7 @@
 					<?php _e('Add new feed', "rss_pi"); ?>
 				</a>
 				<input type="hidden" name="ids" id="ids" value="<?php echo(join($saved_ids, ',')); ?>" />
+                <input type="hidden" id="sts_id" name="sts_id" value="" />
 			</td>
 		</tr>
 <?php

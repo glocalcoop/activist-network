@@ -68,7 +68,7 @@ class fm_checkboxControl extends fm_controlBase{
 	
 	public function getPanelScriptOptions(){
 		$opt = $this->getPanelScriptOptionDefaults();		
-		$opt['extra'] = "\"array('value' => '\" + ".$this->checkboxScriptHelper('value',array('onValue'=>'checked', 'offValue'=>""))." + \"', 'position' => '\" + fm_fix_str(fm_get_item_value(itemID, 'position')) + \"')\"";
+		$opt['extra'] = "{ 'value' : ".$this->checkboxScriptHelper('value',array('onValue'=>'checked', 'offValue'=>"")).", 'position' : fm_get_item_value(itemID, 'position') } ";
 		$opt['required'] = $this->checkboxScriptHelper('required');
 		return $opt;
 	}

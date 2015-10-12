@@ -1,0 +1,1126 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Form Manager"
+msgstr ""
+
+#. Short description.
+msgid "Put custom forms into posts and pages using shortcodes. Download submissions in .csv format."
+msgstr ""
+
+#. Found in description header.
+msgid "Features"
+msgstr ""
+
+#. Found in description header.
+msgid "Supported field types"
+msgstr ""
+
+#. Found in description header.
+msgid "Publishing a Form"
+msgstr ""
+
+#. Found in description header.
+msgid "Languages"
+msgstr ""
+
+#. Found in description list item.
+msgid "validation"
+msgstr ""
+
+#. Found in description list item.
+msgid "required fields"
+msgstr ""
+
+#. Found in description list item.
+msgid "custom acknowledgments"
+msgstr ""
+
+#. Found in description list item.
+msgid "e-mail notifications.   "
+msgstr ""
+
+#. Found in description list item.
+msgid "form display templates"
+msgstr ""
+
+#. Found in description list item.
+msgid "text field"
+msgstr ""
+
+#. Found in description list item.
+msgid "text area"
+msgstr ""
+
+#. Found in description list item.
+msgid "dropdown"
+msgstr ""
+
+#. Found in description list item.
+msgid "radio buttons"
+msgstr ""
+
+#. Found in description list item.
+msgid "checkbox / checkbox list"
+msgstr ""
+
+#. Found in description list item.
+msgid "multiline select"
+msgstr ""
+
+#. Found in description list item.
+msgid "file upload"
+msgstr ""
+
+#. Found in description list item.
+msgid "reCAPTCHA"
+msgstr ""
+
+#. Found in description list item.
+msgid "Espa&ntilde;ol (es_ES) - <a href=\"http://sinetiks.com\">Eduardo Aranda</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Italiano (it_IT) - <a href=\"http://www.andreabersi.com\">Andrea Bersi</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Nederlands (nl_NL) - Dani&euml;l Karssen, <a href=\"http://www.fullcirclemedia.nl\">Sander Kolthof</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Portugu&ecirc;s (Brazil) (pt_BR) - <a href=\"http://www.samuelmartins.com.br\">Samuel Martins</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (ru_RU) - <a href=\"http://www.artmind.com.ua\">Ellena Murawski</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Fran&ccedil;ais (fr_FR) - <a href=\"http://kalyx.fr\">Serge Rauber</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "&#1662;&#1575;&#1585;&#1587;&#1740; (fa_IR) - Salman"
+msgstr ""
+
+#. Found in description list item.
+msgid "&#27491;&#39636;&#20013;&#25991; (zh_TW) - <a href=\"http://sofree.cc\">&#39321;&#33144;</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Chinese Simplified (zh_CN)"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Form Manager is a tool for creating forms to collect and download data from visitors to your WordPress site, and keeps track of time/date and registered users as well.  Forms are added to posts or pages using a simple shortcode format, or can be added to your theme with a simple API."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Subtitles and notes can also be added to the form in any location."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Forms are placed within posts or pages.  Look for the Form Manager button in your post editor towards the right (Thanks to <a href=\"http://www.andreabersi.com\">Andrea Bersi</a>)."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You can also type in shortcodes yourself.  For example, if your form's slug is 'form-1', put the following within a post or page:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<br />"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "Method 1: Activate the 'WordPress Form Manager' plugin through the 'Plugins' menu in WordPress."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "Method 2: Download the source code for the plugin, and upload the 'wordpress-form-manager' directory to the '/wp-content/plugins/' directory."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed CVE-2015-7806 - Thanks to Nick Blundell at appcheck-ng.com."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed 'message to unregistered users' not saving"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed textarea private fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed CSV download ( dependency on PHP multibyte strings module removed )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed 'housekeeping suicide' multisite bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tested up to 4.0"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Chinese Simplified translation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed data table not showing multiple pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed formdata shortcode not using default template"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed data table sorting."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed DB access to use $wpdb."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed 'hidden fields' to use their default values."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added DONOTCACHEPAGE to forms (optional). Thanks to Eduardo Aranda for the help!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "DONOTCACHEPAGE disabled by default for plugins installed at 1.6.45 and prior, enabled by default otherwise."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "reCAPTCHA uses current protocol."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Chinese traditional translation, thanks to &#39321;&#33144;."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to include HTML tags as literal text, instead of stripping the tags."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Previous version would not activate."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added checks to detect if the form manager tables are still valid (some security plugins rename tables)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed an unescaped character bug in the conditions editor, which would cause the conditions to not save."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 'Media' option for file uploads (can render as images)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added non-US date format for text input"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed a bug causing settings saves to fail= 1.6.40 ="
+msgstr ""
+
+#. Found in changelog list item.
+msgid "'Checked by default' works "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CSV files show URL instead of file name for file uploads"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "'Insert Saved Form' bug fixed"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to disable autocomplete for forms"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed a bad array index bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Empty conditions no longer break scripts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 'autocomplete' to the form tag"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed IE placeholder simulation scripts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed IE placeholder bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option in Form &gt; Advanced to specify form action manually"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added html and body tags to the default e-mails"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to turn of default CSS"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed data table CSS class names"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Persian language"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added RTL language support for reCAPTCHA"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to include scripts with form render instead of in footer (for AJAX loaded posts)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed bug for checkbox lists (not escaping special characters)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed debug output from formdata summary output"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed data table bug for new forms"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 'required' option for file uploads"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added French translation, thanks to Serge Rauber. Updated Dutch, thanks to Dani&euml;l Karssen"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Data table formatting fix, thanks to Eduardo Aranda"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "'Show' and 'hide' options work with non-table data lists"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 'showprivate' option to formdata shortcode to show private fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Option to hide empty fields in summary"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Include the form's parent post ID in submission data"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed summary list template bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed form action for non-pages / non-posts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed data table output formatting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed file upload URL bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed radio button condition bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed conditions compatibility with Chrome"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed IE8 placeholder bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added defalut value option for list items"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed activation error due to blank charset / collation values"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor changes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed required condition bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed greater than / less than condition bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to disable nonce check on form submission"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed file upload link bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed conflict with portfolio slideshow"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed multiple submission bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added missing headers from default e-mail notifications (encoding)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed conflict with Facebook Simple Connect"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed conflict with CKEditor plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed conditions in IE8 &amp; IE9"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed file upload type bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added shortcodes to acknowledgement message"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 'post_url' shortcode for published posts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Changed CSV download method to avoid writing files."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to allow certain HTML tags"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Russian language translation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin no longer receives two e-mails if both 'send to admin' and 'send to user' are checked"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added a pluggable action for form submission"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed bugs on the form data page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed multisite error"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to use PHP mail() instead of WP wp_mail()"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed a MySQL default value error on some systems"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added shortcodes to E-Mail 'Subject' and 'To' fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added form id, submission id to e-mail shortcodes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed MySQL warnings about default values for text fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added zip, U.S. state, and dimensions validators"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Option to change the timestamp format for uploaded files"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Data top level link removed, since it was broken. Will be replaced later."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added post status option for publishing submissions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added an 'all' option for CSV download"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed summary view bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor interface changes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed file creation bug on some systems"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added top level links to form data"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Submission data 'edit capability' option now applies to summary view editing"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added members capabilities for .CSV file download"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed CSV data bug, (missing timestamp, user, user IP)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed show/hide column bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added capabilities for viewing data columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added nicknames to private fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed show/hide for editing private fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed checkbox list bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed nickname update bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated Spanish translation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor interface improvements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to change the 'registered users only' message"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to select filesystem method"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed data edit bug for blank text boxes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated Italian, Portuguese"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added friendly upgrade notices"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New 'Submission Data' section, with search and date range"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Download CSV of search results"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "More permissions for the 'Members' plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New ID and Tracking Number fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed default form value bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed data summary bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed data table shortcode bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed reCAPTCHA bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated internationalization"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed date validator bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed conflict with Gantry Framework"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed checkbox bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added %wp_uploads% code for file uploads"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Textarea uses placeholder rather than default value"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added warning about invalid regular expressions for custom validators"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Empty conditions no longer cause the validator script to break"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated Italian translation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed validation bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed submission data problem with large forms"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed checkbox list condition bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "File creation now uses wp_filesystem"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed submit button alignment"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed bug in form template functions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added shortcodes for published post titles"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed a bug when repopulating a form after a failed submission"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Scripts appear within CDATA sections"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added API for the form user's JavaScript environment"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed internationalization for certain parts of the plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added a 'table' view for the form data display shortcode"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed the timezone for timestamps"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added options to change data table column types"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added links to published submissions in the data page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved conditions editor"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed bug when uploading files with Unicode file names"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added some missing internationalization handles"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Conditions can apply to 'file' inputs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added submission information to the main page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed a bug when updating a form element's nickname"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed permissions bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed CSV download bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added separators, notes, and recaptchas to the items you can show/hide with conditions."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed install issues on certain platforms.  Thanks to Metin Kale. "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added an option to disable the TinyMCE button in the 'Advanced' settings page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Files can be uploaded to a directory of your choosing"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Links in summaries / e-mails to uploaded files, if they are in a directory"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed script loading bug in certain environments"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added conditional behavior, e.g., only show certain items based on the values of other items"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dutch language support (Thanks to <a href=\"www.fullcirclemedia.nl\">Sander Kolthof</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed '0 kB' summary bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed checkbox default value bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Editor/Data/Advanced for forms now uses a 'tabbed' interface"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added database check for troubleshooting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added checkbox positioning option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added more specific capabilities for Members plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Notes can display HTML"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 'maximum length' attribute for text inputs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added tinyMCE button. (Many thanks to <a href=\"http://www.andreabersi.com\">Andrea Bersi</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed install error"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added auto-redirect option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added fm_getFormID() to API, returns a form's ID number from a slug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed bug in formdata shortcode 'orderby' attribute"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added support for placeholders in non HTML 5 browsers"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Italian language support (Thanks to <a href=\"http://www.andreabersi.com\">Andrea Bersi</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Specify custom theme for reCAPTCHA"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed problems when trying to edit submission data"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added more capabilites to the Members plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Publish submitted data to posts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Show a table of all submissions within a post"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed IE download issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Unicode issues with CSV / ZIP downloads"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Integration with WP-SlimStat"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed 'show summary' error"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed CSV download with international characters"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admins can edit posted data"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Compatibility for internationalization added"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CSS class names for each form item"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Custom capabilities, integration with the Members plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor bug fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 'template reset' in advanced settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added e-mail notification customization to 'Advanced' form settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed install error for 1.4.7"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed e-mail list"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added text entry for list options"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Moved 'Templates' and 'Behavior' to a new 'Advanced' settings page for forms"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed summary template formatting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added file upload form element"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Save script bug fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added IP address to submission data"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed the summary template timestamp label"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed e-mail list bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed saved bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Templates for e-mail notifications and form display, similar to WordPress theme functionality"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "HTML 5 placeholders in supported browsers"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "E-mail notification conflict with certain hosts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed 'list' option bug when creating a new list"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed asterisks appearing below labels"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed include bug with XAMPP"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added reCAPTCHA color scheme option in settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed conflict with other plugins using Google RECAPTCHA"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Changed upgrade mechanism"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 'required item message' to form editor"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed upgrade from 1.3.3 and older"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Full Unicode support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added date validator for text fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added API stable fm_doFormBySlug($formSlug) to show forms within templates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin can change plugin's shortcode in 'Advanced Settings'"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed form behavior selection bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed possible style conflict with Kubric (Default) theme"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed 'fm_settiings' table install error"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Advanced settings page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Custom text validators using regular expressions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "E-mail notifications for registered users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin and registered user e-mail notifications are now a global rather than per form setting."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added e-mail notification for user input (acknowledgment e-mail)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Changed editor interface"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adjusted for register_activation_hook() change"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed some CSS style names likely to have conflicts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added reCAPTCHA field"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Settings page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Multiple forms per page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed CSV data double quote bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved acknowledgement formatting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed 'Single submission' behavior bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Items in form editor update when 'done' is clicked"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed list option editor bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added form behaviors for registered users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Cleaned up data page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added data summary to data page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Rearranged editor sections"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed checkbox list 'required' test"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added single checkbox 'requried' test"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed .csv download bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added e-mail notifications. "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes multisite edit/data page bug. "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes an installation error when starting with a fresh plugin install."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "*** I am starting work on version 2.  If you have suggestions or requests, please let me know! ***"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Please visit <a href=\"http://www.campbellhoffman.com/form-manager-faq/\">www.campbellhoffman.com/form-manager-faq/</a> for FAQ and tutorials."
+msgstr ""

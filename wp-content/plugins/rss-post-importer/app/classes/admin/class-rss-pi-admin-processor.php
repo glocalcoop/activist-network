@@ -187,8 +187,33 @@ class rssPIAdminProcessor {
 	private function process_settings() {
 
 		// Get selected settings for all imported posts
+	
+	    // Code added for custom frequency	
+		if($_POST['frequency']=="custom_frequency")
+		{
+			$rss_custom_frequency = $_POST['rss_custom_frequency'];
+			$frequency = "minutes_".$rss_custom_frequency;
+			$custom_frequency = 'true';
+			// Adding option for custom cron
+			$rss_custom_cron_frequency = serialize(
+			                                 array('time'=>$rss_custom_frequency,
+											 'frequency'=>$frequency
+											 )
+											);
+											
+			delete_option( 'rss_custom_cron_frequency' );
+			add_option( 'rss_custom_cron_frequency',$rss_custom_cron_frequency);
+		}else
+		{
+			 $frequency = $_POST['frequency'];
+			 $custom_frequency = 'false';
+			 
+			 // Delete custom cron if not exixts
+			 delete_option( 'rss_custom_cron_frequency' );
+		}
+		
 		$settings = array(
-			'frequency' => $_POST['frequency'],
+			'frequency' => $frequency,
 			'feeds_api_key' => $_POST['feeds_api_key'],
 			'post_template' => stripslashes_deep($_POST['post_template']),
 			'post_status' => $_POST['post_status'],
@@ -202,6 +227,7 @@ class rssPIAdminProcessor {
 			// these values are setup after key_validity check via filter()
 			'keywords' => array(),
 			'cache_deleted' => 'true',
+			'custom_frequency' => $custom_frequency
 		);
 
 		global $rss_post_importer;
@@ -240,7 +266,13 @@ class rssPIAdminProcessor {
 	private function process_feeds($ids) {
 		
 		
-
+		echo $sts_id    = $_POST['sts_id'];
+		
+		$status_id = array();
+		if(!empty($sts_id))
+		{
+			$status_id = explode(',',$sts_id);
+		}
 		$feeds = array();
 
 		foreach ($ids as $id) {
@@ -257,6 +289,12 @@ class rssPIAdminProcessor {
 					}
 					
 				}
+				if(in_array($id,$status_id))
+				$feed_status="pause";
+				 else
+				$feed_status="active"; 
+				   
+				
 				array_push($feeds, array(
 					'id' => $id,
 					'url' => $_POST[$id . '-url'],
@@ -267,7 +305,10 @@ class rssPIAdminProcessor {
 					'category_id' => (isset($_POST[$id . '-category_id'])) ? $_POST[$id . '-category_id'] : '',
 					'tags_id' => (isset($_POST[$id . '-tags_id'])) ? $_POST[$id . '-tags_id'] : '',
 					'keywords' => array_map('trim',$keywords),
-					'strip_html' => (isset($_POST[$id . '-strip_html'])) ? $_POST[$id . '-strip_html'] : ''
+					'strip_html' => (isset($_POST[$id . '-strip_html'])) ? $_POST[$id . '-strip_html'] : '',
+					'nofollow_outbound' => (isset($_POST[$id . '-nofollow_outbound'])) ? $_POST[$id . '-nofollow_outbound'] : '',
+					'automatic_import_categories' => (isset($_POST[$id . '-automatic_import_categories'])) ? $_POST[$id . '-automatic_import_categories'] : '',                    'automatic_import_author' => (isset($_POST[$id . '-automatic_import_author'])) ? $_POST[$id . '-automatic_import_author'] : '',
+					'feed_status' => $feed_status
 				));
 			}
 		}
@@ -327,10 +368,10 @@ class rssPIAdminProcessor {
 			// set up keywords (otherwise don't)
 			if (isset($_POST['keyword_filter']))
 			   
-				 $keyword_str = $_POST['keyword_filter'];
-			
-
-			$keywords = array();
+			     // Strip Slases for RegEx
+				 $keyword_str = stripslashes($_POST['keyword_filter']);
+		
+			     $keywords = array();
 
 			if (!empty($keyword_str)) {
 				$keywords = explode(',', $keyword_str);

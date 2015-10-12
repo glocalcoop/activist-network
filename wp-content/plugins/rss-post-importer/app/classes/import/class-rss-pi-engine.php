@@ -138,6 +138,10 @@ class rssPIEngine {
 			'tags_id' => $f['tags_id'],
 			'keywords' => isset($f['keywords']) && is_array($f['keywords']) ? $f['keywords'] : array(),
 			'strip_html' => $f['strip_html'],
+			'nofollow_outbound' => $f['nofollow_outbound'],
+			'automatic_import_categories' => $f['automatic_import_categories'],
+			'automatic_import_author' => $f['automatic_import_author'],
+			'feed_status' => $f['feed_status'],
 			'save_to_db' => true
 		);
 		return $this->_import($f['url'], $args);
@@ -164,8 +168,16 @@ class rssPIEngine {
 			'tags_id' => array(),
 			'keywords' => array(),
 			'strip_html' => true,
-			'save_to_db' => true
+			'save_to_db' => true,
+			'nofollow_outbound' => true,
+			'automatic_import_categories' => true,
+			'automatic_import_author' => true,
+			'feed_status' => 'active'
 		);
+		
+		if($args['feed_status']=='pause'){
+		   return;	
+		}
 
 		$args = wp_parse_args($args, $defaults);
 
@@ -359,8 +371,11 @@ class rssPIEngine {
 
 		// Featured Image setter
 		$thumbnail = new rssPIFeaturedImage();
-        
+		// If Item is active then Import
+	    if($args['feed_status']=="active"){
+		
 		foreach ( $items as $item ) {
+			
 			if ( ! $this->post_exists($item) ) {
 				
 				/* Code to convert tags id array to tag name array * */
@@ -375,13 +390,66 @@ class rssPIEngine {
 
 				// parse the content
 				$content = $parser->_parse($item, $args['feed_title'], $args['strip_html']);
-
-				$post = array(
+				
+				//Filter content for /* Add rel="nofollow" to all outbounded links. */
+				if($args['nofollow_outbound']=='true')
+				{
+				  $content=$this->rss_pi_url_parse_content($content);	
+				}
+				
+				// Get auto categories from Feeds 
+				$post_category = array();
+				if($args['automatic_import_categories']=='true') {
+						
+				$category_array = array();
+				foreach ($item->get_categories() as $category){
+					$cat_id = wp_create_category($category->get_label());
+					if($cat_id > 0){
+						$category_array[] = $cat_id;
+					}else{
+						$category = get_term_by('name', $category->get_label(), 'category');
+						if($category){
+							$category_array[] = $category->term_id;
+						}
+					}
+				} 
+				  $post_category =  $category_array;
+				}else
+				{
+				  $post_category =  array($args['category_id']);	
+				}
+				
+	     // Get Author From Feed URl
+		 if($args['automatic_import_author']=='true') {	
+		 
+			  if ($author = $item->get_author())
+			  {
+				  $array_author = explode(",",$author->get_name());
+				  $user_name =   preg_replace('/[^A-Za-z0-9\-]/', ' ', $array_author[0]); 
+				  $user_id = username_exists( $user_name );
+				  if ( !$user_id) :
+				   $random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+				   $user_id = wp_create_user( $user_name, $random_password,'');
+				  
+				  endif;
+				  
+				$post_author = $user_id;   
+			  
+			  }else
+			  {
+				  $post_author = $args['author_id'];
+			  }
+		 }else
+		 {
+			 $post_author = $args['author_id'];
+		 }
+		
+		 $post = array(
 					'post_title' => $item->get_title(),
 					'post_content' => $content,
 					'post_status' => $this->options['settings']['post_status'],
-					'post_author' => $args['author_id'],
-					'post_category' => array($args['category_id']),
+					'post_author' => $post_author,
+					'post_category' => $post_category,
 					'tags_input' => $tags_name,
 					'comment_status' => $this->options['settings']['allow_comments'],
 					'post_date' => get_date_from_gmt($item->get_date('Y-m-d H:i:s'))
@@ -450,6 +518,7 @@ class rssPIEngine {
 				array_push($saved_posts, $post);
 			}
 		}
+	}
 
 		return $saved_posts;
 	}
@@ -638,6 +707,45 @@ class rssPIEngine {
 		}
 
 		return $id;
+	}
+	
+	function rss_pi_url_parse_content($content) {
+
+		$regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>";
+		if (preg_match_all("/$regexp/siU", $content, $matches, PREG_SET_ORDER)) {
+			if (!empty($matches)) {
+
+				$srcUrl = get_option('home');
+				for ($i = 0; $i < count($matches); $i++) {
+
+					$tag = $matches[$i][0];
+					$tag2 = $matches[$i][0];
+					$url = $matches[$i][0];
+
+					$noFollow = '';
+
+					$pattern = '/target\s*=\s*"\s*_blank\s*"/';
+					preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
+					if (count($match) < 1)
+						$noFollow .= ' target="_blank" ';
+
+					$pattern = '/rel\s*=\s*"\s*[n|d]ofollow\s*"/';
+					preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
+					if (count($match) < 1)
+						$noFollow .= ' rel="nofollow" ';
+
+					$pos = strpos($url, $srcUrl);
+					if ($pos === false) {
+						$tag = rtrim($tag, '>');
+						$tag .= $noFollow . '>';
+						$content = str_replace($tag2, $tag, $content);
+					}
+				}
+			}
+		}
+
+		$content = str_replace(']]>', ']]&gt;', $content);
+		return $content;
 	}
 
 }

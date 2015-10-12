@@ -36,8 +36,20 @@ if (!class_exists("Rss_pi_stats")) {
 				$start_time = strtotime($_POST["rss_from_date"]);
 				$end_time = strtotime($_POST["rss_till_date"]);
 			} else {
-				$start_time = get_the_time("U", $oldest_post);
-				$end_time = get_the_time("U", $newest_post);
+				
+				
+				$date_today           = date("Y-m-d");// current date
+				$date_today_unix      = strtotime($date_today);
+                $date_seven_days_unix = strtotime(date("Y-m-d", strtotime($date_today)) . " -7 day");
+				
+				// for last seven days stats
+				$start_time = $date_seven_days_unix;
+				$end_time = $date_today_unix;
+			    
+				/*Old Code working according to first post*/
+			    //$start_time = get_the_time("U", $oldest_post);
+				//$end_time = get_the_time("U", $newest_post);
+				
 			}
 
 			if ( isset($_POST["rss_filter_stats"]) && $start_time <= 0 || $end_time <= 0 ) {

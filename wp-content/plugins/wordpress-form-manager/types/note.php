@@ -49,9 +49,9 @@ class fm_noteControl extends fm_controlBase{
 	
 	public function getPanelScriptOptions(){
 		$opt = $this->getPanelScriptOptionDefaults();		
-		//$opt['extra'] = $this->extraScriptHelper(array('content'=>'content'));
-		$opt['extra'] = "\"array('allow_markup' => '\" + ".$this->checkboxScriptHelper('allow_markup',array('onValue'=>'checked', 'offValue'=>""))." + \"', 'content' => '\" + fm_fix_str(fm_get_item_value(itemID, 'content')) + \"')\"";
-		//  $opt['extra'] = "\"array('value' => '\" + ".$this->checkboxScriptHelper('value',array('onValue'=>'checked', 'offValue'=>""))." + \"')\"";
+		
+		$opt['extra'] = "{ 'allow_markup': ".$this->checkboxScriptHelper('allow_markup',array('onValue'=>'checked', 'offValue'=>"")).", 'content' : fm_get_item_value(itemID, 'content') }";
+		
 		return $opt;
 	}
 	public function itemDefaults(){

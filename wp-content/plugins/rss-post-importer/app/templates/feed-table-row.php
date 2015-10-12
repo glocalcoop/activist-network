@@ -10,7 +10,10 @@ if (!isset($f)) {
 		'author_id' => 1,
 		'category_id' => 1,
 		'tags_id' => array(),
-		'strip_html' => 'false'
+		'strip_html' => 'false',
+		'nofollow_outbound' => 'false',
+		'automatic_import_categories' => 'false',
+		'automatic_import_author' => 'false'
 	);
 	$show = ' show';
 }
@@ -50,6 +53,7 @@ if (is_array($f['category_id'])) {
 		$category = get_the_category_by_ID(intval($f['category_id']));
 	}
 }
+
 ?>
 
 <tr id="display_<?php echo ($f['id']); ?>" class="data-row<?php echo $show; ?>" data-fields="name,url,max_posts">
@@ -58,6 +62,13 @@ if (is_array($f['category_id'])) {
 		<div class="row-options">
 			<a href="#" class="toggle-edit" data-target="<?php echo ($f['id']); ?>"><?php _e('Edit', 'rss_pi'); ?></a> | 
 			<a href="#" class="delete-row" data-target="<?php echo ($f['id']); ?>"><?php _e('Delete', 'rss_pi'); ?></a>
+            <?php 
+			if($f['feed_status']=="active"){ ?>
+            | <a href="#" class="status-row" data-action="pause" data-target="<?php echo ($f['id']); ?>"><?php _e('Pause', 'rss_pi'); ?></a>
+            <?php }elseif($f['feed_status']=="pause"){ ?>
+            | <a href="#" class="status-row" data-action="Enable_Feed" data-target="<?php echo ($f['id']); ?>"><?php _e('Enable Feed', 'rss_pi'); ?></a>
+            <?php } ?>
+          
 		</div>
 	</td>
 	<td class="rss_pi-feed_url"><span class="field-url"><?php echo esc_url(stripslashes($f['url'])); ?></span></td>
@@ -84,6 +95,40 @@ if (is_array($f['category_id'])) {
 				<td><label for="<?php echo ($f['id']); ?>-max_posts"><?php _e("Max posts / import", 'rss_pi'); ?></label></td>
 				<td><input type="number" class="field-max_posts" name="<?php echo ($f['id']); ?>-max_posts" id="<?php echo ($f['id']); ?>-max_posts" value="<?php echo ($f['max_posts']); ?>" min="1" max="100" /></td>
 			</tr>
+            <tr>
+						<td>
+							<label for="<?php echo ($f['id']); ?>-nofollow_outbound"><?php _e('Nofollow option for all outbound links?', "rss_pi"); ?></label>
+							<p class="description"><?php _e('Add rel="nofollow" to all outbounded links.', "rss_pi"); ?></p>
+						</td>
+						<td>
+							<ul class="radiolist">
+								<li>
+									<label><input type="radio" id="<?php echo($f['id']); ?>-nofollow_outbound_true" name="<?php echo($f['id']); ?>-nofollow_outbound" value="true" <?php echo($f['nofollow_outbound'] == 'true' ? 'checked="checked"' : ''); ?> /> <?php _e('Yes', 'rss_pi'); ?></label>
+								</li>
+								<li>
+									<label><input type="radio" id="<?php echo($f['id']); ?>-nofollow_outbound_false" name="<?php echo($f['id']); ?>-nofollow_outbound" value="false" <?php echo($f['nofollow_outbound'] == 'false' || $f['nofollow_outbound'] == '' ? 'checked="checked"' : ''); ?> /> <?php _e('No', 'rss_pi'); ?></label>
+								</li>
+							</ul>
+						</td>
+					</tr>
+                    
+            <tr>
+						<td>
+							<label for="<?php echo ($f['id']); ?>-automatic_import_author"><?php _e('Automatic import of Authors ?', "rss_pi"); ?></label>
+						
+						</td>
+						<td>
+							<ul class="radiolist">
+								<li>
+									<label><input type="radio" id="<?php echo($f['id']); ?>-automatic_import_author_true" name="<?php echo($f['id']); ?>-automatic_import_author" value="true" <?php echo($f['automatic_import_author'] == 'true' ? 'checked="checked"' : ''); ?> /> <?php _e('Yes', 'rss_pi'); ?></label>
+								</li>
+								<li>
+									<label><input type="radio" id="<?php echo($f['id']); ?>-automatic_import_author_false" name="<?php echo($f['id']); ?>-automatic_import_author" value="false" <?php echo($f['automatic_import_author'] == 'false' || $f['automatic_import_author'] == '' ? 'checked="checked"' : ''); ?> /> <?php _e('No', 'rss_pi'); ?></label>
+								</li>
+							</ul>
+						</td>
+					</tr>        
+                    
 			<tr>
 				<td><label for="<?php echo ($f['id']); ?>-author_id"><?php _e("Feed Author", 'rss_pi'); ?></label></td>
 				<td>
@@ -101,6 +146,25 @@ wp_dropdown_users($args);
 ?>
 				</td>
 			</tr>
+            
+            <tr>
+						<td>
+							<label for="<?php echo ($f['id']); ?>-automatic_import_categories"><?php _e('Automatic import of Categories ?', "rss_pi"); ?></label>
+						
+						</td>
+						<td>
+							<ul class="radiolist">
+								<li>
+									<label><input type="radio" id="<?php echo($f['id']); ?>-automatic_import_categories_true" name="<?php echo($f['id']); ?>-automatic_import_categories" value="true" <?php echo($f['automatic_import_categories'] == 'true' ? 'checked="checked"' : ''); ?> /> <?php _e('Yes', 'rss_pi'); ?></label>
+								</li>
+								<li>
+									<label><input type="radio" id="<?php echo($f['id']); ?>-automatic_import_categories_false" name="<?php echo($f['id']); ?>-automatic_import_categories" value="false" <?php echo($f['automatic_import_categories'] == 'false' || $f['automatic_import_categories'] == '' ? 'checked="checked"' : ''); ?> /> <?php _e('No', 'rss_pi'); ?></label>
+								</li>
+							</ul>
+						</td>
+					</tr>
+            
+            
 			<tr>
 				<td><label for=""><?php _e("Category", 'rss_pi'); ?></label></td>
 				<td>
@@ -126,6 +190,7 @@ wp_dropdown_users($args);
 					?>
 				</td>
 			</tr>
+            
 			<tr>
 				<td><label for=""><?php _e("Tags", 'rss_pi'); ?></label></td>
 				<td>
@@ -166,6 +231,7 @@ wp_dropdown_users($args);
 						?></textarea>
 				</td>
 			</tr>
+            
 			<tr>
 				<td><label for=""><?php _e("Strip html tags", 'rss_pi'); ?></label></td>
 				<td>

@@ -12,17 +12,35 @@
 						<td>
 							<label for="frequency"><?php _e('Frequency', "rss_pi"); ?></label>
 							<p class="description"><?php _e('How often will the import run.', "rss_pi"); ?></p>
+                            <p class="description"><?php _e('Custom Frequency in minutes only.', "rss_pi"); ?></p>
 						</td>
 						<td>
+                        <?php 
+							$x = wp_get_schedules();
+							$custom_cron_options = get_option( 'rss_custom_cron_frequency',array());
+							if(!empty($custom_cron_options)):
+							$rss_custom_cron    = unserialize($custom_cron_options);
+							endif;
+						  ?>
 							<select name="frequency" id="frequency">
-								<?php $x = wp_get_schedules(); ?>
-								<?php foreach (array_keys($x) as $interval) : ?>
+								<?php foreach (array_keys($x) as $interval) :
+								      if($rss_custom_cron['frequency'] != $interval) :
+								
+								 ?>
 									<option value="<?php echo $interval; ?>" <?php
 									if ($this->options['settings']['frequency'] == $interval) : echo('selected="selected"');
 									endif;
 									?>><?php echo $x[$interval]['display']; ?></option>
-										<?php endforeach; ?>
+										<?php endif;
+									 endforeach; ?>
+                                      
+                                     <option value="custom_frequency" <?php if ($this->options['settings']['custom_frequency'] == "true"){ echo('selected="selected"');} ?>><?php _e('Custom frequency', "rss_pi"); ?></option>    
 							</select>
+                            &nbsp;
+                          
+                            <input type="text" id="rss_custom_frequency"  name="rss_custom_frequency" value="<?php echo $rss_custom_cron['time']; ?>"  placeholder="Minutes" <?php if ($this->options['settings']['custom_frequency'] == 'true'){ echo('style="display:inline"');} ?>/>
+                           
+                            
 						</td>
 					</tr>
 					<tr>
