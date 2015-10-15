@@ -38,7 +38,7 @@ if ( ! function_exists('anp_summary_post_type') ) {
 			'hierarchical'        => false,
 			'public'              => true,
 			'show_ui'             => true,
-			'show_in_menu'        => 'edit.php?post_type=anp_meetings',
+			'show_in_menu'        => false,
 			'menu_position'       => 30,
 			'show_in_admin_bar'   => true,
 			'show_in_nav_menus'   => true,
@@ -62,7 +62,21 @@ if ( ! function_exists( 'anp_summary_add_to_menu' ) ) {
 
     function anp_summary_add_to_menu() { 
 
-        // add_submenu_page('edit.php?post_type=anp_meetings', 'New Summary', 'New Summary', 'manage_options', 'post-new.php?post_type=anp_summary'); 
+        add_submenu_page(
+            'edit.php?post_type=anp_meetings', 
+            __('All Summaries', 'anp_meetings'), 
+            __('All Summaries', 'anp_meetings'), 
+            'manage_options', 
+            'edit.php?post_type=anp_summary'
+        ); 
+
+        add_submenu_page(
+            'edit.php?post_type=anp_meetings', 
+            __('New Summary', 'anp_meetings'), 
+            __('New Summary', 'anp_meetings'), 
+            'manage_options', 
+            'post-new.php?post_type=anp_summary'
+        ); 
 
     }
 

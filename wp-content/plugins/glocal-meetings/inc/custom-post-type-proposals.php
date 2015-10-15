@@ -38,12 +38,12 @@ if ( ! function_exists('anp_proposals_post_type') ) {
             'taxonomies'          => array( 
                 'anp_proposal_status', 
                 'anp_meetings_type', 
-                ' anp_meetings_tag' ),
+                'anp_meetings_tag' ),
             'hierarchical'        => false,
             'public'              => true,
             'show_ui'             => true,
-            'show_in_menu'        => 'edit.php?post_type=anp_meetings',
-            'menu_position'       => 5,
+            'show_in_menu'        => false,
+            'menu_position'       => 30,
             'show_in_admin_bar'   => true,
             'show_in_nav_menus'   => true,
             'can_export'          => true,
@@ -113,9 +113,31 @@ if ( ! function_exists( 'anp_proposals_add_to_menu' ) ) {
 
     function anp_proposals_add_to_menu() { 
 
-        add_submenu_page('edit.php?post_type=anp_meetings', 'New Proposal', 'New Proposal', 'manage_options', 'post-new.php?post_type=anp_proposal'); 
+        //edit.php?post_type=anp_meetings
 
-        // add_submenu_page('edit.php?post_type=anp_meetings', 'Proposal Statuses', 'Proposal Statuses', 'manage_options', 'edit-tags.php?taxonomy=anp_proposal_status&post_type=anp_proposal'); 
+        add_submenu_page(
+            'edit.php?post_type=anp_meetings', 
+            __('All Proposals', 'anp_meetings'), 
+            __('All Proposals', 'anp_meetings'), 
+            'manage_options', 
+            'edit.php?post_type=anp_proposal'
+        ); 
+
+        add_submenu_page(
+            'edit.php?post_type=anp_meetings', 
+            __('New Proposal', 'anp_meetings'), 
+            __('New Proposal', 'anp_meetings'), 
+            'manage_options', 
+            'post-new.php?post_type=anp_proposal'
+        ); 
+
+        add_submenu_page(
+            'edit.php?post_type=anp_meetings', 
+            __('Proposal Statuses', 'anp_meetings'), 
+            __('Proposal Statuses', 'anp_meetings'), 
+            'manage_options', 
+            'edit-tags.php?taxonomy=anp_proposal_status&post_type=anp_proposal'
+        ); 
 
     }
 
