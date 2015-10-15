@@ -76,7 +76,7 @@
             "package": {
                 "name": "humanmade/mercator",
                 "version": "0.1",
-                "type": "wordpress-muplugin",
+                "type": "wordpress-plugin",
                 "dist": {
                     "type": "zip",
                     "url": "https://github.com/humanmade/Mercator/archive/master.zip"
