@@ -10,9 +10,14 @@ License: GPL
 
 /************* REQUIRE FILES *****************/
 
-define( 'ACF_LITE', true );
+//define( 'ACF_LITE', true );
 include_once('advanced-custom-fields/acf.php');
 include_once('anp-meetings-render.php');
+<<<<<<< HEAD
+include_once('inc/custom-post-type-meetings.php');
+include_once('inc/custom-post-type-proposals.php');
+include_once('inc/custom-post-type-summaries.php');
+=======
 
 /************* CUSTOM POST TYPES *****************/
 
@@ -355,6 +360,7 @@ function anp_meetings_populate_columns( $column ) {
         echo $meeting_date;
     }
 }
+>>>>>>> a86f85aabedbcc034da10b52419b3ab635f5ded2
 
 
 ?>
