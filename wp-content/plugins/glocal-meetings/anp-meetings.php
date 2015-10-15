@@ -64,17 +64,36 @@ function anp_meetings_post_type() {
 		'publicly_queryable'  => true,
 		'query_var'           => 'meeting',
 		'rewrite'             => $rewrite,
-		'capability_type'     => 'page',
+		'capability_type'     => 'anp_meeting',
+        'map_meta_cap'        => true,
+        'delete_with_user'    => false,
 	);
-	register_post_type( 'anp_meetings', $args );
-
+    register_post_type( 'anp_meetings', $args );
 }
+    
+// Assing Caps to WP Roles and add Read option.     
+    add_action( 'init', 'add_anp_meeting_caps');
+    function add_anp_meeting_caps() {
+        global $wp_roles;
+
+        if ( isset($wp_roles) ) {
+            $wp_roles->add_cap( 'editor', 'edit_anp_meeting' );
+            $wp_roles->add_cap( 'editor', 'delete_anp_meeting' );
+            $wp_roles->add_cap( 'editor', 'publish_anp_meeting' );
+            $wp_roles->add_cap( 'editor', 'edit_anp_meeting' );
+            $wp_roles->add_cap( 'editor', 'edit_others_anp_meeting' );
+            $wp_roles->add_cap( 'editor', 'delete_anp_meeting' );
+            $wp_roles->add_cap( 'editor', 'delete_others_anp_meeting' );
+
+            $wp_roles->add_cap( 'author', 'read_anp_meeting' );
+            $wp_roles->add_cap( 'author', 'read_private_anp_meeting' );
+        }
+  }
 
 // Hook into the 'init' action
 add_action( 'init', 'anp_meetings_post_type', 0 );
 
 }
-
 
 /************* CUSTOM TAXONOMIES *****************/
 
