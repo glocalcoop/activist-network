@@ -5270,10 +5270,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
     font-size: 22px;
     font-size: 1.375rem;
     margin-bottom: 0; }
-  .post-type-archive-anp_meetings article .article-footer,
-  .tax-anp_meetings_tag article .article-footer,
-  .tax-anp_meetings_type article .article-footer {
-    display: none; }
 
 .single-anp_meetings article p.meta {
   margin-bottom: 0;
@@ -5320,10 +5316,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
       margin: 0; }
     .single-anp_meetings article .entry-content .meeting-agenda li {
       font-weight: normal; }
-
-.single-anp_meetings article .byline,
-.single-anp_meetings article .article-footer {
-  display: none; }
 
 .single-anp_meetings article .post-footer {
   margin: 1em 0 0.5em 0;

@@ -26,9 +26,9 @@ MEETINGS ARCHIVE & SINGLE STYLES
 
         .entry-content {}
 
-        .article-footer {
-            display: none;
-        }
+        // .article-footer {
+        //     display: none;
+        // }
 
     }
   
@@ -109,10 +109,10 @@ MEETINGS ARCHIVE & SINGLE STYLES
             
         }
 
-        .byline,
-        .article-footer {
-            display: none;
-        }
+        // .byline,
+        // .article-footer {
+        //     display: none;
+        // }
         
         .post-footer {
             margin: 1em 0 .5em 0;
@@ -153,40 +153,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
 
 }
 
-//.hentry {
-//	header {}
-//	footer {}
-//
-//} 
-//
-//.page-title,
-//.archive-title,
-//.section-title {
-//    text-transform: uppercase; 
-//    letter-spacing: $tracking;
-//    @include font-size($gamma);
-//    line-height: 1.1;
-//    margin: $space 0 $space-double;
-//}
-//
-//.subtitle {
-//    text-transform: uppercase; 
-//    letter-spacing: $tracking;
-//    color: $text-color;
-//    .directory & {
-//        margin-top: $space-double;
-//    }
-//}
-//
-//
-//.single-title {
-//}
-//
-//.entry-title.single-title {
-//  margin-top: $space;
-//  margin-bottom: .3em;
-//}
-
 
 
 /* want to style individual post classes? Booya! */
@@ -198,109 +164,5 @@ MEETINGS ARCHIVE & SINGLE STYLES
 .hentry {}          /* hentry class */
 .category-slug {}   /* style by category (i.e. category-videos) */
 .tag-slug {}        /* style by tag (i.e. tag-news) */
-
-
-//// general post
-//.post {
-//  padding: $space;
-//}
-//.post-image img {
-//  width: 100%;
-//  height: auto;
-//}
-//
-//
-//// post date and author name
-//.byline {
-//  margin: 0;
-//  color: $quiet-color;
-//	text-transform: uppercase; 
-//  letter-spacing: $tracking;
-//	@include font-size(15);
-//  a {
-//    color: $quiet-color;
-//  }
-//}
-//
-//// single blog post
-//.single-post {
-//  .entry-content {
-//    padding-top: 40px;
-//  }
-//  .entry-content p:first-child {
-//    @include font-size(22);
-//  }  
-//}
-//
-//
-//// single blog post content 
-//.post .entry-content {
-//    
-//  h2, h3, h4 {
-//    margin-top: 1.8em;
-//  }
-//    
-//  p {
-//  	max-width: 40em;
-//	}
-//  a {
-//    color: $text-color;
-//    border-bottom: 1px solid rgba($anchor-color, .2 );
-//    box-shadow: inset 0 -3px 0 rgba($anchor-color, .2 );
-//    &:hover {
-//      color: $anchor-color;
-//      border-bottom-color: rgba($anchor-color, .1 );
-//      box-shadow: inset 0 -3px 0 rgba($anchor-color, .1 );
-//    }
-//  }
-//
-//	ul, ol, table, dl {}
-//	ul, ol {
-//    padding: 0 40px;
-//		li {
-//		}
-//	}
-//	ul {
-//    list-style: square;
-//		li {}
-//	}
-//	ol {
-//    list-style: decimal;
-//		li {}
-//	}
-//	blockquote {
-//		&:before {}
-//	}
-//	dl {
-//  	border-top: 1px solid $white;
-//    padding-top: 1em;
-//	}
-//	dt {
-//  	float: left;
-//	}
-//	dd {
-//  	margin-left: 375px;
-//	}
-//	img {
-//		margin: 0 0 20px 0;
-//		max-width: 100%;
-//		height: auto;
-//	}
-//	/*
-//	image alignment on a screen this size may be
-//	a bit difficult. It's set to start aligning
-//	and floating images at the next breakpoint,
-//	but it's up to you. Feel free to change it up.
-//	*/
-//	.alignleft, img.alignleft {float: left; margin-right: 40px; margin-bottom: 20px;}
-//	.alignright, img.alignright {float: right; margin-left: 40px; margin-bottom: 20px;}
-//	.aligncenter, img.aligncenter {}
-//	video, object {
-//		max-width: 100%;
-//		height: auto;
-//	}
-//	pre {}
-//
-//} // end .entry-content 
 
 
