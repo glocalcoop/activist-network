@@ -13,11 +13,13 @@ Text Domain: anp_meetings
 
 //define( 'ACF_LITE', true );
 include_once('advanced-custom-fields/acf.php');
+include_once('posts-to-posts/posts-to-posts.php');
 include_once('anp-meetings-render.php');
 include_once('inc/custom-post-type-meetings.php');
 include_once('inc/custom-post-type-agendas.php');
 include_once('inc/custom-post-type-summaries.php');
 include_once('inc/custom-post-type-proposals.php');
+include_once('inc/post-type-connections.php');
 
 
 
