@@ -24,12 +24,23 @@
             <?php } ?>
          
             <?php
+             $queried_object = get_queried_object();
+             var_dump( $queried_object );
             // Post query modified using pre_get_posts filter
+            ?>
+
+            <?php
+            // Find connected pages (for all posts)
+            p2p_type( 'meeting_to_agenda' )->each_connected( $wp_query, array(), 'agendas' );
+
+            p2p_type( 'meeting_to_summary' )->each_connected( $wp_query, array(), 'summaries' );
+
+            p2p_type( 'meeting_to_proposals' )->each_connected( $wp_query, array(), 'proposals' );
             ?>
 
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
           
-            <?php $term_list = wp_get_post_terms($post->ID, 'anp_meetings_type', array("fields" => "names")); ?>
+            <?php $term_list = wp_get_post_terms( $post->ID, 'anp_meetings_type', array( "fields" => "names" ) ); ?>
 
 			<article role="article" id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?>>
               
@@ -46,10 +57,53 @@
 				</section>
 
 				<footer class="article-footer">
-                  
-                  <p class="meta tags">
+
+                  <div class="meta tags">
                     <?php echo get_the_term_list( $post->ID, 'anp_meetings_tag', 'Tags: <span class="tags">', ', ', '</span>' ) ?>
-                    </p>
+                  </div>
+
+                      
+
+                  <div class="related-content">
+
+                    <?php
+                    if( count( $post->agendas ) > 0 ) {
+
+                        foreach ( $post->agendas as $post ) : setup_postdata( $post ); ?>
+
+                            <span class="tags agenda"><a href="<?php the_permalink( $post->ID ); ?>"><?php _e( 'Agenda', 'anp_meetings' ) ?></a></span>
+                                                    
+                        <?php
+                        endforeach;
+
+                    }
+
+                    wp_reset_postdata(); ?>
+
+
+                    <?php
+                    if( count( $post->summaries ) > 0 ) {
+
+                        foreach ( $post->summaries as $post ) : setup_postdata( $post ); ?>
+
+                            <span class="tags summary"><a href="<?php the_permalink( $post->ID ); ?>"><?php _e( 'Summary', 'anp_meetings' ) ?></a></span>
+                                                    
+                        <?php
+                        endforeach;
+
+                    }
+
+                    wp_reset_postdata();
+                    ?>
+
+
+                    <?php
+                    if( count( $post->proposals ) > 0 ) {
+
+                    }
+                    ?>
+
+                  </div>
 
 				</footer>
 

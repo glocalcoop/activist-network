@@ -9,8 +9,7 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           
         <?php
-            $meeting_agenda = get_post_meta( $post->ID, 'meeting_agenda', true );
-            $meeting_links = get_post_meta( $post->ID, 'meeting_links', true );
+          $query = get_queried_object();
         ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
@@ -27,35 +26,90 @@
             <p class="meta">
               <?php echo get_the_term_list( $post->ID, 'anp_meetings_type', 'Type: <span class="category">', ', ', '</span>' ) ?>
             </p>
+
+            <?php  
+            // Find connected summary
+            $agenda = new WP_Query( array(
+              'connected_type' => 'meeting_to_agenda',
+              'connected_items' => $query,
+              'nopaging' => true,
+            ) );
+
+            // Display connected pages
+            if ( $agenda->have_posts() ) :
+            ?>
+            <p class="meta">
+              <?php while ( $agenda->have_posts() ) : $agenda->the_post(); ?>
+              <a href="<?php the_permalink(); ?>"><?php _e( 'Agenda', 'anp_meetings' ); ?></a>
+              <?php endwhile; ?>
+            </p>
+
+            <?php 
+            // Prevent weirdness
+            wp_reset_postdata();
+
+            endif;
+            ?>
+
+            <?php  
+            // Find connected summary
+            $summary = new WP_Query( array(
+              'connected_type' => 'meeting_to_summary',
+              'connected_items' => $query,
+              'nopaging' => true,
+            ) );
+
+            // Display connected pages
+            if ( $summary->have_posts() ) :
+            ?>
+            <p class="meta">
+              <?php while ( $summary->have_posts() ) : $summary->the_post(); ?>
+              <a href="<?php the_permalink(); ?>"><?php _e( 'Summary', 'anp_meetings' ); ?></a>
+              <?php endwhile; ?>
+            </p>
+
+            <?php 
+            // Prevent weirdness
+            wp_reset_postdata();
+
+            endif;
+            ?> 
                       
 					</header>
 
 					<section class="entry-content clearfix" itemprop="articleBody">
                                                         
-            <h2 id="meeting-notes"><?php _e( 'Notes', 'anp_meetings' ); ?></h2>
-
             <?php the_content(); ?>
 
 					</section>
 
 					<footer class="article-footer">
-                      
-            <?php
 
-            if( !empty($meeting_links) ) {
-              echo '<h3 id="meeting-links">Associated Content</h3>';
-              echo '<ul class="meeting-links">';
-              foreach($meeting_links as $link) {
-                echo '<li>';
-                echo '<a href="' . get_permalink( $link ) . '">';
-                echo get_the_title( $link );
-                echo '</a>';
-                echo '</li>';
-              }
-              echo '</ul>';
-            }
+            <?php  
 
+            // Find connected pages
+            $proposals = new WP_Query( array(
+              'connected_type' => 'meeting_to_proposals',
+              'connected_items' => $query,
+              'nopaging' => true,
+            ) );
+
+            // Display connected pages
+            if ( $proposals->have_posts() ) :
             ?>
+            <h3><?php _e( 'Proposals', 'anp_meetings' ); ?></h3>
+            <ul class="meeting-links">
+              <?php while ( $proposals->have_posts() ) : $proposals->the_post(); ?>
+              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+              <?php endwhile; ?>
+            </ul>
+
+            <?php 
+            // Prevent weirdness
+            wp_reset_postdata();
+
+            endif;
+            ?>                  
 
             <?php echo get_the_term_list( $post->ID, 'anp_meetings_tag', '<p class="tags meta">Tags: <span class="tags">', ', ', '</span></p>' ) ?>
 
