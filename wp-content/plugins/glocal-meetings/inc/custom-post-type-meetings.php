@@ -175,56 +175,6 @@ function anp_meetings_init() {
 if( function_exists( "register_field_group" ) ) {
     
 	register_field_group(array (
-		'id' => 'acf_meeting-meta',
-		'title' => 'Meeting Meta',
-		'fields' => array (
-			array (
-				'key' => '_meeting_links',
-				'label' => 'Associated Links',
-				'name' => 'meeting_links',
-				'type' => 'relationship',
-				'return_format' => 'object',
-				'post_type' => array (
-					0 => 'post',
-					1 => 'anp_meetings',
-				),
-				'taxonomy' => array (
-					0 => 'all',
-				),
-				'filters' => array (
-					0 => 'search',
-				),
-				'result_elements' => array (
-					0 => 'post_type',
-					1 => 'post_title',
-				),
-				'max' => '',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'anp_meetings',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-				0 => 'custom_fields',
-				1 => 'format',
-				2 => 'featured_image',
-			),
-		),
-		'menu_order' => 0,
-	));
-    
-	register_field_group(array (
 		'id' => 'acf_meeting-details',
 		'title' => 'Meeting Details',
 		'fields' => array (
@@ -262,42 +212,6 @@ if( function_exists( "register_field_group" ) ) {
 		'menu_order' => 10,
 	));
     
-	register_field_group(array (
-		// 'id' => 'acf_meeting-planning',
-		// 'title' => 'Meeting Planning',
-		// 'fields' => array (
-		// 	array (
-		// 		'key' => '_meeting_agenda',
-		// 		'label' => 'Agenda',
-		// 		'name' => 'meeting_agenda',
-		// 		'type' => 'wysiwyg',
-		// 		'default_value' => '',
-		// 		'toolbar' => 'basic',
-		// 		'media_upload' => 'no',
-		// 	),
-		// ),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'anp_meetings',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'acf_after_title',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-				0 => 'custom_fields',
-				1 => 'format',
-				2 => 'featured_image',
-			),
-		),
-		'menu_order' => 20,
-	));
 }
 
 
