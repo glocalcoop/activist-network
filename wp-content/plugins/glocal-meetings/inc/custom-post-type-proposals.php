@@ -95,7 +95,7 @@ if ( ! function_exists( 'anp_proposals_status_taxonomy' ) ) {
             'labels'                     => $labels,
             'hierarchical'               => true,
             'public'                     => true,
-            'show_ui'                    => true,
+            'show_ui'                    => false,
             'show_admin_column'          => true,
             'show_in_nav_menus'          => true,
             'show_tagcloud'              => true,
