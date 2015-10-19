@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * ANP Meetings Agenda Post Type
+ *
+ * @author    Pea, Glocal
+ * @license   GPL-2.0+
+ * @link      http://glocal.coop
+ * @since     1.0.0
+ * @package   ANP_Meetings
+ */
+
+
 if ( ! function_exists('anp_agenda_post_type') ) {
 
     // Register Custom Post Type
