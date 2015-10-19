@@ -66,6 +66,25 @@ if(! function_exists( 'meetings_title_filter' ) ) {
 }
 
 /* 
+ * Add markdown support for custom post types
+ */
+
+if(! function_exists( 'meetings_markdown_support' )  ) {
+
+    function meetings_markdown_support() {
+        add_post_type_support( 'anp_meetings', 'wpcom-markdown' );
+        add_post_type_support( 'anp_proposal', 'wpcom-markdown' );
+        add_post_type_support( 'anp_summary', 'wpcom-markdown' );
+        add_post_type_support( 'anp_agenda', 'wpcom-markdown' );
+    }
+
+    add_action( 'init', 'meetings_markdown_support' );
+
+
+}
+
+
+/* 
  * the_content()
  */
 
@@ -144,41 +163,11 @@ if(! function_exists( 'meetings_pre_get_posts' ) ) {
 
     }
 
-    //add_action('pre_get_posts', 'meetings_pre_get_posts');
+    add_action('pre_get_posts', 'meetings_pre_get_posts');
 
 }
 
-/** 
- * Get the post-type info. 
- *
- * Use: Call function <?php is_post_type('post-type'); ?>
- * Function is used to determine if current post is of a certain post-type.
- */
-// function is_post_type($type) {
-//     global $wp_query;
-//     if( $type == get_post_type($wp_query->post->ID) ) {
-//         return true;
- 
-//     } else {
-//         return false;
-//     }
-// }
 
-/************* POST FILTER AND SEARCH *****************/
-
-// Load scripts
-
-// Function to process request
-
-// JS for AJAX post
-
-//add_action( 'edit_form_top', 'meetings_edit_form_title' );
-//add_action( 'edit_form_after_title', 'meetings_edit_form_title' );
-//add_action( 'edit_form_after_editor', 'meetings_edit_form_title' );
-//
-//function meetings_edit_form_title() {
-//	echo '<h2>' . current_filter() . '</h2>';
-//}
 
 
 ?>
