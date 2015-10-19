@@ -13,16 +13,16 @@ if(! function_exists( 'include_meeting_templates' ) ) {
         if ( is_singular( 'anp_meetings' ) ) {
             // checks if the file exists in the theme first,
             // otherwise serve the file from the plugin
-            if ( $theme_file = locate_template( array ( 'plugins/anp-meetings/single-anp_meetings.php' ) ) ) {
+            if ( $theme_file = locate_template( array ( 'plugins/anp-meetings/single.php' ) ) ) {
                 $template_path = $theme_file;
             } else {
-                $template_path = plugin_dir_path( __FILE__ ) . 'templates/single-anp_meetings.php';
+                $template_path = plugin_dir_path( __FILE__ ) . 'templates/single.php';
             }
-        } elseif ( is_post_type_archive( 'anp_meetings' ) ) {
-            if ( $theme_file = locate_template( array('plugins/anp-meetings/archive-anp_meetings.php') ) ) {
+        } elseif ( is_post_type_archive( array( 'anp_meetings', 'anp_proposal', 'anp_summary', 'anp_agenda' ) ) ) {
+            if ( $theme_file = locate_template( array('plugins/anp-meetings/archive.php') ) ) {
                 $template_path = $theme_file;
             } else {
-                $template_path = plugin_dir_path( __FILE__ ) . 'templates/archive-anp_meetings.php';
+                $template_path = plugin_dir_path( __FILE__ ) . 'templates/archive.php';
             }
         }
         return $template_path;
@@ -149,7 +149,7 @@ if(! function_exists( 'meetings_pre_get_posts' ) ) {
         }
         
         // If meetings post archive, anp_meetings_tag archive or anp_meetings_type archive
-        if ( ( is_post_type_archive( array( 'anp_meetings', 'anp_proposal', 'anp_summary', 'anp_agenda' ) ) || is_tax( 'anp_meetings_tag' ) || is_tax( 'anp_meetings_type' ) || is_tax( 'anp_proposal_status' ) ) ) {
+        if ( ( is_post_type_archive( array( 'anp_meetings', 'anp_summary', 'anp_agenda' ) ) || is_tax( 'anp_meetings_tag' ) || is_tax( 'anp_meetings_type' ) || is_tax( 'anp_proposal_status' ) ) ) {
 
             set_query_var( 'orderby', 'meta_value' );
             set_query_var( 'meta_key', 'meeting_date' );
