@@ -162,13 +162,6 @@ if ( ! function_exists( 'anp_meetings_tag' ) ) {
 
 }
 
-/************* INITIALIZERS *****************/
-
-add_action('init', 'anp_meetings_init');
-
-function anp_meetings_init() {
-  add_post_type_support( 'anp_meetings', 'wpcom-markdown' );
-}
 
 /************* CUSTOM FIELDS *****************/
 
