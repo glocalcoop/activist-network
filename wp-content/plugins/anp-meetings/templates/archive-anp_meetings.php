@@ -25,7 +25,7 @@
          
             <?php
              $queried_object = get_queried_object();
-             var_dump( $queried_object );
+             // var_dump( $queried_object );
             // Post query modified using pre_get_posts filter
             ?>
 
@@ -51,8 +51,6 @@
 				</header>
 
 				<section class="entry-content">
-
-					<?php// the_excerpt(); ?>
 
 				</section>
 
