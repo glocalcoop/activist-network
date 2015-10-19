@@ -1,0 +1,1610 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Admin Columns"
+msgstr ""
+
+#. Short description.
+msgid "Customise columns on the administration screens for post(types), pages, media, comments, links and users with an easy to use drag-and-drop interface."
+msgstr ""
+
+#. Screenshot description.
+msgid "Settings page for Post(type) columns."
+msgstr ""
+
+#. Screenshot description.
+msgid "Posts Screen with the customized sortable columns."
+msgstr ""
+
+#. Screenshot description.
+msgid "Settings page for the Media Library columns."
+msgstr ""
+
+#. Screenshot description.
+msgid "Media Screen with the customized sortable columns."
+msgstr ""
+
+#. Screenshot description.
+msgid "Settings page for Users columns."
+msgstr ""
+
+#. Screenshot description.
+msgid "Users Screen with the customized sortable columns."
+msgstr ""
+
+#. Screenshot description.
+msgid "Settings page showing the different displaying types for custom field."
+msgstr ""
+
+#. Screenshot description.
+msgid "Posts Screen with custom fields."
+msgstr ""
+
+#. Found in description header.
+msgid "Admin Columns Pro"
+msgstr ""
+
+#. Found in description header.
+msgid "Enhanced list tables"
+msgstr ""
+
+#. Found in description header.
+msgid "Features"
+msgstr ""
+
+#. Found in description header.
+msgid "Sortable, filterable and editable columns &amp; import/export"
+msgstr ""
+
+#. Found in description header.
+msgid "Third party plugin integration"
+msgstr ""
+
+#. Found in description header.
+msgid "Custom field column"
+msgstr ""
+
+#. Found in description header.
+msgid "Supported content types"
+msgstr ""
+
+#. Found in description header.
+msgid "Post types columns"
+msgstr ""
+
+#. Found in description header.
+msgid "User columns"
+msgstr ""
+
+#. Found in description header.
+msgid "Media columns"
+msgstr ""
+
+#. Found in description header.
+msgid "Comment columns"
+msgstr ""
+
+#. Found in description header.
+msgid "Docs &amp; Support"
+msgstr ""
+
+#. Found in description header.
+msgid "Translations"
+msgstr ""
+
+#. Found in description header.
+msgid "Feedback &amp; Feature Requests"
+msgstr ""
+
+#. Found in description header.
+msgid "Related Links"
+msgstr ""
+
+#. Found in description list item.
+msgid "Raw value"
+msgstr ""
+
+#. Found in description list item.
+msgid "Checkmark (for true/false values)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Color (color code)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Counter"
+msgstr ""
+
+#. Found in description list item.
+msgid "Date (automatically formatted dates)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Excerpt (snippet for long texts)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Image"
+msgstr ""
+
+#. Found in description list item.
+msgid "Media library"
+msgstr ""
+
+#. Found in description list item.
+msgid "Multiple values (automatically parse comma-separated data)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Numeric"
+msgstr ""
+
+#. Found in description list item.
+msgid "Post Title (post relationships based on post IDs)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Username (user relationships based on user IDs)"
+msgstr ""
+
+#. Found in description list item.
+msgid "ACF Field (Admin Columns Pro only)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Actions"
+msgstr ""
+
+#. Found in description list item.
+msgid "Attachment"
+msgstr ""
+
+#. Found in description list item.
+msgid "Attachment count"
+msgstr ""
+
+#. Found in description list item.
+msgid "Author"
+msgstr ""
+
+#. Found in description list item.
+msgid "Author Name"
+msgstr ""
+
+#. Found in description list item.
+msgid "Before More Tag"
+msgstr ""
+
+#. Found in description list item.
+msgid "Categories"
+msgstr ""
+
+#. Found in description list item.
+msgid "Comment Count"
+msgstr ""
+
+#. Found in description list item.
+msgid "Comment Status"
+msgstr ""
+
+#. Found in description list item.
+msgid "Comments"
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom Field"
+msgstr ""
+
+#. Found in description list item.
+msgid "Date"
+msgstr ""
+
+#. Found in description list item.
+msgid "Excerpt"
+msgstr ""
+
+#. Found in description list item.
+msgid "Featured Image"
+msgstr ""
+
+#. Found in description list item.
+msgid "ID"
+msgstr ""
+
+#. Found in description list item.
+msgid "Modified"
+msgstr ""
+
+#. Found in description list item.
+msgid "Order"
+msgstr ""
+
+#. Found in description list item.
+msgid "Page Template"
+msgstr ""
+
+#. Found in description list item.
+msgid "Parent"
+msgstr ""
+
+#. Found in description list item.
+msgid "Permalink"
+msgstr ""
+
+#. Found in description list item.
+msgid "Ping Status"
+msgstr ""
+
+#. Found in description list item.
+msgid "Post Format"
+msgstr ""
+
+#. Found in description list item.
+msgid "Roles"
+msgstr ""
+
+#. Found in description list item.
+msgid "Slug"
+msgstr ""
+
+#. Found in description list item.
+msgid "Status"
+msgstr ""
+
+#. Found in description list item.
+msgid "Sticky"
+msgstr ""
+
+#. Found in description list item.
+msgid "Tags"
+msgstr ""
+
+#. Found in description list item.
+msgid "Taxonomy"
+msgstr ""
+
+#. Found in description list item.
+msgid "Title"
+msgstr ""
+
+#. Found in description list item.
+msgid "Word Count"
+msgstr ""
+
+#. Found in description list item.
+msgid "Description"
+msgstr ""
+
+#. Found in description list item.
+msgid "Email"
+msgstr ""
+
+#. Found in description list item.
+msgid "First Name"
+msgstr ""
+
+#. Found in description list item.
+msgid "Last Name"
+msgstr ""
+
+#. Found in description list item.
+msgid "Name"
+msgstr ""
+
+#. Found in description list item.
+msgid "Nickname"
+msgstr ""
+
+#. Found in description list item.
+msgid "Post Count"
+msgstr ""
+
+#. Found in description list item.
+msgid "Posts"
+msgstr ""
+
+#. Found in description list item.
+msgid "Registered Date"
+msgstr ""
+
+#. Found in description list item.
+msgid "Role"
+msgstr ""
+
+#. Found in description list item.
+msgid "URL"
+msgstr ""
+
+#. Found in description list item.
+msgid "Username"
+msgstr ""
+
+#. Found in description list item.
+msgid "Alternate Text"
+msgstr ""
+
+#. Found in description list item.
+msgid "Caption"
+msgstr ""
+
+#. Found in description list item.
+msgid "Dimensions"
+msgstr ""
+
+#. Found in description list item.
+msgid "EXIF Data"
+msgstr ""
+
+#. Found in description list item.
+msgid "File"
+msgstr ""
+
+#. Found in description list item.
+msgid "File Name"
+msgstr ""
+
+#. Found in description list item.
+msgid "File Size"
+msgstr ""
+
+#. Found in description list item.
+msgid "Full Path"
+msgstr ""
+
+#. Found in description list item.
+msgid "Height"
+msgstr ""
+
+#. Found in description list item.
+msgid "Icon"
+msgstr ""
+
+#. Found in description list item.
+msgid "Mime Type"
+msgstr ""
+
+#. Found in description list item.
+msgid "Uploaded To"
+msgstr ""
+
+#. Found in description list item.
+msgid "Width"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://admincolumns.com/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=relatedlinks&amp;utm_campaign=cpac-pluginpage\">http://admincolumns.com</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Manage and organize columns in the posts, users, comments and media lists in the WordPress admin panel. Transform the WordPress admin screens into beautiful, clear overviews."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "The free version of Admin Columns does not support sorting, filtering and inline editing and has no priority support. <a href=\"http://admincolumns.com/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=blockquote&amp;utm_campaign=cpac-pluginpage\">Admin Columns Pro</a> offers these features, direct e-mail support and several add-ons."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "[vimeo http://vimeo.com/96885841]"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "By default, WordPress provides list tables, giving you an overview of your content in the admin panel. These list tables are quite limited, however. For posts and custom post types, for example, not much more than the date and title of the post is displayed. Admin Columns allows you to take control over these list tables, managing the columns dislpayed in these overviews. Supporting custom fields, featured images, custom taxonomies, EXIF data for media and much, much more (Admin Columns features over 90 columns), you can create overviews that are perfectly suited for your content."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Admin Columns greatly enhances your WordPress installation. Whether you're running a simple blog or a full-blown enterprise website, it will prove its worth within minutes. Thanks to our dedicated development and support team, you can rest assured that Admin Columns will persist to be an essential part of any WordPress installation."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "To give you some insight into the great amount of possibilities Admin Columns offers to enhance your (or your client's) WordPress admin panel, be sure to check out the screenshots or the demo video!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "All of the new columns support sorting on all screens, and many of them support filtering. Another great feature is direct editing: it allows you to directly edit all types of data (including titles, featured images, custom fields and taxonomies) directly from the posts overview. These features are only available with <a href=\"http://admincolumns.com\">Admin Columns Pro</a>! Admin Columns Pro also allows you to import and export your column setup, and it allows you to save your columns to PHP, so you (and your clients) don't have to worry about the admin interface!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Admin Columns works perfectly with just about all external plugins with custom columns. Examples include Yoast SEO (SEO columns), WooCommerce, Advanced Custom Fields, Types and Pods. Not only can you reorganize the custom columns added by these plugins, you can also add custom columns provided by Admin Columns in the overview!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "The Developer license of <a href=\"http://admincolumns.com/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=thirdpartyplugins&amp;utm_campaign=cpac-pluginpage\">Admin Columns Pro</a> includes <a href=\"http://admincolumns.com/advanced-custom-fields-integration/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=thirdpartyplugins&amp;utm_campaign=cpac-pluginpage\">Advanced Custom Fields</a> and <a href=\"http://admincolumns.com/woocommerce-integration/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=thirdpartyplugins&amp;utm_campaign=cpac-pluginpage\">WooCommerce</a> add-ons for easy integration and inline editing of data from these plugins."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Admin Columns allows you to display custom fields for posts (post meta) and users (user meta) for all custom fields you have. With many different custom field types supported, such as files, images, numbers and even post and user relations, you can create a beautiful overview of your custom content!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "To ensure proper formatting of your custom fields, Admin Columns provides a set of custom field types, which automatically format your meta data properly."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Admin Columns can change your post (posts, pages and custom post types), user, comment, media and taxonomy (Admin Columns Pro only) lists! Below, you can find a list of supported column types for each content type."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Is this the first time you're using Admin Columns? Check out our Getting Started guide."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "We offer an extensive and up-to-date <a href=\"http://admincolumns.com/documentation/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=docs-support&amp;utm_campaign=cpac-pluginpage\">documentation</a>, <a href=\"http://admincolumns.com/documentation/faq/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=docs-support&amp;utm_campaign=cpac-pluginpage\">FAQ</a>, <a href=\"http://admincolumns.com/documentation/how-to/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=docs-support&amp;utm_campaign=cpac-pluginpage\">how-tos</a> and an advanced <a href=\"http://admincolumns.com/documentation/developer-docs/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=docs-support&amp;utm_campaign=cpac-pluginpage\">Developer Documentation</a>. For one-on-one support, please check out the Admin Columns Forums."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Thanks to the great community of translators surrounding Admin Columns, the plugin is available in many languages! To find your translation or to contribute to Admin Columns by translating it into your own language, please visit our <a href=\"https://www.transifex.com/projects/p/admin-columns/\">Transifex page</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You can leave any requests or feedback on <a href=\"http://admincolumns.com/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=feedback&amp;utm_campaign=cpac-pluginpage\">admincolumns.com</a>."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload codepress-admin-columns to the /wp-content/plugins/ directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate Admin Columns through the 'Plugins' menu in WordPress"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Configure the plugin by going to the Admin Columns settings that appears under the Settings menu."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Comment Post column added"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Update] User Actions columns extends CPAC_Actions object"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Update] PHP export columns no longer uses global"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added \"Link To\" selection field for the author column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Date and Title column are labeled as Default column for posts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] WPML columns will display the correct flag on the overview when switching language"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Page Order column is now available on all supported posttypes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Time reading columns shows \"-\" instead of zero when there is no content"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Estimate Time Reading column will not display a value when there is no content"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] When updating there was a possbile change on a \"Cannot modify header information\""
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Support for custom post statuses"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Page Order column is now available on all hierarchical post types"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] WordPress Default columns has it's own menu group"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Columns set by plugins has it's own menu group"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Custom Field column has it's own menu group"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Update] Updated all languages from Transifex"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Comment bubble icon is fixed"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added new comment columns: type, author and user."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Width indicator text is darker"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Remove ' symbol from column label, because it causing issues when sorting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Review notice will only show on admin columns page and with an improved hide button"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added the development filter 'cac/menu_types' to add custom menu types"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added public method set_menu_type() to the storage model"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added review notice"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Po file will exclude Actions columns which contain only native WordPress translatable strings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Updated all languages from Transifex"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Pro addon notice text has been updated"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added content column for post(types)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added the column shortcodes, which will display any used shortcodes in your post's content"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Column width has a text field to enter the width"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added a message for when a custom field is empty"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Column width can be set to pixels or percentages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added a width indicator to the column settings header"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added a singular label to all storage_models"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] A column can have it's own JS/CSS files by using the CPAC_Column::scripts() method"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Column Name can be found by hovering over the \"Type\" label in your column settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Fixed a quick edit issue for comments"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] is_field() method of the custom field column works as intended"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added user column: Visual Editor"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added post column: Estimated Reading Time"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added method CPAC_Column::get_sorting_value()"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added user column display name"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] fixed wordcount issue with PHP 5.3 or lower"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Fixed media actions column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] All translations from Transifex - ttps://www.transifex.com/projects/p/admin-columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] 100% Spanish translation thanks to Carlos"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Custom Fields will now display an icon for file attachments in the correct specified dimensions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Public methods to CPAC_Column; get_type(), is_type(), is_field_type(), get_field_type()"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Custom Field type \"Terms\""
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added posts column \"Last Modified Author\""
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Improced] Improved loading on columns settings screen when using many custom field columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Only display filtering icon on supported Custom Field types"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Remove deregister of qtip2 scripts."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] PHP export now works as intended"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Compatibility issue with Ninja Forms where submission would not be displayed"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Image Uploader failing inside nested Settings pod when using the Pods plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added filter \"cac/column/meta/is_editable\" for making all custom fields editable"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] CPAC_Settings::get_settings_page() to retrieve setting_page slug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Caching method for CPAC_Storage_Model"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Field PHP Export was not working when included to a site"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Improved word count on post content"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added filter \"cac/column/actions/action_links\" for modifying the action column links"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] WordPress SEO by Yoast columns were not added to the dropdown menu when using the 'add column' button."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Fix \"restore\" action link in post actions column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Persian (fa_IR) language, thanks to kamel kimiaei."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Partially Italian (it_IT) language, thanks to francesco."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Quick Edit will display columns correctly after saving"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] support for WPML columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added date format option for \"Last modified\" column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Change references from Codepress Admin Columns to Admin Columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] General code clean-up"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Improved] Documentation improvements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Portuguese (Brazil) language - thanks to André Mácola Machado"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Enable 3rd party plugins to set storage_models outside the post listings screens"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Spanish language updated - thanks to Andrew Kurtis"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Fixed “Illegal offset” warning for unset option on edit screen"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Fixed dependency on PHP 5.3+ in actions column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Changed] Display \"edit columns\" button by default"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Improved] Improved memory usage by only loading columns for the current screen"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Changed] Removed floatHead library"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Only display ACF placeholder with ACF active."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Unavailable included JS-file on editing pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Error with actions icons."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] New Column! Used-by-menu column; will display in which menu a post/page/taxonomy is being used. With support for column sorting in posts."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Only ajax calls from cpac will trigger the loading of storage_models now."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] New filter <code>cpac/storage_model/columns_default</code> for filtering the columns that should be loaded if there are no stored columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Option (column property <code>hidden</code>) to hide column types from the dropdown list of column types"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Use tooltip library for enhanced column value representation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Box for direct feedback on Admin Columns settings screen"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added method for retrieving current storage model (for overview pages such as the posts and page overviews)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added WooCommerce add-on to list of add-ons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Hide ACF5 field group post type from list of post types columns settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Updated structure of scripts and styles and way of enqueuing them"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added Path column for post(types). Uses the permalink without the home url."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Custom Fields for Media Library did not work."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Column type dropdown displayed an empty item."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Fixed issue with Posts 2 Posts (and other third party plugins) columns not being displayed because of  hooking into late actions on post pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Option to make permalink in permalink column clickable (linking to post)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Direct support box in Admin Columns settings screen sidebar"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added filter to suppress pro add-on notice (<code>cpac/suppress_proaddon_notice</code>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Minor adjustments for WooCommerce and other third party plugin support, setting up the post object in post columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Minor update in default column retrieval for improved 3rd party plugin support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Fixed problem with column groups incorrectly handling default 3rd party columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Updated translations from Transifex"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] AJAX refreshing of columns in columns settings screen"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Support for managing columns via code instead of UI"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Additional integration possibilities for add-ons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Add-ons tab for managing Admin Columns add-ons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Extended grouping support for column types to support add-ons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Additional documentation was added to filters and actions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Updated languages (from transfix)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] All custom fields (including hidden fields) now always displayed in custom field dropdown"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Third party plugin integration functions are now prefixed, thereby adhering to coding standards"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Compatibility with add-ons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] CSS now is compiled with LESS"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Menu is split between posttypes and media, comments and users."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] WordPress SEO 1.5.2 columns support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Refactored JS and cleanup"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Registered Date column now uses GMT date"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Display author as column has fallback to display_name"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Added conditional checks for featured-image-, ping-status and comment-status-columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Fixed warning for available-sizes column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Column labels can no longer contain \":\" characters"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Undo changes from 2.1.2, will be in the next major release"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Moved assignment of capabilities to plugin activation hook"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Hook into manage_columns filters later to prevent overwriting from other plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Filters for column_path"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Added page check to posttype edit screens"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] taxonomy raw_value outputs term_ids"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Taxnomy support for Media"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] In some cases custom field column would trigger a php warning on post titles type"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Improved overall performance for script loading and lowered memory usage"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Danish translation - thanks to iosoftgame"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Spanish translation - thanks to redywebs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Chinese translation - thanks to Ã¥â‚¬Â¡Ã¨ÂÅ’"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Solved bug with before and after field"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Fieldtype \"Counter\" to Custom Fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Column type ID when you hover over the column type label"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Support for raw values"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Changed filter for cac/column/value. See: http://www.codepresshq.com/documentation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Performance issue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Option to show/hide edit-button"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Bug before/after-field not saving correctly"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Bug with storage model trying to load repository (svn) files"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Bug with tooltip"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Bug with duplicate message in javascript"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] RTL support - thanks to Hassan"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Arabic translation - thanks to Hassan"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Bug which caused columns to not include properly"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Notice] Database needs an update, make sure to backup first"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Changed] Sortorder licence is now an Pro Add-on"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Changed] Some filters and hooks have been changed, see online documentation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Extensive refactoring of the code with improved API"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] New UI with responsive design"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Hooks and filters has been replaced with one that follows the correct naming conventions with underscores."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Columns menu will only display posttypes which have show_ui set to true"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Updated] Admin Columns will have a tabbed settings panel"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added settings page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added import/export capabilities"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Column: Available_Sizes for media"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Default sorting for Users, Comments, Media"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Column: Parent for posts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Set your own excerpt length per column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Set your own image size per column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Restore settings per type"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Column support for WooCommerce"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Support for image headings by other plugin columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added edit/view-button for easy switching between overview screen and admin columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Added capability manage_admin_columns to control which roles can set columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Removed] Column: Actions for comments"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Removed] Calling get_column_headers() interfered with storing columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: Sorting was not working when label contains the ':' character"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Addon] Added Pro add-on"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Addon] Pro add-on includes Sorting, Filtering and Import/Export"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "fixed bug: thirdparty columns that were previous loaded through load-edit.php will now use do_action( 'cpac-get-default-columns-{$type}' )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: removed acf posttype placed by Advaced Custom Fields from settings menu"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: removed bbPress posttypes topic, forum and reply from admin columns settings menu"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: license key could not activate properly"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Upated] Ready for WP 3.5"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] support for custom fields for Media"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] color to the custom field types"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] default sorting for Post(types) and Media"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] problem with different date formats in custom fields. all dates will parsed by strtotime() now."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: which could trigger a conflict when saving the setting on other plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: when returning an admin class atrribute"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Improved] Perfomance on post count on user overview screen"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] 'before more tag' column, which will show the content which is placed before the more-tag"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: file images will now also be displayed when they can not be resized."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: the checkbox disappeared when resetting columns and resaving them."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] new custom field type: User by User ID"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] values to filter 'cpac_get_column_value_custom_field' for better control of the output"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] an example for above filter to FAQ section"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: where trash posts did not show with the sorting addon activated"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: with a static function which could cause an error in some cases"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] filter to enable taxonomy filtering. add this to your functions.php to enable taxonomy filtering: <code>add_filter( 'cpac-remove-filtering-columns', '__return_false' );</code>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: for possible warning when using Custompress ( props to scottsalisbury for the fix! )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: for sorting by postcount for users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] 'Display Author As' column for post(types)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] sorting support for 'Display Author As' column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] german language ( thanks to Uli )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] danish language ( thanks to Morten Dalgaard Johansen )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] filter for setting thumbnail size ( see FAQ on how to use it )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] support for hidden custom fields ( see FAQ on how to enable this )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: for WordPress SEO by Yoast Columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Removed] taxonomy filtering ( will implement show/hide option )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] french language ( thanks to Alexandre Girard )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] filtering by taxonomy ( only displays when column is used )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] compatibility with woocommerce"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Actions column for Media (delete, view etc.)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Actions column for Link (delete, view etc.)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Actions column for Comments (delete, view etc.)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Wordcount column for Comments"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Filesize column for Media ( supports sorting )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] default sorting for posts ( remembers your last sorting, only with addon )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] default sorting for media ( remembers your last sorting, only with addon )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] filters to the result output"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: value media meta column ID"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: with sorting users by postcount"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] posts columns Last Modified and Comment count"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] media columns for EXIF and IPTC image data"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] custom fields columns to the Media Library"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Improved] given column values it's own class"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] bug fix for sorting bookmarks/links"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] possible php warning"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Removed] taxonomy filtering"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: for unexpected output in the column value"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: for better 3rd party plugin support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] column for Comment status"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] column for Ping/Trackback status"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] column for Posts Actions (delete, view etc.)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] column for Users Actions (delete, view etc.)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] sorting taxonomies ( only on first one )"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: fix for sorting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] taxonomy filtering"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] polish translation, thanks to Bartosz."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Upated] the license key validation proces to be complaint with WP rules"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Removed] non-breaking-space-character from column output"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] support for comment columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] support for link columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] links to taxonomies"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] sorting user custom fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] sorting to links columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] user columns so you can see how many articles an author has published of a certain post type"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Textual help"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] the option to specify column width"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] role column to all posts screens"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] posts status column to all posts screens"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] image path to media library"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] added apply_filters('cpac-get-post-types', $post_types) to filter out certain post types"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] option to enter license key for activating sorting on ALL columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: a php5 warning"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: a conflict with the Co-Authors plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] support for Media columns"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Media columns: filename, width, height, dimensions, description, alt, caption and mime-type"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] date type to posts custom fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] title type to posts custom fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Improved] sorting has changed. when sorting; only results are shown which contain a value"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Improved] str_word_count is used for excerpts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] word count sorting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] attachment count sorting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] template name sorting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Improved] styling changes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: with sorting by slug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: with sorting by attachment"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] support for third party plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] user custom fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] extra image check"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: with javascript (jquery) enqueue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: for WP3.3beta"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] Dutch translation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] Issue: path separator for require_once"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] word count column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] User Columns."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] before / after text for custom fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] custom field type 'Numeric'."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Added] custom field sortables."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] domain path"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[Fixed] settings link"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Initial release."
+msgstr ""
+
+#. Found in faq header.
+msgid "Is there documentation for Admin Columns?"
+msgstr ""
+
+#. Found in faq header.
+msgid "I have an idea for a great way to improve this plugin"
+msgstr ""
+
+#. Found in faq header.
+msgid "How can I change the thumbnail size of images?"
+msgstr ""
+
+#. Found in faq header.
+msgid "What filters and hooks can I use?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Yes, you will find all the documentation you need on the <a href=\"http://admincolumns.com/documentation/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=faq&amp;utm_campaign=cpac-pluginpage\">admincolumns.com documentation page</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Great, we'd love to hear from you! Please leave your feature request in our <a href=\"http://admincolumns.com/forums/forum/feature-requests/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=faq&amp;utm_campaign=cpac-pluginpage\">forums</a>!"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You can select a custom size for your custom field option from the Column options."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "<strong>my columns thumbnails still have the wrong size</strong>"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "If you want your already uploaded images to display the newly added size you will need to regenerate the thumbnail for them. You can use this plugin to generate the newly added sized thumbnails: http://wordpress.org/extend/plugins/regenerate-thumbnails/."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You can find a list of the available actions and filters (and examples on how to use them!) in the <a href=\"http://admincolumns.com/documentation/?utm_source=wordpressorg&amp;utm_medium=readme&amp;utm_content=faq&amp;utm_campaign=cpac-pluginpage\">Admin Columns documentation</a>."
+msgstr ""
