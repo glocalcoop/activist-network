@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * ANP Meetings Meeting Post Type
+ *
+ * @author    Pea, Glocal
+ * @license   GPL-2.0+
+ * @link      http://glocal.coop
+ * @since     1.0.0
+ * @package   ANP_Meetings
+ */
+
 /************* CUSTOM POST TYPE*****************/
 
 if ( ! function_exists('anp_meetings_post_type') ) {
@@ -160,51 +170,6 @@ if ( ! function_exists( 'anp_meetings_tag' ) ) {
 	// Hook into the 'init' action
 	add_action( 'init', 'anp_meetings_tag', 0 );
 
-}
-
-
-/************* CUSTOM FIELDS *****************/
-
-if( function_exists( "register_field_group" ) ) {
-    
-	register_field_group(array (
-		'id' => 'acf_meeting-details',
-		'title' => 'Meeting Details',
-		'fields' => array (
-			array (
-				'key' => '_meeting_date',
-				'label' => 'Date',
-				'name' => 'meeting_date',
-				'type' => 'date_picker',
-				'required' => 1,
-				'date_format' => 'yy-mm-dd',
-				'display_format' => 'mm/dd/yy',
-				'first_day' => 1,
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'anp_meetings',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'acf_after_title',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-				0 => 'custom_fields',
-				1 => 'format',
-				2 => 'featured_image',
-			),
-		),
-		'menu_order' => 10,
-	));
-    
 }
 
 
