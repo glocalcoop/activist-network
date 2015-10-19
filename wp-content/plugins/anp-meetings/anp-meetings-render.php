@@ -80,7 +80,6 @@ if(! function_exists( 'meetings_markdown_support' )  ) {
 
     add_action( 'init', 'meetings_markdown_support' );
 
-
 }
 
 
@@ -104,7 +103,7 @@ if(! function_exists( 'meetings_content_filter' ) ) {
             $meeting_tags .= get_the_term_list( $post->ID, 'anp_meetings_tag', '<span class="tags"> ', ', ', '</span>' );
             $meeting_tags .= '</p>';
 
-            include_once( plugin_dir_path( __FILE__ ) . 'views/content-archive.php' );
+            include( plugin_dir_path( __FILE__ ) . 'views/content-archive.php' );
 
             $meeting_content = $meeting_pre_content;
             $meeting_content .= $meeting_tags;
