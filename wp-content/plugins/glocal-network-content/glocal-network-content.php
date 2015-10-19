@@ -531,8 +531,11 @@ function render_list_html($posts_array, $options_array) {
         global $post;
         
         $post_id = $post_detail['post_id'];
-        $post_categories = implode(", ", $post_detail['categories']);
-		
+
+        if( isset( $post_detail['categories'] ) ) {
+            $post_categories = implode(", ", $post_detail['categories']);
+        }
+        
 		// use a template for the output so that it can easily be overridden by theme
 		// check for template in active theme
 		$template = locate_template(array('plugins/glocal-network-content/anp-post-list-template.php'));

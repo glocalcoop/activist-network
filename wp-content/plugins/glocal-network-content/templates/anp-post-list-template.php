@@ -37,7 +37,7 @@ if($show_excerpt) {
 }
 if($show_meta) {
 	$html .= '<div class="meta">';
-	$html .= '<div class="post-categories cat-links tags">' . $post_categories . '</div>';
+	$html .= ( isset( $post_categories ) ) ? '<div class="post-categories cat-links tags">' . $post_categories . '</div>' : '';
 	$html .= '</div>';
 }
 $html .= '</li>';
