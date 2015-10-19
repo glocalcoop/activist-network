@@ -21,12 +21,6 @@ $meeting_pre_content .= '<div class="pre-content">';
 // $meeting_pre_content .= '<p class="meta"><span class="meta-label">' . __( 'Date:', 'anp_meetings' ) . '</span> ' . $meeting_date . '</p>';
 // $meeting_pre_content .= '<p class="meta"><span class="meta-label">' . __( 'Type:', 'anp_meetings' ) . '</span> ' . $meeting_type . '</p>';
 
-if( !empty($meeting_agenda) ) {
-	$meeting_pre_content .= '<div class="meeting-agenda">';
-	$meeting_pre_content .= '<h2>' . __( 'Agenda', 'anp_meetings' ) . '</h2>';
-	$meeting_pre_content .= $meeting_agenda;
-	$meeting_pre_content .= '</div>';
-}
 $meeting_pre_content .= '</div>';
 
 $meeting_pre_content .= '<div class="post-content">';
