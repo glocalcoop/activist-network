@@ -1,0 +1,14 @@
+[
+    {
+        "name": "wp-api/wp-api",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/wp-api/wp-api",
+            "reference": "96343d710aeb7edb8f4f22dd165991c680eb13db"
+        },
+        "type": "library",
+        "installation-source": "source"
+    }
+]
