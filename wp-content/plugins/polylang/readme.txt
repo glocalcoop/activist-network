@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: multilingual, bilingual, translate, translation, language, multilanguage, international, localization
 Requires at least: 3.9
 Tested up to: 4.3
-Stable tag: 1.7.10
+Stable tag: 1.7.11
 License: GPLv2 or later
 
 Making WordPress multilingual
@@ -111,6 +111,14 @@ See http://polylang.wordpress.com/documentation/contribute/
 1. The Polylang languages admin panel in WordPress 3.8
 
 == Changelog ==
+
+= 1.7.11 (2015-10-15) =
+
+* fix: conflict with GET ajax requests sent by the jquery method load
+* fix: notice in frontend-nav-menu.php at line 211 (introduced in 1.7.10) [props Jesse Graupmann](https://wordpress.org/support/topic/warning-and-notice-on-upgrade)
+* fix: the parent list in page attributes metabox is not in the correct language (introduced in 1.7.10)
+* fix: error 404 for attachments
+* fix: the language switcher is not displayed when combining "Forces link to front page" and "Hides languages with no translation"
 
 = 1.7.10 (2015-09-28) =
 
