@@ -5,11 +5,21 @@
  * Variables that can be used in the template
  */
 
-// $meeting_agenda = wpautop( get_post_meta($post->ID, 'meeting_agenda', true), true );
-// $meeting_links = get_post_meta($post->ID, 'meeting_links', true);
-// $meeting_date = date_i18n( get_option( 'date_format' ), strtotime( get_post_meta($post->ID, 'meeting_date', true) ) );
-// $meeting_type = get_the_term_list( $post->ID, 'anp_meetings_type', '<span class="category">', ', ', '</span>' );
-// $meeting_tags = get_the_term_list( $post->ID, 'anp_meetings_tag', '<span class="tags">', ', ', '</span>' );
+global $wp_query;
+
+$post_type = get_post_type( get_the_ID() );
+
+// Meeting Meta
+$meeting_date = date_i18n( get_option( 'date_format' ), strtotime( get_post_meta( get_the_ID(), 'meeting_date', true ) ) );
+$meeting_type = get_the_term_list( get_the_ID(), 'anp_meetings_type', '<span class="category">', ', ', '</span>' );
+$meeting_tags = get_the_term_list( get_the_ID(), 'anp_meetings_tag', '<span class="tags">', ', ', '</span>' );
+
+// Proposal Meta
+$approval_date = $meeting_date;
+$effective_date = date_i18n( get_option( 'date_format' ), strtotime( get_post_meta( get_the_ID(), 'proposal_date_effective', true ) ) );
+$proposal_status = get_the_term_list( get_the_ID(), 'anp_proposal_status', '<span class="tags">', ', ', '</span>' );
+
+// Associated Content
 
 /* 
  * Before the_content()
@@ -17,6 +27,27 @@
  */
 
 $meeting_pre_content = '';
+
+$agendas = ( function_exists( 'meetings_get_agenda' ) ) ? meetings_get_agenda( get_the_ID() ) : '';
+
+$summaries = ( function_exists( 'meetings_get_summary' ) ) ? meetings_get_summary( get_the_ID() ) : '';
+
+$proposals = ( function_exists( 'meetings_get_proposal' ) ) ? meetings_get_proposal( get_the_ID() ) : '';
+
+
+if( $agendas || $summaries ) {
+
+    $meeting_pre_content .= '<ul class="connected-content">';
+
+    $meeting_pre_content .= ( $agendas ) ? $agendas : '';
+
+    $meeting_pre_content .= ( $summaries ) ? $summaries : '';
+
+    $meeting_pre_content .= ( $proposals ) ? $proposals : '';
+
+    $meeting_pre_content .= '</ul>';
+
+}
 
 /* 
  * After the_content()
