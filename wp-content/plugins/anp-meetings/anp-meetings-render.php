@@ -99,8 +99,8 @@ if(! function_exists( 'meetings_title_filter' ) ) {
 
         }
 
-        // If anp_proposal, display as the_title {anp_proposal_status} 
-        if( is_post_type_archive( 'anp_proposal' ) ||  is_tax( 'anp_proposal_status' ) || is_singular( 'anp_proposal' ) ) {
+        // If anp_proposal or status archive, display as the_title {anp_proposal_status} {meeting_date} (conditional)
+        if( is_post_type_archive( 'anp_proposal' ) ||  is_tax( 'anp_proposal_status' ) ) {
 
             global $post;
 
@@ -109,7 +109,7 @@ if(! function_exists( 'meetings_title_filter' ) ) {
             $term_list = wp_get_post_terms( get_the_ID(), 'anp_proposal_status', array( "fields" => "names" ) );
             $approval_date = date_i18n( get_option( 'date_format' ), strtotime( get_post_meta( $post->ID, 'meeting_date', true ) ) );
             $meeting_title = ( !empty( $term_list ) ) ? '<span class="proposal-status meta">'. $term_list[0] . '</span> ' : '';
-            $meeting_title .= ( $approval_date ) ? '<span class="proposal-approval-dte meta"><time>'. $approval_date . '</time></span>' : '';
+            $meeting_title .= ( $approval_date && !is_singular( 'anp_proposal' ) ) ? '<span class="proposal-approval-dte meta"><time>'. $approval_date . '</time></span>' : '';
             
             return $title . ' ' . $meeting_title;
 
