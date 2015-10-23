@@ -36,7 +36,7 @@ if ( ! function_exists('anp_proposals_post_type') ) {
         );
         $rewrite = array(
             'slug'                => 'proposal',
-            'with_front'          => true,
+            'with_front'          => false,
             'pages'               => true,
             'feeds'               => true,
         );

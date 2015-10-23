@@ -36,7 +36,7 @@ if ( ! function_exists('anp_summary_post_type') ) {
 		);
 		$rewrite = array(
 			'slug'                => 'summary',
-			'with_front'          => true,
+			'with_front'          => false,
 			'pages'               => true,
 			'feeds'               => true,
 		);

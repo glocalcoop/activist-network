@@ -35,7 +35,7 @@ if ( ! function_exists('anp_agenda_post_type') ) {
         );
         $rewrite = array(
             'slug'                => 'agenda',
-            'with_front'          => true,
+            'with_front'          => false,
             'pages'               => true,
             'feeds'               => true,
         );

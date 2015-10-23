@@ -36,7 +36,7 @@ if ( ! function_exists('anp_meetings_post_type') ) {
 		);
 		$rewrite = array(
 			'slug'                => 'meetings',
-			'with_front'          => true,
+			'with_front'          => false,
 			'pages'               => true,
 			'feeds'               => true,
 		);
