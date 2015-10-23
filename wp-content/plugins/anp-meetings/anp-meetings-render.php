@@ -292,8 +292,6 @@ if(! function_exists( 'meetings_get_agenda' ) ) {
             'nopaging' => true
         );
          
-        // $query = new WP_Query( $query_args );
-
         $agendas = get_posts( $query_args );
         
         $content = '';
@@ -312,7 +310,8 @@ if(! function_exists( 'meetings_get_agenda' ) ) {
 
         }
 
-        return $content;
+        // Filter added to allow content be overriden
+        return apply_filters( 'meetings_get_agenda_content', $content, $post_id );
     }  
 
 }
@@ -350,7 +349,8 @@ if(! function_exists( 'meetings_get_summary' ) ) {
 
         }
 
-        return $content;
+        // Filter added to allow content be overriden
+        return apply_filters( 'meetings_get_summary_content', $content, $post_id );
     }  
       
 }
@@ -388,7 +388,8 @@ if(! function_exists( 'meetings_get_proposal' ) ) {
 
         }
 
-        return $content;
+        // Filter added to allow content be overriden
+        return apply_filters( 'meetings_get_proposal_content', $content, $post_id );
     }  
       
 }
