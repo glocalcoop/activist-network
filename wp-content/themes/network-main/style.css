@@ -5391,7 +5391,7 @@ MEETINGS ARCHIVE & SINGLE STYLES
       .tax-anp_meetings_tag article ul li::before,
       .tax-anp_meetings_type article ul li::before,
       .tax-anp_proposal_status article ul li::before {
-        margin-right: .125em;
+        margin-right: .25em;
         color: #b8b6b2; }
   .post-type-archive-anp_meetings article .tags,
   .post-type-archive-anp_proposal article .tags,
@@ -5416,7 +5416,7 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .tax-anp_meetings_tag article .tags::before,
     .tax-anp_meetings_type article .tags::before,
     .tax-anp_proposal_status article .tags::before {
-      margin-right: .125em; }
+      margin-right: .25em; }
   .post-type-archive-anp_meetings article .article-footer,
   .post-type-archive-anp_proposal article .article-footer,
   .post-type-archive-anp_summary article .article-footer,

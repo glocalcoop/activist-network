@@ -52,7 +52,7 @@ MEETINGS ARCHIVE & SINGLE STYLES
                 }
 
                 &::before {
-                    margin-right: .125em;
+                    margin-right: .25em;
                     color: $base6;
                 }
             }
@@ -69,7 +69,7 @@ MEETINGS ARCHIVE & SINGLE STYLES
             @extend .fa-tags;
 
             &::before {
-                margin-right: .125em;
+                margin-right: .25em;
             }
         }
 
