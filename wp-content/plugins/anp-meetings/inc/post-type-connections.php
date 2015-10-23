@@ -36,7 +36,7 @@ function anp_meetings_connection_types() {
     ) );
 
     p2p_register_connection_type( array(
-        'name' => 'meeting_to_proposals',
+        'name' => 'meeting_to_proposal',
         'from' => 'anp_meetings',
         'to' => 'anp_proposal',
         'reciprocal' => true,

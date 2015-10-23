@@ -28,25 +28,59 @@ $proposal_status = get_the_term_list( get_the_ID(), 'anp_proposal_status', '<spa
 
 $meeting_pre_content = '';
 
-$agendas = ( function_exists( 'meetings_get_agenda' ) ) ? meetings_get_agenda( get_the_ID() ) : '';
+if( 'anp_meetings' == $post_type ) {
 
-$summaries = ( function_exists( 'meetings_get_summary' ) ) ? meetings_get_summary( get_the_ID() ) : '';
+    $agendas = ( function_exists( 'meetings_get_agenda' ) ) ? meetings_get_agenda( get_the_ID() ) : '';
 
-$proposals = ( function_exists( 'meetings_get_proposal' ) ) ? meetings_get_proposal( get_the_ID() ) : '';
+    $summaries = ( function_exists( 'meetings_get_summary' ) ) ? meetings_get_summary( get_the_ID() ) : '';
+
+    $proposals = ( function_exists( 'meetings_get_proposal' ) ) ? meetings_get_proposal( get_the_ID() ) : '';
 
 
-if( $agendas || $summaries ) {
+    if( $agendas || $summaries || $proposals ) {
 
-    $meeting_pre_content .= '<ul class="connected-content">';
+        $meeting_pre_content .= '<ul class="connected-content">';
 
-    $meeting_pre_content .= ( $agendas ) ? $agendas : '';
+        $meeting_pre_content .= ( $agendas ) ? $agendas : '';
 
-    $meeting_pre_content .= ( $summaries ) ? $summaries : '';
+        $meeting_pre_content .= ( $summaries ) ? $summaries : '';
 
-    $meeting_pre_content .= ( $proposals ) ? $proposals : '';
+        $meeting_pre_content .= ( $proposals ) ? $proposals : '';
 
-    $meeting_pre_content .= '</ul>';
+        $meeting_pre_content .= '</ul>';
 
+    }
+}
+
+if( 'anp_agenda' == $post_type ) {
+
+    $agendas = ( function_exists( 'meetings_get_agenda' ) ) ? meetings_get_agenda( get_the_ID() ) : '';
+
+    if( $agendas ) {
+
+        $meeting_pre_content .= '<ul class="connected-content meeting">';
+
+        $meeting_pre_content .= ( $agendas ) ? $agendas : '';
+
+        $meeting_pre_content .= '</ul>';
+
+    }
+
+}
+
+if( 'anp_summary' == $post_type ) {
+
+    $summaries = ( function_exists( 'meetings_get_summary' ) ) ? meetings_get_summary( get_the_ID() ) : '';
+
+    if( $summaries ) {
+
+        $meeting_pre_content .= '<ul class="connected-content meeting">';
+
+        $meeting_pre_content .= ( $summaries ) ? $summaries : '';
+
+        $meeting_pre_content .= '</ul>';
+
+    }
 }
 
 /* 
