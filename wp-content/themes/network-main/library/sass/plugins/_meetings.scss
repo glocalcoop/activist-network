@@ -59,12 +59,17 @@ MEETINGS ARCHIVE & SINGLE STYLES
         }
 
         .tags {
+            color: $base6;
+
+            a {
+                color: $base6;
+            }
+
             @extend %fa-before;
             @extend .fa-tags;
 
             &::before {
                 margin-right: .125em;
-                color: $base6;
             }
         }
 

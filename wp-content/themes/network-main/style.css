@@ -5393,15 +5393,30 @@ MEETINGS ARCHIVE & SINGLE STYLES
       .tax-anp_proposal_status article ul li::before {
         margin-right: .125em;
         color: #b8b6b2; }
-  .post-type-archive-anp_meetings article .tags::before,
-  .post-type-archive-anp_proposal article .tags::before,
-  .post-type-archive-anp_summary article .tags::before,
-  .post-type-archive-anp_agenda article .tags::before,
-  .tax-anp_meetings_tag article .tags::before,
-  .tax-anp_meetings_type article .tags::before,
-  .tax-anp_proposal_status article .tags::before {
-    margin-right: .125em;
+  .post-type-archive-anp_meetings article .tags,
+  .post-type-archive-anp_proposal article .tags,
+  .post-type-archive-anp_summary article .tags,
+  .post-type-archive-anp_agenda article .tags,
+  .tax-anp_meetings_tag article .tags,
+  .tax-anp_meetings_type article .tags,
+  .tax-anp_proposal_status article .tags {
     color: #b8b6b2; }
+    .post-type-archive-anp_meetings article .tags a,
+    .post-type-archive-anp_proposal article .tags a,
+    .post-type-archive-anp_summary article .tags a,
+    .post-type-archive-anp_agenda article .tags a,
+    .tax-anp_meetings_tag article .tags a,
+    .tax-anp_meetings_type article .tags a,
+    .tax-anp_proposal_status article .tags a {
+      color: #b8b6b2; }
+    .post-type-archive-anp_meetings article .tags::before,
+    .post-type-archive-anp_proposal article .tags::before,
+    .post-type-archive-anp_summary article .tags::before,
+    .post-type-archive-anp_agenda article .tags::before,
+    .tax-anp_meetings_tag article .tags::before,
+    .tax-anp_meetings_type article .tags::before,
+    .tax-anp_proposal_status article .tags::before {
+      margin-right: .125em; }
   .post-type-archive-anp_meetings article .article-footer,
   .post-type-archive-anp_proposal article .article-footer,
   .post-type-archive-anp_summary article .article-footer,
