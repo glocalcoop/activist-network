@@ -20,7 +20,7 @@ function anp_meetings_connection_types() {
         'admin_column' => true,
         'admin_dropdown' => 'to',
         'sortable' => 'any',
-        // 'title' => __( 'Agenda', 'anp_meetings' ),
+        'title' => array( 'from' => __( 'Agenda', 'anp_meetings' ), 'to' => __( 'Meeting', 'anp_meetings' ) ),
     ) );
 
     p2p_register_connection_type( array(
@@ -32,7 +32,7 @@ function anp_meetings_connection_types() {
         'admin_column' => true,
         'admin_dropdown' => 'to',
         'sortable' => 'any',
-        // 'title' => __( 'Summary', 'anp_meetings' ),
+        'title' => array( 'from' => __( 'Summary', 'anp_meetings' ), 'to' => __( 'Meeting', 'anp_meetings' ) ),
     ) );
 
     p2p_register_connection_type( array(
@@ -44,7 +44,7 @@ function anp_meetings_connection_types() {
         'admin_column' => true,
         'admin_dropdown' => 'any',
         'sortable' => 'any',
-        // 'title' => __( 'Proposals', 'anp_meetings' ),
+        'title' => array( 'from' => __( 'Proposals', 'anp_meetings' ), 'to' => __( 'Meeting', 'anp_meetings' ) ),
     ) );
 
 }
