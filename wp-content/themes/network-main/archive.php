@@ -51,6 +51,12 @@
 					
 			<?php } ?>
 
+			<?php if( is_post_type_archive( array( 'anp_meetings', 'anp_proposal', 'anp_summary', 'anp_agenda' ) ) ) : ?>
+
+				<?php ( function_exists( 'anp_meetings_taxonomy_filter' ) ) ? anp_meetings_taxonomy_filter() : '' ;?>
+
+			<?php endif; ?>
+
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
                 <?php get_template_part( 'partials/content', 'archive' ); ?>
