@@ -20,6 +20,11 @@ License: GPL
 Text Domain: anp_meetings
 */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    die;
+}
+
 /************* REQUIRE FILES *****************/
 
 //define( 'ACF_LITE', true );
