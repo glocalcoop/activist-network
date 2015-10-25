@@ -1,51 +1,5 @@
 <?php
 
-/* 
- * TEMPLATE LOCATION
- * Templates can be overwritten by putting a template file of the same name in 
- * plugins/anp-meetings/ folder of your active theme 
- */
-
-
-if(! function_exists( 'include_meeting_templates' ) ) {
-
-    function include_meeting_templates( $template_path ) {
-
-        $post_types = array(
-            'anp_meetings', 
-            'anp_proposal', 
-            'anp_summary', 
-            'anp_agenda'
-        );
-
-        $post_tax = array(
-            'anp_meetings_type',
-            'anp_meetings_tag',
-            'anp_proposal_status',
-        );
-
-        if ( is_singular( $post_types ) ) {
-            // checks if the file exists in the theme first,
-            // otherwise serve the file from the plugin
-            if ( $theme_file = locate_template( array ( 'plugins/anp-meetings/single.php' ) ) ) {
-                $template_path = $theme_file;
-            } else {
-                $template_path = ANP_MEETINGS_PLUGIN_DIR . 'templates/single.php';
-            }
-        } elseif ( is_post_type_archive( $post_types ) || is_tax( $post_tax ) ) {
-            if ( $theme_file = locate_template( array('plugins/anp-meetings/archive.php') ) ) {
-                $template_path = $theme_file;
-            } else {
-                $template_path = ANP_MEETINGS_PLUGIN_DIR . 'templates/archive.php';
-            }
-        }
-        return $template_path;
-    }
-    //add_filter( 'template_include', 'include_meeting_templates', 1 );
-
-}
-
-
 /* ADMIN CONNECTION 
  * Order posts alphabetically in the P2P connections box
  *
@@ -65,7 +19,6 @@ if(! function_exists( 'anp_connection_box_order' ) ) {
     add_filter( 'p2p_connectable_args', 'anp_connection_box_order', 10, 3 );
 
 }
-
 
 
 /**
@@ -206,6 +159,51 @@ if(! function_exists( 'meetings_markdown_support' )  ) {
 
 }
 
+
+/* 
+ * TEMPLATE LOCATION
+ * Templates can be overwritten by putting a template file of the same name in 
+ * plugins/anp-meetings/ folder of your active theme 
+ */
+
+
+if(! function_exists( 'include_meeting_templates' ) ) {
+
+    function include_meeting_templates( $template_path ) {
+
+        $post_types = array(
+            'anp_meetings', 
+            'anp_proposal', 
+            'anp_summary', 
+            'anp_agenda'
+        );
+
+        $post_tax = array(
+            'anp_meetings_type',
+            'anp_meetings_tag',
+            'anp_proposal_status',
+        );
+
+        if ( is_singular( $post_types ) ) {
+            // checks if the file exists in the theme first,
+            // otherwise serve the file from the plugin
+            if ( $theme_file = locate_template( array ( 'plugins/anp-meetings/single.php' ) ) ) {
+                $template_path = $theme_file;
+            } else {
+                $template_path = ANP_MEETINGS_PLUGIN_DIR . 'templates/single.php';
+            }
+        } elseif ( is_post_type_archive( $post_types ) || is_tax( $post_tax ) ) {
+            if ( $theme_file = locate_template( array('plugins/anp-meetings/archive.php') ) ) {
+                $template_path = $theme_file;
+            } else {
+                $template_path = ANP_MEETINGS_PLUGIN_DIR . 'templates/archive.php';
+            }
+        }
+        return $template_path;
+    }
+    //add_filter( 'template_include', 'include_meeting_templates', 1 );
+
+}
 
 
 
