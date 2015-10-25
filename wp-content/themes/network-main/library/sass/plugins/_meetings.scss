@@ -123,6 +123,10 @@ MEETINGS ARCHIVE & SINGLE STYLES
                 //border-top: 1px solid $base8;
                 margin-top:  .5em;
                 padding-top:  .5em;
+
+                &:first-child {
+                    padding-top: 0;
+                }
                 
             }
             h3 {
@@ -162,10 +166,11 @@ MEETINGS ARCHIVE & SINGLE STYLES
 
             .connected-content,
             .post-content {
-                margin: .25em 0;
-                padding: .25em 0;
-                border-top: 1px solid $base8;
-            }
+                margin: .125em 0;
+                padding: 2%;
+                // border-top: 1px solid $base8;
+                background-color: $white;
+           }
 
             .connected-content {
                 list-style: none;

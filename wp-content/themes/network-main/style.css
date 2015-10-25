@@ -5492,6 +5492,14 @@ MEETINGS ARCHIVE & SINGLE STYLES
     font-size: 1.75rem;
     margin-top: .5em;
     padding-top: .5em; }
+    .single-anp_meetings article .entry-content h2:first-child,
+    .single-anp_meetings article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child,
+    .so-widget-sow-cta .sow-cta-base .single-anp_meetings article .entry-content h4:first-child, .single-anp_proposal article .entry-content h2:first-child,
+    .single-anp_proposal article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child,
+    .so-widget-sow-cta .sow-cta-base .single-anp_proposal article .entry-content h4:first-child, .single-anp_agenda article .entry-content h2:first-child,
+    .single-anp_agenda article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child,
+    .so-widget-sow-cta .sow-cta-base .single-anp_agenda article .entry-content h4:first-child, .single-anp_summary article .entry-content h2:first-child, .single-anp_summary article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base .single-anp_summary article .entry-content h4:first-child {
+      padding-top: 0; }
   .single-anp_meetings article .entry-content h3,
   .single-anp_meetings article .entry-content .news-list .post-title,
   .news-list .single-anp_meetings article .entry-content .post-title,
@@ -5581,9 +5589,9 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .single-anp_agenda article .entry-content .post-content,
   .single-anp_summary article .entry-content .connected-content,
   .single-anp_summary article .entry-content .post-content {
-    margin: .25em 0;
-    padding: .25em 0;
-    border-top: 1px solid #e6e4df; }
+    margin: .125em 0;
+    padding: 2%;
+    background-color: #fff; }
   .single-anp_meetings article .entry-content .connected-content,
   .single-anp_proposal article .entry-content .connected-content,
   .single-anp_agenda article .entry-content .connected-content,
