@@ -2,6 +2,12 @@
 MEETINGS ARCHIVE & SINGLE STYLES
 *********************/
 
+// <ul class="sort js-menu">
+// <li class="is-on" data-sort="id">Most Recently Added</li>
+// <li data-sort="slug">Alphabetically</li>
+// <li data-sort="posts">Most Active</li>
+// </ul>
+
 // Meetings List - Archive
 .post-type-archive-anp_meetings,
 .post-type-archive-anp_proposal,
@@ -11,7 +17,14 @@ MEETINGS ARCHIVE & SINGLE STYLES
 .tax-anp_meetings_type,
 .tax-anp_proposal_status {
 
-    
+    .content-filter {
+        @extend %clearfix;
+
+        li a {
+            display: block;
+        }
+    }
+
     article {
 
         background-color: $white;
@@ -31,7 +44,7 @@ MEETINGS ARCHIVE & SINGLE STYLES
 
         .entry-content {}
 
-        ul {
+        .connected-content {
             list-style: none;
             margin: 0;
             padding: 0;
@@ -90,6 +103,9 @@ MEETINGS ARCHIVE & SINGLE STYLES
         }
 
     }
+
+
+    
   
 }
 
