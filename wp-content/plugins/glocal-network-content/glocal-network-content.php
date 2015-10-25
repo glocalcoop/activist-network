@@ -38,6 +38,12 @@ License: GPL
 		anp-sites-list-template.php
 */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    die;
+}
+ 
+
 // Input: user-selected options array
 // Output: list of posts from all sites, rendered as HTML or returned as array
 function glocal_networkwide_posts_module($parameters = []) {
