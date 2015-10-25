@@ -5602,7 +5602,8 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .single-anp_agenda article .entry-content .connected-content li::before,
     .single-anp_summary article .entry-content .connected-content li::before {
       margin-right: .125em;
-      color: #b8b6b2; }
+      color: #b8b6b2;
+      font-weight: normal; }
   .single-anp_meetings article .entry-content .post-content h2,
   .single-anp_meetings article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4,
   .so-widget-sow-cta .sow-cta-base .single-anp_meetings article .entry-content .post-content h4, .single-anp_proposal article .entry-content .post-content h2,
