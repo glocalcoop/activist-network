@@ -61,7 +61,7 @@ if( 'anp_proposal' == $post_type ) {
 }
 
 
-if( !empty( $connected_agenda ) || !empty( $connected_summary ) ) {
+if( !empty( $connected_agenda ) || !empty( $connected_summary ) || !empty( $connected_proposal ) ) {
 
     $meeting_pre_content .= '<ul class="connected-content">';
 
@@ -81,7 +81,21 @@ if( !empty( $connected_agenda ) || !empty( $connected_summary ) ) {
         $meeting_pre_content .= '</a></li>'; 
     }
 
-    if( !empty( $connected_proposal ) ) {
+    if( 'anp_proposal' == get_post_type() ) {
+
+      $count = 0;
+      foreach( $connected_proposal as $proposal ) {
+          $post_type_obj = get_post_type_object( get_post_type( $proposal->ID ) );
+          $post_type_name = __( 'Meeting', 'anp_meetings' );
+          $meeting_pre_content .= '<li class="meeting-link"><a href="' . get_post_permalink( $proposal->ID ) . '">';
+          $meeting_pre_content .= $post_type_name;
+          $meeting_pre_content .= '</a></li>'; 
+      }
+
+    }
+
+
+    if( 'anp_meetings' == get_post_type() ) {
 
         $meeting_pre_content .= '<li class="proposal-link"><a href="#proposals">' . __( 'Proposal(s)', 'anp_meetings' ) . '</a></li>';
 
