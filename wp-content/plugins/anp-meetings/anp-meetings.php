@@ -54,7 +54,7 @@ include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-summaries.php' );
 include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-proposals.php' );
 include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-fields.php' );
 include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/post-type-connections.php' );
-
+include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-search-filters.php' );
 
 
 ?>
