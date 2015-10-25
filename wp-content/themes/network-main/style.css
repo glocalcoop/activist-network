@@ -1112,15 +1112,26 @@ th {
 
 .fa-paste:before,
 .fa-clipboard:before, .post-type-archive-anp_meetings article ul li.summary-link:before,
+.post-type-archive-anp_meetings article ul li.meeting-link:before,
 .post-type-archive-anp_proposal article ul li.summary-link:before,
+.post-type-archive-anp_proposal article ul li.meeting-link:before,
 .post-type-archive-anp_summary article ul li.summary-link:before,
+.post-type-archive-anp_summary article ul li.meeting-link:before,
 .post-type-archive-anp_agenda article ul li.summary-link:before,
+.post-type-archive-anp_agenda article ul li.meeting-link:before,
 .tax-anp_meetings_tag article ul li.summary-link:before,
+.tax-anp_meetings_tag article ul li.meeting-link:before,
 .tax-anp_meetings_type article ul li.summary-link:before,
-.tax-anp_proposal_status article ul li.summary-link:before, .single-anp_meetings article .entry-content .connected-content li.summary-link:before,
+.tax-anp_meetings_type article ul li.meeting-link:before,
+.tax-anp_proposal_status article ul li.summary-link:before,
+.tax-anp_proposal_status article ul li.meeting-link:before, .single-anp_meetings article .entry-content .connected-content li.summary-link:before,
+.single-anp_meetings article .entry-content .connected-content li.meeting-link:before,
 .single-anp_proposal article .entry-content .connected-content li.summary-link:before,
+.single-anp_proposal article .entry-content .connected-content li.meeting-link:before,
 .single-anp_agenda article .entry-content .connected-content li.summary-link:before,
-.single-anp_summary article .entry-content .connected-content li.summary-link:before {
+.single-anp_agenda article .entry-content .connected-content li.meeting-link:before,
+.single-anp_summary article .entry-content .connected-content li.summary-link:before,
+.single-anp_summary article .entry-content .connected-content li.meeting-link:before {
   content: ""; }
 
 .fa-lightbulb-o:before {
@@ -5383,7 +5394,8 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .tax-anp_meetings_type article ul li,
     .tax-anp_proposal_status article ul li {
       display: inline-block;
-      margin-right: .75em; }
+      margin-right: .75em;
+      margin-bottom: 0; }
       .post-type-archive-anp_meetings article ul li::before,
       .post-type-archive-anp_proposal article ul li::before,
       .post-type-archive-anp_summary article ul li::before,

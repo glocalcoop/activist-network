@@ -38,13 +38,15 @@ MEETINGS ARCHIVE & SINGLE STYLES
             li {
                 display: inline-block;
                 margin-right: .75em;
+                margin-bottom: 0;
 
                 @extend %fa-before;
 
                 &.agenda-link {
                     @extend .fa-list;
                 }
-                &.summary-link {
+                &.summary-link,
+                &.meeting-link {
                     @extend .fa-clipboard;
                 }
                 &.proposal-link {
@@ -165,7 +167,8 @@ MEETINGS ARCHIVE & SINGLE STYLES
                     &.agenda-link {
                         @extend .fa-list;
                     }
-                    &.summary-link {
+                    &.summary-link,
+                    &.meeting-link {
                         @extend .fa-clipboard;
                     }
                     &.proposal-link {
