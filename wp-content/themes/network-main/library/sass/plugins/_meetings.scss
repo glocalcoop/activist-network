@@ -14,9 +14,10 @@ MEETINGS ARCHIVE & SINGLE STYLES
     
     article {
 
-        border-bottom: 1px solid $base8;
-        margin-bottom: .5em;
-        padding-bottom: .5em;
+        background-color: $white;
+        // border-bottom: 1px solid $base8;
+        margin-bottom: .125em;
+        padding: .75em;
         
         p.meta {
             margin-bottom: 0;

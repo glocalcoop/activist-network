@@ -5303,9 +5303,9 @@ MEETINGS ARCHIVE & SINGLE STYLES
 .tax-anp_meetings_tag article,
 .tax-anp_meetings_type article,
 .tax-anp_proposal_status article {
-  border-bottom: 1px solid #e6e4df;
-  margin-bottom: .5em;
-  padding-bottom: .5em; }
+  background-color: #fff;
+  margin-bottom: .125em;
+  padding: .75em; }
   .post-type-archive-anp_meetings article p.meta,
   .post-type-archive-anp_proposal article p.meta,
   .post-type-archive-anp_summary article p.meta,
