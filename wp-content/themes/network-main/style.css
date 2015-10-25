@@ -5396,6 +5396,29 @@ MEETINGS ARCHIVE & SINGLE STYLES
       display: inline-block;
       margin-right: .75em;
       margin-bottom: 0; }
+      .post-type-archive-anp_meetings article ul li a,
+      .post-type-archive-anp_proposal article ul li a,
+      .post-type-archive-anp_summary article ul li a,
+      .post-type-archive-anp_agenda article ul li a,
+      .tax-anp_meetings_tag article ul li a,
+      .tax-anp_meetings_type article ul li a,
+      .tax-anp_proposal_status article ul li a {
+        color: #000; }
+        .post-type-archive-anp_meetings article ul li a:hover,
+        .post-type-archive-anp_meetings article ul li a:focus,
+        .post-type-archive-anp_proposal article ul li a:hover,
+        .post-type-archive-anp_proposal article ul li a:focus,
+        .post-type-archive-anp_summary article ul li a:hover,
+        .post-type-archive-anp_summary article ul li a:focus,
+        .post-type-archive-anp_agenda article ul li a:hover,
+        .post-type-archive-anp_agenda article ul li a:focus,
+        .tax-anp_meetings_tag article ul li a:hover,
+        .tax-anp_meetings_tag article ul li a:focus,
+        .tax-anp_meetings_type article ul li a:hover,
+        .tax-anp_meetings_type article ul li a:focus,
+        .tax-anp_proposal_status article ul li a:hover,
+        .tax-anp_proposal_status article ul li a:focus {
+          color: #00a99d; }
       .post-type-archive-anp_meetings article ul li::before,
       .post-type-archive-anp_proposal article ul li::before,
       .post-type-archive-anp_summary article ul li::before,

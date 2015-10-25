@@ -40,6 +40,15 @@ MEETINGS ARCHIVE & SINGLE STYLES
                 margin-right: .75em;
                 margin-bottom: 0;
 
+                a {
+                    color: $black;
+
+                    &:hover,
+                    &:focus {
+                        color: $teal;
+                    }
+                }
+
                 @extend %fa-before;
 
                 &.agenda-link {
