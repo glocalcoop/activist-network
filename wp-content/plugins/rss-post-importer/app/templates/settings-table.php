@@ -37,8 +37,8 @@
                                      <option value="custom_frequency" <?php if ($this->options['settings']['custom_frequency'] == "true"){ echo('selected="selected"');} ?>><?php _e('Custom frequency', "rss_pi"); ?></option>    
 							</select>
                             &nbsp;
-                          
-                            <input type="text" id="rss_custom_frequency"  name="rss_custom_frequency" value="<?php echo $rss_custom_cron['time']; ?>"  placeholder="Minutes" <?php if ($this->options['settings']['custom_frequency'] == 'true'){ echo('style="display:inline"');} ?>/>
+                    
+                            <input type="text" id="rss_custom_frequency"  name="rss_custom_frequency" value="<?php echo $rss_custom_cron['time']; ?>"  placeholder="Minutes" <?php if ($this->options['settings']['custom_frequency'] == 'true'){ echo('style="display:inline"');}else{ echo('style="display:none"');} ?>/>
                            
                             
 						</td>
@@ -352,6 +352,28 @@ strip_html = strip html tags - "true" or "false"', "rss_pi"); ?></p>
 							<input type="file" name="import_opml"<?php echo $disabled; ?> />
 						</td> 
 					</tr>
+                    
+                    <tr>
+						<td>
+							<?php _e('Social Media Optimization and Open Graph', "rss_pi"); ?>
+							<p class="description"><?php _e('Social Media and Open Graph optimization', "rss_pi"); ?></p>
+						</td>
+						<td>
+						<ul class="radiolist">
+                                <li>
+									<label><label><input type="checkbox" name="tw_show" id="tw_show" value="1" <?php echo($this->options['settings']['tw_show'] == '1' ? 'checked="checked"' : ''); ?> /> <?php _e('Twitter', 'rss_pi'); ?></label>
+								</li>
+								<li>
+									<label><label><input type="checkbox" name="gg_show" id="gg_show" value="1" <?php echo($this->options['settings']['gg_show'] == '1' ? 'checked="checked"' : ''); ?> /> <?php _e('Google+', 'rss_pi'); ?></label>
+								</li>
+                                <li>
+									<label><label><input type="checkbox" name="og_show" id="og_show" value="1" <?php echo($this->options['settings']['og_show'] == '1' ? 'checked="checked"' : ''); ?> /> <?php _e('Facebook Opengraph', 'rss_pi'); ?></label>
+								</li>
+							</ul>
+						</td> 
+					</tr>
+                    
+                    
 				</table>
 			</td>
 		</tr>
