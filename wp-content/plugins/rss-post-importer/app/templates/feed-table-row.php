@@ -13,7 +13,8 @@ if (!isset($f)) {
 		'strip_html' => 'false',
 		'nofollow_outbound' => 'false',
 		'automatic_import_categories' => 'false',
-		'automatic_import_author' => 'false'
+		'automatic_import_author' => 'false',
+		'canonical_urls' => 'my_blog'
 	);
 	$show = ' show';
 }
@@ -110,7 +111,24 @@ if (is_array($f['category_id'])) {
 								</li>
 							</ul>
 						</td>
-					</tr>
+					</tr>     
+                    
+            <tr>
+				<td>
+					<label for="<?php echo ($f['id']); ?>-canonical_urls"><?php _e('SEO canonical URLs ?', "rss_pi"); ?></label>
+							<!--<p class="description"><?php _e('Add rel="nofollow" to all outbounded links.', "rss_pi"); ?></p>-->
+						</td>
+						<td>
+							<ul class="radiolist">
+								<li>
+									<label><input type="radio" id="<?php echo($f['id']); ?>-canonical_urls_myblog" name="<?php echo($f['id']); ?>-canonical_urls" value="my_blog" <?php echo($f['canonical_urls'] == 'my_blog' || $f['canonical_urls'] == '' ? 'checked="checked"' : ''); ?> /> <?php _e('My Blog URLs', 'rss_pi'); ?></label>
+								</li>
+								<li>
+									<label><input type="radio" id="<?php echo($f['id']); ?>-canonical_urls_sourceblog" name="<?php echo($f['id']); ?>-canonical_urls" value="source_blog" <?php echo($f['canonical_urls'] == 'source_blog' ? 'checked="checked"' : ''); ?> /> <?php _e('Source Blog URLs', 'rss_pi'); ?></label>
+								</li>
+							</ul>
+						</td>
+					</tr>        
                     
             <tr>
 						<td>

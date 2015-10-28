@@ -142,6 +142,7 @@ class rssPIEngine {
 			'automatic_import_categories' => $f['automatic_import_categories'],
 			'automatic_import_author' => $f['automatic_import_author'],
 			'feed_status' => $f['feed_status'],
+			'canonical_urls' => $f['canonical_urls'],
 			'save_to_db' => true
 		);
 		return $this->_import($f['url'], $args);
@@ -172,7 +173,8 @@ class rssPIEngine {
 			'nofollow_outbound' => true,
 			'automatic_import_categories' => true,
 			'automatic_import_author' => true,
-			'feed_status' => 'active'
+			'feed_status' => 'active',
+			'canonical_urls' => 'my_blog'
 		);
 		
 		if($args['feed_status']=='pause'){
@@ -514,7 +516,8 @@ class rssPIEngine {
 					wp_update_post($_post);
 					$post['post_content'] = $_post_content;
 				}
-
+				// canonical_urls
+                update_post_meta($post_id, 'rss_pi_canonical_url',$args['canonical_urls']);
 				array_push($saved_posts, $post);
 			}
 		}

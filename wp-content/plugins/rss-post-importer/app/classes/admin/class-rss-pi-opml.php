@@ -121,7 +121,8 @@ if (!class_exists("Rss_pi_opml")) {
 						'nofollow_outbound' => 'false',
 						'automatic_import_categories' => 'false',
 						'automatic_import_author' => 'false',
-						'feed_status' => 'active'
+						'feed_status' => 'active',
+						'canonical_urls' => 'my_blog'
 					));
 
 				} else {

@@ -222,6 +222,9 @@ class rssPIAdminProcessor {
 			'block_indexing' => $_POST['block_indexing'],
 			'nofollow_outbound' => $_POST['nofollow_outbound'],
 			'enable_logging' => $_POST['enable_logging'],
+			'tw_show' => $_POST['tw_show'],
+			'gg_show' => $_POST['gg_show'],
+			'og_show' => $_POST['og_show'],
 			'import_images_locally' => $_POST['import_images_locally'],
 			'disable_thumbnail' => $_POST['disable_thumbnail'],
 			// these values are setup after key_validity check via filter()
@@ -308,6 +311,7 @@ class rssPIAdminProcessor {
 					'strip_html' => (isset($_POST[$id . '-strip_html'])) ? $_POST[$id . '-strip_html'] : '',
 					'nofollow_outbound' => (isset($_POST[$id . '-nofollow_outbound'])) ? $_POST[$id . '-nofollow_outbound'] : '',
 					'automatic_import_categories' => (isset($_POST[$id . '-automatic_import_categories'])) ? $_POST[$id . '-automatic_import_categories'] : '',                    'automatic_import_author' => (isset($_POST[$id . '-automatic_import_author'])) ? $_POST[$id . '-automatic_import_author'] : '',
+					'canonical_urls' => (isset($_POST[$id . '-canonical_urls'])) ? $_POST[$id . '-canonical_urls'] : '',
 					'feed_status' => $feed_status
 				));
 			}
