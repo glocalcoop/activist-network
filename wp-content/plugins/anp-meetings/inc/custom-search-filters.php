@@ -26,8 +26,6 @@ if(! function_exists( 'anp_meetings_enqueue_scripts' )  ) {
     add_action( 'wp_enqueue_scripts', 'anp_meetings_enqueue_scripts' );
 }
 
-// ANP_MEETINGS_PLUGIN_DIR
-
 
 /**
  * Taxonomy filter
@@ -55,8 +53,9 @@ if(! function_exists( 'anp_meetings_taxonomy_filter' ) ) {
                     $query_var = get_taxonomy( $taxonomy )->query_var;
                     break;
                 default: 
-                    $taxonomy = 'anp_meetings_tag';
-                    $query_var = get_taxonomy( $taxonomy )->query_var;
+                    // $taxonomy = 'anp_meetings_tag';
+                    // $query_var = get_taxonomy( $taxonomy )->query_var;
+                    return;
 
             }
 
@@ -68,9 +67,14 @@ if(! function_exists( 'anp_meetings_taxonomy_filter' ) ) {
 
                 echo '<div class="content-filter">';
 
-                echo '<ul class="' . $post_type . '-filter filter js-menu">';
+                echo '<ul class="' . $post_type . '-filter">';
 
-                echo '<li class="is-on all" data-filter="*">' . $term_obj->labels->name . '</li>';
+                // All terms, resets query
+                echo '<li class="all" data-filter="*">';
+
+                echo '<a href="' . esc_url( remove_query_arg( $query_var ) ) . '">' . $term_obj->labels->all_items . '</a>';
+
+                echo '</li>';
 
                 foreach( $terms as $term ) {
 
