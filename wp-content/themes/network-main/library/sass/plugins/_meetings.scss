@@ -20,9 +20,30 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .content-filter {
         @extend %clearfix;
 
-        li a {
-            display: block;
+        margin-bottom: .5em;
+
+        ul {
+            text-align: center;
         }
+
+        li {
+            display: inline-block;
+            @extend .button;
+            margin: 0 .25em .25em 0;
+            padding-right: 2em;
+            padding-left: 2em;
+
+            a {
+                display: block;
+                color: $white;
+            }
+
+            &.active {
+                background-color: $black;
+            }
+
+        }
+
     }
 
     article {
