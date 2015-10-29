@@ -1,3 +1,4 @@
+/*jslint white: true */
 /**
  * 
  * Search Filter
@@ -5,20 +6,46 @@
  * 
  **/
 
+jQuery( document ).ready( function( $ ) {
 
-(function($) {
+    console.log( 'filters.js loaded' );
 
-    'use strict';
+    var queryVars = getUrlVars();
 
-    //console.log( 'searchFilters.js is loaded' );
+    function getUrlVars() {
 
-    var url = $( location ).attr( 'href' );
+        var url = window.location.href;
+        var vars = {};
+        var hashes = url.split( '?' )[1];
 
-    $( '.filter' ).on( 'click', '.all', function( event ) {
+        if( hashes ) {
+            var hash = hashes.split( '&' );
+        } else {
+            return false;
+        }
+        
+        for ( var i = 0; i < hash.length; i++ ) {
+            params=hash[i].split( '=' );
+            vars[params[0]] = params[1];
+        }
 
-        url = url.split('?')[0];
-        window.location.replace( url );
+        return vars;
+    }
 
-    } );
-    
-})( jQuery );
+    if( queryVars ) {
+
+        $( 'li[data-filter=' + queryVars.meeting_type + ']' ).addClass( 'active' );
+
+        $( 'li[data-filter=' + queryVars.meeting_tag + ']' ).addClass( 'active' );
+
+        $( 'li[data-filter=' + queryVars.proposal_status + ']' ).addClass( 'active' );
+
+    } else {
+
+        $( 'li.all' ).addClass( 'active' );
+
+    }
+
+
+
+} );
