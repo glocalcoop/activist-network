@@ -372,7 +372,7 @@ table.em-calendar {
         }
     }
 
-    @media (max-width: 769px) {
+    @media (max-width: $md-screen) {
 
         .event-start {
             float: none;

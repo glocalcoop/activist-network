@@ -27,11 +27,11 @@ MEETINGS ARCHIVE & SINGLE STYLES
         }
 
         li {
-            display: inline-block;
             @extend .button;
-            margin: 0 .25em .25em 0;
-            padding-right: 2em;
-            padding-left: 2em;
+
+            display: block;
+
+            margin-bottom: .25em;
 
             a {
                 display: block;
@@ -44,12 +44,21 @@ MEETINGS ARCHIVE & SINGLE STYLES
 
         }
 
+        @include breakpoint( sm ) {
+
+            li {
+                display: inline-block;
+                margin: 0 .25em .25em 0;
+                padding-right: 2em;
+                padding-left: 2em;
+            }
+        }
+
     }
 
     article {
 
         background-color: $white;
-        // border-bottom: 1px solid $base8;
         margin-bottom: .125em;
         padding: .75em;
         

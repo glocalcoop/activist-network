@@ -5389,10 +5389,8 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .tax-anp_meetings_tag .content-filter li,
   .tax-anp_meetings_type .content-filter li,
   .tax-anp_proposal_status .content-filter li {
-    display: inline-block;
-    margin: 0 0.25em 0.25em 0;
-    padding-right: 2em;
-    padding-left: 2em; }
+    display: block;
+    margin-bottom: .25em; }
     .post-type-archive-anp_meetings .content-filter li a,
     .post-type-archive-anp_proposal .content-filter li a,
     .post-type-archive-anp_summary .content-filter li a,
@@ -5410,6 +5408,18 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .tax-anp_meetings_type .content-filter li.active,
     .tax-anp_proposal_status .content-filter li.active {
       background-color: #000; }
+  @media screen and (min-width: 481px) {
+    .post-type-archive-anp_meetings .content-filter li,
+    .post-type-archive-anp_proposal .content-filter li,
+    .post-type-archive-anp_summary .content-filter li,
+    .post-type-archive-anp_agenda .content-filter li,
+    .tax-anp_meetings_tag .content-filter li,
+    .tax-anp_meetings_type .content-filter li,
+    .tax-anp_proposal_status .content-filter li {
+      display: inline-block;
+      margin: 0 0.25em 0.25em 0;
+      padding-right: 2em;
+      padding-left: 2em; } }
 
 .post-type-archive-anp_meetings article,
 .post-type-archive-anp_proposal article,
