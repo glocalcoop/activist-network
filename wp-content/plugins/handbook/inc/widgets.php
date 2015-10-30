@@ -11,7 +11,8 @@ class WPorg_Handbook_Pages_Widget extends WP_Widget_Pages {
 
 	function widget( $args, $instance ) {
 		$args['after_title'] = '</h2>' . "\n" . '<div class="menu-table-of-contents-container">' . "\n";
-		$args['after_widget'] = '</div>';
+		// Needs extra div (will be overwritten on update)
+		$args['after_widget'] = '</div></div>';
 
 		add_filter( 'widget_pages_args',    array( $this, 'handbook_post_type' ) );
 		add_filter( 'page_css_class',       array( $this, 'amend_page_css_class' ) );
