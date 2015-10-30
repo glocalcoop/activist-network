@@ -9,13 +9,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
 // </ul>
 
 // Meetings List - Archive
-.post-type-archive-anp_meetings,
-.post-type-archive-anp_proposal,
-.post-type-archive-anp_summary,
-.post-type-archive-anp_agenda,
-.tax-anp_meetings_tag,
-.tax-anp_meetings_type,
-.tax-anp_proposal_status {
+.post-type-archive-meeting,
+.post-type-archive-proposal,
+.post-type-archive-summary,
+.post-type-archive-agenda,
+.tax-meeting_tag,
+.tax-meeting_type,
+.tax-proposal_status {
 
     .content-filter {
         @extend %clearfix;
@@ -30,7 +30,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
             @extend .button;
 
             display: block;
-
             margin-bottom: .25em;
 
             a {
@@ -140,10 +139,10 @@ MEETINGS ARCHIVE & SINGLE STYLES
 }
 
 // Single Post
-.single-anp_meetings,
-.single-anp_proposal,
-.single-anp_agenda,
-.single-anp_summary {
+.single-meeting,
+.single-proposal,
+.single-agenda,
+.single-summary {
     
     article {
         

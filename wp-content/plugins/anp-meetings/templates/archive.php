@@ -11,14 +11,14 @@
 					<?php post_type_archive_title(); ?>
 				</h1>
           
-            <?php } elseif ( is_tax( 'anp_meetings_type' ) ) { ?>
+            <?php } elseif ( is_tax( 'meeting_type' ) ) { ?>
                 <h1 class="archive-title h2">
-					<span><?php _e( 'Meeting Type: ', 'anp_meetings' ); ?></span> <?php single_term_title(); ?>
+					<span><?php _e( 'Meeting Type: ', 'meeting' ); ?></span> <?php single_term_title(); ?>
 				</h1>
             
-            <?php } elseif ( is_tax( 'anp_meetings_tag' ) ) { ?>
+            <?php } elseif ( is_tax( 'meeting_tag' ) ) { ?>
                 <h1 class="archive-title h2">
-					<span><?php _e( 'Meeting Tags: ', 'anp_meetings' ); ?></span> <?php single_term_title(); ?>
+					<span><?php _e( 'Meeting Tags: ', 'meeting' ); ?></span> <?php single_term_title(); ?>
 				</h1>
 
             <?php } ?>
@@ -40,7 +40,7 @@
 
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
           
-            <?php $term_list = wp_get_post_terms( $post->ID, 'anp_meetings_type', array( "fields" => "names" ) ); ?>
+            <?php $term_list = wp_get_post_terms( $post->ID, 'meeting_type', array( "fields" => "names" ) ); ?>
 
 			<article role="article" id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?>>
               
@@ -57,7 +57,7 @@
 				<footer class="article-footer">
 
                   <div class="meta tags">
-                    <?php echo get_the_term_list( $post->ID, 'anp_meetings_tag', 'Tags: <span class="tags">', ', ', '</span>' ) ?>
+                    <?php echo get_the_term_list( $post->ID, 'meeting_tag', 'Tags: <span class="tags">', ', ', '</span>' ) ?>
                   </div>
 
                       
@@ -69,7 +69,7 @@
 
                         foreach ( $post->agendas as $post ) : setup_postdata( $post ); ?>
 
-                            <span class="tags agenda"><a href="<?php the_permalink( $post->ID ); ?>"><?php _e( 'Agenda', 'anp_meetings' ) ?></a></span>
+                            <span class="tags agenda"><a href="<?php the_permalink( $post->ID ); ?>"><?php _e( 'Agenda', 'meeting' ) ?></a></span>
                                                     
                         <?php
                         endforeach;
@@ -84,7 +84,7 @@
 
                         foreach ( $post->summaries as $post ) : setup_postdata( $post ); ?>
 
-                            <span class="tags summary"><a href="<?php the_permalink( $post->ID ); ?>"><?php _e( 'Summary', 'anp_meetings' ) ?></a></span>
+                            <span class="tags summary"><a href="<?php the_permalink( $post->ID ); ?>"><?php _e( 'Summary', 'meeting' ) ?></a></span>
                                                     
                         <?php
                         endforeach;
@@ -111,8 +111,8 @@
           
             <nav class="wp-prev-next">
                 <ul class="clearfix">
-                    <li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'anp_meetings' )) ?></li>
-                    <li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'anp_meetings' )) ?></li>
+                    <li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'meeting' )) ?></li>
+                    <li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'meeting' )) ?></li>
                 </ul>
             </nav>
 
@@ -120,13 +120,13 @@
 
 					<article id="post-not-found" class="hentry">
 						<header class="article-header">
-							<h1><?php _e( 'Oops, Post Not Found!', 'anp_meetings' ); ?></h1>
+							<h1><?php _e( 'Oops, Post Not Found!', 'meeting' ); ?></h1>
 						</header>
 						<section class="entry-content">
-							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'anp_meetings' ); ?></p>
+							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'meeting' ); ?></p>
 						</section>
 						<footer class="article-footer">
-								<p><?php _e( 'This is the error message in the archive.php template.', 'anp_meetings' ); ?></p>
+								<p><?php _e( 'This is the error message in the archive.php template.', 'meeting' ); ?></p>
 						</footer>
 					</article>
 

@@ -17,7 +17,7 @@ Author: Pea, Glocal
 Author URI: http://glocal.coop
 Version: 0.1
 License: GPL
-Text Domain: anp_meetings
+Text Domain: meeting
 */
 
 // If this file is called directly, abort.
@@ -45,15 +45,15 @@ if ( !defined( 'ANP_MEETINGS_PLUGIN_URL' ) ) {
 //define( 'ACF_LITE', true );
 include_once( ANP_MEETINGS_PLUGIN_DIR . 'advanced-custom-fields/acf.php' );
 include_once( ANP_MEETINGS_PLUGIN_DIR . 'posts-to-posts/posts-to-posts.php' );
-include_once( ANP_MEETINGS_PLUGIN_DIR . 'anp-meetings-render.php' );
-include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-content-filters.php' );
-include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-pre-get-filters.php' );
-include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-meetings.php' );
-include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-agendas.php' );
-include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-summaries.php' );
-include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-proposals.php' );
+include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-meeting.php' );
+include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-agenda.php' );
+include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-summary.php' );
+include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-post-type-proposal.php' );
 include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-fields.php' );
 include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/post-type-connections.php' );
+include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-content-filters.php' );
+include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-pre-get-filters.php' );
+include_once( ANP_MEETINGS_PLUGIN_DIR . 'anp-meetings-render.php' );
 include_once( ANP_MEETINGS_PLUGIN_DIR . 'inc/custom-search-filters.php' );
 
 

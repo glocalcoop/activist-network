@@ -19,12 +19,12 @@
             <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
             
             <p class="meta"><?php
-            printf(__( 'Date: <time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'anp_meetings' ),  get_post_meta($post->ID, 'meeting_date', true), date_i18n( get_option( 'date_format' ), strtotime( get_post_meta($post->ID, 'meeting_date', true) ) ) );
+            printf(__( 'Date: <time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'meeting' ),  get_post_meta($post->ID, 'meeting_date', true), date_i18n( get_option( 'date_format' ), strtotime( get_post_meta($post->ID, 'meeting_date', true) ) ) );
             ?>
             </p>
             
             <p class="meta">
-              <?php echo get_the_term_list( $post->ID, 'anp_meetings_type', 'Type: <span class="category">', ', ', '</span>' ) ?>
+              <?php echo get_the_term_list( $post->ID, 'meeting_type', 'Type: <span class="category">', ', ', '</span>' ) ?>
             </p>
 
             <?php  
@@ -40,7 +40,7 @@
             ?>
             <p class="meta">
               <?php while ( $agenda->have_posts() ) : $agenda->the_post(); ?>
-              <a href="<?php the_permalink(); ?>"><?php _e( 'Agenda', 'anp_meetings' ); ?></a>
+              <a href="<?php the_permalink(); ?>"><?php _e( 'Agenda', 'meeting' ); ?></a>
               <?php endwhile; ?>
             </p>
 
@@ -64,7 +64,7 @@
             ?>
             <p class="meta">
               <?php while ( $summary->have_posts() ) : $summary->the_post(); ?>
-              <a href="<?php the_permalink(); ?>"><?php _e( 'Summary', 'anp_meetings' ); ?></a>
+              <a href="<?php the_permalink(); ?>"><?php _e( 'Summary', 'meeting' ); ?></a>
               <?php endwhile; ?>
             </p>
 
@@ -97,7 +97,7 @@
             // Display connected pages
             if ( $proposals->have_posts() ) :
             ?>
-            <h3><?php _e( 'Proposals', 'anp_meetings' ); ?></h3>
+            <h3><?php _e( 'Proposals', 'meeting' ); ?></h3>
             <ul class="meeting-links">
               <?php while ( $proposals->have_posts() ) : $proposals->the_post(); ?>
               <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
@@ -111,7 +111,7 @@
             endif;
             ?>                  
 
-            <?php echo get_the_term_list( $post->ID, 'anp_meetings_tag', '<p class="tags meta">Tags: <span class="tags">', ', ', '</span></p>' ) ?>
+            <?php echo get_the_term_list( $post->ID, 'meeting_tag', '<p class="tags meta">Tags: <span class="tags">', ', ', '</span></p>' ) ?>
 
 					</footer>
 
@@ -125,13 +125,13 @@
 
 				<article id="post-not-found" class="hentry clearfix">
 						<header class="article-header">
-							<h1><?php _e( 'Oops, Post Not Found!', 'anp_meetings' ); ?></h1>
+							<h1><?php _e( 'Oops, Post Not Found!', 'meeting' ); ?></h1>
 						</header>
 						<section class="entry-content">
-							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'anp_meetings' ); ?></p>
+							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'meeting' ); ?></p>
 						</section>
 						<footer class="article-footer">
-								<p><?php _e( 'This is the error message in the single.php template.', 'anp_meetings' ); ?></p>
+								<p><?php _e( 'This is the error message in the single.php template.', 'meeting' ); ?></p>
 						</footer>
 				</article>
 

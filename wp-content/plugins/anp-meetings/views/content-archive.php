@@ -11,13 +11,13 @@ $post_type = get_post_type( get_the_ID() );
 
 // Meeting Meta
 $meeting_date = date_i18n( get_option( 'date_format' ), strtotime( get_post_meta( get_the_ID(), 'meeting_date', true ) ) );
-$meeting_type = get_the_term_list( get_the_ID(), 'anp_meetings_type', '<span class="category">', ', ', '</span>' );
-$meeting_tags = get_the_term_list( get_the_ID(), 'anp_meetings_tag', '<span class="tags">', ', ', '</span>' );
+$meeting_type = get_the_term_list( get_the_ID(), 'meeting_type', '<span class="category">', ', ', '</span>' );
+$meeting_tags = get_the_term_list( get_the_ID(), 'meeting_tag', '<span class="tags">', ', ', '</span>' );
 
 // Proposal Meta
 $approval_date = $meeting_date;
 $effective_date = date_i18n( get_option( 'date_format' ), strtotime( get_post_meta( get_the_ID(), 'proposal_date_effective', true ) ) );
-$proposal_status = get_the_term_list( get_the_ID(), 'anp_proposal_status', '<span class="tags">', ', ', '</span>' );
+$proposal_status = get_the_term_list( get_the_ID(), 'proposal_status', '<span class="tags">', ', ', '</span>' );
 
 // Associated Content
 
@@ -28,13 +28,13 @@ $proposal_status = get_the_term_list( get_the_ID(), 'anp_proposal_status', '<spa
 
 $meeting_pre_content = '';
 
-if( 'anp_meetings' == $post_type ) {
+if( 'meeting' == $post_type ) {
 
-    $agendas = ( function_exists( 'meetings_get_agenda' ) ) ? meetings_get_agenda( get_the_ID() ) : '';
+    $agendas = ( function_exists( 'meeting_get_agenda' ) ) ? meeting_get_agenda( get_the_ID() ) : '';
 
-    $summaries = ( function_exists( 'meetings_get_summary' ) ) ? meetings_get_summary( get_the_ID() ) : '';
+    $summaries = ( function_exists( 'meeting_get_summary' ) ) ? meeting_get_summary( get_the_ID() ) : '';
 
-    $proposals = ( function_exists( 'meetings_get_proposal' ) ) ? meetings_get_proposal( get_the_ID() ) : '';
+    $proposals = ( function_exists( 'meeting_get_proposal' ) ) ? meeting_get_proposal( get_the_ID() ) : '';
 
 
     if( $agendas || $summaries || $proposals ) {
@@ -52,9 +52,9 @@ if( 'anp_meetings' == $post_type ) {
     }
 }
 
-if( 'anp_agenda' == $post_type ) {
+if( 'agenda' == $post_type ) {
 
-    $agendas = ( function_exists( 'meetings_get_agenda' ) ) ? meetings_get_agenda( get_the_ID() ) : '';
+    $agendas = ( function_exists( 'meeting_get_agenda' ) ) ? meeting_get_agenda( get_the_ID() ) : '';
 
     if( $agendas ) {
 
@@ -68,9 +68,9 @@ if( 'anp_agenda' == $post_type ) {
 
 }
 
-if( 'anp_summary' == $post_type ) {
+if( 'summary' == $post_type ) {
 
-    $summaries = ( function_exists( 'meetings_get_summary' ) ) ? meetings_get_summary( get_the_ID() ) : '';
+    $summaries = ( function_exists( 'meeting_get_summary' ) ) ? meeting_get_summary( get_the_ID() ) : '';
 
     if( $summaries ) {
 
@@ -90,7 +90,7 @@ if( 'anp_summary' == $post_type ) {
 
 $meeting_post_content = '';
 
-// $meeting_single_post_content .= '<p class="tags meta"><span class="meta-label">' . __( 'Tags:', 'anp_meetings' ) . '</span> ';
+// $meeting_single_post_content .= '<p class="tags meta"><span class="meta-label">' . __( 'Tags:', 'meeting' ) . '</span> ';
 // $meeting_single_post_content .= $meeting_tags;
 // $meeting_single_post_content .= '</p>';
 

@@ -51,7 +51,7 @@
 					
 			<?php } ?>
 
-			<?php if( is_post_type_archive( array( 'anp_meetings', 'anp_proposal', 'anp_summary', 'anp_agenda' ) ) ) : ?>
+			<?php if( is_post_type_archive( array( 'meeting', 'proposal', 'summary', 'agenda' ) ) ) : ?>
 
 				<?php ( function_exists( 'anp_meetings_taxonomy_filter' ) ) ? anp_meetings_taxonomy_filter() : '' ;?>
 

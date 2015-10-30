@@ -30,9 +30,9 @@ if(! function_exists( 'anp_connection_box_order' ) ) {
  * Render agenda associated with content
  */
 
-if(! function_exists( 'meetings_get_agenda' ) ) {
+if(! function_exists( 'meeting_get_agenda' ) ) {
 
-    function meetings_get_agenda( $post_id ) {
+    function meeting_get_agenda( $post_id ) {
      
         $query_args = array(
             'connected_type' => 'meeting_to_agenda',
@@ -59,7 +59,7 @@ if(! function_exists( 'meetings_get_agenda' ) ) {
         }
 
         // Filter added to allow content be overriden
-        return apply_filters( 'meetings_get_agenda_content', $content, $post_id );
+        return apply_filters( 'meeting_get_agenda_content', $content, $post_id );
     }  
 
 }
@@ -69,9 +69,9 @@ if(! function_exists( 'meetings_get_agenda' ) ) {
  * Render summary associated with content
  */
 
-if(! function_exists( 'meetings_get_summary' ) ) {
+if(! function_exists( 'meeting_get_summary' ) ) {
 
-    function meetings_get_summary( $post_id ) {
+    function meeting_get_summary( $post_id ) {
      
         $query_args = array(
             'connected_type' => 'meeting_to_summary',
@@ -98,7 +98,7 @@ if(! function_exists( 'meetings_get_summary' ) ) {
         }
 
         // Filter added to allow content be overriden
-        return apply_filters( 'meetings_get_summary_content', $content, $post_id );
+        return apply_filters( 'meeting_get_summary_content', $content, $post_id );
     }  
       
 }
@@ -108,9 +108,9 @@ if(! function_exists( 'meetings_get_summary' ) ) {
  * Render proposal associated with content
  */
 
-if(! function_exists( 'meetings_get_proposal' ) ) {
+if(! function_exists( 'meeting_get_proposal' ) ) {
 
-    function meetings_get_proposal( $post_id ) {
+    function meeting_get_proposal( $post_id ) {
      
         $query_args = array(
             'connected_type' => 'meeting_to_proposal',
@@ -131,13 +131,13 @@ if(! function_exists( 'meetings_get_proposal' ) ) {
         if( count( $proposals ) > 0 ) {
 
             $content .= '<li class="proposal-link"><a href="' . esc_url( add_query_arg( $url ) ) . '">';
-            $content .= ( 1 == count( $proposals ) ) ? __( 'Proposal', 'anp_meetings' ) : __( 'Proposals', 'anp_meetings' );
+            $content .= ( 1 == count( $proposals ) ) ? __( 'Proposal', 'meeting' ) : __( 'Proposals', 'meeting' );
             $content .= '</a></li>';                   
 
         }
 
         // Filter added to allow content be overriden
-        return apply_filters( 'meetings_get_proposal_content', $content, $post_id );
+        return apply_filters( 'meeting_get_proposal_content', $content, $post_id );
     }  
       
 }
@@ -146,16 +146,16 @@ if(! function_exists( 'meetings_get_proposal' ) ) {
  * Add markdown support for custom post types
  */
 
-if(! function_exists( 'meetings_markdown_support' )  ) {
+if(! function_exists( 'meeting_markdown_support' )  ) {
 
-    function meetings_markdown_support() {
-        add_post_type_support( 'anp_meetings', 'wpcom-markdown' );
-        add_post_type_support( 'anp_proposal', 'wpcom-markdown' );
-        add_post_type_support( 'anp_summary', 'wpcom-markdown' );
-        add_post_type_support( 'anp_agenda', 'wpcom-markdown' );
+    function meeting_markdown_support() {
+        add_post_type_support( 'meeting', 'wpcom-markdown' );
+        add_post_type_support( 'proposal', 'wpcom-markdown' );
+        add_post_type_support( 'summary', 'wpcom-markdown' );
+        add_post_type_support( 'agenda', 'wpcom-markdown' );
     }
 
-    add_action( 'init', 'meetings_markdown_support' );
+    add_action( 'init', 'meeting_markdown_support' );
 
 }
 
@@ -163,7 +163,7 @@ if(! function_exists( 'meetings_markdown_support' )  ) {
 /* 
  * TEMPLATE LOCATION
  * Templates can be overwritten by putting a template file of the same name in 
- * plugins/anp-meetings/ folder of your active theme 
+ * plugins/anp-meeting/ folder of your active theme 
  */
 
 
@@ -172,28 +172,28 @@ if(! function_exists( 'include_meeting_templates' ) ) {
     function include_meeting_templates( $template_path ) {
 
         $post_types = array(
-            'anp_meetings', 
-            'anp_proposal', 
-            'anp_summary', 
-            'anp_agenda'
+            'meeting', 
+            'proposal', 
+            'summary', 
+            'agenda'
         );
 
         $post_tax = array(
-            'anp_meetings_type',
-            'anp_meetings_tag',
-            'anp_proposal_status',
+            'meeting_type',
+            'meeting_tag',
+            'proposal_status',
         );
 
         if ( is_singular( $post_types ) ) {
             // checks if the file exists in the theme first,
             // otherwise serve the file from the plugin
-            if ( $theme_file = locate_template( array ( 'plugins/anp-meetings/single.php' ) ) ) {
+            if ( $theme_file = locate_template( array ( 'plugins/anp-meeting/single.php' ) ) ) {
                 $template_path = $theme_file;
             } else {
                 $template_path = ANP_MEETINGS_PLUGIN_DIR . 'templates/single.php';
             }
         } elseif ( is_post_type_archive( $post_types ) || is_tax( $post_tax ) ) {
-            if ( $theme_file = locate_template( array('plugins/anp-meetings/archive.php') ) ) {
+            if ( $theme_file = locate_template( array('plugins/anp-meeting/archive.php') ) ) {
                 $template_path = $theme_file;
             } else {
                 $template_path = ANP_MEETINGS_PLUGIN_DIR . 'templates/archive.php';

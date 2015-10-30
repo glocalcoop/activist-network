@@ -9,13 +9,13 @@ $post_type = get_post_type( get_the_ID() );
 
 // Meeting Meta
 $meeting_date = date_i18n( get_option( 'date_format' ), strtotime( get_post_meta( get_the_ID(), 'meeting_date', true ) ) );
-$meeting_type = get_the_term_list( get_the_ID(), 'anp_meetings_type', '<span class="category">', ', ', '</span>' );
-$meeting_tags = get_the_term_list( get_the_ID(), 'anp_meetings_tag', '<span class="tags">', ', ', '</span>' );
+$meeting_type = get_the_term_list( get_the_ID(), 'meeting_type', '<span class="category">', ', ', '</span>' );
+$meeting_tags = get_the_term_list( get_the_ID(), 'meeting_tag', '<span class="tags">', ', ', '</span>' );
 
 // Proposal Meta
 $approval_date = $meeting_date;
 $effective_date = date_i18n( get_option( 'date_format' ), strtotime( get_post_meta( get_the_ID(), 'proposal_date_effective', true ) ) );
-$proposal_status = get_the_term_list( get_the_ID(), 'anp_proposal_status', '<span class="tags">', ', ', '</span>' );
+$proposal_status = get_the_term_list( get_the_ID(), 'proposal_status', '<span class="tags">', ', ', '</span>' );
 
 // Associated Content
 $connected_agenda = get_posts( array(
@@ -47,17 +47,17 @@ $connected_proposal = get_posts( array(
 
 $meeting_pre_content = '';
 
-if( 'anp_meetings' == $post_type ) {
+if( 'meeting' == $post_type ) {
 
-    $meeting_pre_content .= '<p class="meta"><span class="meta-label">' . __( 'Date:', 'anp_meetings' ) . '</span> ' . $meeting_date . '</p>';
-    $meeting_pre_content .= '<p class="meta"><span class="meta-label">' . __( 'Type:', 'anp_meetings' ) . '</span> ' . $meeting_type . '</p>';
+    $meeting_pre_content .= '<p class="meta"><span class="meta-label">' . __( 'Date:', 'meeting' ) . '</span> ' . $meeting_date . '</p>';
+    $meeting_pre_content .= '<p class="meta"><span class="meta-label">' . __( 'Type:', 'meeting' ) . '</span> ' . $meeting_type . '</p>';
 
 }
 
-if( 'anp_proposal' == $post_type ) {
-    $meeting_pre_content .= ( $meeting_date ) ? '<p class="meta"><span class="meta-label">' . __( 'Date Appoved:', 'anp_meetings' ) . '</span> ' . $meeting_date . '</p>' : '';
-    $meeting_pre_content .= ( $effective_date ) ? '<p class="meta"><span class="meta-label">' . __( 'Date Effective:', 'anp_meetings' ) . '</span> ' . $meeting_date . '</p>' : '';
-    $meeting_pre_content .= ( $proposal_status ) ? '<p class="meta"><span class="meta-label">' . __( 'Status:', 'anp_meetings' ) . '</span> ' . $proposal_status . '</p>' : '';
+if( 'proposal' == $post_type ) {
+    $meeting_pre_content .= ( $meeting_date ) ? '<p class="meta"><span class="meta-label">' . __( 'Date Appoved:', 'meeting' ) . '</span> ' . $meeting_date . '</p>' : '';
+    $meeting_pre_content .= ( $effective_date ) ? '<p class="meta"><span class="meta-label">' . __( 'Date Effective:', 'meeting' ) . '</span> ' . $meeting_date . '</p>' : '';
+    $meeting_pre_content .= ( $proposal_status ) ? '<p class="meta"><span class="meta-label">' . __( 'Status:', 'meeting' ) . '</span> ' . $proposal_status . '</p>' : '';
 }
 
 
@@ -81,12 +81,12 @@ if( !empty( $connected_agenda ) || !empty( $connected_summary ) || !empty( $conn
         $meeting_pre_content .= '</a></li>'; 
     }
 
-    if( 'anp_proposal' == get_post_type() ) {
+    if( 'proposal' == get_post_type() ) {
 
       $count = 0;
       foreach( $connected_proposal as $proposal ) {
           $post_type_obj = get_post_type_object( get_post_type( $proposal->ID ) );
-          $post_type_name = __( 'Meeting', 'anp_meetings' );
+          $post_type_name = __( 'Meeting', 'meeting' );
           $meeting_pre_content .= '<li class="meeting-link"><a href="' . get_post_permalink( $proposal->ID ) . '">';
           $meeting_pre_content .= $post_type_name;
           $meeting_pre_content .= '</a></li>'; 
@@ -95,9 +95,9 @@ if( !empty( $connected_agenda ) || !empty( $connected_summary ) || !empty( $conn
     }
 
 
-    if( 'anp_meetings' == get_post_type() ) {
+    if( 'meeting' == get_post_type() ) {
 
-        $meeting_pre_content .= '<li class="proposal-link"><a href="#proposals">' . __( 'Proposal(s)', 'anp_meetings' ) . '</a></li>';
+        $meeting_pre_content .= '<li class="proposal-link"><a href="#proposals">' . __( 'Proposal(s)', 'meeting' ) . '</a></li>';
 
     }
 
@@ -118,14 +118,14 @@ $meeting_post_content = '';
 $meeting_post_content .= '<footer class="post-footer">';
 
 if( $meeting_tags ) {
-    $meeting_post_content .= '<p class="tags meta"><span class="meta-label">' . __( 'Tags:', 'anp_meetings' ) . '</span> ';
+    $meeting_post_content .= '<p class="tags meta"><span class="meta-label">' . __( 'Tags:', 'meeting' ) . '</span> ';
     $meeting_post_content .= $meeting_tags;
     $meeting_post_content .= '</p>';
 }
 
 if( !empty( $connected_proposal ) ) {
 
-    $meeting_post_content .= '<h3 id="proposals">'. __( 'Proposals', 'anp_meetings' ) . '</h3>';
+    $meeting_post_content .= '<h3 id="proposals">'. __( 'Proposals', 'meeting' ) . '</h3>';
 
     $meeting_post_content .= '<ul class="proposal-link">';
 

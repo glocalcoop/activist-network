@@ -35,7 +35,7 @@ if( function_exists( "register_field_group" ) ) {
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'anp_meetings',
+                    'value' => 'meeting',
                     'order_no' => 0,
                     'group_no' => 0,
                 ),
@@ -44,7 +44,7 @@ if( function_exists( "register_field_group" ) ) {
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'anp_agenda',
+                    'value' => 'agenda',
                     'order_no' => 0,
                     'group_no' => 1,
                 ),
@@ -53,7 +53,7 @@ if( function_exists( "register_field_group" ) ) {
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'anp_summary',
+                    'value' => 'summary',
                     'order_no' => 0,
                     'group_no' => 2,
                 ),
@@ -79,7 +79,7 @@ if( function_exists( "register_field_group" ) ) {
                 'label' => 'Status',
                 'name' => 'proposal_status',
                 'type' => 'taxonomy',
-                'taxonomy' => 'anp_proposal_status',
+                'taxonomy' => 'proposal_status',
                 'field_type' => 'select',
                 'allow_null' => 1,
                 'load_save_terms' => 1,
@@ -110,7 +110,7 @@ if( function_exists( "register_field_group" ) ) {
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'anp_proposal',
+                    'value' => 'proposal',
                     'order_no' => 0,
                     'group_no' => 0,
                 ),

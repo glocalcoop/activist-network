@@ -10,44 +10,49 @@
  * @package   ANP_Meetings
  */
 
-function anp_meetings_connection_types() {
-    p2p_register_connection_type( array(
-        'name' => 'meeting_to_agenda',
-        'from' => 'anp_meetings',
-        'to' => 'anp_agenda',
-        'reciprocal' => true,
-        'cardinality' => 'one-to-one',
-        'admin_column' => true,
-        'admin_dropdown' => 'to',
-        'sortable' => 'any',
-        'title' => array( 'from' => __( 'Agenda', 'anp_meetings' ), 'to' => __( 'Meeting', 'anp_meetings' ) ),
-    ) );
+if(! function_exists( 'anp_meetings_connection_types' ) ) {
+    
+    function anp_meetings_connection_types() {
+        p2p_register_connection_type( array(
+            'name' => 'meeting_to_agenda',
+            'from' => 'meeting',
+            'to' => 'agenda',
+            'reciprocal' => true,
+            'cardinality' => 'one-to-one',
+            'admin_column' => true,
+            'admin_dropdown' => 'to',
+            'sortable' => 'any',
+            'title' => array( 'from' => __( 'Agenda', 'meeting' ), 'to' => __( 'Meeting', 'meeting' ) ),
+        ) );
 
-    p2p_register_connection_type( array(
-        'name' => 'meeting_to_summary',
-        'from' => 'anp_meetings',
-        'to' => 'anp_summary',
-        'reciprocal' => true,
-        'cardinality' => 'one-to-one',
-        'admin_column' => true,
-        'admin_dropdown' => 'to',
-        'sortable' => 'any',
-        'title' => array( 'from' => __( 'Summary', 'anp_meetings' ), 'to' => __( 'Meeting', 'anp_meetings' ) ),
-    ) );
+        p2p_register_connection_type( array(
+            'name' => 'meeting_to_summary',
+            'from' => 'meeting',
+            'to' => 'summary',
+            'reciprocal' => true,
+            'cardinality' => 'one-to-one',
+            'admin_column' => true,
+            'admin_dropdown' => 'to',
+            'sortable' => 'any',
+            'title' => array( 'from' => __( 'Summary', 'meeting' ), 'to' => __( 'Meeting', 'meeting' ) ),
+        ) );
 
-    p2p_register_connection_type( array(
-        'name' => 'meeting_to_proposal',
-        'from' => 'anp_meetings',
-        'to' => 'anp_proposal',
-        'reciprocal' => true,
-        'cardinality' => 'one-to-many',
-        'admin_column' => true,
-        'admin_dropdown' => 'any',
-        'sortable' => 'any',
-        'title' => array( 'from' => __( 'Proposals', 'anp_meetings' ), 'to' => __( 'Meeting', 'anp_meetings' ) ),
-    ) );
+        p2p_register_connection_type( array(
+            'name' => 'meeting_to_proposal',
+            'from' => 'meeting',
+            'to' => 'proposal',
+            'reciprocal' => true,
+            'cardinality' => 'one-to-many',
+            'admin_column' => true,
+            'admin_dropdown' => 'any',
+            'sortable' => 'any',
+            'title' => array( 'from' => __( 'Proposals', 'meeting' ), 'to' => __( 'Meeting', 'meeting' ) ),
+        ) );
+
+    }
+    add_action( 'p2p_init', 'anp_meetings_connection_types' );
 
 }
-add_action( 'p2p_init', 'anp_meetings_connection_types' );
+
 
 ?>
