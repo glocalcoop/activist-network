@@ -50,6 +50,18 @@
         {
             "type": "package",
             "package": {
+                "name": "glocalcoop/anp-network-content",
+                "version": "v1.0",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/glocalcoop/anp-network-content/archive/master.zip"
+                },
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "civicrm/civicrm",
                 "version": "4.6.9",
                 "type": "wordpress-plugin",
@@ -125,6 +137,7 @@
         "humanmade/mercator": ">=0.1",
         "civicrm/civicrm": ">=4.6.9",
         "tadpolecc/tadpole-civicrm-css": ">=1.2",
+        "glocalcoop/anp-network-content":">=v1.0",
         "glocalcoop/anp-global-menu": ">=v1.0",
         "glocalcoop/anp-meetings": ">=v1.0"
     },
@@ -139,7 +152,8 @@
         "wpackagist-plugin/simply-show-ids": ">=1.3.3",
         "wpackagist-plugin/theme-check": ">=20150818.1",
         "wpackagist-plugin/user-switching": ">=1.0.8",
-        "wpackagist-plugin/wp-example-content": ">=1.3"
+        "wpackagist-plugin/wp-example-content": ">=1.3",
+        "phpunit/phpunit": "5.0.*"
     },
     "extra": {
         "installer-paths": {
