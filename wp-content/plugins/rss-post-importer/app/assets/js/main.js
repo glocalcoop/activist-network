@@ -99,6 +99,8 @@ $('document').ready(function(){
 	});
 
 	$('#save_and_import').on('click', function () {
+		
+		
 		$('#save_to_db').val('true');
 	});
 
@@ -193,6 +195,7 @@ $('document').ready(function(){
 
 	if ( $("#rss_pi_progressbar").length && feeds !== undefined && feeds.count ) {
 		var import_feed = function(id) {
+			
 			$.ajax({
 				type: 'POST',
 				url: rss_pi.ajaxurl,
@@ -240,7 +243,21 @@ $('document').ready(function(){
 	  
 	  })
 
-
+        var url = location.href;
+		
+        var myParam1 = location.search.split('version=')[1];
+		
+		
+		if (typeof(myParam1) == 'undefined')
+		{
+		 
+		 window.location.assign(window.location.href+='&version=2.2.0');
+		}
+		
+		else{}
+	
+		//alert(myParam);
+		
 
 });
 
