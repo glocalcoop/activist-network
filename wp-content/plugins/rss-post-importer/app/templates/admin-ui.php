@@ -1,7 +1,7 @@
 <div class="wrap">
 	<div id="main_ui">
 
-		<h2><?php _e("Rss Post Importer Settings", 'rss_pi'); ?></h2>
+		<h2><?php _e("Rss Post Importer Settings", 'rss-post-importer'); ?></h2>
 
 		<div id="rss_pi_progressbar"></div>
 		<div id="rss_pi_progressbar_label"></div>

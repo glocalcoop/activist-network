@@ -37,7 +37,7 @@ class rssPIAdmin {
 		$this->load_options();
 
 		// add a key prompt
-		$this->key_prompt = __('%1$sYou need a <a href="%2$s" target="_blank">Full Text RSS Key</a> to activate this section, please <a href="%2$s" target="_blank">get one and try it free</a> for the next 14 days to see how it goes.', 'rss_pi');
+		$this->key_prompt = __('%1$sYou need a <a href="%2$s" target="_blank">Full Text RSS Key</a> to activate this section, please <a href="%2$s" target="_blank">get one and try it free</a> for the next 14 days to see how it goes.', 'rss-post-importer');
 
 		// initialise logging
 		$this->log = new rssPILog();
@@ -127,9 +127,12 @@ class rssPIAdmin {
 	 * Add to admin menu
 	 */
 	function admin_menu() {
-
-		add_options_page('Rss Post Importer', 'Rss Post Importer', 'manage_options', 'rss_pi', array($this, 'screen'));
-	}
+     
+ 
+   add_options_page('Rss Post Importer', 'Rss Post Importer', 'manage_options','rss_pi', array($this, 'screen'));
+  
+	
+ }
 
 	/**
 	 * Enqueue our admin css and js
@@ -156,13 +159,14 @@ class rssPIAdmin {
 		wp_enqueue_script('modernizr', RSS_PI_URL . 'app/assets/js/modernizr.custom.32882.js', array(), RSS_PI_VERSION, true);
 		wp_enqueue_script('phpjs-uniqid', RSS_PI_URL . 'app/assets/js/uniqid.js', array(), RSS_PI_VERSION, true);
 		wp_enqueue_script('rss-pi', RSS_PI_URL . 'app/assets/js/main.js', array('jquery'), RSS_PI_VERSION, true);
+		
 
 		// localise ajaxuel for use
 		$localise_args = array(
 			'ajaxurl' => admin_url('admin-ajax.php'),
 			'pluginurl' => RSS_PI_URL,
 			'l18n' => array(
-				'unsaved' => __( 'You have unsaved changes on this page. Do you want to leave this page and discard your changes or stay on this page?', 'rss_pi' )
+				'unsaved' => __( 'You have unsaved changes on this page. Do you want to leave this page and discard your changes or stay on this page?', 'rss-post-importer' )
 			)
 		);
 		wp_localize_script('rss-pi', 'rss_pi', $localise_args);
@@ -237,7 +241,7 @@ class rssPIAdmin {
 	 * Display the screen/ui
 	 */
 	function screen() {
-
+		
 		// it'll process any submitted form data
 		// reload the options just in case
 		$this->load_options();
@@ -272,6 +276,7 @@ class rssPIAdmin {
 ?>
 <script type="text/javascript">
 <?php
+
 $ids = array();
 if ( is_array($this->options['feeds']) ) :
 	foreach ($this->options['feeds'] as $f) :

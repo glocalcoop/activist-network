@@ -50,16 +50,13 @@ class rssPIEngine {
 	 * @return int
 	 */
 	public function import_feed() {
-		global $rss_post_importer;
-		
-		$this->load_options();
-
-		$post_count = 0;
-
-		// filter cache lifetime
+	global $rss_post_importer;
+	$this->load_options();
+	$post_count = 0;
+   // filter cache lifetime
 		add_filter('wp_feed_cache_transient_lifetime', array($this, 'frequency'));
-
-		foreach ($this->options['feeds'] as $i => $f) {
+		
+	foreach ($this->options['feeds'] as $i => $f) {
 
 			// before the first feed, we check for key validity
 			if ( $i == 0 ) {
@@ -374,10 +371,12 @@ class rssPIEngine {
 		// Featured Image setter
 		$thumbnail = new rssPIFeaturedImage();
 		// If Item is active then Import
+		
 	    if($args['feed_status']=="active"){
 		
 		foreach ( $items as $item ) {
 			
+			 
 			if ( ! $this->post_exists($item) ) {
 				
 				/* Code to convert tags id array to tag name array * */
