@@ -4,20 +4,20 @@
 			<h3 class="version">V. <?php echo RSS_PI_VERSION; ?></h3>
 			<ul>
 				<li>
-					<i class="icon-calendar"></i> <?php _e("Latest import:", 'rss_pi'); ?> <strong><?php echo $this->options['latest_import'] ? $this->options['latest_import'] : 'never' ; ?></strong>
+					<i class="icon-calendar"></i> <?php _e("Latest import:", 'rss-post-importer'); ?> <strong><?php echo $this->options['latest_import'] ? $this->options['latest_import'] : 'never' ; ?></strong>
 				</li>
-				<li><i class="icon-eye-open"></i> <a href="#" class="load-log"><?php _e("View the log", 'rss_pi'); ?></a></li>
+				<li><i class="icon-eye-open"></i> <a href="#" class="load-log"><?php _e("View the log", 'rss-post-importer'); ?></a></li>
 			</ul>
 		</div>
 		<div id="major-publishing-actions">
-			<input class="button button-primary button-large right" type="submit" name="info_update" value="<?php _e('Save', 'rss_pi'); ?>" />
-			<input class="button button-large" type="submit" name="info_update" value="<?php _e('Save and import', "rss_pi"); ?>" id="save_and_import" />
+			<input class="button button-primary button-large right" type="submit" name="info_update" value="<?php _e('Save', 'rss-post-importer'); ?>" />
+			<input class="button button-large" type="submit" name="info_update" value="<?php _e('Save and import', "rss-post-importer"); ?>" id="save_and_import" />
 		</div>
 	</div>
 </div>
 <?php if ($this->options['imports'] > 10) : ?>
 	<div class="rate-box">
-		<h4><?php printf(__('%d posts imported and counting!', "rss_pi"), $this->options['imports']); ?></h4>
+		<h4><?php printf(__('%d posts imported and counting!', "rss-post-importer"), $this->options['imports']); ?></h4>
 		<i class="icon-star"></i>
 		<i class="icon-star"></i>
 		<i class="icon-star"></i>

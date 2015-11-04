@@ -38,8 +38,8 @@ class rssPostImporter {
 		$this->upgrade();
 
 		// setup this plugin options page link
-		$this->page_link = admin_url('options-general.php?page=rss_pi');
-
+		$this->page_link = admin_url('options-general.php?page=rss_pi&version='.RSS_PI_VERSION);
+		
 		// hook translations
 		add_action('plugins_loaded', array($this, 'localize'));
 
@@ -182,7 +182,7 @@ class rssPostImporter {
 	 */
 	public function localize() {
 
-		load_plugin_textdomain('rss_pi', false, RSS_PI_PATH . 'app/lang/');
+		load_plugin_textdomain('rss-post-importer', false, RSS_PI_PATH . 'app/lang/');
 	}
 
 	/**
