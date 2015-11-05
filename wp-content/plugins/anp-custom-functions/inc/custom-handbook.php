@@ -67,22 +67,22 @@ if ( ! function_exists( 'anp_handbook_move_menu' ) ) {
 /*
 Add a nicer icon for the Handbook post-type?
 */
-
 if(! function_exists( 'anp_handbook_replace_admin_icon' ) ) {
 
-    function anp_handbook_replace_admin_icon() {
-        ?>
-        <style>
-            #adminmenu #menu-posts-handbook div.wp-menu-image::before {
-                content: '\f330';
-            }
-        </style>
-        <?php
+    function anp_handbook_replace_admin_icon( $default ) {
+
+        $new_defaults = array(
+            'menu_icon' => 'dashicons-book-alt',
+        );
+
+        $default = array_merge( $new_defaults, $default );
+
+        return $default;
+
     }
 
-    add_action( 'admin_head', 'anp_handbook_replace_admin_icon' );
+    add_filter( 'handbook_post_type_defaults', 'anp_handbook_replace_admin_icon' );
 
 }
-
 
 ?>
