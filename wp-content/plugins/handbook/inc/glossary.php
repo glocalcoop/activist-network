@@ -13,6 +13,7 @@ class WPorg_Handbook_Glossary {
 		add_action( 'wporg_email_changes_for_post_types', array( __CLASS__, 'wporg_email_changes_for_post_types' ) );
 		add_action( 'wporg_handbook_glossary', array( __CLASS__, 'page_content' ) );
 		add_action( 'manage_glossary_posts_columns', array( __CLASS__, 'manage_glossary_posts_columns' ) );
+		add_action( 'admin_menu', array( __CLASS__, 'add_new_glossary_term_submenu' ) );
 	}
 
 	static function edit_posts_per_page() {
@@ -25,33 +26,49 @@ class WPorg_Handbook_Glossary {
 	static function init_hook() {
 		add_shortcode( 'glossary', array( __CLASS__, 'shortcode' ) );
 
-		register_post_type( 'glossary', array(
+		$slug = 'glossary';
+
+		$default_config = array(
 			'labels' => array(
-				'name' => _x( 'Glossary', 'glossary' ),
-				'singular_name' => _x( 'Entry', 'glossary' ),
-				'add_new' => _x( 'Add New', 'glossary' ),
-				'add_new_item' => _x( 'Add New Entry', 'glossary' ),
-				'edit_item' => _x( 'Edit Entry', 'glossary' ),
-				'new_item' => _x( 'New Entry', 'glossary' ),
-				'view_item' => _x( 'View Entry', 'glossary' ),
-				'search_items' => _x( 'Search Glossary', 'glossary' ),
-				'not_found' => _x( 'No entries found', 'glossary' ),
-				'not_found_in_trash' => _x( 'No entries found in Trash', 'glossary' ),
-				'parent_item_colon' => _x( 'Parent Entry:', 'glossary' ),
-				'menu_name' => _x( 'Glossary', 'glossary' ),
-				'name_admin_bar' => _x( 'Glossary Entry', 'glossary' ),
+				'name' => _x( 'Glossary Terms', 'glossary' ),
+				'singular_name' => _x( 'Glossary Term', 'glossary' ),
+				'add_new' => _x( 'New Glossary Term', 'glossary' ),
+				'add_new_item' => _x( 'New Glossary Term', 'glossary' ),
+				'edit_item' => _x( 'Edit Glossary Term', 'glossary' ),
+				'new_item' => _x( 'New Glossary Term', 'glossary' ),
+				'view_item' => _x( 'View Glossary Term', 'glossary' ),
+				'search_items' => _x( 'Search Glossary Term', 'glossary' ),
+				'not_found' => _x( 'No terms found', 'glossary' ),
+				'not_found_in_trash' => _x( 'No terms found in Trash', 'glossary' ),
+				'parent_item_colon' => _x( 'Parent Glossary Term:', 'glossary' ),
+				'name_admin_bar' => _x( 'Glossary Term', 'glossary' ),
 			),
 			'public' => true,
 			'show_ui' => true,
 			'hierarchical' => false,
+			'show_in_menu' => 'edit.php?post_type=handbook',
 			# 'has_archive' => true,
 			# 'rewrite' => array( 'slug' => 'handbook/glossary' ),
 			'supports' => array( 'title', 'editor', 'revisions' ),
 			'capability_type' => self::capability_type,
 			'map_meta_cap' => true,
 			'menu_position' => 12,
-		) );
+		);
+
+		$config = apply_filters( 'glossary_post_type_defaults', $default_config, $slug );
+
+		register_post_type( $slug, $config );
 	}
+
+    static function add_new_glossary_term_submenu() {
+        add_submenu_page(
+            'edit.php?post_type=handbook', 
+            __('New Glossary Term', 'meeting'), 
+            __('New Glossary Term', 'meeting'), 
+            'manage_options', 
+            'post-new.php?post_type=glossary'
+        );
+    }
 
 	static function load_edit_php() {
 		if ( get_current_screen()->post_type !== 'glossary' )
