@@ -43,7 +43,7 @@ class rssPILog {
 		file_put_contents($log_file, '');
 		?>
 		<div id="message" class="updated">
-			<p><strong><?php _e('Log has been cleared.', "rss_pi"); ?></strong></p>
+			<p><strong><?php _e('Log has been cleared.', "rss-post-importer"); ?></strong></p>
 		</div>
 		<?php
 		die();

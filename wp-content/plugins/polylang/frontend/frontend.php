@@ -101,9 +101,10 @@ class PLL_Frontend extends PLL_Base {
 			}
 
 			// remove pages query when the language is set unless we do a search
-			// take care not to break the single page and taxonomies queries!
-			if (empty($qv['post_type']) && !$query->is_search && !$query->is_page && empty($taxonomies))
-				$query->set('post_type', 'post');
+			// take care not to break the single page, attachment and taxonomies queries!
+			if ( empty( $qv['post_type']) && ! $query->is_search && ! $query->is_page && ! $query->is_attachment && empty( $taxonomies ) ) {
+				$query->set( 'post_type', 'post' );
+			}
 
 			// unset the is_archive flag for language pages to prevent loading the archive template
 			// keep archive flag for comment feed otherwise the language filter does not work

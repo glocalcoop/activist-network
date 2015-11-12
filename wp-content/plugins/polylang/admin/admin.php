@@ -132,8 +132,15 @@ class PLL_Admin extends PLL_Base {
 
 	/*
 	 * sets pll_ajax_backend on all backend ajax request
-	 * takes care to situations where the ajax request has no options.data thanks to ScreenfeedFr
+	 * the final goal is to detect if an ajax request is made on admin or frontend
+	 *
+	 * takes care to various situations:
+	 * when the ajax request has no options.data thanks to ScreenfeedFr
 	 * see: https://wordpress.org/support/topic/ajaxprefilter-may-not-work-as-expected
+	 * when options.data is a json string
+	 * see: https://wordpress.org/support/topic/polylang-breaking-third-party-ajax-requests-on-admin-panels
+	 * when options.data is an empty string (GET request with the method 'load')
+	 * see: https://wordpress.org/support/topic/invalid-url-during-wordpress-new-dashboard-widget-operation
 	 *
 	 * @since 1.4
 	 */
@@ -145,7 +152,7 @@ class PLL_Admin extends PLL_Base {
 
 		$str = $arr = '';
 		foreach ($params as $k => $v) {
-			$str .= $k . '=' . $v . '&';
+			$str .= ( empty( $str ) ? '' : '&' ) . $k . '=' . $v;
 			$arr .= (empty($arr) ? '' : ', ') . $k . ': ' . $v;
 		}
 ?>
@@ -155,17 +162,22 @@ class PLL_Admin extends PLL_Base {
 			$.ajaxPrefilter(function (options, originalOptions, jqXHR) {
 				if (options.url.indexOf(ajaxurl) != -1) {
 					if ( typeof options.data === 'undefined' ) {
-						options.data = options.type === "get" ? '<?php echo $str;?>' : {<?php echo $arr;?>};
+						options.data = options.type.toLowerCase() === "get" ? '<?php echo $str;?>' : {<?php echo $arr;?>};
 					}
 					else {
 						if (typeof options.data === "string") {
-							try {
-								o = $.parseJSON(options.data);
-								o = $.extend(o, {<?php echo $arr;?>});
-								options.data = JSON.stringify(o);
+							if ( '' === options.data && "get" === options.type.toLowerCase() ) {
+								options.url = options.url+'<?php echo '&' . $str;?>';
 							}
-							catch(e) {
-								options.data = '<?php echo $str;?>'+options.data;
+							else {
+								try {
+									o = $.parseJSON(options.data);
+									o = $.extend(o, {<?php echo $arr;?>});
+									options.data = JSON.stringify(o);
+								}
+								catch(e) {
+									options.data = '<?php echo $str . '&';?>'+options.data;
+								}
 							}
 						}
 						else {

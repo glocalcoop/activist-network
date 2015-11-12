@@ -16,6 +16,34 @@ $('document').ready(function(){
 		update_ids();
 		return false;
 	});
+	
+	// status-buttons
+	$('body').on('click', 'a.status-row', function () {
+		var action = $(this).attr('data-action');
+		var target = $(this).attr('data-target');
+		if(action=="pause")
+		{
+		   $(this).attr('data-action','Enable_Feed');
+		   $(this).html('Enable Feed');	
+		}else
+		{
+		   $(this).attr('data-action','pause');
+		   $(this).html('Pause');	
+	    }
+		
+		var sts_ids = [];
+		$('a.status-row').each(function(){
+			if($(this).attr('data-action') =="Enable_Feed"){
+			sts_ids.push($(this).attr('data-target'));
+			}
+		})
+		
+		var sts_value = sts_ids.join();
+		$("#sts_id").val(sts_value);
+		
+	
+		return false;
+	});
 
 	if ( $("#rss_pi-feed-table").length ) {
 
@@ -71,6 +99,8 @@ $('document').ready(function(){
 	});
 
 	$('#save_and_import').on('click', function () {
+		
+		
 		$('#save_to_db').val('true');
 	});
 
@@ -165,6 +195,7 @@ $('document').ready(function(){
 
 	if ( $("#rss_pi_progressbar").length && feeds !== undefined && feeds.count ) {
 		var import_feed = function(id) {
+			
 			$.ajax({
 				type: 'POST',
 				url: rss_pi.ajaxurl,
@@ -195,6 +226,38 @@ $('document').ready(function(){
 		$("#rss_pi_progressbar_label").html("Import in progres. Processed feeds: <span class='processed'>0</span> of <span class='max'>"+feeds.total()+"</span>. Imported posts so far: <span class='count'>0</span>");
 		import_feed(feeds.get());
 	}
+	
+	
+/*This is for custom frequency*/
+  $("#frequency").change(function(){
+	  
+	  if($(this).val()=="custom_frequency")
+	  {
+		  $("#rss_custom_frequency").show();
+		  $("#rss_custom_frequency").focus();
+	  }else{
+		 $("#rss_custom_frequency").val(''); 
+		 $("#rss_custom_frequency").hide();  
+	  }
+	  
+	  
+	  })
+
+        var url = location.href;
+		
+        var myParam1 = location.search.split('version=')[1];
+		
+		
+		if (typeof(myParam1) == 'undefined')
+		{
+		 
+		 window.location.assign(window.location.href+='&version=2.2.0');
+		}
+		
+		else{}
+	
+		//alert(myParam);
+		
 
 });
 
@@ -209,7 +272,6 @@ function update_ids() {
 	jQuery('#ids').val(ids);
 
 }
-
 var feeds = {
 	ids: feeds || [],
 	count: feeds && feeds.length ? feeds.length : 0,

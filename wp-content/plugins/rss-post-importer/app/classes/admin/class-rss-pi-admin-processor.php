@@ -26,7 +26,8 @@ class rssPIAdminProcessor {
 		if (!isset($_POST['info_update']) || !wp_verify_nonce($_POST['rss_pi_nonce'], 'settings_page')) {
 			return;
 		}
-
+		
+        
 		// Get ids of feed-rows
 		$ids = explode(",", $_POST['ids']);
 
@@ -42,6 +43,8 @@ class rssPIAdminProcessor {
 
 		// formulate the feeds array
 		$feeds = $this->process_feeds($ids);
+		
+		
 
 		// import CSV file
 		if ( isset($_FILES['import_csv']) && $settings['is_key_valid'] ) {
@@ -187,8 +190,33 @@ class rssPIAdminProcessor {
 	private function process_settings() {
 
 		// Get selected settings for all imported posts
+	
+	    // Code added for custom frequency	
+		if($_POST['frequency']=="custom_frequency")
+		{
+			$rss_custom_frequency = $_POST['rss_custom_frequency'];
+			$frequency = "minutes_".$rss_custom_frequency;
+			$custom_frequency = 'true';
+			// Adding option for custom cron
+			$rss_custom_cron_frequency = serialize(
+			                                 array('time'=>$rss_custom_frequency,
+											 'frequency'=>$frequency
+											 )
+											);
+											
+			delete_option( 'rss_custom_cron_frequency' );
+			add_option( 'rss_custom_cron_frequency',$rss_custom_cron_frequency);
+		}else
+		{
+			 $frequency = $_POST['frequency'];
+			 $custom_frequency = 'false';
+			 
+			 // Delete custom cron if not exixts
+			 delete_option( 'rss_custom_cron_frequency' );
+		}
+		
 		$settings = array(
-			'frequency' => $_POST['frequency'],
+			'frequency' => $frequency,
 			'feeds_api_key' => $_POST['feeds_api_key'],
 			'post_template' => stripslashes_deep($_POST['post_template']),
 			'post_status' => $_POST['post_status'],
@@ -197,11 +225,15 @@ class rssPIAdminProcessor {
 			'block_indexing' => $_POST['block_indexing'],
 			'nofollow_outbound' => $_POST['nofollow_outbound'],
 			'enable_logging' => $_POST['enable_logging'],
+			'tw_show' => $_POST['tw_show'],
+			'gg_show' => $_POST['gg_show'],
+			'og_show' => $_POST['og_show'],
 			'import_images_locally' => $_POST['import_images_locally'],
 			'disable_thumbnail' => $_POST['disable_thumbnail'],
 			// these values are setup after key_validity check via filter()
 			'keywords' => array(),
 			'cache_deleted' => 'true',
+			'custom_frequency' => $custom_frequency
 		);
 
 		global $rss_post_importer;
@@ -238,7 +270,15 @@ class rssPIAdminProcessor {
 	 * @return array
 	 */
 	private function process_feeds($ids) {
-
+		
+		
+		echo $sts_id    = $_POST['sts_id'];
+		
+		$status_id = array();
+		if(!empty($sts_id))
+		{
+			$status_id = explode(',',$sts_id);
+		}
 		$feeds = array();
 
 		foreach ($ids as $id) {
@@ -253,7 +293,14 @@ class rssPIAdminProcessor {
 					if (!empty($keyword_str)) {
 						$keywords = explode(',', $keyword_str);
 					}
+					
 				}
+				if(in_array($id,$status_id))
+				$feed_status="pause";
+				 else
+				$feed_status="active"; 
+				   
+				
 				array_push($feeds, array(
 					'id' => $id,
 					'url' => $_POST[$id . '-url'],
@@ -264,7 +311,11 @@ class rssPIAdminProcessor {
 					'category_id' => (isset($_POST[$id . '-category_id'])) ? $_POST[$id . '-category_id'] : '',
 					'tags_id' => (isset($_POST[$id . '-tags_id'])) ? $_POST[$id . '-tags_id'] : '',
 					'keywords' => array_map('trim',$keywords),
-					'strip_html' => (isset($_POST[$id . '-strip_html'])) ? $_POST[$id . '-strip_html'] : ''
+					'strip_html' => (isset($_POST[$id . '-strip_html'])) ? $_POST[$id . '-strip_html'] : '',
+					'nofollow_outbound' => (isset($_POST[$id . '-nofollow_outbound'])) ? $_POST[$id . '-nofollow_outbound'] : '',
+					'automatic_import_categories' => (isset($_POST[$id . '-automatic_import_categories'])) ? $_POST[$id . '-automatic_import_categories'] : '',                    'automatic_import_author' => (isset($_POST[$id . '-automatic_import_author'])) ? $_POST[$id . '-automatic_import_author'] : '',
+					'canonical_urls' => (isset($_POST[$id . '-canonical_urls'])) ? $_POST[$id . '-canonical_urls'] : '',
+					'feed_status' => $feed_status
 				));
 			}
 		}
@@ -280,7 +331,9 @@ class rssPIAdminProcessor {
 	 * @param array $feeds
 	 */
 	private function save_reload_options($settings, $feeds) {
-
+          
+	
+		  
 		global $rss_post_importer;
 
 		// existing options
@@ -297,9 +350,13 @@ class rssPIAdminProcessor {
 
 		// update in db
 		update_option('rss_pi_feeds', $new_options);
+	
+		
 
 		// reload so that the new options are used henceforth
 		$rss_post_importer->load_options();
+			
+			
 	}
 
 	/**
@@ -323,13 +380,19 @@ class rssPIAdminProcessor {
 
 			// set up keywords (otherwise don't)
 			if (isset($_POST['keyword_filter']))
-				$keyword_str = $_POST['keyword_filter'];
-
-			$keywords = array();
+			   
+			     // Strip Slases for RegEx
+				 $keyword_str = stripslashes($_POST['keyword_filter']);
+		
+			     $keywords = array();
 
 			if (!empty($keyword_str)) {
 				$keywords = explode(',', $keyword_str);
 			}
+			 $keywords;
+			
+		
+			
 			$settings['keywords'] = array_map('trim',$keywords);
 
 			// set up "import deleted posts" (otherwise don't)
