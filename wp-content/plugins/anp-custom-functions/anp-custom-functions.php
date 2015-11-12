@@ -42,7 +42,7 @@ if ( !defined( 'ANP_CUSTOM_FUNC_PLUGIN_URL' ) ) {
  * ---------------------------------- */
 
 include_once( ANP_CUSTOM_FUNC_PLUGIN_DIR . 'inc/custom-shortcodes.php' );
-include_once( ANP_CUSTOM_FUNC_PLUGIN_DIR . 'inc/custom-handbook.php' );
+//include_once( ANP_CUSTOM_FUNC_PLUGIN_DIR . 'inc/custom-handbook.php' );
 
 
 ?>

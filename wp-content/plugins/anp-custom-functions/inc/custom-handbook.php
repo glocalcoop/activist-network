@@ -73,6 +73,9 @@ if(! function_exists( 'anp_handbook_replace_admin_icon' ) ) {
 
         $new_defaults = array(
             'menu_icon' => 'dashicons-book-alt',
+            'labels' => array(
+                'add_new' => __( 'New Handbook Page', 'wporg' ),
+            ),
         );
 
         $default = array_merge( $new_defaults, $default );
