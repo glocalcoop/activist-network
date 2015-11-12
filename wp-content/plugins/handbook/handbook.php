@@ -172,6 +172,7 @@ class WPorg_Handbook {
 				'singular_name' => sprintf( __( '%s Page', 'wporg' ), $this->label ),
 				'menu_name'     => $this->label,
 				'all_items'     => sprintf( __( '%s Pages', 'wporg' ), $this->label ),
+				'add_new'       => sprintf( __( 'New %s Page', 'wporg' ), $this->label ),
 			),
 			'public'            => true,
 			'show_ui'           => true,
@@ -180,6 +181,7 @@ class WPorg_Handbook {
 			'has_archive'       => true,
 			'hierarchical'      => true,
 			'menu_position'     => 11,
+			'menu_icon'         => 'dashicons-book-alt',
 			'rewrite' => array(
 				'feeds'         => false,
 				'slug'          => $slug,
