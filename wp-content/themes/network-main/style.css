@@ -4969,11 +4969,11 @@ div.css-search {
     .single-event .location-address {
       margin-top: .75em; } }
 
-.single-event .tools {
+.single-event div.tools {
   margin: 1.5em 0;
   margin-right: 10px; }
   @media screen and (min-width: 481px) {
-    .single-event .tools {
+    .single-event div.tools {
       margin-top: 2.25em; } }
 
 .single-event .event-description {

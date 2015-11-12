@@ -55,8 +55,8 @@ class PLL_Install extends PLL_Install_Base {
 				'redirect_lang' => 0, // do not redirect the language page to the homepage
 				'media_support' => 1, // support languages and translation for media by default
 				'sync'          => array(), // synchronisation is disabled by default (was the opposite before 1.2)
-				'post_types'    => array_values(get_post_types(array('_builtin' => false, 'show_ui => true'))),
-				'taxonomies'    => array_values(get_taxonomies(array('_builtin' => false, 'show_ui => true'))),
+				'post_types'    => array_values(get_post_types(array('_builtin' => false, 'show_ui' => true))),
+				'taxonomies'    => array_values(get_taxonomies(array('_builtin' => false, 'show_ui' => true))),
 				'domains'       => array(),
 				'version'       => POLYLANG_VERSION,
 			);

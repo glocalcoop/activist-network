@@ -328,6 +328,20 @@ class WPCOM_JSON_API_GET_Site_Endpoint extends WPCOM_JSON_API_Endpoint {
 						$response['options']['active_modules'] = (array) array_values( Jetpack_Options::get_option( 'active_modules' ) );
 					}
 
+					if ( $jetpack_wp_version = get_option( 'jetpack_wp_version' ) ) {
+						$response['options']['software_version'] = (string) $jetpack_wp_version;
+					} else if ( $jetpack_update = get_option( 'jetpack_updates' ) ) {
+						if ( is_array( $jetpack_update ) && isset( $jetpack_update['wp_version'] ) ) {
+							$response['options']['software_version'] = (string) $jetpack_update['wp_version'];
+						} else {
+							$response[ 'options' ][ 'software_version' ] = null;
+						}
+					} else {
+						$response['options']['software_version'] = null;
+					}
+
+					$response['options']['max_upload_size'] = get_option( 'jetpack_max_upload_size', false );
+
 					// Sites have to prove that they are not main_network site.
 					// If the sync happends right then we should be able to see that we are not dealing with a network site
 					$response['options']['is_multi_network'] = (bool) get_option( 'jetpack_is_main_network', true  );
@@ -341,6 +355,8 @@ class WPCOM_JSON_API_GET_Site_Endpoint extends WPCOM_JSON_API_Endpoint {
 			case 'meta' :
 				/**
 				 * Filters the URL scheme used when querying your site's REST API endpoint.
+				 *
+				 * @module json-api
 				 *
 				 * @since 3.2.0
 				 *
@@ -501,7 +517,7 @@ class WPCOM_JSON_API_List_Post_Types_Endpoint extends WPCOM_JSON_API_Endpoint {
 				$formatted_post_type_object[ $value ] = $post_type_object->{ $key };
 			}
 			$formatted_post_type_object['api_queryable'] = $is_queryable;
-
+			$formatted_post_type_object['supports'] = get_all_post_type_supports( $post_type );
 			$formatted_post_type_objects[] = $formatted_post_type_object;
 		}
 

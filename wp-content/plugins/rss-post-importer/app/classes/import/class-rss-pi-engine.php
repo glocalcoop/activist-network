@@ -50,16 +50,13 @@ class rssPIEngine {
 	 * @return int
 	 */
 	public function import_feed() {
-		global $rss_post_importer;
-
-		$this->load_options();
-
-		$post_count = 0;
-
-		// filter cache lifetime
+	global $rss_post_importer;
+	$this->load_options();
+	$post_count = 0;
+   // filter cache lifetime
 		add_filter('wp_feed_cache_transient_lifetime', array($this, 'frequency'));
-
-		foreach ($this->options['feeds'] as $i => $f) {
+		
+	foreach ($this->options['feeds'] as $i => $f) {
 
 			// before the first feed, we check for key validity
 			if ( $i == 0 ) {
@@ -127,7 +124,9 @@ class rssPIEngine {
 	 * @return array
 	 */
 	public function do_import($f) {
-
+     
+	 
+	    
 		$args = array(
 			'feed_title' => $f['name'],
 			'max_posts' => $f['max_posts'],
@@ -136,6 +135,11 @@ class rssPIEngine {
 			'tags_id' => $f['tags_id'],
 			'keywords' => isset($f['keywords']) && is_array($f['keywords']) ? $f['keywords'] : array(),
 			'strip_html' => $f['strip_html'],
+			'nofollow_outbound' => $f['nofollow_outbound'],
+			'automatic_import_categories' => $f['automatic_import_categories'],
+			'automatic_import_author' => $f['automatic_import_author'],
+			'feed_status' => $f['feed_status'],
+			'canonical_urls' => $f['canonical_urls'],
 			'save_to_db' => true
 		);
 		return $this->_import($f['url'], $args);
@@ -162,8 +166,17 @@ class rssPIEngine {
 			'tags_id' => array(),
 			'keywords' => array(),
 			'strip_html' => true,
-			'save_to_db' => true
+			'save_to_db' => true,
+			'nofollow_outbound' => true,
+			'automatic_import_categories' => true,
+			'automatic_import_author' => true,
+			'feed_status' => 'active',
+			'canonical_urls' => 'my_blog'
 		);
+		
+		if($args['feed_status']=='pause'){
+		   return;	
+		}
 
 		$args = wp_parse_args($args, $defaults);
 
@@ -175,7 +188,8 @@ class rssPIEngine {
 
 		// fetch the feed
 		$feed = fetch_feed($url);
-
+        
+		 
 		if (is_wp_error($feed)) {
 			return false;
 		}
@@ -223,7 +237,10 @@ class rssPIEngine {
 		// if we are saving
 		if ($args['save_to_db']) {
 			// insert and return
+			
 			$saved_posts = $this->insert($feed_items, $args);
+			
+			
 			return $saved_posts;
 		}
 
@@ -241,6 +258,7 @@ class rssPIEngine {
 	private function filter($feed, $args) {
 
 		// the count of keyword matched items
+		 
 		$got = 0;
 
 		// the current index of the items aray
@@ -261,6 +279,9 @@ class rssPIEngine {
 			// else be in a forever loop
 			// get the content
 			$content = $feed_item[0]->get_content();
+			
+			
+			
 
 			// test it against the keywords
 			$tested = $this->test($content,$args['keywords']);
@@ -343,15 +364,21 @@ class rssPIEngine {
 	private function insert($items, $args = array()) {
 
 		$saved_posts = array();
-
+        
 		// Initialise the content parser
 		$parser = new rssPIParser($this->options);
 
 		// Featured Image setter
 		$thumbnail = new rssPIFeaturedImage();
-
+		// If Item is active then Import
+		
+	    if($args['feed_status']=="active"){
+		
 		foreach ( $items as $item ) {
+			
+			 
 			if ( ! $this->post_exists($item) ) {
+				
 				/* Code to convert tags id array to tag name array * */
 				if ( ! empty($args['tags_id']) ) {
 					foreach ( $args['tags_id'] as $tagid ) {
@@ -364,17 +391,72 @@ class rssPIEngine {
 
 				// parse the content
 				$content = $parser->_parse($item, $args['feed_title'], $args['strip_html']);
-
-				$post = array(
+				
+				//Filter content for /* Add rel="nofollow" to all outbounded links. */
+				if($args['nofollow_outbound']=='true')
+				{
+				  $content=$this->rss_pi_url_parse_content($content);	
+				}
+				
+				// Get auto categories from Feeds 
+				$post_category = array();
+				if($args['automatic_import_categories']=='true') {
+						
+				$category_array = array();
+				foreach ($item->get_categories() as $category){
+					$cat_id = wp_create_category($category->get_label());
+					if($cat_id > 0){
+						$category_array[] = $cat_id;
+					}else{
+						$category = get_term_by('name', $category->get_label(), 'category');
+						if($category){
+							$category_array[] = $category->term_id;
+						}
+					}
+				} 
+				  $post_category =  $category_array;
+				}else
+				{
+				  $post_category =  array($args['category_id']);	
+				}
+				
+	     // Get Author From Feed URl
+		 if($args['automatic_import_author']=='true') {	
+		 
+			  if ($author = $item->get_author())
+			  {
+				  $array_author = explode(",",$author->get_name());
+				  $user_name =   preg_replace('/[^A-Za-z0-9\-]/', ' ', $array_author[0]); 
+				  $user_id = username_exists( $user_name );
+				  if ( !$user_id) :
+				   $random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+				   $user_id = wp_create_user( $user_name, $random_password,'');
+				  
+				  endif;
+				  
+				$post_author = $user_id;   
+			  
+			  }else
+			  {
+				  $post_author = $args['author_id'];
+			  }
+		 }else
+		 {
+			 $post_author = $args['author_id'];
+		 }
+		
+		 $post = array(
 					'post_title' => $item->get_title(),
 					'post_content' => $content,
 					'post_status' => $this->options['settings']['post_status'],
-					'post_author' => $args['author_id'],
-					'post_category' => array($args['category_id']),
+					'post_author' => $post_author,
+					'post_category' => $post_category,
 					'tags_input' => $tags_name,
 					'comment_status' => $this->options['settings']['allow_comments'],
 					'post_date' => get_date_from_gmt($item->get_date('Y-m-d H:i:s'))
 				);
+				
+				
 
 				// catch base url and replace any img src with it
 				if (preg_match('/src="\//ui', $content)) {
@@ -398,6 +480,9 @@ class rssPIEngine {
 				}
 
 				// insert as post
+				
+				
+				
 				$post_id = $this->_insert($post, $item->get_permalink());
 
 				// set thumbnail
@@ -430,10 +515,12 @@ class rssPIEngine {
 					wp_update_post($_post);
 					$post['post_content'] = $_post_content;
 				}
-
+				// canonical_urls
+                update_post_meta($post_id, 'rss_pi_canonical_url',$args['canonical_urls']);
 				array_push($saved_posts, $post);
 			}
 		}
+	}
 
 		return $saved_posts;
 	}
@@ -453,6 +540,7 @@ class rssPIEngine {
 		// strip any params from the URL
 		$permalink_new = $permalink;
 		$permalink_new = explode('?',$permalink_new);
+		
 		$permalink_new = $permalink_new[0];
 		// calculate new md5 hash
 		$permalink_md5_new = md5($permalink_new);
@@ -461,7 +549,8 @@ class rssPIEngine {
 		if ( isset($this->options['upgraded']['deleted_posts']) ) { // database migrated
 			// check if there is post with this source URL that is not trashed
 //			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_key = 'rss_pi_source_md5' and meta_value = %s", $permalink_md5 ), 'ARRAY_A');
-			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} pm, {$wpdb->posts} p WHERE pm.meta_key = 'rss_pi_source_md5' AND ( pm.meta_value = %s OR pm.meta_value = %s ) AND pm.post_id = p.ID AND p.post_status <> 'trash'", $permalink_md5, $permalink_md5_new ), 'ARRAY_A');
+			$posts = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} pm, {$wpdb->posts} p WHERE pm.meta_key = 'rss_pi_source_md5' AND ( pm.meta_value = %s) AND pm.post_id = p.ID AND p.post_status <> 'trash'", $permalink_md5), 'ARRAY_A');
+			 //echo $wpdb->last_query;
 			if ( count($posts) ) {
 				$post_exists = TRUE;
 			}
@@ -492,7 +581,7 @@ class rssPIEngine {
 			// check if the post has been imported and then deleted
 			if ( $this->options['upgraded']['deleted_posts'] ) { // database migrated
 				$rss_pi_deleted_posts = get_option( 'rss_pi_deleted_posts', array() );
-				if ( in_array( $permalink_md5, $rss_pi_deleted_posts ) || in_array( $permalink_md5_new, $rss_pi_deleted_posts ) ) {
+				if ( in_array( $permalink_md5, $rss_pi_deleted_posts )) {
 					$post_exists = TRUE;
 				}
 			} else {
@@ -503,7 +592,12 @@ class rssPIEngine {
 				}
 			}
 		}
-
+        /* if($post_exists==true){
+			
+			echo "1"; 
+		 }else{
+			echo "0"; 
+		 }*/
 		return $post_exists;
 	}
 
@@ -537,7 +631,7 @@ class rssPIEngine {
 		}
 
 		$_post = apply_filters('pre_rss_pi_insert_post', $post);
-
+       
 		$post_id = wp_insert_post($_post);
 
 		add_action('save_rss_pi_post', $post_id);
@@ -615,6 +709,45 @@ class rssPIEngine {
 		}
 
 		return $id;
+	}
+	
+	function rss_pi_url_parse_content($content) {
+
+		$regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>";
+		if (preg_match_all("/$regexp/siU", $content, $matches, PREG_SET_ORDER)) {
+			if (!empty($matches)) {
+
+				$srcUrl = get_option('home');
+				for ($i = 0; $i < count($matches); $i++) {
+
+					$tag = $matches[$i][0];
+					$tag2 = $matches[$i][0];
+					$url = $matches[$i][0];
+
+					$noFollow = '';
+
+					$pattern = '/target\s*=\s*"\s*_blank\s*"/';
+					preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
+					if (count($match) < 1)
+						$noFollow .= ' target="_blank" ';
+
+					$pattern = '/rel\s*=\s*"\s*[n|d]ofollow\s*"/';
+					preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
+					if (count($match) < 1)
+						$noFollow .= ' rel="nofollow" ';
+
+					$pos = strpos($url, $srcUrl);
+					if ($pos === false) {
+						$tag = rtrim($tag, '>');
+						$tag .= $noFollow . '>';
+						$content = str_replace($tag2, $tag, $content);
+					}
+				}
+			}
+		}
+
+		$content = str_replace(']]>', ']]&gt;', $content);
+		return $content;
 	}
 
 }

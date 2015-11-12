@@ -118,6 +118,11 @@ if (!class_exists("Rss_pi_opml")) {
 						'tags_id' => '',
 						'keywords' => '',
 						'strip_html' => 'false',
+						'nofollow_outbound' => 'false',
+						'automatic_import_categories' => 'false',
+						'automatic_import_author' => 'false',
+						'feed_status' => 'active',
+						'canonical_urls' => 'my_blog'
 					));
 
 				} else {
@@ -166,8 +171,8 @@ if (!class_exists("Rss_pi_opml")) {
 //			$result = "<-?xml version=\"1.0\" encoding=\"ISO-8859-1\"?->\n"
 			$result = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
 					. "<opml version=\"1.1\">\n"
-					. "  <head>\n"
-					. "    <title>" . $title . "</title>\n"
+					. "<head>\n"
+					. "      <title>" . $title . "</title>\n"
 					. "    <dateCreated>" . date("r") . "</dateCreated>\n"
 //					. "    <ownerName>" . $ownerName . "</ownerName>\n"
 					. "    <ownerEmail>" . $ownerEmail . "</ownerEmail>\n"

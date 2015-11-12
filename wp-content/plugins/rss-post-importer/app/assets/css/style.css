@@ -280,3 +280,15 @@ div.category_container ul.children {
 	padding: 20px;
 	text-align: center;
 }
+#rss_custom_frequency
+{
+	width:30% !important;
+	
+	
+}
+.rss_show_a {
+display:inline;	
+}
+.rss_hide_a {
+display:none;	
+}

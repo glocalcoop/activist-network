@@ -64,10 +64,10 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
-= 4.1 =
+= 4.1.1 =
 * WP 4.3 OK, network settings save bugfix.
 
 
 == Upgrade Notice ==
-= 4.1 =
+= 4.1.1 =
 * WP 4.3 OK, network settings save bugfix.

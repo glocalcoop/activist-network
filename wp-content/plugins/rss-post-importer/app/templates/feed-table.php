@@ -1,10 +1,10 @@
 <table class="widefat rss_pi-table" id="rss_pi-feed-table">
 	<thead>
 		<tr>
-			<th><?php _e("Feed name", 'rss_pi'); ?></th>
-			<th><?php _e("Feed url", 'rss_pi'); ?></th>
-			<th><?php _e("Max posts / import", 'rss_pi'); ?></th>
-			<!--<th><?php _e("Category", 'rss_pi'); ?></th>-->
+			<th><?php _e("Feed name", 'rss-post-importer'); ?></th>
+			<th><?php _e("Feed url", 'rss-post-importer'); ?></th>
+			<th><?php _e("Max posts / import", 'rss-post-importer'); ?></th>
+			<!--<th><?php _e("Category", 'rss-post-importer'); ?></th>-->
 		</tr>
 	</thead>
 	<tbody class="rss-rows">
@@ -21,7 +21,7 @@
 			?>
 			<tr>
 				<td colspan="4" class="empty_table">
-					<?php _e('You haven\'t specified any feeds to import yet, why don\'t you <a href="#" class="add-row">add one now</a>?', "rss_pi"); ?>
+					<?php _e('You haven\'t specified any feeds to import yet, why don\'t you <a href="#" class="add-row">add one now</a>?', "rss-post-importer"); ?>
 				</td>
 			</tr>
 		<?php
@@ -32,9 +32,10 @@
 		<tr>
 			<td colspan="4">
 				<a href="#" class="button button-large button-primary add-row">
-					<?php _e('Add new feed', "rss_pi"); ?>
+					<?php _e('Add new feed', "rss-post-importer"); ?>
 				</a>
 				<input type="hidden" name="ids" id="ids" value="<?php echo(join($saved_ids, ',')); ?>" />
+                <input type="hidden" id="sts_id" name="sts_id" value="" />
 			</td>
 		</tr>
 <?php

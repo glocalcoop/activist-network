@@ -1,0 +1,30 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "fa1375958f12619342dfac81a4d9d8cd",
+    "packages": [
+        {
+            "name": "wp-api/wp-api",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-api/wp-api",
+                "reference": "96343d710aeb7edb8f4f22dd165991c680eb13db"
+            },
+            "type": "library",
+            "time": "2015-04-09 18:44:37"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "wp-api/wp-api": 20
+    },
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
+}

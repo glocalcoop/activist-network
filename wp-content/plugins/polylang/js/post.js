@@ -82,7 +82,7 @@
 				});
 			}
 		}
-		
+
 		// filter parent page dropdown list
 		function filter_pages(lang) {
 			if ("undefined" != typeof(pll_page_languages)) {
@@ -93,7 +93,7 @@
 					});
 				});
 			}
-		}		
+		}
 	});
 })(jQuery);
 
@@ -119,12 +119,14 @@
 
 			// get the modified rows in ajax and update them
 			$.post(ajaxurl, data, function(response) {
-				var res = wpAjax.parseAjaxResponse(response, 'ajax-response');
-				$.each(res.responses, function() {
-					if ('row' == this.what) {
-						$("#post-"+this.supplemental.post_id).replaceWith(this.data);
-					}
-				});
+				if (response) {
+					var res = wpAjax.parseAjaxResponse(response, 'ajax-response');
+					$.each(res.responses, function() {
+						if ('row' == this.what) {
+							$("#post-"+this.supplemental.post_id).replaceWith(this.data);
+						}
+					});
+				}
 			});
 		}
 
@@ -258,5 +260,4 @@ jQuery(document).ready(function($) {
 	}
 
 	init_translations();
-
 });
