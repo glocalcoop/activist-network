@@ -591,7 +591,9 @@ class PLL_Model {
 				'singular_name' => __('Language', 'polylang'),
 				'all_items' => __('All languages', 'polylang'),
 			),
-			'public' => false, // avoid displaying the 'like post tags text box' in the quick edit
+			'public' => true, // since WP 4.4 we must set it to true for WP to accept our query var
+			'show_ui' => false,
+			'show_in_nav_menus' => false,
 			'query_var' => 'lang',
 			'rewrite' => $this->options['force_lang'] < 2, // no rewrite for domains and sub-domains
 			'_pll' => true // polylang taxonomy

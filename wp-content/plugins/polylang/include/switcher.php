@@ -49,6 +49,7 @@ class PLL_Switcher {
 			$id = (int) $language->term_id;
 			$slug = $language->slug;
 			$classes = array('lang-item', 'lang-item-' . $id, 'lang-item-' . esc_attr($slug));
+			$url = null; // avoids potential notice
 
 			if ($current_lang = pll_current_language() == $slug) {
 				if ($args['hide_current'] && !$args['dropdown'])
@@ -57,7 +58,7 @@ class PLL_Switcher {
 					$classes[] = 'current-lang';
 			}
 
-			if ( $args['post_id'] !== null && ( $tr_id = $links->model->post->get( $args['post_id'], $language ) ) && $links->current_user_can_read( $tr_id ) ) {
+			if ( $args['post_id'] !== null && ( $tr_id = $links->model->get_post( $args['post_id'], $language ) ) && $links->current_user_can_read( $tr_id ) ) {
 				$url =  get_permalink( $tr_id );
 			}
 			elseif ( $args['post_id'] === null ) {
