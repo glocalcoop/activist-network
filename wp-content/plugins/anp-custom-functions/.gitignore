@@ -1,0 +1,11 @@
+.htaccess
+.DS_Store
+*.bak
+*.log
+*.zip
+*.tar
+*.gz
+.brackets.json
+.sass-cache/
+node_modules
+assets/vendor
