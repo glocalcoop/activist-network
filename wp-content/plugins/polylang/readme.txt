@@ -3,8 +3,8 @@ Contributors: Chouby
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CCWWYUUQV8F4E
 Tags: multilingual, bilingual, translate, translation, language, multilanguage, international, localization
 Requires at least: 3.9
-Tested up to: 4.3
-Stable tag: 1.7.11
+Tested up to: 4.4
+Stable tag: 1.7.12
 License: GPLv2 or later
 
 Making WordPress multilingual
@@ -23,6 +23,12 @@ Polylang allows you to create a bilingual or multilingual WordPress site. You wr
 * Categories, post tags as well as some other metas are automatically copied when adding a new post or page translation
 * A customizable language switcher is provided as a widget or in the nav menu
 * The admin interface is of course multilingual too and each user can set the WordPress admin language in its profile
+
+= Credits =
+
+Thanks a lot to [Alex Lopez](http://www.alexlopez.rocks/) for the design of the banner and the logo.
+Most of the flags included with Polylang are coming from [famfamfam](http://famfamfam.com/) and are public domain.
+Wherever third party code has been used, credit has been given in the code’s comments.
 
 = Translators =
 
@@ -66,13 +72,9 @@ The plugin admin interface is currently available in 41 languages:
 * Brazilian Portuguese by [Henrique Vianna](http://henriquevianna.com/)
 * Georgian by [Tours in Georgia](http://www.georgia-tours.eu/)
 * Galician by [Toño Calo](http://fedellar.wordpress.com/)
-* Romanian by uskro
+* Romanian by [Philippe C. Focsaneanu](http://www.pandemicdesign.no/)
 * Japanese by [Eiko Toda](http://www.eikotoda.com)
 * Occitan by [Cédric Valmary](http://www.totenoc.eu/)
-
-= Credits =
-
-Most of the flags included with Polylang are coming from [famfamfam](http://famfamfam.com/) and are public domain. Wherever third party code has been used, credit has been given in the code’s comments.
 
 = Do you like Polylang? =
 
@@ -111,6 +113,14 @@ See http://polylang.wordpress.com/documentation/contribute/
 1. The Polylang languages admin panel in WordPress 3.8
 
 == Changelog ==
+
+= 1.7.12 (2015-11-13) =
+
+* The language taxonomy is now public for compatibility with WP 4.4
+* fix: nav menus locations are not correctly populated in customizer in WP 4.4
+* fix: the termmeta table was still deleted at upgrade
+* fix: fatal error when using the argument 'post_id' in 'pll_the_languages()' (introduced in 1.7.11) [props EKesty](https://wordpress.org/support/topic/bug-on)
+* fix: potential notice in 'pll_the_languages()' [props mattkeys](https://wordpress.org/support/topic/bug-on)
 
 = 1.7.11 (2015-10-15) =
 

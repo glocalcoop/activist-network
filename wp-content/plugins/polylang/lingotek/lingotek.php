@@ -145,7 +145,7 @@ class PLL_Lingotek {
 				__('Start the process of getting extra services.', 'polylang'),
 				__('Do you need someone to run your localization project?', 'polylang'),
 				__('Do you need customized workflows?', 'polylang'),
-				__('Do you you have existing Translation Memories you would like to use?', 'polylang'),
+				__('Do you have existing Translation Memories you would like to use?', 'polylang'),
 				__('Do you need help creating glossaries and terminologies?', 'polylang'),
 			),
 			array_intersect_key($links, array_flip(array('activate','services'))),

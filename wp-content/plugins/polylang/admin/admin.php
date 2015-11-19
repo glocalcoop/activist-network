@@ -84,7 +84,7 @@ class PLL_Admin extends PLL_Base {
 
 		// setup filters for admin pages
 		if (!PLL_SETTINGS)
-			add_action('wp_loaded', array(&$this, 'add_filters'));
+			add_action('wp_loaded', array(&$this, 'add_filters'), 5); // priority 5 to make sure filters are there before customize_register is fired
 	}
 
 	/*
