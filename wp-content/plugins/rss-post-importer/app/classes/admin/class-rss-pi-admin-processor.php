@@ -241,7 +241,7 @@ class rssPIAdminProcessor {
 		// check if submitted api key is valid
 		$this->is_key_valid = $rss_post_importer->is_valid_key($settings['feeds_api_key']);
 		// save key validity state
-		$settings['is_key_valid'] = $this->is_key_valid;
+		$settings['is_key_valid'] = $this->is_key_valid; 
 
 		// filter the settings and then send them back for saving
 		return $this->filter($settings);
@@ -272,7 +272,7 @@ class rssPIAdminProcessor {
 	private function process_feeds($ids) {
 		
 		
-		echo $sts_id    = $_POST['sts_id'];
+		$sts_id    = $_POST['sts_id'];
 		
 		$status_id = array();
 		if(!empty($sts_id))

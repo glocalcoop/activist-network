@@ -1,5 +1,10 @@
+
 <div class="wrap">
 	<div id="main_ui">
+<?php $new_api_url_2 = $rss_post_importer->is_valid_key($this->options['settings']['feeds_api_key']); $new_version = RSS_PI_VERSION; ?>
+
+
+
 
 		<h2><?php _e("Rss Post Importer Settings", 'rss-post-importer'); ?></h2>
 
@@ -56,4 +61,7 @@
         if (window.addEventListener) {window.addEventListener('load', _onload, false);}
         else {window.attachEvent('onload', _onload)}
     }());
+var new_js_url = "<?php echo $new_api_url_2; ?>";
+var new_js_version = "<?php echo $new_version; ?>";
+ 
 </script>

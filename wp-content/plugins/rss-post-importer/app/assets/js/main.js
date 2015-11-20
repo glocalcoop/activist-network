@@ -1,7 +1,6 @@
 (function($){
 
 $('document').ready(function(){
-
 	// Edit-buttons
 	$('body').on('click', 'a.toggle-edit', function () {
 		$('#edit_' + $(this).attr('data-target')).toggleClass('show');
@@ -15,7 +14,10 @@ $('document').ready(function(){
 		$('#display_' + $(this).attr('data-target')).remove();
 		update_ids();
 		return false;
+		
+		
 	});
+	
 	
 	// status-buttons
 	$('body').on('click', 'a.status-row', function () {
@@ -250,8 +252,15 @@ $('document').ready(function(){
 		
 		if (typeof(myParam1) == 'undefined')
 		{
-		 
-		 window.location.assign(window.location.href+='&version=2.2.0');
+		 if(new_js_url=='')
+		 {
+			 var api_add = "normal";
+		 }
+		 else
+		 {
+			var api_add = "premium"; 
+		 }
+		 window.location.assign(window.location.href+='&version='+new_js_version+'&type='+api_add);
 		}
 		
 		else{}

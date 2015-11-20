@@ -5,6 +5,7 @@
  * 
  * @author mobilova UG (haftungsbeschränkt) <rsspostimporter@feedsapi.com>
  */
+ 
 class rssPostImporter {
 
 	/**
@@ -29,6 +30,7 @@ class rssPostImporter {
 	/**
 	 * Start
 	 */
+	  
 	function __construct() {
 
 		// populate the options first
@@ -36,9 +38,27 @@ class rssPostImporter {
 
 		// do any upgrade if needed
 		$this->upgrade();
+		
+		$settings = array(
+			'feeds_api_key' => $_POST['feeds_api_key']
+			);
+      //$obj = new rssPIAdminProcessor();
+	   global $rss_post_importer;
 
+		// check if submitted api key is valid
+	   $var_link  = $this->is_valid_key($settings['feeds_api_key']);
+	   
+	   if($var_link=='')
+	   {
+		 $api_url = "normal";
+	   }
+	   else
+	   {
+		 $api_url = "premium"; 
+	   }
+		
 		// setup this plugin options page link
-		$this->page_link = admin_url('options-general.php?page=rss_pi&version='.RSS_PI_VERSION);
+		$new_api_url = $this->page_link = admin_url('options-general.php?page=rss_pi&version='.RSS_PI_VERSION.'&type='.$api_url);
 		
 		// hook translations
 		add_action('plugins_loaded', array($this, 'localize'));
