@@ -6,7 +6,7 @@
  * @subpackage Core
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -53,7 +53,7 @@ class BP_Core_User {
 	public $avatar_mini;
 
 	/**
-	 * The full name of the user
+	 * The full name of the user.
 	 *
 	 * @var string
 	 */
@@ -99,7 +99,7 @@ class BP_Core_User {
 	public $total_friends;
 
 	/**
-	 * The total number of blog posts posted by the user
+	 * The total number of blog posts posted by the user.
 	 *
 	 * @var integer
 	 * @deprecated No longer used
@@ -118,7 +118,7 @@ class BP_Core_User {
 	/**
 	 * Profile information for the specific user.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 * @var array
 	 */
 	public $profile_data;
@@ -128,9 +128,9 @@ class BP_Core_User {
 	/**
 	 * Class constructor.
 	 *
-	 * @param integer $user_id The ID for the user being queried.
-	 * @param bool $populate_extras Whether to fetch extra information
-	 *        such as group/friendship counts or not. Default: false.
+	 * @param integer $user_id         The ID for the user being queried.
+	 * @param bool    $populate_extras Whether to fetch extra information such as
+	 *                                 group/friendship counts or not. Default: false.
 	 */
 	public function __construct( $user_id, $populate_extras = false ) {
 		if ( !empty( $user_id ) ) {
@@ -227,25 +227,25 @@ class BP_Core_User {
 	 * @see BP_User_Query for a description of parameters, most of which
 	 *      are used there in the same way.
 	 *
-	 * @param string $type See {@link BP_User_Query}.
-	 * @param int $limit See {@link BP_User_Query}. Default: 0.
-	 * @param int $page See {@link BP_User_Query}. Default: 1.
-	 * @param int $user_id See {@link BP_User_Query}. Default: 0.
-	 * @param mixed $include See {@link BP_User_Query}. Default: false.
-	 * @param string|bool $search_terms See {@link BP_User_Query}.
-	 *        Default: false.
-	 * @param bool $populate_extras See {@link BP_User_Query}.
-	 *        Default: true.
-	 * @param mixed $exclude See {@link BP_User_Query}. Default: false.
-	 * @param string|bool $meta_key See {@link BP_User_Query}.
-	 *        Default: false.
-	 * @param string|bool $meta_value See {@link BP_User_Query}.
-	 *        Default: false.
+	 * @param string      $type            See {@link BP_User_Query}.
+	 * @param int         $limit           See {@link BP_User_Query}. Default: 0.
+	 * @param int         $page            See {@link BP_User_Query}. Default: 1.
+	 * @param int         $user_id         See {@link BP_User_Query}. Default: 0.
+	 * @param mixed       $include         See {@link BP_User_Query}. Default: false.
+	 * @param string|bool $search_terms    See {@link BP_User_Query}.
+	 *                                     Default: false.
+	 * @param bool        $populate_extras See {@link BP_User_Query}.
+	 *                                     Default: true.
+	 * @param mixed       $exclude         See {@link BP_User_Query}. Default: false.
+	 * @param string|bool $meta_key        See {@link BP_User_Query}.
+	 *                                     Default: false.
+	 * @param string|bool $meta_value      See {@link BP_User_Query}.
+	 *                                     Default: false.
 	 * @return array {
-	 *     @type int $total_users Total number of users matched by query
-	 *           params.
+	 *     @type int   $total_users Total number of users matched by query
+	 *                              params.
 	 *     @type array $paged_users The current page of users matched by
-	 *           query params.
+	 *                              query params.
 	 * }
 	 */
 	public static function get_users( $type, $limit = 0, $page = 1, $user_id = 0, $include = false, $search_terms = false, $populate_extras = true, $exclude = false, $meta_key = false, $meta_value = false ) {
@@ -379,7 +379,7 @@ class BP_Core_User {
 		/**
 		 * Filters the SQL used to query for paged users.
 		 *
-		 * @since BuddyPress (1.2.6)
+		 * @since 1.2.6
 		 *
 		 * @param string $value Concatenated SQL statement for the query.
 		 * @param array  $sql   Array of SQL statement parts for the query.
@@ -411,7 +411,7 @@ class BP_Core_User {
 		/**
 		 * Filters the SQL used to query for total users.
 		 *
-		 * @since BuddyPress (1.2.6)
+		 * @since 1.2.6
 		 *
 		 * @param string $value Concatenated SQL statement for the query.
 		 * @param array  $sql   Array of SQL statement parts for the query.
@@ -443,14 +443,14 @@ class BP_Core_User {
 	 *
 	 * @global wpdb $wpdb WordPress database object.
 	 *
-	 * @param string $letter The letter the users names are to start with.
-	 * @param int $limit The number of users we wish to retrive.
-	 * @param int $page The page number we are currently on, used in
-	 *        conjunction with $limit to get the start position for the
-	 *        limit.
-	 * @param bool $populate_extras Populate extra user fields?
-	 * @param string $exclude Comma-separated IDs of users whose results
-	 *        aren't to be fetched.
+	 * @param string $letter          The letter the users names are to start with.
+	 * @param int    $limit           The number of users we wish to retrive.
+	 * @param int    $page            The page number we are currently on, used in conjunction
+	 *                                with $limit to get the start position for the limit.
+	 * @param bool   $populate_extras Populate extra user fields?
+	 * @param string $exclude         Comma-separated IDs of users whose results
+	 *                                aren't to be fetched.
+	 *
 	 * @return mixed False on error, otherwise associative array of results.
 	 */
 	public static function get_users_by_letter( $letter, $limit = null, $page = 1, $populate_extras = true, $exclude = '' ) {
@@ -487,7 +487,7 @@ class BP_Core_User {
 		/**
 		 * Filters the SQL used to query for total user count by first letter.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param string $value SQL prepared statement for the user count query.
 		 */
@@ -496,7 +496,7 @@ class BP_Core_User {
 		/**
 		 * Filters the SQL used to query for users by first letter.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param string $value SQL prepared statement for the user query.
 		 */
@@ -530,11 +530,13 @@ class BP_Core_User {
 	 * Use {@link BP_User_Query} with the 'user_ids' param instead.
 	 *
 	 * @global wpdb $wpdb WordPress database object.
-	 * @param array $user_ids The user IDs of the users who we wish to
-	 *        fetch information on.
-	 * @param int $limit The limit of results we want.
-	 * @param int $page The page we are on for pagination.
-	 * @param bool $populate_extras Populate extra user fields?
+	 *
+	 * @param array $user_ids        The user IDs of the users who we wish to
+	 *                               fetch information on.
+	 * @param int   $limit           The limit of results we want.
+	 * @param int   $page            The page we are on for pagination.
+	 * @param bool  $populate_extras Populate extra user fields?
+	 *
 	 * @return array Associative array.
 	 */
 	public static function get_specific_users( $user_ids, $limit = null, $page = 1, $populate_extras = true ) {
@@ -553,7 +555,7 @@ class BP_Core_User {
 		 * This same filter name is used for the paged user SQL, and so should be avoided.
 		 * Use 'bp_core_user_get_specific_users_count_sql' instead.
 		 *
-		 * @deprecated BuddyPress (2.3.0)
+		 * @deprecated 2.3.0
 		 *
 		 * @param string $sql SQL string.
 		 */
@@ -564,7 +566,7 @@ class BP_Core_User {
 		 *
 		 * Use this instead of the deprecated 'bp_core_get_specific_users_count_sql'.
 		 *
-		 * @since BuddyPress (2.3.0)
+		 * @since 2.3.0
 		 *
 		 * @param string   $sql             SQL string.
 		 * @param array    $user_ids        Array of IDs of specific users to fetch.
@@ -580,7 +582,7 @@ class BP_Core_User {
 		 * This same filter name is used for the user count SQL, and so should be avoided.
 		 * Use 'bp_core_user_get_specific_users_paged_sql' instead.
 		 *
-		 * @deprecated BuddyPress (2.3.0)
+		 * @deprecated 2.3.0
 		 *
 		 * @param string $sql SQL string.
 		 */
@@ -591,7 +593,7 @@ class BP_Core_User {
 		 *
 		 * Use this instead of the deprecated 'bp_core_get_specific_users_count_sql'.
 		 *
-		 * @since BuddyPress (2.3.0)
+		 * @since 2.3.0
 		 *
 		 * @param string   $sql             SQL string.
 		 * @param array    $user_ids        Array of IDs of specific users to fetch.
@@ -625,11 +627,12 @@ class BP_Core_User {
 	 *
 	 * @global wpdb $wpdb WordPress database object.
 	 *
-	 * @param string $search_terms The terms to search the profile table
-	 *        value column for.
-	 * @param integer $limit The limit of results we want.
-	 * @param integer $page The page we are on for pagination.
+	 * @param string  $search_terms    The terms to search the profile table
+	 *                                 value column for.
+	 * @param int     $limit           The limit of results we want.
+	 * @param int     $page            The page we are on for pagination.
 	 * @param boolean $populate_extras Populate extra user fields?
+	 *
 	 * @return array Associative array.
 	 */
 	public static function search_users( $search_terms, $limit = null, $page = 1, $populate_extras = true ) {
@@ -646,7 +649,7 @@ class BP_Core_User {
 		/**
 		 * Filters the SQL used to query for searched users count.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param string $value SQL statement for the searched users count query.
 		 */
@@ -655,7 +658,7 @@ class BP_Core_User {
 		/**
 		 * Filters the SQL used to query for searched users.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param string $value SQL statement for the searched users query.
 		 */
@@ -685,9 +688,10 @@ class BP_Core_User {
 	 *
 	 * @global wpdb $wpdb WordPress database object.
 	 *
-	 * @param array $paged_users An array of stdClass containing the users.
-	 * @param string $user_ids The user ids to select information about.
-	 * @param string $type The type of fields we wish to get.
+	 * @param array       $paged_users An array of stdClass containing the users.
+	 * @param string      $user_ids    The user ids to select information about.
+	 * @param string|bool $type        The type of fields we wish to get.
+	 *
 	 * @return mixed False on error, otherwise associative array of results.
 	 */
 	public static function get_user_extras( &$paged_users, &$user_ids, $type = false ) {
@@ -772,7 +776,8 @@ class BP_Core_User {
 	 *
 	 * @global wpdb $wpdb WordPress database object.
 	 *
-	 * @param integer $user_id User ID.
+	 * @param int $user_id User ID.
+	 *
 	 * @return array Associative array.
 	 */
 	public static function get_core_userdata( $user_id ) {
@@ -788,6 +793,7 @@ class BP_Core_User {
 	 * Get last activity data for a user or set of users.
 	 *
 	 * @param int|array User IDs or multiple user IDs.
+	 *
 	 * @return array
 	 */
 	public static function get_last_activity( $user_id ) {
@@ -833,10 +839,11 @@ class BP_Core_User {
 	 * Will create a new entry if it does not exist. Otherwise updates the
 	 * existing entry.
 	 *
-	 * @since BuddyPress (2.0.0)
+	 * @since 2.0.0
 	 *
-	 * @param int $user_id ID of the user whose last_activity you are updating.
-	 * @param string $time MySQL-formatted time string.
+	 * @param int    $user_id ID of the user whose last_activity you are updating.
+	 * @param string $time    MySQL-formatted time string.
+	 *
 	 * @return bool True on success, false on failure.
 	 */
 	public static function update_last_activity( $user_id, $time ) {
@@ -922,11 +929,12 @@ class BP_Core_User {
 	/**
 	 * Delete a user's last_activity value.
 	 *
-	 * @since BuddyPress (2.0.0)
+	 * @since 2.0.0
 	 *
 	 * @param int $user_id
+	 *
 	 * @return bool True on success, false on failure or if no last_activity
-	 *         is found for the user.
+	 *              is found for the user.
 	 */
 	public static function delete_last_activity( $user_id ) {
 		global $wpdb;

@@ -1,27 +1,25 @@
 <?php
-
 /**
- * BuddyPress Admin Component Functions
+ * BuddyPress Admin Component Functions.
  *
  * @package BuddyPress
  * @subpackage CoreAdministration
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Renders the Component Setup admin panel.
  *
  * @package BuddyPress
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  * @uses bp_core_admin_component_options()
  */
 function bp_core_admin_components_settings() {
 ?>
 
 	<div class="wrap">
-		<?php screen_icon( 'buddypress'); ?>
 
 		<h2 class="nav-tab-wrapper"><?php bp_core_admin_tabs( __( 'Components', 'buddypress' ) ); ?></h2>
 		<form action="" method="post" id="bp-admin-component-form">
@@ -44,7 +42,7 @@ function bp_core_admin_components_settings() {
  * Creates reusable markup for component setup on the Components and Pages dashboard panel.
  *
  * @package BuddyPress
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  * @todo Use settings API
  */
 function bp_core_admin_components_options() {
@@ -55,7 +53,7 @@ function bp_core_admin_components_options() {
 	/**
 	 * Filters the array of available components.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 *
 	 * @param mixed $value Active components.
 	 */
@@ -235,9 +233,9 @@ function bp_core_admin_components_options() {
 }
 
 /**
- * Handle saving the Component settings
+ * Handle saving the Component settings.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  * @todo Use settings API when it supports saving network settings
  */
 function bp_core_admin_components_settings_handler() {
@@ -277,7 +275,7 @@ function bp_core_admin_components_settings_handler() {
 add_action( 'bp_admin_init', 'bp_core_admin_components_settings_handler' );
 
 /**
- * Calculates the components that should be active after save, based on submitted settings
+ * Calculates the components that should be active after save, based on submitted settings.
  *
  * The way that active components must be set after saving your settings must
  * be calculated differently depending on which of the Components subtabs you
@@ -296,10 +294,11 @@ add_action( 'bp_admin_init', 'bp_core_admin_components_settings_handler' );
  *   is not present, before merging the submitted components with the active
  *   ones.
  *
- * @since BuddyPress (1.7.0)
+ * @since 1.7.0
  *
- * @param array This is the array of component settings coming from the POST
- *   global. You should stripslashes_deep() before passing to this function
+ * @param array $submitted This is the array of component settings coming from the POST
+ *                         global. You should stripslashes_deep() before passing to this function.
+ *
  * @return array The calculated list of component settings
  */
 function bp_core_admin_get_active_components_from_submitted_settings( $submitted ) {
@@ -336,14 +335,15 @@ function bp_core_admin_get_active_components_from_submitted_settings( $submitted
 }
 
 /**
- * Return a list of component information, optionally filtered by type
+ * Return a list of component information, optionally filtered by type.
  *
  * We use this information both to build the markup for the admin screens, as
  * well as to do some processing on settings data submitted from those screens.
  *
- * @since BuddyPress (1.7.0)
+ * @since 1.7.0
  *
- * @param string $type 'all', 'optional', 'retired', 'required'
+ * @param string $type 'all', 'optional', 'retired', 'required'.
+ *
  * @return array An array of requested component data
  */
 function bp_core_admin_get_components( $type = 'all' ) {
@@ -434,7 +434,7 @@ function bp_core_admin_get_components( $type = 'all' ) {
 	/**
 	 * Filters the list of component information.
 	 *
-	 * @since BuddyPress (2.0.0)
+	 * @since 2.0.0
 	 *
 	 * @param array  $components Array of component information.
 	 * @param string $type       Type of component list requested.

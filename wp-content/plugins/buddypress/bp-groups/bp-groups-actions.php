@@ -1,7 +1,6 @@
 <?php
-
 /**
- * BuddyPress Groups Actions
+ * BuddyPress Groups Actions.
  *
  * Action functions are exactly the same as screen functions, however they do
  * not have a template screen associated with them. Usually they will send the
@@ -11,13 +10,13 @@
  * @subpackage GroupsActions
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Protect access to single groups.
  *
- * @since BuddyPress (2.1.0)
+ * @since 2.1.0
  */
 function bp_groups_group_access_protection() {
 	if ( ! bp_is_group() ) {
@@ -60,25 +59,24 @@ function bp_groups_group_access_protection() {
 	 * want to change the $no_access_args, to avoid problems such as
 	 * logged-in users being redirected to wp-login.php.
 	 *
-	 * @since BuddyPress (2.1.0)
+	 * @since 2.1.0
 	 *
-	 * @param bool $user_has_access True if the user has access to the
-	 *        content, otherwise false.
-	 * @param array $no_access_args Arguments to be passed to
-	 *        bp_core_no_access() in case of no access. Note that this
-	 *        value is passed by reference, so it can be modified by the
-	 *        filter callback.
+	 * @param bool  $user_has_access True if the user has access to the
+	 *                               content, otherwise false.
+	 * @param array $no_access_args  Arguments to be passed to bp_core_no_access() in case
+	 *                               of no access. Note that this value is passed by reference,
+	 *                               so it can be modified by the filter callback.
 	 */
 	$user_has_access = apply_filters_ref_array( 'bp_group_user_has_access', array( $user_has_access, &$no_access_args ) );
 
-	// If user has access, we return rather than redirect
+	// If user has access, we return rather than redirect.
 	if ( $user_has_access ) {
 		return;
 	}
 
 	// Hidden groups should return a 404 for non-members.
 	// Unset the current group so that you're not redirected
-	// to the default group tab
+	// to the default group tab.
 	if ( 'hidden' == $current_group->status ) {
 		buddypress()->groups->current_group = 0;
 		buddypress()->is_single_item        = false;
@@ -195,7 +193,7 @@ function groups_action_create_group() {
 			/**
 			 * Filters the allowed invite statuses.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 *
 			 * @param array $value Array of statuses allowed.
 			 *                     Possible values are 'members,
@@ -226,7 +224,7 @@ function groups_action_create_group() {
 		 * This hook is a variable hook dependent on the current step
 		 * in the creation process.
 		 *
-		 * @since BuddyPress (1.1.0)
+		 * @since 1.1.0
 		 */
 		do_action( 'groups_create_group_step_save_' . bp_get_groups_current_create_step() );
 
@@ -235,7 +233,7 @@ function groups_action_create_group() {
 		 *
 		 * Mostly for clearing cache on a generic action name.
 		 *
-		 * @since BuddyPress (1.1.0)
+		 * @since 1.1.0
 		 */
 		do_action( 'groups_create_group_step_complete' );
 
@@ -271,7 +269,7 @@ function groups_action_create_group() {
 			/**
 			 * Fires after the group has been successfully created.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 *
 			 * @param int $new_group_id ID of the newly created group.
 			 */
@@ -342,14 +340,14 @@ function groups_action_create_group() {
 			if ( !bp_core_avatar_handle_crop( array( 'object' => 'group', 'avatar_dir' => 'group-avatars', 'item_id' => $bp->groups->current_group->id, 'original_file' => $_POST['image_src'], 'crop_x' => $_POST['x'], 'crop_y' => $_POST['y'], 'crop_w' => $_POST['w'], 'crop_h' => $_POST['h'] ) ) )
 				bp_core_add_message( __( 'There was an error saving the group profile photo, please try uploading again.', 'buddypress' ), 'error' );
 			else
-				bp_core_add_message( __( 'The group profile photo was uploaded successfully!', 'buddypress' ) );
+				bp_core_add_message( __( 'The group profile photo was uploaded successfully.', 'buddypress' ) );
 		}
 	}
 
 	/**
 	 * Filters the template to load for the group creation screen.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to the group creation template to load.
 	 */
@@ -394,7 +392,7 @@ function groups_action_join_group() {
 	/**
 	 * Filters the template to load for the single group screen.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to the single group template to load.
 	 */
@@ -411,7 +409,7 @@ add_action( 'bp_actions', 'groups_action_join_group' );
  * Note: When leaving a group from the group directory, AJAX is used and
  * another function handles this. See {@link bp_legacy_theme_ajax_joinleave_group()}.
  *
- * @since BuddyPress (1.2.4)
+ * @since 1.2.4
  */
 function groups_action_leave_group() {
 	if ( ! bp_is_single_item() || ! bp_is_groups_component() || ! bp_is_current_action( 'leave-group' ) ) {
@@ -430,7 +428,7 @@ function groups_action_leave_group() {
 		// Stop sole admins from abandoning their group
 		$group_admins = groups_get_group_admins( bp_get_current_group_id() );
 
-	 	if ( 1 == count( $group_admins ) && $group_admins[0]->user_id == bp_loggedin_user_id() ) {
+		if ( 1 == count( $group_admins ) && $group_admins[0]->user_id == bp_loggedin_user_id() ) {
 			bp_core_add_message( __( 'This group must have at least one admin', 'buddypress' ), 'error' );
 		} elseif ( ! groups_leave_group( $bp->groups->current_group->id ) ) {
 			bp_core_add_message( __( 'There was an error leaving the group.', 'buddypress' ), 'error' );
@@ -505,7 +503,7 @@ add_action( 'bp_actions', 'groups_action_redirect_to_random_group' );
 /**
  * Load the activity feed for the current group.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @return false|null False on failure.
  */

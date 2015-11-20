@@ -6,13 +6,13 @@
  * @subpackage Core
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Register bp-core widgets.
  *
- * @since BuddyPress (1.0.0)
+ * @since 1.0.0
  */
 function bp_core_register_widgets() {
 	add_action('widgets_init', create_function('', 'return register_widget("BP_Core_Login_Widget");') );
@@ -22,7 +22,7 @@ add_action( 'bp_register_widgets', 'bp_core_register_widgets' );
 /**
  * BuddyPress Login Widget.
  *
- * @since BuddyPress (1.9.0)
+ * @since 1.9.0
  */
 class BP_Core_Login_Widget extends WP_Widget {
 
@@ -45,7 +45,7 @@ class BP_Core_Login_Widget extends WP_Widget {
 	 *
 	 * @see WP_Widget::widget() for description of parameters.
 	 *
-	 * @param array $args Widget arguments.
+	 * @param array $args     Widget arguments.
 	 * @param array $instance Widget settings, as saved by the user.
 	 */
 	public function widget( $args, $instance ) {
@@ -54,8 +54,8 @@ class BP_Core_Login_Widget extends WP_Widget {
 		/**
 		 * Filters the title of the Login widget.
 		 *
-		 * @since BuddyPress (1.9.0)
-		 * @since BuddyPress (2.3.0) Added 'instance' and 'id_base' to arguments passed to filter.
+		 * @since 1.9.0
+		 * @since 2.3.0 Added 'instance' and 'id_base' to arguments passed to filter.
 		 *
 		 * @param string $title    The widget title.
 		 * @param array  $instance The settings for the particular instance of the widget.
@@ -70,12 +70,11 @@ class BP_Core_Login_Widget extends WP_Widget {
 		<?php if ( is_user_logged_in() ) : ?>
 
 			<?php
-
- 		 	/**
-		 	 * Fires before the display of widget content if logged in.
-		 	 *
-		 	 * @since BuddyPress (1.9.0)
-		 	 */
+			/**
+			 * Fires before the display of widget content if logged in.
+			 *
+			 * @since 1.9.0
+			 */
 			do_action( 'bp_before_login_widget_loggedin' ); ?>
 
 			<div class="bp-login-widget-user-avatar">
@@ -92,10 +91,10 @@ class BP_Core_Login_Widget extends WP_Widget {
 			<?php
 
 			/**
-		 	 * Fires after the display of widget content if logged in.
-		 	 *
-		 	 * @since BuddyPress (1.9.0)
-		 	 */
+			 * Fires after the display of widget content if logged in.
+			 *
+			 * @since 1.9.0
+			 */
 			do_action( 'bp_after_login_widget_loggedin' ); ?>
 
 		<?php else : ?>
@@ -103,10 +102,10 @@ class BP_Core_Login_Widget extends WP_Widget {
 			<?php
 
 			/**
-		 	 * Fires before the display of widget content if logged out.
-		 	 *
-		 	 * @since BuddyPress (1.9.0)
-		 	 */
+			 * Fires before the display of widget content if logged out.
+			 *
+			 * @since 1.9.0
+			 */
 			do_action( 'bp_before_login_widget_loggedout' ); ?>
 
 			<form name="bp-login-form" id="bp-login-widget-form" class="standard-form" action="<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>" method="post">
@@ -116,7 +115,7 @@ class BP_Core_Login_Widget extends WP_Widget {
 				<label for="bp-login-widget-user-pass"><?php _e( 'Password', 'buddypress' ); ?></label>
 				<input type="password" name="pwd" id="bp-login-widget-user-pass" class="input" value="" <?php bp_form_field_attributes( 'password' ) ?> />
 
-				<div class="forgetmenot"><label><input name="rememberme" type="checkbox" id="bp-login-widget-rememberme" value="forever" /> <?php _e( 'Remember Me', 'buddypress' ); ?></label></div>
+				<div class="forgetmenot"><label for="bp-login-widget-rememberme"><input name="rememberme" type="checkbox" id="bp-login-widget-rememberme" value="forever" /> <?php _e( 'Remember Me', 'buddypress' ); ?></label></div>
 
 				<input type="submit" name="wp-submit" id="bp-login-widget-submit" value="<?php esc_attr_e( 'Log In', 'buddypress' ); ?>" />
 
@@ -126,15 +125,24 @@ class BP_Core_Login_Widget extends WP_Widget {
 
 				<?php endif; ?>
 
+				<?php
+
+				/**
+				 * Fires inside the display of the login widget form.
+				 *
+				 * @since 2.4.0
+				 */
+				do_action( 'bp_login_widget_form' ); ?>
+
 			</form>
 
 			<?php
 
 			/**
-		 	 * Fires after the display of widget content if logged out.
-		 	 *
-		 	 * @since BuddyPress (1.9.0)
-		 	 */
+			 * Fires after the display of widget content if logged out.
+			 *
+			 * @since 1.9.0
+			 */
 			do_action( 'bp_after_login_widget_loggedout' ); ?>
 
 		<?php endif;
@@ -147,6 +155,7 @@ class BP_Core_Login_Widget extends WP_Widget {
 	 *
 	 * @param array $new_instance The new instance options.
 	 * @param array $old_instance The old instance options.
+	 *
 	 * @return array $instance The parsed options to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -159,7 +168,9 @@ class BP_Core_Login_Widget extends WP_Widget {
 	/**
 	 * Output the login widget options form.
 	 *
-	 * @param $instance Settings for this widget.
+	 * @param array $instance Settings for this widget.
+	 *
+	 * @return void
 	 */
 	public function form( $instance = array() ) {
 

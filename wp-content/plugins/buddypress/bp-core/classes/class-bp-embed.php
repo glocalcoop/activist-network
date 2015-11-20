@@ -6,7 +6,7 @@
  * @subpackage Core
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * Extends WP_Embed class for use with BuddyPress.
  *
- * @since BuddyPress (1.5.0)
+ * @since 1.5.0
  *
  * @see WP_Embed
  */
@@ -57,7 +57,7 @@ class BP_Embed extends WP_Embed {
 		/**
 		 * Filters the BuddyPress Core oEmbed setup.
 		 *
-		 * @since BuddyPress (1.5.0)
+		 * @since 1.5.0
 		 *
 		 * @param BP_Embed $this Current instance of the BP_Embed. Passed by reference.
 		 */
@@ -80,8 +80,9 @@ class BP_Embed extends WP_Embed {
 	 * @uses _wp_oembed_get_object()
 	 * @uses WP_Embed::maybe_make_link()
 	 *
-	 * @param array $attr Shortcode attributes.
-	 * @param string $url The URL attempting to be embeded.
+	 * @param array  $attr Shortcode attributes.
+	 * @param string $url  The URL attempting to be embeded.
+	 *
 	 * @return string The embed HTML on success, otherwise the original URL.
 	 */
 	public function shortcode( $attr, $url = '' ) {
@@ -105,7 +106,7 @@ class BP_Embed extends WP_Embed {
 						/**
 						 * Filters the oEmbed handler result for the provided URL.
 						 *
-						 * @since BuddyPress (1.5.0)
+						 * @since 1.5.0
 						 *
 						 * @param string $return Handler callback for the oEmbed.
 						 * @param string $url    URL attempting to be embedded.
@@ -120,7 +121,7 @@ class BP_Embed extends WP_Embed {
 		/**
 		 * Filters the embed object ID.
 		 *
-		 * @since BuddyPress (1.5.0)
+		 * @since 1.5.0
 		 *
 		 * @param int $value Value of zero.
 		 */
@@ -129,7 +130,7 @@ class BP_Embed extends WP_Embed {
 		/**
 		 * Filters whether or not oEmbed discovery is on.
 		 *
-		 * @since BuddyPress (1.5.0)
+		 * @since 1.5.0
 		 *
 		 * @param bool $value Current status of oEmbed discovery.
 		 */
@@ -169,11 +170,12 @@ class BP_Embed extends WP_Embed {
 	 * @uses WP_Embed::maybe_make_link() Process URL for hyperlinking on
 	 *       oEmbed failure.
 	 *
-	 * @param int $id ID to do the caching for.
-	 * @param string $url The URL attempting to be embedded.
-	 * @param array $attr Shortcode attributes from {@link WP_Embed::shortcode()}.
-	 * @param array $rawattr Untouched shortcode attributes from
-	 *        {@link WP_Embed::shortcode()}.
+	 * @param int    $id      ID to do the caching for.
+	 * @param string $url     The URL attempting to be embedded.
+	 * @param array  $attr    Shortcode attributes from {@link WP_Embed::shortcode()}.
+	 * @param array  $rawattr Untouched shortcode attributes from
+	 *                        {@link WP_Embed::shortcode()}.
+	 *
 	 * @return string The embed HTML on success, otherwise the original URL.
 	 */
 	public function parse_oembed( $id, $url, $attr, $rawattr ) {
@@ -189,7 +191,7 @@ class BP_Embed extends WP_Embed {
 			/**
 			 * Filters the cache value to be used in the oEmbed, if exists.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 *
 			 * @param string $cache    Empty initial cache value.
 			 * @param int    $id       ID that the caching is for.
@@ -206,7 +208,7 @@ class BP_Embed extends WP_Embed {
 				/**
 				 * Filters the found cache for the provided URL.
 				 *
-				 * @since BuddyPress (1.5.0)
+				 * @since 1.5.0
 				 *
 				 * @param string $cache   Cached HTML markup for embed.
 				 * @param string $url     The URL being embedded.
@@ -225,7 +227,7 @@ class BP_Embed extends WP_Embed {
 				 *
 				 * Lets components / plugins save their cache.
 				 *
-				 * @since BuddyPress (1.5.0)
+				 * @since 1.5.0
 				 *
 				 * @param string $cache    Newly cached HTML markup for embed.
 				 * @param string $cachekey Key to use for the caching in the database.

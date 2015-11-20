@@ -1,5 +1,4 @@
 <?php
-
 /**
  * BuddyPress Groups Screen Functions
  *
@@ -11,7 +10,7 @@
  * @subpackage GroupsScreens
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -24,14 +23,14 @@ function groups_directory_groups_setup() {
 		/**
 		 * Fires before the loading of the Groups directory index.
 		 *
-		 * @since BuddyPress (1.1.0)
+		 * @since 1.1.0
 		 */
 		do_action( 'groups_directory_groups_setup' );
 
 		/**
 		 * Filters the template to load for the Groups directory index.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param string $value Path to the groups directory index template to load.
 		 */
@@ -48,14 +47,14 @@ function groups_screen_my_groups() {
 	/**
 	 * Fires before the loading of the My Groups page.
 	 *
-	 * @since BuddyPress (1.1.0)
+	 * @since 1.1.0
 	 */
 	do_action( 'groups_screen_my_groups' );
 
 	/**
 	 * Filters the template to load for the My Groups page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to the My Groups page template to load.
 	 */
@@ -118,7 +117,7 @@ function groups_screen_group_invites() {
 	/**
 	 * Fires before the loading of a users Groups > Invites template.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param int $group_id ID of the group being displayed
 	 */
@@ -127,7 +126,7 @@ function groups_screen_group_invites() {
 	/**
 	 * Filters the template to load for a users Groups > Invites page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to a users Groups > Invites page template.
 	 */
@@ -146,14 +145,14 @@ function groups_screen_group_home() {
 	/**
 	 * Fires before the loading of a single group's page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 */
 	do_action( 'groups_screen_group_home' );
 
 	/**
 	 * Filters the template to load for a single group's page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to a single group's template to load.
 	 */
@@ -242,7 +241,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Fires after a group forum topic has been stickied.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 *
 			 * @param int $topic_id ID of the topic being stickied.
 			 */
@@ -264,7 +263,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Fires after a group forum topic has been un-stickied.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 *
 			 * @param int $topic_id ID of the topic being un-stickied.
 			 */
@@ -286,7 +285,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Fires after a group forum topic has been closed.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 *
 			 * @param int $topic_id ID of the topic being closed.
 			 */
@@ -308,7 +307,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Fires after a group forum topic has been opened.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 *
 			 * @param int $topic_id ID of the topic being opened.
 			 */
@@ -332,7 +331,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Fires before a group forum topic is deleted.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 *
 			 * @param int $topic_id ID of the topic being deleted.
 			 */
@@ -347,7 +346,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Fires after a group forum topic has been deleted.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 *
 			 * @param int $topic_id ID of the topic being deleted.
 			 */
@@ -380,7 +379,7 @@ function groups_screen_group_forum() {
 				/**
 				 * Fires after a group forum topic has been edited.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 *
 				 * @param int $topic_id ID of the topic being edited.
 				 */
@@ -391,7 +390,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Filters the template to load for a topic edit page.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 *
 			 * @param string $value Path to a topic edit template.
 			 */
@@ -413,7 +412,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Fires before the deletion of a group forum post.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 *
 			 * @param int $post_id ID of the forum post being deleted.
 			 */
@@ -428,7 +427,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Fires after the deletion of a group forum post.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 *
 			 * @param int $post_id ID of the forum post being deleted.
 			 */
@@ -465,7 +464,7 @@ function groups_screen_group_forum() {
 				/**
 				 * Fires after the editing of a group forum post.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 *
 				 * @param int $post_id ID of the forum post being edited.
 				 */
@@ -485,7 +484,7 @@ function groups_screen_group_forum() {
 			/**
 			 * Filters the template to load for a topic page.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 *
 			 * @param string $value Path to a topic template.
 			 */
@@ -541,7 +540,7 @@ function groups_screen_group_forum() {
 		/**
 		 * Fires at the end of the group forum screen loading process.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param int $topic_id ID of the topic being displayed.
 		 * @param int $forum_id ID of the forum being displayed.
@@ -551,7 +550,7 @@ function groups_screen_group_forum() {
 		/**
 		 * Filters the template to load for a group forum page.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param string $value Path to a group forum template.
 		 */
@@ -575,7 +574,7 @@ function groups_screen_group_members() {
 	/**
 	 * Fires before the loading of a group's Members page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param int $id ID of the group whose members are being displayed.
 	 */
@@ -584,7 +583,7 @@ function groups_screen_group_members() {
 	/**
 	 * Filters the template to load for a group's Members page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to a group's Members template.
 	 */
@@ -619,7 +618,7 @@ function groups_screen_group_invite() {
 		/**
 		 * Fires after the sending of a group invite inside the group's Send Invites page.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param int $id ID of the group whose members are being displayed.
 		 */
@@ -631,7 +630,7 @@ function groups_screen_group_invite() {
 		/**
 		 * Filters the template to load for a group's Send Invites page.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param string $value Path to a group's Send Invites template.
 		 */
@@ -648,7 +647,7 @@ function groups_screen_group_invite() {
  * Note that this function is only used when JS is disabled. Normally, clicking
  * Remove Invite removes the invitation via AJAX.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  */
 function groups_remove_group_invite() {
 	if ( ! bp_is_group_invites() ) {
@@ -725,7 +724,7 @@ function groups_screen_group_request_membership() {
 	/**
 	 * Fires before the loading of a group's Request Memebership page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param int $id ID of the group currently being displayed.
 	 */
@@ -734,11 +733,39 @@ function groups_screen_group_request_membership() {
 	/**
 	 * Filters the template to load for a group's Request Membership page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to a group's Request Membership template.
 	 */
 	bp_core_load_template( apply_filters( 'groups_template_group_request_membership', 'groups/single/home' ) );
+}
+
+/**
+ * Handle the loading of a single group's activity.
+ *
+ * @since 2.4.0
+ */
+function groups_screen_group_activity() {
+
+	if ( ! bp_is_single_item() ) {
+		return false;
+	}
+
+	/**
+	 * Fires before the loading of a single group's activity page.
+	 *
+	 * @since 2.4.0
+	 */
+	do_action( 'groups_screen_group_activity' );
+
+	/**
+	 * Filters the template to load for a single group's activity page.
+	 *
+	 * @since 2.4.0
+	 *
+	 * @param string $value Path to a single group's template to load.
+	 */
+	bp_core_load_template( apply_filters( 'groups_screen_group_activity', 'groups/single/activity' ) );
 }
 
 /**
@@ -798,7 +825,7 @@ function groups_screen_group_admin_edit_details() {
 			/**
 			 * Fires before the redirect if a group details has been edited and saved.
 			 *
-			 * @since BuddyPress (1.0.0)
+			 * @since 1.0.0
 			 *
 			 * @param int $id ID of the group that was edited.
 			 */
@@ -810,7 +837,7 @@ function groups_screen_group_admin_edit_details() {
 		/**
 		 * Fires before the loading of the group admin/edit-details page template.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param int $id ID of the group that is being displayed.
 		 */
@@ -819,7 +846,7 @@ function groups_screen_group_admin_edit_details() {
 		/**
 		 * Filters the template to load for a group's admin/edit-details page.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param string $value Path to a group's admin/edit-details template.
 		 */
@@ -868,7 +895,7 @@ function groups_screen_group_admin_settings() {
 		/**
 		 * Fires before the redirect if a group settings has been edited and saved.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param int $id ID of the group that was edited.
 		 */
@@ -880,7 +907,7 @@ function groups_screen_group_admin_settings() {
 	/**
 	 * Fires before the loading of the group admin/group-settings page template.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param int $id ID of the group that is being displayed.
 	 */
@@ -889,7 +916,7 @@ function groups_screen_group_admin_settings() {
 	/**
 	 * Filters the template to load for a group's admin/group-settings page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to a group's admin/group-settings template.
 	 */
@@ -972,7 +999,7 @@ function groups_screen_group_admin_avatar() {
 	/**
 	 * Fires before the loading of the group Change Avatar page template.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param int $id ID of the group that is being displayed.
 	 */
@@ -981,13 +1008,48 @@ function groups_screen_group_admin_avatar() {
 	/**
 	 * Filters the template to load for a group's Change Avatar page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to a group's Change Avatar template.
 	 */
 	bp_core_load_template( apply_filters( 'groups_template_group_admin_avatar', 'groups/single/home' ) );
 }
 add_action( 'bp_screens', 'groups_screen_group_admin_avatar' );
+
+/**
+ * Handle the display of a group's Change cover image page.
+ *
+ * @since 2.4.0
+ */
+function groups_screen_group_admin_cover_image() {
+	if ( 'group-cover-image' != bp_get_group_current_admin_tab() ) {
+		return false;
+	}
+
+	// If the logged-in user doesn't have permission or if cover image uploads are disabled, then stop here
+	if ( ! bp_is_item_admin() || ! bp_group_use_cover_image_header() ) {
+		return false;
+	}
+
+	/**
+	 * Fires before the loading of the group Change cover image page template.
+	 *
+	 * @since 2.4.0
+	 *
+	 * @param int $id ID of the group that is being displayed.
+	 */
+	do_action( 'groups_screen_group_admin_cover_image', bp_get_current_group_id() );
+
+	/**
+	 * Filters the template to load for a group's Change cover image page.
+	 *
+	 * @since 2.4.0
+	 *
+	 * @param string $value Path to a group's Change cover image template.
+	 */
+	bp_core_load_template( apply_filters( 'groups_template_group_admin_cover_image', 'groups/single/home' ) );
+}
+add_action( 'bp_screens', 'groups_screen_group_admin_cover_image' );
 
 /**
  * This function handles actions related to member management on the group admin.
@@ -1020,7 +1082,7 @@ function groups_screen_group_admin_manage_members() {
 			/**
 			 * Fires before the redirect after a group member has been promoted.
 			 *
-			 * @since BuddyPress (1.0.0)
+			 * @since 1.0.0
 			 *
 			 * @param int $user_id ID of the user being promoted.
 			 * @param int $id      ID of the group user is promoted within.
@@ -1053,7 +1115,7 @@ function groups_screen_group_admin_manage_members() {
 			/**
 			 * Fires before the redirect after a group member has been demoted.
 			 *
-			 * @since BuddyPress (1.0.0)
+			 * @since 1.0.0
 			 *
 			 * @param int $user_id ID of the user being demoted.
 			 * @param int $id      ID of the group user is demoted within.
@@ -1079,7 +1141,7 @@ function groups_screen_group_admin_manage_members() {
 			/**
 			 * Fires before the redirect after a group member has been banned.
 			 *
-			 * @since BuddyPress (1.0.0)
+			 * @since 1.0.0
 			 *
 			 * @param int $user_id ID of the user being banned.
 			 * @param int $id      ID of the group user is banned from.
@@ -1105,7 +1167,7 @@ function groups_screen_group_admin_manage_members() {
 			/**
 			 * Fires before the redirect after a group member has been unbanned.
 			 *
-			 * @since BuddyPress (1.0.0)
+			 * @since 1.0.0
 			 *
 			 * @param int $user_id ID of the user being unbanned.
 			 * @param int $id      ID of the group user is unbanned from.
@@ -1131,7 +1193,7 @@ function groups_screen_group_admin_manage_members() {
 			/**
 			 * Fires before the redirect after a group member has been removed.
 			 *
-			 * @since BuddyPress (1.2.6)
+			 * @since 1.2.6
 			 *
 			 * @param int $user_id ID of the user being removed.
 			 * @param int $id      ID of the group the user is removed from.
@@ -1145,7 +1207,7 @@ function groups_screen_group_admin_manage_members() {
 	/**
 	 * Fires before the loading of a group's manage members template.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param int $id ID of the group whose manage members page is being displayed.
 	 */
@@ -1154,7 +1216,7 @@ function groups_screen_group_admin_manage_members() {
 	/**
 	 * Filters the template to load for a group's manage members page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to a group's manage members template.
 	 */
@@ -1207,7 +1269,7 @@ function groups_screen_group_admin_requests() {
 		/**
 		 * Fires before the redirect if a group membership request has been handled.
 		 *
-		 * @since BuddyPress (1.0.0)
+		 * @since 1.0.0
 		 *
 		 * @param int    $id             ID of the group that was edited.
 		 * @param string $request_action Membership request action being performed.
@@ -1220,7 +1282,7 @@ function groups_screen_group_admin_requests() {
 	/**
 	 * Fires before the loading of the group membership request page template.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param int $id ID of the group that is being displayed.
 	 */
@@ -1229,7 +1291,7 @@ function groups_screen_group_admin_requests() {
 	/**
 	 * Filters the template to load for a group's membership request page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to a group's membership request template.
 	 */
@@ -1260,7 +1322,7 @@ function groups_screen_group_admin_delete_group() {
 		/**
 		 * Fires before the deletion of a group from the Delete Group page.
 		 *
-		 * @since BuddyPress (1.5.0)
+		 * @since 1.5.0
 		 *
 		 * @param int $id ID of the group being deleted.
 		 */
@@ -1270,12 +1332,12 @@ function groups_screen_group_admin_delete_group() {
 		if ( !groups_delete_group( $bp->groups->current_group->id ) ) {
 			bp_core_add_message( __( 'There was an error deleting the group. Please try again.', 'buddypress' ), 'error' );
 		} else {
-			bp_core_add_message( __( 'The group was deleted successfully', 'buddypress' ) );
+			bp_core_add_message( __( 'The group was deleted successfully.', 'buddypress' ) );
 
 			/**
 			 * Fires after the deletion of a group from the Delete Group page.
 			 *
-			 * @since BuddyPress (1.0.0)
+			 * @since 1.0.0
 			 *
 			 * @param int $id ID of the group being deleted.
 			 */
@@ -1290,7 +1352,7 @@ function groups_screen_group_admin_delete_group() {
 	/**
 	 * Fires before the loading of the Delete Group page template.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param int $id ID of the group that is being displayed.
 	 */
@@ -1299,7 +1361,7 @@ function groups_screen_group_admin_delete_group() {
 	/**
 	 * Filters the template to load for the Delete Group page.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $value Path to the Delete Group template.
 	 */
@@ -1338,26 +1400,26 @@ function groups_screen_notification_settings() {
 			<tr id="groups-notification-settings-invitation">
 				<td></td>
 				<td><?php _ex( 'A member invites you to join a group', 'group settings on notification settings page','buddypress' ) ?></td>
-				<td class="yes"><input type="radio" name="notifications[notification_groups_invite]" value="yes" <?php checked( $group_invite, 'yes', true ) ?>/></td>
-				<td class="no"><input type="radio" name="notifications[notification_groups_invite]" value="no" <?php checked( $group_invite, 'no', true ) ?>/></td>
+				<td class="yes"><input type="radio" name="notifications[notification_groups_invite]" id="notification-groups-invite-yes" value="yes" <?php checked( $group_invite, 'yes', true ) ?>/><label for="notification-groups-invite-yes" class="bp-screen-reader-text"><?php _e( 'Yes, send email', 'buddypress' ); ?></label></td>
+				<td class="no"><input type="radio" name="notifications[notification_groups_invite]" id="notification-groups-invite-no" value="no" <?php checked( $group_invite, 'no', true ) ?>/><label for="notification-groups-invite-no" class="bp-screen-reader-text"><?php _e( 'No, do not send email', 'buddypress' ); ?></label></td>
 			</tr>
 			<tr id="groups-notification-settings-info-updated">
 				<td></td>
 				<td><?php _ex( 'Group information is updated', 'group settings on notification settings page', 'buddypress' ) ?></td>
-				<td class="yes"><input type="radio" name="notifications[notification_groups_group_updated]" value="yes" <?php checked( $group_update, 'yes', true ) ?>/></td>
-				<td class="no"><input type="radio" name="notifications[notification_groups_group_updated]" value="no" <?php checked( $group_update, 'no', true ) ?>/></td>
+				<td class="yes"><input type="radio" name="notifications[notification_groups_group_updated]" id="notification-groups-group-updated-yes" value="yes" <?php checked( $group_update, 'yes', true ) ?>/><label for="notification-groups-group-updated-yes" class="bp-screen-reader-text"><?php _e( 'Yes, send email', 'buddypress' ); ?></label></td>
+				<td class="no"><input type="radio" name="notifications[notification_groups_group_updated]" id="notification-groups-group-updated-no" value="no" <?php checked( $group_update, 'no', true ) ?>/><label for="notification-groups-group-updated-no" class="bp-screen-reader-text"><?php _e( 'No, do not send email', 'buddypress' ); ?></label></td>
 			</tr>
 			<tr id="groups-notification-settings-promoted">
 				<td></td>
 				<td><?php _ex( 'You are promoted to a group administrator or moderator', 'group settings on notification settings page', 'buddypress' ) ?></td>
-				<td class="yes"><input type="radio" name="notifications[notification_groups_admin_promotion]" value="yes" <?php checked( $group_promo, 'yes', true ) ?>/></td>
-				<td class="no"><input type="radio" name="notifications[notification_groups_admin_promotion]" value="no" <?php checked( $group_promo, 'no', true ) ?>/></td>
+				<td class="yes"><input type="radio" name="notifications[notification_groups_admin_promotion]" id="notification-groups-admin-promotion-yes" value="yes" <?php checked( $group_promo, 'yes', true ) ?>/><label for="notification-groups-admin-promotion-yes" class="bp-screen-reader-text"><?php _e( 'Yes, send email', 'buddypress' ); ?></label></td>
+				<td class="no"><input type="radio" name="notifications[notification_groups_admin_promotion]" id="notification-groups-admin-promotion-no" value="no" <?php checked( $group_promo, 'no', true ) ?>/><label for="notification-groups-admin-promotion-no" class="bp-screen-reader-text"><?php _e( 'No, do not send email', 'buddypress' ); ?></label></td>
 			</tr>
 			<tr id="groups-notification-settings-request">
 				<td></td>
 				<td><?php _ex( 'A member requests to join a private group for which you are an admin', 'group settings on notification settings page', 'buddypress' ) ?></td>
-				<td class="yes"><input type="radio" name="notifications[notification_groups_membership_request]" value="yes" <?php checked( $group_request, 'yes', true ) ?>/></td>
-				<td class="no"><input type="radio" name="notifications[notification_groups_membership_request]" value="no" <?php checked( $group_request, 'no', true ) ?>/></td>
+				<td class="yes"><input type="radio" name="notifications[notification_groups_membership_request]" id="notification-groups-membership-request-yes" value="yes" <?php checked( $group_request, 'yes', true ) ?>/><label for="notification-groups-membership-request-yes" class="bp-screen-reader-text"><?php _e( 'Yes, send email', 'buddypress' ); ?></label></td>
+				<td class="no"><input type="radio" name="notifications[notification_groups_membership_request]" id="notification-groups-membership-request-no" value="no" <?php checked( $group_request, 'no', true ) ?>/><label for="notification-groups-membership-request-no" class="bp-screen-reader-text"><?php _e( 'No, do not send email', 'buddypress' ); ?></label></td>
 			</tr>
 
 			<?php
@@ -1365,7 +1427,7 @@ function groups_screen_notification_settings() {
 			/**
 			 * Fires at the end of the available group settings fields on Notification Settings page.
 			 *
-			 * @since BuddyPress (1.0.0)
+			 * @since 1.0.0
 			 */
 			do_action( 'groups_screen_notification_settings' ); ?>
 
@@ -1384,14 +1446,14 @@ add_action( 'bp_notification_settings', 'groups_screen_notification_settings' );
  * This class sets up the necessary theme compatibility actions to safely output
  * group template parts to the_title and the_content areas of a theme.
  *
- * @since BuddyPress (1.7.0)
+ * @since 1.7.0
  */
 class BP_Groups_Theme_Compat {
 
 	/**
 	 * Set up theme compatibility for the Groups component.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 */
 	public function __construct() {
 		add_action( 'bp_setup_theme_compat', array( $this, 'is_group' ) );
@@ -1400,7 +1462,7 @@ class BP_Groups_Theme_Compat {
 	/**
 	 * Are we looking at something that needs group theme compatibility?
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 */
 	public function is_group() {
 
@@ -1415,7 +1477,7 @@ class BP_Groups_Theme_Compat {
 			/**
 			 * Fires at the start of the group theme compatibility setup.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 */
 			do_action( 'groups_directory_groups_setup' );
 
@@ -1446,7 +1508,7 @@ class BP_Groups_Theme_Compat {
 	 * This is to mirror how WordPress has
 	 * {@link https://codex.wordpress.org/Template_Hierarchy template hierarchy}.
 	 *
-	 * @since BuddyPress (1.8.0)
+	 * @since 1.8.0
 	 *
 	 * @param string $templates The templates from bp_get_theme_compat_templates().
 	 * @return array $templates Array of custom templates to look for.
@@ -1456,7 +1518,7 @@ class BP_Groups_Theme_Compat {
 		/**
 		 * Filters the Groups directory page template hierarchy based on priority.
 		 *
-		 * @since BuddyPress (1.8.0)
+		 * @since 1.8.0
 		 *
 		 * @param array $value Array of default template files to use.
 		 */
@@ -1474,7 +1536,7 @@ class BP_Groups_Theme_Compat {
 	/**
 	 * Update the global $post with directory data.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 */
 	public function directory_dummy_post() {
 		bp_theme_compat_reset_post( array(
@@ -1493,7 +1555,7 @@ class BP_Groups_Theme_Compat {
 	/**
 	 * Filter the_content with the groups index template part.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 */
 	public function directory_content() {
 		return bp_buffer_template_part( 'groups/index', null, false );
@@ -1507,7 +1569,7 @@ class BP_Groups_Theme_Compat {
 	 * This is to mirror how WordPress has
 	 * {@link https://codex.wordpress.org/Template_Hierarchy template hierarchy}.
 	 *
-	 * @since BuddyPress (1.8.0)
+	 * @since 1.8.0
 	 *
 	 * @param string $templates The templates from bp_get_theme_compat_templates().
 	 *
@@ -1518,7 +1580,7 @@ class BP_Groups_Theme_Compat {
 		/**
 		 * Filters the Groups create page template hierarchy based on priority.
 		 *
-		 * @since BuddyPress (1.8.0)
+		 * @since 1.8.0
 		 *
 		 * @param array $value Array of default template files to use.
 		 */
@@ -1536,7 +1598,7 @@ class BP_Groups_Theme_Compat {
 	/**
 	 * Update the global $post with create screen data.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 */
 	public function create_dummy_post() {
 
@@ -1558,7 +1620,7 @@ class BP_Groups_Theme_Compat {
 	/**
 	 * Filter the_content with the create screen template part.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 */
 	public function create_content() {
 		return bp_buffer_template_part( 'groups/create', null, false );
@@ -1572,7 +1634,7 @@ class BP_Groups_Theme_Compat {
 	 * This is to mirror how WordPress has
 	 * {@link https://codex.wordpress.org/Template_Hierarchy template hierarchy}.
 	 *
-	 * @since BuddyPress (1.8.0)
+	 * @since 1.8.0
 	 *
 	 * @param string $templates The templates from bp_get_theme_compat_templates().
 	 * @return array $templates Array of custom templates to look for.
@@ -1584,7 +1646,7 @@ class BP_Groups_Theme_Compat {
 		/**
 		 * Filters the Groups single pages template hierarchy based on priority.
 		 *
-		 * @since BuddyPress (1.8.0)
+		 * @since 1.8.0
 		 *
 		 * @param array $value Array of default template files to use.
 		 */
@@ -1606,7 +1668,7 @@ class BP_Groups_Theme_Compat {
 	/**
 	 * Update the global $post with single group data.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 */
 	public function single_dummy_post() {
 		bp_theme_compat_reset_post( array(
@@ -1625,7 +1687,7 @@ class BP_Groups_Theme_Compat {
 	/**
 	 * Filter the_content with the single group template part.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 */
 	public function single_content() {
 		return bp_buffer_template_part( 'groups/single/home', null, false );

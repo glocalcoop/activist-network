@@ -6,20 +6,20 @@
  * @subpackage Core
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Create HTML list of BP nav items.
  *
- * @since BuddyPress (1.7.0)
+ * @since 1.7.0
  */
 class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 	/**
 	 * Description of fields indexes for building markup.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 * @var array
 	 */
 	var $db_fields = array( 'id' => 'css_id', 'parent' => 'parent' );
@@ -27,7 +27,7 @@ class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 	/**
 	 * Tree type.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 * @var string
 	 */
 	var $tree_type = array();
@@ -45,12 +45,13 @@ class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 	 * hierarchy (we use a slug). Obviously, WordPress Menus use Posts, and
 	 * those have ID/post_parent.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 *
 	 * @see Walker::walk()
 	 *
-	 * @param array $elements See {@link Walker::walk()}.
-	 * @param int $max_depth See {@link Walker::walk()}.
+	 * @param array $elements  See {@link Walker::walk()}.
+	 * @param int   $max_depth See {@link Walker::walk()}.
+	 *
 	 * @return string See {@link Walker::walk()}.
 	 */
 	public function walk( $elements, $max_depth ) {
@@ -78,7 +79,7 @@ class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 		}
 
 		/*
-		 * need to display in hierarchical order
+		 * Need to display in hierarchical order
 		 * separate elements into two buckets: top level and children elements
 		 * children_elements is two dimensional array, eg.
 		 * children_elements[10][] contains all sub-elements whose parent is 10.
@@ -95,8 +96,8 @@ class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 		}
 
 		/*
-		 * when none of the elements is top level
-		 * assume the first one must be root of the sub elements
+		 * When none of the elements is top level
+		 * assume the first one must be root of the sub elements.
 		 */
 		if ( empty( $top_level_elements ) ) {
 
@@ -134,17 +135,17 @@ class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 	/**
 	 * Display the current <li> that we are on.
 	 *
-	 * @see Walker::start_el() for complete description of parameters .
+	 * @see Walker::start_el() for complete description of parameters.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 *
 	 * @param string $output Passed by reference. Used to append
-	 *        additional content.
-	 * @param object $item Menu item data object.
-	 * @param int $depth Depth of menu item. Used for padding. Optional,
-	 *        defaults to 0.
-	 * @param array $args Optional. See {@link Walker::start_el()}.
-	 * @param int $current_page Menu item ID. Optional.
+	 *                       additional content.
+	 * @param object $item   Menu item data object.
+	 * @param int    $depth  Depth of menu item. Used for padding. Optional,
+	 *                       defaults to 0.
+	 * @param array  $args   Optional. See {@link Walker::start_el()}.
+	 * @param int    $id     Menu item ID. Optional.
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		// If we're someway down the tree, indent the HTML with the appropriate number of tabs
@@ -153,7 +154,7 @@ class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 		/**
 		 * Filters the classes to be added to the nav menu markup.
 		 *
-		 * @since BuddyPress (1.7.0)
+		 * @since 1.7.0
 		 *
 		 * @param array  $value Array of classes to be added.
 		 * @param object $item  Menu item data object.
@@ -168,7 +169,7 @@ class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 		/**
 		 * Filters the value to be used for the nav menu ID attribute.
 		 *
-		 * @since BuddyPress (1.7.0)
+		 * @since 1.7.0
 		 *
 		 * @param string $id   ID attribute to be added to the menu item.
 		 * @param object $item Menu item data object.
@@ -190,7 +191,7 @@ class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 		/**
 		 * Filters the link text to be added to the item output.
 		 *
-		 * @since BuddyPress (1.7.0)
+		 * @since 1.7.0
 		 *
 		 * @param string $name  Item text to be applied.
 		 * @param int    $value Post ID the title is for.
@@ -202,7 +203,7 @@ class BP_Walker_Nav_Menu extends Walker_Nav_Menu {
 		/**
 		 * Filters the final result for the menu item.
 		 *
-		 * @since BuddyPress (1.7.0)
+		 * @since 1.7.0
 		 *
 		 * @param string $item_output Constructed output for the menu item to append to output.
 		 * @param object $item        Menu item data object.

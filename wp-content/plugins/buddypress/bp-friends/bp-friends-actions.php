@@ -1,7 +1,6 @@
 <?php
-
 /**
- * BuddyPress Friends Actions
+ * BuddyPress Friends Actions.
  *
  * Action functions are exactly the same as screen functions, however they do
  * not have a template screen associated with them. Usually they will send the
@@ -11,7 +10,7 @@
  * @subpackage FriendsActions
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**

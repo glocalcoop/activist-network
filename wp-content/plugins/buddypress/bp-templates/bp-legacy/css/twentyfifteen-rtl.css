@@ -457,10 +457,6 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 	line-height: 1.4;
 }
 
-#buddypress form#whats-new-form textarea {
-	width: 100%;
-}
-
 @media screen and (max-width: 30em) {
 	#buddypress form#whats-new-form #whats-new-post-in-box select {
 		font-size: 14px;
@@ -491,11 +487,6 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 	#buddypress form#whats-new-form #whats-new-options #whats-new-post-in-box {
 		order: 1;
 	}
-}
-
-#buddypress form#whats-new-form #whats-new-options[style] {
-	min-height: 6rem;
-	overflow: visible;
 }
 
 #buddypress form#whats-new-form #whats-new-options[style] #whats-new-post-in-box {
@@ -952,7 +943,6 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 	width: 100%;
 }
 
-.bp-user #buddypress #item-header #item-header-avatar img.avatar,
 .bp-user #buddypress #item-header #item-header-avatar a {
 	border-bottom: 0;
 	display: inline-block;
@@ -967,7 +957,6 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 	.bp-user #buddypress #item-header #item-header-avatar img.avatar,
 	.bp-user #buddypress #item-header #item-header-avatar a {
 		float: right;
-		width: 100%;
 	}
 	.bp-user #buddypress #item-header #item-header-content {
 		float: left;
@@ -1706,9 +1695,18 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 	border: 1px solid rgba(153, 153, 153, 0.5);
 }
 
+#buddypress .wp-editor-wrap a.button,
+#buddypress .wp-editor-wrap button,
+#buddypress .wp-editor-wrap input[type=submit],
+#buddypress .wp-editor-wrap input[type=button],
+#buddypress .wp-editor-wrap input[type=reset] {
+	padding: 0 5px 1px;
+}
+
 #buddypress .standard-form li,
 #buddypress .group-create-form li {
 	float: none;
+	list-style: none;
 }
 
 #buddypress .standard-form input[type='text'],
