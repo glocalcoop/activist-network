@@ -1,0 +1,190 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Developer"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "A plugin, which helps WordPress developers develop."
+msgstr ""
+
+#. Screenshot description.
+msgid "On activation, the plugin prompts you to specify what type of developer you are. This is used to configure the plugins checks."
+msgstr ""
+
+#. Screenshot description.
+msgid "On activation, the plugin does a quick check to see if you have essential developer plugins installed."
+msgstr ""
+
+#. Screenshot description.
+msgid "With one click you can install and activate the plugin."
+msgstr ""
+
+#. Screenshot description.
+msgid "The plugin's settings page (Tools &gt; Developer) will check to make sure your environment is correctly configured, including plugins, constants, and other settings."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "This plugin will help you optimize your development environment by making sure that you have all the essential tools and plugins installed."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "If you'd like to check out the code and contribute, <a href=\"https://github.com/Automattic/developer\">join us on GitHub</a>. Pull requests, issues, and plugin recommendations are more than welcome!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "We would like to thank Ejner Galaz for letting us use the <code>developer</code> slug in the WordPress.org plugin repository."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload the <code>developer</code> folder to your plugins directory (e.g. <code>/wp-content/plugins/</code>)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the plugin through the 'Plugins' menu in WordPress"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Follow the instructions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Remove MP6"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix strict standards notice"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix PHP Notice in <code>is_dev_version()</code>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Don't recommend Pig Latin for VIP"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix cache key length by hashing relevant data"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Don't recommend Beta Tester if we have a dev version of WordPress"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix cache key length"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add WP-CLI 0.11.2 compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "WP-CLI: Mark selected type as active"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix strict errors in upgrader"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added WP-CLI command"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed Grunion Contact Form because it's part of Jetpack"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added MP6 to recommended plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Koop's Debug Bar Console to recommended plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Made purpose of activate/install links on Settings page more obvious"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added link to full plugin details on Settings page (opens in Thickbox)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added ability to define multiple project types for plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added ability to define project types for constants"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Jetpack to recommended plugins and constants"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added plugin descriptions to installation and settings pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added improved error reporting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added <a href=\"http://wordpress.org/extend/plugins/log-viewer/\">Log Viewer</a> to recommended plugins. Props to @rockaut for the suggestion"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "French localization. Props <a href=\"https://github.com/fxbenard\">fxbenard</a>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Replaced Reveal IDs with Simply Show IDs. The former never installed."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: Show a few plugins as active when they're actually active."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix piglatin slug, props bobbingwide"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New \"WP.org Theme\" project type for developers building themes for self-hosted installs with a number of sweet plugins recommended by the WordPress.com Theme Team."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Simplify some of the wording across the plugin."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added John Blackbourn's <a href=\"http://wordpress.org/extend/plugins/user-switching/\">User Switching</a> is now a recommended plugin for all projects."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added <a href=\"http://wordpress.org/extend/plugins/pig-latin\">Pig Latin</a> plugin to help developer i18n their code."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added resources for all projects."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: don't show installation prompt in network admin."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Initial Release"
+msgstr ""
+
+#. Found in faq header.
+msgid "Why are there no FAQs besides this one?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Because you haven't asked one yet."
+msgstr ""
