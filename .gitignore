@@ -2,55 +2,37 @@
 .htaccess
 .DS_Store
 *.bak
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
 sitemap.xml
 *.log
-wp-content/cache/
-wp-content/backups/
+
 sitemap.xml.gz
 wp-config.php
 civicrm.settings.php
-wp-content/plugins/files/
-wp-content/plugins/akismet/
-wp-content/plugins/hello-dolly/
-wp-content/plugins/anp*
-wp-content/plugins/handbook
-wp-content/plugins/wp-example-content/content.php
-wp-content/plugins/wp-example-content/magic.php
-wp-content/plugins/wp-example-content/readme.txt
-wp-content/plugins/wp-example-content/screenshot-1.png
-wp-content/plugins/wp-example-content/screenshot-2.png
-wp-content/plugins/wp-example-content/screenshot-3.png
 
-# wp-content/themes/twentyfifteen/
-# wp-content/themes/twentyfourteen/
-# wp-content/themes/twentythirteen/
-wp-content/themes/network*
-!wp-content/themes/network-main-child
-wp-content/themes/*/node_modules
+app/wp-cache-config.php
+app/blogs.dir/
+app/cache/
+app/upgrade/
+app/uploads/
+app/backups/
+app/plugins/files/
+app/plugins/akismet/
+app/plugins/hello-dolly/
+app/plugins/anp*
+app/plugins/handbook
+app/plugins/wp-example-content/content.php
+app/plugins/wp-example-content/magic.php
+app/plugins/wp-example-content/readme.txt
+app/plugins/wp-example-content/screenshot-1.png
+app/plugins/wp-example-content/screenshot-2.png
+app/plugins/wp-example-content/screenshot-3.png
 
-license.txt
-readme.html
-wp-activate.php
-wp-admin/
-wp-blog-header.php
-wp-comments-post.php
-wp-config-sample.php
-wp-config.php~
-wp-cron.php
-wp-includes/
-wp-links-opml.php
-wp-load.php
-wp-login.php
-wp-mail.php
-wp-settings.php
-wp-signup.php
-wp-trackback.php
-xmlrpc.php
+# app/themes/twentyfifteen/
+# app/themes/twentyfourteen/
+# app/themes/twentythirteen/
+app/themes/network*
+!app/themes/network-main-child
+app/themes/*/node_modules
 
 .brackets.json
 *.sass-cache
