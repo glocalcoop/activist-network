@@ -16,8 +16,6 @@ app/cache/
 app/upgrade/
 app/uploads/
 app/backups/
-app/plugins/dev*
-app/plugins/debug*
 app/plugins/files/
 app/plugins/akismet/
 app/plugins/hello-dolly/
