@@ -9,6 +9,7 @@ sitemap.xml.gz
 wp-config.php
 civicrm.settings.php
 
+wp/
 app/wp-cache-config.php
 app/blogs.dir/
 app/cache/
