@@ -1,0 +1,21 @@
+[submodule "app/plugins/anp-global-menu"]
+	path = app/plugins/anp-global-menu
+	url = https://github.com/glocalcoop/anp-global-menu.git
+[submodule "app/plugins/anp-meetings"]
+	path = app/plugins/anp-meetings
+	url = https://github.com/glocalcoop/anp-meetings.git
+[submodule "app/plugins/anp-network-content"]
+	path = app/plugins/anp-network-content
+	url = https://github.com/glocalcoop/anp-network-content.git
+[submodule "app/themes/network-main"]
+	path = app/themes/network-main
+	url = https://github.com/glocalcoop/anp-network-main-theme.git
+[submodule "app/themes/network-subsite"]
+	path = app/themes/network-subsite
+	url = https://github.com/glocalcoop/anp-network-subsite-theme.git
+[submodule "app/themes/network-partner"]
+	path = app/themes/network-partner
+	url = https://github.com/glocalcoop/anp-network-partner-theme.git
+[submodule "app/plugins/anp-custom-functions"]
+	path = app/plugins/anp-custom-functions
+	url = https://github.com/glocalcoop/anp-custom-functions.git
