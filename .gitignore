@@ -17,8 +17,8 @@ civicrm.settings.php
 wp-content/plugins/files/
 wp-content/plugins/akismet/
 wp-content/plugins/hello-dolly/
-wp-content/plugins/*/node_modules
-
+wp-content/plugins/anp*
+wp-content/plugins/handbook
 wp-content/plugins/wp-example-content/content.php
 wp-content/plugins/wp-example-content/magic.php
 wp-content/plugins/wp-example-content/readme.txt
@@ -29,7 +29,7 @@ wp-content/plugins/wp-example-content/screenshot-3.png
 # wp-content/themes/twentyfifteen/
 # wp-content/themes/twentyfourteen/
 # wp-content/themes/twentythirteen/
-wp-content/themes/network-main-*
+wp-content/themes/network*
 !wp-content/themes/network-main-child
 wp-content/themes/*/node_modules
 
@@ -54,6 +54,7 @@ xmlrpc.php
 
 .brackets.json
 *.sass-cache
+node_modules
 
 .gitignore~
 .htaccess~
