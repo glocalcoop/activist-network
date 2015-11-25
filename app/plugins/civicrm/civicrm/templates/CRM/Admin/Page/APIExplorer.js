@@ -365,7 +365,14 @@
           entity: entity,
           select: {
             multiple: multiSelect,
-            minimumInputLength: _.includes(OPEN_IMMEDIATELY, entity) ? 0 : 1
+            minimumInputLength: _.includes(OPEN_IMMEDIATELY, entity) ? 0 : 1,
+            // If user types a numeric id, allow it as a choice
+            createSearchChoice: function(input) {
+              var match = /[1-9][0-9]*/.exec(input);
+              if (match && match[0] === input) {
+                return {id: input, label: input};
+              }
+            }
           }
         });
       }
@@ -548,7 +555,7 @@
       json: "CRM.api3('" + entity + "', '" + action + "'",
       drush: "drush cvapi " + entity + '.' + action + ' ',
       wpcli: "wp cv api " + entity + '.' + action + ' ',
-      rest: CRM.config.resourceBase + "extern/rest.php?entity=" + entity + "&action=" + action + "&api_key=yourkey&key=sitekey&json=" + JSON.stringify(params)
+      rest: CRM.config.resourceBase + "extern/rest.php?entity=" + entity + "&action=" + action + "&api_key=userkey&key=sitekey&json=" + JSON.stringify(params)
     };
     smartyPhp = [];
     $.each(params, function(key, value) {

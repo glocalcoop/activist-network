@@ -75,7 +75,7 @@ Not only does this WordPress RSS Aggregator Plugin import a snippet of the rss f
 
 When you start importing rss feeds as a part of your content backup, autoblogging or blogging strategy, you'll be able to reap the benefits of increased content and a larger fan base, which will translate into more traffic and more revenue or dollars for your business!
 
-**PS**: By the way, if RSS Post Importer doesn't work out for you, you might want to try one of these cool alternative pluginsPS: By the way, if RSS Post Importer doesn't work out for you, you might want to try one of these cool alternative plugins
+**PS**: By the way, if RSS Post Importer doesn't work out for you, you might want to try one of these cool alternative plugins
 
 WP-o-Matic, WP-o-Matic, RSSImport, FeedWordPress, Syndicate Press, FeedWeb, RSS Just Better, CyberSyn, CSV 2 Post, Simple Feed Copyright, WP Syndicate, HungryFEED, Feedzy , WP Pipes and many other I can't list here. **RSS Post Importer imports data from a feed and saves it as full stand alone posts.**
 

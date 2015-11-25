@@ -3585,6 +3585,8 @@ CREATE TABLE `civicrm_report_instance` (
      `grouprole` varchar(1024)    COMMENT 'role required to be able to run this instance',
      `form_values` text    COMMENT 'Submitted form values for this report',
      `is_active` tinyint    COMMENT 'Is this entry active?',
+     `created_id` int unsigned    COMMENT 'FK to contact table.',
+     `owner_id` int unsigned    COMMENT 'FK to contact table.',
      `email_subject` varchar(255)    COMMENT 'Subject of email',
      `email_to` text    COMMENT 'comma-separated list of email addresses to send the report to',
      `email_cc` text    COMMENT 'comma-separated list of email addresses to send the report to',
@@ -3597,7 +3599,7 @@ CREATE TABLE `civicrm_report_instance` (
     PRIMARY KEY ( `id` )
  
  
-,          CONSTRAINT FK_civicrm_report_instance_domain_id FOREIGN KEY (`domain_id`) REFERENCES `civicrm_domain`(`id`) ,          CONSTRAINT FK_civicrm_report_instance_navigation_id FOREIGN KEY (`navigation_id`) REFERENCES `civicrm_navigation`(`id`) ON DELETE SET NULL,          CONSTRAINT FK_civicrm_report_instance_drilldown_id FOREIGN KEY (`drilldown_id`) REFERENCES `civicrm_report_instance`(`id`) ON DELETE SET NULL  
+,          CONSTRAINT FK_civicrm_report_instance_domain_id FOREIGN KEY (`domain_id`) REFERENCES `civicrm_domain`(`id`) ,          CONSTRAINT FK_civicrm_report_instance_created_id FOREIGN KEY (`created_id`) REFERENCES `civicrm_contact`(`id`) ON DELETE SET NULL,          CONSTRAINT FK_civicrm_report_instance_owner_id FOREIGN KEY (`owner_id`) REFERENCES `civicrm_contact`(`id`) ON DELETE SET NULL,          CONSTRAINT FK_civicrm_report_instance_navigation_id FOREIGN KEY (`navigation_id`) REFERENCES `civicrm_navigation`(`id`) ON DELETE SET NULL,          CONSTRAINT FK_civicrm_report_instance_drilldown_id FOREIGN KEY (`drilldown_id`) REFERENCES `civicrm_report_instance`(`id`) ON DELETE SET NULL  
 )  ENGINE=InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci  ;
 
 -- /*******************************************************

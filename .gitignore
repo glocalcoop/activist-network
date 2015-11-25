@@ -8,6 +8,7 @@ sitemap.xml
 sitemap.xml.gz
 wp-config.php
 civicrm.settings.php
+composer.lock
 
 wp/
 app/wp-cache-config.php
@@ -16,6 +17,7 @@ app/cache/
 app/upgrade/
 app/uploads/
 app/backups/
+app/vendor/
 app/plugins/dev*
 app/plugins/debug*
 app/plugins/files/

@@ -254,6 +254,7 @@ class CRM_Contribute_Form_Task_Invoice extends CRM_Contribute_Form_Task {
     // gives the status id when contribution status is 'Refunded'
     $contributionStatusID = CRM_Contribute_PseudoConstant::contributionStatus(NULL, 'name');
     $refundedStatusId = CRM_Utils_Array::key('Refunded', $contributionStatusID);
+    $cancelledStatusId = CRM_Utils_Array::key('Cancelled', $contributionStatusID);
 
     // getting data from admin page
     $prefixValue = CRM_Core_BAO_Setting::getItem(CRM_Core_BAO_Setting::CONTRIBUTE_PREFERENCES_NAME, 'contribution_invoice_settings');
@@ -310,8 +311,14 @@ class CRM_Contribute_Form_Task_Invoice extends CRM_Contribute_Form_Task {
         $stateProvinceAbbreviation = '';
       }
 
-      if ($contribution->contribution_status_id == $refundedStatusId) {
-        $creditNoteId = CRM_Utils_Array::value('credit_notes_prefix', $prefixValue) . "" . $contribution->id;
+      if ($contribution->contribution_status_id == $refundedStatusId || $contribution->contribution_status_id == $cancelledStatusId) {
+        if (is_null($contribution->creditnote_id)) {
+          $creditNoteId = CRM_Contribute_BAO_Contribution::createCreditNoteId();
+          CRM_Core_DAO::setFieldValue('CRM_Contribute_DAO_Contribution', $contribution->id, 'creditnote_id', $creditNoteId);
+        }
+        else {
+          $creditNoteId = $contribution->creditnote_id;
+        }
       }
       $invoiceId = CRM_Utils_Array::value('invoice_prefix', $prefixValue) . "" . $contribution->id;
 
@@ -431,6 +438,7 @@ class CRM_Contribute_Form_Task_Invoice extends CRM_Contribute_Form_Task {
         'lineItem' => $lineItem,
         'dataArray' => $dataArray,
         'refundedStatusId' => $refundedStatusId,
+        'cancelledStatusId' => $cancelledStatusId,
         'contribution_status_id' => $contribution->contribution_status_id,
         'subTotal' => $subTotal,
         'street_address' => CRM_Utils_Array::value('street_address', CRM_Utils_Array::value($contribution->contact_id, $billingAddress)),
@@ -457,12 +465,13 @@ class CRM_Contribute_Form_Task_Invoice extends CRM_Contribute_Form_Task {
         $tplParams['creditnote_id'] = $creditNoteId;
       }
 
+      $pdfFileName = "{$invoiceId}.pdf";
       $sendTemplateParams = array(
         'groupName' => 'msg_tpl_workflow_contribution',
         'valueName' => 'contribution_invoice_receipt',
         'contactId' => $contribution->contact_id,
         'tplParams' => $tplParams,
-        'PDFFilename' => 'Invoice.pdf',
+        'PDFFilename' => $pdfFileName,
       );
       $session = CRM_Core_Session::singleton();
       $contactID = $session->get('userID');
@@ -520,7 +529,8 @@ class CRM_Contribute_Form_Task_Invoice extends CRM_Contribute_Form_Task {
 
         list($sent, $subject, $message, $html) = CRM_Core_BAO_MessageTemplate::sendTemplate($sendTemplateParams);
         // functions call for adding activity with attachment
-        $fileName = self::putFile($html);
+        $pdfFileName = "{$invoiceId}.pdf";
+        $fileName = self::putFile($html, $pdfFileName);
         self::addActivities($subject, $contribution->contact_id, $fileName, $params);
       }
       elseif ($contribution->_component == 'event') {
@@ -534,14 +544,12 @@ class CRM_Contribute_Form_Task_Invoice extends CRM_Contribute_Form_Task {
 
         list($sent, $subject, $message, $html) = CRM_Core_BAO_MessageTemplate::sendTemplate($sendTemplateParams);
         // functions call for adding activity with attachment
-        $fileName = self::putFile($html);
+        $pdfFileName = "{$invoiceId}.pdf";
+        $fileName = self::putFile($html, $pdfFileName);
         self::addActivities($subject, $contribution->contact_id, $fileName, $params);
       }
 
       CRM_Core_DAO::setFieldValue('CRM_Contribute_DAO_Contribution', $contribution->id, 'invoice_id', $invoiceId);
-      if ($contribution->contribution_status_id == $refundedStatusId) {
-        CRM_Core_DAO::setFieldValue('CRM_Contribute_DAO_Contribution', $contribution->id, 'creditnote_id', $creditNoteId);
-      }
       $invoiceTemplate->clearTemplateVars();
     }
 
@@ -550,13 +558,14 @@ class CRM_Contribute_Form_Task_Invoice extends CRM_Contribute_Form_Task {
         return $html;
       }
       else {
-        CRM_Utils_PDF_Utils::html2pdf($messageInvoice, 'Invoice.pdf', FALSE, array(
+        $pdfFileName = "{$invoiceId}.pdf";
+        CRM_Utils_PDF_Utils::html2pdf($messageInvoice, $pdfFileName, FALSE, array(
           'margin_top' => 10,
           'margin_left' => 65,
           'metric' => 'px',
         ));
         // functions call for adding activity with attachment
-        $fileName = self::putFile($html);
+        $fileName = self::putFile($html, $pdfFileName);
         self::addActivities($subject, $contactIds, $fileName, $params);
 
         CRM_Utils_System::civiExit();
@@ -634,14 +643,14 @@ class CRM_Contribute_Form_Task_Invoice extends CRM_Contribute_Form_Task {
    * @return string
    *   Name of file which is in pdf format
    */
-  static public function putFile($html) {
+  static public function putFile($html, $name = 'Invoice.pdf') {
     require_once "vendor/dompdf/dompdf/dompdf_config.inc.php";
     $doc = new DOMPDF();
     $doc->load_html($html);
     $doc->render();
     $html = $doc->output();
     $config = CRM_Core_Config::singleton();
-    $fileName = $config->uploadDir . 'Invoice.pdf';
+    $fileName = $config->uploadDir . $name;
     file_put_contents($fileName, $html);
     return $fileName;
   }

@@ -4,10 +4,11 @@
 Plugin Name: Tadpole CiviCRM CSS for WordPress
 Plugin URI: https://tadpole.cc
 Description: Clean up CiviCRM default CSS handling.  On Activation, via CiviCRM API deactivate built in civicrm.css.  Then properly register and load Tadpole's custom civicrm.css on the front end, in the admin register the default civicrm.css.
-Version: 1.1
+Version: 1.2
 Author: Tadpole Collective
 Author URI: https://tadpole.cc
 License: AGPL
+CiviCRM Versions:  4.4 4.5 4.6
 */
 
 
