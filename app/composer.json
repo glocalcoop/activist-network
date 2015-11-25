@@ -20,7 +20,7 @@
                 "dist": {
                     "type": "zip",
                     "url": "https://github.com/glocalcoop/anp-global-menu/archive/master.zip"
-                },
+                }
             }
         },
         {
@@ -32,7 +32,7 @@
                 "dist": {
                     "type": "zip",
                     "url": "https://github.com/glocalcoop/anp-meetings/archive/master.zip"
-                },
+                }
             }
         },
         {
@@ -44,19 +44,19 @@
                 "dist": {
                     "type": "zip",
                     "url": "https://github.com/glocalcoop/anp-network-content/archive/master.zip"
-                },
+                }
             }
         },
         {
             "type": "package",
             "package": {
                 "name": "glocalcoop/handbook",
-                "version": "v1.0",
+                "version": "master",
                 "type": "wordpress-plugin",
                 "dist": {
                     "type": "zip",
                     "url": "https://github.com/glocalcoop/anp-network-content/archive/master.zip"
-                },
+                }
             }
         },
         {
@@ -68,44 +68,41 @@
                 "dist": {
                     "type": "zip",
                     "url": "https://download.civicrm.org/civicrm-4.6.9-wordpress.zip"
-                },
+                }
             }
         },
         {
             "type": "package",
             "package": {
                 "name": "tadpolecc/tadpole-civicrm-css",
-                "version": "1.2",
+                "version": "master",
                 "type": "wordpress-plugin",
                 "dist": {
                     "type": "zip",
                     "url": "https://github.com/tadpolecc/tadpole-civicrm-css/archive/master.zip"
-                },
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "humanmade/mercator",
-                "version": "0.1",
-                "type": "wordpress-muplugin",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/humanmade/Mercator/archive/master.zip"
-                },
+                }
             }
         }
     ],
     "require": {
-        "wpackagist-plugin/events-manager": ">=5.6.1",
-        "wpackagist-plugin/events-manager-osm": ">=0.2",
+        "wpackagist-plugin/admin-post-navigation": ">=1.9.2",
+        "wpackagist-plugin/advanced-custom-fields": ">=4.4.3",
         "wpackagist-plugin/agreeable": ">=1.4",
         "wpackagist-plugin/blog-copier": ">=1.0.7",
-        "wpackagist-plugin/advanced-custom-fields": ">=4.4.3",
-        "wpackagist-plugin/admin-post-navigation": ">=1.9.2",
-        "wpackagist-plugin/jetpack": ">=3.7.2",
+        "wpackagist-plugin/bp-groupblog": ">=1.8.11",
+        "wpackagist-plugin/bp-groups-civicrm-sync": ">=0.2.1",
+        "wpackagist-plugin/buddypress-docs": ">=1.8.8",
+        "wpackagist-plugin/buddypress-group-email-subscription": ">=3.5.2",
+        "wpackagist-plugin/buddypress": ">=2.4.0-beta1",
+        "wpackagist-plugin/civicrm-admin-utilities": ">=0.2.2",
+        "wpackagist-plugin/custom-contact-forms": ">=6.9.2",
+        "wpackagist-plugin/events-manager-osm": ">=0.2",
+        "wpackagist-plugin/events-manager": ">=5.6.1",
+        "wpackagist-plugin/invite-anyone": ">=1.3.8",
         "wpackagist-plugin/jetpack-module-control": ">=1.3",
+        "wpackagist-plugin/jetpack": ">=3.7.2",
         "wpackagist-plugin/join-my-multisite": ">=1.7.8",
+        "wpackagist-plugin/members": ">=1.1.0",
         "wpackagist-plugin/moderate-new-blogs": ">=4.3",
         "wpackagist-plugin/more-privacy-options": ">=4.1.1",
         "wpackagist-plugin/nav-menu-roles": ">=1.7.1",
@@ -120,23 +117,15 @@
         "wpackagist-plugin/user-role-editor": ">=4.19.3",
         "wpackagist-plugin/user-switching": ">=1.0.8",
         "wpackagist-plugin/widget-css-classes": ">=1.2.8",
-        "wpackagist-plugin/wordpress-form-manager": ">=1.7.3",
         "wpackagist-plugin/wordpress-importer": ">=0.6.1",
+        "wpackagist-plugin/wordpress-mu-domain-mapping": ">=0.5.5.1",
         "wpackagist-plugin/wp-email-login": ">=4.6.4",
         "wpackagist-plugin/wp-help": ">=1.4.1",
         "wpackagist-plugin/wp-mail-smtp": ">=0.9.5",
         "wpackagist-plugin/wp-multi-network": ">=1.6.0",
         "wpackagist-plugin/wp-multisite-feed": ">=1.0.3",
-        "wpackagist-plugin/buddypress": ">=2.4.0-beta1",
-        "wpackagist-plugin/bp-groupblog": ">=1.8.11",
-        "wpackagist-plugin/bp-groups-civicrm-sync": ">=0.2.1",
-        "wpackagist-plugin/buddypress-docs": ">=1.8.8",
-        "wpackagist-plugin/buddypress-group-email-subscription": ">=3.5.2",
-        "wpackagist-plugin/invite-anyone": ">=1.3.8",
-        "wpackagist-plugin/civicrm-admin-utilities": ">=0.2.2",
-        "humanmade/mercator": ">=0.1",
         "civicrm/civicrm": ">=4.6.9",
-        "tadpolecc/tadpole-civicrm-css": ">=1.2",
+        "tadpolecc/tadpole-civicrm-css": "dev-master",
         "glocalcoop/anp-network-content":"dev-master",
         "glocalcoop/anp-global-menu": "dev-master",
         "glocalcoop/anp-meetings": "dev-master",
