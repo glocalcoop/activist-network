@@ -146,9 +146,9 @@
     },
     "extra": {
         "installer-paths": {
-            "./plugins/{$name}/": ["type:wordpress-plugin"],
-            "./themes/{$name}/": ["type:wordpress-theme"],
-            "./mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+            "./app/plugins/{$name}/": ["type:wordpress-plugin"],
+            "./app/themes/{$name}/": ["type:wordpress-theme"],
+            "./app/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
         }
     }
 }
