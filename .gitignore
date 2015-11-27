@@ -10,6 +10,7 @@ composer.lock
 wp
 node_modules
 vendor
+app/themes/hybrid*
 app/uploads/*
 app/plugins/files
 
