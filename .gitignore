@@ -2,46 +2,12 @@
 .htaccess
 .DS_Store
 *.bak
-sitemap.xml
-*.log
-
-sitemap.xml.gz
-wp-config.php
-civicrm.settings.php
-composer.lock
-
-wp/
-app/wp-cache-config.php
-app/blogs.dir/
-app/cache/
-app/upgrade/
-app/uploads/
-app/backups/
-app/vendor/
-app/plugins/dev*
-app/plugins/debug*
-app/plugins/files/
-app/plugins/akismet/
-app/plugins/hello-dolly/
-app/plugins/anp*
-app/plugins/handbook
-app/plugins/wp-example-content/content.php
-app/plugins/wp-example-content/magic.php
-app/plugins/wp-example-content/readme.txt
-app/plugins/wp-example-content/screenshot-1.png
-app/plugins/wp-example-content/screenshot-2.png
-app/plugins/wp-example-content/screenshot-3.png
-
-# app/themes/twentyfifteen/
-# app/themes/twentyfourteen/
-# app/themes/twentythirteen/
-app/themes/network*
-!app/themes/network-main-child
-app/themes/*/node_modules
-
+*~
 .brackets.json
 *.sass-cache
-node_modules
+composer.lock
 
-.gitignore~
-.htaccess~
+wp
+node_modules
+vendor
+app/uploads/*

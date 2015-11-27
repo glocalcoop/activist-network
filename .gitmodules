@@ -7,6 +7,12 @@
 [submodule "app/plugins/anp-network-content"]
 	path = app/plugins/anp-network-content
 	url = https://github.com/glocalcoop/anp-network-content.git
+[submodule "app/plugins/anp-custom-functions"]
+	path = app/plugins/anp-custom-functions
+	url = https://github.com/glocalcoop/anp-custom-functions.git
+[submodule "app/plugins/handbook"]
+	path = app/plugins/handbook
+	url = https://github.com/glocalcoop/handbook.git
 [submodule "app/themes/network-main"]
 	path = app/themes/network-main
 	url = https://github.com/glocalcoop/anp-network-main-theme.git
@@ -16,9 +22,4 @@
 [submodule "app/themes/network-partner"]
 	path = app/themes/network-partner
 	url = https://github.com/glocalcoop/anp-network-partner-theme.git
-[submodule "app/plugins/anp-custom-functions"]
-	path = app/plugins/anp-custom-functions
-	url = https://github.com/glocalcoop/anp-custom-functions.git
-[submodule "app/plugins/handbook"]
-	path = app/plugins/handbook
-	url = https://github.com/glocalcoop/handbook.git
+
