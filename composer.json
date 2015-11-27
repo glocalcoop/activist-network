@@ -55,7 +55,7 @@
                 "type": "wordpress-plugin",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/glocalcoop/anp-network-content/archive/master.zip"
+                    "url": "https://github.com/glocalcoop/handbook/archive/master.zip"
                 }
             }
         },
@@ -85,7 +85,8 @@
         }
     ],
     "require": {
-"wpackagist-plugin/admin-post-navigation": ">=1.9.2",
+        "wpackagist-plugin/codepress-admin-columns": ">=2.4.8",
+        "wpackagist-plugin/admin-post-navigation": ">=1.9.2",
         "wpackagist-plugin/advanced-custom-fields": ">=4.4.3",
         "wpackagist-plugin/agreeable": ">=1.4",
         "wpackagist-plugin/blog-copier": ">=1.0.7",
