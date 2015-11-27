@@ -11,3 +11,12 @@ wp
 node_modules
 vendor
 app/uploads/*
+app/plugins/files
+
+# Development
+app/plugins/developer
+app/plugins/debug*
+app/plugins/rewrite-rules-inspector
+app/plugins/theme-check
+app/plugins/wp-example-content
+app/plugins/wp-stage-switcher
