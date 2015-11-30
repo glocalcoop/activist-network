@@ -1,0 +1,734 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "bbPress"
+msgstr ""
+
+#. Short description.
+msgid "bbPress is forum software, made the WordPress way."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Have you ever been frustrated with forum or bulletin board software that was slow, bloated and always got your server hacked? bbPress is focused on ease of integration, ease of use, web standards, and speed."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "We're keeping things as small and light as possible while still allowing for great add-on features through WordPress's extensive plugin system. What does all that mean? bbPress is lean, mean, and ready to take on any job you throw at it."
+msgstr ""
+
+#. Found in installation header.
+msgid "From your WordPress dashboard"
+msgstr ""
+
+#. Found in installation header.
+msgid "From WordPress.org"
+msgstr ""
+
+#. Found in installation header.
+msgid "Extra"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Visit 'Plugins &gt; Add New'"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Search for 'bbPress'"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate bbPress from your Plugins page. (You'll be greeted with a Welcome page.)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Visit 'Forums &gt; Add New' and create some forums. (You can always delete these later.)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "If you have pretty permalinks enabled, visit yourdomain.com/forums, or if you do not have pretty permalinks enabled, visit yourdomain.com?post_type=forum"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Download bbPress."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload the 'bbpress' directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Visit 'Settings &gt; Forums' and adjust your configuration."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Adjust the CSS of your theme as needed, to make everything pretty."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved ajax actions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved user query parsing"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix BuddyPress Groups notice"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved output of certain URLs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved notification &amp; subscription email sending"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved bulk editing of users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved suggesting of topics &amp; authors for moderators"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved converter tool access"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix reply editing causing polluted hierarchy"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add tool for repairing reply positions within topics"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved custom slug and displayed user field sanitization"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved SSL support when relying on theme compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "WordPress 3.8 support (dashicons, new color schemes)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix dropdown selects in settings pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix accidental topic subscription removal on reply form"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix poor grammar in profile title element"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix admin area SSL support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix BuddyPress (1.9.1) Notification integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated subscriptions setting description"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix forum subscriptions not appearing on profiles for some users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Allow links to have targets"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improve Windows compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added forum subscriptions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added importers for AEF, Drupal, FluxBB, Kunena Forums (Joomla), MyBB, Phorum, PHPFox, PHPWind, PunBB, SMF, Xenforo and XMB"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added BuddyPress Notifications integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added ability to enqueue scripts and styles in the template stack"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix various existing importer scripts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix forum visibility meta saving"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix Akismet anonymous user meta checking"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix inconsistent bbp_dropdown() results"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix topic and reply ping-status inconsistencies"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix forum status saving"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix widget settings saving"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix custom wp_title compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix search results custom permalink compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix custom user topics &amp; replies pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix hierarchical reply handling in converter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added hierarchical reply support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added ability to disable forum search"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Reorganized settings page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved rewrite rules"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved responsive CSS"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved code posting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved user capability integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved cache getting and setting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Audit strict type comparisons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Audit GlotPress string escaping"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Audit title attribute usage"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Audit WordPress core function usage"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "General code clean-up"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved posting of preformatted code"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved theme compatibility CSS"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved BuddyPress Activity Streams integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix deleting of post cache group"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix moderators not having view_trash capability"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added forum search functionality"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved BuddyPress Group Forums integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved allowed tags in topics and replies"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added template stack support to theme compatability"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added more forum migration options"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Prepare converter queries"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improve validation and sanitization of form values"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improve compatibility with some themes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix integration with BuddyPress Group Forums"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix BuddyPress Activity Stream integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "RTL and i18n fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved user profile theme compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed incorrect link in credits page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed admin area JS issues related to topic suggest"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed template part reference in extras user edit template"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix role mapping for non-WordPress roles"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix issue with private forums being blocked"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Allow moderators to see hidden forums"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved user roles and capabilities"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved theme compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved forums convertion tool"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved forums tools and settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved multisite support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added What's New and Credits pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "WordPress 3.5 and BuddyPress 1.7 ready"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed admin-side help verbiage"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed reply height CSS"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed password converter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed child post trash and delete functions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Invision, phpBB, and vBulletin importers"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed private/hidden forum bugs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed topic split meta values"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed theme compatibility logic error"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed role mask issues for shared user installs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed missing function cruft"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed missing filter on displayed user fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "WordPress 3.4 compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Deprecate $bbp global, use bbpress() singleton"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Private forums now visible to registered users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated forum converter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Topic and reply edits now ran through Akismet"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Akismet edit bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Widgets nooping globals"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed translation load order"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed user-edit bugs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed settings screen regressions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved post cache invalidation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved admin-side nonce checks"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved admin settings API"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved bbPress 1.1 converter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved BuddyPress integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved Theme-Compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved template coverage"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved query performance"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved breadcrumb behavior"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved multisite integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved code clarity"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved RTL styling"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 2x menu icons for HiDPI displays"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added fancy editor support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added fallback theme picker"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added tools for importing, resetting, and removing"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Released on September 21, 2011"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Genesis incompatibilities"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed BuddyPress activity stream issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Subscription email sending issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Theme Compat display issues for some themes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved Theme Compat class"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "More future proofing internal API's"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "BuddyPress @mention integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved Akismet user agent handling"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added blacklist_keys support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed spam/deleted user handling"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated green admin color scheme for WordPress 3.2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added actions to topic/reply forms"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved support for future ajaxification"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed activation/deactivation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Forum Participant role for multisite use"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "BuddyPress activity action integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Multisite integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed a bushel of bugs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed tag pagination again"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed ajax priority loading"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed tag pagination"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Broke tag pagination"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Squashed a bunch of bugs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix regression in forum index theme compatibility template"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Audit usage of get strings for moderator level and above users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Akismet integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes replies within wp-admin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes reply notification links"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes inconsistent breadcrumb behavior"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes theme compatibility issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes archive and page conflicts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improvements to unpretty permalink support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improvements to importer"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improvements to multisite support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Normalize theme, shortcodes, and template parts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add humans.txt"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add empty index.php files to prevent snooping"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add max length to topic titles (default 80 chars)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "GlotPress integration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes Forum archive bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes and improvements to importer"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adds home link support to breadcrumb"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improvements to Theme Compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Numerous template and CSS improvements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "RTL support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add filters for future anti-spam support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add missing breadcrumbs to various template files"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Topic/reply trash fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "In development"
+msgstr ""
