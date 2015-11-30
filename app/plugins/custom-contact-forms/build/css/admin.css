@@ -16,15 +16,14 @@
   cursor: pointer;
   -webkit-font-smoothing: antialiased; }
 
-.ccf-hosting-offer:after {
+.ccf-subscribe.updated {
+  width: 100%;
   display: block;
-  content: ' '; }
+  box-sizing: border-box;
+  border: 0;
+  background-color: #FCECAD; }
 
-.ccf-hosting-offer ul {
-  list-style-type: disc;
-  margin-left: 30px; }
-
-.ccf-hosting-offer input[type="text"] {
-  margin-right: 20px; }
+.ccf-subscribe.updated form {
+  margin: 0; }
 
 /*# sourceMappingURL=admin.css.map */
