@@ -7,13 +7,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/0.1\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Hew\n"
-
-#. Description of the plugin/theme
-#: wp-content/themes/pub/hew/style.css
-msgid "Hew is a personal blog theme with distinct identity and a splash of colour! It's all about sharing your thoughts and experiences, and connecting with your readers via prominently placed social media links."
-msgstr ""
 
 #: search.php:16
 msgid "Search Results for: %s"
@@ -28,14 +23,14 @@ msgstr "%1$s: %2$s"
 msgid "Archives"
 msgstr "ארכיון"
 
+#: inc/template-tags.php:326
+msgid "Archives: %s"
+msgstr "ארכיון: %s"
+
 #: inc/template-tags.php:323
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "צ'אטים"
-
-#: inc/template-tags.php:326
-msgid "Archives: %s"
-msgstr "ארכיון: %s"
 
 #: inc/template-tags.php:319
 msgctxt "post format archive title"
@@ -67,15 +62,15 @@ msgctxt "post format archive title"
 msgid "Images"
 msgstr "תמונות"
 
-#: inc/template-tags.php:307
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr "הערות"
-
 #: inc/template-tags.php:309
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "גלריות"
+
+#: inc/template-tags.php:307
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "הערות"
 
 #: inc/template-tags.php:304
 msgctxt "daily archives date format"
@@ -128,11 +123,6 @@ msgstr "פוסטים חדשים יותר"
 msgid "Older posts"
 msgstr "פוסטים ישנים יותר"
 
-#: inc/template-tags.php:86
-msgctxt "categories list"
-msgid "in %1$s"
-msgstr ""
-
 #: inc/template-tags.php:241
 msgid "Posts navigation"
 msgstr "ניווט בין הרשומות"
@@ -164,7 +154,7 @@ msgstr "%s <span class=\"says\">הגיב:</span>"
 msgid "Pingback:"
 msgstr "פינגבק:"
 
-#: inc/extras.php:118
+#: inc/extras.php:97
 msgid "Page %s"
 msgstr "עמוד %s"
 
@@ -183,22 +173,6 @@ msgstr "on"
 #: header.php:32
 msgid "Skip to content"
 msgstr "דילוג לתוכן"
-
-#: functions.php:72
-msgid "Top Widget Area One"
-msgstr ""
-
-#: functions.php:82
-msgid "Top Widget Area Two"
-msgstr ""
-
-#: functions.php:92
-msgid "Top Widget Area Three"
-msgstr ""
-
-#: functions.php:102
-msgid "Top Widget Area Four"
-msgstr ""
 
 #. translators: If there are characters in your language that are not supported
 #. * by Source Sans Pro, translate this to 'off'. Do not translate into your

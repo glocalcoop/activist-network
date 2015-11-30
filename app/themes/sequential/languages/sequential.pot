@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sequential 1.1.1\n"
+"Project-Id-Version: Sequential 1.1.4\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/sequential\n"
-"POT-Creation-Date: 2015-08-01 03:49:12+00:00\n"
+"POT-Creation-Date: 2015-11-24 03:49:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -228,7 +228,7 @@ msgid "Menu"
 msgstr ""
 
 #: inc/customizer.php:20
-msgid "Theme"
+msgid "Theme Options"
 msgstr ""
 
 #: inc/customizer.php:31

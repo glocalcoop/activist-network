@@ -131,15 +131,15 @@ You will need to use the Text Editor to create your columns. We recommend not sw
 For example, this code creates a two-column layout:
 
 <div class="column-1-2"><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p></div>
- 
+
 <div class="column-1-2"><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p></div>
 
 This variation creates a three-column layout:
 
 <div class="column-1-3"><p>Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue.</p></div>
- 
+
 <div class="column-1-3"><p>Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue.</p></div>
- 
+
 <div class="column-1-3"><p>Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue.</p></div>
 
 The column-1-3 class can only be used on pages with a full-width layout like the Front Page Template, the Grid Page Template and the Full-Width Template.
@@ -157,6 +157,24 @@ See live examples on Sequential‘s demo site:
 3. Featured Images are 772 wide by unlimited high.
 
 == Changelog ==
+
+= 26 November 2015 =
+* Make sure inputs have a white background when in the sidebar.
+
+= 23 November 2015 =
+* Change "Theme" to "Theme Options" in Customizer.
+
+= 16 November 2015 =
+* Add missing icons for sharing button that got previously removed.
+
+= 12 November 2015 =
+* Fix bug in Jetpack sharing buttons
+
+= 6 November 2015 =
+* Add support for missing Genericons and update to 3.4.1.
+
+= 27 October 2015 =
+* Disable Infinite Scroll for the Testimonial CPT -- Is conflicting with theme style and loads new testimonials outside of wrapper
 
 = 12 August 2015 =
 * updating readme to reflect recent change.

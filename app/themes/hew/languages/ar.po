@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: GlotPress/0.1\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Hew\n"
 
 #. Description of the plugin/theme
@@ -128,11 +128,6 @@ msgstr "التدوينات الأحدث"
 msgid "Older posts"
 msgstr "تدوينات أقدم "
 
-#: inc/template-tags.php:86
-msgctxt "categories list"
-msgid "in %1$s"
-msgstr ""
-
 #: inc/template-tags.php:241
 msgid "Posts navigation"
 msgstr "تصفح المقالات"
@@ -141,11 +136,6 @@ msgstr "تصفح المقالات"
 #: inc/template-tags.php:84
 msgid ", "
 msgstr "، "
-
-#: inc/template-tags.php:79
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
 
 #: inc/template-tags.php:50
 msgid "Your comment is awaiting moderation."
@@ -164,7 +154,7 @@ msgstr "<span class=\"says\">يقول</span> %s:"
 msgid "Pingback:"
 msgstr "تعقيب:"
 
-#: inc/extras.php:118
+#: inc/extras.php:97
 msgid "Page %s"
 msgstr "الصفحة %s"
 
@@ -184,22 +174,6 @@ msgstr "on"
 msgid "Skip to content"
 msgstr "تخطى إلى المحتوى "
 
-#: functions.php:72
-msgid "Top Widget Area One"
-msgstr ""
-
-#: functions.php:82
-msgid "Top Widget Area Two"
-msgstr ""
-
-#: functions.php:92
-msgid "Top Widget Area Three"
-msgstr ""
-
-#: functions.php:102
-msgid "Top Widget Area Four"
-msgstr ""
-
 #. translators: If there are characters in your language that are not supported
 #. * by Source Sans Pro, translate this to 'off'. Do not translate into your
 #. own language.
@@ -207,10 +181,6 @@ msgstr ""
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "مفعل"
-
-#: functions.php:42
-msgid "Social Menu"
-msgstr ""
 
 #: functions.php:41 header.php:49
 msgid "Primary Menu"
@@ -223,10 +193,6 @@ msgstr "قالب: %1$s بواسطة %2$s."
 #: footer.php:15
 msgid "Proudly powered by %s"
 msgstr "مدعوم بواسطة %s"
-
-#: footer.php:15
-msgid "A Semantic Personal Publishing Platform"
-msgstr ""
 
 #: content-quote.php:11 inc/template-tags.php:129
 msgid "All %s posts"

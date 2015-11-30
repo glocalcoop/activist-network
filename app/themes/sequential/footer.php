@@ -29,7 +29,7 @@
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'sequential' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'sequential' ), 'WordPress' ); ?></a>
 			<span class="sep"> &mdash; </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'sequential' ), 'Sequential', '<a href="https://wordpress.com/themes/sequential" rel="designer">WordPress.com</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'sequential' ), 'Sequential', '<a href="http://wordpress.com/themes/sequential/" rel="designer">WordPress.com</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

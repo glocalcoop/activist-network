@@ -40,20 +40,13 @@ function sequential_jetpack_setup() {
 add_action( 'after_setup_theme', 'sequential_jetpack_setup' );
 
 /**
- * Define the code that is used to render the posts added by Infinite Scroll.
- *
- * Includes the whole loop. Used to include the correct template part for the Testimonial CPT.
+ * Disable Infinite Scroll for the Testimonial CPT
+ * @return bool
  */
-function sequential_infinite_scroll_render() {
-	while( have_posts() ) {
-		the_post();
-		if ( is_post_type_archive( 'jetpack-testimonial' ) ) {
-			get_template_part( 'content', 'testimonial' );
-		} else {
-			get_template_part( 'content', get_post_format() );
-		}
-	}
+function sequential_infinite_scroll_supported() {
+        return current_theme_supports( 'infinite-scroll' ) && ! is_post_type_archive( 'jetpack-testimonial' );
 }
+add_filter( 'infinite_scroll_archive_supported', 'sequential_infinite_scroll_supported' );
 
 /**
  * Flush the Rewrite Rules for the Testimonial CPT after the user has activated the theme.

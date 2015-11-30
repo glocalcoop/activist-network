@@ -1,24 +1,14 @@
 /*
 Theme Name: Sequential
 Theme URI: https://wordpress.com/themes/sequential/
+Description: Sequential is a contemporary, clean, and multi-purpose business theme.
+Version: 1.1.4
 Author: Automattic
 Author URI: https://wordpress.com/themes/
-Description: Sequential is a contemporary, clean, and multi-purpose business theme.
-Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sequential
-Tags: light, purple, white, two-columns, right-sidebar, responsive-layout, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Sequential is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
+Tags: light, purple, white, two-columns, right-sidebar, responsive-layout, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, light
 */
 
 /*--------------------------------------------------------------
@@ -580,6 +570,24 @@ input[type="submit"].search-submit {
 /* Password Protected */
 .post-password-form input[type="password"] {
 	margin-bottom: 24px;
+}
+
+/* Widgets */
+.widget-area input[type="text"],
+.widget-area input[type="email"],
+.widget-area input[type="url"],
+.widget-area input[type="password"],
+.widget-area input[type="search"],
+.widget-area textarea {
+	background: #fff;
+}
+.widget-area input[type="text"]:focus,
+.widget-area input[type="email"]:focus,
+.widget-area input[type="url"]:focus,
+.widget-area input[type="password"]:focus,
+.widget-area input[type="search"]:focus,
+.widget-area textarea:focus {
+	border-color: #c0c0c0;
 }
 
 /* Against Dark */
@@ -1269,14 +1277,6 @@ ul[id^="menu-social"]:after {
 .footer-widget-area .widget_rss .rss-date,
 .footer-widget-area .widget_rss cite {
 	color: rgba(255, 255, 255, 0.375);
-}
-
-/* Search */
-.widget .search-field {
-	background: #fff;
-}
-.widget .search-field:focus {
-	border-color: #c0c0c0;
 }
 
 /* Select */
@@ -2357,6 +2357,16 @@ video,
 	border-bottom: 0;
 	color: transparent;
 }
+
+/* Hide sharing button text for text and icon + text sharing buttons for theme's special sharing styles. */
+.sd-social.sd-social-text .sd-button > span,
+.sd-social.sd-social-icon-text .sd-button > span {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
 .hero .entry-content .sd-social a,
 .hero .entry-content .share-more span {
 	color: transparent;
@@ -2626,7 +2636,7 @@ input.search-submit,
 --------------------------------------------------------------*/
 ul[id^="menu-social"] a:before,
 .sd-social a:before {
-	content: '\f408';
+	content: '\f415';
 	display: inline-block;
 	width: 1em;
 	height: 1em;
@@ -2640,88 +2650,98 @@ ul[id^="menu-social"] a:before,
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-ul[id^="menu-social"] a[href$="/feed/"]:before {
-	content: '\f413';
+ul[id^="menu-social"]  a[href*='wordpress.org']:before,
+ul[id^="menu-social"]  a[href*='wordpress.com']:before,
+.sd-social a.share-press-this:before {
+    content: '\f205';
 }
-ul[id^="menu-social"] a[href*="codepen.io"]:before {
-	content: '\f216';
-}
-ul[id^="menu-social"] a[href*="digg.com"]:before {
-	content: '\f221';
-}
-ul[id^="menu-social"] a[href*="dribbble.com"]:before {
-	content: '\f201';
-}
-ul[id^="menu-social"] a[href*="dropbox.com"]:before {
-	content: '\f225';
-}
-ul[id^="menu-social"] a[href*="mailto:"]:before,
-.sd-social a.share-email:before {
-	content: '\f410';
-}
-ul[id^="menu-social"] a[href*="facebook.com"]:before,
+ul[id^="menu-social"]  a[href*='facebook.com']:before,
 .sd-social a.share-facebook:before {
-	content: '\f204';
+    content: '\f204';
 }
-ul[id^="menu-social"] a[href*="flickr.com"]:before {
-	content: '\f211';
+ul[id^="menu-social"]  a[href*='twitter.com']:before,
+.sd-social a.share-twitter:before {
+    content: '\f202';
 }
-ul[id^="menu-social"] a[href*="foursquare.com"]:before {
-	content: '\f226';
+ul[id^="menu-social"]  a[href*='dribbble.com']:before {
+    content: '\f201';
 }
-ul[id^="menu-social"] a[href*="github.com"]:before {
-	content: '\f200';
-}
-ul[id^="menu-social"] a[href*="plus.google.com"]:before,
+ul[id^="menu-social"]  a[href*='plus.google.com']:before,
 .sd-social a.share-google-plus-1:before {
-	content: '\f218';
+    content: '\f206';
 }
-ul[id^="menu-social"] a[href*="instagram.com"]:before {
-	content: '\f215';
-}
-ul[id^="menu-social"] a[href*="linkedin.com"]:before,
-.sd-social a.share-linkedin:before {
-	content: '\f207';
-}
-ul[id^="menu-social"] a[href*="pinterest.com"]:before,
+ul[id^="menu-social"]  a[href*='pinterest.com']:before,
 .sd-social a.share-pinterest:before {
-	content: '\f210';
+    content: '\f209';
+}
+ul[id^="menu-social"]  a[href*='github.com']:before {
+    content: '\f200';
+}
+ul[id^="menu-social"]  a[href*='tumblr.com']:before,
+.sd-social a.share-tumblr:before {
+    content: '\f214';
+}
+ul[id^="menu-social"]  a[href*='youtube.com']:before {
+    content: '\f213';
+}
+ul[id^="menu-social"]  a[href*='flickr.com']:before {
+    content: '\f211';
+}
+ul[id^="menu-social"]  a[href*='vimeo.com']:before {
+    content: '\f212';
+}
+ul[id^="menu-social"]  a[href*='instagram.com']:before {
+    content: '\f215';
+}
+ul[id^="menu-social"]  a[href*='codepen.io']:before {
+    content: '\f216';
+}
+ul[id^="menu-social"]  a[href*='linkedin.com']:before,
+.sd-social a.share-linkedin:before {
+    content: '\f207';
+}
+ul[id^="menu-social"]  a[href*='foursquare.com']:before {
+    content: '\f226';
+}
+ul[id^="menu-social"]  a[href*='reddit.com']:before,
+.sd-social a.share-reddit:before {
+    content: '\f222';
+}
+ul[id^="menu-social"]  a[href*='digg.com']:before {
+    content: '\f221';
+}
+ul[id^="menu-social"]  a[href*='getpocket.com']:before,
+.sd-social a.share-pocket:before {
+    content: '\f224';
+}
+ul[id^="menu-social"]  a[href*='path.com']:before {
+    content: '\f219';
+}
+ul[id^="menu-social"]  a[href*='stumbleupon.com']:before,
+.sd-social a.share-stumbleupon:before {
+    content: '\f223';
+}
+ul[id^="menu-social"]  a[href*='spotify.com']:before {
+    content: '\f515';
+}
+ul[id^="menu-social"]  a[href*='twitch.tv']:before {
+    content: '\f516';
+}
+ul[id^="menu-social"]  a[href*='dropbox.com']:before {
+    content: '\f225';
+}
+ul[id^="menu-social"]  a[href*='/feed']:before {
+    content: '\f413';
+}
+ul[id^="menu-social"]  a[href*='skype']:before {
+    content: '\f220';
+}
+ul[id^="menu-social"]  a[href*='mailto']:before,
+.sd-social a.share-email:before {
+    content: '\f410';
 }
 ul[id^="menu-social"] a[href*="polldaddy.com"]:before {
 	content: '\f217';
-}
-ul[id^="menu-social"] a[href*="reddit.com"]:before,
-.sd-social a.share-reddit:before {
-	content: '\f222';
-}
-ul[id^="menu-social"] a[href*="spotify.com"]:before {
-	content: '\f515';
-}
-ul[id^="menu-social"] a[href*="stumbleupon.com"]:before,
-.sd-social a.share-stumbleupon:before {
-	content: '\f223';
-}
-ul[id^="menu-social"] a[href*="tumblr.com"]:before,
-.sd-social a.share-tumblr:before {
-	content: '\f214';
-}
-ul[id^="menu-social"] a[href*="twitter.com"]:before,
-.sd-social a.share-twitter:before {
-	content: '\f202';
-}
-ul[id^="menu-social"] a[href*="vimeo.com"]:before {
-	content: '\f212';
-}
-ul[id^="menu-social"] a[href*="wordpress.com"]:before,
-ul[id^="menu-social"] a[href*="wordpress.org"]:before,
-.sd-social a.share-press-this:before {
-	content: '\f205';
-}
-ul[id^="menu-social"] a[href*="youtube.com"]:before {
-	content: '\f213';
-}
-.sd-social a.share-pocket:before {
-	content: '\f224';
 }
 .sd-social a.share-print:before {
 	content: '\f469';

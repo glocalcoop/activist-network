@@ -1,7 +1,7 @@
 === Hew ===
 
 Contributors: automattic
-Tags: white, yellow, black, one-column, responsive-layout, custom-header, custom-menu, infinite-scroll, featured-images, sticky-post, rtl-language-support, translation-ready, threaded-comments
+Tags: white, yellow, black, one-column, responsive-layout, custom-header, custom-menu, infinite-scroll, featured-images, sticky-post, rtl-language-support, translation-ready, threaded-comments,
 
 Requires at least: 3.9
 Tested up to: 4.1
@@ -87,12 +87,80 @@ Linking to any of the following sites will automatically display its icon in you
 
 == Changelog ==
 
-= 1.0.2 - Apr 08 2015 =
-* Fixed language filenames
+= 6 November 2015 =
+* Add support for missing Genericons and update to 3.4.1.
 
-= 1.0.1 - Mar 19 2015 =
-* Added missing escaping functions.
-* Added missing text domain.
+= 29 October 2015 =
+* fix SVN properties.
 
-= 1.0 - Mar 03 2015 =
-* Initial release.
+= 31 July 2015 =
+* Remove `.screen-reader-text:hover` and `.screen-reader-text:active` style rules.
+
+= 16 July 2015 =
+* Always use https when loading Google Fonts. See #3221;
+
+= 11 June 2015 =
+* Added JavaScript function calculating how much space there is for website title, depending on whether site logo, widget & menu toggles are present; Fixes #3018;
+
+= 20 March 2015 =
+* Fixing items pointed out in WordPress.org review: added missing textdomain, added missing escaping, added licenseand credit info for screenshot image, removed old compatibility function
+
+= 3 March 2015 =
+* Added readme.txt file
+* Added languages folder and hew.pot file
+
+= 19 February 2015 =
+* Screenshot update
+* Added styles for tag cloud widget
+* Updated 404 page template, removed double nav arrows in comment navigation
+* Minor color adjustments
+* Minor color adjustments
+
+= 18 February 2015 =
+* Removed invalid characters from stylesheet
+* Updated hover styles; Changed widgets icon; Updated font enqueue function.
+
+= 30 January 2015 =
+* Make entry header wider on desktop
+* Fixed header on mobile devices with custom header present
+* Mobile adjustments
+
+= 29 January 2015 =
+* Fixed textdomains, hide posts navigation when IS is active
+
+= 22 January 2015 =
+* Added wp.com specific files
+* General templates cleanup
+
+= 21 January 2015 =
+* Added editor style
+* Keyboard accessibility adjustments
+* Use core archives title and description handling
+
+= 20 January 2015 =
+* Switched to CSS columns for top sidebar widget area
+* Added support for title-tag, screenshot update
+
+= 17 December 2014 =
+* more credits updated.
+* proper Theme Showcase link in footer template.
+* Allow tablets to access submenu items in the site navigation.
+* fix SVN properties.
+
+= 25 September 2014 =
+* Added hover color for entry title
+* Added Jetpack responsvie video support
+
+= 22 September 2014 =
+* Tweaks to slide-out top panel animation
+
+= 17 September 2014 =
+* Fixed jerky animation on top widget area close
+
+= 16 September 2014 =
+* Post navigation hover styling
+* Styling for WP.COM widgets: Gravatar Profile, Recent Comments, Milestone
+* Smaller entry format badge on mobile
+
+= 12 September 2014 =
+* Moving Hew from dev to pub

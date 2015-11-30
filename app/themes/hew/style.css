@@ -1,24 +1,14 @@
 /*
 Theme Name: Hew
-Theme URI: http://wordpress.com/themes/hew
+Theme URI: https://wordpress.com/themes/hew/
+Description: Hew is a personal blog theme with distinct identity and a splash of colour! It's all about sharing your thoughts and experiences, and connecting with your readers via prominently placed social media links.
+Version: 1.0.3
 Author: Automattic
 Author URI: http://wordpress.com/themes/
-Description: Hew is a personal blog theme with distinct identity and a splash of colour! It's all about sharing your thoughts and experiences, and connecting with your readers via prominently placed social media links.
-Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: hew
 Tags: white, yellow, black, one-column, responsive-layout, custom-header, custom-menu, featured-images, sticky-post, rtl-language-support, translation-ready, threaded-comments
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Hew is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
 */
 
 /*--------------------------------------------------------------
@@ -604,54 +594,84 @@ a:active {
 .social-links ul a:hover:before {
 	color: #fbdb4a;
 }
-.social-links ul a[href*="wordpress.org"]:before,
-.social-links ul a[href*="wordpress.com"]:before {
-	content: "\f205";
+.social-links ul a[href*='wordpress.org']:before,
+.social-links ul a[href*='wordpress.com']:before {
+    content: '\f205';
 }
-.social-links ul a[href*="facebook.com"]:before {
-	content: "\f204";
+.social-links ul a[href*='facebook.com']:before {
+    content: '\f204';
 }
-.social-links ul a[href*="twitter.com"]:before {
-	content: "\f202";
+.social-links ul a[href*='twitter.com']:before {
+    content: '\f202';
 }
-.social-links ul a[href*="dribbble.com"]:before {
-	content: "\f201";
+.social-links ul a[href*='dribbble.com']:before {
+    content: '\f201';
 }
-.social-links ul a[href*="plus.google.com"]:before {
-	content: "\f206";
+.social-links ul a[href*='plus.google.com']:before {
+    content: '\f206';
 }
-.social-links ul a[href*="pinterest.com"]:before {
-	content: "\f209";
+.social-links ul a[href*='pinterest.com']:before {
+    content: '\f209';
 }
-.social-links ul a[href*="github.com"]:before {
-	content: "\f200";
+.social-links ul a[href*='github.com']:before {
+    content: '\f200';
 }
-.social-links ul a[href*="tumblr.com"]:before {
-	content: "\f214";
+.social-links ul a[href*='tumblr.com']:before {
+    content: '\f214';
 }
-.social-links ul a[href*="youtube.com"]:before {
-	content: "\f213";
+.social-links ul a[href*='youtube.com']:before {
+    content: '\f213';
 }
-.social-links ul a[href*="flickr.com"]:before {
-	content: "\f211";
+.social-links ul a[href*='flickr.com']:before {
+    content: '\f211';
 }
-.social-links ul a[href*="vimeo.com"]:before {
-	content: "\f212";
+.social-links ul a[href*='vimeo.com']:before {
+    content: '\f212';
 }
-.social-links ul a[href*="instagram.com"]:before {
-	content: "\f215";
+.social-links ul a[href*='instagram.com']:before {
+    content: '\f215';
 }
-.social-links ul a[href*="codepen.io"]:before {
-	content: "\f216";
+.social-links ul a[href*='codepen.io']:before {
+    content: '\f216';
 }
-.social-links ul a[href*="linkedin.com"]:before {
-	content: "\f207";
+.social-links ul a[href*='linkedin.com']:before {
+    content: '\f207';
 }
-.social-links ul a[href*="/feed"]:before {
-	content: "\f413";
+.social-links ul a[href*='foursquare.com']:before {
+    content: '\f226';
 }
-.social-links ul a[href*="mailto"]:before {
-	content: "\f410";
+.social-links ul a[href*='reddit.com']:before {
+    content: '\f222';
+}
+.social-links ul a[href*='digg.com']:before {
+    content: '\f221';
+}
+.social-links ul a[href*='getpocket.com']:before {
+    content: '\f224';
+}
+.social-links ul a[href*='path.com']:before {
+    content: '\f219';
+}
+.social-links ul a[href*='stumbleupon.com']:before {
+    content: '\f223';
+}
+.social-links ul a[href*='spotify.com']:before {
+    content: '\f515';
+}
+.social-links ul a[href*='twitch.tv']:before {
+    content: '\f516';
+}
+.social-links ul a[href*='dropbox.com']:before {
+    content: '\f225';
+}
+.social-links ul a[href*='/feed']:before {
+    content: '\f413';
+}
+.social-links ul a[href*='skype']:before {
+    content: '\f220';
+}
+.social-links ul a[href*='mailto']:before {
+    content: '\f410';
 }
 /* Top Widget Area Toggle */
 .toggle-wrapper {
@@ -727,8 +747,6 @@ a:active {
 	width: 1px;
 }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
@@ -1754,11 +1772,7 @@ object {
 	}
 	.site-branding {
 		display: inline-block;
-		padding-right: 0;
-		width: calc(100% - 156px);
-	}
-	.has-header-image .site-branding {
-		width: calc(100% - 224px);
+		padding-right: 6px;
 	}
 	.site-title {
 		font-size: 30px;
@@ -1875,11 +1889,7 @@ object {
 	}
 	.site-branding {
 		display: inline-block;
-		padding-right: 0;
-		width: calc(100% - 134px);
-	}
-	.has-header-image .site-branding {
-		width: calc(100% - 171px);
+		padding-right: 6px;
 	}
 	.site-title {
 		font-size: 24px;
@@ -1901,7 +1911,7 @@ object {
 	}
 	.menu-toggle {
 		position: relative;
-		right: -35px;
+		right: 0;
 		top: 0;
 	}
 	.menu-toggle,
@@ -1944,12 +1954,6 @@ object {
 	}
 }
 @media screen and (max-width: 320px) {
-	.site-branding {
-		width: calc(100% - 98px);
-	}
-	.has-header-image .site-branding {
-		width: calc(100% - 136px);
-	}
 	.menu-toggle {
 		position: static;
 		right: -45px;

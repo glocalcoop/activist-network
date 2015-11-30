@@ -17,7 +17,7 @@ function sequential_customize_register( $wp_customize ) {
 
 	/* Theme Options */
 	$wp_customize->add_section( 'sequential_theme_options', array(
-		'title'    => __( 'Theme', 'sequential' ),
+		'title'    => __( 'Theme Options', 'sequential' ),
 		'priority' => 130,
 	) );
 

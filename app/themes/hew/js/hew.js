@@ -21,6 +21,24 @@
 			$( window ).trigger( 'resize' );
 		});
 
+		// Calculating how much space there is for website title, depending on whether site logo, widget & menu toggles are present
+		function calcTitleWidth() {
+			if ( 768 > $( document ).width() ) {
+				var brandingWidth = $( '.site-header' ).innerWidth() - ( $( '.site-logo' ).outerWidth() + $( '.menu-toggle' ).outerWidth() + $( '.toggle-wrapper' ).outerWidth() );
+				$( '.site-branding' ).css( 'width', brandingWidth + 'px' );
+			} else {
+				$( '.site-branding' ).css( 'width', 'auto' );
+			}
+		}
+
+		$( document ).ready( function() {
+			calcTitleWidth();
+		} );
+
+		$( window ).on( 'resize', function() {
+			calcTitleWidth();
+		} );
+
 		$( document.body ).on( 'post-load', function () {
         	$( '.infinite-wrap .hentry:first-child' ).not( '.has-post-thumbnail' ).css( 'margin-top', '3.75em' );
     	} );

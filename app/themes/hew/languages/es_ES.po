@@ -7,13 +7,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/0.1\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Hew\n"
-
-#. Description of the plugin/theme
-#: wp-content/themes/pub/hew/style.css
-msgid "Hew is a personal blog theme with distinct identity and a splash of colour! It's all about sharing your thoughts and experiences, and connecting with your readers via prominently placed social media links."
-msgstr ""
 
 #: search.php:16
 msgid "Search Results for: %s"
@@ -28,54 +23,54 @@ msgstr "%1$s: %2$s"
 msgid "Archives"
 msgstr "Archivos"
 
-#: inc/template-tags.php:323
-msgctxt "post format archive title"
-msgid "Chats"
-msgstr "Chats"
-
 #: inc/template-tags.php:326
 msgid "Archives: %s"
 msgstr "Archivos: %s"
 
-#: inc/template-tags.php:319
+#: inc/template-tags.php:323
 msgctxt "post format archive title"
-msgid "Statuses"
-msgstr "Estatus"
+msgid "Chats"
+msgstr "Chats"
 
 #: inc/template-tags.php:321
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr "Audio"
 
+#: inc/template-tags.php:319
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "Estatus"
+
 #: inc/template-tags.php:317
 msgctxt "post format archive title"
 msgid "Links"
 msgstr "Enlaces"
-
-#: inc/template-tags.php:313
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr "Vídeos"
 
 #: inc/template-tags.php:315
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Citas"
 
+#: inc/template-tags.php:313
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Vídeos"
+
 #: inc/template-tags.php:311
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Imágenes"
 
-#: inc/template-tags.php:307
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr "Asides"
-
 #: inc/template-tags.php:309
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Galerías"
+
+#: inc/template-tags.php:307
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "Asides"
 
 #: inc/template-tags.php:304
 msgctxt "daily archives date format"
@@ -128,11 +123,6 @@ msgstr "Entradas recientes"
 msgid "Older posts"
 msgstr "Entradas antiguas"
 
-#: inc/template-tags.php:86
-msgctxt "categories list"
-msgid "in %1$s"
-msgstr ""
-
 #: inc/template-tags.php:241
 msgid "Posts navigation"
 msgstr "Ir a las entradas"
@@ -164,7 +154,7 @@ msgstr "%s <span class=\"says\">dijo:</span>"
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: inc/extras.php:118
+#: inc/extras.php:97
 msgid "Page %s"
 msgstr "Página %s"
 
@@ -183,22 +173,6 @@ msgstr "on"
 #: header.php:32
 msgid "Skip to content"
 msgstr "Saltar al contenido."
-
-#: functions.php:72
-msgid "Top Widget Area One"
-msgstr ""
-
-#: functions.php:82
-msgid "Top Widget Area Two"
-msgstr ""
-
-#: functions.php:92
-msgid "Top Widget Area Three"
-msgstr ""
-
-#: functions.php:102
-msgid "Top Widget Area Four"
-msgstr ""
 
 #. translators: If there are characters in your language that are not supported
 #. * by Source Sans Pro, translate this to 'off'. Do not translate into your

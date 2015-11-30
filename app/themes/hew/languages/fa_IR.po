@@ -2,18 +2,18 @@
 # This file is distributed under the same license as the Hew package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-03-19 07:35:05+0000\n"
+"PO-Revision-Date: 2015-10-26 06:25:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/0.1\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Hew\n"
 
 #. Description of the plugin/theme
 #: wp-content/themes/pub/hew/style.css
 msgid "Hew is a personal blog theme with distinct identity and a splash of colour! It's all about sharing your thoughts and experiences, and connecting with your readers via prominently placed social media links."
-msgstr ""
+msgstr "Hew یک پوستهٔ برای وب‌نویشت‌های شخصی  است  که هویت و رنگ‌بندی‌آی جداگانه دارد! تمام تلاشش روی اشتراک‌گذاری ایده‌ها و تجربیات شما و ارتباط‌برقرارکردن خوانندگانتان از راه پیوندهای رسانه‌های اجتماعی است."
 
 #: search.php:16
 msgid "Search Results for: %s"
@@ -131,7 +131,7 @@ msgstr "نوشته‌های پیشین"
 #: inc/template-tags.php:86
 msgctxt "categories list"
 msgid "in %1$s"
-msgstr ""
+msgstr "در %1$s"
 
 #: inc/template-tags.php:241
 msgid "Posts navigation"
@@ -145,7 +145,7 @@ msgstr "، "
 #: inc/template-tags.php:79
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr ""
+msgstr "نوشته‌شده در %s"
 
 #: inc/template-tags.php:50
 msgid "Your comment is awaiting moderation."
@@ -164,7 +164,7 @@ msgstr "%s <span class=\"says\">می‌گوید:</span>"
 msgid "Pingback:"
 msgstr "بازتاب: "
 
-#: inc/extras.php:118
+#: inc/extras.php:97
 msgid "Page %s"
 msgstr "صفحهٔ %s"
 

@@ -81,6 +81,17 @@ function sequential_setup() {
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery',
 	) );
+
+	/**
+	 * Suggest the Jetpack plugin to users
+	 */
+	add_theme_support( 'theme-plugin-enhancements', array(
+		array(
+			'slug'    => 'jetpack',
+			'name'    => 'Jetpack by WordPress.com',
+			'message' => __( 'The Jetpack plugin is needed to use some of Sequential\'s special features, including the testimonial custom post type (Custom Content Types module), and site logo (no particular module activation needed).', 'sequential' ),
+		),
+	) );
 }
 endif; // sequential_setup
 add_action( 'after_setup_theme', 'sequential_setup' );
@@ -207,7 +218,7 @@ function sequential_scripts() {
 	if ( wp_style_is( 'genericons', 'registered' ) ) {
 		wp_enqueue_style( 'genericons' );
 	} else {
-		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.2' );
+		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 	}
 
 	wp_enqueue_style( 'sequential-style', get_stylesheet_uri() );
@@ -257,6 +268,11 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Require our Theme Plugin Enhancements class.
+ */
+require get_template_directory() . '/inc/plugin-enhancements.php';
 
 /**
  * Load Jetpack compatibility file.

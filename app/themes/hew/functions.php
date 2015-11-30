@@ -142,7 +142,7 @@ function hew_fonts_url() {
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin' ),
 		);
-		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
 	}
 
 	return $fonts_url;
@@ -155,7 +155,7 @@ function hew_scripts() {
 	// Add Open Sans and Noto Serif fonts.
 	wp_enqueue_style( 'hew-fonts', hew_fonts_url(), array(), null );
 
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
 	wp_enqueue_style( 'hew-style', get_stylesheet_uri() );
 
@@ -195,3 +195,6 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
