@@ -1,25 +1,25 @@
-[submodule "app/plugins/anp-global-menu"]
-	path = app/plugins/anp-global-menu
+[submodule "wp-content/plugins/anp-global-menu"]
+	path = wp-content/plugins/anp-global-menu
 	url = https://github.com/glocalcoop/anp-global-menu.git
-[submodule "app/plugins/anp-meetings"]
-	path = app/plugins/anp-meetings
+[submodule "wp-content/plugins/anp-meetings"]
+	path = wp-content/plugins/anp-meetings
 	url = https://github.com/glocalcoop/anp-meetings.git
-[submodule "app/plugins/anp-network-content"]
-	path = app/plugins/anp-network-content
+[submodule "wp-content/plugins/anp-network-content"]
+	path = wp-content/plugins/anp-network-content
 	url = https://github.com/glocalcoop/anp-network-content.git
-[submodule "app/plugins/anp-custom-functions"]
-	path = app/plugins/anp-custom-functions
+[submodule "wp-content/plugins/anp-custom-functions"]
+	path = wp-content/plugins/anp-custom-functions
 	url = https://github.com/glocalcoop/anp-custom-functions.git
-[submodule "app/plugins/handbook"]
-	path = app/plugins/handbook
+[submodule "wp-content/plugins/handbook"]
+	path = wp-content/plugins/handbook
 	url = https://github.com/glocalcoop/handbook.git
-[submodule "app/themes/network-main"]
-	path = app/themes/network-main
+[submodule "wp-content/themes/network-main"]
+	path = wp-content/themes/network-main
 	url = https://github.com/glocalcoop/anp-network-main-theme.git
-[submodule "app/themes/network-subsite"]
-	path = app/themes/network-subsite
+[submodule "wp-content/themes/network-subsite"]
+	path = wp-content/themes/network-subsite
 	url = https://github.com/glocalcoop/anp-network-subsite-theme.git
-[submodule "app/themes/network-partner"]
-	path = app/themes/network-partner
+[submodule "wp-content/themes/network-partner"]
+	path = wp-content/themes/network-partner
 	url = https://github.com/glocalcoop/anp-network-partner-theme.git
 
