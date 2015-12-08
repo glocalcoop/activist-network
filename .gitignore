@@ -6,6 +6,8 @@
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
 wp-content/*
+!wp-content/sunrise.php
+!wp-content/civicrm/
 !wp-content/plugins/
 !wp-content/themes/
 
