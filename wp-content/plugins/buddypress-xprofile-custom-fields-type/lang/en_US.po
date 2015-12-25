@@ -1,0 +1,361 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BuddyPress Xprofile Custom Fields Type v2.1.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-16 18:46+0100\n"
+"PO-Revision-Date: 2015-11-16 18:46+0100\n"
+"Last-Translator: Sol Huebner <translations@it-specialist.net>\n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext;_n;__ngettext_noop;_n_noop;_x;_nx;"
+"_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
+"esc_html_x;_c;_nc\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: bp-xprofile-custom-fields-type.php:98
+msgid ""
+"BuddyPress Xprofile Custom Fields Type plugin needs <b>BuddyPress 2.0</b>, "
+"please install or upgrade BuddyPress."
+msgstr ""
+"BuddyPress Xprofile Custom Fields Type plugin needs <b>BuddyPress 2.0</b>, "
+"please install or upgrade BuddyPress."
+
+#: bp-xprofile-custom-fields-type.php:276
+#: bp-xprofile-custom-fields-type.php:445
+msgid "yes"
+msgstr "yes"
+
+#: bp-xprofile-custom-fields-type.php:276
+#: bp-xprofile-custom-fields-type.php:445
+msgid "no"
+msgstr "no"
+
+#: bp-xprofile-custom-fields-type.php:292
+#: bp-xprofile-custom-fields-type.php:461 classes/Bxcft_Field_Type_File.php:58
+msgid "Download file"
+msgstr "Download file"
+
+#: bp-xprofile-custom-fields-type.php:515
+#: bp-xprofile-custom-fields-type.php:539
+msgid "This is a required field"
+msgstr "This is a required field"
+
+#: bp-xprofile-custom-fields-type.php:521
+#: bp-xprofile-custom-fields-type.php:566
+#, php-format
+msgid "Image type not allowed: (%s)."
+msgstr "Image type not allowed: (%s)."
+
+#: bp-xprofile-custom-fields-type.php:524
+#: bp-xprofile-custom-fields-type.php:570
+#, php-format
+msgid "Max image upload size: %s MB."
+msgstr "Max image upload size: %s MB."
+
+#: bp-xprofile-custom-fields-type.php:528
+#: bp-xprofile-custom-fields-type.php:586
+#, php-format
+msgid "File type not allowed: (%s)."
+msgstr "File type not allowed: (%s)."
+
+#: bp-xprofile-custom-fields-type.php:531
+#: bp-xprofile-custom-fields-type.php:590
+#, php-format
+msgid "Max file upload size: %s MB."
+msgstr "Max file upload size: %s MB."
+
+#: classes/Bxcft_Field_Type_Birthdate.php:12
+msgid "Birthdate Selector"
+msgstr "Birthdate Selector"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:95
+msgid "Show age (hide birthdate):"
+msgstr "Show age (hide birthdate):"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:98
+msgid "Check this if you want to show age instead of birthdate:"
+msgstr "Check this if you want to show age instead of birthdate:"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:152
+#: classes/Bxcft_Field_Type_CheckboxAcceptance.php:60
+#: classes/Bxcft_Field_Type_Color.php:48
+#: classes/Bxcft_Field_Type_Datepicker.php:53
+#: classes/Bxcft_Field_Type_DecimalNumber.php:79
+#: classes/Bxcft_Field_Type_Email.php:53
+#: classes/Bxcft_Field_Type_MultiSelectCustomPostType.php:129
+#: classes/Bxcft_Field_Type_MultiSelectCustomTaxonomy.php:129
+#: classes/Bxcft_Field_Type_NumberMinMax.php:85
+#: classes/Bxcft_Field_Type_SelectCustomPostType.php:114
+#: classes/Bxcft_Field_Type_SelectCustomTaxonomy.php:114
+#: classes/Bxcft_Field_Type_Web.php:53
+msgid "(required)"
+msgstr "(required)"
+
+# no option picked in select box
+#: classes/Bxcft_Field_Type_Birthdate.php:219
+#: classes/Bxcft_Field_Type_Birthdate.php:244
+#: classes/Bxcft_Field_Type_Birthdate.php:252
+msgid "----"
+msgstr "----"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:230
+msgid "January"
+msgstr "January"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:231
+msgid "February"
+msgstr "February"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:232
+msgid "March"
+msgstr "March"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:233
+msgid "April"
+msgstr "April"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:234
+msgid "May"
+msgstr "May"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:235
+msgid "June"
+msgstr "June"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:236
+msgid "July"
+msgstr "July"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:237
+msgid "August"
+msgstr "August"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:238
+msgid "September"
+msgstr "September"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:239
+msgid "October"
+msgstr "October"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:240
+msgid "November"
+msgstr "November"
+
+#: classes/Bxcft_Field_Type_Birthdate.php:241
+msgid "December"
+msgstr "December"
+
+#: classes/Bxcft_Field_Type_CheckboxAcceptance.php:12
+msgid "Checkbox Acceptance"
+msgstr "Checkbox Acceptance"
+
+#: classes/Bxcft_Field_Type_CheckboxAcceptance.php:114
+msgid ""
+"Use this field to write a text that should be displayed beside the checkbox:"
+msgstr ""
+"Use this field to write a text that should be displayed beside the checkbox:"
+
+#: classes/Bxcft_Field_Type_Color.php:12
+msgid "Color (HTML5 field)"
+msgstr "Color (HTML5 field)"
+
+#: classes/Bxcft_Field_Type_Datepicker.php:12
+msgid "Datepicker (HTML5 field)"
+msgstr "Datepicker (HTML5 field)"
+
+#: classes/Bxcft_Field_Type_DecimalNumber.php:12
+msgid "Decimal number (HTML5 field)"
+msgstr "Decimal number (HTML5 field)"
+
+#: classes/Bxcft_Field_Type_DecimalNumber.php:127
+msgid "Select max number of decimals:"
+msgstr "Select max number of decimals:"
+
+#: classes/Bxcft_Field_Type_Email.php:12
+msgid "Email (HTML5 field)"
+msgstr "Email (HTML5 field)"
+
+#: classes/Bxcft_Field_Type_File.php:12
+msgid "File"
+msgstr "File"
+
+#: classes/Bxcft_Field_Type_File.php:60 classes/Bxcft_Field_Type_File.php:67
+msgid "Check this to delete this file"
+msgstr "Check this to delete this file"
+
+#: classes/Bxcft_Field_Type_Image.php:12
+msgid "Image"
+msgstr "Image"
+
+#: classes/Bxcft_Field_Type_Image.php:60 classes/Bxcft_Field_Type_Image.php:67
+msgid "Check this to delete this image"
+msgstr "Check this to delete this image"
+
+#: classes/Bxcft_Field_Type_MultiSelectCustomPostType.php:12
+msgid "Custom Post Type Multiselector"
+msgstr "Custom Post Type Multiselector"
+
+#: classes/Bxcft_Field_Type_MultiSelectCustomPostType.php:87
+#: classes/Bxcft_Field_Type_SelectCustomPostType.php:79
+msgid ""
+"There is no custom post type. You need to create at least one to use this "
+"field."
+msgstr ""
+"There is no custom post type. You need to create at least one to use this "
+"field."
+
+#: classes/Bxcft_Field_Type_MultiSelectCustomPostType.php:89
+#: classes/Bxcft_Field_Type_MultiSelectCustomPostType.php:92
+#: classes/Bxcft_Field_Type_SelectCustomPostType.php:81
+#: classes/Bxcft_Field_Type_SelectCustomPostType.php:84
+msgid "Select a custom post type:"
+msgstr "Select a custom post type:"
+
+#: classes/Bxcft_Field_Type_MultiSelectCustomPostType.php:94
+#: classes/Bxcft_Field_Type_MultiSelectCustomTaxonomy.php:94
+#: classes/Bxcft_Field_Type_SelectCustomPostType.php:86
+#: classes/Bxcft_Field_Type_SelectCustomPostType.php:117
+#: classes/Bxcft_Field_Type_SelectCustomTaxonomy.php:86
+#: classes/Bxcft_Field_Type_SelectCustomTaxonomy.php:117
+msgid "Select..."
+msgstr "Select…"
+
+#: classes/Bxcft_Field_Type_MultiSelectCustomTaxonomy.php:12
+msgid "Custom Taxonomy Multiselector"
+msgstr "Custom Taxonomy Multiselector"
+
+#: classes/Bxcft_Field_Type_MultiSelectCustomTaxonomy.php:87
+#: classes/Bxcft_Field_Type_SelectCustomTaxonomy.php:79
+msgid ""
+"There is no custom taxonomy. You need to create at least one to use this "
+"field."
+msgstr ""
+"There is no custom taxonomy. You need to create at least one to use this "
+"field."
+
+#: classes/Bxcft_Field_Type_MultiSelectCustomTaxonomy.php:89
+#: classes/Bxcft_Field_Type_MultiSelectCustomTaxonomy.php:92
+#: classes/Bxcft_Field_Type_SelectCustomTaxonomy.php:81
+#: classes/Bxcft_Field_Type_SelectCustomTaxonomy.php:84
+msgid "Select a custom taxonomy:"
+msgstr "Select a custom taxonomy:"
+
+#: classes/Bxcft_Field_Type_NumberMinMax.php:12
+msgid "Number within min/max values (HTML5 field)"
+msgstr "Number within min/max values (HTML5 field)"
+
+#: classes/Bxcft_Field_Type_NumberMinMax.php:144
+msgid "Write min and max values. You can leave any field blank if you want."
+msgstr "Write min and max values. You can leave any field blank if you want."
+
+#: classes/Bxcft_Field_Type_NumberMinMax.php:148
+msgid "Minimum:"
+msgstr "Minimum:"
+
+#: classes/Bxcft_Field_Type_NumberMinMax.php:153
+msgid "Maximum:"
+msgstr "Maximum:"
+
+#: classes/Bxcft_Field_Type_NumberMinMax.php:161
+msgid "Min value cannot be bigger than max value."
+msgstr "Min value cannot be bigger than max value."
+
+#: classes/Bxcft_Field_Type_NumberMinMax.php:162
+msgid "You have to fill at least one field."
+msgstr "You have to fill at least one field."
+
+#: classes/Bxcft_Field_Type_SelectCustomPostType.php:12
+msgid "Custom Post Type Selector"
+msgstr "Custom Post Type Selector"
+
+#: classes/Bxcft_Field_Type_SelectCustomTaxonomy.php:12
+msgid "Custom Taxonomy Selector"
+msgstr "Custom Taxonomy Selector"
+
+#: classes/Bxcft_Field_Type_Web.php:12
+msgid "Website (HTML5 field)"
+msgstr "Website (HTML5 field)"
+
+#~ msgid ""
+#~ "Buddypress Xprofile Custom Fields Type plugin needs <b>Buddypress 2.0</"
+#~ "b>, please install or upgrade Buddypress."
+#~ msgstr ""
+#~ "Buddypress Xprofile Custom Fields Type plugin needs <b>Buddypress 2.0</"
+#~ "b>, please install or upgrade Buddypress."
+
+#~ msgid "http://yourwebsite.com"
+#~ msgstr "http://yourwebsite.com"
+
+#~ msgid "example@mail.com"
+#~ msgstr "example@mail.com"
+
+#~ msgid "Field type unrecognized"
+#~ msgstr "Field type unrecognized"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Website"
+#~ msgstr "Website"
+
+#~ msgid "Datepicker"
+#~ msgstr "Datepicker"
+
+#~ msgid "Custom Post Type:"
+#~ msgstr "Custom Post Type:"
+
+#~ msgid "Show age (hide birthdate)"
+#~ msgstr "Show age (hide birthdate)"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "Nobody"
+#~ msgstr "Nobody"
+
+#~ msgid ""
+#~ "Please make sure you fill in all required fields in this profile field "
+#~ "group before saving."
+#~ msgstr ""
+#~ "Please make sure you fill in all required fields in this profile field "
+#~ "group before saving."
+
+#~ msgid ""
+#~ "There was a problem updating some of your profile information, please try "
+#~ "again."
+#~ msgstr ""
+#~ "There was a problem updating some of your profile information, please try "
+#~ "again."
+
+#~ msgid "Changes saved."
+#~ msgstr "Changes saved."
+
+#~ msgid "yourwebsite.com"
+#~ msgstr "yourwebsite.com"
+
+#~ msgid "Color"
+#~ msgstr "Color"
+
+#~ msgid "Number"
+#~ msgstr "Number"
+
+#~ msgid "Friends Suggest Widget"
+#~ msgstr "Widget Sugerencias Amigos"
+
+#~ msgid "Friend Suggestions"
+#~ msgstr "Sugerencias de Amigos"
+
+#~ msgid "Title"
+#~ msgstr "Título"
+
+#~ msgid "Max Number of suggestions:"
+#~ msgstr "Número máx. de sugerencias:"
+
+#~ msgid "We don't have enough details to sugggest a friend yet"
+#~ msgstr "No tenemos suficiente información para sugerir amigos todavía."
