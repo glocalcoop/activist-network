@@ -1,14 +1,14 @@
 === Nav Menu Roles ===
 
 Contributors: helgatheviking
-Donate link: https://inspirepay.com/pay/helgatheviking
+Donate link: https://www.paypal.me/helgatheviking
 Tags: menu, menus, nav menu, nav menus
-Requires at least: 3.8
-Tested up to: 4.2
-Stable tag: 1.7.3
+Requires at least: 3.8.0
+Tested up to: 4.4.0
+Stable tag: 1.7.4
 License: GPLv3
 
-Hide custom menu items based on user roles. PLEASE READ THE [FAQ](http://wordpress.org/plugins/nav-menu-roles/faq/#conflict) IF YOU ARE NOT SEEING THE SETTINGS.
+Hide custom menu items based on user roles. PLEASE READ THE FAQ IF YOU ARE NOT SEEING THE SETTINGS.
 
 == Description ==
 
@@ -61,8 +61,7 @@ WordPress does not have sufficient hooks in this area of the admin and until the
 4. Suffusion theme
 5. BeTheme
 6. Yith Menu
-7. Kleo Theme
-8. Jupiter Theme
+7. Jupiter Theme
 
 
 = <a id="compatibility"></a>Workaround #1 =
@@ -204,6 +203,10 @@ However, the Import plugin only imports certain post meta for menu items.  As of
 1. No duplicate posts will be created but all menu post meta (including your Nav Menu Roles info) will be imported
 
 == Changelog ==
+
+= 1.7.4 =
+* Change language in metabox to try to explain min caps versus strict role checking
+* keep tweaking the FAQ
 
 = 1.7.3 =
 * update readme, update error notice, add more links to the FAQ

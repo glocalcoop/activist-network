@@ -23,6 +23,8 @@ class CCF_Form_CPT {
 	 * @since 6.0
 	 */
 	public function setup() {
+		
+
 		add_action( 'init', array( $this, 'setup_cpt' ) );
 		add_filter( 'manage_edit-ccf_form_columns', array( $this, 'filter_columns' ) ) ;
 		add_action( 'manage_ccf_form_posts_custom_column', array( $this, 'action_columns' ), 10, 2 );
@@ -81,6 +83,7 @@ class CCF_Form_CPT {
 		header( 'Expires: 0' );
 
 		$output = fopen( 'php://output', 'w' );
+		fwrite($output,chr(0xEF).chr(0xBB).chr(0xBF)); 
 		if ( $submissions->have_posts() ) {
 			$last_submission_id = $submissions->posts[0];
 
