@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-09 20:25+0100\n"
-"PO-Revision-Date: 2014-08-12 00:58:53+0000\n"
-"Last-Translator: Mohamed Nazir <Nazir@smartit-sol.com>\n"
+"POT-Creation-Date: 2015-12-09 22:54+0000\n"
+"PO-Revision-Date: 2015-09-25 17:07:10+0000\n"
+"Last-Translator: stephenharris <stephenh1988@gmail.com>\n"
 "Language-Team: \n"
 "Language: Arabic\n"
 "MIME-Version: 1.0\n"
@@ -437,7 +437,7 @@ msgstr "منظم"
 
 #: event-organiser-edit.php:75
 msgid "This is a reoccurring event"
-msgstr "هذا الحدث متكرر"
+msgstr ""
 
 #: event-organiser-edit.php:76
 msgid "Check to edit this event and its reoccurrences"
@@ -466,6 +466,7 @@ msgid "All day"
 msgstr "طوال اليوم"
 
 #: event-organiser-edit.php:139
+#, fuzzy
 msgid "Reoccurence:"
 msgstr "التكرار"
 
@@ -503,6 +504,7 @@ msgid "on"
 msgstr ""
 
 #: event-organiser-edit.php:176
+#, fuzzy
 msgid "day of month"
 msgstr "يوم في الشهر"
 
@@ -600,8 +602,9 @@ msgid "Event"
 msgstr "حدث"
 
 #: event-organiser-manage.php:38
+#, fuzzy
 msgid "Reoccurrence"
-msgstr ""
+msgstr "التكرار"
 
 #: event-organiser-manage.php:163
 msgid "View all events"
@@ -829,8 +832,9 @@ msgid "Exclude events from searches:"
 msgstr ""
 
 #: event-organiser-settings.php:236
+#, fuzzy
 msgid "Enable templates:"
-msgstr "تمكين القوالب"
+msgstr "قوالب"
 
 #: event-organiser-settings.php:242
 msgid ""
@@ -1177,8 +1181,9 @@ msgid "End"
 msgstr ""
 
 #: includes/event-organiser-ajax.php:436
+#, fuzzy
 msgid "This event reoccurs"
-msgstr ""
+msgstr "هذا الحدث سوف يتكرر "
 
 #: includes/event-organiser-ajax.php:442 includes/event-organiser-cpt.php:221
 msgid "Edit Event"
@@ -1655,8 +1660,9 @@ msgid "one time only"
 msgstr ""
 
 #: includes/event-organiser-event-functions.php:760
+#, fuzzy
 msgid "custom reoccurrence"
-msgstr ""
+msgstr "التكرار"
 
 #: includes/event-organiser-event-functions.php:767
 #: includes/event-organiser-register.php:256
@@ -1903,18 +1909,18 @@ msgid ""
 msgstr ""
 
 #: templates/taxonomy-event-category.php:31
-#, php-format
+#, fuzzy, php-format
 msgid "Event Category Archives: %s"
-msgstr ""
+msgstr "تصنيفات الأحداث"
 
 #: templates/taxonomy-event-category.php:120
 msgid "Apologies, but no events were found for the requested category. "
 msgstr ""
 
 #: templates/taxonomy-event-tag.php:31
-#, php-format
+#, fuzzy, php-format
 msgid "Event Tag Archives: %s"
-msgstr ""
+msgstr "أرشيف الأحداث"
 
 #: templates/taxonomy-event-tag.php:120
 msgid "Apologies, but no events were found for the requested tag. "
@@ -1928,3 +1934,6 @@ msgstr ""
 #: templates/taxonomy-event-venue.php:118
 msgid "Apologies, but no events were found for the requested venue. "
 msgstr ""
+
+#~ msgid "Repeat on days of week:"
+#~ msgstr "يوم في الأسبوع"

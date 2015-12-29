@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-09 20:25+0100\n"
-"PO-Revision-Date: 2014-03-13 09:58:04+0000\n"
-"Last-Translator: Matej <matej.faganel@me.com>\n"
+"POT-Creation-Date: 2015-12-09 22:54+0000\n"
+"PO-Revision-Date: 2015-09-26 19:43:43+0000\n"
+"Last-Translator: stephenharris <stephenh1988@gmail.com>\n"
 "Language-Team: \n"
 "Language: Slovenian (Slovenia)\n"
 "MIME-Version: 1.0\n"
@@ -437,9 +437,10 @@ msgstr "Organizator"
 
 #: event-organiser-edit.php:75
 msgid "This is a reoccurring event"
-msgstr "To je ponavljajoč dogodek"
+msgstr ""
 
 #: event-organiser-edit.php:76
+#, fuzzy
 msgid "Check to edit this event and its reoccurrences"
 msgstr "Označi za urejanje dogodka in njegova ponavljanja"
 
@@ -466,8 +467,9 @@ msgid "All day"
 msgstr "Cel dan"
 
 #: event-organiser-edit.php:139
+#, fuzzy
 msgid "Reoccurence:"
-msgstr "Ponavljanje:"
+msgstr "Ponavljanje"
 
 #: event-organiser-edit.php:141
 msgid "none"
@@ -503,6 +505,7 @@ msgid "on"
 msgstr "dne"
 
 #: event-organiser-edit.php:176
+#, fuzzy
 msgid "day of month"
 msgstr "dan meseca"
 
@@ -600,6 +603,7 @@ msgid "Event"
 msgstr "Dogodek"
 
 #: event-organiser-manage.php:38
+#, fuzzy
 msgid "Reoccurrence"
 msgstr "Ponavljanje"
 
@@ -829,8 +833,9 @@ msgid "Exclude events from searches:"
 msgstr "Izloči dogodke iz iskanj:"
 
 #: event-organiser-settings.php:236
+#, fuzzy
 msgid "Enable templates:"
-msgstr "Omogoči predloge:"
+msgstr "Predloge"
 
 #: event-organiser-settings.php:242
 msgid ""
@@ -1178,6 +1183,7 @@ msgid "End"
 msgstr "Konec"
 
 #: includes/event-organiser-ajax.php:436
+#, fuzzy
 msgid "This event reoccurs"
 msgstr "Ta dogodek se ponavlja"
 
@@ -1658,8 +1664,9 @@ msgid "one time only"
 msgstr "le enkrat"
 
 #: includes/event-organiser-event-functions.php:760
+#, fuzzy
 msgid "custom reoccurrence"
-msgstr ""
+msgstr "Ponavljanje"
 
 #: includes/event-organiser-event-functions.php:767
 #: includes/event-organiser-register.php:256
@@ -1912,20 +1919,22 @@ msgstr ""
 #: templates/taxonomy-event-category.php:31
 #, fuzzy, php-format
 msgid "Event Category Archives: %s"
-msgstr "Arhiv kategorije dogodkov"
+msgstr "Upravljaj Kategorije in Oznake Dogodkov"
 
 #: templates/taxonomy-event-category.php:120
+#, fuzzy
 msgid "Apologies, but no events were found for the requested category. "
-msgstr "Oprostite, za željeno kategorijo dogodkov ni zadetkov.   "
+msgstr "Oprostite, za željen seznam dogodkov ni zadetkov."
 
 #: templates/taxonomy-event-tag.php:31
 #, fuzzy, php-format
 msgid "Event Tag Archives: %s"
-msgstr "Arhiv oznak dogodkov"
+msgstr "Dogodki na/v: %s"
 
 #: templates/taxonomy-event-tag.php:120
+#, fuzzy
 msgid "Apologies, but no events were found for the requested tag. "
-msgstr "Oprostite, za željeno oznako dogodkov ni zadetkov."
+msgstr "Oprostite, za željen seznam dogodkov ni zadetkov."
 
 #: templates/taxonomy-event-venue.php:31
 #, php-format
@@ -1933,5 +1942,21 @@ msgid "Events at: %s"
 msgstr "Dogodki na/v: %s"
 
 #: templates/taxonomy-event-venue.php:118
+#, fuzzy
 msgid "Apologies, but no events were found for the requested venue. "
-msgstr "Oprostite, za željeno lokacijo dogodkov ni zadetkov."
+msgstr "Oprostite, za željen seznam dogodkov ni zadetkov."
+
+#~ msgid "End Date"
+#~ msgstr "Konec Datum"
+
+#~ msgid "End Time"
+#~ msgstr "Konec Ura"
+
+#~ msgid "Repeat on days of week:"
+#~ msgstr "dan tedna"
+
+#~ msgid "Start Date"
+#~ msgstr "Začetek Datum"
+
+#~ msgid "Start Time"
+#~ msgstr "Začetek Ura"

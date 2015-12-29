@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-09 20:25+0100\n"
-"PO-Revision-Date: 2015-01-22 14:10:41+0000\n"
-"Last-Translator: Lelde <528redakcija@gmail.com>\n"
+"POT-Creation-Date: 2015-12-09 22:54+0000\n"
+"PO-Revision-Date: 2015-09-26 04:13:51+0000\n"
+"Last-Translator: stephenharris <stephenh1988@gmail.com>\n"
 "Language-Team: \n"
 "Language: Latvian\n"
 "MIME-Version: 1.0\n"
@@ -1177,8 +1177,9 @@ msgid "End"
 msgstr "Beidzas"
 
 #: includes/event-organiser-ajax.php:436
+#, fuzzy
 msgid "This event reoccurs"
-msgstr ""
+msgstr "Šis pasākums atkārtoti notiks"
 
 #: includes/event-organiser-ajax.php:442 includes/event-organiser-cpt.php:221
 msgid "Edit Event"
@@ -1880,9 +1881,9 @@ msgid ""
 msgstr ""
 
 #: templates/event-meta-event-single.php:50
-#, fuzzy, php-format
+#, php-format
 msgid "This event finished on %s"
-msgstr "Šis pasākums ir beidzies"
+msgstr "Šis pasākums pabeigts uz %s"
 
 #: templates/event-meta-event-single.php:89
 msgid "Upcoming Dates"
@@ -1903,22 +1904,24 @@ msgid ""
 msgstr ""
 
 #: templates/taxonomy-event-category.php:31
-#, fuzzy, php-format
+#, php-format
 msgid "Event Category Archives: %s"
-msgstr "Pasākuma kategorija"
+msgstr ""
 
 #: templates/taxonomy-event-category.php:120
+#, fuzzy
 msgid "Apologies, but no events were found for the requested category. "
 msgstr "Atvaino, arhīvā nav informācijas par pasākumiem pēc šiem kritērijiem"
 
 #: templates/taxonomy-event-tag.php:31
-#, fuzzy, php-format
+#, php-format
 msgid "Event Tag Archives: %s"
-msgstr "Pasākuma birku arhīvs"
+msgstr ""
 
 #: templates/taxonomy-event-tag.php:120
+#, fuzzy
 msgid "Apologies, but no events were found for the requested tag. "
-msgstr ""
+msgstr "Atvaino, arhīvā nav informācijas par pasākumiem pēc šiem kritērijiem"
 
 #: templates/taxonomy-event-venue.php:31
 #, php-format
@@ -1926,5 +1929,12 @@ msgid "Events at: %s"
 msgstr ""
 
 #: templates/taxonomy-event-venue.php:118
+#, fuzzy
 msgid "Apologies, but no events were found for the requested venue. "
-msgstr ""
+msgstr "Atvaino, arhīvā nav informācijas par pasākumiem pēc šiem kritērijiem"
+
+#~ msgid "Start Date"
+#~ msgstr "sākuma datums"
+
+#~ msgid "Start Time"
+#~ msgstr "sākuma laiks"

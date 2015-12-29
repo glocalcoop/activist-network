@@ -3,8 +3,8 @@ Contributors: tlovett1
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HR34W94MM53RQ
 Tags: contact form, web form, custom contact form, custom forms, captcha form, contact fields, form mailers, forms
 Requires at least: 3.9
-Tested up to: 4.4
-Stable tag: 6.9.4
+Tested up to: 4.5
+Stable tag: 7.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,22 @@ Please refer to [Github](http://github.com/tlovett1/custom-contact-forms) for de
 For questions, feature requests, and support concerning the Custom Contact Forms plugin, please refer to [Github](http://github.com/tlovett1/custom-contact-forms).
 
 == Changelog ==
+
+= 7.0.3 =
+* Unhack API
+* Use site_url() for API endpoints
+
+= 7.0.2 =
+* Bust script/style cache
+
+= 7.0.1 =
+* Fix CORS issue
+* Add Chinese [davidabm](https://github.com/davidabm)
+
+= 7.0 =
+* Redo API integration for WordPress 4.4 improving stability
+* Add `accept` attribute to file upload input. Props [tuamo](http://github.com/tuamo)
+* Fix Chinese exporting. Props [davidabm](http://github.com/davidabm)
 
 = 6.9.4 =
 * WordPress list signup

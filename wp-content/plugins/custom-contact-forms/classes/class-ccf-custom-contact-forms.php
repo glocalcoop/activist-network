@@ -15,6 +15,7 @@ class CCF_Custom_Contact_Forms {
 	 * @since 6.0
 	 */
 	public function setup() {
+		add_action( 'rest_api_init', array( $this, 'api_init' ), 1000 );
 		add_action( 'plugins_loaded', array( $this, 'manually_load_api' ), 1000 );
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 		add_filter( 'plugin_action_links', array( $this, 'filter_plugin_action_links' ), 10, 2 );
@@ -23,7 +24,6 @@ class CCF_Custom_Contact_Forms {
 		add_action( 'admin_init', array( $this, 'flush_rewrites' ), 10000 );
 
 	}
-
 
 	/**
 	 * Trick API into thinking non publically queryable post types are queryable
@@ -112,9 +112,6 @@ class CCF_Custom_Contact_Forms {
 	public function manually_load_api() {
 		global $pagenow;
 
-		add_action( 'wp_json_server_before_serve', array( $this, 'api_init' ) );
-		add_filter( 'json_url', 'set_url_scheme' );
-
 		if ( ! empty( $pagenow ) ) {
 			if ( 'plugins.php' === $pagenow && ( ! empty( $_GET['action'] ) && 'activate' === $_GET['action'] || ! empty( $_POST['checked'] ) ) ) {
 
@@ -132,11 +129,11 @@ class CCF_Custom_Contact_Forms {
 			}
 		}
 
-		if ( function_exists( 'json_api_init' ) ) {
+		if ( class_exists( 'create_initial_rest_routes' ) ) {
 			return;
 		}
 
-		require_once( dirname( __FILE__ ) . '/../vendor/wp-api/wp-api/plugin.php' );
+		require_once( dirname( __FILE__ ) . '/../wp-api/plugin.php' );
 	}
 
 	/**
@@ -146,12 +143,10 @@ class CCF_Custom_Contact_Forms {
 	 * @since 6.0
 	 */
 	public function api_init( $server ) {
-		global $ccf_api;
+		require_once( dirname( __FILE__ ) . '/../classes/class-ccf-api-form-controller.php' );
 
-		require_once( dirname( __FILE__ ) . '/../classes/class-ccf-api.php' );
-
-		$ccf_api = new CCF_API( $server );
-		add_filter( 'json_endpoints', array( $ccf_api, 'register_routes' ) );
+		$form_controller = new CCF_API_Form_Controller;
+		$form_controller->register_routes();
 	}
 
 	/**
