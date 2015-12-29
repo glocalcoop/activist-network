@@ -4,6 +4,10 @@
         {
             "name": "Pea, Glocal",
             "email": "pea@glocal.coop"
+        },
+        {
+            "name": "Dana, Glocal",
+            "email": "dana@glocal.coop"
         }
     ],
     "repositories": [
@@ -83,6 +87,42 @@
                 }
             }
         }
+        {
+            "type": "package",
+            "package": {
+                "name": "glocalcoop/anp-network-main-theme",
+                "version": "master",
+                "type": "wordpress-theme",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/glocalcoop/anp-network-main-theme/archive/master.zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "glocalcoop/anp-network-subsite-theme",
+                "version": "master",
+                "type": "wordpress-theme",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/glocalcoop/anp-network-subsite-theme/archive/master.zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "glocalcoop/anp-network-partner-theme",
+                "version": "master",
+                "type": "wordpress-theme",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/glocalcoop/anp-network-partner-theme/archive/master.zip"
+                }
+            }
+        }
     ],
     "require": {
         "glocalcoop/anp-network-content":"dev-master",
@@ -128,7 +168,10 @@
         "wpackagist-plugin/civicrm-admin-utilities": ">=0.2.2",
         "wpackagist-plugin/civicrm-wp-member-sync": "0.2.5",
         "wpackagist-plugin/bp-groups-civicrm-sync": ">=0.2.1",
-        "wpackagist-plugin/wp-multi-network": "1.7.0"
+        "wpackagist-plugin/wp-multi-network": "1.7.0",
+        "glocalcoop/anp-network-main-theme": "dev-master",
+        "glocalcoop/anp-network-subsite-theme": "dev-master",
+        "glocalcoop/anp-network-partner-theme": "dev-master"
     },
     "require-dev": {
         "wpackagist-plugin/developer": ">=1.2.5",
