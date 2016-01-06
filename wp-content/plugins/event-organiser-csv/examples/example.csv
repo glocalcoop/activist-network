@@ -1,0 +1,5 @@
+Title,Start Date,End Date,Content,Venue,Category,Tags,Recurrence schedule,Schedule meta,Recurrence frequency,Recurr until,Include dates,Exclude dates,My custom data
+[CSV Import] All Day Event,2013-11-05,2013-11-05,This event is a single all day event,Cargo,Sport,,once,,,,,,hello world
+[CSV Import] Long event,2013-11-21,2013-11-23,This is a long (all day) event.,,,,once,,,,,,custom field value
+[CSV Import] Twice Weekly Event,2013-11-11 15:30:00,2013-11-11 16:30:00,This event repeats on every week on Mondays and Fridays,Somewhere,Foobar,"Tag A, Tag B",weekly,MO,FR,1,2013-11-29 15:30:00,,
+[CSV Import] Monthly Event,2013-10-23 12:30:00,2013-10-24 13:00:00,4th Wednesday Every 2nd Month - Except Christmas,Cargo,Foobar,"Tag A, Tag C",monthly,BYDAY=4WE,2,2014-12-31 12:30:00,,2013-12-25,foobar
