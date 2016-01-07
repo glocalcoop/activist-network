@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<menu>
+  <item>
+     <path>civicrm/volunteer/loghours</path>
+     <title>Batch Data Entry for Logging Volunteer</title>
+     <page_callback>CRM_Volunteer_Form_Log</page_callback>
+     <path_arguments>action=add</path_arguments>
+     <access_arguments>access CiviEvent,edit all events</access_arguments>
+     <component>CiviEvent</component>
+  </item>
+  <item>
+     <path>civicrm/volunteer/need</path>
+     <title>Define Volunteer Needs</title>
+     <page_callback>CRM_Volunteer_Form_Need</page_callback>
+     <path_arguments>action=add</path_arguments>
+     <access_arguments>access CiviEvent,edit all events</access_arguments>
+     <component>CiviEvent</component>
+  </item>
+  <item>
+     <path>civicrm/volunteer/assign</path>
+     <title>Assign Volunteers</title>
+     <page_callback>CRM_Volunteer_Form_Assign</page_callback>
+     <path_arguments>action=add</path_arguments>
+     <access_arguments>access CiviEvent,edit all events</access_arguments>
+     <component>CiviEvent</component>
+  </item>
+  <item>
+     <path>civicrm/event/manage/volunteer</path>
+     <title>Manage Volunteer</title>
+     <page_callback>CRM_Volunteer_Form_Volunteer</page_callback>
+     <access_arguments>access CiviEvent,edit all events</access_arguments>
+     <is_ssl>true</is_ssl>
+     <weight>935</weight>
+  </item>
+  <item>
+    <path>civicrm/volunteer/signup</path>
+    <page_callback>CRM_Volunteer_Form_VolunteerSignUp</page_callback>
+    <title>Volunteer Signup</title>
+    <!-- For VOL-71, we move access control into the preprocessor -->
+    <access_callback>1</access_callback>
+    <!-- <access_arguments>register to volunteer</access_arguments> -->
+    <is_public>true</is_public>
+  </item>
+  <item>
+    <path>civicrm/admin/options/volunteer_role</path>
+    <title>Volunteer Roles</title>
+    <desc>Roles available to volunteer projects.</desc>
+    <path_arguments>group=volunteer_role</path_arguments>
+    <page_callback>CRM_Admin_Page_Options</page_callback>
+    <adminGroup>Customize Data and Screens</adminGroup>
+    <icon>admin/small/08.png</icon>
+    <weight>80</weight>
+  </item>
+  <item>
+    <path>civicrm/volunteer/commendation</path>
+    <page_callback>CRM_Volunteer_Form_Commendation</page_callback>
+    <title>Volunteer Commendation</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/volunteer/manage/includeprofile</path>
+    <page_callback>CRM_Volunteer_Form_IncludeProfile</page_callback>
+    <title>Profile Widget</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/volunteer/join</path>
+    <title>Notify Me of Volunteer Opportunities</title>
+    <access_callback>1</access_callback>
+    <page_callback>CRM_Volunteer_Page_Router</page_callback>
+    <is_public>true</is_public>
+  </item>
+</menu>

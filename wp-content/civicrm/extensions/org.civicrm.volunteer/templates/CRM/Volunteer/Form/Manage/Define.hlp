@@ -1,0 +1,53 @@
+{*
+ +--------------------------------------------------------------------+
+ | CiviCRM version 4.4                                                |
+ +--------------------------------------------------------------------+
+ | Copyright CiviCRM LLC (c) 2004-2013                                |
+ +--------------------------------------------------------------------+
+ | This file is a part of CiviCRM.                                    |
+ |                                                                    |
+ | CiviCRM is free software; you can copy, modify, and distribute it  |
+ | under the terms of the GNU Affero General Public License           |
+ | Version 3, 19 November 2007 and the CiviCRM Licensing Exception.   |
+ |                                                                    |
+ | CiviCRM is distributed in the hope that it will be useful, but     |
+ | WITHOUT ANY WARRANTY; without even the implied warranty of         |
+ | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.               |
+ | See the GNU Affero General Public License for more details.        |
+ |                                                                    |
+ | You should have received a copy of the GNU Affero General Public   |
+ | License and the CiviCRM Licensing Exception along                  |
+ | with this program; if not, contact CiviCRM LLC                     |
+ | at info[AT]civicrm[DOT]org. If you have questions about the        |
+ | GNU Affero General Public License or the licensing of CiviCRM,     |
+ | see the CiviCRM license FAQ at http://civicrm.org/licensing        |
+ +--------------------------------------------------------------------+
+*}
+{capture assign=volRoleURL}{crmURL p="civicrm/admin/options/volunteer_role" q="reset=1"}{/capture}
+
+{htxt id="volunteer-define-title"}
+  {ts domain='org.civicrm.volunteer'}Volunteer Needs{/ts}
+{/htxt}
+{htxt id="volunteer-define"}
+    <p>
+      {ts domain='org.civicrm.volunteer'}Use this form to define the number of
+      volunteers needed for each role and time slot. For each slot, you will
+      select a role, set the number of volunteers needed, set a start date and
+      time, and indicate the duration in minutes.{/ts}
+    </p>
+    <p>
+      {ts domain='org.civicrm.volunteer'}If you want to include a Sign Up button
+      on the event information page, check the 'Public' column for at least one
+      of the slots, or check the box to allow users to sign up without specifying
+      a shift. 'Public' slots will be visible on the public signup form.{/ts}
+      {if $params.isModulePermissionSupported}
+        {ts domain='org.civicrm.volunteer'}You will also need to ensure that the
+        'CiviVolunteer: register to volunteer' permission has been enabled.{/ts}
+      {/if}
+    </p>
+    <p>
+      {ts 1=$volRoleURL domain='org.civicrm.volunteer'}If this is a new type of
+      volunteer project, you may need to create additional volunteer roles first
+      from <a href=%1>Administer > Administration Console > Volunteer Roles</a>.{/ts}
+    </p>
+{/htxt}

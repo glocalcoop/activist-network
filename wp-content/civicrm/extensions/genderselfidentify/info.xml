@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<extension key="org.woolman.genderselfidentify" type="module">
+  <file>genderselfidentify</file>
+  <name>Gender Self-Identify</name>
+  <description>A more inclusive way to input gender in CiviCRM.</description>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>Coleman Watts</author>
+    <email>coleman@civicrm.org</email>
+  </maintainer>
+  <urls>
+    <url desc="Main Extension Page">https://civicrm.org/extensions/gender-self-identify</url>
+    <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
+  </urls>
+  <releaseDate>2015-10-17</releaseDate>
+  <version>1.2</version>
+  <compatibility>
+    <ver>4.4</ver>
+    <ver>4.5</ver>
+    <ver>4.6</ver>
+    <ver>4.7</ver>
+  </compatibility>
+  <comments>There are no configuration options for this extension. Simply install it and users will be able to enter gender in an unrestricted way.</comments>
+  <civix>
+    <namespace>CRM/Genderselfidentify</namespace>
+  </civix>
+</extension>

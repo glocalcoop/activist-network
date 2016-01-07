@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+  <base>CRM/Volunteer</base>
+  <class>Need</class>
+  <name>civicrm_volunteer_need</name>
+  <add>4.4</add>
+  <log>true</log>
+  <field>
+    <name>id</name>
+    <uniqueName>volunteer_need_id</uniqueName>
+    <title>CiviVolunteer Need ID</title>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>Need Id</comment>
+    <add>4.4</add>
+  </field>
+  <primaryKey>
+     <name>id</name>
+     <autoincrement>true</autoincrement>
+  </primaryKey>
+  <field>
+    <name>project_id</name>
+    <type>int unsigned</type>
+    <required>false</required>
+    <uniqueName>volunteer_need_project_id</uniqueName>
+    <comment>FK to civicrm_volunteer_project table which contains entity_table + entity for each volunteer project (initially civicrm_event + eventID).</comment>
+    <add>4.4</add>
+  </field>
+  <foreignKey>
+    <name>project_id</name>
+    <table>civicrm_volunteer_project</table>
+    <key>id</key>
+    <onDelete>SET NULL</onDelete>
+  </foreignKey>
+  <field>
+    <name>start_time</name>
+    <title>Start Date and Time</title>
+    <type>datetime</type>
+    <add>4.4</add>
+  </field>
+  <field>
+    <name>duration</name>
+    <title>Duration</title>
+    <type>int</type>
+    <comment>Length in minutes of this volunteer time slot.</comment>
+    <add>4.4</add>
+  </field>
+  <field>
+    <name>is_flexible</name>
+    <title>Flexible</title>
+    <type>boolean</type>
+    <default>0</default>
+    <required>true</required>
+    <comment>Boolean indicating whether or not the time and role are flexible. Activities linked to a flexible need indicate that the volunteer is generally available.</comment>
+    <add>4.4</add>
+  </field>
+  <field>
+    <name>quantity</name>
+    <type>int</type>
+    <default>NULL</default>
+    <title>Quantity</title>
+    <comment>The number of volunteers needed for this need.</comment>
+    <add>4.4</add>
+  </field>
+  <field>
+    <name>visibility_id</name>
+    <title>Visibility</title>
+    <type>int unsigned</type>
+    <default>NULL</default>
+    <comment> Indicates whether this need is offered on public volunteer signup forms. Implicit FK to option_value row in visibility option_group.</comment>
+    <add>4.4</add>
+    <pseudoconstant>
+      <optionGroupName>visibility</optionGroupName>
+    </pseudoconstant>
+  </field>
+  <field>
+    <name>role_id</name>
+    <title>Role</title>
+    <type>int unsigned</type>
+    <default>NULL</default>
+    <comment>The role associated with this need. Implicit FK to option_value row in volunteer_role option_group.</comment>
+    <add>4.4</add>
+    <pseudoconstant>
+      <optionGroupName>volunteer_role</optionGroupName>
+    </pseudoconstant>
+  </field>
+  <field>
+    <name>is_active</name>
+    <type>boolean</type>
+    <title>Enabled</title>
+    <default>1</default>
+    <required>true</required>
+    <comment>Is this need enabled?</comment>
+    <add>4.4</add>
+  </field>
+</table>
