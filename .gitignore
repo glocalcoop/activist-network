@@ -19,7 +19,7 @@ wp-content/*
 # Ignore Specific Directories or Files
 wp-content/plugins/files/
 wp-content/plugins/wp-multi-network
-wp-content/plugins/oauth2-provider
+wp-content/plugins/civicrm/civicrm.settings.php
 
 # Development
 wp-content/plugins/developer
