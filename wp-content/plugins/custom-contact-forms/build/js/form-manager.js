@@ -333,6 +333,22 @@
 		}
 	);
 
+	wp.ccf.models.PostFieldMapping = wp.ccf.models.PostFieldMapping || Backbone.Model.extend(
+		{
+			defaults: {
+				formField: '',
+				postField: '',
+				customFieldKey: ''
+			},
+
+			decode: function() {
+				return _modelDecode.call( this, [] );
+			},
+
+			set: _modelSet
+		}
+	);
+
 	wp.ccf.models.FormNotificationAddress = wp.ccf.models.FormNotificationAddress || Backbone.Model.extend(
 		{
 			defaults: {
@@ -427,7 +443,10 @@
 					completionActionType: 'text',
 					completionRedirectUrl: '',
 					completionMessage: '',
-
+					postCreation: false,
+					postCreationType: 'post',
+					postCreationStatus: 'draft',
+					postFieldMappings: new wp.ccf.collections.PostFieldMappings(),
 					notifications: new wp.ccf.collections.FormNotifications(),
 					pause: false,
 					pauseMessage: ccfSettings.pauseMessage
@@ -557,6 +576,38 @@
 						});
 
 						response.notifications = new wp.ccf.collections.FormNotifications( newNotifications );
+					}
+				}
+
+				if ( response.postFieldMappings ) {
+
+					var postFieldMappings = SELF.get( 'postFieldMappings' );
+
+					if ( postFieldMappings && postFieldMappings.length > 0 ) {
+
+						for ( i = 0; i < response.postFieldMappings.length; i++ ) {
+							var newPostFieldMapping = response.postFieldMappings[i];
+
+							var postFieldMapping = postFieldMappings.findWhere( { slug: newPostFieldMapping.slug } );
+
+							if ( postFieldMapping ) {
+								postFieldMapping.set( newPostFieldMapping );
+								postFieldMapping.decode();
+							}
+						}
+
+						delete response.postFieldMappings;
+					} else {
+						var newPostFieldMappings = [];
+
+						_.each( response.postFieldMappings, function( postFieldMapping ) {
+							var postFieldMappingModel = new wp.ccf.models.PostFieldMapping( postFieldMapping );
+							postFieldMappingModel.decode();
+
+							newPostFieldMappings.push( postFieldMappingModel );
+						});
+
+						response.postFieldMappings = new wp.ccf.collections.PostFieldMappings( newPostFieldMappings );
 					}
 				}
 
@@ -990,6 +1041,12 @@
 		}
 	);
 
+	wp.ccf.collections.PostFieldMappings = wp.ccf.collections.PostFieldMappings || Backbone.Collection.extend(
+		{
+			model: wp.ccf.models.PostFieldMapping
+		}
+	);
+
 	wp.ccf.collections.FormNotificationAddresses = wp.ccf.collections.FormNotificationAddresses || Backbone.Collection.extend(
 		{
 			model: wp.ccf.models.FormNotificationAddress
@@ -1366,6 +1423,27 @@
 				this.render();
 			},
 
+			updateFieldVariables: function() {
+				if ( 'edit' !== this.context ) {
+					return;
+				}
+				
+				var fieldVariables = this.el.querySelectorAll( '.field-variables' )[0];
+				var variablesText = '';
+				var type;
+				var fields = this.form.get( 'fields' );
+
+				fields.each( function( field ) {
+					type = field.get( 'type' );
+
+					if ( 'html' !== type && 'section-header' !== type && 'recaptcha' !== type ) {
+						variablesText += '[' + field.get( 'slug' ) + '] ';
+					}
+				} );
+
+				fieldVariables.innerText = variablesText;
+			},
+
 			updateFromFieldField: function() {
 				if ( 'edit' !== this.context ) {
 					return;
@@ -1528,7 +1606,7 @@
 				this.model.set( 'content', emailNotificationContent );
 
 				var emailNotificationActive = this.el.querySelectorAll( '.form-email-notification-active' )[0].value;
-				this.model.set( 'active', ( 'Yes' === emailNotificationActive ) ? true : false );
+				this.model.set( 'active', ( '1' === emailNotificationActive ) ? true : false );
 
 				var emailNotificationFromType = this.el.querySelectorAll( '.form-email-notification-from-type' )[0].value;
 				this.model.set( 'fromType', emailNotificationFromType );
@@ -1580,6 +1658,7 @@
 				if ( 'edit' === this.context) {
 					this.toggleNotificationFields();
 					this.updateFromFieldField();
+					this.updateFieldVariables();
 
 					var addressesContainer = this.el.querySelectorAll( '.addresses' )[0];
 					var addresses = this.model.get( 'addresses' );
@@ -1600,6 +1679,8 @@
 
 				this.listenTo( fields, 'add', this.updateFromFieldField, this );
 				this.listenTo( fields, 'remove', this.updateFromFieldField, this );
+				this.listenTo( fields, 'add', this.updateFieldVariables, this );
+				this.listenTo( fields, 'remove', this.updateFieldVariables, this );
 
 				return this;
 			},
@@ -2297,6 +2378,180 @@
 		}
 	);
 
+	wp.ccf.views.PostFieldMapping = Backbone.View.extend(
+		{
+			template: wp.ccf.utils.template( 'ccf-post-field-mapping' ),
+			className: 'field-mapping',
+
+			events: {
+				'click .add': 'triggerAdd',
+				'click .delete': 'triggerDelete',
+				'blur input': 'save',
+				'change select': 'save'
+			},
+
+			initialize: function( options ) {
+				this.parent = options.parent;
+				this.form = options.form;
+			},
+
+			destroy: function() {
+				this.unbind();
+			},
+
+			save: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
+
+				var formField = this.el.querySelectorAll( '.field-form-field' )[0].value;
+				var postField = this.el.querySelectorAll( '.field-post-field' )[0].value;
+				var customFieldKey = this.el.querySelectorAll( '.field-custom-field-key' );
+
+				var oldPostField = this.model.get( 'postField' );
+				
+				this.model.set( 'formField', formField );
+				this.model.set( 'postField', postField );
+
+				if ( customFieldKey.length ) {
+					this.model.set( 'customFieldKey', customFieldKey[0].value );
+				}
+
+				if ( oldPostField !== postField ) {
+					this.render();
+				}
+
+				return this;
+
+			},
+
+			updateFormFieldField: function() {
+				var fieldFormField = this.el.querySelectorAll( '.field-form-field' )[0];
+				fieldFormField.innerHTML = '';
+				fieldFormField.disabled = false;
+
+				var fields = this.form.get( 'fields' ),
+					fieldsAdded = 0;
+
+				var formField = this.model.get( 'formField' ),
+					option;
+
+				if ( fields.length >= 1 ) {
+					option = document.createElement( 'option' );
+					option.innerHTML = ccfSettings.chooseFormField;
+					option.value = '';
+
+					fieldFormField.appendChild( option );
+
+					fields.each( function( field ) {
+						option = document.createElement( 'option' );
+						option.innerHTML = field.get( 'slug' );
+						option.value = field.get( 'slug' );
+
+						if ( field.get( 'slug' ) === formField ) {
+							option.selected = true;
+						}
+
+						fieldFormField.appendChild( option );
+
+						fieldsAdded++;
+					});
+				}
+
+				if ( 0 === fieldsAdded ) {
+					option = document.createElement( 'option' );
+					option.innerHTML = ccfSettings.noAvailableFields;
+					option.value = '';
+					fieldFormField.appendChild( option );
+					fieldFormField.disabled = true;
+				}
+			},
+
+			updatePostFields: function() {
+				var dropdown = this.el.querySelectorAll( '.field-post-field' )[0],
+					option;
+
+				option = document.createElement( 'option' );
+				option.value = '';
+				option.innerText = ccfSettings.choosePostField;
+				dropdown.appendChild( option );
+
+				var mappings = this.form.get( 'postFieldMappings' );
+				var usedFields = [];
+
+				mappings.each( function( model ) {
+					if ( model !== this.model ) {
+						usedFields.push( model.get( 'postField' ) );
+					}
+				}, this );
+
+				_.each( ccfSettings.postFields.single, function( field, slug ) {
+					if ( -1 === usedFields.indexOf( slug ) ) {
+						option = document.createElement( 'option' );
+						option.value = slug;
+						option.innerText = field;
+
+						if ( this.model.get( 'postField' ) === slug ) {
+							option.selected = true;
+						}
+
+						dropdown.appendChild( option );
+					}
+				}, this );
+
+				_.each( ccfSettings.postFields.repeatable, function( field, slug ) {
+
+					option = document.createElement( 'option' );
+					option.value = slug;
+					option.innerText = field;
+
+					if ( this.model.get( 'postField' ) === slug ) {
+						option.selected = true;
+					}
+
+					dropdown.appendChild( option );
+
+				}, this );
+			},
+
+			render: function() {
+				var context = {};
+				if ( this.model ) {
+					context.mapping = this.model.toJSON();
+				}
+
+				this.el.innerHTML = this.template( context );
+
+				var fields = this.form.get( 'fields' );
+
+				this.listenTo( fields, 'add', this.updateFormFieldField, this );
+				this.listenTo( fields, 'remove', this.updateFormieldField, this );
+
+				this.updateFormFieldField();
+				this.updatePostFields();
+
+				return this;
+			},
+
+			triggerAdd: function() {
+				this.form.get( 'postFieldMappings' ).add( new wp.ccf.models.PostFieldMapping() );
+			},
+
+			triggerDelete: function() {
+				var mappings = this.form.get( 'postFieldMappings' );
+
+				if ( mappings.length > 1 ) {
+					this.parent.deletePostFieldMapping( this );
+				} else {
+					this.model.clear().set( wp.ccf.models.PostFieldMapping.prototype.defaults );
+					this.destroy();
+					this.render();
+				}
+			}
+		}
+	);
+
 	wp.ccf.views.FormSettings = wp.ccf.views.FormSettings || Backbone.View.extend(
 		{
 			template: wp.ccf.utils.template( 'ccf-form-settings-template' ),
@@ -2306,17 +2561,41 @@
 				'change select': 'save',
 				'change select.form-completion-action-type': 'toggleCompletionFields',
 				'change select.form-pause': 'togglePauseFields',
+				'change select.form-post-creation': 'togglePostCreationFields',
 				'click .add-notification': 'triggerAddNotification'
 			},
 
 			notificationViews: [],
+			mappingViews: [],
 
 			initialize: function( options ) {
 				this.model = options.form;
 				this.notificationViews = [];
+				this.mappingViews = [];
 
 				var notifications = this.model.get( 'notifications' );
 				this.listenTo( notifications, 'add', this.addNotification );
+
+				var mappings = this.model.get( 'postFieldMappings' );
+				this.listenTo( mappings, 'add', this.addPostFieldMapping );
+			},
+
+			deletePostFieldMapping: function( view ) {
+				_.each( this.mappingViews, function( currentView ) {
+					if ( view.cid === currentView.cid ) {
+						var index = _.indexOf( this.mappingViews, currentView );
+						this.model.get( 'postFieldMappings' ).remove( view.model );
+						this.mappingViews[index].remove();
+						this.mappingViews.splice( index, 1 );
+					}
+				}, this );
+			},
+
+			addPostFieldMapping: function( model ) {
+				var mappingContainer = this.el.querySelectorAll( '.post-creation-mapping' )[0];
+				var view = new wp.ccf.views.PostFieldMapping( { model: model, parent: this, form: this.model } );
+				this.mappingViews.push( view );
+				mappingContainer.appendChild( view.render().el );
 			},
 
 			triggerAddNotification: function() {
@@ -2375,6 +2654,18 @@
 				}
 			},
 
+			togglePostCreationFields: function() {
+
+				var postCreation = this.el.querySelectorAll( '.form-post-creation' )[0].value;
+				var $postCreationMappingFields = $( this.el.querySelectorAll( '.post-creation-mapping-field' ) );
+
+				if ( parseInt( postCreation ) ) {
+					$postCreationMappingFields.show();
+				} else {
+					$postCreationMappingFields.hide();
+				}
+			},
+
 			save: function() {
 				if ( this.el.innerHTML === '' ) {
 					// @todo: for some reason this is needed for IE8
@@ -2392,6 +2683,15 @@
 
 				var pause = this.el.querySelectorAll( '.form-pause' )[0].value;
 				this.model.set( 'pause', ( parseInt( pause ) ) ? true : false );
+
+				var postCreation = this.el.querySelectorAll( '.form-post-creation' )[0].value;
+				this.model.set( 'postCreation', ( parseInt( postCreation ) ) ? true : false );
+
+				var postCreationType = this.el.querySelectorAll( '.form-post-creation-type' )[0].value;
+				this.model.set( 'postCreationType', postCreationType );
+
+				var postCreationStatus = this.el.querySelectorAll( '.form-post-creation-status' )[0].value;
+				this.model.set( 'postCreationStatus', postCreationStatus );
 
 				var pauseMessage = this.el.querySelectorAll( '.form-pause-message' )[0].value;
 				this.model.set( 'pauseMessage', pauseMessage );
@@ -2415,6 +2715,10 @@
 				this.save();
 
 				_.each( this.notificationViews, function( view ) {
+					view.save();
+				} );
+
+				_.each( this.mappingViews, function( view ) {
 					view.save();
 				} );
 
@@ -2455,7 +2759,7 @@
 				this.el.innerHTML = this.template( context );
 
 				this.toggleCompletionFields();
-
+				this.togglePostCreationFields();
 				this.togglePauseFields();
 
 				var rowContainer = this.el.querySelectorAll( '.ccf-form-notifications .rows' )[0];
@@ -2474,6 +2778,20 @@
 				}
 
 				rowContainer.parentNode.replaceChild( newRowContainer, rowContainer );
+
+				var mappingsContainer = this.el.querySelectorAll( '.post-creation-mapping' )[0];
+				var mappings = this.model.get( 'postFieldMappings' );
+
+				if ( mappings.length >= 1 ) {
+					mappings.each( function( model ) {
+						var mapping = new wp.ccf.views.PostFieldMapping( { model: model, parent: this, form: this.model } ).render();
+						mappingsContainer.appendChild( mapping.el );
+						this.mappingViews.push( mapping );
+					}, this );
+				} else {
+					var newMapping = new wp.ccf.models.PostFieldMapping();
+					mappings.add( newMapping );
+				}
 
 				wp.ccf.dispatcher.on( 'mainViewChange', this.fullSave, this );
 				wp.ccf.dispatcher.on( 'saveFormSettings', this.fullSave, this );

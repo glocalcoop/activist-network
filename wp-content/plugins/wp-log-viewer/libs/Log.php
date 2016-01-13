@@ -39,10 +39,19 @@ class Log {
 	 * @since 0.1.0
 	 */
 	public function init() {
-		// $base = str_replace('plugins/wp-log-viewer/', '', WPLOGVIEWER_BASE);
-		//$base = preg_replace('/([a-zA-Z0-9_\-\/]+)\/[a-zA-Z0-9_-]+\/wp-log-viewer\//', '$1', WPLOGVIEWER_BASE);
-
 		$this->log_file = WP_CONTENT_DIR . '/debug.log';
+	}
+
+
+	/**
+	 * Get debug.log path
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
+	public function get_debug_file_path() {
+		return $this->log_file;
 	}
 
 
@@ -71,6 +80,20 @@ class Log {
 
 
 	/**
+	 * Check if debugging status can be toggled and saved
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return boolean True if status can be toggled and saved
+	 */
+	function is_debug_toggleable() {
+		$index_file = $_SERVER['DOCUMENT_ROOT'].'/wplv-config.php';
+
+		return defined('WPLV_DEBUG') && file_exists($index_file) && is_writable($index_file) ? true : false;
+	}
+
+
+	/**
 	 * Check if debug status was detected or not
 	 *
 	 * @since 0.11.0
@@ -78,8 +101,31 @@ class Log {
 	 * @return boolean True if debugging status was detected
 	 */
 	public function debug_status_detected() {
-		return defined('WP_DEBUG') && (WP_DEBUG === true || WP_DEBUG === 'true') ? true : false;
-		//return defined('WP_DEBUG_DETECTED') && (WP_DEBUG_DETECTED === true || WP_DEBUG_DETECTED === 'true') ? true : false;
+		return defined('WP_DEBUG');
+	}
+
+
+	/**
+	 * Enable debugging
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return boolean True if debugging was enabled
+	 */
+	public function enable_debugging() {
+		return $this->set_debugging_status(true);
+	}
+
+
+	/**
+	 * Disable debugging
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return boolean True if debugging was disabled
+	 */
+	public function disable_debugging() {
+		return $this->set_debugging_status(false);
 	}
 
 
@@ -205,6 +251,22 @@ class Log {
 
 
 	/**
+	 * Get all file contents
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string The contents or empty string
+	 */
+	public function get_contents() {
+		if ($this->file_exists()) {
+			return file_get_contents($this->log_file);
+		}
+
+		return '';
+	}
+
+
+	/**
 	 * Get all entries newer than specified timestamp
 	 *
 	 * @since 0.1.0
@@ -232,6 +294,7 @@ class Log {
 		return @ftruncate($fp, 0);
 	}
 
+
 	/**
 	 * Delete debug.log file
 	 *
@@ -241,5 +304,31 @@ class Log {
 	 */
 	public function delete() {
 		return unlink($this->log_file) === TRUE ? true : false;
+	}
+
+
+	/**
+	 * Set debugging status if possible
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param $status boolean The new status
+	 * @return boolean True if status updated
+	 */
+	private function set_debugging_status($status=false) {
+		$saved = false;
+
+		if ($this->is_debug_toggleable()) {
+			$index_file = $_SERVER['DOCUMENT_ROOT'].'/wplv-config.php';
+
+			// Get file contents then updated constant value
+			$content = file_get_contents($index_file);
+			$content = preg_replace('/define\([ \"\']+WPLV_DEBUG[ \"\']+,.*;/', 'define("WPLV_DEBUG", '.($status == true ? 'true' : 'false').');', $content);
+
+			// Write updated content to debug.log
+			$saved = file_put_contents($index_file, $content);
+		}
+
+		return $saved !== false || $saved > 0 ? true : false;
 	}
 }

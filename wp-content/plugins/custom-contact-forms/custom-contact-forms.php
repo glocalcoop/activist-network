@@ -2,9 +2,11 @@
 /**
  * Plugin Name: Custom Contact Forms
  * Plugin URI: http://www.taylorlovett.com
- * Description: Build beautiful custom forms the WordPress way. View live previews of your forms while you build them.
+ * Description: Build beautiful custom forms and manage submissions the WordPress way. View live previews of your forms while you build them. Contact forms, subscription forms, payment forms, etc.
  * Author: Taylor Lovett
- * Version: 7.2.2
+ * Version: 7.3.2
+ * Text Domain: custom-contact-forms
+ * Domain Path: /languages
  * Author URI: http://www.taylorlovett.com
  */
 
@@ -12,7 +14,7 @@
  * Include plugin reqs
  */
 
-define( 'CCF_VERSION', '7.2.2' );
+define( 'CCF_VERSION', '7.3.2' );
 
 require_once( dirname( __FILE__ ) . '/classes/class-ccf-constants.php' );
 require_once( dirname( __FILE__ ) . '/classes/class-ccf-custom-contact-forms.php' );

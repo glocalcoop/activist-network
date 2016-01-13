@@ -38,11 +38,12 @@ class Ajax {
 		add_action('wp_ajax_log-changed', [$this, 'check_if_log_modified']);
 		add_action('wp_ajax_log-exists', [$this, 'check_if_log_exists']);
 		add_action('wp_ajax_debug-enabled', [$this, 'check_if_debug_enabled']);
+		add_action('wp_ajax_toggle-debugging', [$this, 'toggle_debugging_status']);
 		add_action('wp_ajax_get-entries', [$this, 'get_log_entries']);
 		add_action('wp_ajax_get-entries-if-modified', [$this, 'get_log_entries_if_modified']);
 		add_action('wp_ajax_clear-log', [$this, 'clear_log']);
-		add_action('wp_ajax_get-default-settings', [$this, 'get_default_settings']);
-		add_action('wp_ajax_update-default-settings', [$this, 'update_default_settings']);
+		add_action('wp_ajax_get-global-settings', [$this, 'get_global_settings']);
+		add_action('wp_ajax_update-global-settings', [$this, 'update_global_settings']);
 		add_action('wp_ajax_get-user-settings', [$this, 'get_user_settings']);
 		add_action('wp_ajax_update-user-settings', [$this, 'update_user_settings']);
 	}
@@ -112,6 +113,23 @@ class Ajax {
 
 
 	/**
+	 * Toggle debugging status
+	 *
+	 * @since 1.0.0
+	 */
+	function toggle_debugging_status() {
+		$log = Log::get_instance();
+		$status = isset($_POST['status']) && intval($_POST['status']) == 1 ? true : false;
+		$changed = $status ? $log->enable_debugging() : $log->disable_debugging();
+
+		wp_send_json([
+			'changed'		=> $changed,
+			'status'		=> $status,
+		]);
+	}
+
+
+	/**
 	 * Get log entries
 	 *
 	 * @since 0.13.0
@@ -142,7 +160,7 @@ class Ajax {
 			$truncated = $log->is_smaller();
 
 			wp_send_json([
-				'truncated'		=> $truncated,
+				'truncated'		=> $truncated ,
 				'entries'		=> $log->get_entries(),
 				'modified'		=> $log->last_modified(),
 				'filesize'		=> $log->get_file_size(),
@@ -171,13 +189,13 @@ class Ajax {
 
 
 	/**
-	 * Get default settings
+	 * Get global settings
 	 *
 	 * @since 0.13.0
 	 */
-	function get_default_settings() {
+	function get_global_settings() {
 		$handler = Settings::get_instance();
-		$settings = $handler->get_default_settings();
+		$settings = $handler->get_global_settings();
 
 		wp_send_json([
 			'settings'		=> $settings,
@@ -186,16 +204,16 @@ class Ajax {
 
 
 	/**
-	 * Update default settings
+	 * Update global settings
 	 *
 	 * @since 0.13.0
 	 */
-	function update_default_settings() {
+	function update_global_settings() {
 		$updated = false;
 
 		if (isset($_REQUEST['settings'])) {
 			$handler = Settings::get_instance();
-			$updated = $handler->update_default_settings($_REQUEST['settings']);
+			$updated = $handler->update_global_settings($_REQUEST['settings']);
 		}
 
 		wp_send_json([
@@ -233,7 +251,7 @@ class Ajax {
 
 		if (isset($_REQUEST['user_id']) && isset($_REQUEST['settings'])) {
 			$handler = Settings::get_instance();
-			$updated = $handler->update_user_settings($_REQUEST['user_id'], $_REQUEST['setttings']);
+			$updated = $handler->update_user_settings($_REQUEST['user_id'], $_REQUEST['settings']);
 		}
 
 		wp_send_json([
