@@ -71,7 +71,7 @@
                 "type": "wordpress-plugin",
                 "dist": {
                     "type": "zip",
-                    "url": "https://download.civicrm.org/civicrm-4.6.10-wordpress.zip"
+                    "url": "https://download.civicrm.org/civicrm-4.6.11-wordpress.zip"
                 }
             }
         },
@@ -255,7 +255,6 @@
         "wpackagist-plugin/password-protected": ">=2.0.2",
         "wpackagist-plugin/polylang": ">=1.8",
         "wpackagist-plugin/rss-importer": ">=0.2",
-        "wpackagist-plugin/rss-post-importer": ">=2.2.1",
         "wpackagist-plugin/simply-show-ids": ">=1.3.3",
         "wpackagist-plugin/so-widgets-bundle": ">=1.5.4",
         "wpackagist-plugin/tagregator": ">=0.6",
