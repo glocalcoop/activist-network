@@ -1,14 +1,18 @@
 <?php
 
+defined( 'ABSPATH' ) or die();
+
 class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 
-	function setUp() {
+	private $run_number = 1;
+
+	public function setUp() {
 		parent::setUp();
 
 		c2c_AdminPostNavigation::register_post_page_hooks();
 	}
 
-	function tearDown() {
+	public function tearDown() {
 		parent::tearDown();
 
 		unset( $GLOBALS['post_ID'] );
@@ -20,19 +24,19 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 	}
 
 
-	/*
-	 *
-	 * DATA PROVIDERS
-	 *
-	 */
+	//
+	//
+	// DATA PROVIDERS
+	//
+	//
 
 
 
-	/*
-	 *
-	 * HELPER FUNCTIONS
-	 *
-	 */
+	//
+	//
+	// HELPER FUNCTIONS
+	//
+	//
 
 
 	private function create_user( $role, $set_as_current = true ) {
@@ -54,6 +58,13 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$user_id = $this->create_user( 'administrator' );
 
 		$posts = $this->factory->post->create_many( $number, array( 'post_author' => $user_id ) );
+
+		// Set publish_date to be different days. The default is now(), which the
+		// script runs fast enough that all posts appear published at same second.
+		foreach ( $posts as $i => $post ) {
+			$new_date = '2' . str_pad( $this->run_number++, 3, '0', STR_PAD_LEFT ) . '-01-' . str_pad( $i+1, 2, '0', STR_PAD_LEFT ) . ' 13:01:00';
+			wp_update_post( array( 'ID' => $post, 'edit_date' => true, 'post_date' => $new_date, 'post_date_gmt' => $new_date ), true );
+		}
 
 		$GLOBALS['post_ID'] = $posts[ $current_post_index ];
 		$current_post = get_post( $posts[ $current_post_index ] );
@@ -91,26 +102,26 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 	}
 
 
-	/*
-	 *
-	 * TESTS
-	 *
-	 */
+	//
+	//
+	// TESTS
+	//
+	//
 
 
-	function test_class_exists() {
+	public function test_class_exists() {
 		$this->assertTrue( class_exists( 'c2c_AdminPostNavigation' ) );
 	}
 
-	function test_version() {
-		$this->assertEquals( '1.9.2', c2c_AdminPostNavigation::version() );
+	public function test_version() {
+		$this->assertEquals( '2.0', c2c_AdminPostNavigation::version() );
 	}
 
 	/*
 	 * c2c_AdminPostNavigation::next_post()
 	 */
 
-	function test_navigate_next_to_post() {
+	public function test_navigate_next_to_post() {
 		$posts = $this->create_posts();
 
 		$next_post = c2c_AdminPostNavigation::next_post();
@@ -118,7 +129,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$this->assertEquals( $posts[3], $next_post->ID );
 	}
 
-	function test_navigate_next_at_end() {
+	public function test_navigate_next_at_end() {
 		$posts = $this->create_posts( 5, 4 );
 
 		$next_post = c2c_AdminPostNavigation::next_post();
@@ -126,7 +137,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$this->assertEmpty( $next_post );
 	}
 
-	function test_navigate_next_skips_unwhitelisted_post_status() {
+	public function test_navigate_next_skips_unwhitelisted_post_status() {
 		$posts = $this->create_posts();
 
 		$post = get_post( $posts[3] );
@@ -138,7 +149,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$this->assertEquals( $posts[4], $next_post->ID );
 	}
 
-	function test_navigate_next_when_no_editable_next() {
+	public function test_navigate_next_when_no_editable_next() {
 		$posts = $this->create_posts();
 		$user_id = $this->create_user( 'author' );
 
@@ -155,7 +166,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 	 * c2c_AdminPostNavigation::previous_post()
 	 */
 
-	function test_navigate_previous_to_post() {
+	public function test_navigate_previous_to_post() {
 		$posts = $this->create_posts();
 
 		$previous_post = c2c_AdminPostNavigation::previous_post();
@@ -163,7 +174,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$this->assertEquals( $posts[1], $previous_post->ID );
 	}
 
-	function test_navigate_previous_at_beginning() {
+	public function test_navigate_previous_at_beginning() {
 		$posts = $this->create_posts( 5, 0 );
 
 		$previous_post = c2c_AdminPostNavigation::previous_post();
@@ -171,7 +182,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$this->assertEmpty( $previous_post );
 	}
 
-	function test_navigate_previous_skips_unwhitelisted_post_status() {
+	public function test_navigate_previous_skips_unwhitelisted_post_status() {
 		$posts = $this->create_posts();
 
 		$post = get_post( $posts[1] );
@@ -183,7 +194,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$this->assertEquals( $posts[0], $previous_post->ID );
 	}
 
-	function test_navigate_previous_when_no_editable_previous() {
+	public function test_navigate_previous_when_no_editable_previous() {
 		$posts = $this->create_posts();
 		$user_id = $this->create_user( 'author' );
 
@@ -202,23 +213,19 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 	 */
 
 
-	function test_hooks_action_load_post_php() {
+	public function test_hooks_action_load_post_php() {
 		$this->assertEquals( 10, has_action( 'load-post.php', array( 'c2c_AdminPostNavigation', 'register_post_page_hooks' ) ) );
 	}
 
-	function test_hooks_action_admin_enqueue_scripts() {
-		$this->assertEquals( 10, has_action( 'admin_enqueue_scripts', array( 'c2c_AdminPostNavigation', 'add_css' ) ) );
+	public function test_hooks_action_admin_enqueue_scripts() {
+		$this->assertEquals( 10, has_action( 'admin_enqueue_scripts', array( 'c2c_AdminPostNavigation', 'admin_enqueue_scripts_and_styles' ) ) );
 	}
 
-	function test_hooks_action_admin_print_footer_scripts() {
-		$this->assertEquals( 10, has_action( 'admin_print_footer_scripts', array( 'c2c_AdminPostNavigation', 'add_js' ) ) );
-	}
-
-	function test_hooks_action_do_meta_boxes() {
+	public function test_hooks_action_do_meta_boxes() {
 		$this->assertEquals( 10, has_action( 'do_meta_boxes', array( 'c2c_AdminPostNavigation', 'do_meta_box' ) ) );
 	}
 
-	function test_filter_c2c_admin_post_navigation_post_statuses_when_adding_post_status() {
+	public function test_filter_c2c_admin_post_navigation_post_statuses_when_adding_post_status() {
 		add_filter( 'c2c_admin_post_navigation_post_statuses', array( $this, 'c2c_admin_post_navigation_post_statuses' ), 10, 3 );
 
 		$posts = $this->create_posts();
@@ -232,7 +239,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$this->assertEquals( $posts[3], $next_post->ID );
 	}
 
-	function test_filter_c2c_admin_post_navigation_post_statuses_when_removing_post_status() {
+	public function test_filter_c2c_admin_post_navigation_post_statuses_when_removing_post_status() {
 		add_filter( 'c2c_admin_post_navigation_post_statuses', array( $this, 'c2c_admin_post_navigation_post_statuses' ), 10, 3 );
 
 		$posts = $this->create_posts();
@@ -246,7 +253,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$this->assertEquals( $posts[4], $next_post->ID );
 	}
 
-	function test_filter_c2c_admin_post_navigation_orderby() {
+	public function test_filter_c2c_admin_post_navigation_orderby() {
 		add_filter( 'c2c_admin_post_navigation_orderby', array( $this, 'c2c_admin_post_navigation_orderby' ), 10, 2 );
 
 		$posts = $this->create_posts();
@@ -274,7 +281,7 @@ class Admin_Post_Navigation_Test extends WP_UnitTestCase {
 		$this->assertEquals( $posts[4], $previous_post->ID );
 	}
 
-	function test_filter_c2c_admin_post_navigation_orderby_with_bad_value() {
+	public function test_filter_c2c_admin_post_navigation_orderby_with_bad_value() {
 		add_filter( 'c2c_admin_post_navigation_orderby', array( $this, 'c2c_admin_post_navigation_orderby_bad_value' ), 10, 2 );
 
 		// Should function as if never hooked.

@@ -1,0 +1,25 @@
+#admin-post-nav {
+	margin-left: 20px;
+	display: inline-block;
+}
+.rtl #admin-post-nav {
+	margin-right:20px;
+}
+#adminpostnav #admin-post-nav {
+	margin-left: 0;
+}
+.rtl #adminpostnav #admin-post-nav {
+	margin-right: 0;
+}
+.rtl #admin-post-nav a {
+	display: inline-block;
+	line-height: initial;
+}
+h2 #admin-post-nav {
+	font-size: 0.6em;
+}
+.inside #admin-post-nav a {
+	top: 0;
+	margin-top: 4px;
+	display: inline-block;
+}

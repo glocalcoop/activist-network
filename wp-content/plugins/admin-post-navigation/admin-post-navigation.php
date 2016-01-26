@@ -1,17 +1,16 @@
 <?php
 /**
  * Plugin Name: Admin Post Navigation
- * Version:     1.9.2
+ * Version:     2.0
  * Plugin URI:  http://coffee2code.com/wp-plugins/admin-post-navigation/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
  * Text Domain: admin-post-navigation
- * Domain Path: /lang/
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Description: Adds links to navigate to the next and previous posts when editing a post in the WordPress admin.
  *
- * Compatible with WordPress 3.0 through 4.3+.
+ * Compatible with WordPress 3.0 through 4.4+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
@@ -19,23 +18,21 @@
  *
  * @package Admin_Post_Navigation
  * @author  Scott Reilly
- * @version 1.9.2
+ * @version 2.0
  */
 
 /*
  * TODO:
- * - Drop pre-WP3.6 support and pass post to the_title_attribute() in add_meta_box()
+ * - Add ability for navigation to save current post before navigating away.
  * - Hide screen option checkbox for metabox if metabox is being hidden
  * - Add screen option allowing user selection of post navigation order
  * - Add more unit tests
- * - Put CSS into enqueuable .css file
- * - Put JS into enqueueable .js file
  * - Add dropdown to post nav links to allow selecting different types of things
  *   to navigate to (e.g. next draft (if looking at a draft), next in category X)
  */
 
 /*
-	Copyright (c) 2008-2015 by Scott Reilly (aka coffee2code)
+	Copyright (c) 2008-2016 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -58,9 +55,42 @@ if ( ! class_exists( 'c2c_AdminPostNavigation' ) ) :
 
 class c2c_AdminPostNavigation {
 
+	/**
+	 * Translated text for previous link.
+	 *
+	 * @access private
+	 *
+	 * @var string
+	 */
 	private static $prev_text = '';
+
+	/**
+	 * Translated text for next link.
+	 *
+	 * @access private
+	 *
+	 * @var string
+	 */
 	private static $next_text = '';
-	private static $post_statuses     = array( 'draft', 'future', 'pending', 'private', 'publish' ); // Filterable later
+
+	/**
+	 * Default post statuses for navigation.
+	 *
+	 * Filterable later.
+	 *
+	 * @access private
+	 *
+	 * @var array
+	 */
+	private static $post_statuses = array( 'draft', 'future', 'pending', 'private', 'publish', 'inherit' );
+
+	/**
+	 * Post status query fragment.
+	 *
+	 * @access private
+	 *
+	 * @var string
+	 */
 	private static $post_statuses_sql = '';
 
 	/**
@@ -69,7 +99,7 @@ class c2c_AdminPostNavigation {
 	 * @since 1.7
 	 */
 	public static function version() {
-		return '1.9.2';
+		return '2.0';
 	}
 
 	/**
@@ -87,16 +117,32 @@ class c2c_AdminPostNavigation {
 	public static function register_post_page_hooks() {
 
 		// Load textdomain.
-		load_plugin_textdomain( 'admin-post-navigation', false, basename( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'lang' );
+		load_plugin_textdomain( 'admin-post-navigation' );
 
 		// Set translatable strings.
 		self::$prev_text = apply_filters( 'c2c_admin_post_navigation_prev_text', __( '&larr; Previous', 'admin-post-navigation' ) );
 		self::$next_text = apply_filters( 'c2c_admin_post_navigation_next_text', __( 'Next &rarr;', 'admin-post-navigation' ) );
 
 		// Register hooks.
-		add_action( 'admin_enqueue_scripts',      array( __CLASS__, 'add_css' ) );
-		add_action( 'admin_print_footer_scripts', array( __CLASS__, 'add_js' ) );
+		add_action( 'admin_enqueue_scripts',      array( __CLASS__, 'admin_enqueue_scripts_and_styles' ) );
 		add_action( 'do_meta_boxes',              array( __CLASS__, 'do_meta_box' ), 10, 3 );
+	}
+
+	/**
+	 * Enqueues scripts and stylesheets on post edit admin pages.
+	 *
+	 * @since 2.0
+	 */
+	public static function admin_enqueue_scripts_and_styles() {
+		wp_register_style( 'admin-post-navigation-admin', plugins_url( 'assets/admin-post-navigation.css', __FILE__ ), array(), self::version() );
+		wp_enqueue_style( 'admin-post-navigation-admin' );
+
+		wp_register_script( 'admin-post-navigation-admin', plugins_url( 'assets/admin-post-navigation.js', __FILE__ ), array( 'jquery' ), self::version(), true );
+		// Localize script.
+		wp_localize_script( 'admin-post-navigation-admin', 'c2c_apn', array(
+			'tag' => version_compare( $GLOBALS['wp_version'], '4.3', '>=' ) ? 'h1' : 'h2',
+		) );
+		wp_enqueue_script( 'admin-post-navigation-admin' );
 	}
 
 	/**
@@ -146,7 +192,7 @@ class c2c_AdminPostNavigation {
 
 		$prev = self::previous_post();
 		if ( $prev ) {
-			$post_title = strip_tags( get_the_title( $prev->ID ) ); /* TODO: Drop pre-WP3.6 support and pass post to the_title_attribute() instead */
+			$post_title = the_title_attribute( array( 'echo' => false, 'post' => $prev->ID ) );
 			$display .= '<a href="' . get_edit_post_link( $prev->ID ) . '" id="admin-post-nav-prev" title="' .
 				esc_attr( sprintf( __( 'Previous %1$s: %2$s', 'admin-post-navigation' ), $context, $post_title ) ) .
 				'" class="admin-post-nav-prev add-new-h2">' . self::$prev_text . '</a>';
@@ -154,10 +200,10 @@ class c2c_AdminPostNavigation {
 
 		$next = self::next_post();
 		if ( $next ) {
-			if ( ! empty( $display ) ) {
+			if ( $display ) {
 				$display .= ' ';
 			}
-			$post_title = strip_tags( get_the_title( $next->ID ) );  /* TODO: Drop pre-WP3.6 support and pass post to the_title_attribute() instead */
+			$post_title = the_title_attribute( array( 'echo' => false, 'post' => $next->ID ) );
 			$display .= '<a href="' . get_edit_post_link( $next->ID ) .
 				'" id="admin-post-nav-next" title="' .
 				esc_attr( sprintf( __( 'Next %1$s: %2$s', 'admin-post-navigation' ), $context, $post_title ) ).
@@ -185,43 +231,6 @@ class c2c_AdminPostNavigation {
 		}
 
 		return strtolower( $label );
-	}
-
-	/**
-	 * Outputs CSS within style tags.
-	 */
-	public static function add_css() {
-		echo <<<HTML
-		<style type="text/css">
-		#admin-post-nav {margin-left:20px;}
-		#adminpostnav #admin-post-nav {margin-left:0;}
-		h2 #admin-post-nav {font-size:0.6em;}
-		.inside #admin-post-nav a {top:0;margin-top:4px;display:inline-block;}
-		</style>
-
-HTML;
-	}
-
-	/**
-	 * Outputs the JavaScript used by the plugin.
-	 *
-	 * For those with JS enabled, the navigation links are moved next to the
-	 * "Edit Post" header and the plugin's meta_box is hidden.  The fallback
-	 * for non-JS people is that the plugin's meta_box is shown and the
-	 * navigation links can be found there.
-	 */
-	public static function add_js() {
-		$tag = version_compare( $GLOBALS['wp_version'], '4.3', '>=' ) ? 'h1' : 'h2';
-
-		echo <<<JS
-		<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$('#admin-post-nav').appendTo($('#wpbody-content .wrap:first {$tag}:first'));
-			$('#adminpostnav, label[for="adminpostnav-hide"]').hide();
-		});
-		</script>
-
-JS;
 	}
 
 	/**
@@ -259,10 +268,10 @@ JS;
 		$sql = "SELECT ID, post_title FROM $wpdb->posts WHERE post_type = '$post_type' AND post_status IN (" . self::$post_statuses_sql . ') ';
 
 		// Determine order.
-		if ( function_exists( 'is_post_type_hierarchical' ) && is_post_type_hierarchical( $post_type ) ) {
+		if ( is_post_type_hierarchical( $post_type ) ) {
 			$orderby = 'post_title';
 		} else {
-			$orderby = 'ID';
+			$orderby = 'post_date';
 		}
 		$default_orderby = $orderby;
 		// Restrict orderby to actual post fields.

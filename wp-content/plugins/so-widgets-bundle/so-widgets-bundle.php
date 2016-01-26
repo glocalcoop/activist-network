@@ -2,7 +2,7 @@
 /*
 Plugin Name: SiteOrigin Widgets Bundle
 Description: A collection of all widgets, neatly bundled into a single plugin. It's also a framework to code your own widgets on top of.
-Version: 1.5.4
+Version: 1.5.6
 Text Domain: so-widgets-bundle
 Domain Path: /languages
 Author: SiteOrigin
@@ -12,7 +12,7 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 */
 
-define('SOW_BUNDLE_VERSION', '1.5.4');
+define('SOW_BUNDLE_VERSION', '1.5.6');
 define('SOW_BUNDLE_JS_SUFFIX', '.min');
 define('SOW_BUNDLE_BASE_FILE', __FILE__);
 
@@ -29,12 +29,12 @@ class SiteOrigin_Widgets_Bundle {
 	 * @var array The array of default widgets.
 	 */
 	static $default_active_widgets = array(
-		'so-button-widget' => true,
-		'so-google-map-widget' => true,
-		'so-image-widget' => true,
-		'so-slider-widget' => true,
-		'so-post-carousel-widget' => true,
-		'so-editor-widget' => true,
+		'button' => true,
+		'google-map' => true,
+		'image' => true,
+		'slider' => true,
+		'post-carousel' => true,
+		'editor' => true,
 	);
 
 	function __construct(){
@@ -54,7 +54,7 @@ class SiteOrigin_Widgets_Bundle {
 
 		// Version check for cache clearing
 		add_action( 'admin_init', array($this, 'plugin_version_check') );
-		add_action( 'siteorigin_widgets_version_update', array( $this, 'check_for_new_widgets' ) );
+		add_action( 'siteorigin_widgets_version_update', array( $this, 'handle_update' ), 10, 2 );
 		add_action( 'admin_notices', array( $this, 'display_admin_notices') );
 
 		// These filters are used to activate any widgets that are missing.
@@ -101,7 +101,6 @@ class SiteOrigin_Widgets_Bundle {
 		if( empty($active_version) || version_compare( $active_version, SOW_BUNDLE_VERSION, '<' ) ) {
 			// If this is a new version, then clear the cache.
 			update_option( 'siteorigin_widget_bundle_version', SOW_BUNDLE_VERSION );
-			siteorigin_widgets_deactivate_legacy_plugins();
 
 			// Remove all cached CSS for SiteOrigin Widgets
 			if( function_exists('WP_Filesystem') && WP_Filesystem() ) {
@@ -122,6 +121,11 @@ class SiteOrigin_Widgets_Bundle {
 			do_action( 'siteorigin_widgets_version_update', SOW_BUNDLE_VERSION, $active_version );
 		}
 
+	}
+
+	function handle_update($old_version, $new_version) {
+		//Always check for new widgets.
+		$this->check_for_new_widgets();
 	}
 
 	/**
@@ -225,10 +229,30 @@ class SiteOrigin_Widgets_Bundle {
 	 * @return mixed|void
 	 */
 	function get_active_widgets( $filter = true ){
-		$active_widgets = get_option( 'siteorigin_widgets_active', array() );
-		$active_widgets = wp_parse_args( $active_widgets, apply_filters('siteorigin_widgets_default_active', self::$default_active_widgets) );
+		// Basic caching of the current active widgets
+		$active_widgets = wp_cache_get( 'active_widgets', 'siteorigin_widgets' );
 
-		if( $filter ) $active_widgets = apply_filters( 'siteorigin_widgets_active_widgets',  $active_widgets);
+		if( empty($active_widgets) ) {
+			$active_widgets = get_option( 'siteorigin_widgets_active', array() );
+			$active_widgets = wp_parse_args( $active_widgets, apply_filters( 'siteorigin_widgets_default_active', self::$default_active_widgets ) );
+
+			// Migrate any old names
+			foreach ( $active_widgets as $widget_name => $is_active ) {
+				if ( substr( $widget_name, 0, 3 ) !== 'so-' ) {
+					continue;
+				}
+				if ( preg_match( '/so-([a-z\-]+)-widget/', $widget_name, $matches ) && ! isset( $active_widgets[ $matches[1] ] ) ) {
+					unset( $active_widgets[ $widget_name ] );
+					$active_widgets[ $matches[1] ] = $is_active;
+				}
+			}
+
+			if ( $filter ) {
+				$active_widgets = apply_filters( 'siteorigin_widgets_active_widgets', $active_widgets );
+			}
+
+			wp_cache_add( 'active_widgets', $active_widgets, 'siteorigin_widgets' );
+		}
 
 		return $active_widgets;
 	}
@@ -285,7 +309,7 @@ class SiteOrigin_Widgets_Bundle {
 	 */
 	function admin_ajax_manage_handler(){
 		if( !wp_verify_nonce($_GET['_wpnonce'], 'manage_so_widget') ) exit();
-		if( !current_user_can( apply_filters('siteorigin_widgets_admin_menu_capability', 'install_plugins') ) ) exit();
+		if( ! current_user_can( apply_filters( 'siteorigin_widgets_admin_menu_capability', 'manage_options' ) ) ) exit();
 		if( empty($_POST['widget']) ) exit();
 
 		if( !empty($_POST['active']) ) $this->activate_widget($_POST['widget']);
@@ -386,6 +410,7 @@ class SiteOrigin_Widgets_Bundle {
 		$active_widgets = $this->get_active_widgets();
 		$active_widgets[$widget_id] = true;
 		update_option( 'siteorigin_widgets_active', $active_widgets );
+		wp_cache_delete( 'active_widgets', 'siteorigin_widgets' );
 
 		// If we don't want to include the widget files, then our job here is done.
 		if( !$include ) return;
@@ -401,7 +426,6 @@ class SiteOrigin_Widgets_Bundle {
 				SiteOrigin_Widgets_Widget_Manager::single()->widgets_init();
 			}
 		}
-
 
 		return true;
 	}
@@ -434,6 +458,7 @@ class SiteOrigin_Widgets_Bundle {
 		$active_widgets = $this->get_active_widgets();
 		$active_widgets[$id] = false;
 		update_option( 'siteorigin_widgets_active', $active_widgets );
+		wp_cache_delete( 'active_widgets', 'siteorigin_widgets' );
 	}
 
 	/**
@@ -512,8 +537,7 @@ class SiteOrigin_Widgets_Bundle {
 			$class = $widget['panels_info']['class'];
 			if( preg_match('/SiteOrigin_Widget_([A-Za-z]+)_Widget/', $class, $matches) ) {
 				$name = $matches[1];
-				// TODO change this when we transition to new widget names
-				$id = 'so'.strtolower( implode( '-', preg_split('/(?=[A-Z])/',$name) ) ).'-widget';
+				$id = strtolower( implode( '-', array_filter( preg_split( '/(?=[A-Z])/', $name ) ) ) );
 				$this->activate_widget($id, true);
 			}
 		}
@@ -535,9 +559,7 @@ class SiteOrigin_Widgets_Bundle {
 
 		if( preg_match('/SiteOrigin_Widget_([A-Za-z]+)_Widget/', $class, $matches) ) {
 			$name = $matches[1];
-			// TODO change this when we transition to new widget names
-			$id = 'so'.strtolower( implode( '-', preg_split('/(?=[A-Z])/',$name) ) ).'-widget';
-
+			$id = strtolower( implode( '-', array_filter( preg_split( '/(?=[A-Z])/', $name ) ) ) );
 			$this->activate_widget($id, true);
 			global $wp_widget_factory;
 			if( !empty($wp_widget_factory->widgets[$class]) ) return $wp_widget_factory->widgets[$class];
@@ -586,18 +608,3 @@ SiteOrigin_Widgets_Bundle::single();
 // Initialize the Meta Box Manager
 global $sow_meta_box_manager;
 $sow_meta_box_manager = SiteOrigin_Widget_Meta_Box_Manager::single();
-
-/**
- * Deactivate any old widget plugins that we used to have on the directory. We'll remove this after version 1.2.
- */
-function siteorigin_widgets_deactivate_legacy_plugins(){
-	// All we want to do here is disable all legacy widgets
-	$the_plugins = get_option('active_plugins');
-	foreach($the_plugins as $plugin_id) {
-		if( preg_match('/^so-([a-z\-]+)-widget\/so-([a-z\-]+)-widget\.php$/', $plugin_id) ) {
-			// Deactivate the legacy plugin
-			deactivate_plugins($plugin_id, true);
-		}
-	}
-}
-register_activation_hook( __FILE__, 'siteorigin_widgets_deactivate_legacy_plugins' );
