@@ -1,14 +1,14 @@
-# Copyright (C) 2015 Automattic
+# Copyright (C) 2016 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sequential 1.1.4\n"
+"Project-Id-Version: Sequential 1.1.5\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/sequential\n"
-"POT-Creation-Date: 2015-11-24 03:49:44+00:00\n"
+"POT-Creation-Date: 2016-01-01 04:35:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -232,22 +232,22 @@ msgid "Theme Options"
 msgstr ""
 
 #: inc/customizer.php:31
-msgid "Show Tagline"
+msgid "Display tagline below site title"
 msgstr ""
 
-#: inc/customizer.php:43
+#: inc/customizer.php:44
 msgid "Top Area Content"
 msgstr ""
 
-#: inc/customizer.php:55
+#: inc/customizer.php:56
 msgid "Front Page: Featured Page One"
 msgstr ""
 
-#: inc/customizer.php:67
+#: inc/customizer.php:68
 msgid "Front Page: Featured Page Two"
 msgstr ""
 
-#: inc/customizer.php:79
+#: inc/customizer.php:80
 msgid "Front Page: Show Page Titles"
 msgstr ""
 
@@ -374,4 +374,39 @@ msgstr ""
 #. Template Name of the plugin/theme
 #: wp-content/themes/pub/sequential/page-templates/grid-page.php
 msgid "Grid Page"
+msgstr ""
+#: inc/plugin-enhancements.php:92
+msgid "The %1$s is required to use some of this theme&rsquo;s features, including: "
+msgstr ""
+
+#: inc/plugin-enhancements.php:93
+msgid "Jetpack plugin"
+msgstr ""
+
+#: inc/plugin-enhancements.php:180
+msgid "no specific module needed"
+msgstr ""
+
+#: inc/plugin-enhancements.php:181
+msgid "Custom Content Types module"
+msgstr ""
+
+#: inc/plugin-enhancements.php:253
+msgid "Please activate %1$s. %2$s"
+msgstr ""
+
+#: inc/plugin-enhancements.php:255
+msgid "Activate"
+msgstr ""
+
+#: inc/plugin-enhancements.php:263
+msgid "Please install %1$s. %2$s"
+msgstr ""
+
+#: inc/plugin-enhancements.php:265
+msgid "Install"
+msgstr ""
+
+#: inc/plugin-enhancements.php:290
+msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
 msgstr ""

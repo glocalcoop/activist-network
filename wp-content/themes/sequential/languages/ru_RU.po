@@ -2,28 +2,34 @@
 # This file is distributed under the same license as the Sequential package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-11-05 01:19:30+0000\n"
+"PO-Revision-Date: 2015-12-12 07:31:52+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: GlotPress/0.1\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Sequential\n"
 
-#. Description of the plugin/theme
-#: wp-content/themes/pub/sequential/style.css
-msgid "Sequential is a contemporary, clean, and multi-purpose business theme."
-msgstr ""
+#: inc/customizer.php:20
+msgid "Theme Options"
+msgstr "Настройки темы"
 
-#. Template Name of the plugin/theme
-#: wp-content/themes/pub/sequential/page-templates/full-width-page.php
-msgid "Full-Width Page"
-msgstr ""
+#: inc/template-tags.php:28
+msgid "<span class=\"meta-nav\">&larr;</span> Older testimonials"
+msgstr "<span class=\"meta-nav\">&larr;</span> Более ранние отзывы"
+
+#: inc/template-tags.php:40
+msgid "Newer testimonials <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Новые отзывы <span class=\"meta-nav\">&rarr;</span>"
+
+#: archive-jetpack-testimonial.php:23
+msgid "Testimonials"
+msgstr "Отзывы"
 
 #. Template Name of the plugin/theme
 #: wp-content/themes/pub/sequential/page-templates/grid-page.php
 msgid "Grid Page"
-msgstr ""
+msgstr "Страница-сетка"
 
 #. Template Name of the plugin/theme
 #: wp-content/themes/pub/sequential/page-templates/front-page.php
@@ -34,60 +40,60 @@ msgstr "Главная страница"
 msgid "Search Results for: %s"
 msgstr "Результаты поиска: %s"
 
-#: inc/template-tags.php:180
+#: inc/template-tags.php:201
 msgid "% Comments"
 msgstr "Комментарии (%)"
 
-#: inc/template-tags.php:180
+#: inc/template-tags.php:201
 msgid "1 Comment"
 msgstr "1 комментарий"
 
-#: inc/template-tags.php:180
+#: inc/template-tags.php:201
 msgid "Leave a comment"
 msgstr "Оставить комментарий"
 
-#: inc/template-tags.php:174
+#: inc/template-tags.php:195
 msgid "Tagged %1$s"
 msgstr "Метки: %1$s"
 
-#: inc/template-tags.php:168
+#: inc/template-tags.php:189
 msgid "Posted in %1$s"
 msgstr "Рубрика: %1$s"
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:166 inc/template-tags.php:172
+#: inc/template-tags.php:187 inc/template-tags.php:193
 msgid ", "
 msgstr ", "
 
-#: inc/template-tags.php:146
+#: inc/template-tags.php:167
 msgid "Featured"
 msgstr "Избранное"
 
-#: inc/template-tags.php:120
+#: inc/template-tags.php:141
 msgid "All %s posts"
 msgstr "Все записи: %s"
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:79
 msgid "<span class=\"meta-nav\">Next Post</span>%title"
 msgstr "<span class=\"meta-nav\">Следующая запись</span>%title"
 
-#: inc/template-tags.php:56
+#: inc/template-tags.php:72
 msgid "<span class=\"meta-nav\">Published In</span>%title"
 msgstr "<span class=\"meta-nav\">Опубликовано в</span>%title"
 
-#: inc/template-tags.php:58
+#: inc/template-tags.php:78
 msgid "<span class=\"meta-nav\">Previous Post</span>%title"
 msgstr "<span class=\"meta-nav\">Предыдущая запись</span>%title"
 
-#: inc/template-tags.php:52
+#: inc/template-tags.php:68
 msgid "Post navigation"
 msgstr "Навигация по записям"
 
-#: inc/template-tags.php:29
+#: inc/template-tags.php:42
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Следующие записи <span class=\"meta-nav\">&rarr;</span>"
 
-#: inc/template-tags.php:25
+#: inc/template-tags.php:30
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие записи"
 
@@ -95,33 +101,17 @@ msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие записи
 msgid "Posts navigation"
 msgstr "Навигация по записям"
 
-#: inc/customizer.php:79
-msgid "Front Page: Show Page Titles"
-msgstr ""
-
 #: inc/extras.php:83
 msgid "Page %s"
 msgstr "Страница %s"
 
-#: inc/customizer.php:31
-msgid "Show Tagline"
-msgstr ""
-
-#: inc/customizer.php:43
-msgid "Top Area Content"
-msgstr ""
-
-#: inc/customizer.php:55
+#: inc/customizer.php:56
 msgid "Front Page: Featured Page One"
-msgstr ""
+msgstr "Главная страница: Избранная страница №1"
 
-#: inc/customizer.php:67
+#: inc/customizer.php:68
 msgid "Front Page: Featured Page Two"
-msgstr ""
-
-#: inc/customizer.php:20
-msgid "Theme"
-msgstr "Тема"
+msgstr "Главная страница: Избранная страница №2"
 
 #: header.php:45
 msgid "Menu"
@@ -147,14 +137,6 @@ msgstr "Перейти к содержимому"
 msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
 msgid "no-subset"
 msgstr "cyrillic"
-
-#. translators: If there are characters in your language that are not supported
-#. * by Montserrat, translate this to 'off'. Do not translate into your own
-#. language.
-#: functions.php:126
-msgctxt "Montserrat font: on or off"
-msgid "on"
-msgstr ""
 
 #. translators: If there are characters in your language that are not supported
 #. * by Open Sans, translate this to 'off'. Do not translate into your own
@@ -220,7 +202,7 @@ msgstr "Не найдено"
 msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Читать дальше <span class=\"meta-nav\">&rarr;</span>"
 
-#: content-grid.php:19 content-page.php:32 inc/template-tags.php:154
+#: content-grid.php:19 content-page.php:32 inc/template-tags.php:175
 #: page-templates/front-page.php:26
 msgid "Edit"
 msgstr "Изменить"

@@ -158,6 +158,14 @@ See live examples on Sequential‘s demo site:
 
 == Changelog ==
 
+= 19 January 2016 =
+* Need to be more specific when targeting .sd-content
+* Make sure sd-content list has correct margin-bottom
+* Add sharedaddy script back so that users can use Sharing setting and send emails.
+
+= 24 December 2015 =
+* Adjust wording of tagline option and display the option contextually
+
 = 26 November 2015 =
 * Make sure inputs have a white background when in the sidebar.
 

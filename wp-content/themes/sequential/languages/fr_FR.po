@@ -105,11 +105,11 @@ msgstr "Navigation des articles"
 msgid "Page %s"
 msgstr "Page %s"
 
-#: inc/customizer.php:55
+#: inc/customizer.php:56
 msgid "Front Page: Featured Page One"
 msgstr "Page d&rsquo;accueil&nbsp;: page à la Une Section #1"
 
-#: inc/customizer.php:67
+#: inc/customizer.php:68
 msgid "Front Page: Featured Page Two"
 msgstr "Page d&rsquo;accueil&nbsp;: page à la Une Section #2"
 

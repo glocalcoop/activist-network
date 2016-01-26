@@ -318,12 +318,27 @@ ul[id^="menu-social"] li {
 10.2 Sharedaddy
 --------------------------------------------------------------*/
 /* Social */
-.sd-social li {
-	float: right;
+.sd-social.sd-social-icon li {
+	margin-left: 6px !important;
+	margin-right: 0 !important;
 }
-.sd-social .share-count {
-	right: auto;
-	left: 0;
+.sd-social.sd-social-icon .sharing-hidden .inner {
+	margin-left: 0;
+	margin-right: -9px;
+}
+
+/* Admin Bar */
+#wpadminbar li#wp-admin-bar-admin-bar-likes-widget {
+	width: 61px;
+	overflow: hidden;
+}
+#wpadminbar iframe.admin-bar-likes-widget {
+	width: 61px;
+	height: 28px;
+	min-height: 28px;
+	border-width: 0px;
+	position: absolute;
+	top: 0;
 }
 
 /* Gravatar Like */

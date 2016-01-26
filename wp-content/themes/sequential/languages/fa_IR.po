@@ -2,13 +2,17 @@
 # This file is distributed under the same license as the Sequential package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-11-24 03:49:46+0000\n"
+"PO-Revision-Date: 2015-12-27 01:10:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Sequential\n"
+
+#: inc/customizer.php:31
+msgid "Display tagline below site title"
+msgstr "شعار در زیر عنوان وب‌گاه نمایش یابد"
 
 #: inc/customizer.php:20
 msgid "Theme Options"
@@ -119,7 +123,7 @@ msgstr "<span class=\"meta-nav\">&larr;</span> نوشته‌های پیشین"
 msgid "Posts navigation"
 msgstr "ناوبری نوشته‌ها"
 
-#: inc/customizer.php:79
+#: inc/customizer.php:80
 msgid "Front Page: Show Page Titles"
 msgstr "صفحهٔ نخست: نمایش عنوان صفحه‌ها"
 
@@ -127,19 +131,15 @@ msgstr "صفحهٔ نخست: نمایش عنوان صفحه‌ها"
 msgid "Page %s"
 msgstr "صفحهٔ %s"
 
-#: inc/customizer.php:31
-msgid "Show Tagline"
-msgstr "نمایش شعار"
-
-#: inc/customizer.php:43
+#: inc/customizer.php:44
 msgid "Top Area Content"
 msgstr "مطالب پهنهٔ بالا"
 
-#: inc/customizer.php:55
+#: inc/customizer.php:56
 msgid "Front Page: Featured Page One"
 msgstr "صفحهٔ نخست: صفحهٔ ویژهٔ نخست"
 
-#: inc/customizer.php:67
+#: inc/customizer.php:68
 msgid "Front Page: Featured Page Two"
 msgstr "صفحهٔ نخست: صفحهٔ ویژهٔ دوم"
 

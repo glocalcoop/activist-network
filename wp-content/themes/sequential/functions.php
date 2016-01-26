@@ -81,17 +81,6 @@ function sequential_setup() {
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery',
 	) );
-
-	/**
-	 * Suggest the Jetpack plugin to users
-	 */
-	add_theme_support( 'theme-plugin-enhancements', array(
-		array(
-			'slug'    => 'jetpack',
-			'name'    => 'Jetpack by WordPress.com',
-			'message' => __( 'The Jetpack plugin is needed to use some of Sequential\'s special features, including the testimonial custom post type (Custom Content Types module), and site logo (no particular module activation needed).', 'sequential' ),
-		),
-	) );
 }
 endif; // sequential_setup
 add_action( 'after_setup_theme', 'sequential_setup' );
@@ -270,11 +259,13 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Require our Theme Plugin Enhancements class.
- */
-require get_template_directory() . '/inc/plugin-enhancements.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+/**
+ * Load plugin enhancement file to display admin notices.
+ */
+require get_template_directory() . '/inc/plugin-enhancements.php';

@@ -103,7 +103,7 @@ msgstr "<span class=\"meta-nav\"> ← </span> Posts Anteriores"
 msgid "Posts navigation"
 msgstr "Navegação de Posts"
 
-#: inc/customizer.php:79
+#: inc/customizer.php:80
 msgid "Front Page: Show Page Titles"
 msgstr "Página Inicial: Mostrar títulos de página"
 
@@ -111,15 +111,15 @@ msgstr "Página Inicial: Mostrar títulos de página"
 msgid "Page %s"
 msgstr "Página %s"
 
-#: inc/customizer.php:43
+#: inc/customizer.php:44
 msgid "Top Area Content"
 msgstr "Conteúdo da região do topo."
 
-#: inc/customizer.php:55
+#: inc/customizer.php:56
 msgid "Front Page: Featured Page One"
 msgstr "Página inicial: Pagina destaque Um"
 
-#: inc/customizer.php:67
+#: inc/customizer.php:68
 msgid "Front Page: Featured Page Two"
 msgstr "Página inicial: Pagina destaque Dois"
 

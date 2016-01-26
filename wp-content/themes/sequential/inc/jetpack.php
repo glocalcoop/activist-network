@@ -68,14 +68,6 @@ function sequential_the_site_logo() {
 }
 
 /**
- * Remove sharedaddy script.
- */
-function sequential_remove_sharedaddy_script() {
-    remove_action( 'wp_head', 'sharing_add_header', 1 );
-}
-add_action( 'template_redirect', 'sequential_remove_sharedaddy_script' );
-
-/**
  * Remove related-posts and likes scripts.
  */
 function sequential_remove_jetpack_scripts() {

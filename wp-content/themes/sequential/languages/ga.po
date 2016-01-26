@@ -92,7 +92,7 @@ msgstr "Treoraíocht alt"
 msgid "Page %s"
 msgstr "Leathanach %s"
 
-#: inc/customizer.php:43
+#: inc/customizer.php:44
 msgid "Top Area Content"
 msgstr "Ábhar Uachtair"
 

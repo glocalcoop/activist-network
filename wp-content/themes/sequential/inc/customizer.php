@@ -28,10 +28,11 @@ function sequential_customize_register( $wp_customize ) {
 		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'sequential_tagline', array(
-		'label'             => __( 'Show Tagline', 'sequential' ),
+		'label'             => __( 'Display tagline below site title', 'sequential' ),
 		'section'           => 'sequential_theme_options',
 		'priority'          => 10,
 		'type'              => 'checkbox',
+		'active_callback'   => 'sequential_is_header_text_shown',
 	) );
 
 	/* Top Area Content */
@@ -102,12 +103,24 @@ function sequential_sanitize_checkbox( $input ) {
  * Sanitize the dropdown pages.
  *
  * @param interger $input.
- * @return interger.
+ * @return integer.
  */
 function sequential_sanitize_dropdown_pages( $input ) {
 	if ( is_numeric( $input ) ) {
 		return intval( $input );
 	}
+}
+
+/*
+ * Callback function used to determine if the header text is hidden or not.
+ * Used to contextually show the `sequential_tagline` theme option.
+ */
+function sequential_is_header_text_shown() {
+	if ( 'blank' == get_header_textcolor() ) :
+		return false;
+	else :
+		return true;
+	endif;
 }
 
 /**

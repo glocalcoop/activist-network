@@ -2,7 +2,7 @@
 Theme Name: Sequential
 Theme URI: https://wordpress.com/themes/sequential/
 Description: Sequential is a contemporary, clean, and multi-purpose business theme.
-Version: 1.1.4
+Version: 1.1.5
 Author: Automattic
 Author URI: https://wordpress.com/themes/
 License: GNU General Public License v2 or later
@@ -2264,6 +2264,9 @@ video,
 13.4 Sharedaddy
 --------------------------------------------------------------*/
 /* Title */
+div.sharedaddy h3.sd-title:before {
+	display: none !important;
+}
 .jp-relatedposts-headline,
 .sd-title {
 	margin-bottom: 0;
@@ -2329,84 +2332,86 @@ video,
 .sd-social {
 	margin-bottom: 18px;
 }
-.sd-social ul {
-	display: block;
-	list-style: none;
-	margin: -6px 0 0 -6px;
+.sd-social ul,
+.sharedaddy .sd-content ul {
+	margin: 0 0 6px !important;
 }
-.sd-social li {
-	vertical-align: top;
-	float: left;
+.sd-social.sd-social-icon li {
+	margin-right: 6px !important;
 	padding: 0;
-	margin: 6px;
-	width: 1.5em;
-	height: 1.5em;
-	font-size: 1.5em;
+	width: 36px;
+	height: 36px;
+	font-size: 36px;
+	line-height: 36px;
 	text-align: center;
+	vertical-align: top;
 }
-.sd-social-official li {
-	width: inherit;
-	height: inherit;
+.sd-social.sd-social-icon a {
+	font-size: inherit !important;
+	top: 0 !important;
 }
-.sd-social a,
-.share-more span {
+.sd-social.sd-social-icon a:before {
+	line-height: 36px !important;
+}
+.sd-social.sd-social-icon a {
 	display: block;
 	position: relative;
 	width: 36px;
 	height: 36px;
+	background: transparent !important;
 	border-bottom: 0;
 	color: transparent;
+	opacity: 1 !important;
+	margin: 0 !important;
+	padding: 0 !important;
 }
-
-/* Hide sharing button text for text and icon + text sharing buttons for theme's special sharing styles. */
-.sd-social.sd-social-text .sd-button > span,
-.sd-social.sd-social-icon-text .sd-button > span {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-}
-.hero .entry-content .sd-social a,
-.hero .entry-content .share-more span {
+.hero .entry-content .sd-social.sd-social-icon a {
 	color: transparent;
 }
-.sd-social a:before {
+.sd-social.sd-social-icon a:before,
+.hero .sd-social.sd-social-icon .sharing-hidden a:before {
 	background: #615f8b;
 	color: #fff;
 }
-.sd-social a:hover:before {
+.sd-social.sd-social-icon a:hover:before,
+.hero .sd-social.sd-social-icon .sharing-hidden a:hover:before {
 	background: #424242;
 }
-.hero .sd-social a:before {
+.hero .sd-social.sd-social-icon a:before {
 	background: #fff;
 	color: #615f8b;
 }
-.hero .sd-social a:hover:before {
+.hero .sd-social.sd-social-icon a:hover:before {
 	background: rgba(0, 0, 0, 0.25);
 	color: #fff;
 }
 .share-end {
 	display: none;
 }
-.sharedaddy .sd-social a:before {
-	width: 2.25em;
-	height: 2.25em;
-	font-size: 0.666667em;
-	line-height: 2.25;
+.sharedaddy .sd-social.sd-social-icon a:before {
+	width: 36px;
+	height: 36px;
+	font-size: 16px;
+	line-height: 36px;
+	top: 0;
 }
-.sd-social .share-count {
-	display: block;
+.sharedaddy .sd-social.sd-social-icon .share-more {
+	border: 0 !important;
+	box-shadow: none !important;
+	line-height: 36px;
+}
+.sharedaddy .sd-social.sd-social-icon .share-more > span {
+	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute;
-	bottom: 0;
-	right: 0;
-	padding: 0 2px;
-	background: #fff;
-	border: 1px solid #e2e2e2;
-	color: #424242;
-	text-align: center;
-	font-size: 10px;
-	line-height: 1;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+.sd-social.sd-social-icon .sharing-hidden .inner {
+	margin-left: -9px;
+}
+.sharing_cancel {
+	border-bottom: 0;
 }
 
 /* Admin Bar */
