@@ -7,7 +7,7 @@ Civi_WP_Member_Sync_Members Class
 
 
 /**
- * Class for encapsulating CiviMember functionality
+ * Class for encapsulating CiviMember functionality.
  */
 class Civi_WP_Member_Sync_Members {
 
@@ -23,7 +23,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Initialise this object
+	 * Initialise this object.
 	 *
 	 * @param object $parent_obj The parent object
 	 * @return object
@@ -45,7 +45,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Register hooks when CiviCRM initialises
+	 * Register hooks when CiviCRM initialises.
 	 *
 	 * @return void
 	 */
@@ -65,7 +65,7 @@ class Civi_WP_Member_Sync_Members {
 
 		}
 
-		// get our civicrm sync setting
+		// get our CiviCRM sync setting
 		$civicrm = absint( $this->parent_obj->admin->setting_get( 'civicrm' ) );
 
 		// add hooks if set
@@ -91,7 +91,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Sync all membership rules
+	 * Sync all membership rules.
 	 *
 	 * @return bool $success True if successful, false otherwise
 	 */
@@ -100,7 +100,7 @@ class Civi_WP_Member_Sync_Members {
 		// kick out if no CiviCRM
 		if ( ! civi_wp()->initialize() ) return;
 
-		// make sure Civi file is included
+		// make sure CiviCRM file is included
 		require_once 'CRM/Core/BAO/UFMatch.php';
 
 		// get all WordPress users
@@ -123,7 +123,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Check user's membership record during logout
+	 * Check user's membership record during logout.
 	 *
 	 * @return void
 	 */
@@ -141,7 +141,34 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Sync a user's role based on their membership record
+	 * Check if a user's membership should by synced.
+	 *
+	 * @param object $user The WordPress user object
+	 * @return bool $should_be_synced Whether or not the user should be synced
+	 */
+	public function user_should_be_synced( $user ) {
+
+		// kick out if we don't receive a valid user
+		if ( ! ( $user instanceof WP_User ) ) return false;
+		if ( ! $user->exists() ) return false;
+
+		// assume user should be synced
+		$should_be_synced = true;
+
+		// exclude admins by default
+		if ( is_super_admin( $user->ID ) OR $user->has_cap( 'delete_users' ) ) {
+			$should_be_synced = false;
+		}
+
+		// return result but allow filtering by other plugins
+		return apply_filters( 'civi_wp_member_sync_user_should_be_synced', $should_be_synced, $user );
+
+	}
+
+
+
+	/**
+	 * Sync a user's role based on their membership record.
 	 *
 	 * @param string $user_login Logged in user's username
 	 * @param WP_User $user WP_User object of the logged-in user.
@@ -149,14 +176,10 @@ class Civi_WP_Member_Sync_Members {
 	 */
 	public function sync_to_user( $user_login, $user ) {
 
-		// kick out if we don't receive a valid user
-		if ( ! ( $user instanceof WP_User ) ) return;
-		if ( ! $user->exists() ) return;
+		// should this user be synced?
+		if ( ! $this->user_should_be_synced( $user ) ) return;
 
-		// exclude admins
-		if ( is_super_admin( $user->ID ) OR $user->has_cap( 'delete_users' ) ) return;
-
-		// get Civi contact ID
+		// get CiviCRM contact ID
 		$civi_contact_id = $this->parent_obj->users->civi_contact_id_get( $user );
 
 		// bail if we don't have one
@@ -174,7 +197,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Update a WP user role when a CiviCRM membership is updated
+	 * Update a WP user role when a CiviCRM membership is updated.
 	 *
 	 * @param string $op the type of database operation
 	 * @param string $objectName the type of object
@@ -187,15 +210,6 @@ class Civi_WP_Member_Sync_Members {
 		// disable
 		return;
 
-		/*
-		print_r( array(
-			'op' => $op,
-			'objectName' => $objectName,
-			'objectId' => $objectId,
-			'objectRef' => $objectRef,
-		)); die();
-		*/
-
 		// target our object type
 		if ( $objectName != 'Membership' ) return;
 
@@ -204,7 +218,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Update a WP user when a CiviCRM membership is updated
+	 * Update a WP user when a CiviCRM membership is updated.
 	 *
 	 * @param string $op the type of database operation
 	 * @param string $objectName the type of object
@@ -217,17 +231,8 @@ class Civi_WP_Member_Sync_Members {
 		// target our object type
 		if ( $objectName != 'Membership' ) return;
 
-		/*
-		print_r( array(
-			'op' => $op,
-			'objectName' => $objectName,
-			'objectId' => $objectId,
-			'objectRef' => $objectRef,
-		)); die();
-		*/
-
 		// kick out if not membership object
-		if ( ! is_a( $objectRef, 'CRM_Member_BAO_Membership' ) ) return;
+		if ( ! ( $objectRef instanceof CRM_Member_BAO_Membership ) ) return;
 
 		// kick out if we don't have a contact ID
 		if ( ! isset( $objectRef->contact_id ) ) return;
@@ -241,7 +246,7 @@ class Civi_WP_Member_Sync_Members {
 			// allow plugins to override this step with a filter
 			if ( true === apply_filters( 'civi_wp_member_sync_auto_create_wp_user', true ) ) {
 
-				// get Civi contact
+				// get CiviCRM contact
 				$civi_contact = $this->parent_obj->users->civi_get_contact_by_contact_id( $objectRef->contact_id );
 
 				// bail if something goes wrong
@@ -262,8 +267,8 @@ class Civi_WP_Member_Sync_Members {
 
 		}
 
-		// exclude admins
-		if ( is_super_admin( $user->ID ) OR $user->has_cap( 'delete_users' ) ) return;
+		// should this user be synced?
+		if ( ! $this->user_should_be_synced( $user ) ) return;
 
 		// catch create and edit operations
 		if ( $op == 'edit' OR $op == 'create' ) {
@@ -300,7 +305,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Update a WordPress user role when a Civi membership is added
+	 * Update a WordPress user role when a CiviCRM membership is added.
 	 *
 	 * @param string $formName the CiviCRM form name
 	 * @param object $form the CiviCRM form object
@@ -308,22 +313,15 @@ class Civi_WP_Member_Sync_Members {
 	 */
 	public function membership_form_process( $formName, &$form ) {
 
-		/*
-		print_r( array(
-			'formName' => $formName,
-			'form' => $form,
-		) ); die();
-		*/
-
 		// kick out if not membership form
-		if ( ! is_a( $form, 'CRM_Member_Form_Membership' ) ) return;
+		if ( ! ( $form instanceof CRM_Member_Form_Membership ) ) return;
 
 	}
 
 
 
 	/**
-	 * Get membership record by Civi contact ID
+	 * Get membership record by CiviCRM contact ID.
 	 *
 	 * @param int $civi_contact_id The numerical CiviCRM contact ID
 	 * @return array $membership CiviCRM formatted membership data
@@ -333,7 +331,7 @@ class Civi_WP_Member_Sync_Members {
 		// kick out if no CiviCRM
 		if ( ! civi_wp()->initialize() ) return false;
 
-		// get Civi membership details
+		// get CiviCRM membership details
 		$membership = civicrm_api( 'Membership', 'get', array(
 			'version' => '3',
 			'page' => 'CiviCRM',
@@ -351,7 +349,7 @@ class Civi_WP_Member_Sync_Members {
 
 		) {
 
-			// Civi should return a 'values' array with just one element
+			// CiviCRM should return a 'values' array with just one element
 			return $membership;
 
 		}
@@ -364,7 +362,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Get name of CiviCRM membership type by ID
+	 * Get name of CiviCRM membership type by ID.
 	 *
 	 * @param int $type_id the numeric ID of the membership type
 	 * @return string $name The name of the membership type
@@ -399,7 +397,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Get membership types
+	 * Get membership types.
 	 *
 	 * @return array $membership_type List of types, key is ID, value is name
 	 */
@@ -433,7 +431,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Get membership status rules
+	 * Get membership status rules.
 	 *
 	 * @return array $membership_status List of status rules, key is ID, value is name
 	 */
@@ -467,7 +465,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Get role/membership names
+	 * Get role/membership names.
 	 *
 	 * @param string $values Serialised array of status rule IDs
 	 * @return string $status_rules The list of status rules, one per line
@@ -496,7 +494,7 @@ class Civi_WP_Member_Sync_Members {
 
 
 	/**
-	 * Get membership status rules for a particular item
+	 * Get membership status rules for a particular item.
 	 *
 	 * @param string $values Serialised array of status rule IDs
 	 * @return array $rules_array The list of membership status rules for this item

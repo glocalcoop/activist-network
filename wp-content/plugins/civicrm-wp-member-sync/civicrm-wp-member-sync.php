@@ -2,9 +2,9 @@
 --------------------------------------------------------------------------------
 Plugin Name: CiviCRM WordPress Member Sync
 Plugin URI: https://github.com/christianwach/civicrm-wp-member-sync
-Description: Synchronize CiviCRM memberships with WordPress user roles or capabilities
+Description: Synchronize CiviCRM memberships with WordPress user roles or capabilities.
 Author: Christian Wach
-Version: 0.2.5
+Version: 0.2.6
 Author URI: http://haystack.co.uk
 Text Domain: civicrm-wp-member-sync
 Domain Path: /languages
@@ -29,7 +29,7 @@ if ( ! defined( 'CIVI_WP_MEMBER_SYNC_CAP_PREFIX' ) ) {
 }
 
 // define plugin version (bumping this will also refresh CSS and JS)
-define( 'CIVI_WP_MEMBER_SYNC_VERSION', '0.2.4' );
+define( 'CIVI_WP_MEMBER_SYNC_VERSION', '0.2.6' );
 
 // store reference to this file
 define( 'CIVI_WP_MEMBER_SYNC_PLUGIN_FILE', __FILE__ );
@@ -53,7 +53,7 @@ if ( ! defined( 'CIVI_WP_MEMBER_SYNC_PLUGIN_PATH' ) ) {
 
 
 /**
- * Class for encapsulating plugin functionality
+ * Class for encapsulating plugin functionality.
  */
 class Civi_WP_Member_Sync {
 
@@ -76,7 +76,7 @@ class Civi_WP_Member_Sync {
 
 
 	/**
-	 * Initialise this object
+	 * Initialise this object.
 	 *
 	 * @return object
 	 */
@@ -124,7 +124,7 @@ class Civi_WP_Member_Sync {
 
 
 	/**
-	 * Perform plugin activation tasks
+	 * Perform plugin activation tasks.
 	 *
 	 * @return void
 	 */
@@ -138,7 +138,7 @@ class Civi_WP_Member_Sync {
 
 
 	/**
-	 * Perform plugin deactivation tasks
+	 * Perform plugin deactivation tasks.
 	 *
 	 * @return void
 	 */
@@ -152,20 +152,20 @@ class Civi_WP_Member_Sync {
 
 
 	/**
-	 * Initialise objects when CiviCRM initialises
+	 * Initialise objects when CiviCRM initialises.
 	 *
 	 * @return void
 	 */
 	public function initialise() {
+
+		// initialise Admin object
+		$this->admin->initialise();
 
 		// initialise users object
 		$this->users->initialise();
 
 		// initialise schedule object
 		$this->schedule->initialise();
-
-		// initialise Admin object
-		$this->admin->initialise();
 
 		// initialise CiviCRM object
 		$this->members->initialise();
@@ -182,7 +182,7 @@ class Civi_WP_Member_Sync {
 
 
 	/**
-	 * Load translation if present
+	 * Load translation if present.
 	 */
 	public function translation() {
 
@@ -252,7 +252,7 @@ function civi_wp_member_sync_plugin_add_settings_link( $links ) {
 
 }
 
-// contstriuct filter
+// construct filter
 $plugin = plugin_basename( __FILE__ );
 add_filter( "plugin_action_links_$plugin", 'civi_wp_member_sync_plugin_add_settings_link' );
 

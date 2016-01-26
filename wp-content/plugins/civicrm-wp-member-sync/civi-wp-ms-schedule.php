@@ -7,7 +7,7 @@ Civi_WP_Member_Sync_Schedule Class
 
 
 /**
- * Class for encapsulating WordPress scheduling functionality
+ * Class for encapsulating WordPress scheduling functionality.
  */
 class Civi_WP_Member_Sync_Schedule {
 
@@ -21,7 +21,7 @@ class Civi_WP_Member_Sync_Schedule {
 
 
 	/**
-	 * Initialise this object
+	 * Initialise this object.
 	 *
 	 * @param object $parent_obj The parent object
 	 * @return object
@@ -39,7 +39,7 @@ class Civi_WP_Member_Sync_Schedule {
 
 
 	/**
-	 * Initialise when CiviCRM initialises
+	 * Initialise when CiviCRM initialises.
 	 *
 	 * @return void
 	 */
@@ -76,7 +76,7 @@ class Civi_WP_Member_Sync_Schedule {
 
 
 	/**
-	 * Set up our scheduled event
+	 * Set up our scheduled event.
 	 *
 	 * @param string $interval One of the WordPress-defined intervals
 	 * @return void
@@ -88,11 +88,9 @@ class Civi_WP_Member_Sync_Schedule {
 
 			// add schedule
 			wp_schedule_event(
-
 				time(), // time when event fires
 				$interval, // event interval
 				'civi_wp_member_sync_refresh' // hook to fire
-
 			);
 
 		}
@@ -102,7 +100,7 @@ class Civi_WP_Member_Sync_Schedule {
 
 
 	/**
-	 * Clear our scheduled event
+	 * Clear our scheduled event.
 	 *
 	 * @return void
 	 */
@@ -125,14 +123,11 @@ class Civi_WP_Member_Sync_Schedule {
 
 
 	/**
-	 * Called when a scheduled event is triggered
+	 * Called when a scheduled event is triggered.
 	 *
 	 * @return void
 	 */
 	public function schedule_callback() {
-
-		// disable for now
-		return;
 
 		// call sync all method
 		$this->parent_obj->members->sync_all();
@@ -146,7 +141,7 @@ class Civi_WP_Member_Sync_Schedule {
 
 
 	/**
-	 * Get schedule intervals
+	 * Get schedule intervals.
 	 *
 	 * @return array $intervals Array of schedule interval arrays, keyed by interval slug
 	 */
@@ -164,7 +159,7 @@ class Civi_WP_Member_Sync_Schedule {
 
 
 	/**
-	 * Clear our legacy_scheduled event
+	 * Clear our legacy_scheduled event.
 	 *
 	 * @return void
 	 */
