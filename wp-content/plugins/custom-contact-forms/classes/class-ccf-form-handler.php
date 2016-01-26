@@ -611,6 +611,7 @@ class CCF_Form_Handler {
 		$skip_fields = apply_filters( 'ccf_skip_fields', array( 'html', 'section-header' ), $form->ID );
 		$save_skip_fields = apply_filters( 'ccf_save_skip_fields', array( 'recaptcha' ), $form->ID );
 		$file_ids = array();
+		$all_form_fields = array();
 
 		foreach ( $fields as $field_id ) {
 			$field_id = (int) $field_id;
@@ -621,7 +622,22 @@ class CCF_Form_Handler {
 				continue;
 			}
 
-			$slug = get_post_meta( $field_id, 'ccf_field_slug', true );
+			$slug = null;
+
+			$field_metas = get_post_meta( $field_id );
+			$new_field = array();
+
+			foreach ( $field_metas as $meta_key => $meta_value ) {
+				if ( 0 === stripos( $meta_key, 'ccf_field_' ) ) {
+					if ( 'ccf_field_slug' === $meta_key ) {
+						$slug = $meta_value[0];
+					}
+
+					$new_field[$meta_key] = wp_kses_post( $meta_value[0] );
+				}
+			}
+
+			$all_form_fields[$slug] = $new_field;
 
 			// We save this to reference later
 			$field_slug_to_id[$slug] = array( 'id' => $field_id, 'type' => sanitize_text_field( $type ) );
@@ -667,6 +683,11 @@ class CCF_Form_Handler {
 				 * @since 6.6
 				 */
 				update_post_meta( $submission_id, 'ccf_submission_data_map', $field_slug_to_id );
+
+				/**
+				 * @since 7.4.4
+				 */
+				update_post_meta( $submission_id, 'ccf_submission_form_fields', $all_form_fields );
 
 				update_post_meta( $submission_id, 'ccf_submission_ip', sanitize_text_field( $_SERVER['REMOTE_ADDR'] ) );
 
@@ -808,7 +829,7 @@ class CCF_Form_Handler {
 
 										<?php if ( 'date' === $type ) : ?>
 
-											<?php echo esc_html( stripslashes( CCF_Submission_CPT::factory()->get_pretty_field_date( $field ) ) ); ?>
+											<?php echo esc_html( stripslashes( CCF_Submission_CPT::factory()->get_pretty_field_date( $field, $field_id ) ) ); ?>
 
 										<?php elseif ( 'name' === $type ) : ?>
 
@@ -905,14 +926,24 @@ class CCF_Form_Handler {
 						$name = null;
 						$email = null;
 
+						$sitename = strtolower( $_SERVER['SERVER_NAME'] );
+						if ( substr( $sitename, 0, 4 ) === 'www.' ) {
+							$sitename = substr( $sitename, 4 );
+						}
+						$default_from_email = 'wordpress@' . $sitename;
+
 						if ( 'custom' === $notification['fromNameType'] ) {
 							$name = $notification['fromName'];
 						} else {
 							$name_field = $notification['fromNameField'];
 						
-							if ( ! empty( $name_field ) && ! empty( $submission[$name_field] ) && is_array( $submission[$name_field] ) ) {
-								if ( ! empty( $submission[$name_field]['first'] ) || ! empty( $submission[$name_field]['last'] ) ) {
-									$name = $submission[$name_field]['first'] . ' ' . $submission[$name_field]['last'];
+							if ( ! empty( $name_field ) && ! empty( $submission[$name_field] ) ) {
+								if ( is_array( $submission[$name_field] ) ) {
+									if ( ! empty( $submission[$name_field]['first'] ) || ! empty( $submission[$name_field]['last'] ) ) {
+										$name = $submission[$name_field]['first'] . ' ' . $submission[$name_field]['last'];
+									}
+								} else {
+									$name = $submission[$name_field];
 								}
 							}
 						}
@@ -935,8 +966,9 @@ class CCF_Form_Handler {
 							$headers[] = 'From: ' . sanitize_text_field( $name ) . ' <' . sanitize_email( $email ) . '>';
 							$headers[] = 'Reply-To: ' . sanitize_email( $email );
 						} elseif ( ! empty( $name ) && empty( $email ) ) {
-							$headers[] = 'From: ' . sanitize_text_field( $name );
+							$headers[] = 'From: ' . sanitize_text_field( $name ) . '<' . sanitize_email( $default_from_email ) . '>';
 						} elseif ( empty( $name ) && ! empty( $email ) ) {
+							// @Todo: investigate how wp_mail handles From: email
 							$headers[] = 'From: ' . sanitize_email( $email );
 							$headers[] = 'Reply-To: ' . sanitize_email( $email );
 						}
@@ -979,6 +1011,10 @@ class CCF_Form_Handler {
 								}
 
 								if ( ! empty( $email ) ) {
+									if ( empty( $notification_content ) ) {
+										$notification_content = ' '; // Hack to send email with empty body via PHPMailer
+									}
+
 									$subject = apply_filters( 'ccf_email_subject', $subject, $form_id, $email, $form_page, $notification );
 									$notification_content = apply_filters( 'ccf_email_content', $message, $form_id, $email, $form_page, $notification );
 									$notification_headers = apply_filters( 'ccf_email_headers', $headers, $form_id, $email, $form_page, $notification );

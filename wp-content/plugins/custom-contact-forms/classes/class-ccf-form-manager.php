@@ -140,9 +140,18 @@ class CCF_Form_Manager {
 			<div class="right-sidebar ccf-field-sidebar accordion-container"></div>
 
 			<div class="bottom">
-				<?php if ( ! apply_filters( 'ccf_hide_ads', false ) ) : ?>
+				<?php $subscribed = get_option( 'ccf_subscribed', false ); if ( empty( $subscribed ) && ! apply_filters( 'ccf_hide_ads', false ) ) : ?>
 					<div class="left signup">
-						<strong>Want free WP blogging tips, tutorials, and marketing tricks? </strong>
+						<strong>Send me tips, offers, and tutorials around </strong>
+						<select name="interest" class="interest-signup-field">
+							<option value="">Choose one</option>
+							<option>Themes</option>
+							<option>eCommerce</option>
+							<option>Page Load Time</option>
+							<option>Social Media</option>
+							<option>Fast WP Hosting</option>
+							<option>Marketing</option>
+						</select>
 						<input type="email" class="email-signup-field" placeholder="Email">
 						<button type="button" class="button signup-button">Sign me up!</button>
 						<span class="signup-check">✓</span>
@@ -220,7 +229,7 @@ class CCF_Form_Manager {
 							<input class="widefat form-email-notification-title" id="ccf_form_email_notification_title" name="email-notification-title" value="{{ notification.title }}">
 						</p>
 
-						<label for="ccf_form_email_notification_content"><?php esc_html_e( 'Email content (HTML):', 'custom-contact-forms' ); ?></label>
+						<label for="ccf_form_email_notification_content"><?php esc_html_e( 'Email Content (HTML):', 'custom-contact-forms' ); ?></label>
 						<textarea id="ccf_form_email_notification_content" class="form-email-notification-content">{{ notification.content }}</textarea><br />
 						<p class="variables">
 							<strong><?php esc_html_e( 'Variables:', 'custom-contact-forms' ); ?></strong>  [all_fields] [ip_address] 
@@ -349,6 +358,18 @@ class CCF_Form_Manager {
 			<p>
 				<label for="ccf_form_button_text"><?php esc_html_e( 'Button Text:', 'custom-contact-forms' ); ?></label>
 				<input class="widefat form-button-text" id="ccf_form_button_text" name="text" type="text" value="{{ form.buttonText }}">
+			</p>
+
+			<p>
+				<label for="ccf_form_theme"><?php esc_html_e( 'Form Theme:', 'custom-contact-forms' ); ?></label>
+
+				<select name="theme" class="form-theme" id="ccf_form_theme">
+					<option value=""><?php esc_html_e( 'None', 'custom-contact-forms' ); ?></option>
+					<option value="light" <# if ( 'light' === form.theme ) { #>selected<# } #>><?php esc_html_e( 'Light', 'custom-contact-forms' ); ?></option>
+					<option value="dark" <# if ( 'dark' === form.theme ) { #>selected<# } #>><?php esc_html_e( 'Dark', 'custom-contact-forms' ); ?></option>
+				</select>
+
+				<span class="explain"><?php esc_html_e( '"None" will have your form inherit styles from your theme.', 'custom-contact-forms' ); ?></span>
 			</p>
 
 			<p>
@@ -1569,22 +1590,27 @@ class CCF_Form_Manager {
 		</script>
 
 		<script type="text/html" id="ccf-submission-row-template">
-			<# _.each( currentColumns, function( column ) { #>
+			<#
+			if ( ! submission.fields || '' == submission.fields ) {
+				submission.fields = {};
+			}
+
+			_.each( currentColumns, function( column ) { #>
 				<# if ( 'date' === column ) { #>
 					<td colspan="1">{{ utils.getPrettyPostDate( submission.date_gmt ) }}</td>
 				<# } else { #>
 					<td colspan="1">
 						<# if ( submission.data[column] ) { #>
 							<# if ( submission.data[column] instanceof Object ) { var output = '', i = 0; #>
-								<# if ( utils.isFieldDate( submission.data[column] ) ) { #>
-									{{ utils.wordChop( utils.getPrettyFieldDate( submission.data[column] ), 30 ) }}
-								<# } else if ( utils.isFieldName( submission.data[column] ) ) { #>
-									{{ utils.wordChop( utils.getPrettyFieldName( submission.data[column] ), 30 ) }}
-								<# } else if ( utils.isFieldAddress( submission.data[column] ) ) { #>
-									{{ utils.wordChop( utils.getPrettyFieldAddress( submission.data[column] ), 30 ) }}
-								<# } else if ( utils.isFieldEmailConfirm( submission.data[column] ) ) { #>
-									{{ utils.wordChop( utils.getPrettyFieldEmailConfirm( submission.data[column] ), 30 ) }}
-								<# } else if ( utils.isFieldFile( submission.data[column] ) ) { #>
+								<# if ( utils.isFieldDate( submission.data[column], submission.fields[column] ) ) { #>
+									{{ utils.wordChop( utils.getPrettyFieldDate( submission.data[column], submission.fields[column] ), 30 ) }}
+								<# } else if ( utils.isFieldName( submission.data[column], submission.fields[column] ) ) { #>
+									{{ utils.wordChop( utils.getPrettyFieldName( submission.data[column], submission.fields[column] ), 30 ) }}
+								<# } else if ( utils.isFieldAddress( submission.data[column], submission.fields[column] ) ) { #>
+									{{ utils.wordChop( utils.getPrettyFieldAddress( submission.data[column], submission.fields[column] ), 30 ) }}
+								<# } else if ( utils.isFieldEmailConfirm( submission.data[column], submission.fields[column] ) ) { #>
+									{{ utils.wordChop( utils.getPrettyFieldEmailConfirm( submission.data[column], submission.fields[column] ), 30 ) }}
+								<# } else if ( utils.isFieldFile( submission.data[column], submission.fields[column] ) ) { #>
 									<a href="{{ submission.data[column].url }}">{{ submission.data[column].file_name }}</a>
 								<# } else { #>
 									<# for ( var key in submission.data[column] ) { if ( submission.data[column].hasOwnProperty( key ) ) {
@@ -1627,15 +1653,15 @@ class CCF_Form_Manager {
 							<div class="field-content">
 								<# if ( submission.data[column] ) { #>
 									<# if ( submission.data[column] instanceof Object ) { var output = '', i = 0; #>
-										<# if ( utils.isFieldDate( submission.data[column] ) ) { #>
-											{{ utils.getPrettyFieldDate( submission.data[column] ) }}
-										<# } else if ( utils.isFieldName( submission.data[column] ) ) { #>
-											{{ utils.getPrettyFieldName( submission.data[column] ) }}
-										<# } else if ( utils.isFieldAddress( submission.data[column] ) ) { #>
-											{{ utils.getPrettyFieldAddress( submission.data[column] ) }}
-										<# } else if ( utils.isFieldEmailConfirm( submission.data[column] ) ) { #>
-											{{ utils.getPrettyFieldEmailConfirm( submission.data[column] ) }}
-										<# } else if ( utils.isFieldFile( submission.data[column] ) ) { #>
+										<# if ( utils.isFieldDate( submission.data[column], submission.fields[column] ) ) { #>
+											{{ utils.getPrettyFieldDate( submission.data[column], submission.fields[column] ) }}
+										<# } else if ( utils.isFieldName( submission.data[column], submission.fields[column] ) ) { #>
+											{{ utils.getPrettyFieldName( submission.data[column], submission.fields[column] ) }}
+										<# } else if ( utils.isFieldAddress( submission.data[column], submission.fields[column] ) ) { #>
+											{{ utils.getPrettyFieldAddress( submission.data[column], submission.fields[column] ) }}
+										<# } else if ( utils.isFieldEmailConfirm( submission.data[column], submission.fields[column] ) ) { #>
+											{{ utils.getPrettyFieldEmailConfirm( submission.data[column], submission.fields[column] ) }}
+										<# } else if ( utils.isFieldFile( submission.data[column], submission.fields[column] ) ) { #>
 											<a href="{{ submission.data[column].url }}">{{ submission.data[column].file_name }}</a>
 										<# } else { #>
 											<# for ( var key in submission.data[column] ) { if ( submission.data[column].hasOwnProperty( key ) ) {
@@ -1761,7 +1787,7 @@ class CCF_Form_Manager {
 			$site_url_parsed = parse_url( site_url() );
 			$home_url_parsed = parse_url( home_url() );
 
-			if ( $site_url_parsed['host'] === $home_url_parsed['host'] ) {
+			if ( $site_url_parsed['host'] === $home_url_parsed['host'] && strtolower( $site_url_parsed['scheme'] ) === strtolower( $home_url_parsed['scheme'] ) ) {
 				$api_root = home_url( 'wp-json' );
 			} else {
 				$api_root = site_url( 'wp-json' );
@@ -1805,7 +1831,7 @@ class CCF_Form_Manager {
 						'post_tag' => esc_html__( 'Post Tags', 'custom-contact-forms' ),
 						'custom_field' => esc_html__( 'Custom Field', 'custom-contact-forms' ),
 					),
-				)
+				),
 			) );
 
 			wp_enqueue_style( 'ccf-form-manager', plugins_url( $css_path, dirname( __FILE__ ) ), array(), CCF_VERSION );

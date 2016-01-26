@@ -195,14 +195,14 @@
 				addressFromField.disabled = false;
 
 				var fields = this.form.get( 'fields' ),
-					addressFieldsAdded = 0;
+					fieldsAdded = 0;
 
 				var addressField = this.model.get( 'field' ),
 					option;
 
 				if ( fields.length >= 1 ) {
 					fields.each( function( field ) {
-						if ( 'email' === field.get( 'type' ) ) {
+						if ( 'email' === field.get( 'type' ) || 'dropdown' === field.get( 'type' ) || 'radio' === field.get( 'type' ) || 'single-line-text' === field.get( 'type' ) ) {
 							option = document.createElement( 'option' );
 							option.innerHTML = field.get( 'slug' );
 							option.value = field.get( 'slug' );
@@ -213,14 +213,14 @@
 
 							addressFromField.appendChild( option );
 
-							addressFieldsAdded++;
+							fieldsAdded++;
 						}
 					});
 				}
 
-				if ( 0 === addressFieldsAdded ) {
+				if ( 0 === fieldsAdded ) {
 					option = document.createElement( 'option' );
-					option.innerHTML = ccfSettings.noEmailFields;
+					option.innerHTML = ccfSettings.noApplicableFields;
 					option.value = '';
 					addressFromField.appendChild( option );
 					addressFromField.disabled = true;
@@ -384,7 +384,7 @@
 
 				if ( fields.length >= 1 ) {
 					fields.each( function( field ) {
-						if ( 'email' === field.get( 'type' ) ) {
+						if ( 'email' === field.get( 'type' ) || 'dropdown' === field.get( 'type' ) || 'radio' === field.get( 'type' ) || 'single-line-text' === field.get( 'type' ) ) {
 							option = document.createElement( 'option' );
 							option.innerHTML = field.get( 'slug' );
 							option.value = field.get( 'slug' );
@@ -396,7 +396,7 @@
 							emailNotificationFromField.appendChild( option );
 
 							addressFieldsAdded++;
-						} else if ( 'name' === field.get( 'type' ) ) {
+						} if ( 'name' === field.get( 'type' ) || 'single-line-text' === field.get( 'type' ) || 'radio' === field.get( 'type' ) || 'dropdown' === field.get( 'type' ) ) {
 							option = document.createElement( 'option' );
 							option.innerHTML = field.get( 'slug' );
 							option.value = field.get( 'slug' );
@@ -408,7 +408,7 @@
 							emailNotificationFromNameField.appendChild( option );
 
 							nameFieldsAdded++;
-						}  else if ( 'single-line-text' === field.get( 'type' ) ) {
+						} if ( 'single-line-text' === field.get( 'type' ) || 'radio' === field.get( 'type' ) || 'dropdown' === field.get( 'type' ) ) {
 							// @Todo: add more applicable fields
 
 							option = document.createElement( 'option' );
@@ -1437,7 +1437,7 @@
 				var fields = this.form.get( 'fields' );
 
 				this.listenTo( fields, 'add', this.updateFormFieldField, this );
-				this.listenTo( fields, 'remove', this.updateFormieldField, this );
+				this.listenTo( fields, 'remove', this.updateFormFieldField, this );
 
 				this.updateFormFieldField();
 				this.updatePostFields();
@@ -1615,6 +1615,9 @@
 
 				var completionActionType = this.el.querySelectorAll( '.form-completion-action-type' )[0].value;
 				this.model.set( 'completionActionType', completionActionType );
+
+				var theme = this.el.querySelectorAll( '.form-theme' )[0].value;
+				this.model.set( 'theme', theme );
 			},
 
 			fullSave: function( $promise ) {
@@ -1740,6 +1743,7 @@
 
 			signup: function( event ) {
 				var email = this.el.querySelectorAll( '.email-signup-field' )[0].value;
+				var interest = this.el.querySelectorAll( '.interest-signup-field' )[0].value;
 				var signupContainer = this.el.querySelectorAll( '.bottom .left.signup' )[0];
 				signupContainer.className = 'left signup';
 
@@ -1749,7 +1753,8 @@
 						method: 'post',
 						dataType: 'jsonp',
 						data: {
-							EMAIL: email
+							EMAIL: email,
+							INTEREST: interest
 						}
 					}).done(function() {
 						signupContainer.className = 'left signup signup-success';
