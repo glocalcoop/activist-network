@@ -20,7 +20,7 @@ class PLL_Choose_Lang_Domain extends PLL_Choose_Lang_Url {
 	 * @since 1.5
 	 */
 	public function get_preferred_language() {
-		return $this->model->get_language($this->links_model->get_language_from_url());
+		return $this->model->get_language( $this->links_model->get_language_from_url() );
 	}
 
 	/*
@@ -29,6 +29,7 @@ class PLL_Choose_Lang_Domain extends PLL_Choose_Lang_Url {
 	 * @since 1.5
 	 */
 	public function home_requested() {
-		$this->set_home_query_var();
+		$this->set_lang_query_var( $GLOBALS['wp_query'], $this->curlang );
+		do_action( 'pll_home_requested' );
 	}
 }

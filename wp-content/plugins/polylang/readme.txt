@@ -2,9 +2,9 @@
 Contributors: Chouby
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CCWWYUUQV8F4E
 Tags: multilingual, bilingual, translate, translation, language, multilanguage, international, localization
-Requires at least: 3.9
+Requires at least: 4.0
 Tested up to: 4.4
-Stable tag: 1.7.12
+Stable tag: 1.8
 License: GPLv2 or later
 
 Making WordPress multilingual
@@ -13,68 +13,26 @@ Making WordPress multilingual
 
 = Features  =
 
-Polylang allows you to create a bilingual or multilingual WordPress site. You write posts, pages and create categories and post tags as usual, and then define the language for each of them. The translation of a post, whether it is in the default language or not, is optional. If you wish to use a professional or automatic translation service, you can now install [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/), as an addon of Polylang. Lingotek offers a complete translation management system which provides services such as translation memory or semi-automated translation processes (e.g. machine translation > human translation > legal review).
+Polylang allows you to create a bilingual or multilingual WordPress site. You write posts, pages and create categories and post tags as usual, and then define the language for each of them. The translation of a post, whether it is in the default language or not, is optional.
 
 * You can use as many languages as you want. RTL language scripts are supported. WordPress languages packs are automatically downloaded and updated.
 * You can translate posts, pages, media, categories, post tags, menus, widgets...
 * Custom post types, custom taxonomies, sticky posts and post formats, RSS feeds and all default WordPress widgets are supported.
-* Professional and automatic translations services are available thanks to [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/).
 * The language is either set by the content or by the language code in url, or you can use one different subdomain or domain per language
 * Categories, post tags as well as some other metas are automatically copied when adding a new post or page translation
 * A customizable language switcher is provided as a widget or in the nav menu
 * The admin interface is of course multilingual too and each user can set the WordPress admin language in its profile
 
+If you wish to use a professional or automatic translation service, you can install [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/), as an addon of Polylang. Lingotek offers a complete translation management system which provides services such as translation memory or semi-automated translation processes (e.g. machine translation > human translation > legal review).
+
+If you wish to migrate from WPML, you can use the plugin [WPML to Polylang](https://wordpress.org/plugins/wpml-to-polylang/)
+
 = Credits =
 
+Thanks a lot to all translators who [help translating Polylang](https://translate.wordpress.org/projects/wp-plugins/polylang).
 Thanks a lot to [Alex Lopez](http://www.alexlopez.rocks/) for the design of the banner and the logo.
 Most of the flags included with Polylang are coming from [famfamfam](http://famfamfam.com/) and are public domain.
 Wherever third party code has been used, credit has been given in the code’s comments.
-
-= Translators =
-
-The plugin admin interface is currently available in 41 languages:
-
-* English
-* French by [fxbenard](http://fxbenard.com/)
-* German by [Christian Ries](http://www.singbyfoot.lu)
-* Russian by [yoyurec](http://yoyurec.in.ua) and unostar
-* Greek by [theodotos](http://www.ubuntucy.org)
-* Dutch by [AlbertGn](http://wordpress.org/support/profile/albertgn)
-* Hebrew by [ArielK](http://www.arielk.net)
-* Polish by [Peter Paciorkiewicz](http://www.paciorkiewicz.pl), [Bartosz](http://www.dfactory.eu/) and Sebastian Janus
-* Latvian by [@AndyDeGroo](http://twitter.com/AndyDeGroo)
-* Italian by [Luca Barbetti](http://wordpress.org/support/profile/lucabarbetti)
-* Danish by [Compute](http://wordpress.org/support/profile/compute)
-* Spanish by Curro
-* Portuguese by [Vitor Carvalho](http://vcarvalho.com/)
-* Lithuanian by [Naglis Jonaitis](http://najo.lt/)
-* Turkish by [darchws](http://darch.ws/) and [Abdullah Pazarbasi](http://www.abdullahpazarbasi.com/)
-* Finnish by [Jani Alha](http://www.wysiwyg.fi)
-* Bulgarian by [pavelsof](http://wordpress.org/support/profile/pavelsof)
-* Belarusian by [Alexander Markevitch](http://fourfeathers.by/)
-* Afrikaans by [Kobus Joubert](http://translate3d.com/)
-* Hungarian by Csaba Erdei
-* Norwegian by [Tom Boersma](http://www.oransje.com/)
-* Slovak by [Branco (WebHostingGeeks.com)](http://webhostinggeeks.com/user-reviews/) and [Maros Kucera](https://maroskucera.com)
-* Swedish by [matsii](http://wordpress.org/support/profile/matsii) and [Jon Täng](http://jontang.se)
-* Catalan by [Núria Martínez Berenguer](http://www.linkedin.com/profile/view?id=127867004&trk=nav_responsive_tab_profile&locale=en_US)
-* Ukrainian by [cmd soft](http://www.cmd-soft.com/), [http://getvoip.com/](http://getvoip.com/) and [Andrii Ryzhkov](https://github.com/andriiryzhkov)
-* Estonian by [Ahto Naris](http://profiles.wordpress.org/ahtonaris/)
-* Venetian by Michele Brunelli
-* simplified Chinese by [Changmeng Hu](http://www.wpdaxue.com)
-* Indonesian by [ajoull](http://www.ajoull.com/)
-* Arabic by [Anas Sulaiman](http://ahs.pw/)
-* Traditional Chinese by [香腸](http://sofree.cc/)
-* Czech by [Přemysl Karbula](http://www.premyslkarbula.cz)
-* Serbian by Sinisa
-* Myanmar by Sithu Thwin
-* Croatian by Bajro
-* Brazilian Portuguese by [Henrique Vianna](http://henriquevianna.com/)
-* Georgian by [Tours in Georgia](http://www.georgia-tours.eu/)
-* Galician by [Toño Calo](http://fedellar.wordpress.com/)
-* Romanian by [Philippe C. Focsaneanu](http://www.pandemicdesign.no/)
-* Japanese by [Eiko Toda](http://www.eikotoda.com)
-* Occitan by [Cédric Valmary](http://www.totenoc.eu/)
 
 = Do you like Polylang? =
 
@@ -82,27 +40,23 @@ Don't hesitate to [give your feedback](http://wordpress.org/support/view/plugin-
 
 == Installation ==
 
-1. Make sure you are using WordPress 3.8 or later and that your server is running PHP 5.2.4 or later (same requirement as WordPress itself)
+1. Make sure you are using WordPress 4.0 or later and that your server is running PHP 5.2.4 or later (same requirement as WordPress itself)
 1. If you tried other multilingual plugins, deactivate them before activating Polylang, otherwise, you may get unexpected results !
-1. Download the plugin
-1. Extract all the files.
-1. Upload everything (keeping the directory structure) to the `/wp-content/plugins/` directory.
-1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Install and activate the [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/) plugin to enable machine/professional translation.
+1. Install and activate the plugin as usual from the 'Plugins' menu in WordPress.
 1. Go to the languages settings page and create the languages you need
 1. Add the 'language switcher' widget to let your visitors switch the language.
-1. Take care that your theme must come with the corresponding .mo files (Polylang downloads them for themes and plugins bundled with WordPress). If your theme is not internationalized yet, please refer to the [codex](http://codex.wordpress.org/I18n_for_WordPress_Developers#I18n_for_theme_and_plugin_developers) or ask the theme author to internationalize it.
+1. Take care that your theme must come with the corresponding .mo files (Polylang automatically downloads them when they are available for themes and plugins in this repository). If your theme is not internationalized yet, please refer to the [codex](http://codex.wordpress.org/I18n_for_WordPress_Developers#I18n_for_theme_and_plugin_developers) or ask the theme author to internationalize it.
 
 == Frequently Asked Questions ==
 
 = Where to find help ? =
 
-* Read the [documentation](http://polylang.wordpress.com/documentation/). It includes [guidelines to start working with Polylang](http://polylang.wordpress.com/documentation/setting-up-a-wordpress-multilingual-site-with-polylang/), a [FAQ](http://polylang.wordpress.com/documentation/frequently-asked-questions/) and the [documentation for programmers](http://polylang.wordpress.com/documentation/documentation-for-developers/).
-* If you want to use professional or automatic translation services, install and activate the [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/) plugin.
 * First time users should read [Polylang - Getting started](http://plugins.svn.wordpress.org/polylang/doc/polylang-getting-started.pdf), a user contributed PDF document which explains the basics with a lot of screenshots.
+* Read the [documentation](http://polylang.wordpress.com/documentation/). It includes [guidelines to start working with Polylang](http://polylang.wordpress.com/documentation/setting-up-a-wordpress-multilingual-site-with-polylang/), a [FAQ](http://polylang.wordpress.com/documentation/frequently-asked-questions/) and the [documentation for programmers](http://polylang.wordpress.com/documentation/documentation-for-developers/).
 * Search the [support forum](https://wordpress.org/search/). You will most probably find your answer here.
 * Read the sticky posts in the [support forum](http://wordpress.org/support/plugin/polylang).
 * If you still have a problem, open a new thread in the [support forum](http://wordpress.org/support/plugin/polylang).
+* If you want to use professional or automatic translation services, install and activate the [Lingotek Translation](https://wordpress.org/plugins/lingotek-translation/) plugin.
 
 = How to contribute? =
 
@@ -110,164 +64,61 @@ See http://polylang.wordpress.com/documentation/contribute/
 
 == Screenshots ==
 
-1. The Polylang languages admin panel in WordPress 3.8
+1. The Polylang languages admin panel
+2. The Strings translations admin panel
+3. Multilingual media library
+4. The Edit Post screen with the Languages metabox
 
 == Changelog ==
 
-= 1.7.12 (2015-11-13) =
+= 1.8 (2016-01-19) =
 
-* The language taxonomy is now public for compatibility with WP 4.4
-* fix: nav menus locations are not correctly populated in customizer in WP 4.4
-* fix: the termmeta table was still deleted at upgrade
-* fix: fatal error when using the argument 'post_id' in 'pll_the_languages()' (introduced in 1.7.11) [props EKesty](https://wordpress.org/support/topic/bug-on)
-* fix: potential notice in 'pll_the_languages()' [props mattkeys](https://wordpress.org/support/topic/bug-on)
-
-= 1.7.11 (2015-10-15) =
-
-* fix: conflict with GET ajax requests sent by the jquery method load
-* fix: notice in frontend-nav-menu.php at line 211 (introduced in 1.7.10) [props Jesse Graupmann](https://wordpress.org/support/topic/warning-and-notice-on-upgrade)
-* fix: the parent list in page attributes metabox is not in the correct language (introduced in 1.7.10)
-* fix: error 404 for attachments
-* fix: the language switcher is not displayed when combining "Forces link to front page" and "Hides languages with no translation"
-
-= 1.7.10 (2015-09-28) =
-
-* Add Occitan translation contributed by [Cédric Valmary](http://www.totenoc.eu/)
-* Add de_DE_formal, en_NZ, es_CO, hy, oci, ps and tl to the predefined languages list
-* Add the filter 'pll_predefined_languages' and the actions 'pll_language_edit_form_fields' and 'pll_language_add_form_fields'
-* the termmeta table (used in Polylang < 1.2) is no more deleted when uninstalling the plugin (as it will soon be included in WP)
-* fix: prevent creating a media translation if one already exists
-* fix: Attempt to translate the nav menus for themes registering a theme location but not using it in wp_nav_menu()
-* fix: Jetpack infinite scroll
-* fix: issue with terms languages when two languages have the same name
-* fix: notices when deleting a tag and Lingotek is active
-* fix: the languages cache is not cleaned when updating the site home url
-* fix: conflict with the theme Ambition
-* fix: front page canonical url displayed by Yoast SEO
-* fix: typo in options definition at install [props null.bit](https://wordpress.org/support/topic/suggestions-for-two-new-filters?replies=5#post-7466159)
-* fix: error when adding a term in a non-translated taxonomy
-
-= 1.7.9 (2015-08-17) =
-
-* Minimum WordPress version is now v3.9
-* Add: hreflang="x-default" on front page when the default language code is not hidden in urls
-* fix: remove hreflang links in html head section of paged archives to please Google
-* fix: conflict with WPSEO sitemap caching when using multiple domains. [props Junaid Bhura](https://wordpress.org/support/topic/wp-seo-sitemap-and-translation-subdomain-issue?replies=8#post-7113817)
-* fix: change the order of strings translations columns for better display on mobile devices in WP 4.3
-* fix: various issues with nav menus and customizer in WP 4.3
-* fix: correctly disallow unchecking both show names and show flags in the language switcher form
-
-= 1.7.8 (2015-07-21) =
-
-* fix: conflict with PHP < 5.4 introduced in 1.7.7
-
-= 1.7.7 (2015-07-20) =
-
-* Add Romanian translation contributed by uskro
-* Add Japanese translation contributed by [Eiko Toda](http://www.eikotoda.com)
-* Update French translation contributed by [fxbenard](http://fxbenard.com/)
-* The language locale is now validated with the same pattern as in WP 4.3. See #28303
-* fix: make sure that the language switcher never finds translations for untranslated post types (could occur when the post type was previously translated)
-* fix: display the default category according to the admin language filter in settings->writing
-* fix: flushing rewrite rules at network activation and de-activation is back. [props RavanH](https://polylang.wordpress.com/2015/06/10/polylang-1-7-6-and-multisite/comment-page-1/#comment-1138)
-* fix: avoid a conflict with WP Super Cache preloading (loading 'polylang_mo' posts which are 404). [props ecdltf](https://wordpress.org/support/topic/polylang_mo-and-404s-take-2)
-* fix: customizer menus issues introduced by changes in WP 4.1
-* fix: strings translations are not saved when pressing enter
-* fix: it is not possible to de-activate the translation for custom post types and taxonomies from wpml-config.xml
-* fix: conflict whith plugins using stringified json in ajax requests
-
-= 1.7.6 (2015-06-10) =
-
-* Add Galician translation contributed by [Toño Calo](http://fedellar.wordpress.com/)
-* fix: incorrect post type archive link for untranslated post types
-* fix: notices in wp-import.php
-* fix: avoid flushing rewrite rules at network activation and de-activation
-* fix: the note below the category list table displays the default category according to the admin language filter
-* fix: wrong future posts permalinks
-* fix: deleting a media translation deletes the file too
-* fix: when using persistent object cache, get_terms is not always filtered by the correct language on admin side
-* fix: it is possible to create two categories having the same translation
-* fix: fatal error when using the dropdown language switcher in WP < 4.1
-
-= 1.7.5 (2015-05-11) =
-
-* Add 'pll_languages_list' filter
-* fix: warning when a plugin calls 'icl_object_id' with an untranslated post type (seen in ACF 4.4.1)
-* fix: the language is not correctly set from the url when using PATHINFO permalinks (introduced in 1.6!)
-* fix: notice when a search is filtered by a taxonomy term in a different language
-
-= 1.7.4 (2015-05-03) =
-
-* fix: translated taxonomies and post types from wpml-config.xml are not filtered on frontend (introduced in 1.7.2)
-* fix: WPML strings translations not always loaded (introduced in 1.7)
-* fix: $.ajaxPrefilter() may not work as expected [props ScreenfeedFr](https://wordpress.org/support/topic/ajaxprefilter-may-not-work-as-expected)
-* fix: can't hide the language code for the default language when using subdomains
-* fix: incorrect static front page url when hiding the default language information
-* fix: an untranslated posts page may display posts in all languages
-* fix: javascript error when changing the language of a hierarchical post type from the languages metabox in WP 4.2
-* fix: subdomains urls are malformed when the main site uses www.
-* fix: suggest tags are not filtered in quick edit
-* fix: parent page dropdown list not filtered in quick edit
-
-= 1.7.3 (2015-04-11) =
-
-* the transient 'pll_languages_list' now stores an array of arrays instead of an array of PLL_Language objects
-* fix: fatal error for users hosted at GoDaddy (due to PLL_Language objects stored in a transient)
-* fix: additional query vars are removed from home page
-* fix: categories are not filtered by the admin language switcher in posts list table (introduced in 1.7)
-* fix: when using multiple domains, the domain url is lost when modifying the language slug
-* fix: the queried object is incorrectly set for author archives (introduced in 1.6.5)
-* fix: notice when a nav menu assigned to a translated nav menu location has been deleted
-* fix: no canonical redirection when using pretty permalinks and querying default permalinks
-
-= 1.7.2 (2015-03-23) =
-
-* fix: comments are filtered for posts in a post type not managed by Polylang
-* fix: translated static front page don't work when setting PLL_CACHE_HOME_URL to false (introduced in 1.7)
-* fix: the query for taxonomies on custom post types is broken (when adding the language code to the url)
-
-= 1.7.1 (2015-03-20) =
-
-* fix: wrong redirection when using a static front page and replacing the page name by the language code (introduced in 1.7)
-
-= 1.7 (2015-03-19) =
-
-* Minimum WordPress version is now v3.8
-* Add new languages to the predefined languages list: Swiss German, Hazaragi
-* Add compatibility with nested tax queries introduced in WP 4.1
-* Add compatibility with splitting shared terms to be introduced in WP 4.2
-* Add the possibility to change the domain in the default language when using multiple domains (avoids a conflict with the domain mapping plugin)
-* Add the possibility to set the language from the code in url when using default permalinks
-* Adding the language code in url is now default at first activation (should improve the out of the box compatibility with other plugins and themes)
-* Add new language switcher option to hide a language with no translation
-* pll_the_languages() now outputs the js code to handle language change in dropdown list (as done by the widget)
-* Improve performance by using base64 encoded flags + various slight optimizations
-* Improve protection against chained redirects
-* The find posts list is now filtered per media language when clicking on attach link in Media library
-* Copy alternative text when creating a media translation
-* The category checklist in quick edit is now filtered per post language instead of admin language filter
-* Quick and bulk language edit don't break translations anymore if the new language is free
-* Make it impossible to change the language of the default categories
-* Make sure that a default category defined in settings->writing is translated in all languages
-* Tweak css for mobiles in add and edit term form
-* Tweak the query getting the list of available posts in the autocomplete input field in the post languages metabox
-* fix: after adding a term translation, need to refresh the page before adding a new term
-* fix: term translations rows are not modified in list table when a term is added / deleted or inline edited
-* fix: post translations rows are not modified in list table when a post is inline edited
-* fix: using brackets in language name breaks strings translations
-* fix: quick edit may conflict with other plugins
-* fix: impossible to use several dropdown languages widgets
-* fix: pll_the_languages() may display a dropdown with empty options
-* fix: the categories widget does not work correctly with dropdown
-* fix: autosave post always created after manual save
-* fix: tax query not filtered by language when using 'NOT IN' operator on a translated taxonomy
-* fix: incorrect translation url for searches filtered by taxonomy
-* fix: backward incompatibility for edited_term_taxonomy action introduced in WP 4.2
-* fix: the home link may be incorrect on MS Windows
-* fix: tags in wrong language may be assigned when bulk editing posts in several languages
-* fix: tags created when bulk editing posts are not assigned any language
-* fix: Illegal string offset 'taxonomy' introduced in v1.6.5
-* fix: Undefined property: WP_Query::$queried_object_id when calling pll_the_languages(array('raw' => 1)) in a function hooked to 'wp'. props [KLicheR](https://wordpress.org/support/profile/klicher)
-* fix: Notice in admin.php when used with MailPoet plugin
+* Minimum WordPress version is now 4.0
+* Add ary, bn_BD, en_ZA, es_AR, fr_CA and fr_BE to the predefined languages list
+* Adopt WordPress coding standards
+* New structure for translated posts and terms (=> several methods of PLL_Model are deprecated).
+* Revamp the management of the static front page and page for posts
+* Improve performance for navigation menus with a lot of pages
+* The Polylang and WPML API are now loaded when 'plugins_loaded' is fired (on frontend only if at least one language has been defined)
+* Add 'pll_get_post_translations()' and 'pll_get_term_translations()' to the API
+* Add filter 'pll_cookie_expiration' to change the cookie expiration time
+* Add support for 'wpml_get_language_information' function from the WPML API
+* The default language is now managed directly from the languages list table
+* Various accessibility improvements
+* It is now possible to choose the languages flags from the available list (custom flags on frontend still work as previously)
+* Revamp the settings page (now a list table with inline configuration)
+* Add an option to remove all data when uninstalling the plugin
+* Add test of subdomains and domains accessibility
+* Add post state for translations of the front page and posts page
+* Add better support of the customizer menus introduced in WP 4.3
+* Media taxonomies (created by 3rd party plugins) are now filtered by language when editing a media
+* Synchronization of taxonomies (created by 3rd party plugins) and meta are now enabled for media
+* The 'hreflang' tag now refers to the locale instead of the 2-letters language code
+* Workaround for WordPress locales not being W3C valid (see #33511)
+* Workaround a bug in Nextgen Gallery causing redirect on album
+* Add compatibility with Duplicate Post plugin to avoid duplicated post keeping the link to translations
+* Add compatibility with Jetpack Related Posts
+* fix: incorrect rewrite rules after changing how the language is set (need to flush rewrite rules after this)
+* fix: password protected pages don't work on multiple domains
+* fix: ensure that the page parent is in the correct language when using bulk edit
+* fix: is_tax set on category and post tags archives when it should not
+* fix: automatically added new top-level pages to menus are not filtered by language
+* fix: nav menus locations are messed when changing the default language
+* fix: error 404 for untranslated taxonomies pages
+* fix: single posts and pages links do not include the language code when using the default permalinks and forcing the language code in url
+* fix: missing trailing slash on home url when using default permalinks or a static front page
+* fix: sticky visibility is copied to new translation only if the synchronization is activated
+* fix: remove "» Languages » [language name]" from the feed title
+* fix: spaces are not honored when searching strings translations
+* fix: default language not set and terms translations not correctly imported when using WordPress Importer
+* fix: the browser language detection does not differentiate 'en_US' and 'en_GB'
+* fix: non alphanumeric characters query vars values lead to an infinite redirection loop on static front pages
+* fix: user profile not saved for a language when the language code contains a "-"
+* fix: non translated posts page always link to the static front page even when they should not
+* fix: remove hreflang="x-default" when using one domain per language
+* fix: deprecated function notice in WP 4.5 alpha
+* fix: wrong url for attachments when media are translated and using subdomains
+* fix: wrong url for unattached attachments when using subdirectories (since WP 4.4)
+* fix: wrong url scheme for custom flags
 
 See changelog.txt for older changelog

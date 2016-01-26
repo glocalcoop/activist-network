@@ -20,8 +20,8 @@ class PLL_Links_Default extends PLL_Links_Model {
 	 * @param object $lang language
 	 * @return string modified url
 	 */
-	public function add_language_to_link($url, $lang) {
-		return empty($lang) || ($this->options['hide_default'] && $this->options['default_lang'] == $lang->slug) ? $url : add_query_arg( 'lang', $lang->slug, $url );
+	public function add_language_to_link( $url, $lang ) {
+		return empty( $lang ) || ( $this->options['hide_default'] && $this->options['default_lang'] == $lang->slug ) ? $url : add_query_arg( 'lang', $lang->slug, $url );
 	}
 
 	/*
@@ -33,8 +33,8 @@ class PLL_Links_Default extends PLL_Links_Model {
 	 * @param string $url url to modify
 	 * @return string modified url
 	 */
-	public function remove_language_from_link($url) {
-		return remove_query_arg('lang', $url);
+	public function remove_language_from_link( $url ) {
+		return remove_query_arg( 'lang', $url );
 	}
 
 	/*
@@ -46,8 +46,8 @@ class PLL_Links_Default extends PLL_Links_Model {
 	 * @param string $url url to modify
 	 * @return string modified url
 	 */
-	function remove_paged_from_link($url) {
-		return remove_query_arg('paged', $url);
+	function remove_paged_from_link( $url ) {
+		return remove_query_arg( 'paged', $url );
 	}
 
 
@@ -60,8 +60,8 @@ class PLL_Links_Default extends PLL_Links_Model {
 	 * @param int $page
 	 * @return string modified url
 	 */
-	public function add_paged_to_link($url, $page) {
-		return add_query_arg(array('paged' => $page), $url);
+	public function add_paged_to_link( $url, $page ) {
+		return add_query_arg( array( 'paged' => $page ), $url );
 	}
 
 
@@ -74,20 +74,23 @@ class PLL_Links_Default extends PLL_Links_Model {
 	 * @return string language slug
 	 */
 	public function get_language_from_url() {
-		$pattern = '#lang=('.implode('|', $this->model->get_languages_list(array('fields' => 'slug'))).')#';
-		return preg_match($pattern, trailingslashit($_SERVER['REQUEST_URI']), $matches) ? $matches[1] : ''; // $matches[1] is the slug of the requested language
+		$pattern = '#lang=('.implode( '|', $this->model->get_languages_list( array( 'fields' => 'slug' ) ) ).')#';
+		return preg_match( $pattern, trailingslashit( $_SERVER['REQUEST_URI'] ), $matches ) ? $matches[1] : ''; // $matches[1] is the slug of the requested language
 	}
 
 	/*
-	 * returns the home url
-	 * links_model interface
+	 * returns the static front page url
 	 *
-	 * @since 1.3.1
+	 * @since 1.8
 	 *
-	 * @param object $lang PLL_Language object
+	 * @param object $lang
 	 * @return string
 	 */
-	public function home_url($lang) {
-		return $this->options['hide_default'] && $lang->slug == $this->options['default_lang'] ? $this->home : get_term_link($lang, 'language');
+	public function front_page_url( $lang ) {
+		if ( $this->options['hide_default'] && $lang->slug == $this->options['default_lang'] ) {
+			return trailingslashit( $this->home );
+		}
+		$url = home_url( '/?page_id=' . $lang->page_on_front );
+		return $this->options['force_lang'] ? $this->add_language_to_link( $url, $lang ) : $url;
 	}
 }
