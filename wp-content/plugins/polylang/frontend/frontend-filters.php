@@ -44,7 +44,7 @@ class PLL_Frontend_Filters extends PLL_Filters{
 		}
 
 		// translates biography
-		add_filter( 'get_user_metadata', array( &$this, 'get_user_metadata' ), 10, 3 );
+		add_filter( 'get_user_metadata', array( &$this, 'get_user_metadata' ), 10, 4 );
 
 		// set posts and terms language when created from frontend ( ex with P2 theme )
 		add_action( 'save_post', array( &$this, 'save_post' ), 200, 2 );
@@ -179,10 +179,11 @@ class PLL_Frontend_Filters extends PLL_Filters{
 	 * @param null $null
 	 * @param int $id user id
 	 * @param string $meta_key
+	 * @param bool $single Whether to return only the first value of the specified $meta_key
 	 * @return null|string
 	 */
-	public function get_user_metadata( $null, $id, $meta_key ) {
-		return 'description' == $meta_key && $this->curlang->slug != $this->options['default_lang'] ? get_user_meta( $id, 'description_'.$this->curlang->slug, true ) : $null;
+	public function get_user_metadata( $null, $id, $meta_key, $single ) {
+		return 'description' === $meta_key && $this->curlang->slug !== $this->options['default_lang'] ? get_user_meta( $id, 'description_'.$this->curlang->slug, $single ) : $null;
 	}
 
 	/*

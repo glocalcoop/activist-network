@@ -11,12 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class PLL_Lingotek {
 	const LINGOTEK = 'lingotek-translation/lingotek.php';
+
 	/*
-	 * constructor
+	 * Init
 	 *
 	 * @since 1.7.7
 	 */
-	public function __construct() {
+	public function init() {
 		$options = get_option( 'polylang' );
 
 		// the Lingotek tab
@@ -290,4 +291,4 @@ class PLL_Lingotek {
 	}
 }
 
-add_action( 'admin_init', create_function( '', 'new PLL_Lingotek();' ) );
+add_action( 'admin_init', array( new PLL_Lingotek(), 'init' ) );

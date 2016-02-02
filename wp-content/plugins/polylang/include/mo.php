@@ -14,7 +14,8 @@ class PLL_MO extends MO {
 	 */
 	public function __construct() {
 		if ( ! post_type_exists( 'polylang_mo' ) ) {
-			register_post_type( 'polylang_mo', array( 'rewrite' => false, 'query_var' => false, '_pll' => true ) );
+			$labels = array( 'name' => __( 'Strings translations', 'polylang' ) );
+			register_post_type( 'polylang_mo', array( 'labels' => $labels, 'rewrite' => false, 'query_var' => false, '_pll' => true ) );
 		}
 	}
 

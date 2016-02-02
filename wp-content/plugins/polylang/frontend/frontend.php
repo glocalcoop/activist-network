@@ -105,15 +105,27 @@ class PLL_Frontend extends PLL_Base {
 	public function parse_query( $query ) {
 		$qv = $query->query_vars;
 
-		// to avoid returning an empty result if the query includes either a translated taxonomy in a different language or a non-translated taxonomy
-		$has_tax = isset( $query->tax_query->queries ) && $this->have_unfiltered_taxonomy( $query->tax_query->queries );
+		// to avoid returning an empty result if the query includes a translated taxonomy in a different language
+		$has_tax = isset( $query->tax_query->queries ) && $this->have_translated_taxonomy( $query->tax_query->queries );
 
 		// allow filtering recent posts and secondary queries by the current language
 		// take care not to break queries for non visible post types such as nav_menu_items
 		// do not filter if lang is set to an empty value
 		// do not filter single page and translated taxonomies to avoid conflicts
-		if ( ! empty( $this->curlang ) && ! isset( $qv['lang'] ) && ! $has_tax && empty( $qv['page_id'] ) && empty( $qv['pagename'] ) && ( empty( $qv['post_type'] ) || $this->model->is_translated_post_type( $qv['post_type'] ) ) ) {
-			$this->choose_lang->set_lang_query_var( $query, $this->curlang );
+		if ( ! empty( $this->curlang ) && ! isset( $qv['lang'] ) && ! $has_tax && empty( $qv['page_id'] ) && empty( $qv['pagename'] ) ) {
+			$taxonomies = $this->get_queried_taxonomies( $query );
+
+			if ( $taxonomies && ( empty( $qv['post_type'] ) || 'any' === $qv['post_type'] ) ) {
+				foreach ( $taxonomies as $taxonomy ) {
+					$tax_object = get_taxonomy( $taxonomy );
+					if ( $this->model->is_translated_post_type( $tax_object->object_type ) ) {
+						$this->choose_lang->set_lang_query_var( $query, $this->curlang );
+						break;
+					}
+				}
+			} elseif ( empty( $qv['post_type'] ) || $this->model->is_translated_post_type( $qv['post_type'] ) ) {
+				$this->choose_lang->set_lang_query_var( $query, $this->curlang );
+			}
 		}
 
 		// modifies query vars when the language is queried
@@ -181,14 +193,14 @@ class PLL_Frontend extends PLL_Base {
 	 * @param array $tax_queries
 	 * @return bool
 	 */
-	protected function have_unfiltered_taxonomy( $tax_queries ) {
+	protected function have_translated_taxonomy( $tax_queries ) {
 		foreach ( $tax_queries as $tax_query ) {
-			if ( isset( $tax_query['taxonomy'] ) && ! $this->model->is_filtered_taxonomy( $tax_query['taxonomy'] ) && ! ( isset( $tax_query['operator'] ) && 'NOT IN' === $tax_query['operator'] ) ) {
+			if ( isset( $tax_query['taxonomy'] ) && $this->model->is_translated_taxonomy( $tax_query['taxonomy'] ) && ! ( isset( $tax_query['operator'] ) && 'NOT IN' === $tax_query['operator'] ) ) {
 				return true;
 			}
 
 			// nested queries
-			elseif ( is_array( $tax_query ) && $this->have_unfiltered_taxonomy( $tax_query ) ) {
+			elseif ( is_array( $tax_query ) && $this->have_translated_taxonomy( $tax_query ) ) {
 				return true;
 			}
 		}

@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: multilingual, bilingual, translate, translation, language, multilanguage, international, localization
 Requires at least: 4.0
 Tested up to: 4.4
-Stable tag: 1.8
+Stable tag: 1.8.1
 License: GPLv2 or later
 
 Making WordPress multilingual
@@ -70,6 +70,14 @@ See http://polylang.wordpress.com/documentation/contribute/
 4. The Edit Post screen with the Languages metabox
 
 == Changelog ==
+
+= 1.8.1 (2016-01-31) =
+
+* Update the list of Facebook locales used for Opengraph support with Yoast SEO and Jetpack
+* fix: secondary query with translated post type and untranslated taxonomy mixes languages (introduced in 1.8)
+* fix: issue with paged static front page when hiding the default language in url
+* fix: potential issue with cache after synchronizations
+* fix: trailing slash added to canonical home url outputed by Yoast SEO when using default permalinks
 
 = 1.8 (2016-01-19) =
 

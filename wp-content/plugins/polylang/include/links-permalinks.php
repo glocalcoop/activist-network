@@ -36,7 +36,7 @@ abstract class PLL_Links_Permalinks extends PLL_Links_Model {
 	 * @return string modified url
 	 */
 	public function remove_paged_from_link( $url ) {
-		return preg_replace( '#\/page\/[0-9]+\/#', '/', $url ); // FIXME trailing slash ?
+		return preg_replace( '#\/page\/[0-9]+\/?#', $this->use_trailing_slashes ? '/' : '', $url );
 	}
 
 	/*
@@ -49,7 +49,7 @@ abstract class PLL_Links_Permalinks extends PLL_Links_Model {
 	 * @return string modified url
 	 */
 	public function add_paged_to_link( $url, $page ) {
-		return trailingslashit( $url ) . 'page/' . $page; // FIXME trailing slash ?
+		return user_trailingslashit( trailingslashit( $url ) . 'page/' . $page, 'paged' );
 	}
 
 	/*

@@ -40,7 +40,7 @@ class PLL_Settings extends PLL_Admin_Base {
 		add_action( 'load-settings_page_mlang',  array( &$this, 'load_page' ) );
 
 		// saves per-page value in screen option
-		add_filter( 'set-screen-option', create_function( '$s, $o, $v', 'return $v;' ), 10, 3 );
+		add_filter( 'set-screen-option', array( &$this, 'set_screen_option' ), 10, 3 );
 	}
 
 	/*
@@ -75,6 +75,15 @@ class PLL_Settings extends PLL_Admin_Base {
 	}
 
 	/*
+	 * Loads the about metabox
+	 *
+	 * @since 0.8
+	 */
+	public function metabox_about() {
+		include( PLL_SETTINGS_INC.'/view-about.php' );
+	}
+
+	/*
 	 * adds screen options and the about box in the languages admin panel
 	 *
 	 * @since 0.9.5
@@ -83,26 +92,11 @@ class PLL_Settings extends PLL_Admin_Base {
 		// test of $this->active_tab avoids displaying the automatically generated screen options on other tabs
 		switch ( $this->active_tab ) {
 			case 'lang':
-				ob_start();
-				include( PLL_SETTINGS_INC.'/view-recommended.php' );
-				$content = trim( ob_get_contents() );
-				ob_end_clean();
-
-				if ( strlen( $content ) > 0 ) {
-					add_meta_box(
-						'pll-recommended',
-						__( 'Recommended plugins', 'polylang' ),
-						create_function( '', "echo '$content';" ),
-						'settings_page_mlang',
-						'normal'
-					);
-				}
-
 				if ( ! defined( 'PLL_DISPLAY_ABOUT' ) || PLL_DISPLAY_ABOUT ) {
 					add_meta_box(
 						'pll-about-box',
 						__( 'About Polylang', 'polylang' ),
-						create_function( '', "include( PLL_SETTINGS_INC.'/view-about.php' );" ),
+						array( &$this, 'metabox_about' ),
 						'settings_page_mlang',
 						'normal'
 					);
@@ -128,6 +122,21 @@ class PLL_Settings extends PLL_Admin_Base {
 	}
 
 	/*
+	 * Save the "Views/Uploads per page" option set by this user
+	 *
+	 * @since 0.9.5
+	 *
+	 * @param	mixed $status false or value returned by previous filter
+	 * @param	string $option Name of the option being changed
+	 * @param	string $value Value of the option
+	 *
+	 * @return string New value if this is our option, otherwise nothing
+	 */
+	public function set_screen_option( $status, $option, $value ) {
+		return 'pll_strings_per_page' === $option ? $value : $status;
+	}
+
+	/*
 	 * diplays the 3 tabs pages: languages, strings translations, settings
 	 * also manages user input for these pages
 	 *
@@ -139,7 +148,7 @@ class PLL_Settings extends PLL_Admin_Base {
 
 		// only if at least one language has been created
 		if ( $listlanguages = $this->model->get_languages_list() ) {
-			$tabs['strings'] = __( 'Strings translation','polylang' );
+			$tabs['strings'] = __( 'Strings translations', 'polylang' );
 			$tabs['settings'] = __( 'Settings', 'polylang' );
 		}
 

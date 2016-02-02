@@ -194,7 +194,7 @@ class PLL_Frontend_Static_Pages extends PLL_Static_Pages {
 		}
 
 		// redirect the language page to the homepage when using a static front page
-		elseif ( $this->options['redirect_lang'] && ( count( $query->query ) == 1 || ( is_paged() && count( $query->query ) == 2 ) ) && is_tax( 'language' ) ) {
+		elseif ( ( $this->options['redirect_lang'] || $this->options['hide_default'] ) && ( count( $query->query ) == 1 || ( is_paged() && count( $query->query ) == 2 ) ) && is_tax( 'language' ) ) {
 			$lang = $this->model->get_language( get_query_var( 'lang' ) );
 			$query->set( 'page_id', $lang->page_on_front );
 			$query->is_singular = $query->is_page = true;

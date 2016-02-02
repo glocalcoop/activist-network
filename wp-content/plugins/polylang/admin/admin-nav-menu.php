@@ -276,17 +276,32 @@ class PLL_Admin_Nav_Menu extends PLL_Nav_Menu {
 	 * @param int nav menu id
 	 */
 	function delete_nav_menu( $term_id ) {
-		foreach ( $this->options['nav_menus'] as $theme => $locations ) {
-			foreach ( $locations as $loc => $languages ) {
-				foreach ( $languages as $lang => $menu_id ) {
-					if ( $menu_id === $term_id ) {
-						unset( $this->options['nav_menus'][ $theme ][ $loc ][ $lang ] );
+		if ( isset( $this->options['nav_menus'] ) ) {
+			foreach ( $this->options['nav_menus'] as $theme => $locations ) {
+				foreach ( $locations as $loc => $languages ) {
+					foreach ( $languages as $lang => $menu_id ) {
+						if ( $menu_id === $term_id ) {
+							unset( $this->options['nav_menus'][ $theme ][ $loc ][ $lang ] );
+						}
 					}
 				}
 			}
-		}
 
-		update_option( 'polylang', $this->options );
+			update_option( 'polylang', $this->options );
+		}
+	}
+
+	/*
+	 * filters the option nav_menu_options for auto added pages to menu
+	 *
+	 *	@since 0.9.4
+	 *
+	 * @param array $options
+	 * @return array Modified options
+	 */
+	public function nav_menu_options( $options ) {
+		$options['auto_add'] = array_intersect( $options['auto_add'], array( $this->auto_add_menus ) );
+		return $options;
 	}
 
 	/*
@@ -312,8 +327,8 @@ class PLL_Admin_Nav_Menu extends PLL_Nav_Menu {
 			}
 
 			if ( ! empty( $menus ) ) {
-				$menus = implode( ',', $menus );
-				add_filter( 'option_nav_menu_options', create_function( '$a', "\$a['auto_add'] = array_intersect( \$a['auto_add'], array( $menus ) ); return \$a;" ) );
+				$this->auto_add_menus = implode( ',', $menus );
+				add_filter( 'option_nav_menu_options', array( &$this, 'nav_menu_options' ) );
 			}
 		}
 	}

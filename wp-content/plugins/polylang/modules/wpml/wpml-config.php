@@ -88,7 +88,15 @@ class PLL_WPML_Config {
 		$tagCount = array();
 
 		while ( isset( $this->values[ $this->index ] ) ) {
-			extract( $this->values[ $this->index ] );
+			$tag = $this->values[ $this->index ]['tag'];
+			$type = $this->values[ $this->index ]['type'];
+			if ( isset( $this->values[ $this->index ]['attributes'] ) ) {
+				$attributes = $this->values[ $this->index ]['attributes'];
+			}
+			if ( isset( $this->values[ $this->index ]['value'] ) ) {
+				$value = $this->values[ $this->index ]['value'];
+			}
+
 			$this->index++;
 
 			if ( 'close' == $type ) {

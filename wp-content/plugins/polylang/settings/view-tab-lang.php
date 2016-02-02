@@ -23,14 +23,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="col-wrap">
 
 			<div class="form-wrap">
-				<h3><?php echo 'edit' == $action ? __( 'Edit language', 'polylang' ) :	__( 'Add new language', 'polylang' ); ?></h3><?php
+				<h3><?php echo ! empty( $edit_lang ) ? __( 'Edit language', 'polylang' ) :	__( 'Add new language', 'polylang' ); ?></h3><?php
 
 				// displays the add ( or edit ) language form
 				// adds noheader=true in the action url to allow using wp_redirect when processing the form ?>
 				<form id="add-lang" method="post" action="options-general.php?page=mlang&amp;noheader=true" class="validate"><?php
 					wp_nonce_field( 'add-lang', '_wpnonce_add-lang' );
 
-				if ( 'edit' == $action ) {?>
+				if ( ! empty( $edit_lang ) ) {?>
 					<input type="hidden" name="pll_action" value="update" />
 					<input type="hidden" name="lang_id" value="<?php echo esc_attr( $edit_lang->term_id );?>" /><?php
 				} else { ?>
@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<label for="lang_name"><?php _e( 'Full name', 'polylang' );?></label><?php
 					printf(
 						'<input name="name" id="lang_name" type="text" value="%s" size="40" aria-required="true" />',
-						'edit' == $action ? esc_attr( $edit_lang->name ) : ''
+						! empty( $edit_lang ) ? esc_attr( $edit_lang->name ) : ''
 					);?>
 					<p><?php _e( 'The name is how it is displayed on your site (for example: English).', 'polylang' );?></p>
 				</div>
@@ -69,7 +69,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<label for="lang_locale"><?php _e( 'Locale', 'polylang' );?></label><?php
 					printf(
 						'<input name="locale" id="lang_locale" type="text" value="%s" size="40" aria-required="true" />',
-						'edit' == $action ? esc_attr( $edit_lang->locale ) : ''
+						! empty( $edit_lang ) ? esc_attr( $edit_lang->locale ) : ''
 					);?>
 					<p><?php _e( 'WordPress Locale for the language (for example: en_US). You will need to install the .mo file for this language.', 'polylang' );?></p>
 				</div>
@@ -78,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<label for="lang_slug"><?php _e( 'Language code', 'polylang' );?></label><?php
 					printf(
 						'<input name="slug" id="lang_slug" type="text" value="%s" size="40"/>',
-						'edit' == $action ? esc_attr( $edit_lang->slug ) : ''
+						! empty( $edit_lang ) ? esc_attr( $edit_lang->slug ) : ''
 					);?>
 					<p><?php _e( 'Language code - preferably 2-letters ISO 639-1  (for example: en)', 'polylang' );?></p>
 				</div>
@@ -87,12 +87,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<legend><?php _e( 'Text direction', 'polylang' );?></legend><?php
 					printf(
 						'<label><input name="rtl" type="radio" value="0" %s /> %s</label>',
-						'edit' == $action && $edit_lang->is_rtl ? '' : 'checked="checked"',
+						! empty( $edit_lang ) && $edit_lang->is_rtl ? '' : 'checked="checked"',
 						__( 'left to right', 'polylang' )
 					);
 					printf(
 						'<label><input name="rtl" type="radio" value="1" %s /> %s</label>',
-						'edit' == $action && $edit_lang->is_rtl ? 'checked="checked"' : '',
+						! empty( $edit_lang ) && $edit_lang->is_rtl ? 'checked="checked"' : '',
 						__( 'right to left', 'polylang' )
 					);?>
 					<p><?php _e( 'Choose the text direction for the language', 'polylang' );?></p>
@@ -119,18 +119,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<label for="lang_order"><?php _e( 'Order', 'polylang' );?></label><?php
 					printf(
 						'<input name="term_group" id="lang_order" type="text" value="%d" />',
-						'edit' == $action ? esc_attr( $edit_lang->term_group ) : ''
+						! empty( $edit_lang ) ? esc_attr( $edit_lang->term_group ) : ''
 					);?>
 					<p><?php _e( 'Position of the language in the language switcher', 'polylang' );?></p>
 				</div><?php
 
-				if ( 'edit' == $action ) {
+				if ( ! empty( $edit_lang ) ) {
 					do_action( 'pll_language_edit_form_fields', $edit_lang );
 				} else {
 					do_action( 'pll_language_add_form_fields' );
 				}
 
-				submit_button( 'edit' == $action ? __( 'Update' ) : __( 'Add new language', 'polylang' ) ); // since WP 3.1 ?>
+				submit_button( ! empty( $edit_lang ) ? __( 'Update' ) : __( 'Add new language', 'polylang' ) ); // since WP 3.1 ?>
 
 				</form>
 			</div><!-- form-wrap -->

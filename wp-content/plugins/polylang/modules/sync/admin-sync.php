@@ -50,11 +50,7 @@ class PLL_Admin_Sync {
 	 * @param object $post current post object
 	 */
 	public function add_meta_boxes( $post_type, $post ) {
-		if ( 'post-new.php' == $GLOBALS['pagenow'] && isset( $_GET['from_post'], $_GET['new_lang'] ) ) {
-			if ( ! $this->model->is_translated_post_type( $post->post_type ) ) {
-				return;
-			}
-
+		if ( 'post-new.php' == $GLOBALS['pagenow'] && isset( $_GET['from_post'], $_GET['new_lang'] ) && $this->model->is_translated_post_type( $post->post_type ) ) {
 			// capability check already done in post-new.php
 			$from_post_id = (int) $_GET['from_post'];
 			$lang = $this->model->get_language( $_GET['new_lang'] );
@@ -212,12 +208,12 @@ class PLL_Admin_Sync {
 		}
 
 		if ( in_array( 'post_date', $this->options['sync'] ) ) {
-			$post_arr['post_date_gmt'] = $post->post_date_gmt;
+			$postarr['post_date_gmt'] = $post->post_date_gmt;
 		}
 
 		// synchronize terms and metas in translations
 		foreach ( $translations as $lang => $tr_id ) {
-			if ( ! $tr_id ) {
+			if ( ! $tr_id || $tr_id === $post_id ) {
 				continue;
 			}
 
@@ -243,8 +239,10 @@ class PLL_Admin_Sync {
 			}
 
 			// update all the row at once
+			// don't use wp_update_post to avoid infinite loop
 			if ( ! empty( $tr_arr ) ) {
 				$wpdb->update( $wpdb->posts, $tr_arr, array( 'ID' => $tr_id ) );
+				clean_post_cache( $tr_id );
 			}
 		}
 	}
@@ -292,25 +290,25 @@ class PLL_Admin_Sync {
 
 		// synchronize parent in translations
 		// calling clean_term_cache *after* this is mandatory otherwise the $taxonomy_children option is not correctly updated
-		// but clean_term_cache can be called ( efficiently ) only one time due to static array which prevents to update the option more than once
+		// before WP 3.9 clean_term_cache could be called ( efficiently ) only one time due to static array which prevented to update the option more than once
 		// this is the reason to use the edit_term filter and not edited_term
 		// take care that $_POST contains the only valid values for the current term
 		// FIXME can I synchronize parent without using $_POST instead?
 		if ( isset( $_POST['term_tr_lang'] ) ) {
 			foreach ( $_POST['term_tr_lang'] as $lang => $tr_id ) {
-				if ( ! $tr_id ) {
-					continue;
-				}
+				if ( $tr_id ) {
+					if ( isset( $_POST['parent'] ) && -1 != $_POST['parent'] ) { // since WP 3.1
+						$term_parent = $this->model->term->get_translation( (int) $_POST['parent'], $lang );
+					}
 
-				if ( isset( $_POST['parent'] ) && -1 != $_POST['parent'] ) { // since WP 3.1
-					$term_parent = $this->model->term->get_translation( (int) $_POST['parent'], $lang );
-				}
+					global $wpdb;
+					$wpdb->update( $wpdb->term_taxonomy,
+						array( 'parent' => isset( $term_parent ) ? $term_parent : 0 ),
+						array( 'term_taxonomy_id' => get_term( (int) $tr_id, $taxonomy )->term_taxonomy_id )
+					);
 
-				global $wpdb;
-				$wpdb->update( $wpdb->term_taxonomy,
-					array( 'parent' => isset( $term_parent ) ? $term_parent : 0 ),
-					array( 'term_taxonomy_id' => get_term( (int) $tr_id, $taxonomy )->term_taxonomy_id )
-				);
+					clean_term_cache( $tr_id, $taxonomy ); // OK since WP 3.9
+				}
 			}
 		}
 	}
