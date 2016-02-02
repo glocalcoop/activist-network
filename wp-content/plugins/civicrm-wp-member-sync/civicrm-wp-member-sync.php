@@ -4,7 +4,7 @@ Plugin Name: CiviCRM WordPress Member Sync
 Plugin URI: https://github.com/christianwach/civicrm-wp-member-sync
 Description: Synchronize CiviCRM memberships with WordPress user roles or capabilities.
 Author: Christian Wach
-Version: 0.2.6
+Version: 0.2.7
 Author URI: http://haystack.co.uk
 Text Domain: civicrm-wp-member-sync
 Domain Path: /languages
@@ -29,7 +29,7 @@ if ( ! defined( 'CIVI_WP_MEMBER_SYNC_CAP_PREFIX' ) ) {
 }
 
 // define plugin version (bumping this will also refresh CSS and JS)
-define( 'CIVI_WP_MEMBER_SYNC_VERSION', '0.2.6' );
+define( 'CIVI_WP_MEMBER_SYNC_VERSION', '0.2.7' );
 
 // store reference to this file
 define( 'CIVI_WP_MEMBER_SYNC_PLUGIN_FILE', __FILE__ );
@@ -53,24 +53,48 @@ if ( ! defined( 'CIVI_WP_MEMBER_SYNC_PLUGIN_PATH' ) ) {
 
 
 /**
- * Class for encapsulating plugin functionality.
+ * CiviCRM WordPress Member Sync class.
+ *
+ * A class for encapsulating plugin functionality.
+ *
+ * @since 0.1
  */
 class Civi_WP_Member_Sync {
 
 	/**
-	 * Properties
+	 * WordPress Users utilities object.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var object $user The users utilities object
 	 */
-
-	// Users utilities class
 	public $users;
 
-	// Schedule utilities class
+	/**
+	 * WordPress Scheduled Events utilities object.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var object $schedule The scheduled events utilities object
+	 */
 	public $schedule;
 
-	// Admin utilities class
+	/**
+	 * Admin utilities object.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var object $admin The admin utilities object
+	 */
 	public $admin;
 
-	// CiviMember utilities class
+	/**
+	 * CiviCRM Membership utilities object.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var object $members The membership utilities object
+	 */
 	public $members;
 
 
@@ -78,9 +102,9 @@ class Civi_WP_Member_Sync {
 	/**
 	 * Initialise this object.
 	 *
-	 * @return object
+	 * @since 0.1
 	 */
-	function __construct() {
+	public function __construct() {
 
 		// use translation
 		add_action( 'plugins_loaded', array( $this, 'translation' ) );
@@ -112,9 +136,6 @@ class Civi_WP_Member_Sync {
 		// instantiate
 		$this->members = new Civi_WP_Member_Sync_Members( $this );
 
-		// --<
-		return $this;
-
 	}
 
 
@@ -125,6 +146,8 @@ class Civi_WP_Member_Sync {
 
 	/**
 	 * Perform plugin activation tasks.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -140,6 +163,8 @@ class Civi_WP_Member_Sync {
 	/**
 	 * Perform plugin deactivation tasks.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function deactivate() {
@@ -153,6 +178,8 @@ class Civi_WP_Member_Sync {
 
 	/**
 	 * Initialise objects when CiviCRM initialises.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -183,6 +210,8 @@ class Civi_WP_Member_Sync {
 
 	/**
 	 * Load translation if present.
+	 *
+	 * @since 0.1
 	 */
 	public function translation() {
 
@@ -231,30 +260,58 @@ register_deactivation_hook( __FILE__, array( $civi_wp_member_sync, 'deactivate' 
 
 
 /**
- * Add utility links to WordPress Plugin Listings Page
+ * Utility for retrieving a reference to this plugin.
+ *
+ * @since 0.2.7
+ *
+ * @return object $civi_wp_member_sync The plugin reference
+ */
+function civicrm_wpms() {
+
+	// return reference
+	global $civi_wp_member_sync;
+	return $civi_wp_member_sync;
+
+}
+
+
+
+/**
+ * Add courtesy links on WordPress plugin listings pages.
+ *
+ * @since 0.1
  *
  * @param array $links The existing list of plugin links
+ * @param str $file The name of the plugin file
  * @return array $links The amended list of plugin links
  */
-function civi_wp_member_sync_plugin_add_settings_link( $links ) {
+function civi_wp_member_sync_plugin_add_settings_link( $links, $file ) {
 
-	// access plugin
-	global $civi_wp_member_sync;
+	// maybe add settings link
+	if ( $file == plugin_basename( dirname( __FILE__ ) . '/civicrm-wp-member-sync.php' ) ) {
 
-	// get admin URLs
-	$urls = $civi_wp_member_sync->admin->page_get_urls();
+		// is this Network Admin? Also check sub-site listings (since WordPress 4.4) and show for network admins
+		if ( 
+			is_network_admin() OR 
+			( is_super_admin() AND civicrm_wpms()->admin->is_network_activated() ) 
+		) {
+			$link = add_query_arg( array( 'page' => 'civi_wp_member_sync_parent' ), network_admin_url( 'settings.php' ) );
+		} else {
+			$link = add_query_arg( array( 'page' => 'civi_wp_member_sync_parent' ), admin_url( 'options-general.php' ) );
+		}
 
-	// add courtesy link
-	$links[] = '<a href="' . $urls['settings'] . '">' . __( 'Settings', 'civicrm-wp-member-sync' ) . '</a>';
+		// add settings link
+		$links[] = '<a href="' . esc_url( $link ) . '">' . esc_html__( 'Settings', 'civicrm-wp-member-sync' ) . '</a>';
+
+	}
 
 	// --<
 	return $links;
 
 }
 
-// construct filter
-$plugin = plugin_basename( __FILE__ );
-add_filter( "plugin_action_links_$plugin", 'civi_wp_member_sync_plugin_add_settings_link' );
+add_filter( 'network_admin_plugin_action_links', 'civi_wp_member_sync_plugin_add_settings_link', 10, 2 );
+add_filter( 'plugin_action_links', 'civi_wp_member_sync_plugin_add_settings_link', 10, 2 );
 
 
 

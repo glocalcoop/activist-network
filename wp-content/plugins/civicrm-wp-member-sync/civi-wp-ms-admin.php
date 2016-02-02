@@ -1,43 +1,111 @@
-<?php /*
---------------------------------------------------------------------------------
-Civi_WP_Member_Sync_Admin Class
---------------------------------------------------------------------------------
-*/
-
-
+<?php
 
 /**
+ * CiviCRM WordPress Member Sync Admin class.
+ *
  * Class for encapsulating admin functionality.
+ *
+ * @since 0.1
  */
 class Civi_WP_Member_Sync_Admin {
 
 	/**
-	 * Properties
+	 * Plugin (calling) object.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var object $plugin The plugin object
 	 */
+	public $plugin;
 
-	// parent object
-	public $parent_obj;
-
-	// migration object
+	/**
+	 * Migration object.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var object $migrate The migration object
+	 */
 	public $migrate;
 
-	// admin pages
+	/**
+	 * Parent Page.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var str $parent_page The parent page
+	 */
 	public $parent_page;
+
+	/**
+	 * Settings Page.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var str $settings_page The settings page
+	 */
 	public $settings_page;
+
+	/**
+	 * Manual Sync Page.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var str $sync_page The manual sync page
+	 */
 	public $sync_page;
+
+	/**
+	 * List Association Rules Page.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var str $rules_list_page The list rules page
+	 */
 	public $rules_list_page;
+
+	/**
+	 * Add or edit Association Rule Page.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var str $rules_list_page The add/edit rules page
+	 */
 	public $rule_add_edit_page;
 
-	// plugin version
+	/**
+	 * Plugin version.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var str $plugin_version The plugin version (numeric string)
+	 */
 	public $plugin_version;
 
-	// settings
+	/**
+	 * Plugin settings.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var array $settings The plugin settings
+	 */
 	public $settings = array();
 
-	// form error messages
+	/**
+	 * Form error messages.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var array $error_strings The form error messages
+	 */
 	public $error_strings;
 
-	// errors in current submission
+	/**
+	 * Errors in current form submission.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var array $error_strings The errors in current form submission
+	 */
 	public $errors;
 
 
@@ -45,13 +113,14 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Initialise this object.
 	 *
-	 * @param object $parent_obj The parent object
-	 * @return object
+	 * @since 0.1
+	 *
+	 * @param object $plugin The plugin object
 	 */
-	function __construct( $parent_obj ) {
+	public function __construct( $plugin ) {
 
-		// store reference to parent
-		$this->parent_obj = $parent_obj;
+		// store reference to plugin
+		$this->plugin = $plugin;
 
 		// define errors
 		$this->error_strings = array(
@@ -74,15 +143,14 @@ class Civi_WP_Member_Sync_Admin {
 
 		}
 
-		// --<
-		return $this;
-
 	}
 
 
 
 	/**
 	 * Perform activation tasks.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -92,10 +160,10 @@ class Civi_WP_Member_Sync_Admin {
 		$this->store_version();
 
 		// add settings option only if it does not exist
-		if ( 'fgffgs' == get_option( 'civi_wp_member_sync_settings', 'fgffgs' ) ) {
+		if ( 'fgffgs' == $this->option_get( 'civi_wp_member_sync_settings', 'fgffgs' ) ) {
 
 			// store default settings
-			add_option( 'civi_wp_member_sync_settings', $this->settings_get_default() );
+			$this->option_save( 'civi_wp_member_sync_settings', $this->settings_get_default() );
 
 		}
 
@@ -105,6 +173,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Perform deactivation tasks.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -117,28 +187,77 @@ class Civi_WP_Member_Sync_Admin {
 
 
 	/**
+	 * Test if this plugin is network activated.
+	 *
+	 * @since 0.2.7
+	 *
+	 * @return bool $is_network_active True if network activated, false otherwise
+	 */
+	public function is_network_activated() {
+
+		// only need to test once
+		static $is_network_active;
+
+		// have we done this already?
+		if ( isset( $is_network_active ) ) return $is_network_active;
+
+		// if not multisite, it cannot be
+		if ( ! is_multisite() ) {
+
+			// set flag
+			$is_network_active = false;
+
+			// kick out
+			return $is_network_active;
+
+		}
+
+		// make sure plugin file is included when outside admin
+		if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
+			require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+		}
+
+		// get path from 'plugins' directory to this plugin
+		$this_plugin = plugin_basename( CIVI_WP_MEMBER_SYNC_PLUGIN_FILE );
+
+		// test if network active
+		$is_network_active = is_plugin_active_for_network( $this_plugin );
+
+		// --<
+		return $is_network_active;
+
+	}
+
+
+
+	/**
 	 * Initialise when CiviCRM initialises.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
 	public function initialise() {
 
 		// load plugin version
-		$this->plugin_version = get_option( 'civi_wp_member_sync_version', false );
+		$this->plugin_version = $this->option_get( 'civi_wp_member_sync_version', false );
+
+		// perform any upgrade tasks
+		$this->upgrade_tasks();
 
 		// upgrade version if needed
 		if ( $this->plugin_version != CIVI_WP_MEMBER_SYNC_VERSION ) $this->store_version();
 
 		// load settings array
-		$this->settings = get_option( 'civi_wp_member_sync_settings', $this->settings );
+		$this->settings = $this->option_get( 'civi_wp_member_sync_settings', $this->settings );
 
 		// is this the back end?
 		if ( is_admin() ) {
 
-			// multisite?
-			if ( is_multisite() ) {
+			// multisite and network-activated?
+			if ( $this->is_network_activated() ) {
 
-				// add admin page to Network menu
+				// add admin page to Network Settings menu
 				add_action( 'network_admin_menu', array( $this, 'admin_menu' ), 30 );
 
 			} else {
@@ -158,14 +277,58 @@ class Civi_WP_Member_Sync_Admin {
 
 
 	/**
+	 * Perform upgrade tasks.
+	 *
+	 * @since 0.2.7
+	 *
+	 * @return void
+	 */
+	public function upgrade_tasks() {
+
+		// if the current version is less than 0.2.7 and we're upgrading to 0.2.7+
+		if (
+			version_compare( $this->plugin_version, '0.2.7', '<' ) AND
+			version_compare( CIVI_WP_MEMBER_SYNC_VERSION, '0.2.7', '>=' )
+		) {
+
+			// check if this plugin is network-activated
+			if ( $this->is_network_activated() ) {
+
+				// get existing settings from local options
+				$settings = get_option( 'civi_wp_member_sync_settings', array() );
+
+				// what if we don't have any?
+				if ( ! array_key_exists( 'data', $settings ) ) {
+					return;
+				}
+
+				// migrate to network settings
+				$this->settings = $settings;
+				$this->settings_save();
+
+				// delete local options
+				delete_option( 'civi_wp_member_sync_version' );
+				delete_option( 'civi_wp_member_sync_settings' );
+
+			}
+
+		}
+
+	}
+
+
+
+	/**
 	 * Store the plugin version.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
 	public function store_version() {
 
 		// store version
-		update_option( 'civi_wp_member_sync_version', CIVI_WP_MEMBER_SYNC_VERSION );
+		$this->option_save( 'civi_wp_member_sync_version', CIVI_WP_MEMBER_SYNC_VERSION );
 
 	}
 
@@ -178,18 +341,20 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Add this plugin's Settings Page to the WordPress admin menu.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function admin_menu() {
 
 		// we must be network admin in multisite
-		if ( is_multisite() AND !is_super_admin() ) return false;
+		if ( is_multisite() AND ! is_super_admin() ) return false;
 
 		// check user permissions
-		if ( !current_user_can('manage_options') ) return false;
+		if ( ! current_user_can( 'manage_options' ) ) return false;
 
 		// multisite?
-		if ( is_multisite() ) {
+		if ( $this->is_network_activated() ) {
 
 			// add settings page to the Network Settings menu
 			$this->parent_page = add_submenu_page(
@@ -287,8 +452,10 @@ class Civi_WP_Member_Sync_Admin {
 
 
 	/**
-	 * This tells WP to highlight the plugin's menu item, regardless of which.
+	 * Tell WordPress to highlight the plugin's menu item, regardless of which
 	 * actual admin screen we are on.
+	 *
+	 * @since 0.1
 	 *
 	 * @global string $plugin_page
 	 * @global array $submenu
@@ -318,6 +485,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Initialise plugin help.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function admin_head() {
@@ -334,6 +503,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Enqueue plugin options page CSS.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -354,6 +525,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Ensure jQuery and jQuery Form are available in WP admin.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -394,6 +567,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Adds help copy to admin page in WP3.3+.
 	 *
+	 * @since 0.1
+	 *
 	 * @param object $screen The existing WordPress screen object
 	 * @return object $screen The amended WordPress screen object
 	 */
@@ -403,7 +578,7 @@ class Civi_WP_Member_Sync_Admin {
 		$page = '';
 
 		// the page ID is different in multisite
-		if ( is_multisite() ) {
+		if ( $this->is_network_activated() ) {
 			$page = '-network';
 		}
 
@@ -435,6 +610,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Get help text.
 	 *
+	 * @since 0.1
+	 *
 	 * @return string $help Help formatted as HTML
 	 */
 	public function get_help() {
@@ -456,12 +633,14 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Show settings page.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function page_settings() {
 
 		// check user permissions
-		if ( current_user_can('manage_options') ) {
+		if ( current_user_can( 'manage_options' ) ) {
 
 			// get admin page URLs
 			$urls = $this->page_get_urls();
@@ -481,7 +660,7 @@ class Civi_WP_Member_Sync_Admin {
 			$method = $this->setting_get( 'method' );
 
 			// get all schedules
-			$schedules = $this->parent_obj->schedule->intervals_get();
+			$schedules = $this->plugin->schedule->intervals_get();
 
 			// get our sync settings
 			$login = absint( $this->setting_get( 'login' ) );
@@ -503,12 +682,14 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Show manual sync page.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function page_manual_sync() {
 
 		// check user permissions
-		if ( current_user_can('manage_options') ) {
+		if ( current_user_can( 'manage_options' ) ) {
 
 			// get admin page URLs
 			$urls = $this->page_get_urls();
@@ -525,12 +706,14 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Show rules list page.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function page_rules_list() {
 
 		// check user permissions
-		if ( current_user_can('manage_options') ) {
+		if ( current_user_can( 'manage_options' ) ) {
 
 			// get admin page URLs
 			$urls = $this->page_get_urls();
@@ -545,7 +728,7 @@ class Civi_WP_Member_Sync_Admin {
 			$data = ( isset( $all_data[$method] ) ) ? $all_data[$method] : array();
 
 			// get all membership types
-			$membership_types = $this->parent_obj->members->types_get_all();
+			$membership_types = $this->plugin->members->types_get_all();
 
 			// assume we don't have all types
 			$have_all_types = false;
@@ -553,7 +736,7 @@ class Civi_WP_Member_Sync_Admin {
 			// well, do we have all types populated?
 			if ( count( $data ) === count( $membership_types ) ) {
 
-				// we do!
+				// we do
 				$have_all_types = true;
 
 			}
@@ -580,12 +763,14 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Decide whether to show add or edit page.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function page_rule_add_edit() {
 
 		// check user permissions
-		if ( current_user_can('manage_options') ) {
+		if ( current_user_can( 'manage_options' ) ) {
 
 			// default mode
 			$mode = 'add';
@@ -613,6 +798,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Show add rule page.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	private function page_rule_add() {
@@ -621,10 +808,10 @@ class Civi_WP_Member_Sync_Admin {
 		$urls = $this->page_get_urls();
 
 		// get all membership types
-		$membership_types = $this->parent_obj->members->types_get_all();
+		$membership_types = $this->plugin->members->types_get_all();
 
 		// get all membership status rules
-		$status_rules = $this->parent_obj->members->status_rules_get_all();
+		$status_rules = $this->plugin->members->status_rules_get_all();
 
 		// get method
 		$method = $this->setting_get( 'method' );
@@ -651,7 +838,7 @@ class Civi_WP_Member_Sync_Admin {
 		if ( $method == 'roles' ) {
 
 			// get filtered roles
-			$roles = $this->parent_obj->users->wp_role_names_get_all();
+			$roles = $this->plugin->users->wp_role_names_get_all();
 
 			// include template file
 			include( CIVI_WP_MEMBER_SYNC_PLUGIN_PATH . 'assets/templates/rule-role-add.php' );
@@ -670,6 +857,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Show edit rule page.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	private function page_rule_edit() {
@@ -678,10 +867,10 @@ class Civi_WP_Member_Sync_Admin {
 		$urls = $this->page_get_urls();
 
 		// get all membership types
-		$membership_types = $this->parent_obj->members->types_get_all();
+		$membership_types = $this->plugin->members->types_get_all();
 
 		// get all membership status rules
-		$status_rules = $this->parent_obj->members->status_rules_get_all();
+		$status_rules = $this->plugin->members->status_rules_get_all();
 
 		// get method
 		$method = $this->setting_get( 'method' );
@@ -718,7 +907,7 @@ class Civi_WP_Member_Sync_Admin {
 		if ( $method == 'roles' ) {
 
 			// get filtered roles
-			$roles = $this->parent_obj->users->wp_role_names_get_all();
+			$roles = $this->plugin->users->wp_role_names_get_all();
 
 			// get stored roles
 			$current_wp_role = $selected_rule['current_wp_role'];
@@ -745,6 +934,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Get admin page URLs.
 	 *
+	 * @since 0.1
+	 *
 	 * @return array $admin_urls The array of admin page URLs
 	 */
 	public function page_get_urls() {
@@ -756,7 +947,7 @@ class Civi_WP_Member_Sync_Admin {
 		$this->urls = array();
 
 		// multisite?
-		if ( is_multisite() ) {
+		if ( $this->is_network_activated() ) {
 
 			// get admin page URLs via our adapted method
 			$this->urls['settings'] = $this->network_menu_page_url( 'civi_wp_member_sync_settings', false );
@@ -785,11 +976,13 @@ class Civi_WP_Member_Sync_Admin {
 	 * Get the url to access a particular menu page based on the slug it was registered with.
 	 * If the slug hasn't been registered properly no url will be returned.
 	 *
+	 * @since 0.1
+	 *
 	 * @param string $menu_slug The slug name to refer to this menu by (should be unique for this menu)
 	 * @param bool $echo Whether or not to echo the url - default is true
 	 * @return string $url The URL
 	 */
-	public function network_menu_page_url($menu_slug, $echo = true) {
+	public function network_menu_page_url( $menu_slug, $echo = true ) {
 		global $_parent_pages;
 
 		if ( isset( $_parent_pages[$menu_slug] ) ) {
@@ -803,7 +996,7 @@ class Civi_WP_Member_Sync_Admin {
 			$url = '';
 		}
 
-		$url = esc_url($url);
+		$url = esc_url( $url );
 
 		if ( $echo ) echo $url;
 
@@ -816,6 +1009,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Get the URL for the form action.
+	 *
+	 * @since 0.1
 	 *
 	 * @return string $target_url The URL for the admin form action
 	 */
@@ -840,6 +1035,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Route settings updates to relevant methods.
 	 *
+	 * @since 0.1
+	 *
 	 * @return bool $result True on success, false otherwise
 	 */
 	public function settings_update_router() {
@@ -848,17 +1045,17 @@ class Civi_WP_Member_Sync_Admin {
 		$result = false;
 
 		// was the "Migrate" form submitted?
-		if( isset( $_POST[ 'civi_wp_member_sync_migrate_submit' ] ) ) {
+		if( isset( $_POST['civi_wp_member_sync_migrate_submit'] ) ) {
 			$result = $this->migrate->legacy_migrate();
 		}
 
 		// was the "Settings" form submitted?
-		if( isset( $_POST[ 'civi_wp_member_sync_settings_submit' ] ) ) {
+		if( isset( $_POST['civi_wp_member_sync_settings_submit'] ) ) {
 			$result = $this->settings_update();
 		}
 
 		// was the "Manual Sync" form submitted?
-		if( isset( $_POST[ 'civi_wp_member_sync_manual_sync_submit' ] ) ) {
+		if( isset( $_POST['civi_wp_member_sync_manual_sync_submit'] ) ) {
 
 			// check that we trust the source of the request
 			check_admin_referer( 'civi_wp_member_sync_manual_sync_action', 'civi_wp_member_sync_nonce' );
@@ -867,7 +1064,7 @@ class Civi_WP_Member_Sync_Admin {
 			do_action( 'civi_wp_member_sync_pre_sync_all' );
 
 			// sync all memberships for *existing* WordPress users
-			$result = $this->parent_obj->members->sync_all();
+			$result = $this->plugin->members->sync_all();
 
 			// and again, now that we're done
 			do_action( 'civi_wp_member_sync_after_sync_all' );
@@ -875,7 +1072,7 @@ class Civi_WP_Member_Sync_Admin {
 		}
 
 		// was the "Rule" form submitted?
-		if( isset( $_POST[ 'civi_wp_member_sync_rules_submit' ] ) ) {
+		if( isset( $_POST['civi_wp_member_sync_rules_submit'] ) ) {
 			$result = $this->rule_update();
 		}
 
@@ -895,6 +1092,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Get default plugin settings.
+	 *
+	 * @since 0.1
 	 *
 	 * @return array $settings The array of settings, keyed by setting name
 	 */
@@ -927,6 +1126,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Update plugin settings.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -995,7 +1196,7 @@ class Civi_WP_Member_Sync_Admin {
 		if ( $existing_schedule == 1 AND $settings_schedule === 0 ) {
 
 			// clear current scheduled event
-			$this->parent_obj->schedule->unschedule();
+			$this->plugin->schedule->unschedule();
 
 		}
 
@@ -1014,10 +1215,10 @@ class Civi_WP_Member_Sync_Admin {
 			if ( $settings_schedule AND $settings_interval != $existing_interval ) {
 
 				// clear current scheduled event
-				$this->parent_obj->schedule->unschedule();
+				$this->plugin->schedule->unschedule();
 
 				// now add new scheduled event
-				$this->parent_obj->schedule->schedule( $settings_interval );
+				$this->plugin->schedule->schedule( $settings_interval );
 
 			}
 
@@ -1045,12 +1246,14 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Save the plugin's settings array.
 	 *
+	 * @since 0.1
+	 *
 	 * @return bool $result True if setting value has changed, false if not or if update failed
 	 */
 	public function settings_save() {
 
 		// update WordPress option and return result
-		return update_option( 'civi_wp_member_sync_settings', $this->settings );
+		return $this->option_save( 'civi_wp_member_sync_settings', $this->settings );
 
 	}
 
@@ -1058,6 +1261,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Return a value for a specified setting.
+	 *
+	 * @since 0.1
 	 *
 	 * @return mixed $setting The value of the setting
 	 */
@@ -1077,6 +1282,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Set a value for a specified setting.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -1099,7 +1306,99 @@ class Civi_WP_Member_Sync_Admin {
 
 
 	/**
+	 * Get a WordPress option.
+	 *
+	 * @since 0.2.7
+	 *
+	 * @param string $key The option name
+	 * @param mixed $default The default option value if none exists
+	 * @return mixed $value
+	 */
+	public function option_get( $key, $default = null ) {
+
+		// if multisite and network activated
+		if ( $this->is_network_activated() ) {
+
+			// get site option
+			$value = get_site_option( $key, $default );
+
+		} else {
+
+			// get option
+			$value = get_option( $key, $default );
+
+		}
+
+		// --<
+		return $value;
+
+	}
+
+
+
+	/**
+	 * Save a WordPress option.
+	 *
+	 * @since 0.2.7
+	 *
+	 * @param string $key The option name
+	 * @param mixed $value The value to save
+	 * @return void
+	 */
+	public function option_save( $key, $value ) {
+
+		// if multisite and network activated
+		if ( $this->is_network_activated() ) {
+
+			// update site option
+			update_site_option( $key, $value );
+
+		} else {
+
+			// update option
+			update_option( $key, $value );
+
+		}
+
+	}
+
+
+
+	/**
+	 * Delete a WordPress option.
+	 *
+	 * @since 0.2.7
+	 *
+	 * @param string $key The option name
+	 * @return void
+	 */
+	public function option_delete( $key ) {
+
+		// if multisite and network activated
+		if ( $this->is_network_activated() ) {
+
+			// delete site option
+			delete_site_option( $key, $value );
+
+		} else {
+
+			// delete option
+			delete_option( $key, $value );
+
+		}
+
+	}
+
+
+
+	//##########################################################################
+
+
+
+	/**
 	 * Get all association rules by method.
+	 *
+	 * @since 0.1
 	 *
 	 * @param string $method The sync method (either 'roles' or 'capabilities')
 	 * @return mixed $rule Array if successful, boolean false otherwise
@@ -1124,6 +1423,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Get an association rule by membership type ID.
+	 *
+	 * @since 0.1
 	 *
 	 * @param int $type_id The numeric ID of the CiviCRM membership type
 	 * @param string $method The sync method (either 'roles' or 'capabilities')
@@ -1152,6 +1453,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Update (or add) a membership rule.
+	 *
+	 * @since 0.1
 	 *
 	 * @return bool $success True if successful, false otherwise
 	 */
@@ -1326,6 +1629,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Delete a membership rule.
 	 *
+	 * @since 0.1
+	 *
 	 * @return bool $success True if successful, false otherwise
 	 */
 	public function rule_delete() {
@@ -1400,6 +1705,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Assign WordPress role or capability based on membership status.
 	 *
+	 * @since 0.1
+	 *
 	 * @param WP_User $user WP_User object of the user in question
 	 * @param array $membership The membership details of the WordPress user in question
 	 * @return bool True if successful, false otherwise
@@ -1445,7 +1752,7 @@ class Civi_WP_Member_Sync_Admin {
 			// SYNC ROLES
 
 			// get primary WP role
-			$user_role = $this->parent_obj->users->wp_role_get( $user );
+			$user_role = $this->plugin->users->wp_role_get( $user );
 
 			// does the user's membership status match a current status rule?
 			if ( isset( $status_id ) && array_search( $status_id, $current_rule ) ) {
@@ -1457,7 +1764,7 @@ class Civi_WP_Member_Sync_Admin {
 				if (  ! empty( $wp_role ) AND $wp_role != $user_role ) {
 
 					// no - set new role
-					$this->parent_obj->users->wp_role_set( $user, $user_role, $wp_role );
+					$this->plugin->users->wp_role_set( $user, $user_role, $wp_role );
 
 				}
 
@@ -1470,7 +1777,7 @@ class Civi_WP_Member_Sync_Admin {
 				if ( ! empty( $expired_wp_role ) AND $expired_wp_role != $user_role ) {
 
 					// switch user's role to the expired role
-					$this->parent_obj->users->wp_role_set( $user, $user_role, $expired_wp_role );
+					$this->plugin->users->wp_role_set( $user, $user_role, $expired_wp_role );
 
 				}
 
@@ -1496,18 +1803,18 @@ class Civi_WP_Member_Sync_Admin {
 				if ( defined( 'MEMBERS_VERSION' ) ) {
 
 					// add the plugin's custom capability
-					$this->parent_obj->users->wp_cap_add( $user, 'restrict_content' );
+					$this->plugin->users->wp_cap_add( $user, 'restrict_content' );
 
 				}
 
 				// add type capability
-				$this->parent_obj->users->wp_cap_add( $user, $capability );
+				$this->plugin->users->wp_cap_add( $user, $capability );
 
 				// clear status capabilities
-				$this->parent_obj->users->wp_cap_remove_status( $user, $capability );
+				$this->plugin->users->wp_cap_remove_status( $user, $capability );
 
 				// add status capability
-				$this->parent_obj->users->wp_cap_add( $user, $capability_status );
+				$this->plugin->users->wp_cap_add( $user, $capability_status );
 
 			} else {
 
@@ -1515,15 +1822,15 @@ class Civi_WP_Member_Sync_Admin {
 				if ( defined( 'MEMBERS_VERSION' ) ) {
 
 					// remove the plugin's custom capability
-					$this->parent_obj->users->wp_cap_remove( $user, 'restrict_content' );
+					$this->plugin->users->wp_cap_remove( $user, 'restrict_content' );
 
 				}
 
 				// remove type capability
-				$this->parent_obj->users->wp_cap_remove( $user, $capability );
+				$this->plugin->users->wp_cap_remove( $user, $capability );
 
 				// clear status capabilities
-				$this->parent_obj->users->wp_cap_remove_status( $user, $capability );
+				$this->plugin->users->wp_cap_remove_status( $user, $capability );
 
 			}
 
@@ -1542,6 +1849,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Remove WordPress role or capability when a membership is deleted.
 	 *
+	 * @since 0.1
+	 *
 	 * @param WP_User $user WP_User object of the user in question
 	 * @param object $membership The membership details of the WordPress user in question
 	 * @return bool True if successful, false otherwise
@@ -1558,7 +1867,7 @@ class Civi_WP_Member_Sync_Admin {
 			// assign the expired role
 
 			// get primary WP role
-			$user_role = $this->parent_obj->users->wp_role_get( $user );
+			$user_role = $this->plugin->users->wp_role_get( $user );
 
 			// get association rule for this membership type
 			$association_rule = $this->rule_get_by_type( $membership->membership_type_id, $method );
@@ -1570,7 +1879,7 @@ class Civi_WP_Member_Sync_Admin {
 			$expired_wp_role = $association_rule['expired_wp_role'];
 
 			// switch user's role to the expired role
-			$this->parent_obj->users->wp_role_set( $user, $user_role, $expired_wp_role );
+			$this->plugin->users->wp_role_set( $user, $user_role, $expired_wp_role );
 
 			// --<
 			return true;
@@ -1581,16 +1890,16 @@ class Civi_WP_Member_Sync_Admin {
 			$capability = CIVI_WP_MEMBER_SYNC_CAP_PREFIX . $membership->membership_type_id;
 
 			// remove capability
-			$this->parent_obj->users->wp_cap_remove( $user, $capability );
+			$this->plugin->users->wp_cap_remove( $user, $capability );
 
 			// remove status capability
-			$this->parent_obj->users->wp_cap_remove_status( $user, $capability );
+			$this->plugin->users->wp_cap_remove_status( $user, $capability );
 
 			// do we have the "Members" plugin?
 			if ( defined( 'MEMBERS_VERSION' ) ) {
 
 				// remove the custom capability
-				$this->parent_obj->users->wp_cap_remove( $user, 'restrict_content' );
+				$this->plugin->users->wp_cap_remove( $user, 'restrict_content' );
 
 			}
 
@@ -1612,6 +1921,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Register "Groups" plugin hooks if it's present.
+	 *
+	 * @since 0.2.3
 	 *
 	 * @return void
 	 */
@@ -1642,6 +1953,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * When an association rule is created, add capability to "Groups" plugin.
 	 *
+	 * @since 0.2.3
+	 *
 	 * @param array $data The association rule data
 	 * @return void
 	 */
@@ -1666,6 +1979,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * When an association rule is edited, edit capability in "Groups" plugin.
 	 *
+	 * @since 0.2.3
+	 *
 	 * @param array $data The association rule data
 	 * @return void
 	 */
@@ -1680,6 +1995,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * When an association rule is deleted, delete capability from "Groups" plugin.
+	 *
+	 * @since 0.2.3
 	 *
 	 * @param array $data The association rule data
 	 * @return void
@@ -1704,6 +2021,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Add "read post" capability to "Groups" plugin.
+	 *
+	 * @since 0.2.3
 	 *
 	 * @param array $capability The capability to add
 	 * @return void
@@ -1731,6 +2050,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Delete "read post" capability from "Groups" plugin.
+	 *
+	 * @since 0.2.3
 	 *
 	 * @param array $capability The capability to delete
 	 * @return void
@@ -1762,6 +2083,8 @@ class Civi_WP_Member_Sync_Admin {
 	/**
 	 * Before a manual sync, make sure "Groups" plugin is in sync.
 	 *
+	 * @since 0.2.3
+	 *
 	 * @return void
 	 */
 	public function groups_pre_sync() {
@@ -1792,6 +2115,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * Auto-restrict a post based on the post type.
+	 *
+	 * @since 0.2.3
 	 *
 	 * This is a placeholder in case we want to extend this plugin to handle
 	 * automatic content restriction.
@@ -1828,6 +2153,8 @@ class Civi_WP_Member_Sync_Admin {
 
 	/**
 	 * General debugging utility.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */

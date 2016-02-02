@@ -1,14 +1,14 @@
-<?php
-/*
+<?php /*
 --------------------------------------------------------------------------------
 Plugin Name: CiviCRM WordPress Profile Sync
 Plugin URI: https://github.com/christianwach/civicrm-wp-profile-sync
 Description: Keeps a WordPress User profile in sync with CiviCRM Contact info
 Author: Christian Wach
-Version: 0.2.1
+Version: 0.2.2
 Author URI: http://haystack.co.uk
 Text Domain: civicrm-wp-profile-sync
 Domain Path: /languages
+Depends: CiviCRM
 --------------------------------------------------------------------------------
 */
 
@@ -21,7 +21,7 @@ define( 'CIVICRM_WP_PROFILE_SYNC_DEBUG', false );
 define( 'CIVICRM_WP_PROFILE_SYNC_BULK', false );
 
 // set our version here
-define( 'CIVICRM_WP_PROFILE_SYNC_VERSION', '0.2.1' );
+define( 'CIVICRM_WP_PROFILE_SYNC_VERSION', '0.2.2' );
 
 // store reference to this file
 if ( !defined( 'CIVICRM_WP_PROFILE_SYNC_FILE' ) ) {
@@ -40,29 +40,32 @@ if ( !defined( 'CIVICRM_WP_PROFILE_SYNC_PATH' ) ) {
 
 
 
-/*
---------------------------------------------------------------------------------
-CiviCRM_WP_Profile_Sync Class
---------------------------------------------------------------------------------
-*/
-
+/**
+ * CiviCRM WordPress Profile Sync Class.
+ *
+ * A class that encapsulates this plugin's functionality.
+ *
+ * @since 0.1
+ */
 class CiviCRM_WP_Profile_Sync {
 
 	/**
-	 * Properties
+	 * Error messages.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var array $messages The error messages array
 	 */
-
-	// error messages
 	public $messages = array();
 
 
 
 	/**
-	 * Initialises this object
+	 * Initialises this object.
 	 *
-	 * @return object
+	 * @since 0.1
 	 */
-	function __construct() {
+	public function __construct() {
 
 		// use translation
 		add_action( 'plugins_loaded', array( $this, 'translation' ) );
@@ -76,11 +79,11 @@ class CiviCRM_WP_Profile_Sync {
 		// sync a WP user when a CiviCRM contact is updated
 		$this->_add_hooks_civi();
 
-		// add an item to the actions dropdown
-		add_action( 'civicrm_searchTasks', array( $this, 'civi_bulk_operations' ), 10, 2 );
-
 		// are we allowing bulk operations?
 		if ( CIVICRM_WP_PROFILE_SYNC_BULK ) {
+
+			// add an item to the actions dropdown
+			add_action( 'civicrm_searchTasks', array( $this, 'civi_bulk_operations' ), 10, 2 );
 
 			// register php and template directories
 			add_action( 'civicrm_config', array( $this, 'register_php_directory' ), 10, 1 );
@@ -92,9 +95,6 @@ class CiviCRM_WP_Profile_Sync {
 
 		}
 
-		// --<
-		return $this;
-
 	}
 
 
@@ -104,7 +104,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Load translation if present
+	 * Load translation if present.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -134,11 +136,13 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Register directory that CiviCRM searches in for new PHP files
+	 * Register directory that CiviCRM searches in for new PHP files.
 	 *
 	 * This only works with *new* PHP files. One cannot override existing PHP
-	 * with this technique - instead, the file must be placed in the path
+	 * with this technique - instead, the file must be placed in the path:
 	 * defined in $config->customPHPPathDir
+	 *
+	 * @since 0.1
 	 *
 	 * @param object $config The CiviCRM config object
 	 * @return void
@@ -160,7 +164,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Register directories that CiviCRM searches for php and template files
+	 * Register directories that CiviCRM searches for php and template files.
+	 *
+	 * @since 0.1
 	 *
 	 * @param object $config The CiviCRM config object
 	 * @return void
@@ -188,7 +194,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Add an option to the Actions dropdown
+	 * Add an option to the Actions dropdown.
+	 *
+	 * @since 0.1
 	 *
 	 * @param str $object_name The CiviCRM object type
 	 * @param array $tasks The CiviCRM tasks array to add our option to
@@ -225,7 +233,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Intercept BuddyPress's attempt to sync to WordPress user profile
+	 * Intercept BuddyPress's attempt to sync to WordPress user profile.
+	 *
+	 * @since 0.1
 	 *
 	 * @param integer $user_id The numeric ID of the WordPress user
 	 * @param array $posted_field_ids The array of numeric IDs of the BuddyPress fields
@@ -258,7 +268,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Updates a CiviCRM Contact when a WordPress user is updated
+	 * Updates a CiviCRM Contact when a WordPress user is updated.
+	 *
+	 * @since 0.1
 	 *
 	 * @param integer $user_id The numeric ID of the WordPress user
 	 * @return void
@@ -328,6 +340,8 @@ class CiviCRM_WP_Profile_Sync {
 	 * if the update is initiated from the WordPress side, this callback will have been
 	 * unhooked and will not be called.
 	 *
+	 * @since 0.1
+	 *
 	 * @param string $op The type of database operation
 	 * @param string $objectName The type of object
 	 * @param integer $objectId The ID of the object
@@ -359,7 +373,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Prevent recursion when a CiviCRM contact's primary email address is updated
+	 * Prevent recursion when a CiviCRM contact's primary email address is updated.
+	 *
+	 * @since 0.1
 	 *
 	 * @param string $op The type of database operation
 	 * @param string $objectName The type of object
@@ -395,7 +411,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Update a WordPress user when a CiviCRM contact's website is updated
+	 * Update a WordPress user when a CiviCRM contact's website is updated.
+	 *
+	 * @since 0.1
 	 *
 	 * @param string $op The type of database operation
 	 * @param string $objectName The type of object
@@ -462,7 +480,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Update a WP user when a CiviCRM contact is updated
+	 * Update a WP user when a CiviCRM contact is updated.
+	 *
+	 * @since 0.1
 	 *
 	 * @param string $op The type of database operation
 	 * @param string $objectName The type of object
@@ -554,7 +574,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Prevent recursion when a WordPress user is about to be bulk added
+	 * Prevent recursion when a WordPress user is about to be bulk added.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -569,7 +591,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Re-hook when a WordPress user has been bulk added
+	 * Re-hook when a WordPress user has been bulk added.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -588,7 +612,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Add BuddyPress sync hooks
+	 * Add BuddyPress sync hooks.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -604,7 +630,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Remove BuddyPress sync hooks
+	 * Remove BuddyPress sync hooks.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -620,7 +648,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Add WordPress sync hooks
+	 * Add WordPress sync hooks.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -635,7 +665,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Remove WordPress sync hooks
+	 * Remove WordPress sync hooks.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -650,7 +682,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Add CiviCRM sync hooks
+	 * Add CiviCRM sync hooks.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -671,7 +705,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Remove CiviCRM sync hooks
+	 * Remove CiviCRM sync hooks.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -688,7 +724,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Update a Civi contact's first name and last name
+	 * Update a Civi contact's first name and last name.
+	 *
+	 * @since 0.1
 	 *
 	 * @param object $user The WP user object
 	 * @param object $civi_contact The Civi Contact object
@@ -712,7 +750,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Update a Civi contact's primary email address
+	 * Update a Civi contact's primary email address.
+	 *
+	 * @since 0.1
 	 *
 	 * @param object $user The WP user object
 	 * @param object $civi_contact The Civi Contact object
@@ -759,7 +799,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Update a Civi contact's website address
+	 * Update a Civi contact's website address.
+	 *
+	 * @since 0.1
 	 *
 	 * @param object $user The WP user object
 	 * @param object $civi_contact The Civi Contact object
@@ -838,7 +880,9 @@ class CiviCRM_WP_Profile_Sync {
 
 
 	/**
-	 * Debugging
+	 * Debugging.
+	 *
+	 * @since 0.1
 	 *
 	 * @param array $msg
 	 * @return string
@@ -859,11 +903,10 @@ class CiviCRM_WP_Profile_Sync {
 
 
 
-
-
-
 /**
- * Initialise our plugin after CiviCRM initialises
+ * Initialise our plugin after CiviCRM initialises.
+ *
+ * @since 0.1
  *
  * @return void
  */
@@ -879,8 +922,6 @@ function civicrm_wp_profile_sync_init() {
 
 // add action for plugin init
 add_action( 'civicrm_instance_loaded', 'civicrm_wp_profile_sync_init' );
-
-
 
 
 

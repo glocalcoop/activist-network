@@ -1,38 +1,36 @@
-<?php /*
---------------------------------------------------------------------------------
-Civi_WP_Member_Sync_Schedule Class
---------------------------------------------------------------------------------
-*/
-
-
+<?php
 
 /**
+ * CiviCRM WordPress Member Sync Schedule class.
+ *
  * Class for encapsulating WordPress scheduling functionality.
+ *
+ * @since 0.1
  */
 class Civi_WP_Member_Sync_Schedule {
 
 	/**
-	 * Properties
+	 * Plugin (calling) object.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var object $plugin The plugin object
 	 */
-
-	// parent object
-	public $parent_obj;
+	public $plugin;
 
 
 
 	/**
 	 * Initialise this object.
 	 *
-	 * @param object $parent_obj The parent object
-	 * @return object
+	 * @since 0.1
+	 *
+	 * @param object $plugin The plugin object
 	 */
-	function __construct( $parent_obj ) {
+	public function __construct( $plugin ) {
 
-		// store reference to parent
-		$this->parent_obj = $parent_obj;
-
-		// --<
-		return $this;
+		// store reference to plugin
+		$this->plugin = $plugin;
 
 	}
 
@@ -41,18 +39,20 @@ class Civi_WP_Member_Sync_Schedule {
 	/**
 	 * Initialise when CiviCRM initialises.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function initialise() {
 
 		// get our schedule sync setting
-		$schedule = absint( $this->parent_obj->admin->setting_get( 'schedule' ) );
+		$schedule = absint( $this->plugin->admin->setting_get( 'schedule' ) );
 
 		// add schedule if set
 		if ( $schedule === 1 ) {
 
 			// get our interval setting
-			$interval = $this->parent_obj->admin->setting_get( 'interval' );
+			$interval = $this->plugin->admin->setting_get( 'interval' );
 
 			// sanity check
 			if ( ! empty( $interval ) ) {
@@ -78,6 +78,8 @@ class Civi_WP_Member_Sync_Schedule {
 	/**
 	 * Set up our scheduled event.
 	 *
+	 * @since 0.1
+	 *
 	 * @param string $interval One of the WordPress-defined intervals
 	 * @return void
 	 */
@@ -102,6 +104,8 @@ class Civi_WP_Member_Sync_Schedule {
 	/**
 	 * Clear our scheduled event.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function unschedule() {
@@ -125,12 +129,14 @@ class Civi_WP_Member_Sync_Schedule {
 	/**
 	 * Called when a scheduled event is triggered.
 	 *
+	 * @since 0.1
+	 *
 	 * @return void
 	 */
 	public function schedule_callback() {
 
 		// call sync all method
-		$this->parent_obj->members->sync_all();
+		$this->plugin->members->sync_all();
 
 	}
 
@@ -142,6 +148,8 @@ class Civi_WP_Member_Sync_Schedule {
 
 	/**
 	 * Get schedule intervals.
+	 *
+	 * @since 0.1
 	 *
 	 * @return array $intervals Array of schedule interval arrays, keyed by interval slug
 	 */
@@ -160,6 +168,8 @@ class Civi_WP_Member_Sync_Schedule {
 
 	/**
 	 * Clear our legacy_scheduled event.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */

@@ -14,7 +14,7 @@
 	<h3><?php _e( 'All Association Rules', 'civicrm-wp-member-sync' ); ?><?php
 
 		// if we don't have all our Membership Types populated...
-		if ( !$have_all_types ) {
+		if ( ! $have_all_types ) {
 
 			// show the 'Add New' button
 			?> <a class="add-new-h2" href="<?php echo $urls['rules']; ?>"><?php _e( 'Add New', 'civicrm-wp-member-sync' ); ?></a><?php
@@ -91,14 +91,14 @@
 				?>
 				<tr>
 					<td>
-						<?php echo $this->parent_obj->members->membership_name_get_by_id( $key ); ?><br />
+						<?php echo $this->plugin->members->membership_name_get_by_id( $key ); ?><br />
 						<div class="row-actions">
 							<span class="edit"><a href="<?php echo $edit_url; ?>"><?php _e( 'Edit', 'civicrm-wp-member-sync' ); ?></a> | </span>
 							<span class="delete"><a href="<?php echo $delete_url; ?>" class="submitdelete"><?php _e( 'Delete', 'civicrm-wp-member-sync' );?></a></span>
 						</div>
 					</td>
-					<td><?php echo $this->parent_obj->members->status_rules_get_current( $item['current_rule'] ); ?></td>
-					<td><?php echo $this->parent_obj->members->status_rules_get_current( $item['expiry_rule'] );?></td>
+					<td><?php echo $this->plugin->members->status_rules_get_current( $item['current_rule'] ); ?></td>
+					<td><?php echo $this->plugin->members->status_rules_get_current( $item['expiry_rule'] );?></td>
 					<td><?php
 
 						// show custom capability for this rule

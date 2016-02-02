@@ -1,46 +1,43 @@
-<?php /*
---------------------------------------------------------------------------------
-Civi_WP_Member_Sync_Migrate Class
---------------------------------------------------------------------------------
-
-Author note:
-
-This class is written for me to migrate my existing data. You may need to amend
-it for your needs if you want to migrate your data from either of the plugins
-that this one has built on.
-
-If you want to enable it, uncomment where CIVI_WP_MEMBER_SYNC_MIGRATE is defined
-in the main plugin file.
-
---------------------------------------------------------------------------------
-*/
-
-
+<?php
 
 /**
+ * CiviCRM WordPress Member Sync Migrate class.
+ *
  * Class for encapsulating migration functionality.
+ *
+ * Author note:
+ * This class is written for me to migrate my existing data. You may need to
+ * amend it for your needs if you want to migrate your data from either of the
+ * plugins that this one has built on.
+ * If you want to enable it, uncomment where CIVI_WP_MEMBER_SYNC_MIGRATE is
+ * defined in the main plugin file.
+ *
+ * @since 0.1
  */
 class Civi_WP_Member_Sync_Migrate {
 
 	/**
-	 * Properties
+	 * Plugin (calling) object.
+	 *
+	 * @since 0.1
+	 * @access public
+	 * @var object $plugin The plugin object
 	 */
+	public $plugin;
 
 
 
 	/**
 	 * Initialise this object.
 	 *
-	 * @param object $parent_obj The parent object
-	 * @return object
+	 * @since 0.1
+	 *
+	 * @param object $plugin The plugin object
 	 */
-	function __construct( $parent_obj ) {
+	public function __construct( $plugin ) {
 
-		// store reference to parent
-		$this->parent_obj = $parent_obj;
-
-		// --<
-		return $this;
+		// store reference to plugin
+		$this->plugin = $plugin;
 
 	}
 
@@ -53,6 +50,8 @@ class Civi_WP_Member_Sync_Migrate {
 	/**
 	 * Check for legacy 'civi_member_sync' plugin.
 	 *
+	 * @since 0.1
+	 *
 	 * @return boolean $result
 	 */
 	public function legacy_plugin_exists() {
@@ -61,7 +60,7 @@ class Civi_WP_Member_Sync_Migrate {
 		return false;
 
 		// grab default data to test for the default array
-		$data = $this->parent_obj->setting_get( 'data' );
+		$data = $this->plugin->setting_get( 'data' );
 
 		// don't show migration if we have data
 		if ( count( $data['roles'] ) > 0 ) return false;
@@ -79,6 +78,8 @@ class Civi_WP_Member_Sync_Migrate {
 
 	/**
 	 * Migrate from 'civi_member_sync' to this plugin.
+	 *
+	 * @since 0.1
 	 *
 	 * @return void
 	 */
@@ -104,12 +105,14 @@ class Civi_WP_Member_Sync_Migrate {
 	/**
 	 * Migrate 'civi_member_sync' data to our plugin settings.
 	 *
+	 * @since 0.1
+	 *
 	 * @return boolean $result
 	 */
 	public function legacy_data_migrate() {
 
 		// grab default data (there will only be the skeleton array)
-		$data = $this->parent_obj->setting_get( 'data' );
+		$data = $this->plugin->setting_get( 'data' );
 
 		// access database object
 		global $wpdb;
@@ -139,10 +142,10 @@ class Civi_WP_Member_Sync_Migrate {
 			}
 
 			// overwrite existing data
-			$this->parent_obj->setting_set( 'data', $data );
+			$this->plugin->setting_set( 'data', $data );
 
 			// save
-			$this->parent_obj->settings_save();
+			$this->plugin->settings_save();
 
 		}
 
@@ -152,6 +155,8 @@ class Civi_WP_Member_Sync_Migrate {
 
 	/**
 	 * Remove previous 'civi_member_sync' database tables.
+	 *
+	 * @since 0.1
 	 *
 	 * @return boolean $result
 	 */
