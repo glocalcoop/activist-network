@@ -3,7 +3,7 @@
 Plugin Name: User Role Editor
 Plugin URI: https://www.role-editor.com
 Description: Change/add/delete WordPress user roles and capabilities.
-Version: 4.22
+Version: 4.23.1
 Author: Vladimir Garagulya
 Author URI: https://www.role-editor.com
 Text Domain: ure
@@ -23,17 +23,15 @@ if (defined('URE_PLUGIN_URL')) {
    wp_die('It seems that other version of User Role Editor is active. Please deactivate it before use this version');
 }
 
-define('URE_VERSION', '4.22');
+define('URE_VERSION', '4.23.1');
 define('URE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('URE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('URE_PLUGIN_BASE_NAME', plugin_basename(__FILE__));
 define('URE_PLUGIN_FILE', basename(__FILE__));
 define('URE_PLUGIN_FULL_PATH', __FILE__);
 
-if (!class_exists('Garvs_WP_Lib')) {
-    require_once(URE_PLUGIN_DIR.'includes/class-garvs-wp-lib.php');
-}
-require_once(URE_PLUGIN_DIR.'includes/class-ure-lib.php');
+require_once(URE_PLUGIN_DIR.'includes/classes/base-lib.php');
+require_once(URE_PLUGIN_DIR.'includes/classes/ure-lib.php');
 
 // check PHP version
 $ure_required_php_version = '5.2.4';
@@ -49,5 +47,5 @@ Ure_Lib::check_version(get_bloginfo('version'), $ure_required_wp_version, $exit_
 
 require_once(URE_PLUGIN_DIR .'includes/loader.php');
 
-$ure_lib = new Ure_Lib('user_role_editor');
-$GLOBALS['user_role_editor'] = new User_Role_Editor($ure_lib);
+$ure_lib = Ure_Lib::get_instance('user_role_editor');
+$GLOBALS['user_role_editor'] = new User_Role_Editor();

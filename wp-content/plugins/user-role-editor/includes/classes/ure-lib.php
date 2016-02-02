@@ -11,7 +11,7 @@
 /**
  * This class contains general stuff for usage at WordPress plugins
  */
-class Ure_Lib extends Garvs_WP_Lib {
+class Ure_Lib extends URE_Base_Lib {
 
 	public $roles = null;     
 	public $notification = '';   // notification message to show on page
@@ -27,7 +27,7 @@ class Ure_Lib extends Garvs_WP_Lib {
 	protected $caps_readable = false;
 	protected $hide_pro_banner = false;	
 	protected $full_capabilities = false;
-	protected $ure_object = 'role';  // what to process, 'role' or 'user'  
+	public $ure_object = 'role';  // what to process, 'role' or 'user'  
 	public    $role_default_html = '';
 	protected $role_to_copy_html = '';
 	protected $role_select_html = '';
@@ -62,6 +62,21 @@ class Ure_Lib extends Garvs_WP_Lib {
     }
     // end of __construct()
 
+    
+    public static function get_instance($options_id = '') {
+        
+        if (self::$instance === null) {
+            if (empty($options_id)) {
+                throw new Exception('URE_Lib::get_inctance() - Error: plugin options ID string is required');
+            }
+            // new static() will work too
+            self::$instance = new URE_Lib($options_id);
+        }
+
+        return self::$instance;
+    }
+    // end of get_instance()
+    
     
     protected function upgrade() {
         
@@ -340,9 +355,16 @@ if ($this->multisite && !is_network_admin()) {
 </div>     
 
 <?php        
-        do_action('ure_dialogs_html');
+        
     }
     // end of output_role_edit_dialogs()
+    
+    
+    protected function output_user_caps_edit_dialogs() {
+    
+
+    }
+    // end of output_user_caps_edit_dialogs()
     
     
     protected function output_confirmation_dialog() {
@@ -391,7 +413,11 @@ if ($this->multisite && !is_network_admin()) {
 	
     if ($this->ure_object == 'role') {
         $this->output_role_edit_dialogs();
+    } else {
+        $this->output_user_caps_edit_dialogs();
     }
+    do_action('ure_dialogs_html');
+    
     $this->output_confirmation_dialog();
 ?>
         </div>          
@@ -1840,7 +1866,7 @@ if ($this->multisite && !is_network_admin()) {
      * @global wpdb $wpdb
      * @return boolean
      */
-    function direct_network_roles_update() {
+    public function direct_network_roles_update() {
         global $wpdb;
 
         if (!$this->last_check_before_update()) {
@@ -1867,6 +1893,8 @@ if ($this->multisite && !is_network_admin()) {
                 $this->log_event($wpdb->last_error, true);
                 return false;
             }
+            // save role additional options
+            
         }
         
         return true;
@@ -1883,7 +1911,8 @@ if ($this->multisite && !is_network_admin()) {
         $GLOBALS['_wp_switched_stack'] = array();
         $GLOBALS['switched'] = ! empty( $GLOBALS['_wp_switched_stack'] );
     }
-    // end of restore_after_blog_switching(
+    // end of restore_after_blog_switching()
+    
     
     protected function wp_api_network_roles_update() {
         global $wpdb;
@@ -1942,7 +1971,6 @@ if ($this->multisite && !is_network_admin()) {
      * @return boolean
      */
     protected function update_roles() {
-        global $wpdb;
 
         if ($this->multisite && is_super_admin() && $this->apply_to_all) {  // update Role for the all blogs/sites in the network (permitted to superadmin only)
             if (!$this->multisite_update_roles()) {
@@ -1967,13 +1995,13 @@ if ($this->multisite && !is_network_admin()) {
      * @param boolean $show_message
      */
     protected function log_event($message, $show_message = false) {
-        global $wp_version;
+        global $wp_version, $wpdb;
 
         $file_name = URE_PLUGIN_DIR . 'user-role-editor.log';
         $fh = fopen($file_name, 'a');
         $cr = "\n";
         $s = $cr . date("d-m-Y H:i:s") . $cr .
-                'WordPress version: ' . $wp_version . ', PHP version: ' . phpversion() . ', MySQL version: ' . mysql_get_server_info() . $cr;
+                'WordPress version: ' . $wp_version . ', PHP version: ' . phpversion() . ', MySQL version: ' . $wpdb->db_version() . $cr;
         fwrite($fh, $s);
         fwrite($fh, $message . $cr);
         fclose($fh);
