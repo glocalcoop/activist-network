@@ -28,7 +28,10 @@ class User_Role_Editor {
      */
     public function __construct() {
 
-        $this->lib = Ure_Lib::get_instance();
+        if (empty($this->lib)) {
+            $this->lib = URE_Lib::get_instance('user_role_editor');
+        }
+
         $this->user_other_roles = new URE_User_Other_Roles($this->lib);
         
         if ($this->lib->is_pro()) {

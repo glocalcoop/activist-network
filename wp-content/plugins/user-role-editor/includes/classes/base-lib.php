@@ -11,7 +11,7 @@
 /**
  * This class contains general stuff for usage at WordPress plugins and must be extended by child class
  */
-abstract class URE_Base_Lib {
+class URE_Base_Lib {
 
     protected static $instance = null; // object exemplar reference  
     protected $options_id = ''; // identifire to save/retrieve plugin options to/from wp_option DB table
@@ -22,7 +22,14 @@ abstract class URE_Base_Lib {
     protected $main_blog_id = 0;
 
     
-    abstract public static function get_instance($options_id = '');
+    public static function get_instance($options_id = '') {
+        if (self::$instance===null) {        
+            self::$instance = new URE_Base_Lib($options_id);
+        }
+        
+        return self::$instance;
+    }
+    // end of get_instance()
     
 /**
  * Every child class should override get_instance() method with its own version for compatibility purpose.

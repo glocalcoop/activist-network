@@ -2,7 +2,7 @@
 /*
 Plugin Name: SiteOrigin Widgets Bundle
 Description: A collection of all widgets, neatly bundled into a single plugin. It's also a framework to code your own widgets on top of.
-Version: 1.5.6
+Version: 1.5.7
 Text Domain: so-widgets-bundle
 Domain Path: /languages
 Author: SiteOrigin
@@ -12,7 +12,7 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 */
 
-define('SOW_BUNDLE_VERSION', '1.5.6');
+define('SOW_BUNDLE_VERSION', '1.5.7');
 define('SOW_BUNDLE_JS_SUFFIX', '.min');
 define('SOW_BUNDLE_BASE_FILE', __FILE__);
 

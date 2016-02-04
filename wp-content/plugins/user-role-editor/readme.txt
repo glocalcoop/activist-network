@@ -3,8 +3,8 @@ Contributors: shinephp
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=vladimir%40shinephp%2ecom&lc=RU&item_name=ShinePHP%2ecom&item_number=User%20Role%20Editor%20WordPress%20plugin&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Tags: user, role, editor, security, access, permission, capability
 Requires at least: 4.0
-Tested up to: 4.4.1
-Stable tag: 4.23.1
+Tested up to: 4.4.2
+Stable tag: 4.23.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,7 +76,10 @@ If you wish to check available translations or help with plugin translation to y
 https://translate.wordpress.org/projects/wp-plugins/user-role-editor/
 
 == Changelog ==
-= [4.23.1] 02.02.2016 =
+= [4.23.2] 03.02.2016 =
+* Fix: PHP warning "Strict Standards: Static function URE_Base_Lib::get_instance() should not be abstract" was generated
+
+= [4.23.1] 01.02.2016 =
 * Fix: 'get_called_class()' function call was excluded for the compatibility with PHP 5.2.*
 * Fix: ure-users.js was loaded not only to the 'Users' page.
 
