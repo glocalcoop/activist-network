@@ -1,5 +1,4 @@
-<?php
-/*
+{*
  +--------------------------------------------------------------------+
  | CiviCRM version 4.6                                                |
  +--------------------------------------------------------------------+
@@ -23,65 +22,6 @@
  | GNU Affero General Public License or the licensing of CiviCRM,     |
  | see the CiviCRM license FAQ at http://civicrm.org/licensing        |
  +--------------------------------------------------------------------+
- */
+*}
 
-/**
- *
- * @package CRM
- * @copyright CiviCRM LLC (c) 2004-2015
- * $Id$
- *
- */
-
-/**
- * form helper class for an IM object
- */
-class CRM_Contact_Form_Edit_IM {
-
-  /**
-   * Build the form object elements for an IM object.
-   *
-   * @param CRM_Core_Form $form
-   *   Reference to the form object.
-   * @param int $blockCount
-   *   Block number to build.
-   * @param bool $blockEdit
-   *   Is it block edit.
-   *
-   * @return void
-   */
-  public static function buildQuickForm(&$form, $blockCount = NULL, $blockEdit = FALSE) {
-    if (!$blockCount) {
-      $blockId = ($form->get('IM_Block_Count')) ? $form->get('IM_Block_Count') : 1;
-    }
-    else {
-      $blockId = $blockCount;
-    }
-    $form->applyFilter('__ALL__', 'trim');
-
-    //IM provider select
-    $form->addSelect("im[$blockId][provider_id]", array('entity' => 'im', 'class' => 'eight', 'placeholder' => NULL));
-
-    //Block type select
-    $form->addSelect("im[$blockId][location_type_id]", array(
-        'entity' => 'im',
-        'class' => 'eight',
-        'placeholder' => NULL,
-        'option_url' => NULL,
-      ));
-
-    //IM box
-    $form->addElement('text', "im[$blockId][name]", ts('Instant Messenger'),
-      CRM_Core_DAO::getAttribute('CRM_Core_DAO_IM', 'name')
-    );
-
-    //is_Primary radio
-    $js = array('id' => 'IM_' . $blockId . '_IsPrimary');
-    if (!$blockEdit) {
-      $js['onClick'] = 'singleSelect( this.id );';
-    }
-
-    $form->addElement('radio', "im[$blockId][is_primary]", '', '', '1', $js);
-  }
-
-}
+<div id="civicrm-getting-started">{$gettingStarted}</div>
