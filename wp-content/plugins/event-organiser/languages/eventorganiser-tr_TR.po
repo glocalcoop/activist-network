@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-29 23:50+0000\n"
+"POT-Creation-Date: 2016-02-05 00:28+0000\n"
 "PO-Revision-Date: 2015-09-26 08:10:14+0000\n"
 "Last-Translator: stephenharris <stephenh1988@gmail.com>\n"
 "Language-Team: \n"
@@ -56,6 +56,7 @@ msgid "Include 'Add To Google' link"
 msgstr "\"Google'a ekle\" bağlantısı içersin"
 
 #: classes/class-eo-agenda-widget.php:140 event-organiser-edit.php:151
+#: includes/event-organiser-event-functions.php:1369
 msgid "All day"
 msgstr "Tüm gün"
 
@@ -292,7 +293,7 @@ msgstr "Mekanlar"
 msgid "Select Venue"
 msgstr "Mekan seçin"
 
-#: classes/class-eventorganiser-shortcodes.php:436
+#: classes/class-eventorganiser-shortcodes.php:435
 msgid "There is no excerpt because this is a protected post."
 msgstr "Seçilemez çünkü bu korunan bir iletidir."
 
@@ -310,7 +311,7 @@ msgid ""
 "the plug-in."
 msgstr ""
 
-#: event-organiser-add-ons.php:130
+#: event-organiser-add-ons.php:130 event-organiser-go-pro.php:90
 msgid "Find out more &hellip;"
 msgstr ""
 
@@ -318,26 +319,26 @@ msgstr ""
 msgid "Calendar View"
 msgstr ""
 
-#: event-organiser-calendar.php:72 includes/event-organiser-register.php:59
+#: event-organiser-calendar.php:72 includes/event-organiser-register.php:62
 msgid "today"
 msgstr "bugün"
 
-#: event-organiser-calendar.php:73 includes/event-organiser-register.php:60
-#: includes/event-organiser-register.php:244
+#: event-organiser-calendar.php:73 includes/event-organiser-register.php:63
+#: includes/event-organiser-register.php:247
 msgid "day"
 msgstr "gün"
 
-#: event-organiser-calendar.php:74 includes/event-organiser-register.php:61
-#: includes/event-organiser-register.php:246
+#: event-organiser-calendar.php:74 includes/event-organiser-register.php:64
+#: includes/event-organiser-register.php:249
 msgid "week"
 msgstr ""
 
-#: event-organiser-calendar.php:75 includes/event-organiser-register.php:62
-#: includes/event-organiser-register.php:248
+#: event-organiser-calendar.php:75 includes/event-organiser-register.php:65
+#: includes/event-organiser-register.php:251
 msgid "month"
 msgstr "ay"
 
-#: event-organiser-calendar.php:76 includes/event-organiser-register.php:63
+#: event-organiser-calendar.php:76 includes/event-organiser-register.php:66
 msgid "go to date"
 msgstr ""
 
@@ -448,7 +449,7 @@ msgid "Close modal"
 msgstr ""
 
 #: event-organiser-calendar.php:369
-msgid "Open shorcut help"
+msgid "Open shortcut help"
 msgstr ""
 
 #: event-organiser-calendar.php:388 event-organiser-edit.php:14
@@ -569,9 +570,9 @@ msgstr ""
 msgid "End Time"
 msgstr ""
 
-#: event-organiser-edit.php:160 event-organiser-manage.php:37
+#: event-organiser-edit.php:160
 #, fuzzy
-msgid "Recurrence"
+msgid "Recurrence:"
 msgstr "özel tekrar"
 
 #: event-organiser-edit.php:165
@@ -629,7 +630,7 @@ msgstr "haftanın günü"
 
 #: event-organiser-edit.php:225
 #: includes/event-organiser-event-functions.php:842
-#: includes/event-organiser-register.php:261
+#: includes/event-organiser-register.php:264
 msgid "until"
 msgstr ""
 
@@ -641,7 +642,7 @@ msgstr ""
 msgid "Include/Exclude occurrences:"
 msgstr ""
 
-#: event-organiser-edit.php:240 includes/event-organiser-register.php:238
+#: event-organiser-edit.php:240 includes/event-organiser-register.php:241
 msgid "Show dates"
 msgstr ""
 
@@ -712,10 +713,6 @@ msgid ""
 "venues more attentioned with their own 'featured image'"
 msgstr ""
 
-#: event-organiser-go-pro.php:90
-msgid "Find out more&hellip;"
-msgstr ""
-
 #: event-organiser-go-pro.php:96
 msgid "Go to Event Organiser settings"
 msgstr ""
@@ -731,6 +728,10 @@ msgstr ""
 #: event-organiser-manage.php:36
 msgid "End Date/Time"
 msgstr ""
+
+#: event-organiser-manage.php:37
+msgid "Recurrence"
+msgstr "özel tekrar"
 
 #: event-organiser-manage.php:156
 msgid "View all events"
@@ -1892,27 +1893,27 @@ msgid "Assign the category a colour."
 msgstr "Bir kategori rengi tayin edin"
 
 #: includes/event-organiser-event-functions.php:763
-#: includes/event-organiser-register.php:267
+#: includes/event-organiser-register.php:270
 msgid "last"
 msgstr "son"
 
 #: includes/event-organiser-event-functions.php:763
-#: includes/event-organiser-register.php:263
+#: includes/event-organiser-register.php:266
 msgid "first"
 msgstr "ilk"
 
 #: includes/event-organiser-event-functions.php:763
-#: includes/event-organiser-register.php:264
+#: includes/event-organiser-register.php:267
 msgid "second"
 msgstr "ikinci"
 
 #: includes/event-organiser-event-functions.php:763
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:268
 msgid "third"
 msgstr "üçüncü"
 
 #: includes/event-organiser-event-functions.php:763
-#: includes/event-organiser-register.php:266
+#: includes/event-organiser-register.php:269
 msgid "fourth"
 msgstr "dördüncü"
 
@@ -1926,34 +1927,34 @@ msgid "custom recurrence"
 msgstr "özel tekrar"
 
 #: includes/event-organiser-event-functions.php:783
-#: includes/event-organiser-register.php:252
+#: includes/event-organiser-register.php:255
 msgid "every day"
 msgstr "hergün"
 
 #: includes/event-organiser-event-functions.php:785
-#: includes/event-organiser-register.php:253
+#: includes/event-organiser-register.php:256
 #, php-format
 msgid "every %d days"
 msgstr "her %d günde"
 
 #: includes/event-organiser-event-functions.php:791
-#: includes/event-organiser-register.php:254
+#: includes/event-organiser-register.php:257
 msgid "every week on"
 msgstr "her hafta"
 
 #: includes/event-organiser-event-functions.php:793
-#: includes/event-organiser-register.php:255
+#: includes/event-organiser-register.php:258
 #, php-format
 msgid "every %d weeks on"
 msgstr "her %d haftada"
 
 #: includes/event-organiser-event-functions.php:804
-#: includes/event-organiser-register.php:256
+#: includes/event-organiser-register.php:259
 msgid "every month on the"
 msgstr "her ay"
 
 #: includes/event-organiser-event-functions.php:806
-#: includes/event-organiser-register.php:257
+#: includes/event-organiser-register.php:260
 #, php-format
 msgid "every %d months on the"
 msgstr "her %d ayında"
@@ -1967,68 +1968,64 @@ msgstr "her yıl"
 msgid "every %d years"
 msgstr "her %d yıl"
 
-#: includes/event-organiser-event-functions.php:1369
-msgid "All Day"
-msgstr "Tüm Gün"
-
-#: includes/event-organiser-register.php:57
+#: includes/event-organiser-register.php:60
 msgid "Show More"
 msgstr "Daha Fazla"
 
-#: includes/event-organiser-register.php:58
+#: includes/event-organiser-register.php:61
 msgid "Show Less"
 msgstr "Daha Az"
 
-#: includes/event-organiser-register.php:239
+#: includes/event-organiser-register.php:242
 msgid "Hide dates"
 msgstr "Günleri gösterme"
 
-#: includes/event-organiser-register.php:242
+#: includes/event-organiser-register.php:245
 msgid "Hour"
 msgstr "Saat"
 
-#: includes/event-organiser-register.php:243
+#: includes/event-organiser-register.php:246
 msgid "Minute"
 msgstr "Dakika"
 
-#: includes/event-organiser-register.php:245
+#: includes/event-organiser-register.php:248
 msgid "days"
 msgstr "gün"
 
-#: includes/event-organiser-register.php:247
+#: includes/event-organiser-register.php:250
 msgid "weeks"
 msgstr "hafta"
 
-#: includes/event-organiser-register.php:249
+#: includes/event-organiser-register.php:252
 msgid "months"
 msgstr "ay"
 
-#: includes/event-organiser-register.php:250
+#: includes/event-organiser-register.php:253
 msgid "year"
 msgstr "yıl"
 
-#: includes/event-organiser-register.php:251
+#: includes/event-organiser-register.php:254
 msgid "years"
 msgstr "yıl"
 
-#: includes/event-organiser-register.php:258
+#: includes/event-organiser-register.php:261
 msgid "every year on the"
 msgstr ""
 
-#: includes/event-organiser-register.php:259
+#: includes/event-organiser-register.php:262
 #, php-format
 msgid "every %d years on the"
 msgstr "her %d yılda"
 
-#: includes/event-organiser-register.php:260
+#: includes/event-organiser-register.php:263
 msgid "This event will repeat"
 msgstr "Bu etkinlik tekrarlanır"
 
-#: includes/event-organiser-register.php:383
+#: includes/event-organiser-register.php:386
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: includes/event-organiser-register.php:551
+#: includes/event-organiser-register.php:554
 msgid ""
 "<h4>The Default Templates Have Changed</h4>Don't panic! If you've set up "
 "your own templates in your theme you won't notice any change. </br> If you "
@@ -2040,24 +2037,24 @@ msgstr ""
 "yapmadıysanız ve eski şablonu geri istiyorsanız, <a href='http://wp-event-"
 "organiser.com/blog/new-default-templates-in-1-7'>bu yazıyı okuyun</a>."
 
-#: includes/event-organiser-register.php:568
+#: includes/event-organiser-register.php:571
 #, php-format
 msgid "Your site timezone is %s"
 msgstr ""
 
-#: includes/event-organiser-register.php:569
+#: includes/event-organiser-register.php:572
 msgid ""
 "Is this correct? Using a fixed offset from UTC may cause unexpected "
 "behaviour, particular if you observe Daylight Savings Time."
 msgstr ""
 
-#: includes/event-organiser-register.php:570
+#: includes/event-organiser-register.php:573
 msgid ""
 "It is strongly recommended you select a city instead, even if you don't "
 "observe Daylight Savings Time."
 msgstr ""
 
-#: includes/event-organiser-register.php:571
+#: includes/event-organiser-register.php:574
 #, php-format
 msgid "You can <a href='%s'>change your timezone settings here</a>."
 msgstr ""
@@ -2178,3 +2175,6 @@ msgstr ""
 #, fuzzy, php-format
 msgid "Events at: %s"
 msgstr "%daki Etkinlikler"
+
+#~ msgid "All Day"
+#~ msgstr "Tüm Gün"
