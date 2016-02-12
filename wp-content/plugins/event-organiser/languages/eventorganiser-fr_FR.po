@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-05 00:28+0000\n"
+"POT-Creation-Date: 2016-02-12 11:46+0000\n"
 "PO-Revision-Date: 2015-09-25 18:53:13+0000\n"
 "Last-Translator: stephenharris <stephenh1988@gmail.com>\n"
 "Language-Team: \n"
@@ -217,7 +217,7 @@ msgstr ""
 "pour les information d'événement que vous voulez voir apparaître dans le "
 "widget.  <a href=\"%s\" target=\"_blank\"> Plus d'information</a>."
 
-#: classes/class-eo-event-list-widget.php:177
+#: classes/class-eo-event-list-widget.php:178
 msgid "'No events' message"
 msgstr "message 'No events'"
 
@@ -1449,24 +1449,24 @@ msgstr "Supprimer cette occurrence"
 msgid "Break this series"
 msgstr "Casser cette série"
 
-#: includes/event-organiser-ajax.php:770
+#: includes/event-organiser-ajax.php:771
 msgid "Event not found"
 msgstr "Evénement non trouvé"
 
-#: includes/event-organiser-ajax.php:778
+#: includes/event-organiser-ajax.php:779
 msgid "Events are not editable via the admin calendar"
 msgstr ""
 "Les événements ne sont pas modifiables dans le calendrier d'administration"
 
-#: includes/event-organiser-ajax.php:784
+#: includes/event-organiser-ajax.php:785
 msgid "Are you sure you want to do this?"
 msgstr "Etes vous sûr de vouloir continuer ?"
 
-#: includes/event-organiser-ajax.php:791
+#: includes/event-organiser-ajax.php:792
 msgid "You do not have permission to edit this event"
 msgstr "Vous n'avez pas la permission d'éditer cet événement"
 
-#: includes/event-organiser-ajax.php:807
+#: includes/event-organiser-ajax.php:808
 #, php-format
 msgid "Event not created: %s"
 msgstr "Evénement non créé: %s"

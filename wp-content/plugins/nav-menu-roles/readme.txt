@@ -3,9 +3,9 @@
 Contributors: helgatheviking
 Donate link: https://www.paypal.me/helgatheviking
 Tags: menu, menus, nav menu, nav menus
-Requires at least: 3.8.0
+Requires at least: 4.4.0
 Tested up to: 4.4.0
-Stable tag: 1.7.4
+Stable tag: 1.7.7
 License: GPLv3
 
 Hide custom menu items based on user roles. PLEASE READ THE FAQ IF YOU ARE NOT SEEING THE SETTINGS.
@@ -24,7 +24,7 @@ In WordPress menu items and pages are completely separate entities. Nav Menu Rol
 
 1. Go to Appearance > Menus
 1. Edit the menu items accordingly.  First select whether you'd like to display the item to all logged in users, all logged out users or to customize by role.
-1. If you chose customize by role, then you can check the boxes next to the roles you'd like to restrict visibility to.
+1. If you chose customize by role, keep in mind that the role doesn't limit the item strictly to that role, but to everyone who has that role's capability. For example: an item set to "Subscriber" will be visible by Subscribers *and* by admins. Think of this more as a minimum role required to see an item. 
 1. If you choose 'By Role' and don't check any boxes, the item will be visible to everyone like normal.
 
 = Support =
@@ -203,6 +203,12 @@ However, the Import plugin only imports certain post meta for menu items.  As of
 1. No duplicate posts will be created but all menu post meta (including your Nav Menu Roles info) will be imported
 
 == Changelog ==
+
+= 1.7.6 =
+* tweak CSS to initially hide checkboxes on newly added menu items (defaults to "Everyone" so roles should not appear)
+
+= 1.7.5 =
+* Update Walker_Nav_Menu_Edit_Roles to mimic Walker_Nav_Menu in WordPress 4.4
 
 = 1.7.4 =
 * Change language in metabox to try to explain min caps versus strict role checking

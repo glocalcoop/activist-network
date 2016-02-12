@@ -2,8 +2,8 @@
 /*
 Plugin Name: Nav Menu Roles
 Plugin URI: http://www.kathyisawesome.com/449/nav-menu-roles/
-Description: Hide custom menu items based on user roles. PLEASE READ THE [FAQ](http://wordpress.org/plugins/nav-menu-roles/faq/#conflict) IF YOU ARE NOT SEEING THE SETTINGS.
-Version: 1.7.4
+Description: Hide custom menu items based on user roles.
+Version: 1.7.7
 Author: Kathy Darling
 Author URI: http://www.kathyisawesome.com
 License: GPL2
@@ -45,16 +45,16 @@ class Nav_Menu_Roles {
 	protected static $_instance = null;
 
 	/**
-	* @var string donate url
+	* @constant string donate url
 	* @since 1.5
 	*/
-	public static $donate_url = "https://inspirepay.com/pay/helgatheviking";
+	CONST DONATE_URL = "https://inspirepay.com/pay/helgatheviking/10";
 
 	/**
-	* @var string version number
+	* @constant string version number
 	* @since 1.7.1
 	*/
-	public $version = '1.7.4';
+	CONST VERSION = '1.7.6';
 
 	/**
 	* Main Nav Menu Roles Instance
@@ -110,7 +110,7 @@ class Nav_Menu_Roles {
 		add_action( 'activated_plugin', array( $this, 'delete_transient' ) );
 		add_action( 'deactivated_plugin', array( $this, 'delete_transient' ) );
 
-		// add FAQ link to plugin 
+		// add FAQ and Donate link to plugin 
 		add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array( $this, 'add_action_links' ) );
 
 		// switch the admin walker
@@ -132,6 +132,9 @@ class Nav_Menu_Roles {
 		if ( ! is_admin() ) {
 			add_filter( 'wp_get_nav_menu_items', array( $this, 'exclude_menu_items' ) );
 		}
+
+		// upgrade routine
+		add_action( 'plugins_loaded', array( $this, 'maybe_upgrade' ) );
 
 	}
 
@@ -202,19 +205,24 @@ class Nav_Menu_Roles {
 		if ( false === ( $conflicts = get_transient( 'nav_menu_roles_conflicts' ) ) ) {
 
 			// It wasn't there, so regenerate the data and save the transient
-			global $wp_filter;
+			$filters = self::list_hooks( 'wp_edit_nav_menu_walker' );
 
-			$filters = is_array( $wp_filter['wp_edit_nav_menu_walker'] ) ? array_shift( $wp_filter['wp_edit_nav_menu_walker'] ) : array();
+			foreach( $filters as $filter ){ 
 
-			foreach( $filters as $filter ){
+				$file = str_replace( WP_CONTENT_DIR, '', $filter['file'] );
+
 				// we expect to see NVR so collect everything else
-				if( ! is_a( $filter['function'][0], 'Nav_Menu_Roles') ) {
-					$conflicts[] = is_object( $filter['function'][0] ) ? get_class( $filter['function'][0] ) : $filter['function'][0];
+				if( is_array( $filter['function'] ) && $filter['function'][0] == 'Nav_Menu_Roles' ){
+					continue;
 				}
 
+				$conflicts[] = sprintf( '<code>%s</code> on line %s', $file, $filter['line'] );;
+										
 			}
-		}
 
+			set_transient( 'nav_menu_roles_conflicts', $conflicts );	
+
+		}
 
 		// Check Transient for conflicts and show error
 		if ( ! empty ( $conflicts ) ) {
@@ -225,8 +233,8 @@ class Nav_Menu_Roles {
 
 				echo '<div class="error">
 				<p>';
-				printf ( __( 'Nav Menu Roles has detected a possible conflict with the following functions or classes: %1$s. Please direct the author of the conflicting theme or plugin to the %2$sFAQ%3$s for a solution. | %4$sHide Notice%3$s', 'nav-menu-roles' ),
-				'<code>' . implode( $conflicts, ', ' ) . '</code>',
+				printf ( __( 'Nav Menu Roles has detected a possible conflict in the following locations: %1$s. Please direct the author of the conflicting theme or plugin to the %2$sFAQ%3$s for a solution. | %4$sHide Notice%3$s', 'nav-menu-roles' ),
+				implode( $conflicts, ', ' ),
 				'<a href="http://wordpress.org/plugins/nav-menu-roles/faq#conflict" target="_blank">',
 				'</a>',
 				'<a href="?nmr_nag_ignore=0">' );
@@ -267,11 +275,11 @@ class Nav_Menu_Roles {
 	* @since 1.7.3
 	*/
 	public function add_action_links( $links ) {
-		 $new_link = array(
-		 	sprintf( '<a href="https://wordpress.org/plugins/nav-menu-roles/faq/#conflict">%s</a>', __( 'FAQ', 'nav-menu-roles' ) ),
-		 );
-		return array_merge( $links, $new_link );
+		$links[] = sprintf( '<a href="https://wordpress.org/plugins/nav-menu-roles/faq/#conflict">%s</a>', __( 'FAQ', 'nav-menu-roles' ) );
+		$links[] = '<a href="' . self::DONATE_URL . '" target="_blank">' . __( 'Donate', 'nav-menu-roles' ) . '</a>';
+		return $links;
 	}
+
 
 	/**
 	* Override the Admin Menu Walker
@@ -328,6 +336,9 @@ class Nav_Menu_Roles {
 		// the specific roles to check
 		$checked_roles = is_array( $roles ) ? $roles : false;
 
+		// whether to display the role checkboxes
+		$hidden = $logged_in_out == 'in' ? '' : 'display: none;';
+
 		?>
 
 		<input type="hidden" name="nav-menu-role-nonce" value="<?php echo wp_create_nonce( 'nav-menu-nonce-name' ); ?>" />
@@ -361,7 +372,7 @@ class Nav_Menu_Roles {
 
 		</div>
 
-		<div class="field-nav_menu_role nav_menu_role_field description-wide" style="margin: 5px 0;">
+		<div class="field-nav_menu_role nav_menu_role_field description-wide" style="margin: 5px 0; <?php echo $hidden;?>">
 		    <span class="description"><?php _e( "Restrict menu item to a minimum role", 'nav-menu-roles' ); ?></span>
 		    <br />
 
@@ -399,7 +410,7 @@ class Nav_Menu_Roles {
 	public function enqueue_scripts( $hook ){
 		if ( $hook == 'nav-menus.php' ){
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-			wp_enqueue_script( 'nav-menu-roles', plugins_url( 'js/nav-menu-roles' . $suffix . '.js' , __FILE__ ), array( 'jquery' ), $this->version, true );
+			wp_enqueue_script( 'nav-menu-roles', plugins_url( 'js/nav-menu-roles' . $suffix . '.js' , __FILE__ ), array( 'jquery' ), self::VERSION, true );
 		}
 	}
 
@@ -510,7 +521,73 @@ class Nav_Menu_Roles {
 		}
 
 		return $items;
-}
+	}
+
+
+	/**
+	* Even fancier debug info
+	* @props @Danijel http://stackoverflow.com/a/26680808/383847
+	* @since 1.7.7
+	*/
+	public static function list_hooks( $hook = '' ) {
+	    global $wp_filter;
+
+	    $hooks = isset( $wp_filter[$hook] ) ? $wp_filter[$hook] : array();  
+	    $hooks = call_user_func_array( 'array_merge', $hooks );
+
+	    foreach( $hooks as &$item ) {
+	        // function name as string or static class method eg. 'Foo::Bar'
+	        if ( is_string( $item['function'] ) ) { 
+	            $ref = strpos( $item['function'], '::' ) ? new ReflectionClass( strstr( $item['function'], '::', true ) ) : new ReflectionFunction( $item['function'] );
+	            $item['file'] = $ref->getFileName();
+	            $item['line'] = get_class( $ref ) == 'ReflectionFunction' 
+	                ? $ref->getStartLine() 
+	                : $ref->getMethod( substr( $item['function'], strpos( $item['function'], '::' ) + 2 ) )->getStartLine();
+
+	        // array( object, method ), array( string object, method ), array( string object, string 'parent::method' )
+	        } elseif ( is_array( $item['function'] ) ) {
+
+	            $ref = new ReflectionClass( $item['function'][0] );
+
+	            // $item['function'][0] is a reference to existing object
+	            $item['function'] = array(
+	                is_object( $item['function'][0] ) ? get_class( $item['function'][0] ) : $item['function'][0],
+	                $item['function'][1]
+	            );
+	            $item['file'] = $ref->getFileName();
+	            $item['line'] = strpos( $item['function'][1], '::' )
+	                ? $ref->getParentClass()->getMethod( substr( $item['function'][1], strpos( $item['function'][1], '::' ) + 2 ) )->getStartLine()
+	                : $ref->getMethod( $item['function'][1] )->getStartLine();
+
+	        // closures
+	        } elseif ( is_callable( $item['function'] ) ) {     
+	            $ref = new ReflectionFunction( $item['function'] );         
+	            $item['function'] = get_class( $item['function'] );
+	            $item['file'] = $ref->getFileName();
+	            $item['line'] = $ref->getStartLine();
+
+	        }       
+	    }
+
+	    return $hooks;
+	}
+
+
+	/**
+	* Maybe upgrade
+	*
+	* @access public
+	* @return void
+	*/
+	public function maybe_upgrade() {
+		$db_version = get_option( 'nav_menu_roles_db_version', false );
+		
+		// 1.7.7 upgrade: changed the debug notice so the old transient is invalid
+		if ( $db_version === false || version_compare( '1.7.7', $db_version, '<' ) ) {
+			$this->delete_transient();
+		    update_option( 'nav_menu_roles_db_version', self::VERSION );
+		} 
+	}
 
 } // end class
 

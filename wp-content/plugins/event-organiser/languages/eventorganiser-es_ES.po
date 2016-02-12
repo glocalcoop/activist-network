@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-05 00:28+0000\n"
+"POT-Creation-Date: 2016-02-12 11:46+0000\n"
 "PO-Revision-Date: 2016-01-03 17:06:44+0000\n"
 "Last-Translator: Gonzalo <gonzaloman312@hotmail.com>\n"
 "Language-Team: \n"
@@ -215,7 +215,7 @@ msgstr ""
 "información de evento que desee que aparezca en el widget.<a href=\"%s\" "
 "target=\"_blank\"> Ver más</a>."
 
-#: classes/class-eo-event-list-widget.php:177
+#: classes/class-eo-event-list-widget.php:178
 msgid "'No events' message"
 msgstr "Mensaje 'Sin eventos'."
 
@@ -1441,23 +1441,23 @@ msgstr "Borrar esta ocurrencia "
 msgid "Break this series"
 msgstr "Romper esta serie"
 
-#: includes/event-organiser-ajax.php:770
+#: includes/event-organiser-ajax.php:771
 msgid "Event not found"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:778
+#: includes/event-organiser-ajax.php:779
 msgid "Events are not editable via the admin calendar"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:784
+#: includes/event-organiser-ajax.php:785
 msgid "Are you sure you want to do this?"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:791
+#: includes/event-organiser-ajax.php:792
 msgid "You do not have permission to edit this event"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:807
+#: includes/event-organiser-ajax.php:808
 #, php-format
 msgid "Event not created: %s"
 msgstr ""

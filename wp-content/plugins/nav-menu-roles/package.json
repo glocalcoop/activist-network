@@ -1,0 +1,35 @@
+{
+  "title": "Nav Menu Roles",
+  "name": "nav-menu-roles",
+  "version": "1.7.7",
+  "description": "Hide menu items based on user roles",
+  "main": "Gruntfile.js",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/helgatheviking/nav-menu-roles"
+  },
+  "bugs": {
+    "url": "https://github.com/helgatheviking/nav-menu-roles/issues"
+  },
+  "author": "helgatheviking",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-checkbranch": "~1.0.2",
+    "grunt-checkrepo": "~0.1.0",
+    "grunt-contrib-clean": "~0.7.0",
+    "grunt-contrib-copy": "~0.8.2",
+    "grunt-contrib-jshint": "~0.12.0",
+    "grunt-contrib-uglify": "~0.11.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-newer": "~1.1.1",
+    "grunt-po2mo": "~0.1.2",
+    "grunt-text-replace": "^0.4.0",
+    "grunt-transifex": "git://github.com/helgatheviking/grunt-transifex",
+    "grunt-wp-deploy": "~1.1.0",
+    "grunt-wp-i18n": "~0.5.3",
+    "grunt-wp-readme-to-markdown": "~1.0.0",
+    "jshint-stylish": "~2.1.0",
+    "load-grunt-tasks": "~3.4.0"
+  }
+}

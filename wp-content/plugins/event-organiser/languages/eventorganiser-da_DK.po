@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-05 00:28+0000\n"
+"POT-Creation-Date: 2016-02-12 11:46+0000\n"
 "PO-Revision-Date: 2015-12-26 20:43:57+0000\n"
 "Last-Translator: Flemming Graff <flemminggraff@hotmail.com>\n"
 "Language-Team: \n"
@@ -215,7 +215,7 @@ msgstr ""
 "vil have til at optræde i widget'et. <a href=\"%s\" target=\"_blank\"> Læs "
 "mere</a>."
 
-#: classes/class-eo-event-list-widget.php:177
+#: classes/class-eo-event-list-widget.php:178
 msgid "'No events' message"
 msgstr "\"Ingen begivenheder\"-besked "
 
@@ -1437,23 +1437,23 @@ msgstr "Slet denne forekomst"
 msgid "Break this series"
 msgstr "Bryd denne serie"
 
-#: includes/event-organiser-ajax.php:770
+#: includes/event-organiser-ajax.php:771
 msgid "Event not found"
 msgstr "Begivenhed ikke fundet"
 
-#: includes/event-organiser-ajax.php:778
+#: includes/event-organiser-ajax.php:779
 msgid "Events are not editable via the admin calendar"
 msgstr "Begivenheder kan ikke rettes via admin kalenderen"
 
-#: includes/event-organiser-ajax.php:784
+#: includes/event-organiser-ajax.php:785
 msgid "Are you sure you want to do this?"
 msgstr "Er du sikker på at du vil gøre dette?"
 
-#: includes/event-organiser-ajax.php:791
+#: includes/event-organiser-ajax.php:792
 msgid "You do not have permission to edit this event"
 msgstr "Du har ikke tilladelse til at rette denne begivenhed"
 
-#: includes/event-organiser-ajax.php:807
+#: includes/event-organiser-ajax.php:808
 #, php-format
 msgid "Event not created: %s"
 msgstr "Begivenhed ikke oprettet: %s"
