@@ -6,27 +6,28 @@
  * @subpackage Messages
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Register widgets for the Messages component.
  *
- * @since BuddyPress (1.9.0)
+ * @since 1.9.0
  */
 function bp_messages_register_widgets() {
 	add_action( 'widgets_init', create_function('', 'return register_widget( "BP_Messages_Sitewide_Notices_Widget" );') );
 }
 add_action( 'bp_register_widgets', 'bp_messages_register_widgets' );
 
-/** Sitewide Notices widget ***************************************************/
-
 /**
  * A widget that displays sitewide notices.
  *
- * @since BuddyPress (1.9.0)
+ * @since 1.9.0
  */
 class BP_Messages_Sitewide_Notices_Widget extends WP_Widget {
 
 	/**
-	 * Constructor method
+	 * Constructor method.
 	 */
 	function __construct() {
 		parent::__construct(
@@ -53,7 +54,7 @@ class BP_Messages_Sitewide_Notices_Widget extends WP_Widget {
 			return;
 		}
 
-		// Don't display the widget if there are no Notices to show
+		// Don't display the widget if there are no Notices to show.
 		$notices = BP_Messages_Notice::get_active();
 		if ( empty( $notices ) ) {
 			return;
@@ -66,8 +67,8 @@ class BP_Messages_Sitewide_Notices_Widget extends WP_Widget {
 		/**
 		 * Filters the title of the Messages widget.
 		 *
-		 * @since BuddyPress (1.9.0)
-		 * @since BuddyPress (2.3.0) Added 'instance' and 'id_base' to arguments passed to filter.
+		 * @since 1.9.0
+		 * @since 2.3.0 Added 'instance' and 'id_base' to arguments passed to filter.
 		 *
 		 * @param string $title    The widget title.
 		 * @param array  $instance The settings for the particular instance of the widget.
@@ -95,7 +96,6 @@ class BP_Messages_Sitewide_Notices_Widget extends WP_Widget {
 	 *
 	 * @param array $new_instance See {@WP_Widget::update()}.
 	 * @param array $old_instance See {@WP_Widget::update()}.
-	 *
 	 * @return array $instance See {@WP_Widget::update()}.
 	 */
 	public function update( $new_instance, $old_instance ) {

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Action functions are exactly the same as screen functions, however they do
  * not have a template screen associated with them. Usually they will send the
@@ -9,13 +8,13 @@
  * @subpackage ActivityActions
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Allow core components and dependent plugins to register activity actions.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses do_action() To call 'bp_register_activity_actions' hook.
  */
@@ -24,7 +23,7 @@ function bp_register_activity_actions() {
 	/**
 	 * Fires on bp_init to allow core components and dependent plugins to register activity actions.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 */
 	do_action( 'bp_register_activity_actions' );
 }
@@ -33,7 +32,7 @@ add_action( 'bp_init', 'bp_register_activity_actions', 8 );
 /**
  * Catch and route requests for single activity item permalinks.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses bp_is_activity_component()
  * @uses bp_is_current_action()
@@ -51,15 +50,15 @@ add_action( 'bp_init', 'bp_register_activity_actions', 8 );
  */
 function bp_activity_action_permalink_router() {
 
-	// Not viewing activity
+	// Not viewing activity.
 	if ( ! bp_is_activity_component() || ! bp_is_current_action( 'p' ) )
 		return false;
 
-	// No activity to display
+	// No activity to display.
 	if ( ! bp_action_variable( 0 ) || ! is_numeric( bp_action_variable( 0 ) ) )
 		return false;
 
-	// Get the activity details
+	// Get the activity details.
 	$activity = bp_activity_get_specific( array( 'activity_ids' => bp_action_variable( 0 ), 'show_hidden' => true ) );
 
 	// 404 if activity does not exist
@@ -70,31 +69,31 @@ function bp_activity_action_permalink_router() {
 		$activity = $activity['activities'][0];
 	}
 
-	// Do not redirect at default
+	// Do not redirect at default.
 	$redirect = false;
 
-	// Redirect based on the type of activity
+	// Redirect based on the type of activity.
 	if ( bp_is_active( 'groups' ) && $activity->component == buddypress()->groups->id ) {
 
-		// Activity is a user update
+		// Activity is a user update.
 		if ( ! empty( $activity->user_id ) ) {
 			$redirect = bp_core_get_user_domain( $activity->user_id, $activity->user_nicename, $activity->user_login ) . bp_get_activity_slug() . '/' . $activity->id . '/';
 
-		// Activity is something else
+		// Activity is something else.
 		} else {
 
-			// Set redirect to group activity stream
+			// Set redirect to group activity stream.
 			if ( $group = groups_get_group( array( 'group_id' => $activity->item_id ) ) ) {
 				$redirect = bp_get_group_permalink( $group ) . bp_get_activity_slug() . '/' . $activity->id . '/';
 			}
 		}
 
-	// Set redirect to users' activity stream
+	// Set redirect to users' activity stream.
 	} elseif ( ! empty( $activity->user_id ) ) {
 		$redirect = bp_core_get_user_domain( $activity->user_id, $activity->user_nicename, $activity->user_login ) . bp_get_activity_slug() . '/' . $activity->id . '/';
 	}
 
-	// If set, add the original query string back onto the redirect URL
+	// If set, add the original query string back onto the redirect URL.
 	if ( ! empty( $_SERVER['QUERY_STRING'] ) ) {
 		$query_frags = array();
 		wp_parse_str( $_SERVER['QUERY_STRING'], $query_frags );
@@ -104,7 +103,7 @@ function bp_activity_action_permalink_router() {
 	/**
 	 * Filter the intended redirect url before the redirect occurs for the single activity item.
 	 *
-	 * @since BuddyPress (1.2.2)
+	 * @since 1.2.2
 	 *
 	 * @param array Array with url to redirect to and activity related to the redirect.
 	 */
@@ -112,7 +111,7 @@ function bp_activity_action_permalink_router() {
 		bp_core_redirect( bp_get_root_domain() );
 	}
 
-	// Redirect to the actual activity permalink page
+	// Redirect to the actual activity permalink page.
 	bp_core_redirect( $redirect );
 }
 add_action( 'bp_actions', 'bp_activity_action_permalink_router' );
@@ -120,9 +119,7 @@ add_action( 'bp_actions', 'bp_activity_action_permalink_router' );
 /**
  * Delete specific activity item and redirect to previous page.
  *
- * @since BuddyPress (1.1.0)
- *
- * @param int $activity_id Activity id to be deleted. Defaults to 0.
+ * @since 1.1.0
  *
  * @uses bp_is_activity_component()
  * @uses bp_is_current_action()
@@ -135,42 +132,43 @@ add_action( 'bp_actions', 'bp_activity_action_permalink_router' );
  * @uses do_action() Calls 'bp_activity_action_delete_activity' hook to allow actions to be taken after the activity is deleted.
  * @uses bp_core_redirect()
  *
+ * @param int $activity_id Activity id to be deleted. Defaults to 0.
  * @return bool False on failure.
  */
 function bp_activity_action_delete_activity( $activity_id = 0 ) {
 
-	// Not viewing activity or action is not delete
+	// Not viewing activity or action is not delete.
 	if ( !bp_is_activity_component() || !bp_is_current_action( 'delete' ) )
 		return false;
 
 	if ( empty( $activity_id ) && bp_action_variable( 0 ) )
 		$activity_id = (int) bp_action_variable( 0 );
 
-	// Not viewing a specific activity item
+	// Not viewing a specific activity item.
 	if ( empty( $activity_id ) )
 		return false;
 
-	// Check the nonce
+	// Check the nonce.
 	check_admin_referer( 'bp_activity_delete_link' );
 
-	// Load up the activity item
+	// Load up the activity item.
 	$activity = new BP_Activity_Activity( $activity_id );
 
-	// Check access
+	// Check access.
 	if ( ! bp_activity_user_can_delete( $activity ) )
 		return false;
 
 	/**
 	 * Fires before the deletion so plugins can still fetch information about it.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 *
 	 * @param int $activity_id The activity ID.
 	 * @param int $user_id     The user associated with the activity.
 	 */
 	do_action( 'bp_activity_before_action_delete_activity', $activity_id, $activity->user_id );
 
-	// Delete the activity item and provide user feedback
+	// Delete the activity item and provide user feedback.
 	if ( bp_activity_delete( array( 'id' => $activity_id, 'user_id' => $activity->user_id ) ) )
 		bp_core_add_message( __( 'Activity deleted successfully', 'buddypress' ) );
 	else
@@ -179,14 +177,14 @@ function bp_activity_action_delete_activity( $activity_id = 0 ) {
 	/**
 	 * Fires after the deletion so plugins can act afterwards based on the activity.
 	 *
-	 * @since BuddyPress (1.1.0)
+	 * @since 1.1.0
 	 *
 	 * @param int $activity_id The activity ID.
 	 * @param int $user_id     The user associated with the activity.
 	 */
 	do_action( 'bp_activity_action_delete_activity', $activity_id, $activity->user_id );
 
-	// Check for the redirect query arg, otherwise let WP handle things
+	// Check for the redirect query arg, otherwise let WP handle things.
  	if ( !empty( $_GET['redirect_to'] ) )
 		bp_core_redirect( esc_url( $_GET['redirect_to'] ) );
 	else
@@ -197,23 +195,22 @@ add_action( 'bp_actions', 'bp_activity_action_delete_activity' );
 /**
  * Mark specific activity item as spam and redirect to previous page.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @param int $activity_id Activity id to be deleted. Defaults to 0.
- *
  * @return bool False on failure.
  */
 function bp_activity_action_spam_activity( $activity_id = 0 ) {
 	$bp = buddypress();
 
-	// Not viewing activity, or action is not spam, or Akismet isn't present
+	// Not viewing activity, or action is not spam, or Akismet isn't present.
 	if ( !bp_is_activity_component() || !bp_is_current_action( 'spam' ) || empty( $bp->activity->akismet ) )
 		return false;
 
 	if ( empty( $activity_id ) && bp_action_variable( 0 ) )
 		$activity_id = (int) bp_action_variable( 0 );
 
-	// Not viewing a specific activity item
+	// Not viewing a specific activity item.
 	if ( empty( $activity_id ) )
 		return false;
 
@@ -221,42 +218,42 @@ function bp_activity_action_spam_activity( $activity_id = 0 ) {
 	if ( !bp_activity_user_can_mark_spam() )
 		return false;
 
-	// Load up the activity item
+	// Load up the activity item.
 	$activity = new BP_Activity_Activity( $activity_id );
 	if ( empty( $activity->id ) )
 		return false;
 
-	// Check nonce
+	// Check nonce.
 	check_admin_referer( 'bp_activity_akismet_spam_' . $activity->id );
 
 	/**
 	 * Fires before the marking activity as spam so plugins can modify things if they want to.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param int    $activity_id Activity ID to be marked as spam.
 	 * @param object $activity    Activity object for the ID to be marked as spam.
 	 */
 	do_action( 'bp_activity_before_action_spam_activity', $activity->id, $activity );
 
-	// Mark as spam
+	// Mark as spam.
 	bp_activity_mark_as_spam( $activity );
 	$activity->save();
 
-	// Tell the user the spamming has been successful
+	// Tell the user the spamming has been successful.
 	bp_core_add_message( __( 'The activity item has been marked as spam and is no longer visible.', 'buddypress' ) );
 
 	/**
 	 * Fires after the marking activity as spam so plugins can act afterwards based on the activity.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param int $activity_id Activity ID that was marked as spam.
 	 * @param int $user_id     User ID associated with activity.
 	 */
 	do_action( 'bp_activity_action_spam_activity', $activity_id, $activity->user_id );
 
-	// Check for the redirect query arg, otherwise let WP handle things
+	// Check for the redirect query arg, otherwise let WP handle things.
  	if ( !empty( $_GET['redirect_to'] ) )
 		bp_core_redirect( esc_url( $_GET['redirect_to'] ) );
 	else
@@ -267,7 +264,7 @@ add_action( 'bp_actions', 'bp_activity_action_spam_activity' );
 /**
  * Post user/group activity update.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses is_user_logged_in()
  * @uses bp_is_activity_component()
@@ -287,17 +284,17 @@ add_action( 'bp_actions', 'bp_activity_action_spam_activity' );
  */
 function bp_activity_action_post_update() {
 
-	// Do not proceed if user is not logged in, not viewing activity, or not posting
+	// Do not proceed if user is not logged in, not viewing activity, or not posting.
 	if ( !is_user_logged_in() || !bp_is_activity_component() || !bp_is_current_action( 'post' ) )
 		return false;
 
-	// Check the nonce
+	// Check the nonce.
 	check_admin_referer( 'post_update', '_wpnonce_post_update' );
 
 	/**
 	 * Filters the content provided in the activity input field.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 *
 	 * @param string $value Activity message being posted.
 	 */
@@ -308,7 +305,7 @@ function bp_activity_action_post_update() {
 		/**
 		 * Filters the item type that the activity update should be associated with.
 		 *
-		 * @since BuddyPress (1.2.0)
+		 * @since 1.2.0
 		 *
 		 * @param string $value Item type to associate with.
 		 */
@@ -320,24 +317,24 @@ function bp_activity_action_post_update() {
 		/**
 		 * Filters what component the activity is being to.
 		 *
-		 * @since BuddyPress (1.2.0)
+		 * @since 1.2.0
 		 *
 		 * @param string $value Chosen component to post activity to.
 		 */
 		$item_id = apply_filters( 'bp_activity_post_update_item_id', $_POST['whats-new-post-in'] );
 	}
 
-	// No activity content so provide feedback and redirect
+	// No activity content so provide feedback and redirect.
 	if ( empty( $content ) ) {
 		bp_core_add_message( __( 'Please enter some content to post.', 'buddypress' ), 'error' );
 		bp_core_redirect( wp_get_referer() );
 	}
 
-	// No existing item_id
+	// No existing item_id.
 	if ( empty( $item_id ) ) {
 		$activity_id = bp_activity_post_update( array( 'content' => $content ) );
 
-	// Post to groups object
+	// Post to groups object.
 	} elseif ( 'groups' == $object && bp_is_active( 'groups' ) ) {
 		if ( (int) $item_id ) {
 			$activity_id = groups_post_update( array( 'content' => $content, 'group_id' => $item_id ) );
@@ -348,7 +345,7 @@ function bp_activity_action_post_update() {
 		/**
 		 * Filters activity object for BuddyPress core and plugin authors before posting activity update.
 		 *
-		 * @since BuddyPress (1.2.0)
+		 * @since 1.2.0
 		 *
 		 * @param string $object  Activity item being associated to.
 		 * @param string $item_id Component ID being posted to.
@@ -357,13 +354,13 @@ function bp_activity_action_post_update() {
 		$activity_id = apply_filters( 'bp_activity_custom_update', $object, $item_id, $content );
 	}
 
-	// Provide user feedback
+	// Provide user feedback.
 	if ( !empty( $activity_id ) )
 		bp_core_add_message( __( 'Update Posted!', 'buddypress' ) );
 	else
 		bp_core_add_message( __( 'There was an error when posting your update. Please try again.', 'buddypress' ), 'error' );
 
-	// Redirect
+	// Redirect.
 	bp_core_redirect( wp_get_referer() );
 }
 add_action( 'bp_actions', 'bp_activity_action_post_update' );
@@ -371,7 +368,7 @@ add_action( 'bp_actions', 'bp_activity_action_post_update' );
 /**
  * Post new activity comment.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses is_user_logged_in()
  * @uses bp_is_activity_component()
@@ -391,13 +388,13 @@ function bp_activity_action_post_comment() {
 	if ( !is_user_logged_in() || !bp_is_activity_component() || !bp_is_current_action( 'reply' ) )
 		return false;
 
-	// Check the nonce
+	// Check the nonce.
 	check_admin_referer( 'new_activity_comment', '_wpnonce_new_activity_comment' );
 
 	/**
 	 * Filters the activity ID a comment will be in reply to.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 *
 	 * @param string $value ID of the activity being replied to.
 	 */
@@ -406,7 +403,7 @@ function bp_activity_action_post_comment() {
 	/**
 	 * Filters the comment content for a comment reply.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 *
 	 * @param string $value Comment content being posted.
 	 */
@@ -435,7 +432,7 @@ add_action( 'bp_actions', 'bp_activity_action_post_comment' );
 /**
  * Mark activity as favorite.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses is_user_logged_in()
  * @uses bp_is_activity_component()
@@ -454,7 +451,7 @@ function bp_activity_action_mark_favorite() {
 	if ( !is_user_logged_in() || !bp_is_activity_component() || !bp_is_current_action( 'favorite' ) )
 		return false;
 
-	// Check the nonce
+	// Check the nonce.
 	check_admin_referer( 'mark_favorite' );
 
 	if ( bp_activity_add_user_favorite( bp_action_variable( 0 ) ) )
@@ -469,7 +466,7 @@ add_action( 'bp_actions', 'bp_activity_action_mark_favorite' );
 /**
  * Remove activity from favorites.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses is_user_logged_in()
  * @uses bp_is_activity_component()
@@ -488,7 +485,7 @@ function bp_activity_action_remove_favorite() {
 	if ( ! is_user_logged_in() || ! bp_is_activity_component() || ! bp_is_current_action( 'unfavorite' ) )
 		return false;
 
-	// Check the nonce
+	// Check the nonce.
 	check_admin_referer( 'unmark_favorite' );
 
 	if ( bp_activity_remove_user_favorite( bp_action_variable( 0 ) ) )
@@ -503,7 +500,7 @@ add_action( 'bp_actions', 'bp_activity_action_remove_favorite' );
 /**
  * Load the sitewide activity feed.
  *
- * @since BuddyPress (1.0.0)
+ * @since 1.0.0
  *
  * @uses bp_is_activity_component()
  * @uses bp_is_current_action()
@@ -518,7 +515,7 @@ function bp_activity_action_sitewide_feed() {
 	if ( ! bp_is_activity_component() || ! bp_is_current_action( 'feed' ) || bp_is_user() || ! empty( $bp->groups->current_group ) )
 		return false;
 
-	// setup the feed
+	// Setup the feed.
 	buddypress()->activity->feed = new BP_Activity_Feed( array(
 		'id'            => 'sitewide',
 
@@ -535,7 +532,7 @@ add_action( 'bp_actions', 'bp_activity_action_sitewide_feed' );
 /**
  * Load a user's personal activity feed.
  *
- * @since BuddyPress (1.0.0)
+ * @since 1.0.0
  *
  * @uses bp_is_user_activity()
  * @uses bp_is_current_action()
@@ -548,7 +545,7 @@ function bp_activity_action_personal_feed() {
 		return false;
 	}
 
-	// setup the feed
+	// Setup the feed.
 	buddypress()->activity->feed = new BP_Activity_Feed( array(
 		'id'            => 'personal',
 
@@ -565,7 +562,7 @@ add_action( 'bp_actions', 'bp_activity_action_personal_feed' );
 /**
  * Load a user's friends' activity feed.
  *
- * @since BuddyPress (1.0.0)
+ * @since 1.0.0
  *
  * @uses bp_is_active()
  * @uses bp_is_user_activity()
@@ -581,7 +578,7 @@ function bp_activity_action_friends_feed() {
 		return false;
 	}
 
-	// setup the feed
+	// Setup the feed.
 	buddypress()->activity->feed = new BP_Activity_Feed( array(
 		'id'            => 'friends',
 
@@ -598,7 +595,7 @@ add_action( 'bp_actions', 'bp_activity_action_friends_feed' );
 /**
  * Load the activity feed for a user's groups.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses bp_is_active()
  * @uses bp_is_user_activity()
@@ -614,11 +611,11 @@ function bp_activity_action_my_groups_feed() {
 		return false;
 	}
 
-	// get displayed user's group IDs
+	// Get displayed user's group IDs.
 	$groups    = groups_get_user_groups();
 	$group_ids = implode( ',', $groups['groups'] );
 
-	// setup the feed
+	// Setup the feed.
 	buddypress()->activity->feed = new BP_Activity_Feed( array(
 		'id'            => 'mygroups',
 
@@ -639,7 +636,7 @@ add_action( 'bp_actions', 'bp_activity_action_my_groups_feed' );
 /**
  * Load a user's @mentions feed.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses bp_is_user_activity()
  * @uses bp_is_current_action()
@@ -657,7 +654,7 @@ function bp_activity_action_mentions_feed() {
 		return false;
 	}
 
-	// setup the feed
+	// Setup the feed.
 	buddypress()->activity->feed = new BP_Activity_Feed( array(
 		'id'            => 'mentions',
 
@@ -676,7 +673,7 @@ add_action( 'bp_actions', 'bp_activity_action_mentions_feed' );
 /**
  * Load a user's favorites feed.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses bp_is_user_activity()
  * @uses bp_is_current_action()
@@ -690,11 +687,11 @@ function bp_activity_action_favorites_feed() {
 		return false;
 	}
 
-	// get displayed user's favorite activity IDs
+	// Get displayed user's favorite activity IDs.
 	$favs = bp_activity_get_user_favorites( bp_displayed_user_id() );
 	$fav_ids = implode( ',', (array) $favs );
 
-	// setup the feed
+	// Setup the feed.
 	buddypress()->activity->feed = new BP_Activity_Feed( array(
 		'id'            => 'favorites',
 
@@ -711,23 +708,23 @@ add_action( 'bp_actions', 'bp_activity_action_favorites_feed' );
 /**
  * Loads Akismet filtering for activity.
  *
- * @since BuddyPress (1.6.0)
- * @since BuddyPress (2.3.0) We only support Akismet 3+.
+ * @since 1.6.0
+ * @since 2.3.0 We only support Akismet 3+.
  */
 function bp_activity_setup_akismet() {
 	$bp = buddypress();
 
-	// Bail if Akismet is not active
+	// Bail if Akismet is not active.
 	if ( ! defined( 'AKISMET_VERSION' ) ) {
 		return;
 	}
 
-	// Bail if older version of Akismet
+	// Bail if older version of Akismet.
 	if ( ! class_exists( 'Akismet' ) ) {
 		return;
 	}
 
-	// Bail if no Akismet key is set
+	// Bail if no Akismet key is set.
 	if ( ! bp_get_option( 'wordpress_api_key' ) && ! defined( 'WPCOM_API_KEY' ) ) {
 		return;
 	}
@@ -735,7 +732,7 @@ function bp_activity_setup_akismet() {
 	/**
 	 * Filters if BuddyPress Activity Akismet support has been disabled by another plugin.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Return value of bp_is_akismet_active boolean function.
 	 */
@@ -743,14 +740,14 @@ function bp_activity_setup_akismet() {
 		return;
 	}
 
-	// Instantiate Akismet for BuddyPress
+	// Instantiate Akismet for BuddyPress.
 	$bp->activity->akismet = new BP_Akismet();
 }
 
 /**
  * AJAX endpoint for Suggestions API lookups.
  *
- * @since BuddyPress (2.1.0)
+ * @since 2.1.0
  */
 function bp_ajax_get_suggestions() {
 	if ( ! bp_is_user_active() || empty( $_GET['term'] ) || empty( $_GET['type'] ) ) {
@@ -782,7 +779,7 @@ add_action( 'wp_ajax_bp_get_suggestions', 'bp_ajax_get_suggestions' );
 /**
  * Detect a change in post type status, and initiate an activity update if necessary.
  *
- * @since BuddyPress (2.2.0)
+ * @since 2.2.0
  *
  * @todo Support untrashing better.
  *
@@ -816,7 +813,7 @@ function bp_activity_catch_transition_post_type_status( $new_status, $old_status
 			 * This is a variable filter that is dependent on the post type
 			 * being untrashed.
 			 *
-			 * @since BuddyPress (2.2.0)
+			 * @since 2.2.0
 			 *
 			 * @param WP_Post $post Post data.
 			 */
@@ -828,7 +825,7 @@ function bp_activity_catch_transition_post_type_status( $new_status, $old_status
 
 	// Unpublishing a previously published post.
 	} elseif ( 'publish' === $old_status ) {
-		// Some form of pending status - only remove the activity entry
+		// Some form of pending status - only remove the activity entry.
 		bp_activity_post_type_unpublish( $post->ID, $post );
 	}
 }

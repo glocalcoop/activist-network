@@ -1,5 +1,4 @@
 <?php
-
 /**
  * BuddyPress Messages Filters.
  *
@@ -9,7 +8,7 @@
  * @subpackage MessagesFilters
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 add_filter( 'bp_get_message_notice_subject',        'wp_filter_kses', 1 );
@@ -70,15 +69,16 @@ add_filter( 'bp_get_the_thread_subject',              'stripslashes_deep' );
 /**
  * Enforce limitations on viewing private message contents
  *
- * @since BuddyPress (2.3.2)
+ * @since 2.3.2
  *
  * @see bp_has_message_threads() for description of parameters
  *
  * @param array|string $args See {@link bp_has_message_threads()}.
+ * @return array
  */
 function bp_messages_enforce_current_user( $args = array() ) {
 
-	// Non-community moderators can only ever see their own messages
+	// Non-community moderators can only ever see their own messages.
 	if ( is_user_logged_in() && ! bp_current_user_can( 'bp_moderate' ) ) {
 		$_user_id = (int) bp_loggedin_user_id();
 		if ( $_user_id !== (int) $args['user_id'] ) {
@@ -86,7 +86,7 @@ function bp_messages_enforce_current_user( $args = array() ) {
 		}
 	}
 
-	// Return possibly modified $args array
+	// Return possibly modified $args array.
 	return $args;
 }
 add_filter( 'bp_after_has_message_threads_parse_args', 'bp_messages_enforce_current_user', 5 );

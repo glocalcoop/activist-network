@@ -1,12 +1,13 @@
 <?php
-
 /**
  * Functions related to the BuddyPress Activity component and the WP Cache.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
+ * @package    BuddyPress
+ * @subpackage ActivityCache
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -17,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * using querying activitymeta inline.
  *
  * @param int|string|array|bool $activity_ids Accepts a single activity ID, or a comma-
- *                                            separated list or array of activity ids
+ *                                            separated list or array of activity ids.
  */
 function bp_activity_update_meta_cache( $activity_ids = false ) {
 	$bp = buddypress();
@@ -37,9 +38,9 @@ function bp_activity_update_meta_cache( $activity_ids = false ) {
 /**
  * Clear a cached activity item when that item is updated.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  *
- * @param BP_Activity_Activity $activity
+ * @param BP_Activity_Activity $activity Activity object.
  */
 function bp_activity_clear_cache_for_activity( $activity ) {
 	wp_cache_delete( $activity->id, 'bp_activity' );
@@ -50,7 +51,7 @@ add_action( 'bp_activity_after_save', 'bp_activity_clear_cache_for_activity' );
 /**
  * Clear cached data for deleted activity items.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  *
  * @param array $deleted_ids IDs of deleted activity items.
  */

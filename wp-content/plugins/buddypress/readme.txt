@@ -1,9 +1,9 @@
 === BuddyPress ===
 Contributors: johnjamesjacoby, DJPaul, boonebgorges, r-a-y, imath, mercime, tw2113, dcavins, hnla
 Tags: social networking, activity, profiles, messaging, friends, groups, forums, notifications, settings, social, community, networks, networking
-Requires at least: 3.6
-Tested up to: 4.3
-Stable tag: 2.3.3
+Requires at least: 3.8
+Tested up to: 4.4
+Stable tag: 2.4.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,9 +114,27 @@ BuddyPress is free software, built by an international community of volunteers. 
 
 BuddyPress is available in many languages thanks to the volunteer efforts of individuals all around the world. Check out our <a href="https://codex.buddypress.org/translations/">translations page</a> on the BuddyPress Codex for more details.
 
-Please consider helping translate BuddyPress at our <a href="https://translate.wordpress.org/projects/buddypress">GlotPress project</a>. Growing the BuddyPress community means better software for everyone!
+Please consider helping translate BuddyPress at our <a href="https://translate.wordpress.org/projects/wp-plugins/buddypress">GlotPress project</a>. Growing the BuddyPress community means better software for everyone!
 
 == Upgrade Notice ==
+
+= 2.4.3 =
+See: https://codex.buddypress.org/releases/version-2-4-3/
+
+= 2.4.2 =
+See: https://codex.buddypress.org/releases/version-2-4-2/
+
+= 2.4.1 =
+See: https://codex.buddypress.org/releases/version-2-4-1/
+
+= 2.4.0 =
+See: https://codex.buddypress.org/releases/version-2-4-0/
+
+= 2.3.5 =
+See: https://codex.buddypress.org/releases/version-2-3-5/
+
+= 2.3.4 =
+See: https://codex.buddypress.org/releases/version-2-3-4/
 
 = 2.3.3 =
 See: https://codex.buddypress.org/releases/version-2-3-3/
@@ -221,6 +239,27 @@ Compatibility with WordPress 3.1
 Fixes over 10 bugs.
 
 == Changelog ==
+
+= 2.4.3 =
+See: https://codex.buddypress.org/releases/version-2-4-3/
+
+= 2.4.2 =
+See: https://codex.buddypress.org/releases/version-2-4-2/
+
+= 2.4.1 =
+See: https://codex.buddypress.org/releases/version-2-4-1/
+
+= 2.4.0 =
+See: https://codex.buddypress.org/releases/version-2-4-0/
+
+= 2.3.5 =
+See: https://codex.buddypress.org/releases/version-2-3-5/
+
+= 2.3.4 =
+See: https://codex.buddypress.org/releases/version-2-3-4/
+
+= 2.3.3 =
+See: https://codex.buddypress.org/releases/version-2-3-3/
 
 = 2.3.2 =
 See: https://codex.buddypress.org/releases/version-2-3-2/

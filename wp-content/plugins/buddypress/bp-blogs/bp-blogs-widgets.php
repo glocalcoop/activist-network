@@ -1,7 +1,6 @@
 <?php
-
 /**
- * BuddyPress Blogs Widgets
+ * BuddyPress Blogs Widgets.
  *
  * @package BuddyPress
  * @subpackage BlogsWidgets
@@ -23,7 +22,7 @@ function bp_blogs_register_widgets() {
 add_action( 'bp_register_widgets', 'bp_blogs_register_widgets' );
 
 /**
- * The Recent Networkwide Posts widget
+ * The Recent Networkwide Posts widget.
  */
 class BP_Blogs_Recent_Posts_Widget extends WP_Widget {
 
@@ -43,7 +42,7 @@ class BP_Blogs_Recent_Posts_Widget extends WP_Widget {
 	 *
 	 * @see WP_Widget::widget() for description of parameters.
 	 *
-	 * @param array $args Widget arguments.
+	 * @param array $args     Widget arguments.
 	 * @param array $instance Widget settings, as saved by the user.
 	 */
 	public function widget( $args, $instance ) {
@@ -59,8 +58,8 @@ class BP_Blogs_Recent_Posts_Widget extends WP_Widget {
 		/**
 		 * Filters the Blogs Recent Posts widget title.
 		 *
-		 * @since BuddyPress (2.2.0)
-		 * @since BuddyPress (2.3.0) Added 'instance' and 'id_base' to arguments passed to filter.
+		 * @since 2.2.0
+		 * @since 2.3.0 Added 'instance' and 'id_base' to arguments passed to filter.
 		 *
 		 * @param string $title    The widget title.
 		 * @param array  $instance The settings for the particular instance of the widget.
@@ -74,6 +73,8 @@ class BP_Blogs_Recent_Posts_Widget extends WP_Widget {
 		if ( empty( $instance['max_posts'] ) || empty( $instance['max_posts'] ) ) {
 			$instance['max_posts'] = 10;
 		}
+
+		$after_widget = $args['after_widget'];
 
 		// Override some of the contextually set parameters for bp_has_activities()
 		$args = array(
@@ -117,7 +118,7 @@ class BP_Blogs_Recent_Posts_Widget extends WP_Widget {
 
 		<?php endif; ?>
 
-		<?php echo $args['after_widget']; ?>
+		<?php echo $after_widget; ?>
 	<?php
 	}
 
@@ -126,6 +127,7 @@ class BP_Blogs_Recent_Posts_Widget extends WP_Widget {
 	 *
 	 * @param array $new_instance The new instance options.
 	 * @param array $old_instance The old instance options.
+	 *
 	 * @return array $instance The parsed options to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -140,7 +142,9 @@ class BP_Blogs_Recent_Posts_Widget extends WP_Widget {
 	/**
 	 * Output the networkwide posts widget options form.
 	 *
-	 * @param $instance Settings for this widget.
+	 * @param array $instance Settings for this widget.
+	 *
+	 * @return string
 	 */
 	public function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, array(

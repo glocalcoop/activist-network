@@ -1,5 +1,4 @@
 <?php
-
 /**
  * BuddyPress Options.
  *
@@ -7,13 +6,13 @@
  * @subpackage Options
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Get the default site options and their values.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @return array Filtered option names and values.
  */
@@ -24,75 +23,81 @@ function bp_get_default_options() {
 
 		/** Components ********************************************************/
 
-		'bp-deactivated-components'       => array(),
+		'bp-deactivated-components'            => array(),
 
 		/** bbPress ***********************************************************/
 
 		// Legacy bbPress config location
-		'bb-config-location'              => ABSPATH . 'bb-config.php',
+		'bb-config-location'                   => ABSPATH . 'bb-config.php',
 
 		/** XProfile **********************************************************/
 
 		// Base profile groups name
-		'bp-xprofile-base-group-name'     => 'Base',
+		'bp-xprofile-base-group-name'          => 'Base',
 
 		// Base fullname field name
-		'bp-xprofile-fullname-field-name' => 'Name',
+		'bp-xprofile-fullname-field-name'      => 'Name',
 
 		/** Blogs *************************************************************/
 
 		// Used to decide if blogs need indexing
-		'bp-blogs-first-install'          => false,
+		'bp-blogs-first-install'               => false,
 
 		/** Settings **********************************************************/
 
 		// Disable the WP to BP profile sync
-		'bp-disable-profile-sync'         => false,
+		'bp-disable-profile-sync'              => false,
 
 		// Hide the Toolbar for logged out users
-		'hide-loggedout-adminbar'         => false,
+		'hide-loggedout-adminbar'              => false,
 
 		// Avatar uploads
-		'bp-disable-avatar-uploads'       => false,
+		'bp-disable-avatar-uploads'            => false,
+
+		// Cover image uploads
+		'bp-disable-cover-image-uploads'       => false,
 
 		// Group Profile Photos
-		'bp-disable-group-avatar-uploads' => false,
+		'bp-disable-group-avatar-uploads'      => false,
+
+		// Group Cover image uploads
+		'bp-disable-group-cover-image-uploads' => false,
 
 		// Allow users to delete their own accounts
-		'bp-disable-account-deletion'     => false,
+		'bp-disable-account-deletion'          => false,
 
 		// Allow comments on blog and forum activity items
-		'bp-disable-blogforum-comments'   => true,
+		'bp-disable-blogforum-comments'        => true,
 
 		// The ID for the current theme package.
-		'_bp_theme_package_id'            => 'legacy',
+		'_bp_theme_package_id'                 => 'legacy',
 
 		/** Groups ************************************************************/
 
 		// @todo Move this into the groups component
 
 		// Restrict group creation to super admins
-		'bp_restrict_group_creation'      => false,
+		'bp_restrict_group_creation'           => false,
 
 		/** Akismet ***********************************************************/
 
 		// Users from all sites can post
-		'_bp_enable_akismet'              => true,
+		'_bp_enable_akismet'                   => true,
 
 		/** Activity HeartBeat ************************************************/
 
 		// HeartBeat is on to refresh activities
-		'_bp_enable_heartbeat_refresh'    => true,
+		'_bp_enable_heartbeat_refresh'         => true,
 
 		/** BuddyBar **********************************************************/
 
 		// Force the BuddyBar
-		'_bp_force_buddybar'              => false,
+		'_bp_force_buddybar'                   => false,
 
 		/** Legacy theme *********************************************/
 
 		// Whether to register the bp-default themes directory
-		'_bp_retain_bp_default'           => false,
+		'_bp_retain_bp_default'                => false,
 
 		/** Widgets **************************************************/
 		'widget_bp_core_login_widget'                => false,
@@ -106,7 +111,7 @@ function bp_get_default_options() {
 	/**
 	 * Filters the default options to be set upon activation.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param array $options Array of default options to set.
 	 */
@@ -119,7 +124,7 @@ function bp_get_default_options() {
  * Only called once when BuddyPress is activated.
  * Non-destructive, so existing settings will not be overridden.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_default_options() To get default options.
  * @uses add_option() Adds default options.
@@ -140,7 +145,7 @@ function bp_add_options() {
 	 *
 	 * Allows previously activated plugins to append their own options.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 */
 	do_action( 'bp_add_options' );
 }
@@ -153,7 +158,7 @@ function bp_add_options() {
  *
  * Currently unused.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_default_options() To get default options.
  * @uses delete_option() Removes default options.
@@ -174,7 +179,7 @@ function bp_delete_options() {
 	 *
 	 * Allows previously activated plugins to append their own options.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 */
 	do_action( 'bp_delete_options' );
 }
@@ -184,7 +189,7 @@ function bp_delete_options() {
  *
  * Currently unused.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_default_options() To get default options.
  * @uses add_filter() To add filters to 'pre_option_{$key}'.
@@ -205,7 +210,7 @@ function bp_setup_option_filters() {
 	 *
 	 * Allows previously activated plugins to append their own options.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 */
 	do_action( 'bp_setup_option_filters' );
 }
@@ -215,10 +220,11 @@ function bp_setup_option_filters() {
  *
  * Currently unused.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
- * @param bool $value Optional. Default value false
- * @return mixed false if not overloaded, mixed if set
+ * @param bool $value Optional. Default value false.
+ *
+ * @return mixed False if not overloaded, mixed if set.
  */
 function bp_pre_get_option( $value = false ) {
 	$bp = buddypress();
@@ -246,13 +252,14 @@ function bp_pre_get_option( $value = false ) {
  *
  * The 'bp_get_option' filter is primarily for backward-compatibility.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  *
  * @uses bp_get_root_blog_id()
  *
  * @param string $option_name The option to be retrieved.
- * @param string $default Optional. Default value to be returned if the option
- *        isn't set. See {@link get_blog_option()}.
+ * @param string $default     Optional. Default value to be returned if the option
+ *                            isn't set. See {@link get_blog_option()}.
+ *
  * @return mixed The value for the option.
  */
 function bp_get_option( $option_name, $default = '' ) {
@@ -261,7 +268,7 @@ function bp_get_option( $option_name, $default = '' ) {
 	/**
 	 * Filters the option value for the requested option.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 *
 	 * @param mixed $value The value for the option.
 	 */
@@ -274,10 +281,11 @@ function bp_get_option( $option_name, $default = '' ) {
  * This is a wrapper for {@link add_blog_option()}, which in turn stores
  * settings data on the appropriate blog, given your current setup.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  *
  * @param string $option_name The option key to be set.
- * @param mixed $value The value to be set.
+ * @param mixed  $value       The value to be set.
+ *
  * @return bool True on success, false on failure.
  */
 function bp_add_option( $option_name, $value ) {
@@ -291,12 +299,13 @@ function bp_add_option( $option_name, $value ) {
  * settings data (such as bp-pages) on the appropriate blog, given your current
  * setup.
  *
- * @since BuddyPress (1.5.0)
+ * @since 1.5.0
  *
  * @uses bp_get_root_blog_id()
  *
  * @param string $option_name The option key to be set.
- * @param string $value The value to be set.
+ * @param string $value       The value to be set.
+ *
  * @return bool True on success, false on failure.
  */
 function bp_update_option( $option_name, $value ) {
@@ -310,11 +319,12 @@ function bp_update_option( $option_name, $value ) {
  * settings data (such as bp-pages) on the appropriate blog, given your current
  * setup.
  *
- * @since BuddyPress (1.5.0)
+ * @since 1.5.0
  *
  * @uses bp_get_root_blog_id()
  *
  * @param string $option_name The option key to be deleted.
+ *
  * @return bool True on success, false on failure.
  */
 function bp_delete_option( $option_name ) {
@@ -330,6 +340,10 @@ function bp_delete_option( $option_name ) {
  * This function is no longer used.
  *
  * @deprecated 1.6.0
+ *
+ * @param array $keys
+ *
+ * @return bool
  */
 function bp_core_activate_site_options( $keys = array() ) {
 
@@ -394,7 +408,7 @@ function bp_core_get_root_options() {
 			/**
 			 * Filters multisite options retrieved from sitemeta.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 *
 			 * @param array $value Array of multisite options from sitemeta table.
 			 */
@@ -477,7 +491,7 @@ function bp_core_get_root_options() {
 	/**
 	 * Filters the global BP options.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 *
 	 * @param array $root_blog_options_meta Array of global BP options.
 	 */
@@ -491,9 +505,10 @@ function bp_core_get_root_options() {
  * time during a pageload and stored in `buddypress()->site_options` to prevent future lookups.
  * See {@see bp_core_get_root_options()}.
  *
- * @since BuddyPress (2.3.0)
+ * @since 2.3.0
  *
  * @param  string $option Name of the option key.
+ *
  * @return mixed Value, if found.
  */
 function bp_core_get_root_option( $option ) {
@@ -516,12 +531,13 @@ function bp_core_get_root_option( $option ) {
 /**
  * Is profile syncing disabled?
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_option() To get the profile sync option.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: true.
+ *                      Default: true.
+ *
  * @return bool True if profile sync is enabled, otherwise false.
  */
 function bp_disable_profile_sync( $default = false ) {
@@ -529,7 +545,7 @@ function bp_disable_profile_sync( $default = false ) {
 	/**
 	 * Filters whether or not profile syncing is disabled.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Whether or not syncing is disabled.
 	 */
@@ -539,21 +555,22 @@ function bp_disable_profile_sync( $default = false ) {
 /**
  * Is the Toolbar hidden for logged out users?
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_option() To get the logged out Toolbar option.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: true.
+ *                      Default: true.
+ *
  * @return bool True if the admin bar should be hidden for logged-out users,
- *         otherwise false.
+ *              otherwise false.
  */
 function bp_hide_loggedout_adminbar( $default = true ) {
 
 	/**
 	 * Filters whether or not the toolbar is hidden for logged out users.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Whether or not the toolbar is hidden.
 	 */
@@ -563,12 +580,13 @@ function bp_hide_loggedout_adminbar( $default = true ) {
 /**
  * Are members able to upload their own avatars?
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_option() To get the avatar uploads option.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: true.
+ *                      Default: true.
+ *
  * @return bool True if avatar uploads are disabled, otherwise false.
  */
 function bp_disable_avatar_uploads( $default = true ) {
@@ -576,11 +594,35 @@ function bp_disable_avatar_uploads( $default = true ) {
 	/**
 	 * Filters whether or not members are able to upload their own avatars.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Whether or not members are able to upload their own avatars.
 	 */
 	return (bool) apply_filters( 'bp_disable_avatar_uploads', (bool) bp_get_option( 'bp-disable-avatar-uploads', $default ) );
+}
+
+/**
+ * Are members able to upload their own cover images?
+ *
+ * @since 2.4.0
+ *
+ * @uses bp_get_option() To get the cover image uploads option.
+ *
+ * @param bool $default Optional. Fallback value if not found in the database.
+ *                      Default: false.
+ *
+ * @return bool True if cover image uploads are disabled, otherwise false.
+ */
+function bp_disable_cover_image_uploads( $default = false ) {
+
+	/**
+	 * Filters whether or not members are able to upload their own cover images.
+	 *
+	 * @since 2.4.0
+	 *
+	 * @param bool $value Whether or not members are able to upload their own cover images.
+	 */
+	return (bool) apply_filters( 'bp_disable_cover_image_uploads', (bool) bp_get_option( 'bp-disable-cover-image-uploads', $default ) );
 }
 
 /**
@@ -589,10 +631,11 @@ function bp_disable_avatar_uploads( $default = true ) {
  * For backward compatibility, this option falls back on the value of 'bp-disable-avatar-uploads' when no value is
  * found in the database.
  *
- * @since BuddyPress (2.3.0)
+ * @since 2.3.0
  *
- * @param bool $default Optional. Fallback value if not found in the database.
- *                      Defaults to the value of `bp_disable_avatar_uploads()`.
+ * @param bool|null $default Optional. Fallback value if not found in the database.
+ *                           Defaults to the value of `bp_disable_avatar_uploads()`.
+ *
  * @return bool True if group avatar uploads are disabled, otherwise false.
  */
 function bp_disable_group_avatar_uploads( $default = null ) {
@@ -609,7 +652,7 @@ function bp_disable_group_avatar_uploads( $default = null ) {
 	/**
 	 * Filters whether or not members are able to upload group avatars.
 	 *
-	 * @since BuddyPress (2.3.0)
+	 * @since 2.3.0
 	 *
 	 * @param bool $disabled Whether or not members are able to upload their groups avatars.
 	 * @param bool $default  Default value passed to the function.
@@ -618,23 +661,48 @@ function bp_disable_group_avatar_uploads( $default = null ) {
 }
 
 /**
+ * Are group cover images disabled?
+ *
+ * @since 2.4.0
+ *
+ * @uses bp_get_option() To get the group cover image uploads option.
+ *
+ * @param bool $default Optional. Fallback value if not found in the database.
+ *                      Default: false.
+ *
+ * @return bool True if group cover image uploads are disabled, otherwise false.
+ */
+function bp_disable_group_cover_image_uploads( $default = false ) {
+
+	/**
+	 * Filters whether or not members are able to upload group cover images.
+	 *
+	 * @since 2.4.0
+	 *
+	 * @param bool $value Whether or not members are able to upload thier groups cover images.
+	 */
+	return (bool) apply_filters( 'bp_disable_group_cover_image_uploads', (bool) bp_get_option( 'bp-disable-group-cover-image-uploads', $default ) );
+}
+
+/**
  * Are members able to delete their own accounts?
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_option() To get the account deletion option.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: true.
+ *                      Default: true.
+ *
  * @return bool True if users are able to delete their own accounts, otherwise
- *         false.
+ *              false.
  */
 function bp_disable_account_deletion( $default = false ) {
 
 	/**
 	 * Filters whether or not members are able to delete their own accounts.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Whether or not members are able to delete their own accounts.
 	 */
@@ -644,22 +712,23 @@ function bp_disable_account_deletion( $default = false ) {
 /**
  * Are blog and forum activity stream comments disabled?
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @todo split and move into blog and forum components.
  * @uses bp_get_option() To get the blog/forum comments option.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: false.
+ *                      Default: false.
+ *
  * @return bool True if activity comments are disabled for blog and forum
- *         items, otherwise false.
+ *              items, otherwise false.
  */
 function bp_disable_blogforum_comments( $default = false ) {
 
 	/**
 	 * Filters whether or not blog and forum activity stream comments are disabled.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Whether or not blog and forum activity stream comments are disabled.
 	 */
@@ -669,13 +738,14 @@ function bp_disable_blogforum_comments( $default = false ) {
 /**
  * Is group creation turned off?
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @todo Move into groups component.
  * @uses bp_get_option() To get the group creation.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: true.
+ *                      Default: true.
+ *
  * @return bool True if group creation is restricted, otherwise false.
  */
 function bp_restrict_group_creation( $default = true ) {
@@ -683,7 +753,7 @@ function bp_restrict_group_creation( $default = true ) {
 	/**
 	 * Filters whether or not group creation is turned off.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Whether or not group creation is turned off.
 	 */
@@ -693,12 +763,13 @@ function bp_restrict_group_creation( $default = true ) {
 /**
  * Should the old BuddyBar be forced in place of the WP admin bar?
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_option() To get the BuddyBar option.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: true.
+ *                      Default: true.
+ *
  * @return bool True if the BuddyBar should be forced on, otherwise false.
  */
 function bp_force_buddybar( $default = true ) {
@@ -706,7 +777,7 @@ function bp_force_buddybar( $default = true ) {
 	/**
 	 * Filters whether or not BuddyBar should be forced in place of WP Admin Bar.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Whether or not BuddyBar should be forced in place of WP Admin Bar.
 	 */
@@ -716,9 +787,9 @@ function bp_force_buddybar( $default = true ) {
 /**
  * Output the group forums root parent forum id.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
- * @param bool $default Optional. Default: '0'.
+ * @param bool|string $default Optional. Default: '0'.
  */
 function bp_group_forums_root_id( $default = '0' ) {
 	echo bp_get_group_forums_root_id( $default );
@@ -726,11 +797,12 @@ function bp_group_forums_root_id( $default = '0' ) {
 	/**
 	 * Return the group forums root parent forum id.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @uses bp_get_option() To get the root forum ID from the database.
 	 *
-	 * @param bool $default Optional. Default: '0'.
+	 * @param bool|string $default Optional. Default: '0'.
+	 *
 	 * @return int The ID of the group forums root forum.
 	 */
 	function bp_get_group_forums_root_id( $default = '0' ) {
@@ -738,7 +810,7 @@ function bp_group_forums_root_id( $default = '0' ) {
 		/**
 		 * Filters the group forums root parent forum id.
 		 *
-		 * @since BuddyPress (1.6.0)
+		 * @since 1.6.0
 		 *
 		 * @param int $value The group forums root parent forum id.
 		 */
@@ -748,12 +820,13 @@ function bp_group_forums_root_id( $default = '0' ) {
 /**
  * Check whether BuddyPress Group Forums are enabled.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_option() To get the group forums option.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: true.
+ *                      Default: true.
+ *
  * @return bool True if group forums are active, otherwise false.
  */
 function bp_is_group_forums_active( $default = true ) {
@@ -761,7 +834,7 @@ function bp_is_group_forums_active( $default = true ) {
 	/**
 	 * Filters whether or not BuddyPress Group Forums are enabled.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Whether or not BuddyPress Group Forums are enabled.
 	 */
@@ -771,12 +844,13 @@ function bp_is_group_forums_active( $default = true ) {
 /**
  * Check whether Akismet is enabled.
  *
- * @since BuddyPress (1.6.0)
+ * @since 1.6.0
  *
  * @uses bp_get_option() To get the Akismet option.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: true.
+ *                      Default: true.
+ *
  * @return bool True if Akismet is enabled, otherwise false.
  */
 function bp_is_akismet_active( $default = true ) {
@@ -784,7 +858,7 @@ function bp_is_akismet_active( $default = true ) {
 	/**
 	 * Filters whether or not Akismet is enabled.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 *
 	 * @param bool $value Whether or not Akismet is enabled.
 	 */
@@ -794,12 +868,13 @@ function bp_is_akismet_active( $default = true ) {
 /**
  * Check whether Activity Heartbeat refresh is enabled.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  *
  * @uses bp_get_option() To get the Heartbeat option.
  *
  * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: true.
+ *                      Default: true.
+ *
  * @return bool True if Heartbeat refresh is enabled, otherwise false.
  */
 function bp_is_activity_heartbeat_active( $default = true ) {
@@ -807,7 +882,7 @@ function bp_is_activity_heartbeat_active( $default = true ) {
 	/**
 	 * Filters whether or not Activity Heartbeat refresh is enabled.
 	 *
-	 * @since BuddyPress (2.0.0)
+	 * @since 2.0.0
 	 *
 	 * @param bool $value Whether or not Activity Heartbeat refresh is enabled.
 	 */
@@ -817,12 +892,13 @@ function bp_is_activity_heartbeat_active( $default = true ) {
 /**
  * Get the current theme package ID.
  *
- * @since BuddyPress (1.7.0)
+ * @since 1.7.0
  *
  * @uses get_option() To get the theme package option.
  *
- * @param bool $default Optional. Fallback value if not found in the database.
- *        Default: 'legacy'.
+ * @param string $default Optional. Fallback value if not found in the database.
+ *                        Default: 'legacy'.
+ *
  * @return string ID of the theme package.
  */
 function bp_get_theme_package_id( $default = 'legacy' ) {
@@ -830,7 +906,7 @@ function bp_get_theme_package_id( $default = 'legacy' ) {
 	/**
 	 * Filters the current theme package ID.
 	 *
-	 * @since BuddyPress (1.7.0)
+	 * @since 1.7.0
 	 *
 	 * @param string $value The current theme package ID.
 	 */

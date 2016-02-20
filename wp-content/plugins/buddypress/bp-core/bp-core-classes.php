@@ -6,7 +6,7 @@
  * @subpackage Core
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 require dirname( __FILE__ ) . '/classes/class-bp-user-query.php';
@@ -23,3 +23,4 @@ require dirname( __FILE__ ) . '/classes/class-bp-recursive-query.php';
 require dirname( __FILE__ ) . '/classes/class-bp-media-extractor.php';
 require dirname( __FILE__ ) . '/classes/class-bp-attachment.php';
 require dirname( __FILE__ ) . '/classes/class-bp-attachment-avatar.php';
+require dirname( __FILE__ ) . '/classes/class-bp-attachment-cover-image.php';

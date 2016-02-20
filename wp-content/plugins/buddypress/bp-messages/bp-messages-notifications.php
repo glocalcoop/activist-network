@@ -1,13 +1,12 @@
 <?php
-
 /**
- * BuddyPress Messages Notifications
+ * BuddyPress Messages Notifications.
  *
  * @package BuddyPress
  * @subpackage MessagesNotifications
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 /** Email *********************************************************************/
@@ -15,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Email message recipients to alert them of a new unread private message.
  *
- * @since BuddyPress (1.0.0)
+ * @since 1.0.0
  *
  * @param array|BP_Messages_Message $raw_args {
  *     Array of arguments. Also accepts a BP_Messages_Message object.
@@ -27,25 +26,25 @@ defined( 'ABSPATH' ) || exit;
  */
 function messages_notification_new_message( $raw_args = array() ) {
 
-	// Cast possible $message object as an array
+	// Cast possible $message object as an array.
 	if ( is_object( $raw_args ) ) {
 		$args = (array) $raw_args;
 	} else {
 		$args = $raw_args;
 	}
 
-	// These should be extracted below
+	// These should be extracted below.
 	$recipients    = array();
 	$email_subject = $email_content = '';
 	$sender_id     = 0;
 
-	// Barf
+	// Barf.
 	extract( $args );
 
-	// Get the sender display name
+	// Get the sender display name.
 	$sender_name = bp_core_get_user_displayname( $sender_id );
 
-	// Bail if no recipients
+	// Bail if no recipients.
 	if ( ! empty( $recipients ) ) {
 
 		foreach ( $recipients as $recipient ) {
@@ -54,10 +53,10 @@ function messages_notification_new_message( $raw_args = array() ) {
 				continue;
 			}
 
-			// User data and links
+			// User data and links.
 			$ud = get_userdata( $recipient->user_id );
 
-			// Bail if user cannot be found
+			// Bail if user cannot be found.
 			if ( empty( $ud ) ) {
 				continue;
 			}
@@ -66,12 +65,12 @@ function messages_notification_new_message( $raw_args = array() ) {
 			$settings_slug = function_exists( 'bp_get_settings_slug' ) ? bp_get_settings_slug() : 'settings';
 			$settings_link = bp_core_get_user_domain( $recipient->user_id ) . $settings_slug . '/notifications/';
 
-			// Sender info
+			// Sender info.
 			$sender_name   = stripslashes( $sender_name );
 			$subject       = stripslashes( wp_filter_kses( $subject ) );
 			$content       = stripslashes( wp_filter_kses( $message ) );
 
-			// Set up and send the message
+			// Set up and send the message.
 			$email_to      = $ud->user_email;
 			$email_subject = bp_get_email_subject( array( 'text' => sprintf( __( 'New message from %s', 'buddypress' ), $sender_name ) ) );
 
@@ -87,7 +86,7 @@ To view and read your messages please log in and visit: %4$s
 ---------------------
 ', 'buddypress' ), $sender_name, $subject, $content, $message_link );
 
-			// Only show the disable notifications line if the settings component is enabled
+			// Only show the disable notifications line if the settings component is enabled.
 			if ( bp_is_active( 'settings' ) ) {
 				$email_content .= sprintf( __( 'To disable these notifications, please log in and go to: %s', 'buddypress' ), $settings_link );
 			}
@@ -95,7 +94,7 @@ To view and read your messages please log in and visit: %4$s
 			/**
 			 * Filters the user email that the message notification will be sent to.
 			 *
-			 * @since BuddyPress (1.2.0)
+			 * @since 1.2.0
 			 *
 			 * @param string  $email_to User email the notification is being sent to.
 			 * @param WP_User $ud       WP_User object of who is receiving the message.
@@ -105,7 +104,7 @@ To view and read your messages please log in and visit: %4$s
 			/**
 			 * Filters the message notification subject that will be sent to user.
 			 *
-			 * @since BuddyPress (1.2.0)
+			 * @since 1.2.0
 			 *
 			 * @param string  $email_subject Email notification subject text.
 			 * @param string  $sender_name   Name of the person who sent the message.
@@ -116,7 +115,7 @@ To view and read your messages please log in and visit: %4$s
 			/**
 			 * Filters the message notification message that will be sent to user.
 			 *
-			 * @since BuddyPress (1.2.0)
+			 * @since 1.2.0
 			 *
 			 * @param string  $email_content Email notification message text.
 			 * @param string  $sender_name   Name of the person who sent the message.
@@ -135,7 +134,7 @@ To view and read your messages please log in and visit: %4$s
 	/**
 	 * Fires after the sending of a new message email notification.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 *
 	 * @param array  $recipients    User IDs of recipients.
 	 * @param string $email_subject Email notification subject text.
@@ -151,7 +150,7 @@ add_action( 'messages_message_sent', 'messages_notification_new_message', 10 );
 /**
  * Format notifications for the Messages component.
  *
- * @since BuddyPress (1.0.0)
+ * @since 1.0.0
  *
  * @param string $action            The kind of notification being rendered.
  * @param int    $item_id           The primary item id.
@@ -160,7 +159,6 @@ add_action( 'messages_message_sent', 'messages_notification_new_message', 10 );
  *                                  waiting for the user.
  * @param string $format            Return value format. 'string' for BuddyBar-compatible
  *                                  notifications; 'array' for WP Toolbar. Default: 'string'.
- *
  * @return string|array Formatted notifications.
  */
 function messages_format_notifications( $action, $item_id, $secondary_item_id, $total_items, $format = 'string' ) {
@@ -176,7 +174,7 @@ function messages_format_notifications( $action, $item_id, $secondary_item_id, $
 		} else {
 			$amount = 'single';
 
-			// get message thread ID
+			// Get message thread ID.
 			$message   = new BP_Messages_Message( $item_id );
 			$thread_id = $message->thread_id;
 			$link      = ( ! empty( $thread_id ) )
@@ -223,7 +221,7 @@ function messages_format_notifications( $action, $item_id, $secondary_item_id, $
 	/**
 	 * Fires right before returning the formatted message notifications.
 	 *
-	 * @since BuddyPress (1.0.0)
+	 * @since 1.0.0
 	 *
 	 * @param string $action            The type of message notification.
 	 * @param int    $item_id           The primary item ID.
@@ -238,7 +236,7 @@ function messages_format_notifications( $action, $item_id, $secondary_item_id, $
 /**
  * Send notifications to message recipients.
  *
- * @since BuddyPress (1.9.0)
+ * @since 1.9.0
  *
  * @param BP_Messages_Message $message Message object.
  */
@@ -262,13 +260,13 @@ add_action( 'messages_message_sent', 'bp_messages_message_sent_add_notification'
 /**
  * Mark new message notification when member reads a message thread directly.
  *
- * @since BuddyPress (1.9.0)
+ * @since 1.9.0
  */
 function bp_messages_screen_conversation_mark_notifications() {
 	if ( bp_is_active( 'notifications' ) ) {
 		global $thread_template;
 
-		// get unread PM notifications for the user
+		// Get unread PM notifications for the user.
 		$new_pm_notifications = BP_Notifications_Notification::get( array(
 			'user_id'           => bp_loggedin_user_id(),
 			'component_name'    => buddypress()->messages->id,
@@ -277,15 +275,15 @@ function bp_messages_screen_conversation_mark_notifications() {
 		) );
 		$unread_message_ids = wp_list_pluck( $new_pm_notifications, 'item_id' );
 
-		// no unread PMs, so stop!
+		// No unread PMs, so stop!
 		if ( empty( $unread_message_ids ) ) {
 			return;
 		}
 
-		// get the unread message ids for this thread only
+		// Get the unread message ids for this thread only.
 		$message_ids = array_intersect( $unread_message_ids, wp_list_pluck( $thread_template->thread->messages, 'id' ) );
 
-		// mark each notification for each PM message as read
+		// Mark each notification for each PM message as read.
 		foreach ( $message_ids as $message_id ) {
 			bp_notifications_mark_notifications_by_item_id( bp_loggedin_user_id(), (int) $message_id, buddypress()->messages->id, 'new_message' );
 		}
@@ -296,7 +294,7 @@ add_action( 'thread_loop_start', 'bp_messages_screen_conversation_mark_notificat
 /**
  * When a message is deleted, delete corresponding notifications.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  *
  * @param int   $thread_id   ID of the thread.
  * @param array $message_ids IDs of the messages.
