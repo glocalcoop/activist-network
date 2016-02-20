@@ -352,6 +352,11 @@ class CCF_Form_Manager {
 			</p>
 
 			<p>
+				<label for="ccf_form_button_class"><?php esc_html_e( 'Button Class:', 'custom-contact-forms' ); ?></label>
+				<input class="widefat form-button-class" id="ccf_form_button_class" name="class" type="text" value="{{ form.buttonClass }}">
+			</p>
+
+			<p>
 				<label for="ccf_form_theme"><?php esc_html_e( 'Form Theme:', 'custom-contact-forms' ); ?></label>
 
 				<select name="theme" class="form-theme" id="ccf_form_theme">
@@ -1894,6 +1899,7 @@ class CCF_Form_Manager {
 				<div class="actions">
 					<a class="edit edit-form" data-view="form-pane" data-form-id="{{ form.id }}" href="#form-pane-{{ form.id }}"><?php esc_html_e( 'Edit', 'custom-contact-forms' ); ?></a> |
 					<a class="insert-form-button"><?php esc_html_e( 'Insert into post', 'custom-contact-forms' ); ?></a> |
+					<a class="duplicate"><?php esc_html_e( 'Duplicate form', 'custom-contact-forms' ); ?></a> |
 					<a class="delete"><?php esc_html_e( 'Trash', 'custom-contact-forms' ); ?></a>
 				</div>
 			</td>

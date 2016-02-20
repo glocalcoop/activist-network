@@ -461,6 +461,7 @@
 					status: 'publish',
 					description: '',
 					buttonText: 'Submit Form',
+					buttonClass: '',
 					completionActionType: 'text',
 					completionRedirectUrl: '',
 					completionMessage: '',
@@ -3022,6 +3023,9 @@
 				var buttonText = this.el.querySelectorAll( '.form-button-text' )[0].value;
 				this.model.set( 'buttonText', buttonText );
 
+				var buttonClass = this.el.querySelectorAll( '.form-button-class' )[0].value;
+				this.model.set( 'buttonClass', buttonClass );
+
 				var pause = this.el.querySelectorAll( '.form-pause' )[0].value;
 				this.model.set( 'pause', ( parseInt( pause ) ) ? true : false );
 
@@ -3444,6 +3448,7 @@
 			events: {
 				'click .edit': 'triggerMainViewChange',
 				'click .delete': 'triggerDelete',
+				'click .duplicate': 'triggerDuplicate',
 				'click .insert-form-button': 'insertForm'
 			},
 
@@ -3477,6 +3482,22 @@
 						SELF.parent.renderPagination();
 					});
 				});
+			},
+
+			triggerDuplicate: function() {
+				var SELF = this,
+					currentPage = SELF.parent.collection.state.currentPage;
+
+				SELF.model
+					.clone()
+					.set( 'title', { raw: SELF.model.get( 'title' ).raw + ' (Duplicate)' } )
+					.unset( 'id' )
+					.save()
+					.done( function() {
+						SELF.parent.showPage( currentPage ).done( function() {
+							SELF.parent.renderPagination();
+						});
+					});
 			},
 
 			render: function() {
@@ -4184,6 +4205,27 @@
 							metabox.insertBefore( download, metabox.firstChild.nextSibling.nextSibling );
 
 							wp.ccf.createSubmissionsTable( container );
+
+							var duplicateButton = document.querySelectorAll( '#major-publishing-actions .duplicate')[0];
+
+							var duplicateClick = function( evnt ) {
+								evnt = evnt || window.event;
+								evnt.preventDefault();
+
+								SELF.currentForm.clone()
+									.set( 'title', { raw: SELF.currentForm.get( 'title' ).raw + ' (duplicate)' } )
+									.unset( 'id' )
+									.save()
+									.done( function( newForm ) {
+										document.location = ccfSettings.adminUrl + '/post.php?action=edit&post=' + newForm.id;
+									});
+							};
+
+							if ( duplicateButton.addEventListener ) {
+								duplicateButton.addEventListener( 'click', duplicateClick, false );
+							} else {
+								duplicateButton.attachEvent( 'onclick', duplicateClick );
+							}
 						}
 					});
 				} else {

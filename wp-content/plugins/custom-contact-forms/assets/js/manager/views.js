@@ -1791,6 +1791,9 @@
 				var buttonText = this.el.querySelectorAll( '.form-button-text' )[0].value;
 				this.model.set( 'buttonText', buttonText );
 
+				var buttonClass = this.el.querySelectorAll( '.form-button-class' )[0].value;
+				this.model.set( 'buttonClass', buttonClass );
+
 				var pause = this.el.querySelectorAll( '.form-pause' )[0].value;
 				this.model.set( 'pause', ( parseInt( pause ) ) ? true : false );
 
@@ -2213,6 +2216,7 @@
 			events: {
 				'click .edit': 'triggerMainViewChange',
 				'click .delete': 'triggerDelete',
+				'click .duplicate': 'triggerDuplicate',
 				'click .insert-form-button': 'insertForm'
 			},
 
@@ -2246,6 +2250,22 @@
 						SELF.parent.renderPagination();
 					});
 				});
+			},
+
+			triggerDuplicate: function() {
+				var SELF = this,
+					currentPage = SELF.parent.collection.state.currentPage;
+
+				SELF.model
+					.clone()
+					.set( 'title', { raw: SELF.model.get( 'title' ).raw + ' (Duplicate)' } )
+					.unset( 'id' )
+					.save()
+					.done( function() {
+						SELF.parent.showPage( currentPage ).done( function() {
+							SELF.parent.renderPagination();
+						});
+					});
 			},
 
 			render: function() {
