@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sequential 1.1.5\n"
+"Project-Id-Version: Sequential 1.1.6\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/sequential\n"
-"POT-Creation-Date: 2016-01-01 04:35:57+00:00\n"
+"POT-Creation-Date: 2016-01-21 03:50:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,31 +97,31 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: comments.php:28
+#: comments.php:29
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:45
+#: comments.php:48
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:46
-msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+#: comments.php:49
+msgid "Older Comments"
 msgstr ""
 
-#: comments.php:47
-msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+#: comments.php:50
+msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:57
+#: comments.php:60
 msgid "Comments are closed."
 msgstr ""
 
 #: content-grid.php:16
-msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
+msgid "Read more"
 msgstr ""
 
 #: content-grid.php:19 content-page.php:32 inc/template-tags.php:175
@@ -155,7 +155,7 @@ msgid "Pages:"
 msgstr ""
 
 #: content.php:25
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgid "Continue reading"
 msgstr ""
 
 #: footer.php:30
@@ -260,19 +260,19 @@ msgid "Posts navigation"
 msgstr ""
 
 #: inc/template-tags.php:28
-msgid "<span class=\"meta-nav\">&larr;</span> Older testimonials"
+msgid "Older testimonials"
 msgstr ""
 
 #: inc/template-tags.php:30
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgid "Older posts"
 msgstr ""
 
 #: inc/template-tags.php:40
-msgid "Newer testimonials <span class=\"meta-nav\">&rarr;</span>"
+msgid "Newer testimonials"
 msgstr ""
 
 #: inc/template-tags.php:42
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgid "Newer posts"
 msgstr ""
 
 #: inc/template-tags.php:68

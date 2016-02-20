@@ -56,8 +56,8 @@ function sequential_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'sequential' ),
-		'footer'  => __( 'Footer Menu', 'sequential' ),
+		'primary' => esc_html__( 'Primary Menu', 'sequential' ),
+		'footer'  => esc_html__( 'Footer Menu', 'sequential' ),
 	) );
 
 	/*
@@ -92,7 +92,7 @@ add_action( 'after_setup_theme', 'sequential_setup' );
  */
 function sequential_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'sequential' ),
+		'name'          => esc_html__( 'Sidebar', 'sequential' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -101,7 +101,7 @@ function sequential_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer', 'sequential' ),
+		'name'          => esc_html__( 'Footer', 'sequential' ),
 		'id'            => 'sidebar-2',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -123,7 +123,7 @@ function sequential_montserrat_font_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by Montserrat, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'sequential' ) ) {
+	if ( 'off' !== esc_html_x( 'on', 'Montserrat font: on or off', 'sequential' ) ) {
 		$query_args = array(
 			'family' => urlencode( 'Montserrat:400,700' ),
 		);
@@ -145,13 +145,13 @@ function sequential_open_sans_font_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by Open Sans, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'sequential' ) ) {
+	if ( 'off' !== esc_html_x( 'on', 'Open Sans font: on or off', 'sequential' ) ) {
 		$subsets = 'latin,latin-ext';
 
 		/* translators: To add an additional Open Sans character subset specific to your language,
 		 * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language.
 		 */
-		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'sequential' );
+		$subset = esc_html_x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'sequential' );
 
 		if ( 'cyrillic' == $subset ) {
 			$subsets .= ',cyrillic,cyrillic-ext';
@@ -183,7 +183,7 @@ function sequential_source_code_pro_font_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by Source Code Pro, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Source Code Pro font: on or off', 'sequential' ) ) {
+	if ( 'off' !== esc_html_x( 'on', 'Source Code Pro font: on or off', 'sequential' ) ) {
 		$query_args = array(
 			'family' => urlencode( 'Source Code Pro:400,700' ),
 		);
@@ -207,7 +207,7 @@ function sequential_scripts() {
 	if ( wp_style_is( 'genericons', 'registered' ) ) {
 		wp_enqueue_style( 'genericons' );
 	} else {
-		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
+		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons/genericons.css', array(), '3.4.1' );
 	}
 
 	wp_enqueue_style( 'sequential-style', get_stylesheet_uri() );

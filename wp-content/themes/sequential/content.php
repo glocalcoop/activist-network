@@ -22,9 +22,9 @@
 	<div class="entry-content">
 		<?php
 			if ( ! is_search() ) {
-				the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sequential' ) );
+				the_content( esc_html__( 'Continue reading', 'sequential' ) );
 				wp_link_pages( array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'sequential' ) . '</span>',
+					'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'sequential' ) . '</span>',
 					'after'       => '</div>',
 					'link_before' => '<span>',
 					'link_after'  => '</span>',

@@ -13,8 +13,8 @@
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-		<p><a class="more-link" href="<?php the_permalink(); ?>" rel="bookmark"><?php _e( 'Read more <span class="meta-nav">&rarr;</span>', 'sequential' ); ?></a></p>
+		<p><a class="more-link" href="<?php the_permalink(); ?>" rel="bookmark"><?php esc_html_e( 'Read more', 'sequential' ); ?></a></p>
 	</div><!-- .entry-summary -->
 
-	<?php edit_post_link( __( 'Edit', 'sequential' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( esc_html__( 'Edit', 'sequential' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

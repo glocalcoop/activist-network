@@ -2,13 +2,37 @@
 # This file is distributed under the same license as the Sequential package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-12-03 16:42:56+0000\n"
+"PO-Revision-Date: 2016-01-21 03:50:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Sequential\n"
+
+#: inc/template-tags.php:42
+msgid "Newer posts"
+msgstr "新しい投稿"
+
+#: content-grid.php:16
+msgid "Read more"
+msgstr "続きを読む"
+
+#: content.php:25
+msgid "Continue reading"
+msgstr "続きを読む"
+
+#: inc/template-tags.php:30
+msgid "Older posts"
+msgstr "過去の投稿"
+
+#: comments.php:49
+msgid "Older Comments"
+msgstr "過去のコメント"
+
+#: comments.php:50
+msgid "Newer Comments"
+msgstr "新しいコメント"
 
 #: inc/customizer.php:20
 msgid "Theme Options"
@@ -90,14 +114,6 @@ msgstr "<span class=\"meta-nav\">前の投稿</span>%title"
 #: inc/template-tags.php:68
 msgid "Post navigation"
 msgstr "投稿ナビゲーション"
-
-#: inc/template-tags.php:42
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "新しい投稿 <span class=\"meta-nav\">&rarr;</span>"
-
-#: inc/template-tags.php:30
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> 古い投稿"
 
 #: inc/template-tags.php:21
 msgid "Posts navigation"
@@ -184,10 +200,6 @@ msgstr "Proudly powered by %s"
 msgid "http://wordpress.org/"
 msgstr "http://ja.wordpress.org/"
 
-#: content.php:25
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
-
 #: content-page.php:24 content-single.php:26 content.php:27
 msgid "Pages:"
 msgstr "ページ:"
@@ -208,32 +220,20 @@ msgstr "最初の投稿をする準備ができましたか ?  <a href=\"%1$s\">
 msgid "Nothing Found"
 msgstr "見つかりません"
 
-#: content-grid.php:16
-msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
-msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
-
 #: content-grid.php:19 content-page.php:32 inc/template-tags.php:175
 #: page-templates/front-page.php:26
 msgid "Edit"
 msgstr "編集"
 
-#: comments.php:57
+#: comments.php:60
 msgid "Comments are closed."
 msgstr "コメントは停止中です。"
 
-#: comments.php:47
-msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
-msgstr "新しいコメント <span class=\"meta-nav\">&rarr;</span>"
-
-#: comments.php:46
-msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
-msgstr "<span class=\"meta-nav\">&larr;</span> 昔のコメント"
-
-#: comments.php:45
+#: comments.php:48
 msgid "Comment navigation"
 msgstr "コメントナビゲーション"
 
-#: comments.php:28
+#: comments.php:29
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"

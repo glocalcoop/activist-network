@@ -18,16 +18,16 @@ function sequential_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'sequential' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'sequential' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
 				<div class="nav-previous">
 					<?php
 						if ( is_post_type_archive( 'jetpack-testimonial' ) ) {
-							next_posts_link( __( '<span class="meta-nav">&larr;</span> Older testimonials', 'sequential' ) );
+							next_posts_link( esc_html__( 'Older testimonials', 'sequential' ) );
 						} else {
-							next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'sequential' ) );
+							next_posts_link( esc_html__( 'Older posts', 'sequential' ) );
 						}
 					?>
 				</div>
@@ -37,9 +37,9 @@ function sequential_paging_nav() {
 				<div class="nav-next">
 					<?php
 						if ( is_post_type_archive( 'jetpack-testimonial' ) ) {
-							previous_posts_link( __( 'Newer testimonials <span class="meta-nav">&rarr;</span>', 'sequential' ) );
+							previous_posts_link( esc_html__( 'Newer testimonials', 'sequential' ) );
 						} else {
-							previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'sequential' ) );
+							previous_posts_link( esc_html__( 'Newer posts', 'sequential' ) );
 						}
 					?>
 				</div>
@@ -65,7 +65,7 @@ function sequential_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'sequential' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'sequential' ); ?></h1>
 		<div class="nav-links">
 			<?php
 				if ( is_attachment() ) {
@@ -164,7 +164,7 @@ function sequential_entry_meta() {
 
 		if ( is_sticky() && ! is_single() ) {
 
-			$featured = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . __( 'Featured', 'sequential' ) . '</a>';
+			$featured = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Featured', 'sequential' ) . '</a>';
 			echo '<span class="featured">' . $featured . '</span> ';
 
 		}
@@ -172,7 +172,7 @@ function sequential_entry_meta() {
 		$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 		echo '<span class="byline">' . $byline . '</span> ';
 
-		edit_post_link( __( 'Edit', 'sequential' ), '<span class="edit-link">', '</span>' );
+		edit_post_link( esc_html__( 'Edit', 'sequential' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -186,19 +186,19 @@ function sequential_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', 'sequential' ) );
 		if ( $categories_list && sequential_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'sequential' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'sequential' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'sequential' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'sequential' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'sequential' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'sequential' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'sequential' ), __( '1 Comment', 'sequential' ), __( '% Comments', 'sequential' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'sequential' ), esc_html__( '1 Comment', 'sequential' ), esc_html__( '% Comments', 'sequential' ) );
 		echo '</span>';
 	}
 }

@@ -20,7 +20,7 @@ get_header(); ?>
 								if ( '' != $jetpack_options['page-title'] ) {
 									echo esc_html( $jetpack_options['page-title'] );
 								} else {
-									_e( 'Testimonials', 'sequential' );
+									esc_html_e( 'Testimonials', 'sequential' );
 								}
 							?>
 						</h1><!-- .entry-title -->

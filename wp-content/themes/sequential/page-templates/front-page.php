@@ -23,7 +23,7 @@ get_header(); ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
 					</div>
-					<?php edit_post_link( __( 'Edit', 'sequential' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+					<?php edit_post_link( esc_html__( 'Edit', 'sequential' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
 				</div><!-- .entry-written-content -->
 			</div><!-- .wrapper -->
 		</article><!-- .hentry -->

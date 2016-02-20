@@ -17,8 +17,8 @@ function sequential_customize_register( $wp_customize ) {
 
 	/* Theme Options */
 	$wp_customize->add_section( 'sequential_theme_options', array(
-		'title'    => __( 'Theme Options', 'sequential' ),
-		'priority' => 130,
+		'title'             => esc_html__( 'Theme Options', 'sequential' ),
+		'priority'          => 130,
 	) );
 
 	/* Show Tagline */
@@ -28,7 +28,7 @@ function sequential_customize_register( $wp_customize ) {
 		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'sequential_tagline', array(
-		'label'             => __( 'Display tagline below site title', 'sequential' ),
+		'label'             => esc_html__( 'Display tagline below site title', 'sequential' ),
 		'section'           => 'sequential_theme_options',
 		'priority'          => 10,
 		'type'              => 'checkbox',
@@ -41,7 +41,7 @@ function sequential_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'wp_kses_post',
 	) );
 	$wp_customize->add_control( 'sequential_top_area_content', array(
-		'label'             => __( 'Top Area Content', 'sequential' ),
+		'label'             => esc_html__( 'Top Area Content', 'sequential' ),
 		'section'           => 'sequential_theme_options',
 		'priority'          => 20,
 		'type'              => 'textarea',
@@ -53,7 +53,7 @@ function sequential_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sequential_sanitize_dropdown_pages',
 	) );
 	$wp_customize->add_control( 'sequential_featured_page_one_front_page', array(
-		'label'             => __( 'Front Page: Featured Page One', 'sequential' ),
+		'label'             => esc_html__( 'Front Page: Featured Page One', 'sequential' ),
 		'section'           => 'sequential_theme_options',
 		'priority'          => 30,
 		'type'              => 'dropdown-pages',
@@ -65,7 +65,7 @@ function sequential_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sequential_sanitize_dropdown_pages',
 	) );
 	$wp_customize->add_control( 'sequential_featured_page_two_front_page', array(
-		'label'             => __( 'Front Page: Featured Page Two', 'sequential' ),
+		'label'             => esc_html__( 'Front Page: Featured Page Two', 'sequential' ),
 		'section'           => 'sequential_theme_options',
 		'priority'          => 40,
 		'type'              => 'dropdown-pages',
@@ -77,7 +77,7 @@ function sequential_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sequential_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'sequential_title_front_page', array(
-		'label'             => __( 'Front Page: Show Page Titles', 'sequential' ),
+		'label'             => esc_html__( 'Front Page: Show Page Titles', 'sequential' ),
 		'section'           => 'sequential_theme_options',
 		'priority'          => 50,
 		'type'              => 'checkbox',

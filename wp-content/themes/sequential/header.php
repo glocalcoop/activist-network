@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'sequential' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sequential' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<?php
@@ -42,7 +42,7 @@
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-expanded="false" ><span class="screen-reader-text"><?php _e( 'Menu', 'sequential' ); ?></span></button>
+					<button class="menu-toggle" aria-expanded="false" ><span class="screen-reader-text"><?php esc_html_e( 'Menu', 'sequential' ); ?></span></button>
 					<?php
 						wp_nav_menu( array(
 							'theme_location'  => 'primary',

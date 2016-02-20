@@ -2,13 +2,37 @@
 # This file is distributed under the same license as the Sequential package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-11-24 03:49:46+0000\n"
+"PO-Revision-Date: 2016-01-21 03:50:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Sequential\n"
+
+#: inc/template-tags.php:42
+msgid "Newer posts"
+msgstr "Neuere Beiträge"
+
+#: content-grid.php:16
+msgid "Read more"
+msgstr "Weiterlesen"
+
+#: content.php:25
+msgid "Continue reading"
+msgstr "weiterlesen"
+
+#: inc/template-tags.php:30
+msgid "Older posts"
+msgstr "Ältere Beiträge"
+
+#: comments.php:49
+msgid "Older Comments"
+msgstr "Ältere Kommentare"
+
+#: comments.php:50
+msgid "Newer Comments"
+msgstr "Neuere Kommentare"
 
 #: inc/customizer.php:20
 msgid "Theme Options"
@@ -86,14 +110,6 @@ msgstr "<span class=\"meta-nav\">Vorheriger Beitrag</span>%title"
 msgid "Post navigation"
 msgstr "Beitragsnavigation"
 
-#: inc/template-tags.php:42
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Neuere Beiträge <span class=\"meta-nav\">&rarr;</span>"
-
-#: inc/template-tags.php:30
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Beiträge"
-
 #: inc/template-tags.php:21
 msgid "Posts navigation"
 msgstr "Beiträge-Navigation"
@@ -163,10 +179,6 @@ msgstr "Proudly powered by %s"
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: content.php:25
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
-
 #: content-page.php:24 content-single.php:26 content.php:27
 msgid "Pages:"
 msgstr "Seiten:"
@@ -187,32 +199,20 @@ msgstr "Bereit deinen ersten Beitrag zu veröffentlichen? <a href=\"%1$s\">Erste
 msgid "Nothing Found"
 msgstr "Es konnte nichts gefunden werden."
 
-#: content-grid.php:16
-msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
-
 #: content-grid.php:19 content-page.php:32 inc/template-tags.php:175
 #: page-templates/front-page.php:26
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: comments.php:57
+#: comments.php:60
 msgid "Comments are closed."
 msgstr "Die Kommentarfunktion ist geschlossen."
 
-#: comments.php:47
-msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Neuere Kommentare <span class=\"meta-nav\">&rarr;</span>"
-
-#: comments.php:46
-msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
-msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Kommentare"
-
-#: comments.php:45
+#: comments.php:48
 msgid "Comment navigation"
 msgstr "Kommentar-Navigation"
 
-#: comments.php:28
+#: comments.php:29
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"

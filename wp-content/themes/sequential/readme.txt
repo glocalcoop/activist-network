@@ -158,6 +158,14 @@ See live examples on Sequential‘s demo site:
 
 == Changelog ==
 
+= 26 January 2016 =
+* Correcting link used to enqueue Genericons.
+
+= 20 January 2016 =
+* Remove meta-nav
+* Temporary remove esc_html from template-tags.php -- creating issues -- will look into it
+* Add proper escaping
+
 = 19 January 2016 =
 * Need to be more specific when targeting .sd-content
 * Make sure sd-content list has correct margin-bottom
