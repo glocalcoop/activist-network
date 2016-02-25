@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-12 11:46+0000\n"
+"POT-Creation-Date: 2016-02-24 23:37+0000\n"
 "PO-Revision-Date: 2015-09-25 19:06:04+0000\n"
 "Last-Translator: stephenharris <stephenh1988@gmail.com>\n"
 "Language-Team: \n"
@@ -124,7 +124,7 @@ msgstr "Prikaži listu događanja"
 
 #: classes/class-eo-event-list-widget.php:14
 #: classes/class-eo-event-list-widget.php:28 event-organiser-venues.php:463
-#: event-organiser.php:138 includes/class-eo-theme-compatability.php:199
+#: event-organiser.php:149 includes/class-eo-theme-compatability.php:199
 #: includes/event-organiser-cpt.php:224 includes/event-organiser-cpt.php:236
 #: includes/event-organiser-install.php:100 templates/archive-event.php:40
 msgid "Events"
@@ -391,7 +391,7 @@ msgstr "Kada"
 msgid "Event Title"
 msgstr "Naslov događaja"
 
-#: event-organiser-calendar.php:287 includes/event-organiser-ajax.php:400
+#: event-organiser-calendar.php:287 includes/event-organiser-ajax.php:402
 msgid "Where"
 msgstr "Gdje"
 
@@ -796,42 +796,42 @@ msgstr "Postavke Event Organiser"
 msgid "Event Organiser"
 msgstr "Event Organiser"
 
-#: event-organiser-settings.php:46 event-organiser.php:111
+#: event-organiser-settings.php:46 event-organiser.php:122
 #: includes/event-organiser-install.php:116
 msgid "Edit Events"
 msgstr "Uredi Događanja"
 
-#: event-organiser-settings.php:47 event-organiser.php:112
+#: event-organiser-settings.php:47 event-organiser.php:123
 #: includes/event-organiser-install.php:117
 msgid "Publish Events"
 msgstr "Objavi Događaje"
 
-#: event-organiser-settings.php:48 event-organiser.php:113
+#: event-organiser-settings.php:48 event-organiser.php:124
 #: includes/event-organiser-install.php:118
 msgid "Delete Events"
 msgstr "Obriši događaje"
 
-#: event-organiser-settings.php:49 event-organiser.php:114
+#: event-organiser-settings.php:49 event-organiser.php:125
 #: includes/event-organiser-install.php:119
 msgid "Edit Others' Events"
 msgstr "Uredi druga događanja"
 
-#: event-organiser-settings.php:50 event-organiser.php:115
+#: event-organiser-settings.php:50 event-organiser.php:126
 #: includes/event-organiser-install.php:120
 msgid "Delete Other's Events"
 msgstr "Obriši druga događanja"
 
-#: event-organiser-settings.php:51 event-organiser.php:116
+#: event-organiser-settings.php:51 event-organiser.php:127
 #: includes/event-organiser-install.php:121
 msgid "Read Private Events"
 msgstr "Pročitaj privatne događaje"
 
-#: event-organiser-settings.php:52 event-organiser.php:117
+#: event-organiser-settings.php:52 event-organiser.php:128
 #: includes/event-organiser-install.php:122
 msgid "Manage Venues"
 msgstr "Upravljanje sastajalištima"
 
-#: event-organiser-settings.php:53 event-organiser.php:118
+#: event-organiser-settings.php:53 event-organiser.php:129
 #: includes/event-organiser-install.php:123
 msgid "Manage Event Categories & Tags"
 msgstr "Upravljanje kategorijama događanja i Oznakama"
@@ -1378,63 +1378,63 @@ msgstr "1 kategorija je kreirana"
 msgid "%d categories were created"
 msgstr "%d kategorija je kreirano"
 
-#: includes/event-organiser-ajax.php:339
+#: includes/event-organiser-ajax.php:341
 msgid "Protected"
 msgstr "Zaštičeno"
 
-#: includes/event-organiser-ajax.php:341
+#: includes/event-organiser-ajax.php:343
 msgid "Private"
 msgstr "Privatno"
 
-#: includes/event-organiser-ajax.php:343
+#: includes/event-organiser-ajax.php:345
 msgid "Draft"
 msgstr "Skica"
 
-#: includes/event-organiser-ajax.php:383
+#: includes/event-organiser-ajax.php:385
 msgid "Start"
 msgstr "Početak"
 
-#: includes/event-organiser-ajax.php:384
+#: includes/event-organiser-ajax.php:386
 msgid "End"
 msgstr "Kraj"
 
-#: includes/event-organiser-ajax.php:387
+#: includes/event-organiser-ajax.php:389
 msgid "Organiser:"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:426
+#: includes/event-organiser-ajax.php:428
 msgid "This event recurs"
 msgstr "Ovaj se događaj ponavlja"
 
-#: includes/event-organiser-ajax.php:432 includes/event-organiser-cpt.php:228
+#: includes/event-organiser-ajax.php:434 includes/event-organiser-cpt.php:228
 msgid "Edit Event"
 msgstr "Uredi Događaj"
 
-#: includes/event-organiser-ajax.php:452
+#: includes/event-organiser-ajax.php:454
 msgid "Delete this occurrence"
 msgstr "Obriši ovo sjedište"
 
-#: includes/event-organiser-ajax.php:469
+#: includes/event-organiser-ajax.php:471
 msgid "Break this series"
 msgstr "Prelomi ovaj niz"
 
-#: includes/event-organiser-ajax.php:771
+#: includes/event-organiser-ajax.php:773
 msgid "Event not found"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:779
+#: includes/event-organiser-ajax.php:781
 msgid "Events are not editable via the admin calendar"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:785
+#: includes/event-organiser-ajax.php:787
 msgid "Are you sure you want to do this?"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:792
+#: includes/event-organiser-ajax.php:794
 msgid "You do not have permission to edit this event"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:808
+#: includes/event-organiser-ajax.php:810
 #, php-format
 msgid "Event not created: %s"
 msgstr ""
