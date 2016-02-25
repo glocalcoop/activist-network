@@ -232,7 +232,7 @@ class BuddyPress_Event_Organiser {
 
 		// only do this when creating or editing an event on backend or frontend
 		if ( false === $frontend || ( bpeo_is_action( 'new' ) || bpeo_is_action( 'edit' ) ) ) {
-			wp_enqueue_style( 'bpeo-select2' );
+			wp_enqueue_style( 'select2' );
 			wp_enqueue_script( 'bpeo-group-select' );
 
 			$vars['group_privacy_message'] = __( 'You have added a group to this event.  Since groups have their own privacy settings, we have removed the ability to set the status for this event.', 'bp-event-organiser' );

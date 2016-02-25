@@ -24,6 +24,8 @@ function bpeo_register_assets() {
 	// Select2
 	if ( false === wp_script_is( 'select2' ) ) {
 		wp_register_script( 'select2', set_url_scheme( 'http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js', array( 'jquery' ) ) );
+	}
+	if ( false === wp_style_is( 'select2' ) ) {
 		wp_register_style( 'select2', set_url_scheme( 'http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css' ) );
 	}
 
