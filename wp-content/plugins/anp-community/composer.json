@@ -1,0 +1,15 @@
+{
+    "name": "glocalcoop/anp-buddypress-customization",
+    "authors": [
+        {
+            "name": "Pea, Glocal",
+            "email": "pea@misfist.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        }
+    ]
+}
