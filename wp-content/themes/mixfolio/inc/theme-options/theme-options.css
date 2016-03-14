@@ -1,9 +1,0 @@
-#welcome-area-message,
-#contact-details {
-	width: 410px;
-	height: 100px;
-}
-#welcome-area-message + label,
-#contact-details + label {
-	display: block;
-}
