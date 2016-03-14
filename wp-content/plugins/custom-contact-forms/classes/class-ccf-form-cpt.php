@@ -506,6 +506,7 @@ class CCF_Form_CPT {
 			'author' => esc_html__( 'Author', 'custom-contact-forms' ),
 			'submissions' => esc_html__( 'Submissions', 'custom-contact-forms' ),
 			'fields' => esc_html__( 'Number of Fields', 'custom-contact-forms' ),
+			'ccf_form_id' => esc_html__( 'Form ID', 'custom-contact-forms' ),
 			'ccf_date' => esc_html__( 'Date', 'custom-contact-forms' ),
 		);
 
@@ -535,6 +536,10 @@ class CCF_Form_CPT {
 				} else {
 					echo count( $fields );
 				}
+
+				break;
+			case 'ccf_form_id':
+				echo (int) $post->ID;
 
 				break;
 			case 'ccf_date':

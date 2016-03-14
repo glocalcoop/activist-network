@@ -27,6 +27,8 @@ Custom Contact Forms enables you to build forms and manage submissions the WordP
 * Multiple themes to choose from
 * No custom database tables
 * Easy form duplication
+* Multiple types of CAPTCHAs for spam blocking
+* Only show forms to logged in users
 * Forms can show customizable completion text or redirect to a URL.
 * Temporarily pause forms with a customizable pause message.
 * Create and manage multiple notifications for each form. Notifications can send emails to one or more administrators or form submittors. Customize notification email subject, from email address, from email name, and email body. Map form fields to email subject, from name, and from email address. Easily activate and deactivate notifications.
@@ -58,9 +60,24 @@ For full documentation, questions, feature requests, and support concerning the 
 
 == Changelog ==
 
+= 7.8 =
+* Hide form title setting
+* Reply to notification fields
+* Activate form notifications by default
+
+= 7.7 =
+* New CAPTCHA option
+* Fix "0" choice input bug
+* Fix empty conditional bug
+* Reset field renderer bug fixed
+* Guide user for whitelisting file extenions in file field
+* Submit class form option
+* Logged in users only form option
+
 = 7.6 =
 * Form duplication
 * Fix multiple section header bug
+* Button class field
 
 = 7.5 =
 * Conditional fields and sections
