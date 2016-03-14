@@ -20,7 +20,7 @@ class PLL_Plugins_Compat {
 		add_filter( 'wp_import_terms', array( &$this, 'wp_import_terms' ) );
 
 		// YARPP
-		add_action( 'pll_init', array( &$this, 'yarpp_init' ) );
+		add_action( 'init', array( &$this, 'yarpp_init' ) ); // after Polylang has registered its taxonomy in setup_theme
 
 		// Yoast SEO
 		add_action( 'pll_language_defined', array( &$this, 'wpseo_init' ) );
@@ -47,7 +47,7 @@ class PLL_Plugins_Compat {
 		add_filter( 'jetpack_relatedposts_filter_filters', array( &$this, 'jetpack_relatedposts_filter_filters' ), 10, 2 );
 
 		// Jetpack infinite scroll
-		if ( !defined( 'PLL_AJAX_ON_FRONT' ) && isset( $_GET['infinity'], $_POST['action'] ) && 'infinite_scroll' == $_POST['action'] ) {
+		if ( ! defined( 'PLL_AJAX_ON_FRONT' ) && isset( $_GET['infinity'], $_POST['action'] ) && 'infinite_scroll' == $_POST['action'] ) {
 			define( 'PLL_AJAX_ON_FRONT', true );
 		}
 	}
@@ -146,8 +146,7 @@ class PLL_Plugins_Compat {
 		if ( did_action( 'wp_loaded' ) ) {
 			if ( version_compare( WPSEO_VERSION, '1.7.2', '<' ) ) {
 				global $wpseo_front;
-			}
-			else {
+			} else {
 				$wpseo_front = WPSEO_Frontend::get_instance();
 			}
 
@@ -465,7 +464,7 @@ class PLL_Plugins_Compat {
 	 */
 	function jetpack_relatedposts_filter_filters( $filters, $post_id ) {
 		$slug = sanitize_title( pll_get_post_language( $post_id, 'name' ) );
-		$filters[] = array( 'term' => array('taxonomy.language.slug' =>  $slug ) );
+		$filters[] = array( 'term' => array( 'taxonomy.language.slug' =>  $slug ) );
 		return $filters;
 	}
 

@@ -87,12 +87,14 @@ class PLL_Translated_Post extends PLL_Translated_Object {
 				'singular_name' => __( 'Language', 'polylang' ),
 				'all_items'     => __( 'All languages', 'polylang' ),
 			),
-			'public'            => true, // since WP 4.4 we must set it to true for WP to accept our query var
-			'show_ui'           => false, // hide the taxonomy on admin side
-			'show_in_nav_menus' => false, // no metabox for nav menus
-			'query_var'         => 'lang',
-			'rewrite'           => $this->model->options['force_lang'] < 2, // no rewrite for domains and sub-domains
-			'_pll'              => true, // polylang taxonomy
+			// FIXME backward compatibility with WP 4.4.x: we must keep public to true for WP to accept our query var
+			'public'             => version_compare( $GLOBALS['wp_version'], '4.4', '>=' ) && version_compare( $GLOBALS['wp_version'], '4.5', '<' ),
+			'show_ui'            => false, // hide the taxonomy on admin side, needed for WP 4.4.x
+			'show_in_nav_menus'  => false, // no metabox for nav menus, needed for WP 4.4.x
+			'publicly_queryable' => true, // since WP 4.5
+			'query_var'          => 'lang',
+			'rewrite'            => $this->model->options['force_lang'] < 2, // no rewrite for domains and sub-domains
+			'_pll'               => true, // polylang taxonomy
 		) );
 	}
 

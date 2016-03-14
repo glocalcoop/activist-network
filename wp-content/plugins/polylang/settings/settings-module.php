@@ -156,21 +156,22 @@ class PLL_Settings_Module {
 
 		if ( $this->module == $_POST['module'] ) {
 			unset( $_POST['action'], $_POST['module'], $_POST['pll_ajax_backend'], $_POST['_pll_nonce'] );
+
+			// it's up to the child class to decide which options are saved, whether there are errors or not
 			$options = $this->update( $_POST );
+			$this->options = array_merge( $this->options, $options );
+			update_option( 'polylang', $this->options );
+
+			// refresh language cache in case home urls have been modified
+			$this->model->clean_languages_cache();
+
+			// refresh rewrite rules in case rewrite,  hide_default, post types or taxonomies options have been modified
+			// don't use flush_rewrite_rules as we don't have the right links model and permastruct
+			delete_option( 'rewrite_rules' );
 
 			ob_start();
 
 			if ( ! get_settings_errors() ) {
-				$this->options = array_merge( $this->options, $options );
-				update_option( 'polylang', $this->options );
-
-				// refresh language cache in case home urls have been modified
-				$this->model->clean_languages_cache();
-
-				// refresh rewrite rules in case rewrite,  hide_default, post types or taxonomies options have been modified
-				// don't use flush_rewrite_rules as we don't have the right links model and permastruct
-				delete_option( 'rewrite_rules' );
-
 				// send update message
 				add_settings_error( 'general', 'settings_updated', __( 'Settings saved.' ), 'updated' );
 				settings_errors();

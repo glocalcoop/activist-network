@@ -702,7 +702,8 @@ class PLL_Admin_Filters_Term {
 		$traces = debug_backtrace();
 
 		if ( isset( $traces[4] ) ) {
-			if ( in_array( $traces[4]['function'], array( 'column_cb', 'column_name' ) ) && in_array( $traces[4]['args'][0]->term_id, $this->model->term->get_translations( $value ) ) ) {
+			// FIXME 'column_name' for backward compatibility with WP < 4.3
+			if ( in_array( $traces[4]['function'], array( 'column_cb', 'column_name', 'handle_row_actions' ) ) && in_array( $traces[4]['args'][0]->term_id, $this->model->term->get_translations( $value ) ) ) {
 				return $traces[4]['args'][0]->term_id;
 			}
 

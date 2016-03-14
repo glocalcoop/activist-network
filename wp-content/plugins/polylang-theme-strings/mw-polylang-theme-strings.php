@@ -4,7 +4,7 @@
     Plugin Name: Polylang Theme Strings
     Plugin URI: http://modeewine.com/en-polylang-theme-strings
     Description: Automatic scanning of strings translation in the theme and registration of them in Polylang plugin.
-    Version: 2.2
+    Version: 2.2.1
     Author: Modeewine
     Author URI: http://modeewine.com
     License: GPL2
@@ -158,7 +158,7 @@
 
                         foreach($files as $v)
                         {
-                            if (preg_match("/\/.*?\.(php|inc)$/uis", $v))
+                            if (preg_match("/\/.*?\.[a-z0-9]+$/uis", $v))
                             {
                                 preg_match_all("/\<\?.*?\?\>/uis", file_get_contents($v), $p);
 
@@ -166,7 +166,7 @@
                                 {
                                     foreach ($p[0] as $pv)
                                     {
-                                        preg_match_all("/pll_[_e][\s]*\([\s]*[\'\"](.*?)[\'\"][\s]*\)/uis", $pv, $m);
+                                        preg_match_all("/pll_[_e][\s]*\([\s]*[\'\"](.*?)[\'\"].*?\)/uis", $pv, $m);
 
                                         if (count($m[0]))
                                         {

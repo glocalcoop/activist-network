@@ -28,8 +28,8 @@
  * search_url          => home url to use in search forms
  * host                => host of this language
  * mo_id               => id of the post storing strings translations
- * page_on_front       => id of the page on front in this language ( set from PLL_Model )
- * page_for_posts      => id of the page for posts in this language ( set from PLL_Model )
+ * page_on_front       => id of the page on front in this language ( set from pll_languages_list filter )
+ * page_for_posts      => id of the page for posts in this language ( set from pll_languages_list filter )
  *
  * @since 1.2
  */
@@ -40,6 +40,7 @@ class PLL_Language {
 	public $flag_url, $flag;
 	public $home_url, $search_url;
 	public $host, $mo_id;
+	public $page_on_front, $page_for_posts;
 
 	/*
 	 * constructor: builds a language object given its two corresponding terms in language and term_language taxonomies

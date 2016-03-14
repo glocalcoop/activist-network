@@ -100,6 +100,15 @@ class PLL_Table_Settings extends WP_List_Table {
 		}
 	}
 
+	/**
+	 * added for backward compatibility with WP < 4.2
+	 *
+	 * @since 1.8.2
+	 *
+	 * @param object $item
+	 */
+	protected function column_cb( $item ) {}
+
 	/*
 	 * displays the item information in a column ( default case )
 	 *

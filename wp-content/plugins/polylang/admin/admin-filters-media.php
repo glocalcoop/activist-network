@@ -26,7 +26,7 @@ class PLL_Admin_Filters_Media extends PLL_Admin_Filters_Post_Base {
 		add_filter( 'wp_delete_file', array( &$this, 'wp_delete_file' ) );
 
 		// creates a media translation
-		if ( isset( $_GET['action'], $_GET['new_lang'], $_GET['from_media'] ) && 'translate_media' == $_GET['action']) {
+		if ( isset( $_GET['action'], $_GET['new_lang'], $_GET['from_media'] ) && 'translate_media' === $_GET['action'] ) {
 			add_action( 'admin_init', array( &$this, 'translate_media' ) );
 		}
 	}

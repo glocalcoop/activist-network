@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: multilingual, bilingual, translate, translation, language, multilanguage, international, localization
 Requires at least: 4.0
 Tested up to: 4.4
-Stable tag: 1.8.1
+Stable tag: 1.8.4
 License: GPLv2 or later
 
 Making WordPress multilingual
@@ -71,6 +71,26 @@ See http://polylang.wordpress.com/documentation/contribute/
 
 == Changelog ==
 
+= 1.8.4 (2016-03-06) =
+
+* Revert canonical redirection of static front page when combining plain permalinks + default language hidden in url (introduced in 1.8.2)
+
+= 1.8.3 (2016-03-04) =
+
+* fix: All pages are redirected to the home page on some installations (introduced in 1.8.2)
+
+= 1.8.2 (2016-03-02) =
+
+* Add support for the 'wpml_get_default_language()' function from the WPML API
+* Stop blocking saving settings when errors are detected (invalid domains)
+* Use publicly_queryable => true instead of public => true for the language taxonomy (WP 4.5+)
+* fix: PHP notice when pll_default_language() is called before a language is created
+* fix: PHP notice undefined property PLL_Language::$page_on_front
+* fix: canonical redirection of static front page when combining plain permalinks + default language hidden in url
+* fix: YARPP compatibility broken in v1.8
+* fix: Remove the delete link for translations of the default category (introduced back by WP 4.3)
+* fix: settings not displayed with WP 4.1 or older
+
 = 1.8.1 (2016-01-31) =
 
 * Update the list of Facebook locales used for Opengraph support with Yoast SEO and Jetpack
@@ -90,7 +110,7 @@ See http://polylang.wordpress.com/documentation/contribute/
 * The Polylang and WPML API are now loaded when 'plugins_loaded' is fired (on frontend only if at least one language has been defined)
 * Add 'pll_get_post_translations()' and 'pll_get_term_translations()' to the API
 * Add filter 'pll_cookie_expiration' to change the cookie expiration time
-* Add support for 'wpml_get_language_information' function from the WPML API
+* Add support for 'wpml_get_language_information()' function from the WPML API
 * The default language is now managed directly from the languages list table
 * Various accessibility improvements
 * It is now possible to choose the languages flags from the available list (custom flags on frontend still work as previously)

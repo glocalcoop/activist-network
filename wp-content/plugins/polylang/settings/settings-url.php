@@ -185,7 +185,7 @@ class PLL_Settings_Url extends PLL_Settings_Module {
 	 */
 	protected function update( $options ) {
 		foreach ( array( 'force_lang', 'rewrite' ) as $key ) {
-			$newoptions[ $key ] = isset( $options[ $key] ) ? (int) $options[ $key ] : 0;
+			$newoptions[ $key ] = isset( $options[ $key ] ) ? (int) $options[ $key ] : 0;
 		}
 
 		if ( 3 == $options['force_lang'] && isset( $options['domains'] ) && is_array( $options['domains'] ) ) {
