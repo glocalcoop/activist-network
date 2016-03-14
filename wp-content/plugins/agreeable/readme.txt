@@ -1,7 +1,7 @@
 === Agreeable ===
-Contributors: kraftpress, buildcreate
+Contributors: kraftpress, buildcreate, 3pointross
 Tags: agree,terms,conditions,require,terms,login,log in,admin,login page,admin,buddypress,page,policy,privacy,bbpress,theme my login,signup,register,widgets,comment terms,comments,multisite,woocommerce
-Requires at least: 3.5 
+Requires at least: 3.5
 Tested up to: 4.2
 Stable tag: trunk
 License:GPLv2 or later
@@ -27,8 +27,8 @@ Add an "agree to terms" check box to your login, registration, or comment forms,
 = Please rate and review us, every one counts! =
 
 == Screenshots ==
-1. Login 
-2. Admin 
+1. Login
+2. Admin
 
 == Installation ==
 
@@ -36,6 +36,11 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 
 == Changelog ==
+
+= 1.5 =
+* WordPress VIP Compatible!
+* Added sanitization to save routine
+* Added escaping to data output on frontend and backend
 
 = 1.4 =
 * Updated comment tracking, misc bug fixes
@@ -52,7 +57,7 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 == 1.3.9.3 ==
 * Fixed lightbox issues and registration page
 
-== 1.3.8 == 
+== 1.3.8 ==
 * Fixed bug with WooCommerce extension
 
 = 1.3.7 =
@@ -72,7 +77,7 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 = 1.3.3 =
 * Misc Multisite and BuddyPress bug fixes
 
-= 1.3 = 
+= 1.3 =
 * Refactored plugin code in preparation for extensions
 * Changed Remember Me function to simple leave the box checked instead of bypassing the form entirely
 

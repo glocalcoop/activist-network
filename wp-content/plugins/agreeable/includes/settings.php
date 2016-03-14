@@ -12,11 +12,11 @@
 		
 	?>
 
-<?php $pages = get_pages('status=publish&numberposts=-1&posts_per_page=-1'); ?>
+<?php $pages = get_pages('status=publish&numberposts=1000&posts_per_page=-1'); ?>
 
 <div class="wrap agreeable-settings">
 			<div class="ag-plugin-banner">
-				<img src="<?php echo plugins_url('../images/banner.png', __FILE__); ?>" alt="Agreeable" />
+				<img src="<?php echo esc_url( plugins_url('../images/banner.png', __FILE__) ); ?>" alt="Agreeable" />
 			</div>
 			<div class="kp-cross-promote-area">
 				<?php $this->cross_promotions('agreeable'); ?>
@@ -24,9 +24,12 @@
 			
 			
 			<form id="ag-form" name="ag_form" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
+				
 				<input type="hidden" name="ag_hidden" value="Y">
 				
-				<?php    echo "<h3>" . __( 'General Settings', 'agreeable' ) . "</h3>"; ?>
+				<?php wp_nonce_field( 'ag_settings_page' ); ?>
+				
+				<h3><?php _e( 'General Settings', 'agreeable' ); ?></h3>
 				
 				<p><label for="ag_fail"><?php _e("Failed to agree error message: ", 'agreeable' ); ?></label><input type="text" name="ag_fail" value="<?php echo esc_attr($this->options['fail_text']); ?>" size="20"></br><span class='mes'><?php _e("This is what shows up if they don't check the box", 'agreeable' ); ?></span></p>
 				
@@ -34,7 +37,7 @@
 					<label for="ag_url"><?php _e("Select your terms page", 'agreeable'); ?></label>
 					<select name="ag_url">
 						<?php foreach ($pages as $p) { ?>
-							<option value="<?php echo $p->ID; ?>" <?php echo $this->options['terms_page'] == $p->ID ? 'selected="selected"' : ''; ?>><?php echo esc_attr($p->post_title); ?></option>
+							<option value="<?php echo esc_attr( $p->ID ); ?>" <?php echo $this->options['terms_page'] == $p->ID ? 'selected="selected"' : ''; ?>><?php echo esc_attr($p->post_title); ?></option>
 						<?php } ?>
 					</select>
 					<br><span class='mes'><?php _e("Create a page for your terms and conditions and select it here.", 'agreeable' ); ?></span>
