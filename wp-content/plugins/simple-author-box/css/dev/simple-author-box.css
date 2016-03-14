@@ -1,0 +1,1535 @@
+.saboxplugin-wrap {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	border: 1px solid;
+  border-color: #EEE;
+	width: 100%;
+	clear: both;
+	display: block;
+	overflow: hidden;
+  word-wrap:break-word;
+}
+
+.saboxplugin-wrap .saboxplugin-gravatar {
+	float: left;
+	padding: 20px;
+}
+
+.saboxplugin-wrap .saboxplugin-gravatar img {
+
+}
+
+.saboxplugin-wrap .saboxplugin-gravatar img:hover {
+
+}
+
+.saboxplugin-wrap .saboxplugin-authorname {
+	font-size: 18px;
+	line-height: 1;
+	margin: 20px 0 0 20px;
+	display: block;
+}
+
+.saboxplugin-wrap .saboxplugin-authorname a {
+  text-decoration: none;
+}
+
+.saboxplugin-wrap .saboxplugin-authorname a:focus {
+   outline: none;
+}
+
+.saboxplugin-wrap .saboxplugin-desc {
+  display: block;
+  margin: 5px 20px;
+}
+
+.saboxplugin-wrap .saboxplugin-desc a {
+	text-decoration: none;
+}
+
+.saboxplugin-wrap .saboxplugin-desc p {
+	margin: 5px 0 12px 0;
+}
+
+.saboxplugin-wrap .saboxplugin-web {
+  margin: 0 20px 15px;
+  text-align: left;
+}
+
+.saboxplugin-wrap .sab-web-position {
+  text-align: right;
+}
+
+.saboxplugin-wrap .saboxplugin-web a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.saboxplugin-wrap .saboxplugin-socials {
+  position:relative;
+  z-index:50;
+  display:block;
+  background: #FCFCFC;
+  padding:0 15px;
+  -webkit-box-shadow: 0 1px 0 0 #eee inset;
+  -moz-box-shadow:    0 1px 0 0 #eee inset;
+  box-shadow:         0 1px 0 0 #eee inset;
+}
+
+.saboxplugin-wrap .saboxplugin-socials a {
+  text-decoration:none;
+  padding:0;
+  margin:0;
+  border:0;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.saboxplugin-wrap .saboxplugin-socials a:hover {
+  opacity: 0.8;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+
+}
+
+.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color:before {
+  display:block;
+  width:30px;
+  height:30px;
+  line-height:33px;
+  text-align:center;
+  speak:none;
+}
+
+.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color {
+  font-family:'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  font-size:14px;
+  position:relative;
+  display:-moz-inline-stack;
+  display:inline-block;
+  vertical-align:middle;
+  *vertical-align:auto;
+  zoom:1;
+  *display:inline;
+  margin:10px 5px;
+  background-clip: content-box;
+  -moz-background-clip: content-box;
+  -webkit-background-clip: content-box;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  -ms-border-radius:0;
+  -o-border-radius:0;
+  border-radius:0;
+  overflow: hidden;
+}
+
+.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey:before {
+  display:block;
+  text-align:center;
+  speak:none;
+  line-height:1;
+}
+
+.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey {
+  font-family:'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  font-size:20px;
+  position:relative;
+  display:-moz-inline-stack;
+  display:inline-block;
+  vertical-align:middle;
+  *vertical-align:auto;
+  zoom:1;
+  *display:inline;
+  margin:10px 5px;
+  color: #444;
+}
+
+.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color,
+.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey {
+
+}
+
+.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color:hover,
+.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey:hover {
+
+}
+
+.clearfix:after,
+.clearfix:before {
+	content: ' ';
+	display: table;
+	line-height: 0;
+	clear: both;
+}
+
+.ie7 .clearfix {
+	zoom: 1;
+}
+
+.saboxplugin-wrap .saboxplugin-socials.sabox-colored .saboxplugin-icon-color {
+  color:#fff;
+}
+
+/*  FONT AWESOME FOR BOTH COLORED AND GRAY SOCIAL ICONS
+-------------------------------------------------------------- */
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-addthis:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-addthis:before {
+  content:'\f067';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-behance:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-behance:before {
+  content:'\f1b4';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-delicious:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-delicious:before {
+  content:'\f1a5';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-deviantart:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-deviantart:before {
+  content:'\f1bd';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-digg:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-digg:before {
+  content:'\f1a6';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-dribbble:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-dribbble:before {
+  content:'\f17d';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-facebook:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-facebook:before {
+  content:'\f09a';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-flickr:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-flickr:before {
+  content:'\f16e';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-github:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-github:before {
+  content:'\f09b';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-google:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-google:before {
+  content:'\f1a0';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-googleplus:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-googleplus:before {
+  content:'\f0d5';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-html5:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-html5:before {
+  content:'\f13b';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-instagram:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-instagram:before {
+  content:'\f16d';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-linkedin:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-linkedin:before {
+  content:'\f0e1';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-pinterest:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-pinterest:before {
+  content:'\f0d2';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-reddit:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-reddit:before {
+  content:'\f1a1';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-rss:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-rss:before {
+  content:'\f09e';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-sharethis:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-sharethis:before {
+  content:'\f1e0';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-skype:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-skype:before {
+  content:'\f17e';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-soundcloud:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-soundcloud:before {
+  content:'\f1be';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-spotify:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-spotify:before {
+  content:'\f1bc';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-stackoverflow:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-stackoverflow:before {
+  content:'\f16c';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-steam:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-steam:before {
+  content:'\f1b6';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-stumbleUpon:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-stumbleUpon:before {
+  content:'\f1a4';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-tumblr:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-tumblr:before {
+  content:'\f173';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-twitter:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-twitter:before {
+  content:'\f099';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-vimeo:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-vimeo:before {
+  content:'\f194';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-windows:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-windows:before {
+  content:'\f17a';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-wordpress:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-wordpress:before {
+  content:'\f19a';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-yahoo:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-yahoo:before {
+  content:'\f19e';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-youtube:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-youtube:before {
+  content:'\f167';
+}
+
+.saboxplugin-socials .saboxplugin-icon-grey.saboxplugin-icon-xing:before,
+.saboxplugin-socials .saboxplugin-icon-color.saboxplugin-icon-xing:before {
+  content:'\f168';
+}
+
+/*  COLORED BACKGROUND AND LONG SHADOW EFFECT FOR SOCIAL ICONS
+-------------------------------------------------------------- */
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-addthis {
+  background:#FF8662;
+  border: 1px solid #D5644B;
+  text-shadow:
+  rgb(213, 100, 75) 1px 1px,
+  rgb(213, 100, 75) 2px 2px,
+  rgb(213, 100, 75) 3px 3px,
+  rgb(213, 100, 75) 4px 4px,
+  rgb(213, 100, 75) 5px 5px,
+  rgb(213, 100, 75) 6px 6px,
+  rgb(213, 100, 75) 7px 7px,
+  rgb(213, 100, 75) 8px 8px,
+  rgb(213, 100, 75) 9px 9px,
+  rgb(213, 100, 75) 10px 10px,
+  rgb(213, 100, 75) 11px 11px,
+  rgb(213, 100, 75) 12px 12px,
+  rgb(213, 100, 75) 13px 13px,
+  rgb(213, 100, 75) 14px 14px,
+  rgb(213, 100, 75) 15px 15px,
+  rgb(213, 100, 75) 16px 16px,
+  rgb(213, 100, 75) 17px 17px,
+  rgb(213, 100, 75) 18px 18px,
+  rgb(213, 100, 75) 19px 19px,
+  rgb(213, 100, 75) 20px 20px,
+  rgb(213, 100, 75) 21px 21px,
+  rgb(213, 100, 75) 22px 22px,
+  rgb(213, 100, 75) 23px 23px,
+  rgb(213, 100, 75) 24px 24px,
+  rgb(213, 100, 75) 25px 25px,
+  rgb(213, 100, 75) 26px 26px,
+  rgb(213, 100, 75) 27px 27px,
+  rgb(213, 100, 75) 28px 28px,
+  rgb(213, 100, 75) 29px 29px,
+  rgb(213, 100, 75) 30px 30px;
+}
+
+   .saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-behance {
+    background:#0294FF;
+    border: 1px solid #0083D4;
+    text-shadow:
+    rgb(0, 131, 212) 1px 1px,
+    rgb(0, 131, 212) 2px 2px,
+    rgb(0, 131, 212) 3px 3px,
+    rgb(0, 131, 212) 4px 4px,
+    rgb(0, 131, 212) 5px 5px,
+    rgb(0, 131, 212) 6px 6px,
+    rgb(0, 131, 212) 7px 7px,
+    rgb(0, 131, 212) 8px 8px,
+    rgb(0, 131, 212) 9px 9px,
+    rgb(0, 131, 212) 10px 10px,
+    rgb(0, 131, 212) 11px 11px,
+    rgb(0, 131, 212) 12px 12px,
+    rgb(0, 131, 212) 13px 13px,
+    rgb(0, 131, 212) 14px 14px,
+    rgb(0, 131, 212) 15px 15px,
+    rgb(0, 131, 212) 16px 16px,
+    rgb(0, 131, 212) 17px 17px,
+    rgb(0, 131, 212) 18px 18px,
+    rgb(0, 131, 212) 19px 19px,
+    rgb(0, 131, 212) 20px 20px,
+    rgb(0, 131, 212) 21px 21px,
+    rgb(0, 131, 212) 22px 22px,
+    rgb(0, 131, 212) 23px 23px,
+    rgb(0, 131, 212) 24px 24px,
+    rgb(0, 131, 212) 25px 25px,
+    rgb(0, 131, 212) 26px 26px,
+    rgb(0, 131, 212) 27px 27px,
+    rgb(0, 131, 212) 28px 28px,
+    rgb(0, 131, 212) 29px 29px,
+    rgb(0, 131, 212) 30px 30px;
+  }
+
+  .saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-delicious {
+    background:#0294FF;
+    border: 1px solid #007ECD;
+    text-shadow:
+    rgb(0, 126, 205) 1px 1px,
+    rgb(0, 126, 205) 2px 2px,
+    rgb(0, 126, 205) 3px 3px,
+    rgb(0, 126, 205) 4px 4px,
+    rgb(0, 126, 205) 5px 5px,
+    rgb(0, 126, 205) 6px 6px,
+    rgb(0, 126, 205) 7px 7px,
+    rgb(0, 126, 205) 8px 8px,
+    rgb(0, 126, 205) 9px 9px,
+    rgb(0, 126, 205) 10px 10px,
+    rgb(0, 126, 205) 11px 11px,
+    rgb(0, 126, 205) 12px 12px,
+    rgb(0, 126, 205) 13px 13px,
+    rgb(0, 126, 205) 14px 14px,
+    rgb(0, 126, 205) 15px 15px,
+    rgb(0, 126, 205) 16px 16px,
+    rgb(0, 126, 205) 17px 17px,
+    rgb(0, 126, 205) 18px 18px,
+    rgb(0, 126, 205) 19px 19px,
+    rgb(0, 126, 205) 20px 20px,
+    rgb(0, 126, 205) 21px 21px,
+    rgb(0, 126, 205) 22px 22px,
+    rgb(0, 126, 205) 23px 23px,
+    rgb(0, 126, 205) 24px 24px,
+    rgb(0, 126, 205) 25px 25px,
+    rgb(0, 126, 205) 26px 26px,
+    rgb(0, 126, 205) 27px 27px,
+    rgb(0, 126, 205) 28px 28px,
+    rgb(0, 126, 205) 29px 29px,
+    rgb(0, 126, 205) 30px 30px;
+  }
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-deviantart {
+  background:#DCE22B;
+  border: 1px solid #B2B423;
+  text-shadow:
+  rgb(178, 180, 35) 1px 1px,
+  rgb(178, 180, 35) 2px 2px,
+  rgb(178, 180, 35) 3px 3px,
+  rgb(178, 180, 35) 4px 4px,
+  rgb(178, 180, 35) 5px 5px,
+  rgb(178, 180, 35) 6px 6px,
+  rgb(178, 180, 35) 7px 7px,
+  rgb(178, 180, 35) 8px 8px,
+  rgb(178, 180, 35) 9px 9px,
+  rgb(178, 180, 35) 10px 10px,
+  rgb(178, 180, 35) 11px 11px,
+  rgb(178, 180, 35) 12px 12px,
+  rgb(178, 180, 35) 13px 13px,
+  rgb(178, 180, 35) 14px 14px,
+  rgb(178, 180, 35) 15px 15px,
+  rgb(178, 180, 35) 16px 16px,
+  rgb(178, 180, 35) 17px 17px,
+  rgb(178, 180, 35) 18px 18px,
+  rgb(178, 180, 35) 19px 19px,
+  rgb(178, 180, 35) 20px 20px,
+  rgb(178, 180, 35) 21px 21px,
+  rgb(178, 180, 35) 22px 22px,
+  rgb(178, 180, 35) 23px 23px,
+  rgb(178, 180, 35) 24px 24px,
+  rgb(178, 180, 35) 25px 25px,
+  rgb(178, 180, 35) 26px 26px,
+  rgb(178, 180, 35) 27px 27px,
+  rgb(178, 180, 35) 28px 28px,
+  rgb(178, 180, 35) 29px 29px,
+  rgb(178, 180, 35) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-digg {
+  background:#1B8EC4;
+  border: 1px solid #126C92;
+  text-shadow:
+  rgb(18, 108, 146) 1px 1px,
+  rgb(18, 108, 146) 2px 2px,
+  rgb(18, 108, 146) 3px 3px,
+  rgb(18, 108, 146) 4px 4px,
+  rgb(18, 108, 146) 5px 5px,
+  rgb(18, 108, 146) 6px 6px,
+  rgb(18, 108, 146) 7px 7px,
+  rgb(18, 108, 146) 8px 8px,
+  rgb(18, 108, 146) 9px 9px,
+  rgb(18, 108, 146) 10px 10px,
+  rgb(18, 108, 146) 11px 11px,
+  rgb(18, 108, 146) 12px 12px,
+  rgb(18, 108, 146) 13px 13px,
+  rgb(18, 108, 146) 14px 14px,
+  rgb(18, 108, 146) 15px 15px,
+  rgb(18, 108, 146) 16px 16px,
+  rgb(18, 108, 146) 17px 17px,
+  rgb(18, 108, 146) 18px 18px,
+  rgb(18, 108, 146) 19px 19px,
+  rgb(18, 108, 146) 20px 20px,
+  rgb(18, 108, 146) 21px 21px,
+  rgb(18, 108, 146) 22px 22px,
+  rgb(18, 108, 146) 23px 23px,
+  rgb(18, 108, 146) 24px 24px,
+  rgb(18, 108, 146) 25px 25px,
+  rgb(18, 108, 146) 26px 26px,
+  rgb(18, 108, 146) 27px 27px,
+  rgb(18, 108, 146) 28px 28px,
+  rgb(18, 108, 146) 29px 29px,
+  rgb(18, 108, 146) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-dribbble {
+  background:#EF76A4;
+  border: 1px solid #C05C84;
+  text-shadow:
+  rgb(192, 92, 132) 1px 1px,
+  rgb(192, 92, 132) 2px 2px,
+  rgb(192, 92, 132) 3px 3px,
+  rgb(192, 92, 132) 4px 4px,
+  rgb(192, 92, 132) 5px 5px,
+  rgb(192, 92, 132) 6px 6px,
+  rgb(192, 92, 132) 7px 7px,
+  rgb(192, 92, 132) 8px 8px,
+  rgb(192, 92, 132) 9px 9px,
+  rgb(192, 92, 132) 10px 10px,
+  rgb(192, 92, 132) 11px 11px,
+  rgb(192, 92, 132) 12px 12px,
+  rgb(192, 92, 132) 13px 13px,
+  rgb(192, 92, 132) 14px 14px,
+  rgb(192, 92, 132) 15px 15px,
+  rgb(192, 92, 132) 16px 16px,
+  rgb(192, 92, 132) 17px 17px,
+  rgb(192, 92, 132) 18px 18px,
+  rgb(192, 92, 132) 19px 19px,
+  rgb(192, 92, 132) 20px 20px,
+  rgb(192, 92, 132) 21px 21px,
+  rgb(192, 92, 132) 22px 22px,
+  rgb(192, 92, 132) 23px 23px,
+  rgb(192, 92, 132) 24px 24px,
+  rgb(192, 92, 132) 25px 25px,
+  rgb(192, 92, 132) 26px 26px,
+  rgb(192, 92, 132) 27px 27px,
+  rgb(192, 92, 132) 28px 28px,
+  rgb(192, 92, 132) 29px 29px,
+  rgb(192, 92, 132) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-facebook {
+  background:#3B5998;
+  border: 1px solid #1E3D7A;
+  text-shadow:
+  rgb(30, 61, 122) 1px 1px,
+  rgb(30, 61, 122) 2px 2px,
+  rgb(30, 61, 122) 3px 3px,
+  rgb(30, 61, 122) 4px 4px,
+  rgb(30, 61, 122) 5px 5px,
+  rgb(30, 61, 122) 6px 6px,
+  rgb(30, 61, 122) 7px 7px,
+  rgb(30, 61, 122) 8px 8px,
+  rgb(30, 61, 122) 9px 9px,
+  rgb(30, 61, 122) 10px 10px,
+  rgb(30, 61, 122) 11px 11px,
+  rgb(30, 61, 122) 12px 12px,
+  rgb(30, 61, 122) 13px 13px,
+  rgb(30, 61, 122) 14px 14px,
+  rgb(30, 61, 122) 15px 15px,
+  rgb(30, 61, 122) 16px 16px,
+  rgb(30, 61, 122) 17px 17px,
+  rgb(30, 61, 122) 18px 18px,
+  rgb(30, 61, 122) 19px 19px,
+  rgb(30, 61, 122) 20px 20px,
+  rgb(30, 61, 122) 21px 21px,
+  rgb(30, 61, 122) 22px 22px,
+  rgb(30, 61, 122) 23px 23px,
+  rgb(30, 61, 122) 24px 24px,
+  rgb(30, 61, 122) 25px 25px,
+  rgb(30, 61, 122) 26px 26px,
+  rgb(30, 61, 122) 27px 27px,
+  rgb(30, 61, 122) 28px 28px,
+  rgb(30, 61, 122) 29px 29px,
+  rgb(30, 61, 122) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-flickr {
+  background:#FF0586;
+  border: 1px solid #D0006F;
+  text-shadow:
+  rgb(208, 0, 111) 1px 1px,
+  rgb(208, 0, 111) 2px 2px,
+  rgb(208, 0, 111) 3px 3px,
+  rgb(208, 0, 111) 4px 4px,
+  rgb(208, 0, 111) 5px 5px,
+  rgb(208, 0, 111) 6px 6px,
+  rgb(208, 0, 111) 7px 7px,
+  rgb(208, 0, 111) 8px 8px,
+  rgb(208, 0, 111) 9px 9px,
+  rgb(208, 0, 111) 10px 10px,
+  rgb(208, 0, 111) 11px 11px,
+  rgb(208, 0, 111) 12px 12px,
+  rgb(208, 0, 111) 13px 13px,
+  rgb(208, 0, 111) 14px 14px,
+  rgb(208, 0, 111) 15px 15px,
+  rgb(208, 0, 111) 16px 16px,
+  rgb(208, 0, 111) 17px 17px,
+  rgb(208, 0, 111) 18px 18px,
+  rgb(208, 0, 111) 19px 19px,
+  rgb(208, 0, 111) 20px 20px,
+  rgb(208, 0, 111) 21px 21px,
+  rgb(208, 0, 111) 22px 22px,
+  rgb(208, 0, 111) 23px 23px,
+  rgb(208, 0, 111) 24px 24px,
+  rgb(208, 0, 111) 25px 25px,
+  rgb(208, 0, 111) 26px 26px,
+  rgb(208, 0, 111) 27px 27px,
+  rgb(208, 0, 111) 28px 28px,
+  rgb(208, 0, 111) 29px 29px,
+  rgb(208, 0, 111) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-github {
+  background:#829AA8;
+  border: 1px solid #4F7385;
+  text-shadow:
+  rgb(79, 115, 133) 1px 1px,
+  rgb(79, 115, 133) 2px 2px,
+  rgb(79, 115, 133) 3px 3px,
+  rgb(79, 115, 133) 4px 4px,
+  rgb(79, 115, 133) 5px 5px,
+  rgb(79, 115, 133) 6px 6px,
+  rgb(79, 115, 133) 7px 7px,
+  rgb(79, 115, 133) 8px 8px,
+  rgb(79, 115, 133) 9px 9px,
+  rgb(79, 115, 133) 10px 10px,
+  rgb(79, 115, 133) 11px 11px,
+  rgb(79, 115, 133) 12px 12px,
+  rgb(79, 115, 133) 13px 13px,
+  rgb(79, 115, 133) 14px 14px,
+  rgb(79, 115, 133) 15px 15px,
+  rgb(79, 115, 133) 16px 16px,
+  rgb(79, 115, 133) 17px 17px,
+  rgb(79, 115, 133) 18px 18px,
+  rgb(79, 115, 133) 19px 19px,
+  rgb(79, 115, 133) 20px 20px,
+  rgb(79, 115, 133) 21px 21px,
+  rgb(79, 115, 133) 22px 22px,
+  rgb(79, 115, 133) 23px 23px,
+  rgb(79, 115, 133) 24px 24px,
+  rgb(79, 115, 133) 25px 25px,
+  rgb(79, 115, 133) 26px 26px,
+  rgb(79, 115, 133) 27px 27px,
+  rgb(79, 115, 133) 28px 28px,
+  rgb(79, 115, 133) 29px 29px,
+  rgb(79, 115, 133) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-google {
+  background:#E8262F;
+  border: 1px solid #C20C18;
+  text-shadow:
+  rgb(194, 12, 24) 1px 1px,
+  rgb(194, 12, 24) 2px 2px,
+  rgb(194, 12, 24) 3px 3px,
+  rgb(194, 12, 24) 4px 4px,
+  rgb(194, 12, 24) 5px 5px,
+  rgb(194, 12, 24) 6px 6px,
+  rgb(194, 12, 24) 7px 7px,
+  rgb(194, 12, 24) 8px 8px,
+  rgb(194, 12, 24) 9px 9px,
+  rgb(194, 12, 24) 10px 10px,
+  rgb(194, 12, 24) 11px 11px,
+  rgb(194, 12, 24) 12px 12px,
+  rgb(194, 12, 24) 13px 13px,
+  rgb(194, 12, 24) 14px 14px,
+  rgb(194, 12, 24) 15px 15px,
+  rgb(194, 12, 24) 16px 16px,
+  rgb(194, 12, 24) 17px 17px,
+  rgb(194, 12, 24) 18px 18px,
+  rgb(194, 12, 24) 19px 19px,
+  rgb(194, 12, 24) 20px 20px,
+  rgb(194, 12, 24) 21px 21px,
+  rgb(194, 12, 24) 22px 22px,
+  rgb(194, 12, 24) 23px 23px,
+  rgb(194, 12, 24) 24px 24px,
+  rgb(194, 12, 24) 25px 25px,
+  rgb(194, 12, 24) 26px 26px,
+  rgb(194, 12, 24) 27px 27px,
+  rgb(194, 12, 24) 28px 28px,
+  rgb(194, 12, 24) 29px 29px,
+  rgb(194, 12, 24) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-googleplus {
+  background:#DD4B39;
+  border: 1px solid #B32414;
+  text-shadow:
+  rgb(179, 36, 20) 1px 1px,
+  rgb(179, 36, 20) 2px 2px,
+  rgb(179, 36, 20) 3px 3px,
+  rgb(179, 36, 20) 4px 4px,
+  rgb(179, 36, 20) 5px 5px,
+  rgb(179, 36, 20) 6px 6px,
+  rgb(179, 36, 20) 7px 7px,
+  rgb(179, 36, 20) 8px 8px,
+  rgb(179, 36, 20) 9px 9px,
+  rgb(179, 36, 20) 10px 10px,
+  rgb(179, 36, 20) 11px 11px,
+  rgb(179, 36, 20) 12px 12px,
+  rgb(179, 36, 20) 13px 13px,
+  rgb(179, 36, 20) 14px 14px,
+  rgb(179, 36, 20) 15px 15px,
+  rgb(179, 36, 20) 16px 16px,
+  rgb(179, 36, 20) 17px 17px,
+  rgb(179, 36, 20) 18px 18px,
+  rgb(179, 36, 20) 19px 19px,
+  rgb(179, 36, 20) 20px 20px,
+  rgb(179, 36, 20) 21px 21px,
+  rgb(179, 36, 20) 22px 22px,
+  rgb(179, 36, 20) 23px 23px,
+  rgb(179, 36, 20) 24px 24px,
+  rgb(179, 36, 20) 25px 25px,
+  rgb(179, 36, 20) 26px 26px,
+  rgb(179, 36, 20) 27px 27px,
+  rgb(179, 36, 20) 28px 28px,
+  rgb(179, 36, 20) 29px 29px,
+  rgb(179, 36, 20) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-html5 {
+  background:#F16528;
+  border: 1px solid #C23D08;
+  text-shadow:
+  rgb(194, 61, 8) 1px 1px,
+  rgb(194, 61, 8) 2px 2px,
+  rgb(194, 61, 8) 3px 3px,
+  rgb(194, 61, 8) 4px 4px,
+  rgb(194, 61, 8) 5px 5px,
+  rgb(194, 61, 8) 6px 6px,
+  rgb(194, 61, 8) 7px 7px,
+  rgb(194, 61, 8) 8px 8px,
+  rgb(194, 61, 8) 9px 9px,
+  rgb(194, 61, 8) 10px 10px,
+  rgb(194, 61, 8) 11px 11px,
+  rgb(194, 61, 8) 12px 12px,
+  rgb(194, 61, 8) 13px 13px,
+  rgb(194, 61, 8) 14px 14px,
+  rgb(194, 61, 8) 15px 15px,
+  rgb(194, 61, 8) 16px 16px,
+  rgb(194, 61, 8) 17px 17px,
+  rgb(194, 61, 8) 18px 18px,
+  rgb(194, 61, 8) 19px 19px,
+  rgb(194, 61, 8) 20px 20px,
+  rgb(194, 61, 8) 21px 21px,
+  rgb(194, 61, 8) 22px 22px,
+  rgb(194, 61, 8) 23px 23px,
+  rgb(194, 61, 8) 24px 24px,
+  rgb(194, 61, 8) 25px 25px,
+  rgb(194, 61, 8) 26px 26px,
+  rgb(194, 61, 8) 27px 27px,
+  rgb(194, 61, 8) 28px 28px,
+  rgb(194, 61, 8) 29px 29px,
+  rgb(194, 61, 8) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-instagram {
+  background:#417096;
+  border: 1px solid #244F70;
+  text-shadow:
+  rgb(36, 79, 112) 1px 1px,
+  rgb(36, 79, 112) 2px 2px,
+  rgb(36, 79, 112) 3px 3px,
+  rgb(36, 79, 112) 4px 4px,
+  rgb(36, 79, 112) 5px 5px,
+  rgb(36, 79, 112) 6px 6px,
+  rgb(36, 79, 112) 7px 7px,
+  rgb(36, 79, 112) 8px 8px,
+  rgb(36, 79, 112) 9px 9px,
+  rgb(36, 79, 112) 10px 10px,
+  rgb(36, 79, 112) 11px 11px,
+  rgb(36, 79, 112) 12px 12px,
+  rgb(36, 79, 112) 13px 13px,
+  rgb(36, 79, 112) 14px 14px,
+  rgb(36, 79, 112) 15px 15px,
+  rgb(36, 79, 112) 16px 16px,
+  rgb(36, 79, 112) 17px 17px,
+  rgb(36, 79, 112) 18px 18px,
+  rgb(36, 79, 112) 19px 19px,
+  rgb(36, 79, 112) 20px 20px,
+  rgb(36, 79, 112) 21px 21px,
+  rgb(36, 79, 112) 22px 22px,
+  rgb(36, 79, 112) 23px 23px,
+  rgb(36, 79, 112) 24px 24px,
+  rgb(36, 79, 112) 25px 25px,
+  rgb(36, 79, 112) 26px 26px,
+  rgb(36, 79, 112) 27px 27px,
+  rgb(36, 79, 112) 28px 28px,
+  rgb(36, 79, 112) 29px 29px,
+  rgb(36, 79, 112) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-linkedin {
+  background:#1583BB;
+  border: 1px solid #036390;
+  text-shadow:
+  rgb(3, 99, 144) 1px 1px,
+  rgb(3, 99, 144) 2px 2px,
+  rgb(3, 99, 144) 3px 3px,
+  rgb(3, 99, 144) 4px 4px,
+  rgb(3, 99, 144) 5px 5px,
+  rgb(3, 99, 144) 6px 6px,
+  rgb(3, 99, 144) 7px 7px,
+  rgb(3, 99, 144) 8px 8px,
+  rgb(3, 99, 144) 9px 9px,
+  rgb(3, 99, 144) 10px 10px,
+  rgb(3, 99, 144) 11px 11px,
+  rgb(3, 99, 144) 12px 12px,
+  rgb(3, 99, 144) 13px 13px,
+  rgb(3, 99, 144) 14px 14px,
+  rgb(3, 99, 144) 15px 15px,
+  rgb(3, 99, 144) 16px 16px,
+  rgb(3, 99, 144) 17px 17px,
+  rgb(3, 99, 144) 18px 18px,
+  rgb(3, 99, 144) 19px 19px,
+  rgb(3, 99, 144) 20px 20px,
+  rgb(3, 99, 144) 21px 21px,
+  rgb(3, 99, 144) 22px 22px,
+  rgb(3, 99, 144) 23px 23px,
+  rgb(3, 99, 144) 24px 24px,
+  rgb(3, 99, 144) 25px 25px,
+  rgb(3, 99, 144) 26px 26px,
+  rgb(3, 99, 144) 27px 27px,
+  rgb(3, 99, 144) 28px 28px,
+  rgb(3, 99, 144) 29px 29px,
+  rgb(3, 99, 144) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-pinterest {
+  background:#CB2027;
+  border: 1px solid #9D060E;
+  text-shadow:
+  rgb(157, 6, 62) 1px 1px,
+  rgb(157, 6, 62) 2px 2px,
+  rgb(157, 6, 62) 3px 3px,
+  rgb(157, 6, 62) 4px 4px,
+  rgb(157, 6, 62) 5px 5px,
+  rgb(157, 6, 62) 6px 6px,
+  rgb(157, 6, 62) 7px 7px,
+  rgb(157, 6, 62) 8px 8px,
+  rgb(157, 6, 62) 9px 9px,
+  rgb(157, 6, 62) 10px 10px,
+  rgb(157, 6, 62) 11px 11px,
+  rgb(157, 6, 62) 12px 12px,
+  rgb(157, 6, 62) 13px 13px,
+  rgb(157, 6, 62) 14px 14px,
+  rgb(157, 6, 62) 15px 15px,
+  rgb(157, 6, 62) 16px 16px,
+  rgb(157, 6, 62) 17px 17px,
+  rgb(157, 6, 62) 18px 18px,
+  rgb(157, 6, 62) 19px 19px,
+  rgb(157, 6, 62) 20px 20px,
+  rgb(157, 6, 62) 21px 21px,
+  rgb(157, 6, 62) 22px 22px,
+  rgb(157, 6, 62) 23px 23px,
+  rgb(157, 6, 62) 24px 24px,
+  rgb(157, 6, 62) 25px 25px,
+  rgb(157, 6, 62) 26px 26px,
+  rgb(157, 6, 62) 27px 27px,
+  rgb(157, 6, 62) 28px 28px,
+  rgb(157, 6, 62) 29px 29px,
+  rgb(157, 6, 62) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-reddit {
+  background:#FF4107;
+  border: 1px solid #C62D02;
+  text-shadow:
+  rgb(198, 45, 2) 1px 1px,
+  rgb(198, 45, 2) 2px 2px,
+  rgb(198, 45, 2) 3px 3px,
+  rgb(198, 45, 2) 4px 4px,
+  rgb(198, 45, 2) 5px 5px,
+  rgb(198, 45, 2) 6px 6px,
+  rgb(198, 45, 2) 7px 7px,
+  rgb(198, 45, 2) 8px 8px,
+  rgb(198, 45, 2) 9px 9px,
+  rgb(198, 45, 2) 10px 10px,
+  rgb(198, 45, 2) 11px 11px,
+  rgb(198, 45, 2) 12px 12px,
+  rgb(198, 45, 2) 13px 13px,
+  rgb(198, 45, 2) 14px 14px,
+  rgb(198, 45, 2) 15px 15px,
+  rgb(198, 45, 2) 16px 16px,
+  rgb(198, 45, 2) 17px 17px,
+  rgb(198, 45, 2) 18px 18px,
+  rgb(198, 45, 2) 19px 19px,
+  rgb(198, 45, 2) 20px 20px,
+  rgb(198, 45, 2) 21px 21px,
+  rgb(198, 45, 2) 22px 22px,
+  rgb(198, 45, 2) 23px 23px,
+  rgb(198, 45, 2) 24px 24px,
+  rgb(198, 45, 2) 25px 25px,
+  rgb(198, 45, 2) 26px 26px,
+  rgb(198, 45, 2) 27px 27px,
+  rgb(198, 45, 2) 28px 28px,
+  rgb(198, 45, 2) 29px 29px,
+  rgb(198, 45, 2) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-rss {
+  background:#FF7A21;
+  border: 1px solid #C24B02;
+  text-shadow:
+  rgb(194, 75, 2) 1px 1px,
+  rgb(194, 75, 2) 2px 2px,
+  rgb(194, 75, 2) 3px 3px,
+  rgb(194, 75, 2) 4px 4px,
+  rgb(194, 75, 2) 5px 5px,
+  rgb(194, 75, 2) 6px 6px,
+  rgb(194, 75, 2) 7px 7px,
+  rgb(194, 75, 2) 8px 8px,
+  rgb(194, 75, 2) 9px 9px,
+  rgb(194, 75, 2) 10px 10px,
+  rgb(194, 75, 2) 11px 11px,
+  rgb(194, 75, 2) 12px 12px,
+  rgb(194, 75, 2) 13px 13px,
+  rgb(194, 75, 2) 14px 14px,
+  rgb(194, 75, 2) 15px 15px,
+  rgb(194, 75, 2) 16px 16px,
+  rgb(194, 75, 2) 17px 17px,
+  rgb(194, 75, 2) 18px 18px,
+  rgb(194, 75, 2) 19px 19px,
+  rgb(194, 75, 2) 20px 20px,
+  rgb(194, 75, 2) 21px 21px,
+  rgb(194, 75, 2) 22px 22px,
+  rgb(194, 75, 2) 23px 23px,
+  rgb(194, 75, 2) 24px 24px,
+  rgb(194, 75, 2) 25px 25px,
+  rgb(194, 75, 2) 26px 26px,
+  rgb(194, 75, 2) 27px 27px,
+  rgb(194, 75, 2) 28px 28px,
+  rgb(194, 75, 2) 29px 29px,
+  rgb(194, 75, 2) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-sharethis {
+  background:#1D9565;
+  border: 1px solid #076840;
+  text-shadow:
+  rgb(7, 104, 64) 1px 1px,
+  rgb(7, 104, 64) 2px 2px,
+  rgb(7, 104, 64) 3px 3px,
+  rgb(7, 104, 64) 4px 4px,
+  rgb(7, 104, 64) 5px 5px,
+  rgb(7, 104, 64) 6px 6px,
+  rgb(7, 104, 64) 7px 7px,
+  rgb(7, 104, 64) 8px 8px,
+  rgb(7, 104, 64) 9px 9px,
+  rgb(7, 104, 64) 10px 10px,
+  rgb(7, 104, 64) 11px 11px,
+  rgb(7, 104, 64) 12px 12px,
+  rgb(7, 104, 64) 13px 13px,
+  rgb(7, 104, 64) 14px 14px,
+  rgb(7, 104, 64) 15px 15px,
+  rgb(7, 104, 64) 16px 16px,
+  rgb(7, 104, 64) 17px 17px,
+  rgb(7, 104, 64) 18px 18px,
+  rgb(7, 104, 64) 19px 19px,
+  rgb(7, 104, 64) 20px 20px,
+  rgb(7, 104, 64) 21px 21px,
+  rgb(7, 104, 64) 22px 22px,
+  rgb(7, 104, 64) 23px 23px,
+  rgb(7, 104, 64) 24px 24px,
+  rgb(7, 104, 64) 25px 25px,
+  rgb(7, 104, 64) 26px 26px,
+  rgb(7, 104, 64) 27px 27px,
+  rgb(7, 104, 64) 28px 28px,
+  rgb(7, 104, 64) 29px 29px,
+  rgb(7, 104, 64) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-skype {
+  background:#3FC1F4;
+  border: 1px solid #1B95C2;
+  text-shadow:
+  rgb(27, 149, 194) 1px 1px,
+  rgb(27, 149, 194) 2px 2px,
+  rgb(27, 149, 194) 3px 3px,
+  rgb(27, 149, 194) 4px 4px,
+  rgb(27, 149, 194) 5px 5px,
+  rgb(27, 149, 194) 6px 6px,
+  rgb(27, 149, 194) 7px 7px,
+  rgb(27, 149, 194) 8px 8px,
+  rgb(27, 149, 194) 9px 9px,
+  rgb(27, 149, 194) 10px 10px,
+  rgb(27, 149, 194) 11px 11px,
+  rgb(27, 149, 194) 12px 12px,
+  rgb(27, 149, 194) 13px 13px,
+  rgb(27, 149, 194) 14px 14px,
+  rgb(27, 149, 194) 15px 15px,
+  rgb(27, 149, 194) 16px 16px,
+  rgb(27, 149, 194) 17px 17px,
+  rgb(27, 149, 194) 18px 18px,
+  rgb(27, 149, 194) 19px 19px,
+  rgb(27, 149, 194) 20px 20px,
+  rgb(27, 149, 194) 21px 21px,
+  rgb(27, 149, 194) 22px 22px,
+  rgb(27, 149, 194) 23px 23px,
+  rgb(27, 149, 194) 24px 24px,
+  rgb(27, 149, 194) 25px 25px,
+  rgb(27, 149, 194) 26px 26px,
+  rgb(27, 149, 194) 27px 27px,
+  rgb(27, 149, 194) 28px 28px,
+  rgb(27, 149, 194) 29px 29px,
+  rgb(27, 149, 194) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-soundcloud {
+  background:#FF5419;
+  border: 1px solid #C73002;
+  text-shadow:
+  rgb(199, 48, 2) 1px 1px,
+  rgb(199, 48, 2) 2px 2px,
+  rgb(199, 48, 2) 3px 3px,
+  rgb(199, 48, 2) 4px 4px,
+  rgb(199, 48, 2) 5px 5px,
+  rgb(199, 48, 2) 6px 6px,
+  rgb(199, 48, 2) 7px 7px,
+  rgb(199, 48, 2) 8px 8px,
+  rgb(199, 48, 2) 9px 9px,
+  rgb(199, 48, 2) 10px 10px,
+  rgb(199, 48, 2) 11px 11px,
+  rgb(199, 48, 2) 12px 12px,
+  rgb(199, 48, 2) 13px 13px,
+  rgb(199, 48, 2) 14px 14px,
+  rgb(199, 48, 2) 15px 15px,
+  rgb(199, 48, 2) 16px 16px,
+  rgb(199, 48, 2) 17px 17px,
+  rgb(199, 48, 2) 18px 18px,
+  rgb(199, 48, 2) 19px 19px,
+  rgb(199, 48, 2) 20px 20px,
+  rgb(199, 48, 2) 21px 21px,
+  rgb(199, 48, 2) 22px 22px,
+  rgb(199, 48, 2) 23px 23px,
+  rgb(199, 48, 2) 24px 24px,
+  rgb(199, 48, 2) 25px 25px,
+  rgb(199, 48, 2) 26px 26px,
+  rgb(199, 48, 2) 27px 27px,
+  rgb(199, 48, 2) 28px 28px,
+  rgb(199, 48, 2) 29px 29px,
+  rgb(199, 48, 2) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-spotify {
+  background:#AECF02;
+  border: 1px solid #829900;
+  text-shadow:
+  rgb(130, 153, 0) 1px 1px,
+  rgb(130, 153, 0) 2px 2px,
+  rgb(130, 153, 0) 3px 3px,
+  rgb(130, 153, 0) 4px 4px,
+  rgb(130, 153, 0) 5px 5px,
+  rgb(130, 153, 0) 6px 6px,
+  rgb(130, 153, 0) 7px 7px,
+  rgb(130, 153, 0) 8px 8px,
+  rgb(130, 153, 0) 9px 9px,
+  rgb(130, 153, 0) 10px 10px,
+  rgb(130, 153, 0) 11px 11px,
+  rgb(130, 153, 0) 12px 12px,
+  rgb(130, 153, 0) 13px 13px,
+  rgb(130, 153, 0) 14px 14px,
+  rgb(130, 153, 0) 15px 15px,
+  rgb(130, 153, 0) 16px 16px,
+  rgb(130, 153, 0) 17px 17px,
+  rgb(130, 153, 0) 18px 18px,
+  rgb(130, 153, 0) 19px 19px,
+  rgb(130, 153, 0) 20px 20px,
+  rgb(130, 153, 0) 21px 21px,
+  rgb(130, 153, 0) 22px 22px,
+  rgb(130, 153, 0) 23px 23px,
+  rgb(130, 153, 0) 24px 24px,
+  rgb(130, 153, 0) 25px 25px,
+  rgb(130, 153, 0) 26px 26px,
+  rgb(130, 153, 0) 27px 27px,
+  rgb(130, 153, 0) 28px 28px,
+  rgb(130, 153, 0) 29px 29px,
+  rgb(130, 153, 0) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-stackoverflow {
+  background:#FF661E;
+  border: 1px solid #CE3A00;
+  text-shadow:
+  rgb(206, 58, 0) 1px 1px,
+  rgb(206, 58, 0) 2px 2px,
+  rgb(206, 58, 0) 3px 3px,
+  rgb(206, 58, 0) 4px 4px,
+  rgb(206, 58, 0) 5px 5px,
+  rgb(206, 58, 0) 6px 6px,
+  rgb(206, 58, 0) 7px 7px,
+  rgb(206, 58, 0) 8px 8px,
+  rgb(206, 58, 0) 9px 9px,
+  rgb(206, 58, 0) 10px 10px,
+  rgb(206, 58, 0) 11px 11px,
+  rgb(206, 58, 0) 12px 12px,
+  rgb(206, 58, 0) 13px 13px,
+  rgb(206, 58, 0) 14px 14px,
+  rgb(206, 58, 0) 15px 15px,
+  rgb(206, 58, 0) 16px 16px,
+  rgb(206, 58, 0) 17px 17px,
+  rgb(206, 58, 0) 18px 18px,
+  rgb(206, 58, 0) 19px 19px,
+  rgb(206, 58, 0) 20px 20px,
+  rgb(206, 58, 0) 21px 21px,
+  rgb(206, 58, 0) 22px 22px,
+  rgb(206, 58, 0) 23px 23px,
+  rgb(206, 58, 0) 24px 24px,
+  rgb(206, 58, 0) 25px 25px,
+  rgb(206, 58, 0) 26px 26px,
+  rgb(206, 58, 0) 27px 27px,
+  rgb(206, 58, 0) 28px 28px,
+  rgb(206, 58, 0) 29px 29px,
+  rgb(206, 58, 0) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-steam {
+  background:#484848;
+  border: 1px solid #302B2B;
+  text-shadow:
+  rgb(48, 43, 43) 1px 1px,
+  rgb(48, 43, 43) 2px 2px,
+  rgb(48, 43, 43) 3px 3px,
+  rgb(48, 43, 43) 4px 4px,
+  rgb(48, 43, 43) 5px 5px,
+  rgb(48, 43, 43) 6px 6px,
+  rgb(48, 43, 43) 7px 7px,
+  rgb(48, 43, 43) 8px 8px,
+  rgb(48, 43, 43) 9px 9px,
+  rgb(48, 43, 43) 10px 10px,
+  rgb(48, 43, 43) 11px 11px,
+  rgb(48, 43, 43) 12px 12px,
+  rgb(48, 43, 43) 13px 13px,
+  rgb(48, 43, 43) 14px 14px,
+  rgb(48, 43, 43) 15px 15px,
+  rgb(48, 43, 43) 16px 16px,
+  rgb(48, 43, 43) 17px 17px,
+  rgb(48, 43, 43) 18px 18px,
+  rgb(48, 43, 43) 19px 19px,
+  rgb(48, 43, 43) 20px 20px,
+  rgb(48, 43, 43) 21px 21px,
+  rgb(48, 43, 43) 22px 22px,
+  rgb(48, 43, 43) 23px 23px,
+  rgb(48, 43, 43) 24px 24px,
+  rgb(48, 43, 43) 25px 25px,
+  rgb(48, 43, 43) 26px 26px,
+  rgb(48, 43, 43) 27px 27px,
+  rgb(48, 43, 43) 28px 28px,
+  rgb(48, 43, 43) 29px 29px,
+  rgb(48, 43, 43) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-stumbleUpon {
+  background:#EB4923;
+  border: 1px solid #BE2507;
+  text-shadow:
+  rgb(190, 37, 7) 1px 1px,
+  rgb(190, 37, 7) 2px 2px,
+  rgb(190, 37, 7) 3px 3px,
+  rgb(190, 37, 7) 4px 4px,
+  rgb(190, 37, 7) 5px 5px,
+  rgb(190, 37, 7) 6px 6px,
+  rgb(190, 37, 7) 7px 7px,
+  rgb(190, 37, 7) 8px 8px,
+  rgb(190, 37, 7) 9px 9px,
+  rgb(190, 37, 7) 10px 10px,
+  rgb(190, 37, 7) 11px 11px,
+  rgb(190, 37, 7) 12px 12px,
+  rgb(190, 37, 7) 13px 13px,
+  rgb(190, 37, 7) 14px 14px,
+  rgb(190, 37, 7) 15px 15px,
+  rgb(190, 37, 7) 16px 16px,
+  rgb(190, 37, 7) 17px 17px,
+  rgb(190, 37, 7) 18px 18px,
+  rgb(190, 37, 7) 19px 19px,
+  rgb(190, 37, 7) 20px 20px,
+  rgb(190, 37, 7) 21px 21px,
+  rgb(190, 37, 7) 22px 22px,
+  rgb(190, 37, 7) 23px 23px,
+  rgb(190, 37, 7) 24px 24px,
+  rgb(190, 37, 7) 25px 25px,
+  rgb(190, 37, 7) 26px 26px,
+  rgb(190, 37, 7) 27px 27px,
+  rgb(190, 37, 7) 28px 28px,
+  rgb(190, 37, 7) 29px 29px,
+  rgb(190, 37, 7) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-tumblr {
+  background:#3C576C;
+  border: 1px solid #1E3546;
+  text-shadow:
+  rgb(30, 53, 70) 1px 1px,
+  rgb(30, 53, 70) 2px 2px,
+  rgb(30, 53, 70) 3px 3px,
+  rgb(30, 53, 70) 4px 4px,
+  rgb(30, 53, 70) 5px 5px,
+  rgb(30, 53, 70) 6px 6px,
+  rgb(30, 53, 70) 7px 7px,
+  rgb(30, 53, 70) 8px 8px,
+  rgb(30, 53, 70) 9px 9px,
+  rgb(30, 53, 70) 10px 10px,
+  rgb(30, 53, 70) 11px 11px,
+  rgb(30, 53, 70) 12px 12px,
+  rgb(30, 53, 70) 13px 13px,
+  rgb(30, 53, 70) 14px 14px,
+  rgb(30, 53, 70) 15px 15px,
+  rgb(30, 53, 70) 16px 16px,
+  rgb(30, 53, 70) 17px 17px,
+  rgb(30, 53, 70) 18px 18px,
+  rgb(30, 53, 70) 19px 19px,
+  rgb(30, 53, 70) 20px 20px,
+  rgb(30, 53, 70) 21px 21px,
+  rgb(30, 53, 70) 22px 22px,
+  rgb(30, 53, 70) 23px 23px,
+  rgb(30, 53, 70) 24px 24px,
+  rgb(30, 53, 70) 25px 25px,
+  rgb(30, 53, 70) 26px 26px,
+  rgb(30, 53, 70) 27px 27px,
+  rgb(30, 53, 70) 28px 28px,
+  rgb(30, 53, 70) 29px 29px,
+  rgb(30, 53, 70) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-twitter {
+  background:#00ACED;
+  border: 1px solid #008AB8;
+  text-shadow:
+  rgb(0, 138, 184) 1px 1px,
+  rgb(0, 138, 184) 2px 2px,
+  rgb(0, 138, 184) 3px 3px,
+  rgb(0, 138, 184) 4px 4px,
+  rgb(0, 138, 184) 5px 5px,
+  rgb(0, 138, 184) 6px 6px,
+  rgb(0, 138, 184) 7px 7px,
+  rgb(0, 138, 184) 8px 8px,
+  rgb(0, 138, 184) 9px 9px,
+  rgb(0, 138, 184) 10px 10px,
+  rgb(0, 138, 184) 11px 11px,
+  rgb(0, 138, 184) 12px 12px,
+  rgb(0, 138, 184) 13px 13px,
+  rgb(0, 138, 184) 14px 14px,
+  rgb(0, 138, 184) 15px 15px,
+  rgb(0, 138, 184) 16px 16px,
+  rgb(0, 138, 184) 17px 17px,
+  rgb(0, 138, 184) 18px 18px,
+  rgb(0, 138, 184) 19px 19px,
+  rgb(0, 138, 184) 20px 20px,
+  rgb(0, 138, 184) 21px 21px,
+  rgb(0, 138, 184) 22px 22px,
+  rgb(0, 138, 184) 23px 23px,
+  rgb(0, 138, 184) 24px 24px,
+  rgb(0, 138, 184) 25px 25px,
+  rgb(0, 138, 184) 26px 26px,
+  rgb(0, 138, 184) 27px 27px,
+  rgb(0, 138, 184) 28px 28px,
+  rgb(0, 138, 184) 29px 29px,
+  rgb(0, 138, 184) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-vimeo {
+  background:#006599;
+  border: 1px solid #00496A;
+  text-shadow:
+  rgb(0, 73, 106) 1px 1px,
+  rgb(0, 73, 106) 2px 2px,
+  rgb(0, 73, 106) 3px 3px,
+  rgb(0, 73, 106) 4px 4px,
+  rgb(0, 73, 106) 5px 5px,
+  rgb(0, 73, 106) 6px 6px,
+  rgb(0, 73, 106) 7px 7px,
+  rgb(0, 73, 106) 8px 8px,
+  rgb(0, 73, 106) 9px 9px,
+  rgb(0, 73, 106) 10px 10px,
+  rgb(0, 73, 106) 11px 11px,
+  rgb(0, 73, 106) 12px 12px,
+  rgb(0, 73, 106) 13px 13px,
+  rgb(0, 73, 106) 14px 14px,
+  rgb(0, 73, 106) 15px 15px,
+  rgb(0, 73, 106) 16px 16px,
+  rgb(0, 73, 106) 17px 17px,
+  rgb(0, 73, 106) 18px 18px,
+  rgb(0, 73, 106) 19px 19px,
+  rgb(0, 73, 106) 20px 20px,
+  rgb(0, 73, 106) 21px 21px,
+  rgb(0, 73, 106) 22px 22px,
+  rgb(0, 73, 106) 23px 23px,
+  rgb(0, 73, 106) 24px 24px,
+  rgb(0, 73, 106) 25px 25px,
+  rgb(0, 73, 106) 26px 26px,
+  rgb(0, 73, 106) 27px 27px,
+  rgb(0, 73, 106) 28px 28px,
+  rgb(0, 73, 106) 29px 29px,
+  rgb(0, 73, 106) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-windows {
+  background:#00ADEF;
+  border: 1px solid #038BBC;
+  text-shadow:
+  rgb(3, 139, 188) 1px 1px,
+  rgb(3, 139, 188) 2px 2px,
+  rgb(3, 139, 188) 3px 3px,
+  rgb(3, 139, 188) 4px 4px,
+  rgb(3, 139, 188) 5px 5px,
+  rgb(3, 139, 188) 6px 6px,
+  rgb(3, 139, 188) 7px 7px,
+  rgb(3, 139, 188) 8px 8px,
+  rgb(3, 139, 188) 9px 9px,
+  rgb(3, 139, 188) 10px 10px,
+  rgb(3, 139, 188) 11px 11px,
+  rgb(3, 139, 188) 12px 12px,
+  rgb(3, 139, 188) 13px 13px,
+  rgb(3, 139, 188) 14px 14px,
+  rgb(3, 139, 188) 15px 15px,
+  rgb(3, 139, 188) 16px 16px,
+  rgb(3, 139, 188) 17px 17px,
+  rgb(3, 139, 188) 18px 18px,
+  rgb(3, 139, 188) 19px 19px,
+  rgb(3, 139, 188) 20px 20px,
+  rgb(3, 139, 188) 21px 21px,
+  rgb(3, 139, 188) 22px 22px,
+  rgb(3, 139, 188) 23px 23px,
+  rgb(3, 139, 188) 24px 24px,
+  rgb(3, 139, 188) 25px 25px,
+  rgb(3, 139, 188) 26px 26px,
+  rgb(3, 139, 188) 27px 27px,
+  rgb(3, 139, 188) 28px 28px,
+  rgb(3, 139, 188) 29px 29px,
+  rgb(3, 139, 188) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-wordpress {
+  background:#21759A;
+  border: 1px solid #0F607E;
+  text-shadow:
+  rgb(15, 96, 126) 1px 1px,
+  rgb(15, 96, 126) 2px 2px,
+  rgb(15, 96, 126) 3px 3px,
+  rgb(15, 96, 126) 4px 4px,
+  rgb(15, 96, 126) 5px 5px,
+  rgb(15, 96, 126) 6px 6px,
+  rgb(15, 96, 126) 7px 7px,
+  rgb(15, 96, 126) 8px 8px,
+  rgb(15, 96, 126) 9px 9px,
+  rgb(15, 96, 126) 10px 10px,
+  rgb(15, 96, 126) 11px 11px,
+  rgb(15, 96, 126) 12px 12px,
+  rgb(15, 96, 126) 13px 13px,
+  rgb(15, 96, 126) 14px 14px,
+  rgb(15, 96, 126) 15px 15px,
+  rgb(15, 96, 126) 16px 16px,
+  rgb(15, 96, 126) 17px 17px,
+  rgb(15, 96, 126) 18px 18px,
+  rgb(15, 96, 126) 19px 19px,
+  rgb(15, 96, 126) 20px 20px,
+  rgb(15, 96, 126) 21px 21px,
+  rgb(15, 96, 126) 22px 22px,
+  rgb(15, 96, 126) 23px 23px,
+  rgb(15, 96, 126) 24px 24px,
+  rgb(15, 96, 126) 25px 25px,
+  rgb(15, 96, 126) 26px 26px,
+  rgb(15, 96, 126) 27px 27px,
+  rgb(15, 96, 126) 28px 28px,
+  rgb(15, 96, 126) 29px 29px,
+  rgb(15, 96, 126) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-yahoo {
+  background:#4101AF;
+  border: 1px solid #290074;
+  text-shadow:
+  rgb(41, 0, 116) 1px 1px,
+  rgb(41, 0, 116) 2px 2px,
+  rgb(41, 0, 116) 3px 3px,
+  rgb(41, 0, 116) 4px 4px,
+  rgb(41, 0, 116) 5px 5px,
+  rgb(41, 0, 116) 6px 6px,
+  rgb(41, 0, 116) 7px 7px,
+  rgb(41, 0, 116) 8px 8px,
+  rgb(41, 0, 116) 9px 9px,
+  rgb(41, 0, 116) 10px 10px,
+  rgb(41, 0, 116) 11px 11px,
+  rgb(41, 0, 116) 12px 12px,
+  rgb(41, 0, 116) 13px 13px,
+  rgb(41, 0, 116) 14px 14px,
+  rgb(41, 0, 116) 15px 15px,
+  rgb(41, 0, 116) 16px 16px,
+  rgb(41, 0, 116) 17px 17px,
+  rgb(41, 0, 116) 18px 18px,
+  rgb(41, 0, 116) 19px 19px,
+  rgb(41, 0, 116) 20px 20px,
+  rgb(41, 0, 116) 21px 21px,
+  rgb(41, 0, 116) 22px 22px,
+  rgb(41, 0, 116) 23px 23px,
+  rgb(41, 0, 116) 24px 24px,
+  rgb(41, 0, 116) 25px 25px,
+  rgb(41, 0, 116) 26px 26px,
+  rgb(41, 0, 116) 27px 27px,
+  rgb(41, 0, 116) 28px 28px,
+  rgb(41, 0, 116) 29px 29px,
+  rgb(41, 0, 116) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-youtube {
+  background:#E52C27;
+  border: 1px solid #BE0707;
+  text-shadow:
+  rgb(190, 7, 7) 1px 1px,
+  rgb(190, 7, 7) 2px 2px,
+  rgb(190, 7, 7) 3px 3px,
+  rgb(190, 7, 7) 4px 4px,
+  rgb(190, 7, 7) 5px 5px,
+  rgb(190, 7, 7) 6px 6px,
+  rgb(190, 7, 7) 7px 7px,
+  rgb(190, 7, 7) 8px 8px,
+  rgb(190, 7, 7) 9px 9px,
+  rgb(190, 7, 7) 10px 10px,
+  rgb(190, 7, 7) 11px 11px,
+  rgb(190, 7, 7) 12px 12px,
+  rgb(190, 7, 7) 13px 13px,
+  rgb(190, 7, 7) 14px 14px,
+  rgb(190, 7, 7) 15px 15px,
+  rgb(190, 7, 7) 16px 16px,
+  rgb(190, 7, 7) 17px 17px,
+  rgb(190, 7, 7) 18px 18px,
+  rgb(190, 7, 7) 19px 19px,
+  rgb(190, 7, 7) 20px 20px,
+  rgb(190, 7, 7) 21px 21px,
+  rgb(190, 7, 7) 22px 22px,
+  rgb(190, 7, 7) 23px 23px,
+  rgb(190, 7, 7) 24px 24px,
+  rgb(190, 7, 7) 25px 25px,
+  rgb(190, 7, 7) 26px 26px,
+  rgb(190, 7, 7) 27px 27px,
+  rgb(190, 7, 7) 28px 28px,
+  rgb(190, 7, 7) 29px 29px,
+  rgb(190, 7, 7) 30px 30px;
+}
+
+.saboxplugin-socials.sabox-colored .saboxplugin-icon-color.saboxplugin-icon-xing {
+  background:#026466;
+  border: 1px solid #004746;
+  text-shadow:
+  rgb(0, 71, 70) 1px 1px,
+  rgb(0, 71, 70) 2px 2px,
+  rgb(0, 71, 70) 3px 3px,
+  rgb(0, 71, 70) 4px 4px,
+  rgb(0, 71, 70) 5px 5px,
+  rgb(0, 71, 70) 6px 6px,
+  rgb(0, 71, 70) 7px 7px,
+  rgb(0, 71, 70) 8px 8px,
+  rgb(0, 71, 70) 9px 9px,
+  rgb(0, 71, 70) 10px 10px,
+  rgb(0, 71, 70) 11px 11px,
+  rgb(0, 71, 70) 12px 12px,
+  rgb(0, 71, 70) 13px 13px,
+  rgb(0, 71, 70) 14px 14px,
+  rgb(0, 71, 70) 15px 15px,
+  rgb(0, 71, 70) 16px 16px,
+  rgb(0, 71, 70) 17px 17px,
+  rgb(0, 71, 70) 18px 18px,
+  rgb(0, 71, 70) 19px 19px,
+  rgb(0, 71, 70) 20px 20px,
+  rgb(0, 71, 70) 21px 21px,
+  rgb(0, 71, 70) 22px 22px,
+  rgb(0, 71, 70) 23px 23px,
+  rgb(0, 71, 70) 24px 24px,
+  rgb(0, 71, 70) 25px 25px,
+  rgb(0, 71, 70) 26px 26px,
+  rgb(0, 71, 70) 27px 27px,
+  rgb(0, 71, 70) 28px 28px,
+  rgb(0, 71, 70) 29px 29px,
+  rgb(0, 71, 70) 30px 30px;
+}
+/*  - GLOBAL MEDIA QUERIES
+-------------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+
+  .saboxplugin-wrap {
+    text-align: center;
+  }
+
+  .saboxplugin-wrap .saboxplugin-gravatar {
+    float: none;
+    padding: 20px 0;
+    text-align: center;
+    margin: 0 auto;
+    display:block;
+  }
+  .saboxplugin-wrap .saboxplugin-gravatar img {
+    float:none;
+    display:inline-block;
+    display:-moz-inline-stack;
+    vertical-align:middle;
+    *vertical-align:auto;
+    zoom:1;
+    *display:inline;
+  }
+
+  .saboxplugin-wrap .saboxplugin-desc {
+    margin: 0 10px 20px;
+    text-align: center;
+  }
+
+  .saboxplugin-wrap .saboxplugin-authorname {
+    text-align: center;
+    margin:10px 0 20px;
+  }
+
+}
