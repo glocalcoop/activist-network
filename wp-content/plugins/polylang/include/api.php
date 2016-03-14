@@ -52,7 +52,7 @@ function pll_current_language( $field = 'slug' ) {
  * @return string the requested field for the default language
  */
 function pll_default_language( $field = 'slug' ) {
-	return ( $lang = PLL()->model->get_language( PLL()->options['default_lang'] ) ) && isset( $lang->$field ) ? $lang->$field : false;
+	return isset( PLL()->options['default_lang'] ) && ( $lang = PLL()->model->get_language( PLL()->options['default_lang'] ) ) && isset( $lang->$field ) ? $lang->$field : false;
 }
 
 /*

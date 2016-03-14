@@ -1,0 +1,588 @@
+#: code/attachments/front.php:191
+msgid "attachment"
+msgid_plural "attachments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: code/attachments/admin.php:85
+#: code/attachments/admin.php:85
+#: code/attachments/front.php:204
+#: code/admin.php:61
+#: forms/uploader.php:5
+msgid "Attachments"
+msgstr ""
+
+#: code/attachments/admin.php:98
+msgid "Attachments Settings"
+msgstr ""
+
+#: code/attachments/admin.php:99
+#: code/attachments/admin.php:100
+msgid "Attachments List"
+msgstr ""
+
+#: code/attachments/front.php:207
+msgid "You must be <a href='%s'>logged in</a> to view attached files."
+msgstr ""
+
+#: code/attachments/front.php:237
+msgid "delete"
+msgstr ""
+
+#: code/attachments/front.php:241
+msgid "detach"
+msgstr ""
+
+#: code/attachments/front.php:335
+#: forms/attachments/meta_files.php:20
+msgid "Upload Errors"
+msgstr ""
+
+#: code/admin.php:50
+#: forms/tabs/toolbox.php:2
+msgid "Thank you for using this plugin. Please, take a few minutes and check out the GD bbPress Toolbox Pro plugin with many new and improved features."
+msgstr ""
+
+#: code/admin.php:51
+#: forms/tabs/toolbox.php:4
+msgid "Buy GD bbPress Toolbox Pro version or Dev4Press Plugins Pack and get 15% discount using this coupon"
+msgstr ""
+
+#: code/admin.php:53
+#: forms/tabs/toolbox.php:6
+msgid "Official Website"
+msgstr ""
+
+#: code/admin.php:54
+#: forms/tabs/toolbox.php:7
+msgid "Dev4Press Plugins Pack"
+msgstr ""
+
+#: code/admin.php:55
+msgid "Don't display this message anymore"
+msgstr ""
+
+#: code/admin.php:76
+#: forms/panels.php:9
+msgid "Settings"
+msgstr ""
+
+#: code/admin.php:85
+#: forms/panels.php:10
+msgid "FAQ"
+msgstr ""
+
+#: code/admin.php:86
+msgid "Upgrade to GD bbPress Toolbox Pro"
+msgstr ""
+
+#: code/admin.php:97
+msgid "Website"
+msgstr ""
+
+#: code/admin.php:98
+msgid "On Twitter"
+msgstr ""
+
+#: code/admin.php:99
+msgid "On Facebook"
+msgstr ""
+
+#: code/admin.php:103
+msgid "Get Help"
+msgstr ""
+
+#: code/admin.php:104
+msgid "General Plugin Information"
+msgstr ""
+
+#: code/admin.php:105
+msgid "Home Page on Dev4Press.com"
+msgstr ""
+
+#: code/admin.php:106
+msgid "Home Page on WordPress.org"
+msgstr ""
+
+#: code/admin.php:107
+msgid "Getting Plugin Support"
+msgstr ""
+
+#: code/admin.php:108
+msgid "Support Forum on Dev4Press.com"
+msgstr ""
+
+#: code/admin.php:109
+msgid "Support Forum on WordPress.org"
+msgstr ""
+
+#: code/admin.php:110
+msgid "Plugin Support Sources"
+msgstr ""
+
+#: code/admin.php:115
+msgid "On Dev4Press website you can find many useful plugins, themes and tutorials, all for WordPress. Please, take a few minutes to browse some of these resources, you might find some of them very useful."
+msgstr ""
+
+#: code/admin.php:116
+msgid "Plugins"
+msgstr ""
+
+#: code/admin.php:116
+msgid "We have more than 10 plugins available, some of them are commercial and some are available for free."
+msgstr ""
+
+#: code/admin.php:117
+msgid "Themes"
+msgstr ""
+
+#: code/admin.php:117
+msgid "All our themes are based on our own xScape Theme Framework, and only available as premium."
+msgstr ""
+
+#: code/admin.php:118
+msgid "Tutorials"
+msgstr ""
+
+#: code/admin.php:118
+msgid "Premium and free tutorials for our plugins themes, and many general and practical WordPress tutorials."
+msgstr ""
+
+#: code/admin.php:119
+msgid "Central Documentation"
+msgstr ""
+
+#: code/admin.php:119
+msgid "Growing collection of functions, classes, hooks, constants with examples for our plugins and themes."
+msgstr ""
+
+#: code/admin.php:120
+msgid "Support Forums"
+msgstr ""
+
+#: code/admin.php:120
+msgid "Premium support forum for all with valid licenses to get help. Also, report bugs and leave suggestions."
+msgstr ""
+
+#: code/defaults.php:46
+msgid "File exceeds allowed file size."
+msgstr ""
+
+#: code/defaults.php:47
+msgid "File not uploaded."
+msgstr ""
+
+#: code/defaults.php:48
+msgid "Upload file size exceeds PHP maximum file size allowed."
+msgstr ""
+
+#: code/defaults.php:49
+msgid "Upload file size exceeds FORM specified file size."
+msgstr ""
+
+#: code/defaults.php:50
+msgid "Upload file only partially uploaded."
+msgstr ""
+
+#: code/defaults.php:51
+msgid "Can't write file to the disk."
+msgstr ""
+
+#: code/defaults.php:52
+msgid "Temporary folder for upload is missing."
+msgstr ""
+
+#: code/defaults.php:53
+msgid "Server extension restriction stopped upload."
+msgstr ""
+
+#: forms/attachments/meta_files.php:4
+msgid "No attachments here."
+msgstr ""
+
+#: forms/attachments/meta_files.php:11
+msgid "edit"
+msgstr ""
+
+#: forms/attachments/meta_forum.php:2
+#: forms/attachments/meta_forum.php:3
+msgid "Disable Attachments"
+msgstr ""
+
+#: forms/attachments/meta_forum.php:7
+#: forms/attachments/meta_forum.php:8
+msgid "Override Defaults"
+msgstr ""
+
+#: forms/attachments/meta_forum.php:11
+msgid "Settings to override"
+msgstr ""
+
+#: forms/attachments/meta_forum.php:13
+#: forms/attachments/meta_forum.php:14
+#: forms/tabs/attachments.php:14
+msgid "Maximum file size"
+msgstr ""
+
+#: forms/attachments/meta_forum.php:19
+#: forms/attachments/meta_forum.php:20
+#: forms/tabs/attachments.php:21
+msgid "Maximum files to upload"
+msgstr ""
+
+#: forms/attachments/meta_forum.php:24
+#: forms/tabs/attachments.php:28
+msgid "Hide list of attachements from visitors"
+msgstr ""
+
+#: forms/attachments/meta_forum.php:25
+msgid "Hide From Visitors"
+msgstr ""
+
+#: forms/tabs/about.php:10
+msgid "Release Date: "
+msgstr ""
+
+#: forms/tabs/about.php:12
+msgid "Status: "
+msgstr ""
+
+#: forms/tabs/about.php:14
+msgid "Build: "
+msgstr ""
+
+#: forms/tabs/about.php:19
+msgid "System Requirements"
+msgstr ""
+
+#: forms/tabs/about.php:22
+msgid "WordPress: "
+msgstr ""
+
+#: forms/tabs/about.php:24
+msgid "bbPress: "
+msgstr ""
+
+#: forms/tabs/about.php:30
+msgid "Important Plugin Links"
+msgstr ""
+
+#: forms/tabs/about.php:31
+msgid "Home Page"
+msgstr ""
+
+#: forms/tabs/about.php:32
+#: forms/tabs/about.php:36
+msgid "on"
+msgstr ""
+
+#: forms/tabs/about.php:33
+msgid "Plugin Support"
+msgstr ""
+
+#: forms/tabs/about.php:34
+msgid "Plugin Support Forum on Dev4Press"
+msgstr ""
+
+#: forms/tabs/about.php:35
+msgid "Dev4Press Important Links"
+msgstr ""
+
+#: forms/tabs/about.php:37
+#: forms/tabs/about.php:38
+msgid "Page"
+msgstr ""
+
+#: forms/tabs/attachments.php:2
+msgid "Settings saved."
+msgstr ""
+
+#: forms/tabs/attachments.php:9
+msgid "Global Attachments Settings"
+msgstr ""
+
+#: forms/tabs/attachments.php:10
+msgid "These settings can be overriden for individual forums."
+msgstr ""
+
+#: forms/tabs/attachments.php:24
+msgid "For single topic or reply"
+msgstr ""
+
+#: forms/tabs/attachments.php:35
+msgid "Users Upload Restrictions"
+msgstr ""
+
+#: forms/tabs/attachments.php:36
+msgid "Only users having one of the selected roles will be able to attach files."
+msgstr ""
+
+#: forms/tabs/attachments.php:40
+#: forms/tabs/attachments.php:43
+msgid "Allow upload to"
+msgstr ""
+
+#: forms/tabs/attachments.php:55
+msgid "Topic and Reply Deleting"
+msgstr ""
+
+#: forms/tabs/attachments.php:56
+msgid "Select what to do with attachments when topic or reply with attachments is deleted."
+msgstr ""
+
+#: forms/tabs/attachments.php:60
+msgid "Attachments Action"
+msgstr ""
+
+#: forms/tabs/attachments.php:63
+msgid "Leave in media library"
+msgstr ""
+
+#: forms/tabs/attachments.php:64
+msgid "Delete"
+msgstr ""
+
+#: forms/tabs/attachments.php:65
+msgid "Do nothing"
+msgstr ""
+
+#: forms/tabs/attachments.php:71
+msgid "JavaScript and CSS Settings"
+msgstr ""
+
+#: forms/tabs/attachments.php:72
+msgid "You can disable including styles and JavaScript by the plugin, if you want to do it some other way."
+msgstr ""
+
+#: forms/tabs/attachments.php:76
+msgid "Include JavaScript"
+msgstr ""
+
+#: forms/tabs/attachments.php:82
+msgid "Include CSS"
+msgstr ""
+
+#: forms/tabs/attachments.php:89
+msgid "If you use shortcodes to embed forums, and you rely on plugin to add JS and CSS, you also need to enable this option to skip checking for bbPress specific pages."
+msgstr ""
+
+#: forms/tabs/attachments.php:93
+msgid "Always Include"
+msgstr ""
+
+#: forms/tabs/attachments.php:100
+msgid "Enable this option if you use BuddyPress with bbPress plugin for site wide forums."
+msgstr ""
+
+#: forms/tabs/attachments.php:103
+msgid "Error logging"
+msgstr ""
+
+#: forms/tabs/attachments.php:104
+msgid "Each failed upload will be logged in postmeta table. Administrators and topic/reply authors can see the log."
+msgstr ""
+
+#: forms/tabs/attachments.php:108
+#: forms/tabs/attachments.php:195
+msgid "Activated"
+msgstr ""
+
+#: forms/tabs/attachments.php:114
+msgid "Visible to administrators"
+msgstr ""
+
+#: forms/tabs/attachments.php:120
+msgid "Visible to moderators"
+msgstr ""
+
+#: forms/tabs/attachments.php:126
+msgid "Visible to author"
+msgstr ""
+
+#: forms/tabs/attachments.php:133
+msgid "Deleting attachments"
+msgstr ""
+
+#: forms/tabs/attachments.php:134
+msgid "Once uploaded and attached, attachments can be deleted. Only administrators and authors can do this."
+msgstr ""
+
+#: forms/tabs/attachments.php:138
+msgid "Administrators"
+msgstr ""
+
+#: forms/tabs/attachments.php:141
+#: forms/tabs/attachments.php:152
+#: forms/tabs/attachments.php:163
+msgid "Don't allow to delete"
+msgstr ""
+
+#: forms/tabs/attachments.php:142
+#: forms/tabs/attachments.php:153
+#: forms/tabs/attachments.php:164
+msgid "Delete from Media Library"
+msgstr ""
+
+#: forms/tabs/attachments.php:143
+#: forms/tabs/attachments.php:154
+#: forms/tabs/attachments.php:165
+msgid "Only detach from topic/reply"
+msgstr ""
+
+#: forms/tabs/attachments.php:144
+#: forms/tabs/attachments.php:155
+#: forms/tabs/attachments.php:166
+msgid "Allow both delete and detach"
+msgstr ""
+
+#: forms/tabs/attachments.php:149
+msgid "Moderators"
+msgstr ""
+
+#: forms/tabs/attachments.php:177
+msgid "Attachment Icon"
+msgstr ""
+
+#: forms/tabs/attachments.php:160
+msgid "Author"
+msgstr ""
+
+#: forms/tabs/attachments.php:172
+msgid "Forums Integration"
+msgstr ""
+
+#: forms/tabs/attachments.php:173
+msgid "With these options you can modify the forums to include attachment elements."
+msgstr ""
+
+#: forms/tabs/attachments.php:183
+msgid "File Type Icons"
+msgstr ""
+
+#: forms/tabs/attachments.php:190
+msgid "Display of image attachments"
+msgstr ""
+
+#: forms/tabs/attachments.php:191
+msgid "Attached images can be displayed as thumbnails, and from here you can control this."
+msgstr ""
+
+#: forms/tabs/attachments.php:201
+msgid "With caption"
+msgstr ""
+
+#: forms/tabs/attachments.php:207
+msgid "In line"
+msgstr ""
+
+#: forms/tabs/attachments.php:213
+msgid "CSS class"
+msgstr ""
+
+#: forms/tabs/attachments.php:219
+msgid "REL attribute"
+msgstr ""
+
+#: forms/tabs/attachments.php:222
+msgid "You can use these tags"
+msgstr ""
+
+#: forms/tabs/attachments.php:227
+msgid "Image thumbnails size"
+msgstr ""
+
+#: forms/tabs/attachments.php:228
+msgid "Changing thumbnails size affects only new image attachments. To use new size for old attachments, resize them using"
+msgstr ""
+
+#: forms/tabs/attachments.php:228
+msgid "plugin"
+msgstr ""
+
+#: forms/tabs/attachments.php:232
+msgid "Thumbnail size"
+msgstr ""
+
+#: forms/tabs/attachments.php:248
+msgid "Save Changes"
+msgstr ""
+
+#: forms/tabs/d4p.php:3
+#: forms/tabs/d4p.php:8
+msgid "Plugin Home Website"
+msgstr ""
+
+#: forms/tabs/d4p.php:4
+#: forms/tabs/d4p.php:9
+#: forms/tabs/d4p.php:13
+msgid "Home on Dev4Press"
+msgstr ""
+
+#: forms/tabs/d4p.php:17
+msgid "Other Premium Plugins"
+msgstr ""
+
+#: forms/tabs/d4p.php:20
+msgid "Premium Themes"
+msgstr ""
+
+#: forms/tabs/d4p.php:23
+msgid "Free Plugins"
+msgstr ""
+
+#: forms/tabs/toolbox.php:1
+msgid "Special upgrade discount"
+msgstr ""
+
+#: forms/tabs/toolbox.php:3
+msgid "GD bbPress Toolbox Pro merges into one all our bbPress plugins: Attachments, Tools and Widgets. And, it expands these plugins with many more new features. Pro plugin is available through several different licenses."
+msgstr ""
+
+#: forms/tabs/toolbox.php:5
+msgid "Important links"
+msgstr ""
+
+#: forms/tabs/toolbox.php:11
+msgid "Contains all features from"
+msgstr ""
+
+#: forms/tabs/toolbox.php:17
+msgid "Additional features"
+msgstr ""
+
+#: forms/tabs/toolbox.php:19
+msgid "Panel with list of attachments"
+msgstr ""
+
+#: forms/tabs/toolbox.php:20
+msgid "Panel with logged errors"
+msgstr ""
+
+#: forms/tabs/toolbox.php:21
+msgid "More widgets"
+msgstr ""
+
+#: forms/tabs/toolbox.php:22
+msgid "More registered views"
+msgstr ""
+
+#: forms/panels.php:11
+msgid "Toolbox"
+msgstr ""
+
+#: forms/panels.php:12
+msgid "Dev4Press"
+msgstr ""
+
+#: forms/panels.php:13
+msgid "About"
+msgstr ""
+
+#: forms/uploader.php:8
+msgid "Add another file"
+msgstr ""
+
+#: forms/uploader.php:1
+msgid "Maximum file size allowed is"
+msgstr ""
+

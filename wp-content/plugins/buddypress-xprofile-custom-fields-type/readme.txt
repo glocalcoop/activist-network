@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donmi
 Tags: buddypress, xprofile, fields
 Requires at least: 3.0
 Tested up to: 4.4
-Stable tag: 2.4.1
+Stable tag: 2.4.3
 License: GLPv2 or later
 
 Buddypress 2.0 required! This plugin add custom field types to Buddypress Xprofile extension. Field types are: Birthdate, Email, Url, ...
@@ -48,11 +48,11 @@ Works with [BP Profile Search](https://wordpress.org/plugins/bp-profile-search/ 
 
 == Changelog ==
 
-= 2.4.1 =
-* Solved the bug with missing files! Sorry!
+= 2.4.3 =
+* Loads js for birthdate selector when page loads and not only when you change month and year.
 
 = Previous versions =
 * <http://donmik.com/en/buddypress-xprofile-custom-fields-type/#changelog>
 
 == Upgrade Notice ==
-* Solved the bug with missing files! Sorry!
+* Loads js for birthdate selector when page loads and not only when you change month and year.

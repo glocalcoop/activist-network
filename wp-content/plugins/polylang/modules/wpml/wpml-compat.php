@@ -180,7 +180,7 @@ if ( ! function_exists( 'icl_link_to_element' ) ) {
  */
 if ( ! function_exists( 'icl_object_id' ) ) {
 	function icl_object_id( $id, $type, $return_original_if_missing = false, $lang = false ) {
-		$pll_type = ( $type == 'post' || pll_is_translated_post_type( $type ) ) ? 'post' : ( $type == 'term' || pll_is_translated_taxonomy( $type ) ? 'term' : false );
+		$pll_type = ( 'post' === $type || pll_is_translated_post_type( $type ) ) ? 'post' : ( 'term' === $type || pll_is_translated_taxonomy( $type ) ? 'term' : false );
 		return $pll_type && ( $lang = $lang ? $lang : pll_current_language() ) && ( $tr_id = PLL()->model->$pll_type->get_translation( $id, $lang ) ) ? $tr_id :
 			( $return_original_if_missing ? $id : null );
 	}
@@ -208,7 +208,7 @@ if ( ! function_exists( 'wpml_get_language_information' ) ) {
 			'text_direction' => $lang->is_rtl,
 			'display_name' => $lang->name, // seems to be the post language name displayed in the current language, not a feature in Polylang
 			'native_name' => $lang->name,
-			'different_language' => $lang->slug != pll_current_language()
+			'different_language' => $lang->slug != pll_current_language(),
 		);
 	}
 }
@@ -317,6 +317,20 @@ if ( ! function_exists( 'wpml_get_copied_fields_for_post_edit' ) ) {
  */
 if ( ! function_exists( 'icl_get_default_language' ) ) {
 	function icl_get_default_language() {
+		return pll_default_language();
+	}
+}
+
+/*
+ * undocumented function reported to be used by Table Rate Shipping for WooCommerce
+ * @see https://wordpress.org/support/topic/add-wpml-compatibility-function
+ *
+ * @since 1.8.2
+ *
+ * @return string default language code
+ */
+if ( ! function_exists( 'wpml_get_default_language' ) ) {
+	function wpml_get_default_language() {
 		return pll_default_language();
 	}
 }

@@ -1,0 +1,591 @@
+/*  ADMIN PLUGIN STYLE
+-------------------------------------------------------------- */
+.wrap .saboxplugin .wp-core-ui .button, .wp-core-ui .button-primary, .wp-core-ui .button-secondary {
+  font-size: 16px;
+  height: 42px;
+  border-style: none;
+  line-height: 36px;
+  border-radius: 0;
+  -webkit-box-shadow:none;
+  -moz-box-shadow:none;
+  box-shadow:none;
+}
+
+.wrap .saboxplugin p {
+  color: #777;
+  line-height: 1.6;
+}
+
+.wrap .saboxplugin p.description  {
+  margin: 20px 0px 5px;
+}
+
+.wrap .saboxplugin ::-moz-selection {
+  background: #80828F;
+  color: #fff;
+}
+.wrap .saboxplugin ::selection {
+  background: #80828F;
+  color: #fff;
+}
+
+.wrap .saboxplugin #saboxplugin-hide {
+  border-top: 1px dashed #E1E1E1;
+  margin: 1.5em 0;
+  display: none;
+}
+
+.wrap .saboxplugin .saboxplugin-border {
+  border-bottom: 1px dashed #E1E1E1;
+  margin: 2em 0;
+}
+
+.wrap .saboxplugin #poststuff h2 {
+  font-size: 26px;
+  padding: 9px 15px 20px 0;
+  font-weight: 700;
+}
+
+.wrap .saboxplugin h3 {
+  font-size: 24px;
+  padding: 9px 15px 20px 0;
+  font-weight: 700;
+  color: #444;
+}
+
+.wrap .saboxplugin #poststuff h3 {
+    font-size: 24px;
+    padding: 8px 20px;
+}
+
+.wrap .saboxplugin #poststuff .inside {
+    margin: 26px 0px 0px;
+}
+
+.wrap .saboxplugin .handlediv {
+    color: #80828F;
+}
+
+.wrap .saboxplugin .meta-box-sortables .postbox .handlediv:before {
+    right: 20px;
+    font: 400 30px/1.2 'dashicons';
+    padding: 8px 0;
+}
+
+.wrap .saboxplugin .meta-box-sortables .postbox .handlediv:before {
+    content: "\f343";
+}
+
+.wrap .saboxplugin .meta-box-sortables .postbox.closed .handlediv:before {
+    content: "\f347";
+}
+
+.wrap .saboxplugin .postbox .inside {
+    padding: 0px 40px 12px;
+}
+
+.wrap .saboxplugin label {
+    cursor: default;
+}
+
+/*  UI SLIDE OVERWRITE
+-------------------------------------------------------------- */
+.wrap .saboxplugin .sabox-inline-slide .sabox-amount,
+.wrap .saboxplugin .sabox-inline-slide .sabox-amount2,
+.wrap .saboxplugin .sabox-inline-slide .sabox-amount3,
+.wrap .saboxplugin .sabox-inline-slide .sabox-amount4,
+.wrap .saboxplugin .sabox-inline-slide .sabox-amount5,
+.wrap .saboxplugin .sabox-inline-slide .sabox-amount6 {
+  background-color: transparent;
+  border: medium none;
+  -webkit-box-shadow:none;
+  -moz-box-shadow:none;
+  box-shadow:none;
+  font-size: 24px;
+  color: #666666;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .sabox-slider,
+.wrap .saboxplugin .sabox-inline-slide .sabox-slider2,
+.wrap .saboxplugin .sabox-inline-slide .sabox-slider3,
+.wrap .saboxplugin .sabox-inline-slide .sabox-slider4,
+.wrap .saboxplugin .sabox-inline-slide .sabox-slider5,
+.wrap .saboxplugin .sabox-inline-slide .sabox-slider6 {
+  width: 40%;
+  margin: 20px 0;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .ui-state-default,
+.wrap .saboxplugin  .sabox-inline-slide .ui-widget-content .ui-state-default,
+.wrap .saboxplugin .sabox-inline-slide .ui-widget-header .ui-state-default {
+  border:1px solid #73C77B;
+  background-color:#8CE196;
+  font-weight:400;
+  color:#555;
+  outline:0 none;
+  cursor:pointer;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .ui-state-default:before,
+.wrap .saboxplugin .sabox-inline-slide .ui-widget-content .ui-state-default:before,
+.wrap .saboxplugin .sabox-inline-slide .ui-widget-header .ui-state-default:before {
+  content:"\2630";
+  display:inline-block;
+  -webkit-font-smoothing:antialiased;
+  color:#fff;
+  font-weight:700;
+  text-shadow:0 1px #73C77B;
+  line-height: 1.8;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .ui-state-default a,
+.wrap .saboxplugin .sabox-inline-slide .ui-state-default a:link,
+.wrap .saboxplugin .sabox-inline-slide .ui-state-default a:visited {
+  color:#fff;
+  text-decoration:none;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .ui-state-focus,
+.wrap .saboxplugin .sabox-inline-slide .ui-state-hover,
+.wrap .saboxplugin .sabox-inline-slide .ui-widget-content .ui-state-focus,
+.wrap .saboxplugin .sabox-inline-slide .ui-widget-content .ui-state-hover,
+.wrap .saboxplugin .sabox-inline-slide .ui-widget-header .ui-state-focus,
+.wrap .saboxplugin .sabox-inline-slide .ui-widget-header .ui-state-hover {
+  background:#9BEBA3;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-all,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-top,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-left,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-tl {
+  border-top-left-radius: 0;
+}
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-all,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-top,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-right,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-tr {
+  border-top-right-radius: 0;
+}
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-bottom,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-left,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-bl {
+  border-bottom-left-radius: 0;
+}
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-all,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-bottom,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-right,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-br {
+  border-bottom-right-radius: 0;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-all,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-bottom,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-left,
+.wrap .saboxplugin .sabox-inline-slide .ui-corner-bl {
+    border-bottom-left-radius: 0;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .ui-slider-horizontal {
+  height:1.3em;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .ui-slider .ui-slider-handle {
+  width:1.8em;
+  height:1.8em;
+  cursor:pointer;
+  text-align:center;
+}
+
+.wrap .saboxplugin .sabox-inline-slide .ui-widget-content {
+  -webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);
+  -moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.1);
+  border:1px solid #B2BFCA;
+  background:#F1F2F7;
+  color:#222
+}
+
+/*  COLOR PICKER OVERWRITE
+-------------------------------------------------------------- */
+.wrap .saboxplugin .wp-color-result:after, .wp-color-result  {
+  border-radius: 0;
+  -webkit-box-shadow:none!important;
+  -moz-box-shadow:none!important;
+  box-shadow:none!important;
+  outline: 0;
+}
+
+.wrap .saboxplugin .wp-color-result:after{
+  font-size: 12px;
+  border-left: 1px solid #D3D6DB;
+  line-height: 42px;
+  padding: 0px 7.5px;
+}
+
+.wrap .saboxplugin .wp-color-result  {
+  border: 1px solid #D3D6DB;
+  height: 42px;
+  padding-left: 40px;
+  outline: 0 none;
+  background-color: #D3D6DB;
+}
+
+.wrap .saboxplugin .wp-color-result:hover:after {
+  border-color: #AFAEAE;
+  border-left: 1px solid #D3D6DB;
+}
+
+.wrap .saboxplugin .wp-picker-container .button {
+    color: #FFF;
+    background-color: #80828F;
+    border: medium none;
+    height: 44px;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    border-radius: 0;
+    padding: 0 15px 1px;
+}
+
+.wrap .saboxplugin .wp-picker-container input.wp-color-picker[type="text"] {
+    height: 44px;
+}
+
+.wrap .saboxplugin .saboxplugin-icon:before {
+  content: "\f336";
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font: 50px/0.6 "dashicons";
+  vertical-align: top;
+  color: #FA5148;
+  padding-right: 5px;
+}
+
+.wrap .saboxplugin textarea[name=saboxplugin] {
+  resize: none;
+  border: medium none;
+  background-color: #FFF;
+  -webkit-box-shadow:none;
+  -moz-box-shadow:none;
+  box-shadow:none;
+  color: #777;
+  padding: 0px;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow: hidden;
+  width: 99%;
+}
+
+.wrap .saboxplugin .saboxplugin-question {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 0;
+  font-size: 24px;
+  margin-right: 40px;
+  color: #666666;
+  width: 100%;
+  max-width: 700px;
+  min-width: 247px;
+  line-height: 1.6;
+}
+
+.wrap .saboxplugin .saboxplugin-switch {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px 0;
+}
+
+.wrap .saboxplugin .sab-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.wrap .saboxplugin .sab-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.wrap .saboxplugin input.sab-toggle-yes-no + label {
+  padding: 2px;
+  width: 120px;
+  height: 40px;
+}
+
+.wrap .saboxplugin input.sab-toggle-yes-no + label:before,
+.wrap .saboxplugin input.sab-toggle-yes-no + label:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  font-family: "Open Sans", serif;
+  font-size: 20px;
+  text-align: center;
+  line-height: 42px;
+}
+
+.wrap .saboxplugin input.sab-toggle-yes-no + label:before {
+  background-color: #D3D6DB;
+  content: attr(data-off);
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+}
+
+.wrap .saboxplugin input.sab-toggle-yes-no + label:after {
+  background-color: #8CE196;
+  content: attr(data-on);
+  transition: transform 0.5s;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.wrap .saboxplugin input.sab-toggle-yes-no:checked + label:before {
+  transform: rotateY(180deg);
+}
+
+.wrap .saboxplugin input.sab-toggle-yes-no:checked + label:after {
+  transform: rotateY(0);
+}
+
+.wrap .saboxplugin .sab-title-div {
+  height: 50px;
+  clear: both;
+}
+
+.wrap .saboxplugin .sab-title-div .sab-title {
+  font-size: 18px;
+  line-height: 26px;
+  padding-top: 16px;
+  padding-right: 15px;
+  display: block;
+  float: left;
+}
+
+.wrap .saboxplugin .sab-box {
+  background:#fff;
+  border: 1px solid #E5E5E5;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  padding: 15px;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrap .saboxplugin .sab-box p {
+  margin: 5px 0 5px 70px;
+  color: #777;
+}
+
+.wrap .saboxplugin .sab-box-legend, .wrap .saboxplugin .sab-box-version {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.wrap .saboxplugin .sab-box-version {
+  background: none repeat scroll 0% 0% #80828F;
+  padding: 10px 15px;
+}
+
+.wrap .saboxplugin .sab-icon-help, .wrap .saboxplugin .sab-icon-version {
+  color:#FFF;
+  font-size:25px;
+}
+
+.wrap .saboxplugin .sab-infos {
+  display: block;
+  margin: 0 auto;
+  padding-left: 70px;
+  font-weight: 700;
+  color:#777;
+}
+
+.wrap .saboxplugin .sab-infos span {
+  color: #777;
+  font-weight: 400;
+}
+
+.wrap .saboxplugin .sab-infos-title {
+  font-weight: 700;
+  color: #777;
+}
+
+.wrap .saboxplugin .sab-icon-version:before {
+  content: "\f348";
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font: normal 30px/1.5 'dashicons';
+  vertical-align: top;
+}
+
+.clearfix:after,
+.clearfix:before {
+  content: ' ';
+  display: table;
+  line-height: 0;
+  clear: both;
+}
+
+.ie7 .clearfix {
+  zoom: 1;
+}
+
+/*  MEDIA QUERIES
+-------------------------------------------------------------- */
+@media (min-width: 900px) and (max-width: 1199px) {
+
+  .wrap .saboxplugin .saboxplugin-question {
+    max-width: 480px;
+    font-size: 20px;
+  }
+
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount2,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount3,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount4 {
+    font-size: 20px;
+  }
+
+  .wrap .saboxplugin .postbox .inside {
+    padding: 0px 20px 12px;
+  }
+
+  .wrap .saboxplugin  .meta-box-sortables .postbox .handlediv:before {
+    right: 40px;
+  }
+
+}
+
+@media screen and (max-width: 899px) {
+
+  .wrap .saboxplugin .saboxplugin-question {
+    max-width: 390px;
+    font-size: 18px;
+    line-height: 2;
+  }
+
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount2,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount3,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount4 {
+    font-size: 18px;
+  }
+
+  .wrap .saboxplugin .saboxplugin-question {
+    max-width: 1000px;
+    text-align: left;
+    min-width: 100px;
+  }
+
+  .wrap .saboxplugin .saboxplugin-switch {
+    display: block;
+  }
+
+  .wrap .saboxplugin input.sab-toggle-yes-no + label {
+    width: auto;
+  }
+
+  .wrap .saboxplugin textarea[name="saboxplugin"] {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+  }
+
+  .wrap .saboxplugin p.description {
+    text-align: center;
+  }
+
+  .wrap .saboxplugin .postbox .inside {
+    padding: 0px 20px 12px;
+  }
+
+  .wrap .saboxplugin .sabox-inline-slide .ui-widget-content {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 783px) {
+
+  .wrap .saboxplugin #poststuff h2 {
+    font-size: 26px;
+    padding: 0 15px 0 0;
+  }
+  .wrap .saboxplugin .saboxplugin-icon:before {
+    font: 40px/0.8 "dashicons";
+  }
+
+  .wp-core-ui .button{
+    padding: 0 14px;
+  }
+
+  .wrap .saboxplugin #poststuff .inside {
+    margin: 0;
+  }
+
+  .wrap .saboxplugin .meta-box-sortables .postbox .handlediv:before {
+    right: 12px;
+    font: 400 20px/1.2 'dashicons';
+    padding: 8px 10px;
+  }
+
+  .wrap .saboxplugin #poststuff h3 {
+    font-size: 20px;
+  }
+
+  .wrap .saboxplugin .saboxplugin-question {
+    font-size: 18px;
+  }
+
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount2,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount3,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount4 {
+    vertical-align: baseline;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+  .wrap .saboxplugin .saboxplugin-question {
+    font-size: 16px;
+  }
+
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount2,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount3,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount4 {
+   font-size: 16px;
+ }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .wrap .saboxplugin .saboxplugin-question {
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .wrap .saboxplugin .saboxplugin-switch {
+    text-align: center;
+  }
+
+  .wrap .saboxplugin .saboxplugin-border {
+    margin: 0;
+  }
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount2,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount3,
+  .wrap .saboxplugin .sabox-inline-slide .sabox-amount4 {
+    text-align: center;
+  }
+
+}

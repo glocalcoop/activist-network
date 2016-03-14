@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-12 11:46+0000\n"
+"POT-Creation-Date: 2016-03-04 00:21+0000\n"
 "PO-Revision-Date: 2015-09-25 19:02:29+0000\n"
 "Last-Translator: stephenharris <stephenh1988@gmail.com>\n"
 "Language-Team: \n"
@@ -123,7 +123,7 @@ msgstr "הצג רשימה של אירועים"
 
 #: classes/class-eo-event-list-widget.php:14
 #: classes/class-eo-event-list-widget.php:28 event-organiser-venues.php:463
-#: event-organiser.php:138 includes/class-eo-theme-compatability.php:199
+#: event-organiser.php:149 includes/class-eo-theme-compatability.php:199
 #: includes/event-organiser-cpt.php:224 includes/event-organiser-cpt.php:236
 #: includes/event-organiser-install.php:100 templates/archive-event.php:40
 msgid "Events"
@@ -389,7 +389,7 @@ msgstr "כאשר"
 msgid "Event Title"
 msgstr "כותרת אירוע"
 
-#: event-organiser-calendar.php:287 includes/event-organiser-ajax.php:400
+#: event-organiser-calendar.php:287 includes/event-organiser-ajax.php:402
 msgid "Where"
 msgstr "איפה"
 
@@ -801,42 +801,42 @@ msgstr "הגדרות Event Organiser"
 msgid "Event Organiser"
 msgstr "ארגון אירועים"
 
-#: event-organiser-settings.php:46 event-organiser.php:111
+#: event-organiser-settings.php:46 event-organiser.php:122
 #: includes/event-organiser-install.php:116
 msgid "Edit Events"
 msgstr "ערוך אירועים"
 
-#: event-organiser-settings.php:47 event-organiser.php:112
+#: event-organiser-settings.php:47 event-organiser.php:123
 #: includes/event-organiser-install.php:117
 msgid "Publish Events"
 msgstr "פרסם אירועים"
 
-#: event-organiser-settings.php:48 event-organiser.php:113
+#: event-organiser-settings.php:48 event-organiser.php:124
 #: includes/event-organiser-install.php:118
 msgid "Delete Events"
 msgstr "מחק אירועים"
 
-#: event-organiser-settings.php:49 event-organiser.php:114
+#: event-organiser-settings.php:49 event-organiser.php:125
 #: includes/event-organiser-install.php:119
 msgid "Edit Others' Events"
 msgstr "עריכת אירוע של מישהו אחר"
 
-#: event-organiser-settings.php:50 event-organiser.php:115
+#: event-organiser-settings.php:50 event-organiser.php:126
 #: includes/event-organiser-install.php:120
 msgid "Delete Other's Events"
 msgstr "מחיקת אירוע של מישהו אחר"
 
-#: event-organiser-settings.php:51 event-organiser.php:116
+#: event-organiser-settings.php:51 event-organiser.php:127
 #: includes/event-organiser-install.php:121
 msgid "Read Private Events"
 msgstr "קרא אירועים פרטיים"
 
-#: event-organiser-settings.php:52 event-organiser.php:117
+#: event-organiser-settings.php:52 event-organiser.php:128
 #: includes/event-organiser-install.php:122
 msgid "Manage Venues"
 msgstr "נהל מיקומים"
 
-#: event-organiser-settings.php:53 event-organiser.php:118
+#: event-organiser-settings.php:53 event-organiser.php:129
 #: includes/event-organiser-install.php:123
 msgid "Manage Event Categories & Tags"
 msgstr "נהל קטגוריות ותגיות אירוע"
@@ -1380,63 +1380,63 @@ msgstr "קטגוריה אחת נוצרה"
 msgid "%d categories were created"
 msgstr "%d קטגוריות נוצרו"
 
-#: includes/event-organiser-ajax.php:339
+#: includes/event-organiser-ajax.php:341
 msgid "Protected"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:341
+#: includes/event-organiser-ajax.php:343
 msgid "Private"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:343
+#: includes/event-organiser-ajax.php:345
 msgid "Draft"
 msgstr "שמור טיוטה"
 
-#: includes/event-organiser-ajax.php:383
+#: includes/event-organiser-ajax.php:385
 msgid "Start"
 msgstr "התחלה"
 
-#: includes/event-organiser-ajax.php:384
+#: includes/event-organiser-ajax.php:386
 msgid "End"
 msgstr "סיום"
 
-#: includes/event-organiser-ajax.php:387
+#: includes/event-organiser-ajax.php:389
 msgid "Organiser:"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:426
+#: includes/event-organiser-ajax.php:428
 msgid "This event recurs"
 msgstr "האירוע חוזר"
 
-#: includes/event-organiser-ajax.php:432 includes/event-organiser-cpt.php:228
+#: includes/event-organiser-ajax.php:434 includes/event-organiser-cpt.php:228
 msgid "Edit Event"
 msgstr "ערוך אירוע"
 
-#: includes/event-organiser-ajax.php:452
+#: includes/event-organiser-ajax.php:454
 msgid "Delete this occurrence"
 msgstr "מחק את המאורע הנוכחי"
 
-#: includes/event-organiser-ajax.php:469
+#: includes/event-organiser-ajax.php:471
 msgid "Break this series"
 msgstr "הפרד מסדרה"
 
-#: includes/event-organiser-ajax.php:771
+#: includes/event-organiser-ajax.php:773
 msgid "Event not found"
 msgstr "ההזנה לא נמצאה"
 
-#: includes/event-organiser-ajax.php:779
+#: includes/event-organiser-ajax.php:781
 msgid "Events are not editable via the admin calendar"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:785
+#: includes/event-organiser-ajax.php:787
 msgid "Are you sure you want to do this?"
 msgstr ""
 
-#: includes/event-organiser-ajax.php:792
+#: includes/event-organiser-ajax.php:794
 msgid "You do not have permission to edit this event"
 msgstr "אין לך הרשאות לערוך מיקום."
 
-#: includes/event-organiser-ajax.php:808
+#: includes/event-organiser-ajax.php:810
 #, php-format
 msgid "Event not created: %s"
 msgstr "אירועים ב: %s"

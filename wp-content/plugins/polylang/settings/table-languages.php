@@ -184,7 +184,7 @@ class PLL_Table_Languages extends WP_List_Table {
 		$actions = apply_filters( 'pll_languages_row_actions', $actions, $item ); // allow plugins to modify the list of actions
 
 		return $this->row_actions( $actions );
- 	}
+	}
 
 	/*
 	 * Sort items

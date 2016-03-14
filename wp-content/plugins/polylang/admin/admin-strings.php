@@ -122,7 +122,7 @@ class PLL_Admin_Strings {
 			$translation = strip_tags( $translation );
 		}
 
-		if ( $name == self::$default_strings['widget_text'] && !current_user_can( 'unfiltered_html' ) ) {
+		if ( $name == self::$default_strings['widget_text'] && ! current_user_can( 'unfiltered_html' ) ) {
 			$translation = wp_unslash( wp_filter_post_kses( addslashes( $translation ) ) ); // wp_filter_post_kses() expects slashed
 		}
 

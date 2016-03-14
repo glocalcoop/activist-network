@@ -1,0 +1,345 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Simple Author Box\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Liviu Costache <tiguan@tiguandesign.com>\n"
+"Language-Team: Tiguandesign.com <tiguan@tiguandesign.com>\n"
+"MIME-Version: 1.0\n"
+"Language: en\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#. Text in echo
+#: simple-author-box/template/options.php:165
+msgid "Add \"nofollow\" attribute on author website link:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:112
+msgid "Author avatar image style:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:373
+msgid "Author description font family:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:474
+msgid "Author description font size:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:515
+msgid "Author description font style:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:255
+msgid "Author name color:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:327
+msgid "Author name font family:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:412
+msgid "Author name font size:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:350
+msgid "Author website font family:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:443
+msgid "Author website font size:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:264
+msgid "Author website link color:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:145
+msgid "Author website position:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:281
+msgid "Background color of social icons bar:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:273
+msgid "Border color of Simple Author Box:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:91
+msgid "Bottom margin of author box:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:117
+#: simple-author-box/template/options.php:195
+msgid "Circle"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:251
+msgid "Color options"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:183
+msgid "Colored"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:479
+msgid "Default font size of author description is 14px."
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:417
+msgid "Default font size of author name is 18px."
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:448
+msgid "Default font size of author website is 14px."
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:507
+msgid "Default font size of social icons is 18px."
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:531
+msgid "Disable Font Awesome stylesheet:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:31
+msgid "General options"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:308
+msgid "Google font characters subset:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:103
+msgid "Hide the author box if author description is empty:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:240
+msgid "Hide the social icons on author box:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:45
+msgid ""
+"If you want to manually insert the Simple Author Box in your template file "
+"(single post view), you can use the following code snippet: "
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:579
+msgid "Installed Version:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:520
+msgid "Italic"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:586
+msgid "Last Update:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:150
+msgid "Left"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:543
+msgid "Load generated inline style to footer:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:34
+msgid "Manually insert the Simple Author Box:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:528
+msgid "Miscellaneous options"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:39
+#: simple-author-box/template/options.php:108
+#: simple-author-box/template/options.php:126
+#: simple-author-box/template/options.php:138
+#: simple-author-box/template/options.php:160
+#: simple-author-box/template/options.php:170
+#: simple-author-box/template/options.php:204
+#: simple-author-box/template/options.php:213
+#: simple-author-box/template/options.php:222
+#: simple-author-box/template/options.php:235
+#: simple-author-box/template/options.php:245
+#: simple-author-box/template/options.php:537
+#: simple-author-box/template/options.php:549
+msgid "No"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:379
+msgid "None"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:520
+msgid "Normal"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:155
+msgid "Open author website link in a new tab:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:230
+msgid "Open social icon links in a new tab:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:309
+msgid "Please note that some Google fonts does not support particular subsets!"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:150
+msgid "Right"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:121
+msgid "Rotate effect on author avatar hover:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:199
+msgid "Rotate effect on social icons hover:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:217
+msgid "Show a thin border on colored social icons:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:133
+msgid "Show author website:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:500
+msgid "Size of social icons:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:290
+msgid "Social icons color (for symbols only):"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:190
+msgid "Social icons style:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:177
+msgid "Social icons type (colored background or symbols only):"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:117
+msgid "Square"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:195
+msgid "Squares"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:532
+msgid ""
+"Switch to \"Yes\" to prevent Font Awesome from loading its stylesheet, ONLY "
+"if your theme or another plugin already does."
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:183
+msgid "Symbols"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:544
+msgid ""
+"This option is useful ONLY if you run a plugin that optimizes your CSS "
+"delivery or moves your stylesheets to the footer, to get a higher score on "
+"speed testing services. However, the plugin style is loaded only on single "
+"post and single page."
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:66
+msgid "Top margin of author box:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:303
+msgid "Typography options"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:208
+msgid "Use flat long shadow effect:"
+msgstr ""
+
+#. Text in echo
+#: simple-author-box/template/options.php:39
+#: simple-author-box/template/options.php:108
+#: simple-author-box/template/options.php:126
+#: simple-author-box/template/options.php:138
+#: simple-author-box/template/options.php:160
+#: simple-author-box/template/options.php:170
+#: simple-author-box/template/options.php:204
+#: simple-author-box/template/options.php:213
+#: simple-author-box/template/options.php:222
+#: simple-author-box/template/options.php:235
+#: simple-author-box/template/options.php:245
+#: simple-author-box/template/options.php:537
+#: simple-author-box/template/options.php:549
+msgid "Yes"
+msgstr ""

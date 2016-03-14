@@ -159,13 +159,21 @@ class CCF_Form_Renderer {
 
 		$pause = get_post_meta( $form_id, 'ccf_form_pause', true );
 
+		$require_logged_in = get_post_meta( $form_id, 'ccf_form_require_logged_in', true );
+
 		if ( empty( $fields ) ) {
 			return '';
 		}
 
 		ob_start();
 
-		if ( ! empty( $pause ) ) {
+		if ( ! empty( $require_logged_in ) && ! is_user_logged_in() ) {
+			?>
+			<div class="ccf-form-require-logged-in form-id-<?php echo (int) $form_id; ?>">
+				<?php esc_html_e( 'Log in to view this form.', 'custom-contact-forms' ); ?>
+			</div>
+			<?php
+		} elseif ( ! empty( $pause ) ) {
 			$pause_message = get_post_meta( $form_id, 'ccf_form_pause_message', true );
 			?>
 
@@ -236,15 +244,19 @@ class CCF_Form_Renderer {
 			if ( empty( $theme ) ) {
 				$theme = 'default';
 			}
+
+			$hide_title = get_post_meta( $form_id, 'ccf_form_hide_title', true );
 			?>
 
 			<div class="ccf-form-wrapper form-id-<?php echo (int) $form_id; ?>" data-form-id="<?php echo (int) $form_id; ?>">
 				<form <?php if ( $contains_file ) : ?>enctype="multipart/form-data"<?php endif; ?> class="ccf-form ccf-theme-<?php echo esc_attr( $theme ); ?>" method="post" action="" data-form-id="<?php echo (int) $form_id; ?>">
 
-					<?php $title = get_the_title( $form_id ); if ( ! empty( $title ) && apply_filters( 'ccf_show_form_title', true, $form_id ) ) : ?>
-						<div class="form-title">
-							<?php echo $title; ?>
-						</div>
+					<?php if ( empty( $hide_title ) ) : ?>
+						<?php $title = get_the_title( $form_id ); if ( ! empty( $title ) && apply_filters( 'ccf_show_form_title', true, $form_id ) ) : ?>
+							<div class="form-title">
+								<?php echo $title; ?>
+							</div>
+						<?php endif; ?>
 					<?php endif; ?>
 
 					<?php $description = get_post_meta( $form_id, 'ccf_form_description', true ); if ( ! empty( $description ) && apply_filters( 'ccf_show_form_description', true, $form_id ) ) : ?>

@@ -1,7 +1,7 @@
 === Page Builder by SiteOrigin ===
 Tags: page builder, responsive, widget, widgets, builder, page, admin, gallery, content, cms, pages, post, css, layout, grid
 Requires at least: 4.0
-Tested up to: 4.4.2
+Tested up to: 4.5
 Stable tag: 2.3.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -95,11 +95,14 @@ We've tried to ensure that Page Builder is compatible with most plugin widgets. 
 
 == Changelog ==
 
-= 2.3.1 - February 10 2015 =
+= 2.3.2 - March 11 2016 =
+* Fixed compatibility with WordPress 4.5
+
+= 2.3.1 - February 10 2016 =
 * Fixed fatal error on RTL sites.
 * Made setting to enable tablet layout. Disabled by default.
 
-= 2.3 - February 10 2015 =
+= 2.3 - February 10 2016 =
 * Delete preview panels data if there are no widgets.
 * Added a collapse order field.
 * Added custom row ID field.

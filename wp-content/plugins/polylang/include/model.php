@@ -393,6 +393,8 @@ class PLL_Model {
 	public function count_posts( $lang, $q = array() ) {
 		global $wpdb;
 
+		$q = wp_parse_args( $q, array( 'post_type' => 'post' ) );
+
 		if ( ! is_array( $q['post_type'] ) ) {
 			$q['post_type'] = array( $q['post_type'] );
 		}
@@ -416,29 +418,29 @@ class PLL_Model {
 			$where = " WHERE post_status = 'publish'";
 			$where .= $wpdb->prepare( " AND p.post_type IN ( '%s' )", join( "', '", $q['post_type'] ) );
 			$where .= $this->post->where_clause( $this->get_languages_list() );
-			$groupby = " GROUP BY pll_tr.term_taxonomy_id";
+			$groupby = ' GROUP BY pll_tr.term_taxonomy_id';
 
 			if ( ! empty( $q['m'] ) ) {
 				$q['m'] = '' . preg_replace( '|[^0-9]|', '', $q['m'] );
-				$where .= $wpdb->prepare( " AND YEAR( p.post_date ) = %d", substr( $q['m'], 0, 4 ) );
+				$where .= $wpdb->prepare( ' AND YEAR( p.post_date ) = %d', substr( $q['m'], 0, 4 ) );
 				if ( strlen( $q['m'] ) > 5 ) {
-					$where .= $wpdb->prepare( " AND MONTH( p.post_date ) = %d", substr( $q['m'], 4, 2 ) );
+					$where .= $wpdb->prepare( ' AND MONTH( p.post_date ) = %d', substr( $q['m'], 4, 2 ) );
 				}
 				if ( strlen( $q['m'] ) > 7 ) {
-					$where .= $wpdb->prepare( " AND DAYOFMONTH( p.post_date ) = %d", substr( $q['m'], 6, 2 ) );
+					$where .= $wpdb->prepare( ' AND DAYOFMONTH( p.post_date ) = %d', substr( $q['m'], 6, 2 ) );
 				}
 			}
 
 			if ( ! empty( $q['year'] ) ) {
-				$where .= $wpdb->prepare( " AND YEAR( p.post_date ) = %d", $q['year'] );
+				$where .= $wpdb->prepare( ' AND YEAR( p.post_date ) = %d', $q['year'] );
 			}
 
 			if ( ! empty( $q['monthnum'] ) ) {
-				$where .= $wpdb->prepare( " AND MONTH( p.post_date ) = %d", $q['monthnum'] );
+				$where .= $wpdb->prepare( ' AND MONTH( p.post_date ) = %d', $q['monthnum'] );
 			}
 
 			if ( ! empty( $q['day'] ) ) {
-				$where .= $wpdb->prepare( " AND DAYOFMONTH( p.post_date ) = %d", $q['day'] );
+				$where .= $wpdb->prepare( ' AND DAYOFMONTH( p.post_date ) = %d', $q['day'] );
 			}
 
 			if ( ! empty( $q['author_name'] ) ) {
@@ -449,16 +451,17 @@ class PLL_Model {
 			}
 
 			if ( ! empty( $q['author'] ) ) {
-				$where .= $wpdb->prepare( " AND p.post_author = %d", $q['author'] );
+				$where .= $wpdb->prepare( ' AND p.post_author = %d', $q['author'] );
 			}
 
 			// filtered taxonomies ( post_format )
 			foreach ( $this->get_filtered_taxonomies_query_vars() as $tax_qv ) {
+
 				if ( ! empty( $q[ $tax_qv ] ) ) {
 					$join .= " INNER JOIN {$wpdb->term_relationships} AS tr ON tr.object_id = p.ID";
 					$join .= " INNER JOIN {$wpdb->term_taxonomy} AS tt ON tt.term_taxonomy_id = tr.term_taxonomy_id";
 					$join .= " INNER JOIN {$wpdb->terms} AS t ON t.term_id = tt.term_id";
-					$where .= $wpdb->prepare( " AND t.slug = %s", $q[ $tax_qv ] );
+					$where .= $wpdb->prepare( ' AND t.slug = %s', $q[ $tax_qv ] );
 				}
 			}
 

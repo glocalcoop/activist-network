@@ -317,7 +317,7 @@ class PLL_Settings extends PLL_Admin_Base {
 				}
 
 				// unregisters strings registered through WPML API
-				if ( $string_table->current_action() == 'delete' && !empty( $_POST['strings'] ) && function_exists( 'icl_unregister_string' ) ) {
+				if ( $string_table->current_action() == 'delete' && ! empty( $_POST['strings'] ) && function_exists( 'icl_unregister_string' ) ) {
 					check_admin_referer( 'string-translation', '_wpnonce_string-translation' );
 					$strings = PLL_Admin_Strings::get_strings();
 
