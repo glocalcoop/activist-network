@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: civicrm, buddypress, user, profile, xprofile, sync
 Requires at least: 3.9
 Tested up to: 4.4
-Stable tag: 0.2.2
+Stable tag: 0.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,10 @@ For versions of *CiviCRM* prior to 4.6-alpha1, this plugin requires the correspo
 
 
 == Changelog ==
+
+= 0.2.3 =
+
+Further fixes to bulk operations logic
 
 = 0.2.2 =
 

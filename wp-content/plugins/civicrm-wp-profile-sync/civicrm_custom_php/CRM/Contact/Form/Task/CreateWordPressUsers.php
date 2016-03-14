@@ -173,12 +173,15 @@ class CRM_Contact_Form_Task_CreateWordPressUsers extends CRM_Contact_Form_Task {
     $urlParams = 'force=1';
     $urlString = "civicrm/contact/search/advanced";
 
-    // let WordPress plugins know what we're about to do
+    /**
+     * Broadcast that a user is about to be added, allowing other plugins to add
+     * or remove hooks.
+     */
     do_action( 'civicrm_wp_profile_sync_user_add_pre' );
 
     // disable Civi's own register hooks
     remove_action( 'user_register', array( civi_wp(), 'update_user' ) );
-    remove_action( 'profile_update', array( $this, 'update_user' ) );
+    remove_action( 'profile_update', array( civi_wp(), 'update_user' ) );
 
     // process data
     foreach ($rows AS $row) {
@@ -279,7 +282,7 @@ class CRM_Contact_Form_Task_CreateWordPressUsers extends CRM_Contact_Form_Task {
         $user_id = wp_insert_user($user_data);
 
         // if contact doesn't already exist create UF Match
-        if ( $user_id !== FALSE && isset($row['id']) ) {
+        if ( ! is_wp_error($user_id) && isset($row['id'] ) ) {
 
           $transaction = new CRM_Core_Transaction();
 
@@ -288,7 +291,7 @@ class CRM_Contact_Form_Task_CreateWordPressUsers extends CRM_Contact_Form_Task {
           $ufmatch->domain_id  = CRM_Core_Config::domainID();
           $ufmatch->uf_id      = $user_id;
           $ufmatch->contact_id = $row['id'];
-          $ufmatch->uf_name    = $row['mail'];
+          $ufmatch->uf_name    = $row['email'];
 
           if (!$ufmatch->find(TRUE)) {
             $ufmatch->save();
@@ -308,20 +311,24 @@ class CRM_Contact_Form_Task_CreateWordPressUsers extends CRM_Contact_Form_Task {
 
     // if debugging die now
     if ( $debug ) {
-	  trigger_error( print_r( array(
-		'method' => 'createUsers',
+      error_log( print_r( array(
+        'method' => __METHOD__,
 		//'rows' => $rows,
 		'messages' => $messages,
 		'count' => count( $messages ),
 		'users' => $users,
-	  ), true ), E_USER_ERROR ); die();
+        //'backtrace' => debug_backtrace( 0 ),
+      ), true ) );
 	}
 
     // re-enable Civi's register hooks
     add_action( 'user_register', array( civi_wp(), 'update_user' ) );
     add_action( 'profile_update', array( civi_wp(), 'update_user' ) );
 
-    // let WordPress plugins know what we've done
+    /**
+     * Broadcast that a user has ben added, allowing other plugins to add or
+     * remove hooks.
+     */
     do_action( 'civicrm_wp_profile_sync_user_add_post' );
 
     // set a message
