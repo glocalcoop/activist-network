@@ -48,6 +48,8 @@ if ( !defined( 'ANP_BP_CUSTOM_PLUGIN_NAMESPACE' ) ) {
  * ---------------------------------- */
 
 include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/bbpress-custom-functions.php' );
-
+include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/buddypress-docs-custom-functions.php' );
+include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/bp-groupblog-custom-functions.php' );
+include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/invite-anyone-custom-functions.php' );
 
 ?>
