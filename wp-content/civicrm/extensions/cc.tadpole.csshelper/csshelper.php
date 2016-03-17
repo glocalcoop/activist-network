@@ -140,8 +140,12 @@ function csshelper_civicrm_preProcess($formName, &$form) {
 */
 
 /*Enqueue default CiviCRM CSS in admin.  Create a filter to allow themes and other plugins to overrride */
+if ( ! function_exists( 'civi_wp' ) ) {
+}
+else {
 
-add_action( 'admin_enqueue_scripts', 'csshelper_register_admin_civicrm_styles' );
+  add_action('admin_enqueue_scripts', 'csshelper_register_admin_civicrm_styles');
+};
 
 function csshelper_register_admin_civicrm_styles() {
   $tc_civi_css_admin = (plugin_dir_url('civicrm')  . 'civicrm/civicrm/css/civicrm.css');
@@ -150,8 +154,12 @@ function csshelper_register_admin_civicrm_styles() {
 }
 
 /*Enqueue custom CiviCRM CSS in front end of site.  Create a filter to allow themes and other plugins to overrride */
+if ( ! function_exists( 'civi_wp' ) ) {
+}
+else {
+  add_action('wp_print_styles', 'csshelper_register_civicrm_styles', 110);
+};
 
-add_action( 'wp_print_styles', 'csshelper_register_civicrm_styles', 110 );
 function csshelper_register_civicrm_styles() {
   $tc_ext_url = CRM_Core_Resources::singleton()->getUrl('cc.tadpole.csshelper');
   $tc_civi_css = ( $tc_ext_url  . 'css/civicrm.css') ;

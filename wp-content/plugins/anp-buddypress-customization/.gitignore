@@ -1,0 +1,8 @@
+.htaccess
+.DS_Store
+*.bak
+*.log
+*.zip
+*.tar
+*.gz
+.brackets.json

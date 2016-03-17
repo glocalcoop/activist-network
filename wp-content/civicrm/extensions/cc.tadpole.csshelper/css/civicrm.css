@@ -13,10 +13,16 @@ CiviCRM CSS
 .crm-container input,
 #civicrm-menu input {
   box-sizing: content-box;
+  clear: both;
+  display: inline-block;
+  float: left;
+  margin: 0 5px 5px 0;
+  width: auto;
 }
 
 .crm-container label {
   display: inline-block;
+  float: left;
 }
 
 .crm-container .crm-quickSearchField {
@@ -66,10 +72,6 @@ input.form-radio {
   cursor: pointer;
 }
 
-div#crm-container.crm-container.crm-public div.crm-section div.content label {
-  margin: -3px 20px 0 5px;
-}
-
 
 /* TABLE STYLING */
 
@@ -84,7 +86,8 @@ div#crm-container.crm-container.crm-public div.crm-section div.content label {
   background: none transparent;
 }
 
-#crm-container.crm-public .label {
+#crm-container.crm-public .label,
+#crm-container.crm-public .crm-section .content {
     padding-top: 6px;
 }
 
@@ -499,6 +502,7 @@ input.crm-form-entityref {
 .crm-block #priceset-div,
 .crm-block .crm-group,
 .crm-block fieldset {
+  clear: both;
   margin-bottom: 1em;
 }
 
@@ -1161,9 +1165,7 @@ input.crm-form-entityref {
   border: none;
   background-color: #F5F6F1;
   position: relative;
-  height: 35px;
-  padding-top: 5px;
-  margin-bottom: 4px;
+  padding: 5px;
 }
 
 .crm-container #search-status ul {
@@ -1179,12 +1181,6 @@ input.crm-form-entityref {
 
 .crm-container .crm-pager input {
   text-align: center;
-}
-
-.crm-container .crm-pager-nav {
-  display: block;
-  margin-top: 7px;
-  padding-left: 5px;
 }
 
 #crm-container .section-hidden {
@@ -4213,11 +4209,8 @@ span.crm-status-icon {
 #crm-container.crm-public input[type="password"],
 #crm-container.crm-public input[type="email"],
 #crm-container.crm-public select {
-  font-size: 15px;
-  padding: 5px;
-  border-radius: 3px;
-  vertical-align: middle;
-  max-width: 100%;
+  font-size: 0.85em;
+  padding: 2px 5px 0;
 }
 
 .crm-container.crm-public .select2-container,
