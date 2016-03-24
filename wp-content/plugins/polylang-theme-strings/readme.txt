@@ -3,11 +3,11 @@ Contributors: modeewine
 Donate link: http://modeewine.com/en-donation
 Tags: extension, polylang, multilingual, translate, translation, language, multilanguage, international, localization
 Requires at least: 3.8
-Tested up to: 4.4
-Stable tag: 2.2.1
+Tested up to: 4.5
+Stable tag: 3.0
 License: GPL2
 
-Automatic scanning and registration Polylang-strings that can be translated. Extension for Polylang plugin.
+Automatic scanning of strings translation in the theme and registration of them in Polylang plugin. Extension for Polylang plugin.
 
 == Description ==
 
@@ -46,6 +46,12 @@ Learn more in <http://modeewine.com/en-polylang-theme-strings>.
 1. Screen of «Polylang» strings translate page settings and when «Polylang Theme Strings» in action.
 
 == Changelog ==
+
+= 3.0 (2016-03-23) =
+
+* Added new info area in strings-translations page (Polylang settings).
+* Improved code and scanning strings engine.
+* Tested and optimized compatibility with WordPress 4.5.
 
 = 2.2.1 (2016-03-09) =
 

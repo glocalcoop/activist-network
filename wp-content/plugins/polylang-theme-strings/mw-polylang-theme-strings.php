@@ -3,8 +3,8 @@
     /*
     Plugin Name: Polylang Theme Strings
     Plugin URI: http://modeewine.com/en-polylang-theme-strings
-    Description: Automatic scanning of strings translation in the theme and registration of them in Polylang plugin.
-    Version: 2.2.1
+    Description: Automatic scanning of strings translation in the theme and registration of them in Polylang plugin. Extension for Polylang plugin.
+    Version: 3.0
     Author: Modeewine
     Author URI: http://modeewine.com
     License: GPL2
@@ -15,8 +15,10 @@
     class MW_Polylang_Theme_Strings
     {
         static $prefix = 'mw_polylang_strings_';
+        static $plugin_version = '3.0';
         static $pll_f = 'pll_register_string';
         private $paths;
+        private $var = array();
 
         function __construct()
         {
@@ -51,6 +53,8 @@
             $this->Plugin_Install_Hooks_Init();
 
             add_action('init', array($this, 'Plugin_Hooks_Init'));
+            add_action('admin_enqueue_scripts', array($this, 'Styles_Scripts_Admin_Init'));
+            add_action('admin_head', array($this, 'Head_Admin_Init'));
         }
 
         private function Paths_Init()
@@ -61,6 +65,7 @@
 
             $this->paths = Array(
                 'plugin_file_index' => __FILE__,
+                'plugin_url'        => plugins_url('/', __FILE__),
                 'themes'            => WP_CONTENT_DIR . get_theme_roots(),
                 'theme'             => $theme,
                 'theme_dir_name'    => $theme_dir_name,
@@ -85,6 +90,64 @@
             {
                 $this->Themes_PLL_Strings_Scan();
                 $this->Themes_PLL_Strings_Init();
+            }
+        }
+
+        public function Styles_Scripts_Admin_Init()
+        {
+            if (self::Is_PLL_Strings_Settings_Page() || self::Is_WP_Plugins_Page())
+            {
+                wp_enqueue_style(self::$prefix . 'admin', $this->Path_Get('plugin_url') . 'css/admin.css', array(), self::$plugin_version, 'all');
+                wp_enqueue_script(self::$prefix . 'admin', $this->Path_Get('plugin_url') . 'js/admin.js', array('jquery'), self::$plugin_version);
+            }
+        }
+
+        public function Head_Admin_Init()
+        {
+            if (self::Is_PLL_Strings_Settings_Page())
+            {
+                ?>
+                <script type="text/javascript">
+                    if (typeof(window.<?php echo self::$prefix; ?>admin) == 'object')
+                    {
+                        window.<?php echo self::$prefix; ?>admin.attr.prefix = '<?php echo self::$prefix; ?>';
+                        window.<?php echo self::$prefix; ?>admin.attr.urls['polylang_strings'] = '<?php echo admin_url('options-general.php?page=mlang&tab=strings'); ?>';
+                        window.<?php echo self::$prefix; ?>admin.attr.urls['polylang_strings_theme_current'] = '<?php echo admin_url('options-general.php?page=mlang&tab=strings&s&group=' . __('Theme') . ': ' . wp_get_theme()->Name . '&paged=1'); ?>';
+
+                        window.<?php echo self::$prefix; ?>admin.lng[10] = '<?php _e('Polylang Theme Strings'); ?>';
+                        window.<?php echo self::$prefix; ?>admin.lng[11] = '<?php _e('works'); ?>';
+                        window.<?php echo self::$prefix; ?>admin.lng[20] = '<?php _e('Current theme polylang-strings detected'); ?>';
+                        window.<?php echo self::$prefix; ?>admin.lng[21] = '<?php echo $this->var['theme-strings-count'][$this->Path_Get('theme_dir_name')]; ?>';
+                        window.<?php echo self::$prefix; ?>admin.lng[30] = '<?php _e('All themes polylang-strings detected'); ?>';
+                        window.<?php echo self::$prefix; ?>admin.lng[31] = '<?php echo array_sum($this->var['theme-strings-count']); ?>';
+                        window.<?php echo self::$prefix; ?>admin.lng[40] = '<?php _e('Plugin web-page'); ?>';
+                        window.<?php echo self::$prefix; ?>admin.lng[50] = '<?php _e('Donation'); ?>';
+                        window.<?php echo self::$prefix; ?>admin.lng[60] = '<?php _e('Please, give plugin feedback'); ?>';
+
+                        jQuery(document).ready(function(){
+                            window.<?php echo self::$prefix; ?>admin.init.polylang_info_area();
+                        });
+                    }
+                </script>
+                <?php
+            }
+
+            if (self::Is_WP_Plugins_Page())
+            {
+                ?>
+                <script type="text/javascript">
+                    if (typeof(window.<?php echo self::$prefix; ?>admin) == 'object')
+                    {
+                        window.<?php echo self::$prefix; ?>admin.attr.urls['polylang_strings'] = '<?php echo admin_url('options-general.php?page=mlang&tab=strings'); ?>';
+
+                        window.<?php echo self::$prefix; ?>admin.lng[70] = '<?php _e('Go to polylang-strings settings page'); ?>';
+
+                        jQuery(document).ready(function(){
+                            window.<?php echo self::$prefix; ?>admin.init.plugins_page();
+                        });
+                    }
+                </script>
+                <?php
             }
         }
 
@@ -132,6 +195,14 @@
                 (isset($_REQUEST['page']) && $_REQUEST['page'] == 'mlang') &&
                 (isset($_REQUEST['tab']) && $_REQUEST['tab'] == 'strings')
             )
+            {
+                return true;
+            }
+        }
+
+        static function Is_WP_Plugins_Page()
+        {
+            if (preg_match("/\/plugins.php[^a-z0-9]?/uis", $_SERVER['REQUEST_URI']))
             {
                 return true;
             }
@@ -211,6 +282,8 @@
                 foreach ($themes as $theme_dir_name => $theme)
                 {
                     $data = get_option(self::$prefix . $theme_dir_name . '_data');
+                    $tsc = &$this->var['theme-strings-count'][$theme_dir_name];
+                    $tsc = 0;
 
                     if (is_array($data) && is_array($data['strings']) && count($data['strings']))
                     {
@@ -218,6 +291,8 @@
                         {
                             pll_register_string($v, $v, __('Theme') . ': ' . $data['name']);
                         }
+
+                        $tsc = count($data['strings']);
                     }
                 }
             }
