@@ -34,7 +34,7 @@ if( !function_exists( 'anp_rename_invite_anyone' ) ) {
             'labels'    => $post_type_labels,
             'public'    => false,
             '_builtin'  => false,
-            'show_ui'   => Invite_Anyone_Schema::show_dashboard_ui(),
+            'show_ui'   => (new Invite_Anyone_Schema)->show_dashboard_ui(),
             'hierarchical'  => false,
             'menu_icon' => 'dashicons-email-alt',
             'supports'  => array( 'title', 'editor', 'custom-fields', 'author' )
